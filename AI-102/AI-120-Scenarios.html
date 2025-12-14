@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-102 Azure AI Engineer Practice Exam Sample</title>
+    
+    <!-- Load Tailwind CSS via CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        /* Changed from min-height: 100vh to ensure the app wrapper covers the viewport */
+        .container {
+            min-height: 100vh;
+        }
+        .option-button {
+            transition: all 0.2s;
+            cursor: pointer;
+            text-align: left;
+            user-select: none; /* Prevents text selection on rapid clicks */
+        }
+        .option-button:hover:not(.selected):not(.correct):not(.incorrect) {
+            background-color: #e5e7eb;
+        }
+        
+        /* User Selection Styles */
+        .selected {
+            border-left: 4px solid #3b82f6;
+            background-color: #dbeafe;
+        }
+        
+        /* Correct Answer Styles */
+        .correct {
+            border: 2px solid #10b981;
+            background-color: #d1fae5;
+        }
+        /* Incorrect Answer Styles (only if user selected it and it was wrong) */
+        .incorrect {
+            border: 2px solid #ef4444;
+            background-color: #fee2e2;
+        }
+
+        /* Explanation box style */
+        .explanation {
+            border-left: 4px solid #f97316;
+            background-color: #fff7ed;
+        }
+
+        /* Custom print styling */
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #summary-modal, #summary-modal * {
+                visibility: visible;
+            }
+            #summary-modal {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                background: white;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .shadow-2xl, .shadow-3xl, .p-10, .m-4 {
+                box-shadow: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            .rounded-xl {
+                border-radius: 0 !important;
+            }
+            .prose {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- Changed `items-center` to `items-start` for vertical top alignment -->
+    <div id="app" class="container flex items-start justify-center p-4">
+        <div id="loading" class="text-gray-600">Initializing quiz...</div>
+
+        <!-- Main Quiz Card -->
+        <div id="quiz-container" class="w-full max-w-3xl bg-white shadow-2xl rounded-xl p-6 md:p-10 hidden mt-10">
+            <h2 id="quiz-title" class="text-3xl font-extrabold text-gray-800 mb-4 border-b pb-2"></h2>
+
+            <!-- Quiz Status -->
+            <div id="quiz-status" class="flex justify-between items-center text-sm font-medium text-gray-500 mb-6">
+                <span id="question-counter"></span>
+                <span id="score-info"></span> 
+            </div>
+
+            <!-- Question Display -->
+            <div id="question-display">
+                <p id="question-text" class="text-xl font-semibold text-gray-900 mb-2"></p>
+                <p id="selection-hint" class="text-sm text-gray-600 mb-6 font-medium italic"></p>
+
+                <div id="options-container" class="space-y-4">
+                    <!-- Options will be injected here -->
+                </div>
+            </div>
+
+            <!-- Correct Answer Explanation -->
+            <div id="explanation-box" class="explanation mt-6 p-4 rounded-lg text-gray-800 text-sm hidden">
+                <p class="font-bold text-orange-700 mb-1">Explanation:</p>
+                <p id="explanation-text"></p>
+            </div>
+
+
+            <!-- Navigation & Action Buttons -->
+            <div class="mt-8 pt-6 border-t flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+                <button id="show-correct-btn" onclick="toggleCorrectAnswer()" class="w-full sm:w-auto px-4 py-2 text-sm font-medium text-blue-700 bg-blue-100 rounded-lg hover:bg-blue-200 transition-colors">
+                    Show Correct Answer
+                </button>
+                <div class="flex space-x-3">
+                    <button id="prev-btn" onclick="handleNavigation(-1)" disabled class="px-6 py-3 text-lg font-semibold rounded-lg bg-gray-200 text-gray-600 transition-all hover:bg-gray-300 disabled:opacity-50">
+                        Previous
+                    </button>
+                    <button id="next-btn" onclick="handleNavigation(1)" class="px-6 py-3 text-lg font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Card -->
+        <div id="results-container" class="w-full max-w-3xl bg-white shadow-2xl rounded-xl p-6 md:p-10 hidden mt-10">
+            <h2 class="text-3xl font-extrabold text-gray-800 mb-4">Quiz Results</h2>
+            <div class="space-y-4 mb-8">
+                <p class="text-xl">Your Final Score: <span id="final-score" class="font-bold"></span> / <span id="results-total-score"></span></p>
+                <p class="text-xl">Status: <span id="pass-fail-status" class="font-bold px-3 py-1 rounded-full inline-block"></span></p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                <button onclick="renderAndShowSummary(true)" class="flex-1 px-6 py-3 text-lg font-semibold rounded-lg text-white bg-green-600 hover:bg-green-700 transition-all shadow-md">
+                    Review & Print Summary
+                </button>
+                <button onclick="window.location.reload()" class="flex-1 px-6 py-3 text-lg font-semibold rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors">
+                    Start New Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Printable Summary Section (Modal) -->
+    <div id="summary-modal" class="fixed inset-0 bg-gray-900 bg-opacity-75 z-50 flex justify-center items-start overflow-y-auto pt-10 hidden">
+        <div class="bg-white rounded-xl shadow-3xl w-full max-w-4xl m-4 p-8">
+            <div id="printSummary" class="prose max-w-none">
+                <!-- Summary content injected here -->
+            </div>
+            <div class="no-print mt-6 flex justify-end space-x-3">
+                <button onclick="document.getElementById('summary-modal').classList.add('hidden')" class="px-6 py-3 text-lg font-semibold rounded-lg bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors">
+                    Close Review
+                </button>
+                <button onclick="window.print()" class="px-6 py-3 text-lg font-semibold rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-all shadow-md">
+                    Print Quiz Summary
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // 1. EMBEDDED QUIZ DATA: Using the provided JSON format.
+        const RAW_QUIZ_DATA = {
+    "quizName": "AI-102 Azure AI Engineer Practice Exam Sample",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+  {
+    "id": 1,
+    "Question": "A global e-commerce company needs to automatically categorize thousands of new product images daily. The categories are highly specialized (e.g., 'vintage leather satchel', 'modern canvas tote'). Which Azure AI service is the best fit for this custom image classification task?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Vision (Image Analysis)" },
+      { "id": 2, "text": "B. Azure AI Custom Vision" },
+      { "id": 3, "text": "C. Azure AI Face" },
+      { "id": 4, "text": "D. Azure Machine Learning" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Azure AI Custom Vision is designed for training custom image classification and object detection models using your own specialized data, unlike the general pre-trained models in Azure AI Vision."
+  },
+  {
+    "id": 2,
+    "Question": "A financial institution wants to predict whether a loan applicant will default. The outcome is a binary 'Yes' or 'No'. What type of machine learning is this?",
+    "Options": [
+      { "id": 1, "text": "A. Clustering" },
+      { "id": 2, "text": "B. Regression" },
+      { "id": 3, "text": "C. Classification" },
+      { "id": 4, "text": "D. Reinforcement Learning" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Classification is used to predict a discrete, categorical label (Yes/No, Spam/Not Spam, A/B/C)."
+  },
+  {
+    "id": 3,
+    "Question": "A retail chain is experiencing frequent out-of-stock events for popular products. They want an AI model to forecast the required inventory levels for the next three months based on historical sales data. What type of machine learning is this?",
+    "Options": [
+      { "id": 1, "text": "A. Classification" },
+      { "id": 2, "text": "B. Time Series Forecasting (Regression)" },
+      { "id": 3, "text": "C. Clustering" },
+      { "id": 4, "text": "D. Object Detection" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Forecasting numerical future values over time (like inventory quantity) is a time series problem, which is a specialized form of regression."
+  },
+  {
+    "id": 4,
+    "Question": "A data science team needs a platform to manage the entire Machine Learning lifecycle, from data prep and training custom models (using Python/R) to deployment and monitoring. Which Azure service should they primarily use?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Cognitive Services" },
+      { "id": 2, "text": "B. Azure Functions" },
+      { "id": 3, "text": "C. Azure Machine Learning" },
+      { "id": 4, "text": "D. Azure Synapse Analytics" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure Machine Learning (Azure ML) is the dedicated platform for managing the end-to-end MLOps lifecycle, including custom model development and deployment."
+  },
+  {
+    "id": 5,
+    "Question": "A company wants to identify patterns in customer segmentation without predefined categories, to discover new market groups. What type of unsupervised machine learning technique should be applied?",
+    "Options": [
+      { "id": 1, "text": "A. Regression" },
+      { "id": 2, "text": "B. Classification" },
+      { "id": 3, "text": "C. Clustering" },
+      { "id": 4, "text": "D. Anomaly Detection" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Clustering is an unsupervised learning method that groups similar data points without relying on pre-labeled outcomes, making it ideal for discovering segments."
+  },
+  {
+    "id": 6,
+    "Question": "You are integrating a pre-trained Azure AI service model into a new application and need to authenticate your requests. What two pieces of information are required for authenticating calls to most Azure AI services via the REST API?",
+    "Options": [
+      { "id": 1, "text": "A. A Subscription ID and Resource Group Name" },
+      { "id": 2, "text": "B. An Endpoint URL and an API Key" },
+      { "id": 3, "text": "C. A Client ID and Client Secret" },
+      { "id": 4, "text": "D. A Storage Account Name and Key" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "All Azure AI services require the service Endpoint (URL) to address the request and an API Key (or an Azure AD token) for authorization."
+  },
+  {
+    "id": 7,
+    "Question": "Your company is building a mobile application that uses a combination of Azure AI Vision and Azure AI Language. You want to centralize management and billing for all AI service usage. Which Azure resource should you provision?",
+    "Options": [
+      { "id": 1, "text": "A. A separate resource for each service" },
+      { "id": 2, "text": "B. A single Azure AI services (multi-service) resource" },
+      { "id": 3, "text": "C. An Azure Function App" },
+      { "id": 4, "text": "D. An Azure Bot Service" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "A multi-service Azure AI resource provides a single key and endpoint for accessing multiple services, consolidating billing and simplifying management."
+  },
+  {
+    "id": 8,
+    "Question": "What is the primary difference between a 'feature' and a 'label' in a supervised machine learning dataset?",
+    "Options": [
+      { "id": 1, "text": "A. A feature is the predicted outcome, a label is the input data." },
+      { "id": 2, "text": "B. A feature is the input data, a label is the known outcome." },
+      { "id": 3, "text": "C. Both terms refer to the input data for the model." },
+      { "id": 4, "text": "D. A feature is numerical data, a label is categorical data." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Features are the input variables used to make a prediction, while the label is the known correct answer or outcome the model is trying to predict."
+  },
+  {
+    "id": 9,
+    "Question": "You have trained a machine learning model. You want to estimate how well the model will generalize to new, unseen data. What subset of your data should be used for this step?",
+    "Options": [
+      { "id": 1, "text": "A. Training dataset" },
+      { "id": 2, "text": "B. Validation dataset" },
+      { "id": 3, "text": "C. Test dataset" },
+      { "id": 4, "text": "D. Feature dataset" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The test dataset is explicitly held back and used only at the end of model development to assess the final, unbiased generalization error."
+  },
+  {
+    "id": 10,
+    "Question": "A company is using AI to automatically flag potentially fraudulent transactions. They notice that the AI incorrectly flags many legitimate transactions as fraud (False Positives). Which evaluation metric should they focus on improving to reduce these false flags?",
+    "Options": [
+      { "id": 1, "text": "A. Recall" },
+      { "id": 2, "text": "B. Precision" },
+      { "id": 3, "text": "C. Accuracy" },
+      { "id": 4, "text": "D. F1 Score" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Precision measures the proportion of positive predictions that were actually correct (True Positives / (True Positives + False Positives)). Improving precision reduces False Positives."
+  },
+  {
+    "id": 11,
+    "Question": "In a linear regression model, what does the 'loss function' or 'cost function' primarily measure?",
+    "Options": [
+      { "id": 1, "text": "A. The speed of model training." },
+      { "id": 2, "text": "B. The total number of features used." },
+      { "id": 3, "text": "C. The difference between the predicted output and the actual output." },
+      { "id": 4, "text": "D. The complexity of the neural network architecture." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The loss function quantifies the error of the model by calculating the distance (or difference) between the model's prediction and the true label."
+  },
+  {
+    "id": 12,
+    "Question": "A construction company wants an AI system to automatically identify the type of safety equipment (e.g., hardhat, safety vest) worn by workers in real-time video streams. Which computer vision task is required?",
+    "Options": [
+      { "id": 1, "text": "A. Image Classification" },
+      { "id": 2, "text": "B. Optical Character Recognition (OCR)" },
+      { "id": 3, "text": "C. Object Detection" },
+      { "id": 4, "text": "D. Image Segmentation" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Object Detection is needed because it identifies *what* the object is (hardhat, vest) and *where* it is located (bounding box) in the image/frame, which is necessary for monitoring safety compliance."
+  },
+  {
+    "id": 13,
+    "Question": "A library wants to digitize historical records by extracting handwritten text from scanned documents. Which Azure AI Vision feature is most appropriate for this task?",
+    "Options": [
+      { "id": 1, "text": "A. Image Analysis (Tagging)" },
+      { "id": 2, "text": "B. Optical Character Recognition (OCR) - Read" },
+      { "id": 3, "text": "C. Facial Recognition" },
+      { "id": 4, "text": "D. Custom Vision" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "The Read API within Azure AI Vision's OCR capabilities is highly optimized for extracting text, including handwritten text, from images and documents."
+  },
+  {
+    "id": 14,
+    "Question": "You need to build an application that can identify and locate faces within an image but does not need to identify *who* the person is. Which Azure AI Vision feature fulfills this requirement?",
+    "Options": [
+      { "id": 1, "text": "A. Image Analysis (Feature extraction)" },
+      { "id": 2, "text": "B. Face Detection" },
+      { "id": 3, "text": "C. Face Verification" },
+      { "id": 4, "text": "D. Custom Vision" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Face Detection identifies the presence and location of faces in an image, returning coordinates, but does not perform identification. Face Verification and Identification require training to know *who* the person is."
+  },
+  {
+    "id": 15,
+    "Question": "A tourism website wants to automatically generate descriptive captions for uploaded photos (e.g., 'A clear photo of a person standing in front of a mountain'). Which feature of Azure AI Vision is best suited for this?",
+    "Options": [
+      { "id": 1, "text": "A. Object Detection" },
+      { "id": 2, "text": "B. Image Classification" },
+      { "id": 3, "text": "C. Image Analysis (Captioning/Summarization)" },
+      { "id": 4, "text": "D. OCR" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure AI Vision's Image Analysis service includes an advanced feature specifically for generating human-readable, descriptive captions for images."
+  },
+  {
+    "id": 16,
+    "Question": "A retail bank needs to process thousands of loan application forms daily, extracting key-value pairs (like 'Applicant Name', 'Loan Amount') from a consistently structured template. Which Azure AI service is purpose-built for this data extraction task?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Vision (OCR)" },
+      { "id": 2, "text": "B. Azure AI Custom Vision" },
+      { "id": 3, "text": "C. Azure AI Document Intelligence (Form Recognizer)" },
+      { "id": 4, "text": "D. Azure Cognitive Search" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure AI Document Intelligence (formerly Form Recognizer) specializes in understanding the structure and content of documents and extracting structured data (key-value pairs, tables), going beyond simple OCR."
+  },
+  {
+    "id": 17,
+    "Question": "You are using Azure AI Custom Vision to train a model. You have provided bounding boxes for objects in the images. Which type of project are you creating?",
+    "Options": [
+      { "id": 1, "text": "A. Image Classification (Single-label)" },
+      { "id": 2, "text": "B. Image Classification (Multi-label)" },
+      { "id": 3, "text": "C. Object Detection" },
+      { "id": 4, "D": "Image Segmentation" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Bounding boxes are the mechanism used to define the location and extent of specific objects within an image for an object detection task."
+  },
+  {
+    "id": 18,
+    "Question": "A manufacturing plant wants to use AI to detect anomalies on an assembly line by comparing a finished product's image to a known good sample. What is the most specific computer vision task needed?",
+    "Options": [
+      { "id": 1, "text": "A. Object Detection" },
+      { "id": 2, "text": "B. Image Classification" },
+      { "id": 3, "text": "C. Anomaly Detection (Vision)" },
+      { "id": 4, "text": "D. Face Detection" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure AI Vision includes specialized Anomaly Detection capabilities for vision, designed to find deviations or defects in industrial images based on a set of 'normal' samples."
+  },
+  {
+    "id": 19,
+    "Question": "A museum is building an application that needs to translate text found in exhibit photos into multiple languages. Which two Azure AI services would be the primary components?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Custom Vision and Azure AI Language" },
+      { "id": 2, "text": "B. Azure AI Vision (OCR) and Azure AI Translator" },
+      { "id": 3, "text": "C. Azure AI Document Intelligence and Azure AI Speech" },
+      { "id": 4, "text": "D. Azure AI Bot Service and Azure AI Vision" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "OCR is required to extract the text from the image, and Azure AI Translator is required to perform the language translation."
+  },
+  {
+    "id": 20,
+    "Question": "What is the key benefit of using a transfer learning approach when building a custom computer vision model with a limited dataset?",
+    "Options": [
+      { "id": 1, "text": "A. It guarantees 100% accuracy." },
+      { "id": 2, "text": "B. It eliminates the need for any labeled data." },
+      { "id": 3, "text": "C. It leverages features learned from a large, pre-trained model." },
+      { "id": 4, "text": "D. It requires a deep knowledge of neural network architecture." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Transfer learning re-uses a model pre-trained on a massive dataset (like ImageNet), saving training time and enabling high accuracy with a smaller, domain-specific dataset."
+  },
+  {
+    "id": 21,
+    "Question": "A large call center wants to process customer transcripts to automatically identify the emotional tone (positive, negative, neutral) of the conversation to escalate unhappy customers. Which Azure AI Language feature should be used?",
+    "Options": [
+      { "id": 1, "text": "A. Language Detection" },
+      { "id": 2, "text": "B. Key Phrase Extraction" },
+      { "id": 3, "text": "C. Sentiment Analysis" },
+      { "id": 4, "text": "D. Text Summarization" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Sentiment Analysis is the specific feature designed to determine the emotional polarity (positive, negative, mixed, neutral) of a text input."
+  },
+  {
+    "id": 22,
+    "Question": "You are building a bot that needs to understand that 'I want to fly from **London** to **New York** **next Tuesday**' contains specific pieces of information like 'London' (Origin), 'New York' (Destination), and 'next Tuesday' (Date). What NLP task is being performed?",
+    "Options": [
+      { "id": 1, "text": "A. Entity Recognition" },
+      { "id": 2, "text": "B. Text Summarization" },
+      { "id": 3, "text": "C. Speech-to-Text" },
+      { "id": 4, "text": "D. Topic Modeling" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [1],
+    "CorrectAnswerExplanation": "Entity Recognition (or Named Entity Recognition, NER) is the task of identifying and classifying specific, structured data points (entities) in unstructured text."
+  },
+  {
+    "id": 23,
+    "Question": "A news company wants to generate short, concise versions of long articles automatically. Which Azure AI Language feature is designed for this task?",
+    "Options": [
+      { "id": 1, "text": "A. Key Phrase Extraction" },
+      { "id": 2, "text": "B. Language Detection" },
+      { "id": 3, "text": "C. Text Summarization" },
+      { "id": 4, "text": "D. Entity Linking" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Text Summarization (Extractive or Abstractive) is the process of creating a concise and coherent summary of a longer document."
+  },
+  {
+    "id": 24,
+    "Question": "A multinational corporation needs a service to instantly convert speech from a meeting into real-time translated subtitles in three different languages. Which Azure AI services are required?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Language and Azure AI Document Intelligence" },
+      { "id": 2, "text": "B. Azure AI Speech (Speech-to-Text) and Azure AI Translator" },
+      { "id": 3, "text": "C. Azure AI Bot Service and Azure AI Vision" },
+      { "id": 4, "text": "D. Azure Machine Learning and Azure AI Language" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Azure AI Speech converts the audio to text, and Azure AI Translator then converts that text into the required target languages in real-time."
+  },
+  {
+    "id": 25,
+    "Question": "You are building a FAQ chatbot for a website. You have a document with over 500 Q&A pairs. Which Azure AI service simplifies the creation of a conversational model from this structured content?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI LUIS (Language Understanding)" },
+      { "id": 2, "text": "B. Azure AI Document Intelligence" },
+      { "id": 3, "text": "C. Azure AI QnA Maker (part of Azure AI Language)" },
+      { "id": 4, "text": "D. Azure AI Content Moderator" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "QnA Maker (now part of the custom features in Azure AI Language) is designed specifically to ingest structured Q&A content and create a knowledge base for chatbots."
+  },
+  {
+    "id": 26,
+    "Question": "What is the primary purpose of an 'Intent' in a Language Understanding (LUIS) model?",
+    "Options": [
+      { "id": 1, "text": "A. To identify specific data points in the user's utterance." },
+      { "id": 2, "text": "B. To translate the user's input to another language." },
+      { "id": 3, "text": "C. To determine the goal or action the user wants to perform." },
+      { "id": 4, "text": "D. To extract the sentiment of the user's message." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The Intent classifies the overall user utterance, determining the user's purpose (e.g., 'BookFlight', 'CheckWeather', 'CancelOrder')."
+  },
+  {
+    "id": 27,
+    "Question": "A podcast company wants to create searchable indices of all their audio content. Which Azure service would convert the spoken words in the audio files into a text transcript?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Translator" },
+      { "id": 2, "text": "B. Azure AI Text Analytics" },
+      { "id": 3, "text": "C. Azure AI Speech (Speech-to-Text)" },
+      { "id": 4, "text": "D. Azure AI Content Moderator" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Speech-to-Text is the core function of Azure AI Speech that converts audio content into written transcripts, making the audio searchable."
+  },
+  {
+    "id": 28,
+    "Question": "You have a large body of customer support tickets and need to find the recurring topics being discussed without pre-labeling the data. Which NLP technique is most suitable?",
+    "Options": [
+      { "id": 1, "text": "A. Sentiment Analysis" },
+      { "id": 2, "text": "B. Key Phrase Extraction" },
+      { "id": 3, "text": "C. Topic Modeling (Clustering)" },
+      { "id": 4, "text": "D. Named Entity Recognition" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Topic Modeling uses clustering techniques to discover abstract 'topics' that occur in a collection of documents, suitable for finding trends in unstructured text like support tickets."
+  },
+  {
+    "id": 29,
+    "Question": "Which Azure service is best for filtering text and images in a social media application to detect and flag potentially offensive or inappropriate content before it goes live?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Document Intelligence" },
+      { "id": 2, "text": "B. Azure AI Content Moderator" },
+      { "id": 3, "C": "Azure AI Translator" },
+      { "id": 4, "text": "D. Azure AI Custom Vision" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Azure AI Content Moderator is specifically designed to scan text, images, and videos for potentially unwanted or inappropriate content for human review."
+  },
+  {
+    "id": 30,
+    "Question": "A web application has user comments in 10 different languages. Before performing sentiment analysis, you need to determine the language of each comment. Which Azure AI Language feature should you use first?",
+    "Options": [
+      { "id": 1, "text": "A. Key Phrase Extraction" },
+      { "id": 2, "text": "B. Language Detection" },
+      { "id": 3, "text": "C. Text Summarization" },
+      { "id": 4, "text": "D. Pii Detection" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Language Detection must be run first, as the accuracy of many subsequent NLP tasks (like sentiment analysis) depends on knowing the source language."
+  },
+  {
+    "id": 31,
+    "Question": "A marketing team wants to automatically create various social media captions and blog post summaries from a single product brief. Which Azure service, utilizing large foundation models, is the best choice?",
+    "Options": [
+      { "id": 1, "text": "A. Azure AI Language" },
+      { "id": 2, "B": "Azure AI Document Intelligence" },
+      { "id": 3, "text": "C. Azure OpenAI Service" },
+      { "id": 4, "text": "D. Azure Machine Learning" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure OpenAI Service, leveraging models like GPT-4, is the current best-of-breed solution for complex content generation and summarization tasks."
+  },
+  {
+    "id": 32,
+    "Question": "What is the primary technique used in Azure OpenAI Service to ensure the model's output is grounded in a specific set of proprietary documents, rather than its general training data? ",
+    "Options": [
+      { "id": 1, "text": "A. Transfer Learning" },
+      { "id": 2, "text": "B. Few-shot prompting" },
+      { "id": 3, "text": "C. Retrieval Augmented Generation (RAG)" },
+      { "id": 4, "text": "D. Clustering" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "RAG is a pattern where external documents (the proprietary data) are retrieved based on the user's query and inserted into the prompt context to 'ground' the generative model's response, preventing hallucination."
+  },
+  {
+    "id": 33,
+    "Question": "In the context of the Azure OpenAI Service, what is 'prompt engineering'?",
+    "Options": [
+      { "id": 1, "text": "A. Designing the neural network architecture." },
+      { "id": 2, "text": "B. Collecting and labeling the training data." },
+      { "id": 3, "text": "C. The practice of carefully crafting the input text to guide the model's response." },
+      { "id": 4, "text": "D. Deploying the model to an inference endpoint." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Prompt engineering involves designing effective instructions, context, and examples (the prompt) to elicit the desired, high-quality, and safe output from a large language model."
+  },
+  {
+    "id": 34,
+    "Question": "Which Azure OpenAI model is best suited for generating high-quality images based on a text description?",
+    "Options": [
+      { "id": 1, "text": "A. GPT-4" },
+      { "id": 2, "text": "B. DALL-E" },
+      { "id": 3, "text": "C. Embeddings" },
+      { "id": 4, "text": "D. Codex" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "DALL-E is the image generation model from OpenAI, integrated into Azure OpenAI Service for creating visual content from text prompts."
+  },
+  {
+    "id": 35,
+    "Question": "You are developing a chatbot for technical support and want the model to behave consistently as a 'Helpful and friendly IT assistant'. Which part of the prompt is best suited for setting this persona in the Azure OpenAI Chat Completion API?",
+    "Options": [
+      { "id": 1, "text": "A. User message" },
+      { "id": 2, "text": "B. Assistant message" },
+      { "id": 3, "text": "C. System message" },
+      { "id": 4, "text": "D. Function call" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The System message is used to give the model high-level instructions, defining its personality, constraints, and overall behavior for the entire conversation."
+  },
+  {
+    "id": 36,
+    "Question": "A developer needs to convert natural language instructions into runnable code snippets. Which category of Azure OpenAI models is specifically designed for code-related tasks?",
+    "Options": [
+      { "id": 1, "text": "A. GPT-3.5" },
+      { "id": 2, "text": "B. GPT-4" },
+      { "id": 3, "text": "C. Codex (or similar code-generating models)" },
+      { "id": 4, "text": "D. DALL-E" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Codex and its derivatives are specialized large language models trained on massive codebases, making them the best choice for code generation and translation tasks."
+  },
+  {
+    "id": 37,
+    "Question": "A hospital is developing an AI system to diagnose diseases. Which Responsible AI principle is primarily concerned with ensuring the system provides accurate and consistent results under various conditions and does not cause unintended harm?",
+    "Options": [
+      { "id": 1, "text": "A. Fairness" },
+      { "id": 2, "text": "B. Accountability" },
+      { "id": 3, "text": "C. Transparency" },
+      { "id": 4, "text": "D. Reliability and Safety" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [4],
+    "CorrectAnswerExplanation": "The principle of Reliability and Safety ensures that AI systems are tested rigorously, deployed safely, and designed to operate correctly and without causing harm in the real world."
+  },
+  {
+    "id": 38,
+    "Question": "An AI model for hiring is found to systematically rate applicants from a specific demographic group lower, even when their qualifications are equal. Which Responsible AI principle is being violated?",
+    "Options": [
+      { "id": 1, "text": "A. Fairness" },
+      { "id": 2, "text": "B. Inclusiveness" },
+      { "id": 3, "text": "C. Privacy and Security" },
+      { "id": 4, "text": "D. Transparency" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [1],
+    "CorrectAnswerExplanation": "Fairness dictates that AI systems should treat all people equitably, without perpetuating or reinforcing systemic biases based on attributes like gender, race, or ethnicity."
+  },
+  {
+    "id": 39,
+    "Question": "To adhere to the principle of 'Transparency', what information should an organization provide about its AI system?",
+    "Options": [
+      { "id": 1, "text": "A. The AI's source code and deployment method." },
+      { "id": 2, "text": "B. The business plan and marketing strategy." },
+      { "id": 3, "text": "C. How the system works, the data it uses, and its intended use/limitations." },
+      { "id": 4, "text": "D. The specific server locations of the training data." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Transparency (or explainability) means communicating how the AI works, its purpose, the data it was trained on, and the constraints of its use so that users can understand and trust it."
+  },
+  {
+    "id": 40,
+    "Question": "An AI service processes sensitive personal health data. Which Responsible AI principle dictates that this data must be protected from unauthorized access and misuse throughout the entire lifecycle?",
+    "Options": [
+      { "id": 1, "text": "A. Accountability" },
+      { "id": 2, "text": "B. Inclusiveness" },
+      { "id": 3, "text": "C. Privacy and Security" },
+      { "id": 4, "text": "D. Fairness" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The Privacy and Security principle focuses on ensuring data is handled securely, protected from breaches, and used only as intended, especially when dealing with PII or sensitive data."
+  },
+  {
+    "id": 41,
+    "Question": "What is the primary concern when an AI model exhibits 'Bias'?",
+    "Options": [
+      { "id": 1, "text": "A. The model is too fast to train." },
+      { "id": 2, "text": "B. The model only works on cloud infrastructure." },
+      { "id": 3, "text": "C. The model makes systematic, unfair judgments due to non-representative training data." },
+      { "id": 4, "text": "D. The model is too expensive to run." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "AI bias stems from skewed, incomplete, or unrepresentative data, leading the model to consistently produce outputs that are unfairly favorable or unfavorable to certain groups."
+  },
+  {
+    "id": 42,
+    "Question": "Which principle is addressed by creating a process that ensures human oversight and a clear chain of responsibility for the AI's outcomes?",
+    "Options": [
+      { "id": 1, "text": "A. Fairness" },
+      { "id": 2, "text": "B. Reliability and Safety" },
+      { "id": 3, "text": "C. Accountability" },
+      { "id": 4, "text": "D. Inclusiveness" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Accountability ensures that there is a governance structure, human oversight, and clear responsibility assigned to the people who design, deploy, and operate the AI system."
+  },
+  {
+    "id": 43,
+    "Question": "A developer needs to create an Azure AI Vision resource using the Azure CLI. Which command prefix would they use to manage AI services resources?",
+    "Options": [
+      { "id": 1, "text": "A. `az vm`" },
+      { "id": 2, "text": "B. `az account`" },
+      { "id": 3, "text": "C. `az cognitiveservices`" },
+      { "id": 4, "text": "D. `az network`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The `az cognitiveservices` command group is used for managing the core Azure AI service resources (including Vision, Language, Speech, etc.) in the CLI."
+  },
+  {
+    "id": 44,
+    "Question": "Which Azure CLI command is used to retrieve the primary and secondary access keys for a created Azure AI service (Cognitive Services) resource?",
+    "Options": [
+      { "id": 1, "text": "A. `az cognitiveservices show`" },
+      { "id": 2, "text": "B. `az cognitiveservices list-keys`" },
+      { "id": 3, "text": "C. `az cognitiveservices get-secret`" },
+      { "id": 4, "text": "D. `az cognitiveservices renew`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "The `list-keys` subcommand is the standard Azure CLI operation for retrieving the API keys associated with a resource."
+  },
+  {
+    "id": 45,
+    "Question": "When deploying an Azure Machine Learning model as a real-time endpoint, which type of file typically defines the dependencies and environment for the deployment?",
+    "Options": [
+      { "id": 1, "text": "A. `model.onnx`" },
+      { "id": 2, "text": "B. `deployment.json`" },
+      { "id": 3, "text": "C. `requirements.txt` or a Conda environment file" },
+      { "id": 4, "text": "D. `config.log`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Environment definition files (`requirements.txt`, `conda.yml`) are essential to ensure the inference environment has all the necessary Python packages and dependencies to run the model and scoring script."
+  },
+  {
+    "id": 46,
+    "Question": "You are calling the Text Summarization API (part of Azure AI Language). You need to send the text content to be summarized in the HTTP request body. Which HTTP method is typically used for this type of data submission?",
+    "Options": [
+      { "id": 1, "text": "A. GET" },
+      { "id": 2, "text": "B. PUT" },
+      { "id": 3, "text": "C. POST" },
+      { "id": 4, "text": "D. DELETE" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The POST method is used to submit data to a specified resource, which is the correct method for sending text in the request body to an AI service for processing."
+  },
+  {
+    "id": 47,
+    "Question": "To manage the deployment of an Azure OpenAI model using the Azure CLI, which command would you likely use?",
+    "Options": [
+      { "id": 1, "text": "A. `az openai model deploy`" },
+      { "id": 2, "text": "B. `az ai deployment create`" },
+      { "id": 3, "text": "C. `az ml model deploy`" },
+      { "id": 4, "text": "D. `az openai deployment create`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [4],
+    "CorrectAnswerExplanation": "The dedicated command group for Azure OpenAI management is `az openai`, and the standard action for creating a model deployment is `deployment create`."
+  },
+  {
+    "id": 48,
+    "Question": "What is the primary role of the `scoring script` (often a `score.py` file) when deploying a custom machine learning model via Azure Machine Learning?",
+    "Options": [
+      { "id": 1, "text": "A. To train the model from scratch." },
+      { "id": 2, "text": "B. To define the compute target for the deployment." },
+      { "id": 3, "text": "C. To load the model and process incoming data for real-time inference." },
+      { "id": 4, "text": "D. To delete the model from the workspace." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The scoring script contains the `init()` function (to load the model) and the `run(data)` function (to process the request and return the prediction), defining the inference logic."
+  },
+  {
+    "id": 49,
+    "Question": "A Python developer is using the Azure AI SDK. Before making any API calls, they need to instantiate a client object. What two essential pieces of information are required for this step, regardless of the specific SDK method?",
+    "Options": [
+      { "id": 1, "text": "A. Resource Group and Location" },
+      { "id": 2, "text": "B. Endpoint URL and API Key/Credential" },
+      { "id": 3, "text": "C. Subscription ID and Tenant ID" },
+      { "id": 4, "text": "D. Model Name and Version" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "To initialize a service client, the SDK must know *where* to send the request (Endpoint URL) and *how* to authenticate it (API Key or Token Credential)."
+  },
+  {
+    "id": 50,
+    "Question": "You need to find the location (region) of your existing Azure AI Language resource using the Azure CLI. Which command would be most effective?",
+    "Options": [
+      { "id": 1, "text": "A. `az resource list --name <resource-name>`" },
+      { "id": 2, "text": "B. `az resource delete --name <resource-name>`" },
+      { "id": 3, "text": "C. `az resource move --name <resource-name>`" },
+      { "id": 4, "text": "D. `az resource create --name <resource-name>`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [1],
+    "CorrectAnswerExplanation": "The `az resource list` command is used to retrieve metadata (including location) about a specific resource or a group of resources."
+  },
+  {
+    "id": 51,
+    "Question": "A common practice for securing Azure AI service keys is to store them in a centralized secret management service. Which Azure service is used for this purpose?",
+    "Options": [
+      { "id": 1, "text": "A. Azure Blob Storage" },
+      { "id": 2, "text": "B. Azure Key Vault" },
+      { "id": 3, "text": "C. Azure SQL Database" },
+      { "id": 4, "text": "D. Azure App Service" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "Azure Key Vault is the dedicated service for securely storing and managing secrets, encryption keys, and certificates, which is best practice for API keys."
+  },
+  {
+    "id": 52,
+    "Question": "Which HTTP status code would a REST API call to an Azure AI service most likely return if the API Key used in the request is invalid or missing?",
+    "Options": [
+      { "id": 1, "text": "A. 200 (OK)" },
+      { "id": 2, "text": "B. 400 (Bad Request)" },
+      { "id": 3, "text": "C. 401 (Unauthorized)" },
+      { "id": 4, "text": "D. 404 (Not Found)" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "A 401 Unauthorized status code is the standard HTTP response for a request that fails due to invalid or missing authentication credentials (like an incorrect API key)."
+  },
+  {
+    "id": 53,
+    "Question": "A data scientist needs to export the details of a trained model from Azure Machine Learning so a colleague can use it. Which CLI command family is used to register, list, and download models in the workspace?",
+    "Options": [
+      { "id": 1, "text": "A. `az ml workspace`" },
+      { "id": 2, "text": "B. `az ml compute`" },
+      { "id": 3, "text": "C. `az ml data`" },
+      { "id": 4, "text": "D. `az ml model`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [4],
+    "CorrectAnswerExplanation": "The `az ml model` command group is used for managing the model assets within the Azure Machine Learning workspace, including registering models for deployment."
+  },
+  {
+    "id": 54,
+    "Question": "When configuring a private endpoint for an Azure AI service, the primary goal is to:",
+    "Options": [
+      { "id": 1, "text": "A. Increase the performance of the service." },
+      { "id": 2, "text": "B. Allow public internet access to the service." },
+      { "id": 3, "text": "C. Secure the service by limiting access to a specific virtual network." },
+      { "id": 4, "text": "D. Reduce the cost of the service." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Private Endpoints bring the Azure service into a private virtual network, securing it from public internet access and ensuring all data traffic stays on the Azure backbone network."
+  },
+  {
+    "id": 55,
+    "Question": "Which command would you use in the Azure CLI to install the core Azure Machine Learning extension?",
+    "Options": [
+      { "id": 1, "text": "A. `az extension add --name ai`" },
+      { "id": 2, "text": "B. `az extension add --name ml`" },
+      { "id": 3, "text": "C. `az install ml`" },
+      { "id": 4, "text": "D. `az install ai`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "The `az extension add` command is used to install CLI extensions, and 'ml' is the name of the Azure Machine Learning extension."
+  },
+  {
+    "id": 56,
+    "Question": "To programmatically get a list of all custom models trained in a specific Azure AI Custom Vision project via the REST API, you would typically use which HTTP method?",
+    "Options": [
+      { "id": 1, "text": "A. POST" },
+      { "id": 2, "text": "B. GET" },
+      { "id": 3, "text": "C. PATCH" },
+      { "id": 4, "text": "D. DELETE" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "The GET method is the standard HTTP method used to retrieve or read data (like a list of models) from a resource without modifying it."
+  },
+  {
+    "id": 57,
+    "Question": "You are deploying an Azure AI Vision resource to a restricted network environment. What method should be used to restrict incoming API traffic to only specific IP addresses?",
+    "Options": [
+      { "id": 1, "text": "A. Creating a Public IP address for the resource." },
+      { "id": 2, "text": "B. Using a Network Security Group (NSG) on the virtual machine." },
+      { "id": 3, "text": "C. Configuring the resource's network settings with an IP firewall." },
+      { "id": 4, "text": "D. Enabling HTTPS encryption." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "Azure AI services allow you to configure an IP firewall directly on the resource's networking blade to specify which public IP addresses are permitted to access the service endpoint."
+  },
+  {
+    "id": 58,
+    "Question": "In the Azure OpenAI Chat Completion API, which parameter controls the randomness of the model's output (higher values mean more creative, lower values mean more deterministic)?",
+    "Options": [
+      { "id": 1, "text": "A. `max_tokens`" },
+      { "id": 2, "text": "B. `temperature`" },
+      { "id": 3, "text": "C. `top_p`" },
+      { "id": 4, "text": "D. `n`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [2],
+    "CorrectAnswerExplanation": "The `temperature` parameter is the primary control for controlling randomness. A temperature of 0 is deterministic (always the same output), while a higher temperature increases creativity and diversity."
+  },
+  {
+    "id": 59,
+    "Question": "A Python developer is using the Azure AI Document Intelligence SDK to call the service. Which type of error would the SDK typically throw if the service quota (e.g., transactions per second) has been exceeded?",
+    "Options": [
+      { "id": 1, "text": "A. A 200 (OK) response with a warning." },
+      { "id": 2, "text": "B. A 404 (Not Found) error." },
+      { "id": 3, "text": "C. A 429 (Too Many Requests) error." },
+      { "id": 4, "text": "D. A 500 (Internal Server Error)." }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The 429 status code (Too Many Requests) is the standard HTTP code used to indicate that a client has exceeded its rate limits or quota."
+  },
+  {
+    "id": 60,
+    "Question": "After deploying an ML model to Azure Kubernetes Service (AKS), a developer wants to test the endpoint from the CLI. Which command can be used to stream the logs of the deployed service to diagnose any issues?",
+    "Options": [
+      { "id": 1, "text": "A. `az ml endpoint list`" },
+      { "id": 2, "text": "B. `az ml endpoint invoke`" },
+      { "id": 3, "text": "C. `az ml endpoint get-logs` (or similar command in the new CLI)" },
+      { "id": 4, "text": "D. `az ml deployment delete`" }
+    ],
+    "MaxAnswerSelection": 1,
+    "CorrectAnswers": [3],
+    "CorrectAnswerExplanation": "The ability to view deployment logs is crucial for debugging. The Azure ML CLI provides a command (often `az ml endpoint get-logs` or `az ml service logs` in older versions) to stream logs from the deployed service container."
+  }
+]
+	
+}
+;
+
+        // Global variables for quiz state
+        let quizData = null;
+        let currentQuestionIndex = 0;
+        // userAnswers will now store an array of selected option IDs for each question.
+        // E.g., userAnswers[0] = [2, 3] if the user selected options 2 and 3 for the first question.
+        let userAnswers = [];
+        let isShowingCorrect = false;
+
+        // Configuration
+        const QUIZ_CONTAINER = document.getElementById('quiz-container');
+        const RESULTS_CONTAINER = document.getElementById('results-container');
+        const LOADING_ELEMENT = document.getElementById('loading');
+        const EXPLANATION_BOX = document.getElementById('explanation-box');
+        const EXPLANATION_TEXT = document.getElementById('explanation-text');
+
+        /**
+         * Initializes the application using the embedded quiz data.
+         */
+        function initializeQuiz() {
+            try {
+                // Assign data directly
+                quizData = RAW_QUIZ_DATA;
+                
+                // Initialize user answers array with empty arrays for multi-select support
+                userAnswers = new Array(quizData.questions.length).fill(0).map(() => []);
+                
+                // Set the quiz title
+                document.getElementById('quiz-title').textContent = quizData.quizName;
+                
+                // Update the static score information (Note: Points are per-question now, 
+                // but the overall score is what matters for the header)
+                document.getElementById('score-info').textContent = `Total Score: ${quizData.totalScore} | Passing Score: ${quizData.passingScore}`;
+
+                // Hide loading, show quiz
+                LOADING_ELEMENT.classList.add('hidden');
+                QUIZ_CONTAINER.classList.remove('hidden');
+                
+                // Render the first question
+                renderQuestion(currentQuestionIndex);
+
+            } catch (error) {
+                console.error("Quiz initialization failed:", error);
+                // Fallback display for critical initialization errors
+                LOADING_ELEMENT.textContent = `Error: Could not process quiz data. ${error.message}`;
+                LOADING_ELEMENT.classList.add('text-red-600', 'font-bold', 'p-4', 'bg-red-100', 'rounded-lg');
+            }
+        }
+
+        /**
+         * Renders the question and its options in the UI.
+         * @param {number} index - The index of the question to render.
+         */
+        function renderQuestion(index) {
+            if (!quizData || !quizData.questions[index]) return;
+
+            const question = quizData.questions[index];
+            const totalQuestions = quizData.questions.length;
+            const optionsContainer = document.getElementById('options-container');
+
+            // Reset correct answer visibility state
+            isShowingCorrect = false;
+            document.getElementById('show-correct-btn').textContent = 'Show Correct Answer';
+            EXPLANATION_BOX.classList.add('hidden');
+
+            // Update question text and counter
+            document.getElementById('question-text').textContent = `Q${question.id}. (${question.MaxAnswerSelection > 1 ? 'Multiple Answer' : 'Single Answer'}) ${question.Question}`;
+            document.getElementById('question-counter').textContent = `Question ${index + 1} of ${totalQuestions}`;
+            document.getElementById('selection-hint').textContent = question.MaxAnswerSelection > 1 
+                ? `Choose up to ${question.MaxAnswerSelection} options.`
+                : `Choose 1 option.`;
+
+
+            // Update navigation buttons
+            document.getElementById('prev-btn').disabled = index === 0;
+            
+            const nextBtn = document.getElementById('next-btn');
+            if (index === totalQuestions - 1) {
+                nextBtn.textContent = 'Submit Quiz';
+                nextBtn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+                nextBtn.classList.add('bg-green-600', 'hover:bg-green-700');
+            } else {
+                nextBtn.textContent = 'Next';
+                nextBtn.classList.remove('bg-green-600', 'hover:bg-green-700');
+                nextBtn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+            }
+
+            // Render options
+            optionsContainer.innerHTML = '';
+            question.Options.forEach(option => {
+                const isSelected = userAnswers[index].includes(option.id);
+
+                const button = document.createElement('button');
+                button.type = 'button';
+                // Use a standard style by default
+                button.className = `option-button w-full p-4 rounded-lg border border-gray-200 shadow-sm transition-colors ${isSelected ? 'selected' : 'bg-white'}`;
+                button.innerHTML = `<span class="font-bold mr-3 text-gray-600">${option.text.split('.')[0]}.</span> ${option.text.split('.').slice(1).join('.')}`;
+                button.onclick = () => handleOptionSelect(index, option.id, question.MaxAnswerSelection);
+
+                optionsContainer.appendChild(button);
+            });
+        }
+
+        /**
+         * Toggles the visibility of the correct answer and explanation for the current question.
+         */
+        function toggleCorrectAnswer() {
+            const index = currentQuestionIndex;
+            if (!quizData || !quizData.questions[index]) return;
+
+            isShowingCorrect = !isShowingCorrect;
+            const question = quizData.questions[index];
+            const optionsContainer = document.getElementById('options-container');
+            const options = optionsContainer.children;
+            const correctIds = question.CorrectAnswers;
+            const userSelectedIds = userAnswers[index];
+            
+            const btn = document.getElementById('show-correct-btn');
+            btn.textContent = isShowingCorrect ? 'Hide Correct Answer' : 'Show Correct Answer';
+            EXPLANATION_TEXT.innerHTML = question.CorrectAnswerExplanation;
+            
+            if (isShowingCorrect) {
+                EXPLANATION_BOX.classList.remove('hidden');
+            } else {
+                EXPLANATION_BOX.classList.add('hidden');
+            }
+
+            // Re-render options to apply/remove classes
+            Array.from(options).forEach((option, optionIndex) => {
+                // Since Options ID starts at 1, optionIndex is 0-based, so use optionIndex + 1 for ID
+                const optionId = optionIndex + 1; 
+                const isSelectedByUser = userSelectedIds.includes(optionId);
+                const isCorrect = correctIds.includes(optionId);
+
+                option.classList.remove('correct', 'incorrect', 'selected');
+                
+                if (isShowingCorrect) {
+                    if (isCorrect) {
+                        // Mark the correct answer
+                        option.classList.add('correct');
+                    }
+                    if (isSelectedByUser && !isCorrect) {
+                        // Mark the incorrect selection by the user
+                        option.classList.add('incorrect');
+                    } else if (isSelectedByUser && isCorrect) {
+                        // If selected and correct, the 'correct' class takes precedence
+                        option.classList.add('correct');
+                    }
+                } else if (isSelectedByUser) {
+                    // If hiding correct answer, just show the user's selection
+                    option.classList.add('selected');
+                }
+            });
+        }
+
+
+        /**
+         * Stores the user's selected option(s) and re-renders the current question.
+         * Handles single- and multi-select logic.
+         * @param {number} questionIndex - The index of the question.
+         * @param {number} selectedId - The ID of the selected option (1-based).
+         * @param {number} maxSelection - The maximum number of options allowed.
+         */
+        function handleOptionSelect(questionIndex, selectedId, maxSelection) {
+            let currentSelections = userAnswers[questionIndex];
+
+            if (maxSelection > 1) {
+                // Multi-select logic: Toggle the selection
+                const indexInSelections = currentSelections.indexOf(selectedId);
+                
+                if (indexInSelections > -1) {
+                    // Deselect
+                    currentSelections.splice(indexInSelections, 1);
+                } else if (currentSelections.length < maxSelection) {
+                    // Select (if max not reached)
+                    currentSelections.push(selectedId);
+                }
+                userAnswers[questionIndex] = currentSelections;
+            } else {
+                // Single-select logic: Replace the selection, or deselect if clicked again
+                if (currentSelections.includes(selectedId)) {
+                    // Deselect if already selected
+                    userAnswers[questionIndex] = [];
+                } else {
+                    // Select the new option
+                    userAnswers[questionIndex] = [selectedId];
+                }
+            }
+            
+            // Re-render to show selection visually
+            renderQuestion(questionIndex);
+        }
+
+        /**
+         * Handles navigation between questions (Next/Previous).
+         * @param {number} direction - 1 for next, -1 for previous.
+         */
+        function handleNavigation(direction) {
+            const newIndex = currentQuestionIndex + direction;
+
+            if (newIndex >= 0 && newIndex < quizData.questions.length) {
+                currentQuestionIndex = newIndex;
+                renderQuestion(currentQuestionIndex);
+            } else if (direction === 1 && newIndex === quizData.questions.length) {
+                submitQuiz();
+            }
+        }
+
+        /**
+         * Calculates the final score and displays the results.
+         * Scoring logic: The question is marked correct ONLY if the user's selected IDs
+         * exactly match the set of CorrectAnswer IDs. Partial credit is NOT given.
+         */
+        function submitQuiz() {
+            let finalScore = 0;
+            const totalScore = quizData.totalScore;
+            const passingScore = quizData.passingScore;
+            
+            // To calculate score, we assume each correct question is worth a fixed amount
+            // that sums up to the totalScore.
+            const pointsPerQuestion = totalScore / quizData.questions.length;
+
+
+            quizData.questions.forEach((question, index) => {
+                const userSelection = userAnswers[index].sort();
+                const correctAnswers = question.CorrectAnswers.sort();
+
+                // Check if user's selection exactly matches the correct answers set
+                const isCorrect = userSelection.length === correctAnswers.length &&
+                                  userSelection.every((value, i) => value === correctAnswers[i]);
+
+                if (isCorrect) {
+                    // Since all questions are worth 200 points in the JSON, let's just 
+                    // use a simplified total score calculation based on the number of questions.
+                    // If the original data intended points per question, we'd use that, but
+                    // since there's no points field, we divide the total score equally.
+                    finalScore += pointsPerQuestion;
+                }
+            });
+
+            // Update results card. Score is rounded to handle floating point issues from division.
+            document.getElementById('final-score').textContent = Math.round(finalScore);
+            document.getElementById('results-total-score').textContent = totalScore;
+            const statusElement = document.getElementById('pass-fail-status');
+
+            if (finalScore >= passingScore) {
+                statusElement.textContent = 'PASSED';
+                statusElement.classList.remove('bg-red-200', 'text-red-700');
+                statusElement.classList.add('bg-green-200', 'text-green-700');
+            } else {
+                statusElement.textContent = 'FAILED';
+                statusElement.classList.remove('bg-green-200', 'text-green-700');
+                statusElement.classList.add('bg-red-200', 'text-red-700');
+            }
+
+            // Hide quiz, show results
+            QUIZ_CONTAINER.classList.add('hidden');
+            RESULTS_CONTAINER.classList.remove('hidden');
+        }
+
+        /**
+         * Generates the summary content and displays the summary modal.
+         * @param {boolean} showModal - If true, shows the modal; otherwise, only generates content.
+         */
+        function renderAndShowSummary(showModal) {
+            const summaryContainer = document.getElementById('printSummary');
+            
+            // Get final score (must be called after submitQuiz or it might be 0)
+            const finalScore = document.getElementById('final-score').textContent;
+            
+            let summaryHtml = `<h1 class="text-3xl font-bold text-gray-900 mb-6">${quizData.quizName} Review & Summary</h1>`;
+            
+            summaryHtml += `<div class="mb-8 p-4 border rounded-lg bg-gray-50">
+                                <p class="text-lg font-semibold">Total Questions: ${quizData.questions.length}</p>
+                                <p class="text-lg font-semibold">Maximum Score: ${quizData.totalScore}</p>
+                                <p class="text-lg font-semibold">Passing Score: ${quizData.passingScore}</p>
+                                <p class="text-xl font-bold mt-2">Your Score: ${finalScore} / ${quizData.totalScore} (${document.getElementById('pass-fail-status').textContent})</p>
+                            </div>`;
+
+            quizData.questions.forEach((question, index) => {
+                const userSelectedIds = userAnswers[index];
+                const correctIds = question.CorrectAnswers;
+                
+                // Determine correctness for score calculation logic
+                const isCorrect = userSelectedIds.length === correctIds.length &&
+                                  userSelectedIds.sort().every((value, i) => value === correctIds.sort()[i]);
+
+                const statusColor = isCorrect ? 'text-green-600' : 'text-red-600';
+                const statusIcon = isCorrect ? '✅' : '❌';
+
+                // Format User Answer Text
+                let userAnswerTexts = userSelectedIds.map(id => {
+                    const option = question.Options.find(opt => opt.id === id);
+                    if (!option) return 'N/A';
+                    
+                    const isUserCorrect = correctIds.includes(id);
+                    const colorClass = isUserCorrect ? 'text-green-700' : 'text-red-700';
+                    const icon = isUserCorrect ? '✔' : '✘';
+                    return `<span class="${colorClass}">${icon} ${option.text}</span>`;
+                });
+
+                if (userAnswerTexts.length === 0) {
+                     userAnswerTexts = ['<span class="text-gray-500 italic">No Answer Selected</span>'];
+                }
+                
+                // Format Correct Answer Text
+                const correctAnswerTexts = correctIds.map(id => {
+                    const option = question.Options.find(opt => opt.id === id);
+                    return `<span class="text-green-700">✔ ${option.text}</span>`;
+                });
+
+
+                summaryHtml += `
+                    <div class="mb-6 p-4 border rounded-lg shadow-sm ${isCorrect ? 'border-green-300 bg-green-50' : 'border-red-300 bg-red-50'}">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">${statusIcon} Q${question.id}: ${question.Question} 
+                            <span class="text-sm font-normal text-gray-500">(${question.MaxAnswerSelection > 1 ? 'Multi-Select' : 'Single-Select'})</span>
+                        </h3>
+                        
+                        <div class="mt-4 border-t pt-3">
+                            <p class="text-md font-medium text-gray-700">Your Selection${userAnswerTexts.length > 1 ? 's' : ''}:</p>
+                            <ul class="list-none space-y-1 pl-0">
+                                ${userAnswerTexts.map(text => `<li>${text}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 border-t pt-3">
+                            <p class="text-md font-medium text-gray-700">Correct Answer${correctAnswerTexts.length > 1 ? 's' : ''}:</p>
+                            <ul class="list-none space-y-1 pl-0">
+                                ${correctAnswerTexts.map(text => `<li>${text}</li>`).join('')}
+                            </ul>
+                        </div>
+                        
+                        <!-- Correct Answer Explanation -->
+                        <div class="explanation mt-4 p-3 rounded-lg text-gray-800 text-sm">
+                            <p class="font-bold text-orange-700 mb-1">Explanation:</p>
+                            <p>${question.CorrectAnswerExplanation}</p>
+                        </div>
+                    </div>
+                `;
+            });
+
+            summaryContainer.innerHTML = summaryHtml;
+
+            if (showModal) {
+                document.getElementById('summary-modal').classList.remove('hidden');
+            }
+        }
+
+        // Initialize the quiz when the page loads
+        document.addEventListener('DOMContentLoaded', initializeQuiz);
+    </script>
+</body>
+</html>
