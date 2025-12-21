@@ -167,6 +167,10 @@
     </div>
 
     <script>
+        let EXAM_CONFIG = [];
+        const CONFIG_URL = "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/available-exams.json";
+
+        /*
         const EXAM_CONFIG = [
             { title: "Sample Test", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json" },
             { title: "GH-300 - GitHub Copilot", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-300/gh-300.json" },
@@ -174,12 +178,14 @@
             { title: "AI-102 - Azure AI Engineer Associate - Set 2", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json" },
             { title: "AI-102 - Azure AI Engineer Associate - Set 3", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json" }
         ];
+        */
 
         let currentExam = null, currentIndex = 0, userAnswers = {}, mode = 'online';
 
         $(document).ready(function () {
             // Populate Dropdown
-            EXAM_CONFIG.forEach(e => $('#exam-selector').append(`<option value="${e.file}">${e.title}</option>`));
+            //EXAM_CONFIG.forEach(e => $('#exam-selector').append(`<option value="${e.file}">${e.title}</option>`));
+            getExamConfig()
 
             // Tab Switching Logic
             $('#tab-online').click(function () {
@@ -230,6 +236,23 @@
                     }
                 }
             });
+
+            function getExamConfig() {
+                fetch(CONFIG_URL)
+                    .then(response => response.json())
+                    .then(data => {
+                        EXAM_CONFIG = data; // Assign the fetched data to our variable
+
+                        // 2. Populate Dropdown after data arrives
+                        EXAM_CONFIG.forEach(e => {
+                            $('#exam-selector').append(`<option value="${e.file}">${e.title}</option>`);
+                        });
+                    })
+                    .catch(err => {
+                        console.error("Error loading exam list:", err);
+                        showError("Could not load the list of available exams.");
+                    });
+            }
 
             function showError(msg) {
                 $('#error-message').text(msg);
