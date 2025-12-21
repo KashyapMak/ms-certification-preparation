@@ -1,0 +1,787 @@
+{
+    "quizName": "AI-102 Azure AI Engineer Practice - Set 2 (Questions 61-120)",
+    "totalScore": 600,
+    "passingScore": 420,
+    "questions": [
+        {
+            "id": 61,
+            "Question": "A company is implementing a policy to ensure that all AI models are explainable, meaning the reasons behind the model's predictions can be understood by humans. Which Microsoft Responsible AI principle does this directly support?",
+            "Options": [
+                { "id": 1, "text": "A. Fairness" },
+                { "id": 2, "text": "B. Inclusiveness" },
+                { "id": 3, "text": "C. Transparency" },
+                { "id": 4, "text": "D. Accountability" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "The principle of Transparency, including interpretability and explainability, ensures that users and developers can understand how the AI system functions and why it made a specific decision."
+        },
+        {
+            "id": 62,
+            "Question": "An AI Engineer is designing a solution that must adhere to the Microsoft Responsible AI principle of Reliability and Safety. What is the primary focus of this principle?",
+            "Options": [
+                { "id": 1, "text": "A. Ensuring AI decisions are fair and do not reflect bias." },
+                { "id": 2, "text": "B. Ensuring AI systems perform consistently and predictably under normal operating conditions." },
+                { "id": 3, "text": "C. Ensuring users know how the AI system operates." },
+                { "id": 4, "text": "D. Ensuring that human-centric oversight is always available." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Reliability and Safety focuses on the system's performance, ensuring the AI performs its designated task accurately, consistently, and without causing harm."
+        },
+        {
+            "id": 63,
+            "Question": "You are processing large, unstructured text documents (e.g., policy manuals) and need to extract the names of people, organizations, and geographical locations. Which Azure AI Language feature is specifically designed for this task?",
+            "Options": [
+                { "id": 1, "text": "A. Custom Classification." },
+                { "id": 2, "text": "B. Key Phrase Extraction." },
+                { "id": 3, "text": "C. Named Entity Recognition (NER)." },
+                { "id": 4, "text": "D. PII Detection." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "NER is the core functionality in Azure AI Language for automatically locating and classifying predefined entities such as people, places, and organizations within unstructured text."
+        },
+        {
+            "id": 64,
+            "Question": "A data scientist needs to train a Custom Vision object detection model but only has a limited number of high-quality, labeled images. What technique can be applied to maximize the model's performance by reusing a model pre-trained on a massive generic dataset?",
+            "Options": [
+                { "id": 1, "text": "A. One-shot learning." },
+                { "id": 2, "text": "B. Transfer learning." },
+                { "id": 3, "text": "C. Zero-shot prompting." },
+                { "id": 4, "text": "D. Hyperparameter optimization." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Transfer learning is the key technique where a model trained on a large dataset is fine-tuned with a small, specific dataset to achieve high accuracy quickly."
+        },
+        {
+            "id": 65,
+            "Question": "When configuring an Azure AI Search Indexer to process documents from a data source like Azure Blob Storage, what is the primary purpose of defining a Schedule for the Indexer?",
+            "Options": [
+                { "id": 1, "text": "A. To specify the fields that should be included in the search index." },
+                { "id": 2, "text": "B. To define the required authentication credentials for the data source." },
+                { "id": 3, "text": "C. To set the frequency at which the Indexer checks the data source for changes and updates the index." },
+                { "id": 4, "text": "D. To apply external Cognitive Services skills to enrich the data." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "The schedule determines how often the indexer runs to look for and ingest new or modified documents from the data source to keep the index fresh."
+        },
+        {
+            "id": 66,
+            "Question": "In the context of the Azure AI Vision Read API, what does the resulting JSON element 'pages' primarily contain?",
+            "Options": [
+                { "id": 1, "text": "A. The confidence score for the image classification." },
+                { "id": 2, "text": "B. Bounding box coordinates for lines and words, along with the extracted text." },
+                { "id": 3, "text": "C. A list of identified faces and their emotions." },
+                { "id": 4, "text": "D. A list of relevant product tags for the image." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The 'pages' element holds the detailed, structured output of the OCR process, including the text content, spatial location (bounding boxes), and structure for each page."
+        },
+        {
+            "id": 67,
+            "Question": "You are building a custom language model using Azure AI Language. Where should you store the training data (e.g., text files, labels) for the Language Studio to access and use it for model training?",
+            "Options": [
+                { "id": 1, "text": "A. Azure Data Factory" },
+                { "id": 2, "text": "B. Azure SQL Database" },
+                { "id": 3, "text": "C. Azure Blob Storage or Azure Data Lake Storage Gen2" },
+                { "id": 4, "text": "D. Azure Cosmos DB" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Language Studio and most Azure AI services use Blob Storage or Data Lake Storage as the integrated source for large volumes of unstructured training data."
+        },
+        {
+            "id": 68,
+            "Question": "A regulatory body requires that the AI system's decision-making process must always involve human review and approval before a high-stakes decision is finalized. Which Microsoft Responsible AI principle does this operational requirement address?",
+            "Options": [
+                { "id": 1, "text": "A. Fairness" },
+                { "id": 2, "text": "B. Reliability and Safety" },
+                { "id": 3, "text": "C. Accountability" },
+                { "id": 4, "text": "D. Inclusiveness" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Accountability ensures that there are systems of governance, including clear human oversight and reporting structures."
+        },
+        {
+            "id": 69,
+            "Question": "Which specific Azure AI service feature would you use to create a custom search experience that returns a list of suggested queries (autocomplete) as the user types into the search box?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Search's Vector Search." },
+                { "id": 2, "text": "B. Azure AI Search's Suggesters." },
+                { "id": 3, "text": "C. Azure AI Language's Conversational Language Understanding (CLU)." },
+                { "id": 4, "text": "D. Azure AI Document Intelligence." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Suggesters are the feature in Azure AI Search specifically designed to implement autocomplete and query suggestion functionality."
+        },
+        {
+            "id": 70,
+            "Question": "You are designing an Azure AI Document Intelligence solution and determine that the input documents may sometimes be rotated or distorted. Which core capability of the service handles the alignment and correction of these image variations before data extraction?",
+            "Options": [
+                { "id": 1, "text": "A. Image Tagging." },
+                { "id": 2, "text": "B. Optical Character Recognition (OCR) and document preprocessing." },
+                { "id": 3, "text": "C. Custom Neural Network training." },
+                { "id": 4, "text": "D. The Layout API, used for spatial analysis." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The underlying OCR and intelligent document processing components of Document Intelligence automatically perform de-skewing and rotation correction."
+        },
+        {
+            "id": 71,
+            "Question": "What is the primary function of an Indexer in the Azure AI Search ecosystem?",
+            "Options": [
+                { "id": 1, "text": "A. To store the final searchable data." },
+                { "id": 2, "text": "B. To crawl external data sources and automate the ingestion and indexing of content." },
+                { "id": 3, "text": "C. To provide the user interface for search queries." },
+                { "id": 4, "text": "D. To perform vectorization of user prompts." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Indexers are crawlers that automate the process of importing data from supported Azure data sources and pushing it into a search index."
+        },
+        {
+            "id": 72,
+            "Question": "Which of the following describes the 'Inclusiveness' principle in Microsoft's Responsible AI framework?",
+            "Options": [
+                { "id": 1, "text": "A. AI systems should be reliable and safe." },
+                { "id": 2, "text": "B. AI systems should empower everyone and engage people." },
+                { "id": 3, "text": "C. AI systems should be understandable to users." },
+                { "id": 4, "text": "D. AI systems should respect privacy laws." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Inclusiveness ensures that AI systems are designed to be accessible and beneficial to all people, regardless of their physical ability, gender, sexual orientation, or other characteristics."
+        },
+        {
+            "id": 73,
+            "Question": "A developer needs to convert long text descriptions into a format that allows for semantic similarity search in a vector database. Which model type in Azure OpenAI is used for this?",
+            "Options": [
+                { "id": 1, "text": "A. GPT-4o" },
+                { "id": 2, "text": "B. Text-embedding-3-small" },
+                { "id": 3, "text": "C. Whisper" },
+                { "id": 4, "text": "D. DALL-E 3" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Embedding models are used to create vector representations of text for similarity-based retrieval."
+        },
+        {
+            "id": 74,
+            "Question": "You are implementing a chatbot using Azure AI Language's Conversational Language Understanding (CLU). To ensure the bot understands various ways a user might ask a question, what must you provide during the training phase?",
+            "Options": [
+                { "id": 1, "text": "A. A list of regular expressions." },
+                { "id": 2, "text": "B. A large set of Utterances for each Intent." },
+                { "id": 3, "text": "C. A pre-trained LLM checkpoint." },
+                { "id": 4, "text": "D. A database of FAQ answers." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Utterances are the example phrases users might say, which are mapped to specific Intents to train the CLU model."
+        },
+        {
+            "id": 75,
+            "Question": "When using Azure AI Speech to generate a voice-over for a video, you want the voice to sound empathetic and professional. Which technology allows for this level of vocal customization?",
+            "Options": [
+                { "id": 1, "text": "A. Standard Text-to-Speech (TTS)." },
+                { "id": 2, "text": "B. Custom Neural Voice." },
+                { "id": 3, "text": "C. Speech-to-Text with Speaker Diarization." },
+                { "id": 4, "text": "D. Real-time translation." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Custom Neural Voice allows you to create unique, highly natural-sounding synthetic voices with specific styles and tones."
+        },
+        {
+            "id": 76,
+            "Question": "To prevent an AI model from disclosing the logic used to create its filters, which aspect of the 'Accountability' principle should be implemented?",
+            "Options": [
+                { "id": 1, "text": "A. Human-in-the-loop." },
+                { "id": 2, "text": "B. Governance and compliance monitoring." },
+                { "id": 3, "text": "C. Redacting model weights." },
+                { "id": 4, "text": "D. Automated reporting." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Accountability requires internal governance to ensure AI systems follow company policies and safety standards without leaking sensitive operational logic."
+        },
+        {
+            "id": 77,
+            "Question": "An Azure AI Search solution needs to handle queries in multiple languages (e.g., English, Spanish, and Japanese). What is the best strategy for the search index?",
+            "Options": [
+                { "id": 1, "text": "A. Create one index with a single 'text' field using the Standard analyzer." },
+                { "id": 2, "text": "B. Use separate fields for each language, each with its own language-specific analyzer (e.g., 'es.lucene')." },
+                { "id": 3, "text": "C. Translate all content to English before indexing." },
+                { "id": 4, "text": "D. Only use vector search, as it is language-agnostic." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Assigning language-specific analyzers to dedicated fields ensures proper tokenization and stemming for each language's specific rules."
+        },
+        {
+            "id": 78,
+            "Question": "A developer is using Azure AI Vision to identify products in a warehouse. They want the model to specifically detect 'pallets' and 'forklifts'. Since these are not in the pre-built model, what should they use?",
+            "Options": [
+                { "id": 1, "text": "A. Image Tagging." },
+                { "id": 2, "text": "B. Custom Vision - Object Detection." },
+                { "id": 3, "text": "C. Custom Vision - Image Classification." },
+                { "id": 4, "text": "D. Optical Character Recognition (OCR)." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Custom Vision Object Detection allows training a model to find and label specific items (like pallets) within an image."
+        },
+        {
+            "id": 79,
+            "Question": "You are creating a Knowledge Mining solution. You need to extract information from scanned handwritten doctors' notes. Which service is best suited for this?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Search - Standard Indexer." },
+                { "id": 2, "text": "B. Azure AI Vision - Read API." },
+                { "id": 3, "text": "C. Azure AI Language - PII Detection." },
+                { "id": 4, "text": "D. Azure AI Video Indexer." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Read API is optimized for high-accuracy extraction of both printed and handwritten text from images and PDFs."
+        },
+        {
+            "id": 80,
+            "Question": "Which parameter in Azure OpenAI controls the randomness of the model's output, with lower values resulting in more predictable text?",
+            "Options": [
+                { "id": 1, "text": "A. max_tokens" },
+                { "id": 2, "text": "B. temperature" },
+                { "id": 3, "text": "C. frequency_penalty" },
+                { "id": 4, "text": "D. stop_sequences" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Temperature controls the 'creativity' or randomness of the model. Lower values (like 0) make the model deterministic."
+        },
+        {
+            "id": 81,
+            "Question": "In an Azure AI Search skillset, which type of skill would you use to translate text from one language to another during the ingestion process?",
+            "Options": [
+                { "id": 1, "text": "A. Entity Recognition skill" },
+                { "id": 2, "text": "B. Text Translation skill" },
+                { "id": 3, "text": "C. Key Phrase Extraction skill" },
+                { "id": 4, "text": "D. Shaper skill" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Text Translation cognitive skill is used within a search enrichment pipeline to translate content before it is indexed."
+        },
+        {
+            "id": 82,
+            "Question": "A developer needs to build an application that can identify different speakers in an audio recording of a meeting. Which Azure AI Speech feature is required?",
+            "Options": [
+                { "id": 1, "text": "A. Real-time transcription." },
+                { "id": 2, "text": "B. Speaker Diarization." },
+                { "id": 3, "text": "C. Keyword Recognition." },
+                { "id": 4, "text": "D. Intent Recognition." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Speaker Diarization identifies and separates different speakers within a single audio stream."
+        },
+        {
+            "id": 83,
+            "Question": "According to the Responsible AI principle of Fairness, what is a key risk when training a face recognition model?",
+            "Options": [
+                { "id": 1, "text": "A. The model might be too slow." },
+                { "id": 2, "text": "B. The model might have lower accuracy for certain demographic groups if the training data is not diverse." },
+                { "id": 3, "text": "C. The model might require too much GPU memory." },
+                { "id": 4, "text": "D. The model might be used without an API key." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Fairness ensures that AI systems do not discriminate or perform poorly for specific groups based on characteristics like race or gender."
+        },
+        {
+            "id": 84,
+            "Question": "Which Azure AI service would you use to extract structured data (like table rows and totals) from a standardized receipt?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Vision." },
+                { "id": 2, "text": "B. Azure AI Document Intelligence." },
+                { "id": 3, "text": "C. Azure AI Language." },
+                { "id": 4, "text": "D. Azure AI Translator." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure AI Document Intelligence has pre-built models specifically for receipts, invoices, and IDs."
+        },
+        {
+            "id": 85,
+            "Question": "When implementing a Retrieval-Augmented Generation (RAG) pattern, what is the role of the 'Retriever'?",
+            "Options": [
+                { "id": 1, "text": "A. To generate the final text response." },
+                { "id": 2, "text": "B. To search a database (like Azure AI Search) for relevant context to ground the prompt." },
+                { "id": 3, "text": "C. To translate the user's input." },
+                { "id": 4, "text": "D. To train the LLM on new data." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The retriever fetches relevant documents or chunks from a knowledge base to provide context to the LLM."
+        },
+        {
+            "id": 86,
+            "Question": "A developer is writing code to call the Azure OpenAI Chat Completions API. Which role should be used for the message that provides high-level instructions (e.g., 'You are a helpful assistant that only answers questions about medical insurance')?",
+            "Options": [
+                { "id": 1, "text": "A. user" },
+                { "id": 2, "text": "B. system" },
+                { "id": 3, "text": "C. assistant" },
+                { "id": 4, "text": "D. function" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The 'system' role is used to define the behavior, persona, and constraints of the AI model."
+        },
+        {
+            "id": 87,
+            "Question": "You want to monitor your Azure AI service to see if any requests are being throttled due to rate limits. Which Azure Monitor feature should you check?",
+            "Options": [
+                { "id": 1, "text": "A. Activity Logs." },
+                { "id": 2, "text": "B. Metrics (specifically 'Total Errors' or '429' status codes)." },
+                { "id": 3, "text": "C. Cost Management." },
+                { "id": 4, "text": "D. Advisor recommendations." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Metrics provide real-time data on the health and performance of resources, including error rates like 429 (Too Many Requests)."
+        },
+        {
+            "id": 88,
+            "Question": "To comply with the 'Privacy and Security' principle, how should a company handle sensitive customer data before sending it to a public LLM for summarization?",
+            "Options": [
+                { "id": 1, "text": "A. Compress the data." },
+                { "id": 2, "text": "B. Anonymize or redact sensitive PII (Personally Identifiable Information)." },
+                { "id": 3, "text": "C. Encrypt the data during transit (HTTPS)." },
+                { "id": 4, "text": "D. Both B and C." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Protecting privacy involves both redacting sensitive content and ensuring secure transport of the remaining data."
+        },
+        {
+            "id": 89,
+            "Question": "An Azure AI Search index contains a field named 'category'. You want users to be able to click on category names (e.g., 'Electronics', 'Books') to filter results. Which field attribute is required?",
+            "Options": [
+                { "id": 1, "text": "A. searchable" },
+                { "id": 2, "text": "B. filterable" },
+                { "id": 3, "text": "C. facetable" },
+                { "id": 4, "text": "D. sortable" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "The 'facetable' attribute allows fields to be used for faceted navigation/filtering in search results."
+        },
+        {
+            "id": 90,
+            "Question": "Which Azure AI Language feature would you use to group a large set of customer reviews into clusters of similar topics without pre-defining the categories?",
+            "Options": [
+                { "id": 1, "text": "A. Custom Text Classification." },
+                { "id": 2, "text": "B. Conversation Summarization." },
+                { "id": 3, "text": "C. Key Phrase Extraction." },
+                { "id": 4, "text": "D. Sentiment Analysis." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Key Phrase Extraction identifies main talking points, which can then be used to cluster or categorize text documents based on common themes."
+        },
+        {
+            "id": 91,
+            "Question": "A developer needs to integrate a speech-to-text service into a mobile application. The service must be highly responsive and operate without a continuous internet connection. Which deployment approach for Azure AI Speech should be chosen?",
+            "Options": [
+                { "id": 1, "text": "A. Cloud-based deployment with a WebSocket connection." },
+                { "id": 2, "text": "B. Azure Private Link deployment." },
+                { "id": 3, "text": "C. A custom language model deployed on Azure Kubernetes Service (AKS)." },
+                { "id": 4, "text": "D. A prebuilt Speech container deployed to Azure IoT Edge or an on-premises server." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Azure AI containers allow services to run in disconnected environments (on-premises or edge devices), satisfying the requirement for offline and highly responsive performance."
+        },
+        {
+            "id": 92,
+            "Question": "A company is using Azure AI Video Indexer to process thousands of hours of training footage. To protect the privacy of employees, they must automatically detect and blur all human faces in the video. What feature within Video Indexer facilitates this?",
+            "Options": [
+                { "id": 1, "text": "A. Keyframe extraction." },
+                { "id": 2, "text": "B. Content moderation with adult content filter." },
+                { "id": 3, "text": "C. Face anonymization." },
+                { "id": 4, "text": "D. Multi-language identification." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Video Indexer's Face Anonymization feature is specifically designed to automatically detect and blur human faces for privacy purposes."
+        },
+        {
+            "id": 93,
+            "Question": "An AI solution uses a GPT model via Azure OpenAI. The input includes personal data. According to Microsoft's Responsible AI principles, which action best addresses the principle of 'Privacy and Security'?",
+            "Options": [
+                { "id": 1, "text": "A. Limit the maximum output length of the model." },
+                { "id": 2, "text": "B. Ensure data passed to the model is masked or redacted before the API call." },
+                { "id": 3, "text": "C. Use the model only for generating code snippets." },
+                { "id": 4, "text": "D. Deploy the model to a public endpoint." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Proactively removing or masking Personally Identifiable Information (PII) before it is processed by the AI model is a core tenet of data privacy and security compliance."
+        },
+        {
+            "id": 94,
+            "Question": "You are building an AI agent that needs to call an external weather API to get real-time information. In the context of the Azure AI Agents solution stack, what is the technical term for the external API that the agent can use?",
+            "Options": [
+                { "id": 1, "text": "A. A Prompt." },
+                { "id": 2, "text": "B. A Skill or Tool." },
+                { "id": 3, "text": "C. An Embedding." },
+                { "id": 4, "text": "D. A System Message." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "In agentic frameworks like Semantic Kernel, external functions or APIs that the agent can execute are referred to as Skills or Tools."
+        },
+        {
+            "id": 95,
+            "Question": "To perform robust image analysis that can both classify an entire image (e.g., 'outdoor scene') AND identify the location and boundary of specific objects within it (e.g., a 'car' at coordinates x,y,w,h), which two Azure AI Vision capabilities should be used?",
+            "Options": [
+                { "id": 1, "text": "A. Image Tagging and Face Detection." },
+                { "id": 2, "text": "B. Optical Character Recognition (OCR) and Image Tagging." },
+                { "id": 3, "text": "C. Image Classification (via Custom Vision) and Image Tagging." },
+                { "id": 4, "text": "D. Image Tagging (for classification) and Object Detection (for localization)." }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Image Tagging provides a high-level description, and Object Detection provides both the label and the bounding box coordinates for objects within the image."
+        },
+        {
+            "id": 96,
+            "Question": "A developer is provisioning an Azure AI Foundry Service. They need to ensure that the service can only be accessed by applications within the company’s internal Azure Virtual Network (VNet). What is the most appropriate network configuration to implement?",
+            "Options": [
+                { "id": 1, "text": "A. Enable the resource’s CORS settings." },
+                { "id": 2, "text": "B. Disable the public endpoint and configure a Private Endpoint." },
+                { "id": 3, "text": "C. Use Shared Access Signatures (SAS) instead of API keys." },
+                { "id": 4, "text": "D. Configure a Service Endpoint on the VNet." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "To ensure a service is entirely internal and unreachable from the public internet while being accessible from a specific VNet, the best practice is to disable the public endpoint and configure a Private Endpoint within the VNet."
+        },
+        {
+            "id": 97,
+            "Question": "To manage costs and track the consumption of Azure AI services, what metric should an AI Engineer primarily monitor in Azure Monitor?",
+            "Options": [
+                { "id": 1, "text": "A. CPU utilization of the resource." },
+                { "id": 2, "text": "B. Network inbound/outbound traffic." },
+                { "id": 3, "text": "C. The number of transactions (e.g., calls, text records) processed." },
+                { "id": 4, "text": "D. Disk read/write operations." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Azure AI services are typically billed based on the number of transactions processed, making this the most important metric for consumption and cost analysis."
+        },
+        {
+            "id": 98,
+            "Question": "A business requirement is to ensure that a newly deployed Azure AI Vision model for identifying manufacturing defects performs accurately and consistently across images taken under different lighting conditions and by various camera models. Which Responsible AI principle is this requirement most aligned with?",
+            "Options": [
+                { "id": 1, "text": "A. Fairness" },
+                { "id": 2, "text": "B. Reliability and Safety" },
+                { "id": 3, "text": "C. Transparency" },
+                { "id": 4, "text": "D. Inclusiveness" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Ensuring an AI system performs consistently and reliably under a variety of conditions, including different inputs (lighting, cameras), is central to the Reliability and Safety principle."
+        },
+        {
+            "id": 99,
+            "Question": "You are processing a large volume of audio files and need to convert them to text. The audio quality is inconsistent, with background noise and multiple speakers. Which Azure AI service should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Translator." },
+                { "id": 2, "text": "B. Azure AI Language." },
+                { "id": 3, "text": "C. Azure AI Speech (Speech-to-Text)." },
+                { "id": 4, "text": "D. Azure AI Video Indexer." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Azure AI Speech is the dedicated service for robust transcription, including handling noise, punctuation, and multi-speaker separation."
+        },
+        {
+            "id": 100,
+            "Question": "What is the key advantage of using an Azure OpenAI Service (AOAI) resource deployed with a Private Endpoint over a publicly accessible AOAI resource?",
+            "Options": [
+                { "id": 1, "text": "A. It guarantees lower latency for all API calls." },
+                { "id": 2, "text": "B. It enables the use of the GPT-4 model." },
+                { "id": 3, "text": "C. It restricts all network access to the resource to traffic originating from the specified Azure Virtual Network (VNet)." },
+                { "id": 4, "text": "D. It uses Managed Identity for authentication automatically." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "A Private Endpoint ensures that the service is only accessible privately from within the specified VNet, significantly improving security and data exfiltration protection."
+        },
+        {
+            "id": 101,
+            "Question": "You are using Azure AI Translator to translate customer chat messages in real-time. Which translation approach should be selected to ensure the chat history (context) is used to improve the accuracy and flow of the current translation?",
+            "Options": [
+                { "id": 1, "text": "A. Standard text translation." },
+                { "id": 2, "text": "B. Custom translation using the Translator Customizer portal." },
+                { "id": 3, "text": "C. Interactive translation using the Batch API." },
+                { "id": 4, "text": "D. Interactive translation using the real-time API, ensuring previous segments are included in the request." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "To maintain conversational context, the real-time API can be used to pass the preceding translated sentences/segments along with the current segment, improving contextual accuracy."
+        },
+        {
+            "id": 102,
+            "Question": "Which type of Azure AI Document Intelligence model is most suitable when the documents are all structurally identical (e.g., a specific internal HR form), allowing for quick training with a small number of labeled samples?",
+            "Options": [
+                { "id": 1, "text": "A. The custom neural model." },
+                { "id": 2, "text": "B. The custom template model." },
+                { "id": 3, "text": "C. The prebuilt invoice model." },
+                { "id": 4, "text": "D. The custom classification model." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The custom template model is optimized for extracting data from documents with a consistent visual layout (fixed templates) and can be trained efficiently with minimal samples."
+        },
+        {
+            "id": 103,
+            "Question": "An Azure AI Engineer is designing a solution that must adhere to the Microsoft Responsible AI principle of Reliability and Safety. What is the primary focus of this principle?",
+            "Options": [
+                { "id": 1, "text": "A. Ensuring AI decisions are fair and do not reflect bias." },
+                { "id": 2, "text": "B. Ensuring AI systems perform consistently and predictably under normal operating conditions." },
+                { "id": 3, "text": "C. Ensuring users know how the AI system operates." },
+                { "id": 4, "text": "D. Ensuring that human-centric oversight is always available." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Reliability and Safety focuses on the system's performance, ensuring the AI performs its designated task accurately, consistently, and without causing harm, including robust testing and monitoring for failures."
+        },
+        {
+            "id": 104,
+            "Question": "You need to implement a solution that identifies when an image contains offensive or explicit material before it is displayed to users. Which Azure AI service is purpose-built for this content moderation requirement?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Content Safety" },
+                { "id": 2, "text": "B. Azure AI Vision" },
+                { "id": 3, "text": "C. Azure AI Search" },
+                { "id": 4, "text": "D. Azure Monitor" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Azure AI Content Safety is the dedicated service for detecting harmful content across text and images, including hate, self-harm, sexual, and violence categories, aligning with Responsible AI principles."
+        },
+        {
+            "id": 105,
+            "Question": "You are building a conversational AI solution that requires the model to perform a multi-step task, such as fetching flight availability and then booking a ticket. What type of solution architecture is this, and which new Azure AI component would be central to its implementation?",
+            "Options": [
+                { "id": 1, "text": "A. A custom vision model; implemented with Azure AI Vision." },
+                { "id": 2, "text": "B. A knowledge mining solution; implemented with Azure AI Search." },
+                { "id": 3, "text": "C. An agentic solution; implemented with Azure AI Agents (or tools like Semantic Kernel)." },
+                { "id": 4, "text": "D. A simple RAG solution; implemented with Azure OpenAI." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "A solution that orchestrates multiple calls and performs complex, multi-step reasoning is known as an agentic solution. Azure AI Agents, often built using frameworks like Semantic Kernel, are the central component for this architecture."
+        },
+        {
+            "id": 106,
+            "Question": "You have a collection of thousands of internal PDF documents and want to build a searchable knowledge base. The search should allow natural language queries and rank results based on relevance. Which two Azure AI services are fundamental to this Knowledge Mining solution?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Vision" },
+                { "id": 2, "text": "B. Azure AI Search" },
+                { "id": 3, "text": "C. Azure AI Document Intelligence" },
+                { "id": 4, "text": "D. Azure AI Speech" }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [2, 3],
+            "CorrectAnswerExplanation": "Azure AI Document Intelligence (C) is needed to extract and structure the content from the PDFs, while Azure AI Search (B) is the engine that indexes this data and provides the necessary search capabilities, including vector search for natural language queries."
+        },
+        {
+            "id": 107,
+            "Question": "Which of the following Azure OpenAI models is primarily used to convert text into numerical representations (vectors) for use in similarity search and RAG scenarios?",
+            "Options": [
+                { "id": 1, "text": "A. GPT-4" },
+                { "id": 2, "text": "B. DALL-E" },
+                { "id": 3, "text": "C. Embeddings models (e.g., text-embedding-ada-002)" },
+                { "id": 4, "text": "D. Whisper" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Embeddings models, such as `text-embedding-ada-002`, are specifically designed for converting human-readable text into dense vector representations. These vectors are then used for similarity calculations in vector databases to enable RAG."
+        },
+        {
+            "id": 108,
+            "Question": "A company is using the Azure AI Language service to analyze text and needs to automatically mask or remove names, phone numbers, and addresses from the resulting JSON output to meet privacy regulations. Which feature should be configured?",
+            "Options": [
+                { "id": 1, "text": "A. Key Phrase Extraction" },
+                { "id": 2, "text": "B. Personally Identifiable Information (PII) Detection" },
+                { "id": 3, "text": "C. Custom Named Entity Recognition (NER)" },
+                { "id": 4, "text": "D. Content Safety Filtering" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The PII Detection feature within Azure AI Language is specifically responsible for identifying and optionally redacting/masking sensitive personal information (like names, locations, contact details) from text to maintain data privacy."
+        },
+        {
+            "id": 109,
+            "Question": "A developer is writing a Python application to call the Azure AI Vision service. To securely authenticate the request, which two pieces of information are required in the HTTP request or SDK client configuration?",
+            "Options": [
+                { "id": 1, "text": "A. The service’s endpoint URL." },
+                { "id": 2, "text": "B. The resource group name." },
+                { "id": 3, "text": "C. The subscription ID." },
+                { "id": 4, "text": "D. One of the resource's account keys." }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [1, 4],
+            "CorrectAnswerExplanation": "To authenticate and route a request to an Azure AI service, the client needs the specific endpoint URL for the service and a valid API key (account key) for that resource. The subscription ID and resource group are used for resource management in the Azure portal, not for API authentication."
+        },
+        {
+            "id": 110,
+            "Question": "You are designing a solution to analyze customer feedback in real-time for key phrases, sentiment, and language detection. Which single Azure AI service should you provision to handle all three tasks?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Speech" },
+                { "id": 2, "text": "B. Azure AI Translator" },
+                { "id": 3, "text": "C. Azure AI Vision" },
+                { "id": 4, "text": "D. Azure AI Language" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Azure AI Language (formerly Text Analytics) provides pre-built features like Key Phrase Extraction, Sentiment Analysis, and Language Detection from text, making it the correct choice for this integrated text-analysis scenario."
+        },
+        {
+            "id": 111,
+            "Question": "Which of the following describes the key benefit of implementing a custom Retrieval-Augmented Generation (RAG) solution over a simple Azure OpenAI prompt call?",
+            "Options": [
+                { "id": 1, "text": "A. It forces the model to use its internal training data exclusively." },
+                { "id": 2, "text": "B. It allows the model to answer questions based on external, proprietary company data." },
+                { "id": 3, "text": "C. It ensures the model can only generate responses in the Python language." },
+                { "id": 4, "text": "D. It reduces the cost of the Azure OpenAI service to zero." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The RAG pattern is used to ground the LLM's response in a specific knowledge base (e.g., proprietary company documents stored in Azure AI Search), preventing hallucinations and enabling answers based on up-to-date or private data."
+        },
+        {
+            "id": 112,
+            "Question": "An Azure AI Engineer is using the Azure AI Search 'Knowledge Store' feature. What is the primary purpose of this component?",
+            "Options": [
+                { "id": 1, "text": "A. To store the search index in a SQL database." },
+                { "id": 2, "text": "B. To persist enriched data (AI-generated metadata) in Azure Storage for independent analysis or use in other applications." },
+                { "id": 3, "text": "C. To provide a high-performance cache for search queries." },
+                { "id": 4, "text": "D. To automate the deployment of Custom Vision models." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "A Knowledge Store saves the output of an AI enrichment pipeline into tables and blobs in Azure Storage, allowing it to be used outside of the search index."
+        },
+        {
+            "id": 113,
+            "Question": "Which of the following authentication methods is the MOST secure for a web application to use when accessing an Azure OpenAI resource, according to Azure security best practices?",
+            "Options": [
+                { "id": 1, "text": "A. Storing the API key in the application's source code." },
+                { "id": 2, "text": "B. Using a System-assigned or User-assigned Managed Identity." },
+                { "id": 3, "text": "C. Passing the API key as a query string parameter in the URL." },
+                { "id": 4, "text": "D. Hardcoding the key into a client-side JavaScript file." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Managed Identities eliminate the need for developers to manage credentials, as the identity is automatically managed by Azure AD, making it the most secure method."
+        },
+        {
+            "id": 114,
+            "Question": "When using Azure AI Search, what is the purpose of 'Skillsets'?",
+            "Options": [
+                { "id": 1, "text": "A. To define the user permissions for the search service." },
+                { "id": 2, "text": "B. To define an enrichment pipeline that uses AI models to extract information from raw data during indexing." },
+                { "id": 3, "text": "C. To configure the geographic region of the search service." },
+                { "id": 4, "text": "D. To set the billing tier of the search service." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Skillsets are used in Knowledge Mining to apply Cognitive Services (like OCR, entity recognition, or translation) to documents as they are being indexed."
+        },
+        {
+            "id": 115,
+            "Question": "You are creating a custom object detection model. You have labeled the objects in 50 images. What is the next step to improve the model's accuracy before deploying it?",
+            "Options": [
+                { "id": 1, "text": "A. Provision a larger search index." },
+                { "id": 2, "text": "B. Perform iterative training and evaluate metrics like Precision and Recall." },
+                { "id": 3, "text": "C. Convert the images to grayscale." },
+                { "id": 4, "text": "D. Redact the PII from the images." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Iterative training and monitoring performance metrics (Precision/Recall) are essential for refining a custom model."
+        },
+        {
+            "id": 116,
+            "Question": "Which Azure AI Language feature allows you to identify the overall sentiment (positive, negative, or neutral) of a customer review?",
+            "Options": [
+                { "id": 1, "text": "A. Key Phrase Extraction" },
+                { "id": 2, "text": "B. Entity Linking" },
+                { "id": 3, "text": "C. Sentiment Analysis" },
+                { "id": 4, "text": "D. PII Detection" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Sentiment Analysis is the dedicated feature for evaluating the emotional tone of text."
+        },
+        {
+            "id": 117,
+            "Question": "What does the 'top_p' parameter (also known as Nucleus Sampling) do in an Azure OpenAI API request?",
+            "Options": [
+                { "id": 1, "text": "A. It sets the maximum number of tokens to generate." },
+                { "id": 2, "text": "B. It limits the model to considering only a subset of potential next tokens whose cumulative probability exceeds the threshold P." },
+                { "id": 3, "text": "C. It ensures the model only uses English." },
+                { "id": 4, "text": "D. It defines the endpoint URL." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Top_p is an alternative to temperature for controlling the diversity and focus of the generated text."
+        },
+        {
+            "id": 118,
+            "Question": "A developer is building a solution to analyze customer calls. They need to transcribe the audio and then summarize the main points of the conversation. Which two features of Azure AI should be used?",
+            "Options": [
+                { "id": 1, "text": "A. Custom Vision and Translator." },
+                { "id": 2, "text": "B. Speech-to-Text and Conversation Summarization (Azure AI Language)." },
+                { "id": 3, "text": "C. Face API and PII Detection." },
+                { "id": 4, "text": "D. Read API and Sentiment Analysis." }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "This combination handles the conversion of audio to text and the subsequent extraction of a concise summary."
+        },
+        {
+            "id": 119,
+            "Question": "A developer is writing a Python application to call the Azure AI Vision service. To securely authenticate the request, which two pieces of information are required in the HTTP request or SDK client configuration?",
+            "Options": [
+                { "id": 1, "text": "A. The service’s endpoint URL." },
+                { "id": 2, "text": "B. The resource group name." },
+                { "id": 3, "text": "C. The subscription ID." },
+                { "id": 4, "text": "D. One of the resource's account keys." }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [1, 4],
+            "CorrectAnswerExplanation": "To authenticate and route a request to an Azure AI service, the client needs the specific endpoint URL for the service and a valid API key (account key) for that resource. The subscription ID and resource group are used for resource management in the Azure portal, not for API authentication."
+        },
+        {
+            "id": 120,
+            "Question": "You are designing a solution to analyze customer feedback in real-time for key phrases, sentiment, and language detection. Which single Azure AI service should you provision to handle all three tasks?",
+            "Options": [
+                { "id": 1, "text": "A. Azure AI Speech" },
+                { "id": 2, "text": "B. Azure AI Translator" },
+                { "id": 3, "text": "C. Azure AI Vision" },
+                { "id": 4, "text": "D. Azure AI Language" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Azure AI Language (formerly Text Analytics) provides pre-built features like Key Phrase Extraction, Sentiment Analysis, and Language Detection from text, making it the correct choice for this integrated text-analysis scenario."
+        }
+    ]
+}

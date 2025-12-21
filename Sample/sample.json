@@ -1,0 +1,73 @@
+{
+    "quizName": "General Knowledge Tutorial Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "Question": "What is the capital city of India?",
+            "Options": [
+                { "id": 1, "text": "A. Mumbai" },
+                { "id": 2, "text": "B. New Delhi" },
+                { "id": 3, "text": "C. Bangalore" },
+                { "id": 4, "text": "D. Kolkata" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata)."
+        },
+        {
+            "id": 2,
+            "Question": "Which of the following are among the world's top two largest rainforests? (Select 2)",
+            "Options": [
+                { "id": 1, "text": "A. The Amazon Rainforest" },
+                { "id": 2, "text": "B. The Sahara Forest" },
+                { "id": 3, "text": "C. The Congo Rainforest" },
+                { "id": 4, "text": "D. The Sherwood Forest" }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [1, 3],
+            "CorrectAnswerExplanation": "The Amazon (South America) is the largest, and the Congo Basin (Africa) is the second largest rainforest in the world."
+        },
+        {
+            "id": 3,
+            "Question": "Which planet is known as the 'Red Planet'?",
+            "Options": [
+                { "id": 1, "text": "A. Venus" },
+                { "id": 2, "text": "B. Mars" },
+                { "id": 3, "text": "C. Jupiter" },
+                { "id": 4, "text": "D. Saturn" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Mars appears red due to iron oxide (rust) on its surface."
+        },
+        {
+            "id": 4,
+            "Question": "Which of the following are primary colors? (Select 3)",
+            "Options": [
+                { "id": 1, "text": "A. Red" },
+                { "id": 2, "text": "B. Green" },
+                { "id": 3, "text": "C. Blue" },
+                { "id": 4, "text": "D. Yellow" },
+                { "id": 5, "text": "E. Orange" }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [1, 3, 4],
+            "CorrectAnswerExplanation": "In traditional color theory (RYB), Red, Yellow, and Blue are the primary colors."
+        },
+        {
+            "id": 5,
+            "Question": "Which is the largest ocean on Earth?",
+            "Options": [
+                { "id": 1, "text": "A. Atlantic Ocean" },
+                { "id": 2, "text": "B. Indian Ocean" },
+                { "id": 3, "text": "C. Arctic Ocean" },
+                { "id": 4, "text": "D. Pacific Ocean" }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "The Pacific Ocean is the largest and deepest of Earth's oceanic divisions."
+        }
+    ]
+}

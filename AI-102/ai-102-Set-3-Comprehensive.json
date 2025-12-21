@@ -1,0 +1,787 @@
+{
+    "quizName": "AI-102 Azure AI Engineer Practice Exam (2025 Comprehensive)",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "Question": "You are designing a solution to analyze customer feedback in real-time for key phrases, sentiment, and language detection. Which single Azure AI service should you provision to handle all three tasks?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Speech"},
+                {"id": 2, "text": "B. Azure AI Translator"},
+                {"id": 3, "text": "C. Azure AI Vision"},
+                {"id": 4, "text": "D. Azure AI Language"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Azure AI Language provides pre-built features like Key Phrase Extraction, Sentiment Analysis, and Language Detection from text."
+        },
+        {
+            "id": 2,
+            "Question": "You have a chatbot that provides generative answers. You need to ensure the bot can only be accessed by your web application without using a static API key in the code. What should you implement?",
+            "Options": [
+                {"id": 1, "text": "A. Shared Access Signatures"},
+                {"id": 2, "text": "B. Managed Identity"},
+                {"id": 3, "text": "C. Query keys"},
+                {"id": 4, "text": "D. Basic Authentication"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Managed Identities allow Azure resources (like an App Service) to authenticate to AI services without managing credentials manually."
+        },
+        {
+            "id": 3,
+            "Question": "You want to deploy an Azure AI service into a private virtual network. Which feature is required to ensure the service is not accessible from the public internet?",
+            "Options": [
+                {"id": 1, "text": "A. Service Endpoint"},
+                {"id": 2, "text": "B. Private Endpoint"},
+                {"id": 3, "text": "C. Network Security Group (NSG)"},
+                {"id": 4, "text": "D. Application Gateway"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "A Private Endpoint uses a private IP address from your VNet to bring the service into your network, disabling public access."
+        },
+        {
+            "id": 4,
+            "Question": "Your company is sensitive to costs. You need to identify which AI service is consuming the most quota. Where should you look?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Foundry Studio Metrics"},
+                {"id": 2, "text": "B. Cost Management + Billing in Azure Portal"},
+                {"id": 3, "text": "C. Resource Health"},
+                {"id": 4, "text": "D. Activity Log"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure Cost Management provides detailed breakdowns of spending across all resources, including AI services."
+        },
+        {
+            "id": 5,
+            "Question": "You need to limit the amount of data processed by an Azure AI Language resource to prevent budget overruns. What should you configure?",
+            "Options": [
+                {"id": 1, "text": "A. Commitment Tiers"},
+                {"id": 2, "text": "B. Data rate limits"},
+                {"id": 3, "text": "C. Budget alerts in Azure Cost Management"},
+                {"id": 4, "text": "D. F0 pricing tier"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Budget alerts notify you when spending reaches a certain threshold, allowing for proactive management."
+        },
+        {
+            "id": 6,
+            "Question": "You are creating a multi-service Azure AI resource. Which of the following services is NOT included in a multi-service resource? (Choose 1)",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Language"},
+                {"id": 2, "text": "B. Azure AI Vision"},
+                {"id": 3, "text": "C. Azure OpenAI Service"},
+                {"id": 4, "text": "D. Azure AI Translator"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Azure OpenAI requires a standalone resource and is not currently part of the 'All-in-one' multi-service resource key."
+        },
+        {
+            "id": 7,
+            "Question": "You are developing a solution that requires Diagnostic Logging. Which Azure service is used to store and query these logs?",
+            "Options": [
+                {"id": 1, "text": "A. Azure Blob Storage"},
+                {"id": 2, "text": "B. Log Analytics Workspace"},
+                {"id": 3, "text": "C. Azure SQL Database"},
+                {"id": 4, "text": "D. Event Hubs"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Log Analytics is the primary destination for diagnostic logs to enable querying and dashboarding."
+        },
+        {
+            "id": 8,
+            "Question": "Which RBAC role allows a user to generate keys but not delete the Azure AI resource?",
+            "Options": [
+                {"id": 1, "text": "A. Cognitive Services User"},
+                {"id": 2, "text": "B. Cognitive Services Contributor"},
+                {"id": 3, "text": "C. Reader"},
+                {"id": 4, "text": "D. Owner"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Contributor role allows management of the resource (including keys) but avoids some higher-level permissions of the Owner role."
+        },
+        {
+            "id": 9,
+            "Question": "You need to ensure that an AI solution complies with data residency requirements by keeping all data within the 'North Europe' region. What should you do?",
+            "Options": [
+                {"id": 1, "text": "A. Use a Global endpoint"},
+                {"id": 2, "text": "B. Provision all resources in the North Europe region"},
+                {"id": 3, "text": "C. Enable data encryption"},
+                {"id": 4, "text": "D. Use a Content Delivery Network (CDN)"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Provisioning in a specific region ensures that the data processed by the service stays within that geographical boundary."
+        },
+        {
+            "id": 10,
+            "Question": "Which authentication method is recommended for high-security production environments to avoid the use of API keys?",
+            "Options": [
+                {"id": 1, "text": "A. Basic Auth"},
+                {"id": 2, "text": "B. Azure Active Directory (Microsoft Entra ID)"},
+                {"id": 3, "text": "C. Shared Key"},
+                {"id": 4, "text": "D. Anonymous"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Entra ID provides token-based authentication, which is more secure and manageable than static keys."
+        },
+        {
+            "id": 11,
+            "Question": "In Azure OpenAI, you want to reduce the 'creativity' of the model to ensure more consistent and predictable answers. Which parameter should you adjust?",
+            "Options": [
+                {"id": 1, "text": "A. max_tokens"},
+                {"id": 2, "text": "B. temperature"},
+                {"id": 3, "text": "C. frequency_penalty"},
+                {"id": 4, "text": "D. presence_penalty"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Setting the temperature to a lower value (e.g., 0) makes the model more deterministic."
+        },
+        {
+            "id": 12,
+            "Question": "You are implementing a RAG solution. Which service is most commonly used to host the vector index for document retrieval?",
+            "Options": [
+                {"id": 1, "text": "A. Azure SQL Database"},
+                {"id": 2, "text": "B. Azure AI Search"},
+                {"id": 3, "text": "C. Azure Cosmos DB"},
+                {"id": 4, "text": "D. Azure Redis Cache"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure AI Search is the primary service for vector storage and retrieval in Azure's RAG architecture."
+        },
+        {
+            "id": 13,
+            "Question": "You want to create an AI Agent that can browse the web to find the latest stock prices. What tool capability should you give the agent?",
+            "Options": [
+                {"id": 1, "text": "A. Code Interpreter"},
+                {"id": 2, "text": "B. Bing Search tool"},
+                {"id": 3, "text": "C. File Search tool"},
+                {"id": 4, "text": "D. SQL Connector"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Bing Search tool allows agents to access real-time information from the internet."
+        },
+        {
+            "id": 14,
+            "Question": "Which feature in Azure OpenAI allows you to use a custom dataset to improve the model's performance on a very specific task or tone, although it is not recommended for adding knowledge?",
+            "Options": [
+                {"id": 1, "text": "A. Embedding"},
+                {"id": 2, "text": "B. Fine-tuning"},
+                {"id": 3, "text": "C. Prompt Engineering"},
+                {"id": 4, "text": "D. RAG"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Fine-tuning trains the model on examples of how to act or format responses, whereas RAG provides it with new knowledge."
+        },
+        {
+            "id": 15,
+            "Question": "You are building a chatbot using the Azure OpenAI 'On Your Data' feature. Which file format is NOT directly supported for automatic document cracking and indexing in the portal?",
+            "Options": [
+                {"id": 1, "text": "A. .pdf"},
+                {"id": 2, "text": "B. .docx"},
+                {"id": 3, "text": "C. .zip"},
+                {"id": 4, "text": "D. .txt"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "While it can be unzipped manually, .zip is not a document format that the indexer 'cracks' to read text directly like PDF or Word."
+        },
+        {
+            "id": 16,
+            "Question": "What is the purpose of the 'System Message' in a Chat Completion call?",
+            "Options": [
+                {"id": 1, "text": "A. To store user chat history"},
+                {"id": 2, "text": "B. To define the persona and constraints of the model"},
+                {"id": 3, "text": "C. To define the API version"},
+                {"id": 4, "text": "D. To provide the final answer to the user"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The system message sets the 'rules' for how the assistant should behave."
+        },
+        {
+            "id": 17,
+            "Question": "You need to prevent your LLM from generating harmful content. Which service provides built-in content filtering for Azure OpenAI?",
+            "Options": [
+                {"id": 1, "text": "A. Azure Firewall"},
+                {"id": 2, "text": "B. Azure AI Content Safety"},
+                {"id": 3, "text": "C. Microsoft Defender for Cloud"},
+                {"id": 4, "text": "D. Azure Policy"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure OpenAI uses Azure AI Content Safety to filter prompts and completions for harm."
+        },
+        {
+            "id": 18,
+            "Question": "Which parameter defines how many tokens the model can generate in a single response?",
+            "Options": [
+                {"id": 1, "text": "A. max_tokens"},
+                {"id": 2, "text": "B. top_p"},
+                {"id": 3, "text": "C. stop_sequence"},
+                {"id": 4, "text": "D. presence_penalty"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "max_tokens limits the length of the output generated by the model."
+        },
+        {
+            "id": 19,
+            "Question": "In an agentic workflow, what is 'Function Calling' primarily used for?",
+            "Options": [
+                {"id": 1, "text": "A. To compress the model's memory"},
+                {"id": 2, "text": "B. To allow the model to provide a structured request for an external tool to execute"},
+                {"id": 3, "text": "C. To encrypt the chat history"},
+                {"id": 4, "text": "D. To speed up the token generation"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The model 'calls' a function by outputting JSON that describes which tool to use and with what arguments."
+        },
+        {
+            "id": 20,
+            "Question": "You are using Azure AI Search for a RAG application. You want to combine the results of a vector search and a keyword search for better accuracy. What is this called?",
+            "Options": [
+                {"id": 1, "text": "A. Simple Search"},
+                {"id": 2, "text": "B. Hybrid Search"},
+                {"id": 3, "text": "C. Fuzzy Search"},
+                {"id": 4, "text": "D. Semantic Search"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Hybrid search combines keyword (BM25) and vector results, often using RRF (Reciprocal Rank Fusion) to re-rank them."
+        },
+        {
+            "id": 21,
+            "Question": "Which Azure OpenAI model is best suited for generating images from text prompts?",
+            "Options": [
+                {"id": 1, "text": "A. GPT-4o"},
+                {"id": 2, "text": "B. DALL-E 3"},
+                {"id": 3, "text": "C. Whisper"},
+                {"id": 4, "text": "D. Text-Embedding-3-Large"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "DALL-E is the specialized model for image generation."
+        },
+        {
+            "id": 22,
+            "Question": "You need to convert a large volume of audio files into text transcripts asynchronously. Which Speech API feature should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Real-time transcription"},
+                {"id": 2, "text": "B. Batch transcription"},
+                {"id": 3, "text": "C. Translation"},
+                {"id": 4, "text": "D. Voice Gallery"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Batch transcription is designed for processing large amounts of audio data stored in Azure Blob Storage."
+        },
+        {
+            "id": 23,
+            "Question": "What is the term for a user prompt that attempts to manipulate a model into revealing its internal system instructions?",
+            "Options": [
+                {"id": 1, "text": "A. Data Poisoning"},
+                {"id": 2, "text": "B. Prompt Injection"},
+                {"id": 3, "text": "C. SQL Injection"},
+                {"id": 4, "text": "D. Model Drift"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Prompt Injection (or Jailbreaking) is the act of using specific phrasing to bypass safety filters or system messages."
+        },
+        {
+            "id": 24,
+            "Question": "You are configuring an Azure AI Content Safety resource. You want to block content related to 'Hate Speech' but allow low-severity content. What should you adjust?",
+            "Options": [
+                {"id": 1, "text": "A. Severity threshold (0-6)"},
+                {"id": 2, "text": "B. Blocklist regex"},
+                {"id": 3, "text": "C. Frequency penalty"},
+                {"id": 4, "text": "D. Top_P"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Content Safety uses a severity scale (0-6). Setting a threshold determines what is blocked vs. allowed."
+        },
+        {
+            "id": 25,
+            "Question": "When using 'On Your Data' in Azure OpenAI, what happens to your data during the indexing process?",
+            "Options": [
+                {"id": 1, "text": "A. It is used to retrain the base GPT model"},
+                {"id": 2, "text": "B. It is converted into embeddings and stored in your AI Search index"},
+                {"id": 3, "text": "C. It is sent to a public database for verification"},
+                {"id": 4, "text": "D. It is deleted after one hour"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The data is grounded into a searchable index; it is never used to train the global foundational models."
+        },
+        {
+            "id": 26,
+            "Question": "You are using Azure AI Vision 4.0. You want to detect where a person is standing in a room and track their movement. Which feature should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Image Analysis"},
+                {"id": 2, "text": "B. Spatial Analysis"},
+                {"id": 3, "text": "C. OCR"},
+                {"id": 4, "text": "D. Face Verification"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Spatial Analysis is a specialized Vision feature for detecting presence and movement in real-world spaces."
+        },
+        {
+            "id": 27,
+            "Question": "You need to extract information from 1,000 different layouts of invoices. Which Document Intelligence model should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Prebuilt Invoice Model"},
+                {"id": 2, "text": "B. Custom Template Model"},
+                {"id": 3, "text": "C. Custom Neural Model"},
+                {"id": 4, "text": "D. Read API"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "The pre-built Invoice model is already trained on thousands of varied invoice layouts."
+        },
+        {
+            "id": 28,
+            "Question": "You want to train a Custom Vision model to distinguish between 10 types of machine parts. You have 50 images of each part. Should you use Classification or Object Detection if you only need to know 'what' is in the image, not 'where' it is?",
+            "Options": [
+                {"id": 1, "text": "A. Classification"},
+                {"id": 2, "text": "B. Object Detection"},
+                {"id": 3, "text": "C. Image Analysis"},
+                {"id": 4, "text": "D. Face API"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Classification tags the whole image; Object Detection is for finding coordinates."
+        },
+        {
+            "id": 29,
+            "Question": "In Document Intelligence, which model is best suited for unstructured documents like contracts or letters where fields can appear anywhere?",
+            "Options": [
+                {"id": 1, "text": "A. Custom Template"},
+                {"id": 2, "text": "B. Custom Neural"},
+                {"id": 3, "text": "C. Layout"},
+                {"id": 4, "text": "D. Receipt"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Custom Neural models use deep learning to understand context in unstructured documents."
+        },
+        {
+            "id": 30,
+            "Question": "Which service should you use to identify celebrities in a video file?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Vision"},
+                {"id": 2, "text": "B. Azure AI Video Indexer"},
+                {"id": 3, "text": "C. Custom Vision"},
+                {"id": 4, "text": "D. Document Intelligence"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Video Indexer has a pre-built celebrity recognition model."
+        },
+        {
+            "id": 31,
+            "Question": "You need to extract text from a highly stylized, handwritten note. Which Vision feature provides the best accuracy?",
+            "Options": [
+                {"id": 1, "text": "A. Describe"},
+                {"id": 2, "text": "B. OCR (Read API)"},
+                {"id": 3, "text": "C. Tags"},
+                {"id": 4, "text": "D. Objects"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Read API is optimized for both printed and handwritten text."
+        },
+        {
+            "id": 32,
+            "Question": "You are using the Custom Vision Service. You have already trained the model. What is the next step before your application can use it?",
+            "Options": [
+                {"id": 1, "text": "A. Label more images"},
+                {"id": 2, "text": "B. Publish the model"},
+                {"id": 3, "text": "C. Create a new project"},
+                {"id": 4, "text": "D. Delete the training images"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "You must 'Publish' the iteration to generate a Prediction Endpoint and Key."
+        },
+        {
+            "id": 33,
+            "Question": "You want to automate the extraction of 'Total Amount' and 'Merchant Name' from physical receipts. Which prebuilt model is designed for this?",
+            "Options": [
+                {"id": 1, "text": "A. Invoice"},
+                {"id": 2, "text": "B. Receipt"},
+                {"id": 3, "text": "C. Business Card"},
+                {"id": 4, "text": "D. Identity"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Receipt model is specifically for sales receipts."
+        },
+        {
+            "id": 34,
+            "Question": "A video contains a segment with spoken dialogue in Italian. You need a transcript in English. What is the most efficient workflow using Azure AI services?",
+            "Options": [
+                {"id": 1, "text": "A. Speech-to-Text -> Translator"},
+                {"id": 2, "text": "B. Speech Translation API"},
+                {"id": 3, "text": "C. Video Indexer"},
+                {"id": 4, "text": "D. Text Translation"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Speech Translation can translate audio directly into text of another language in a single call."
+        },
+        {
+            "id": 35,
+            "Question": "You are building a solution to recognize company employees' faces for office entry. Which service provides 'Face Verification'?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Vision"},
+                {"id": 2, "text": "B. Azure AI Face"},
+                {"id": 3, "text": "C. Video Indexer"},
+                {"id": 4, "text": "D. Custom Vision"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The specialized Face service handles identification and verification."
+        },
+        {
+            "id": 36,
+            "Question": "You need to process 50,000 images using the Vision API. To minimize cost, which pricing tier should you choose if you only need the service for a one-time migration?",
+            "Options": [
+                {"id": 1, "text": "A. F0 (Free)"},
+                {"id": 2, "text": "B. S0 (Standard)"},
+                {"id": 3, "text": "C. Commitment Tier"},
+                {"id": 4, "text": "D. Consumption Tier"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "S0 (Standard) is pay-as-you-go and suitable for bulk processing once the F0 limits are hit."
+        },
+        {
+            "id": 37,
+            "Question": "In Azure AI Document Intelligence, what is 'Composition' of models?",
+            "Options": [
+                {"id": 1, "text": "A. Merging multiple custom models into one ID"},
+                {"id": 2, "text": "B. Translating a model to another language"},
+                {"id": 3, "text": "C. Training a model on video"},
+                {"id": 4, "text": "D. Exporting a model to Excel"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Composed models allow you to group multiple custom models so the service automatically picks the best one for a given document."
+        },
+        {
+            "id": 38,
+            "Question": "Which Vision feature should you use to generate a one-sentence summary of what is happening in an image?",
+            "Options": [
+                {"id": 1, "text": "A. Tags"},
+                {"id": 2, "text": "B. Description / Captioning"},
+                {"id": 3, "text": "C. Objects"},
+                {"id": 4, "text": "D. Color"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Captioning generates human-readable sentences describing an image."
+        },
+        {
+            "id": 39,
+            "Question": "You are using the Azure AI Speech SDK. Which class is used to configure the subscription key and region?",
+            "Options": [
+                {"id": 1, "text": "A. SpeechRecognizer"},
+                {"id": 2, "text": "B. SpeechConfig"},
+                {"id": 3, "text": "C. AudioConfig"},
+                {"id": 4, "text": "D. Connection"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "SpeechConfig holds the credentials and regional settings for the client."
+        },
+        {
+            "id": 40,
+            "Question": "What is the result of 'Document Cracking' in the Azure AI Search pipeline?",
+            "Options": [
+                {"id": 1, "text": "A. Encrypting a document"},
+                {"id": 2, "text": "B. Deleting a corrupted document"},
+                {"id": 3, "text": "C. Opening a file and extracting text/metadata"},
+                {"id": 4, "text": "D. Translating a document"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Document cracking is the phase where the indexer opens files (like PDFs) to read the content."
+        },
+        {
+            "id": 41,
+            "Question": "You want to translate a text file from English into 10 different languages in a single request. Which service should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Language"},
+                {"id": 2, "text": "B. Azure AI Translator"},
+                {"id": 3, "text": "C. Azure OpenAI"},
+                {"id": 4, "text": "D. Speech Translation"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure AI Translator supports translating into multiple target languages in one API call."
+        },
+        {
+            "id": 42,
+            "Question": "You are building a bot that needs to answer questions from a large PDF manual. Which feature of Azure AI Language should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Sentiment Analysis"},
+                {"id": 2, "text": "B. Question Answering (formerly QnA Maker)"},
+                {"id": 3, "text": "C. Entity Linking"},
+                {"id": 4, "text": "D. Key Phrase Extraction"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Question Answering creates a conversational layer over static documents."
+        },
+        {
+            "id": 43,
+            "Question": "In a CLU project, what is the term for a specific piece of information extracted from a user's utterance, such as a date or a city name?",
+            "Options": [
+                {"id": 1, "text": "A. Intent"},
+                {"id": 2, "text": "B. Entity"},
+                {"id": 3, "text": "C. Utterance"},
+                {"id": 4, "text": "D. Schema"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Entities are the data points within the text."
+        },
+        {
+            "id": 44,
+            "Question": "You want to detect if a customer review is positive or negative. Which Azure AI Language feature do you use?",
+            "Options": [
+                {"id": 1, "text": "A. Key Phrase Extraction"},
+                {"id": 2, "text": "B. Sentiment Analysis"},
+                {"id": 3, "text": "C. Language Detection"},
+                {"id": 4, "text": "D. Summarization"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Sentiment analysis provides labels like positive, neutral, or negative."
+        },
+        {
+            "id": 45,
+            "Question": "You are developing an application for a global audience. You need to automatically detect which language a user is typing in. Which feature provides this?",
+            "Options": [
+                {"id": 1, "text": "A. Entity Recognition"},
+                {"id": 2, "text": "B. Language Detection"},
+                {"id": 3, "text": "C. Translation"},
+                {"id": 4, "text": "D. PII Detection"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Language Detection returns the language code (e.g., 'en', 'es') and a confidence score."
+        },
+        {
+            "id": 46,
+            "Question": "What is PII (Personally Identifiable Information) detection used for?",
+            "Options": [
+                {"id": 1, "text": "A. To improve search ranking"},
+                {"id": 2, "text": "B. To identify and redact sensitive information like emails or phone numbers"},
+                {"id": 3, "text": "C. To translate text"},
+                {"id": 4, "text": "D. To detect hate speech"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "PII detection helps in compliance and data privacy scenarios."
+        },
+        {
+            "id": 47,
+            "Question": "You want to customize the translation of specific brand names that the Translator service often gets wrong. What should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Custom Translator"},
+                {"id": 2, "text": "B. Dictionary feature"},
+                {"id": 3, "text": "C. Azure OpenAI"},
+                {"id": 4, "text": "D. SSML"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "The Dynamic Dictionary feature allows you to specify 'do-not-translate' or specific mappings."
+        },
+        {
+            "id": 48,
+            "Question": "Which service is best for generating human-like speech from text for a virtual assistant?",
+            "Options": [
+                {"id": 1, "text": "A. Speech-to-Text"},
+                {"id": 2, "text": "B. Text-to-Speech"},
+                {"id": 3, "text": "C. Translator"},
+                {"id": 4, "text": "D. CLU"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Text-to-Speech (TTS) synthesizes audio from text."
+        },
+        {
+            "id": 49,
+            "Question": "In CLU, what is an 'Utterance'?",
+            "Options": [
+                {"id": 1, "text": "A. A secret key"},
+                {"id": 2, "text": "B. A sample sentence a user might say to the bot"},
+                {"id": 3, "text": "C. A trained model"},
+                {"id": 4, "text": "D. A database table"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Utterances are the training examples used to teach the model to recognize intents."
+        },
+        {
+            "id": 50,
+            "Question": "You want to create a bot that helps users book flights. Which Intent is the best choice for the phrase 'I want to fly to London next Tuesday'?",
+            "Options": [
+                {"id": 1, "text": "A. CancelFlight"},
+                {"id": 2, "text": "B. BookFlight"},
+                {"id": 3, "text": "C. GetWeather"},
+                {"id": 4, "text": "D. None"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The intent represents the action the user wants to perform."
+        },
+        {
+            "id": 51,
+            "Question": "Which Azure service allows you to connect a chatbot to Microsoft Teams, Slack, and Facebook Messenger simultaneously?",
+            "Options": [
+                {"id": 1, "text": "A. Azure AI Language"},
+                {"id": 2, "text": "B. Azure Bot Service"},
+                {"id": 3, "text": "C. App Service"},
+                {"id": 4, "text": "D. API Management"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure Bot Service handles the 'Channels' integration."
+        },
+        {
+            "id": 52,
+            "Question": "You are building a custom question-answering project. You want to add small-talk capabilities (e.g., 'How are you?'). What feature should you enable?",
+            "Options": [
+                {"id": 1, "text": "A. Synonyms"},
+                {"id": 2, "text": "B. Chit-chat"},
+                {"id": 3, "text": "C. Active Learning"},
+                {"id": 4, "text": "D. Metadata"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Chit-chat datasets provide pre-built professional, friendly, or witty responses for non-business queries."
+        },
+        {
+            "id": 53,
+            "Question": "You are creating an Azure AI Search skillset. You want to extract text from images during the indexing process. Which skill should you include?",
+            "Options": [
+                {"id": 1, "text": "A. Sentiment Skill"},
+                {"id": 2, "text": "B. OCR Skill"},
+                {"id": 3, "text": "C. Entity Recognition Skill"},
+                {"id": 4, "text": "D. Shaper Skill"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The OCR skill allows the indexer to 'read' text inside images or scanned PDFs."
+        },
+        {
+            "id": 54,
+            "Question": "You want to save the output of an enrichment pipeline to a format that can be analyzed in Power BI. What should you configure in Azure AI Search?",
+            "Options": [
+                {"id": 1, "text": "A. Indexer"},
+                {"id": 2, "text": "B. Knowledge Store"},
+                {"id": 3, "text": "C. Synonym Map"},
+                {"id": 4, "text": "D. Scoring Profile"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Knowledge Store saves enriched data to Azure Storage (Tables/Blobs) for external use."
+        },
+        {
+            "id": 55,
+            "Question": "In Azure AI Search, what is a 'Skillset'?",
+            "Options": [
+                {"id": 1, "text": "A. A list of users allowed to access the index"},
+                {"id": 2, "text": "B. A series of AI steps that transform data during ingestion"},
+                {"id": 3, "text": "C. A set of query parameters"},
+                {"id": 4, "text": "D. A pricing tier"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Skillsets define the 'enrichment' steps like translation or key phrase extraction."
+        },
+        {
+            "id": 56,
+            "Question": "You want to boost search results that have a more recent 'PublishedDate'. What should you use?",
+            "Options": [
+                {"id": 1, "text": "A. Filter"},
+                {"id": 2, "text": "B. Scoring Profile"},
+                {"id": 3, "text": "C. Indexer"},
+                {"id": 4, "text": "D. Suggester"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Scoring profiles weight search results based on specific fields (like freshness or popularity)."
+        },
+        {
+            "id": 57,
+            "Question": "Which search feature provides a 'did you mean' type experience by completing the user's query as they type?",
+            "Options": [
+                {"id": 1, "text": "A. Facets"},
+                {"id": 2, "text": "B. Suggesters (Autofill)"},
+                {"id": 3, "text": "C. Filters"},
+                {"id": 4, "text": "D. Sorting"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Suggesters power search-as-you-type and autocomplete features."
+        },
+        {
+            "id": 58,
+            "Question": "You need to index data stored in an Azure SQL database. What is the most automated way to do this in Azure AI Search?",
+            "Options": [
+                {"id": 1, "text": "A. Push API"},
+                {"id": 2, "text": "B. Indexer"},
+                {"id": 3, "text": "C. Manual CSV upload"},
+                {"id": 4, "text": "D. Logic Apps"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Indexers can automatically pull data from Azure SQL, Cosmos DB, and Blob Storage."
+        },
+        {
+            "id": 59,
+            "Question": "A search query for 'WiFi' does not return results for 'Wireless'. How can you fix this in Azure AI Search?",
+            "Options": [
+                {"id": 1, "text": "A. Create a Synonym Map"},
+                {"id": 2, "text": "B. Increase the replica count"},
+                {"id": 3, "text": "C. Rebuild the index"},
+                {"id": 4, "text": "D. Change the field to 'Sortable'"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Synonym maps link related terms together so a search for one returns the other."
+        },
+        {
+            "id": 60,
+            "Question": "You want to enable users to filter search results by 'Category' and see the count of items in each. Which field property must be enabled?",
+            "Options": [
+                {"id": 1, "text": "A. Sortable"},
+                {"id": 2, "text": "B. Facetable"},
+                {"id": 3, "text": "C. Searchable"},
+                {"id": 4, "text": "D. Key"}
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Facetable allows for the grouping and counting of results by a specific attribute."
+        }
+    ]
+}
