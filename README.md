@@ -2,6 +2,8 @@
 
 This repository contains **practice exam samples** for Microsoft certification exams, designed to help learners **assess readiness, understand concepts, and practice exam-style questions**.
 
+Hosted Link for Exam Engine - https://ms-exam-practice.tiiny.site 
+
 ## 🎯 What This Repository Offers
 
 - 🚀 **Centralized Exam Engine**: A single HTML interface (`exam-engine.html`) to run all practice tests.
