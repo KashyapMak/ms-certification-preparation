@@ -1,0 +1,73 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "required": [
+        "passingScore",
+        "questions",
+        "quizName",
+        "totalScore"
+    ],
+    "properties": {
+        "quizName": {
+            "type": "string"
+        },
+        "totalScore": {
+            "type": "integer"
+        },
+        "passingScore": {
+            "type": "integer"
+        },
+        "questions": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer"
+                    },
+                    "Question": {
+                        "type": "string"
+                    },
+                    "Options": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "text": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "text"
+                            ]
+                        }
+                    },
+                    "MaxAnswerSelection": {
+                        "type": "integer"
+                    },
+                    "CorrectAnswers": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "CorrectAnswerExplanation": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "CorrectAnswerExplanation",
+                    "CorrectAnswers",
+                    "id",
+                    "MaxAnswerSelection",
+                    "Options",
+                    "Question"
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        @keyframes shake {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            75% {
+                transform: translateX(5px);
+            }
+        }
+
+        .shake {
+            animation: shake 0.2s ease-in-out 0s 2;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .sticky-header {
+            transition: all 0.3s ease;
+        }
+
+        .tab-active {
+            border-bottom: 4px solid #2563eb;
+            color: #1e40af;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen text-slate-800 pb-20">
+
+    <header id="sticky-header" class="hidden sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between gap-4">
+                <h1 id="display-exam-title" class="text-lg md:text-xl font-bold text-blue-900 truncate flex-1"></h1>
+                <div
+                    class="flex items-center gap-2 md:gap-4 text-sm font-bold bg-slate-100 px-3 py-2 rounded-full border border-slate-200">
+                    <div class="whitespace-nowrap">
+                        <span class="text-slate-500">Question:</span>
+                        <span id="current-q-num" class="text-blue-600 font-black">0</span>/<span
+                            id="total-q-num">0</span>
+                    </div>
+                    <div class="h-4 w-px bg-slate-300"></div>
+                    <div class="whitespace-nowrap">
+                        <span class="text-slate-500">Attended:</span>
+                        <span id="attended-count" class="text-green-600 font-black">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full bg-slate-100 h-1.5 overflow-hidden">
+            <div id="progress-bar" class="bg-blue-600 h-full transition-all duration-500 ease-out" style="width: 0%">
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto p-4 md:p-8">
+
+        <div id="setup-view" class="bg-white rounded-2xl shadow-xl p-8 border border-slate-200 mt-10">
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-black text-slate-900 uppercase tracking-tight">Exam Practice Engine</h1>
+                <p class="text-slate-500">Select an online exam or upload your own JSON file.</p>
+            </div>
+
+            <div class="flex border-b border-slate-200 mb-6">
+                <button id="tab-online" class="flex-1 py-3 font-bold text-slate-500 tab-active">Online Exams</button>
+                <button id="tab-local" class="flex-1 py-3 font-bold text-slate-500">Local Upload</button>
+            </div>
+
+            <div id="error-alert" class="hidden mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-r-lg">
+                <p class="font-bold">File Error</p>
+                <p id="error-message" class="text-sm"></p>
+            </div>
+
+            <div class="space-y-6">
+                <div id="section-online">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Select Configured Exam</label>
+                    <select id="exam-selector"
+                        class="w-full p-3 border-2 border-slate-200 rounded-xl bg-white outline-none focus:border-blue-500">
+                        <option value="">-- Choose Exam --</option>
+                    </select>
+                </div>
+
+                <div id="section-local" class="hidden">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Upload JSON File</label>
+                    <input type="file" id="file-input" accept=".json"
+                        class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-600 file:text-white border-2 border-dashed border-slate-200 p-4 rounded-xl cursor-pointer">
+                </div>
+
+                <button id="start-btn" disabled
+                    class="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 text-white font-black py-4 rounded-xl transition-all shadow-lg">
+                    START EXAM
+                </button>
+            </div>
+        </div>
+
+        <div id="exam-view" class="hidden space-y-6 pt-6">
+            <div class="bg-white rounded-2xl shadow-md p-6 border border-slate-200 min-h-[300px]">
+                <div id="question-container" class="space-y-6">
+                    <p id="q-text" class="text-xl font-semibold leading-snug text-slate-800"></p>
+                    <div id="selection-hint"
+                        class="px-3 py-1 bg-amber-50 text-amber-700 text-[11px] font-black uppercase rounded border border-amber-200 w-fit">
+                    </div>
+                    <div id="options-list" class="grid gap-3"></div>
+                </div>
+                <div id="explanation-box"
+                    class="hidden mt-8 p-5 bg-emerald-50 border-l-4 border-emerald-500 rounded-r-xl">
+                    <h4 class="font-black text-emerald-800 text-xs uppercase mb-1">Justification</h4>
+                    <p id="exp-text" class="text-emerald-900 leading-relaxed"></p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+                <div class="flex gap-3 w-full sm:w-auto">
+                    <button id="prev-btn"
+                        class="flex-1 sm:flex-none bg-white border-2 border-slate-200 text-slate-600 font-bold px-8 py-3 rounded-xl disabled:opacity-30">Previous</button>
+                    <button id="next-btn"
+                        class="flex-1 sm:flex-none bg-slate-800 text-white font-bold px-8 py-3 rounded-xl">Next</button>
+                </div>
+                <div class="flex gap-3 w-full sm:w-auto">
+                    <button id="show-ans-btn"
+                        class="flex-1 sm:flex-none bg-amber-500 text-white font-bold px-6 py-3 rounded-xl">Show
+                        Answer</button>
+                    <button id="finish-btn"
+                        class="hidden flex-1 sm:flex-none bg-green-600 text-white font-black px-10 py-3 rounded-xl shadow-lg">FINISH</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-view" class="hidden space-y-8">
+            <div class="bg-white rounded-3xl shadow-2xl p-10 text-center border border-slate-200">
+                <h2 class="text-3xl font-black mb-6 text-slate-900">Exam Results</h2>
+                <div class="inline-block p-8 rounded-full bg-slate-50 border-8 border-white shadow-xl mb-6 text-center">
+                    <div id="final-score" class="text-6xl font-black text-blue-600">0</div>
+                    <div class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">Points</div>
+                </div>
+                <div id="status-badge"
+                    class="max-w-xs mx-auto py-3 px-6 rounded-2xl text-xl font-black mb-8 border-2 shadow-sm"></div>
+                <div class="flex justify-center gap-4">
+                    <button onclick="location.reload()"
+                        class="bg-slate-200 text-slate-700 font-bold px-6 py-2 rounded-xl hover:bg-slate-300">Restart</button>
+                    <a href="#review-section"
+                        class="bg-blue-600 text-white font-bold px-6 py-2 rounded-xl hover:bg-blue-700">Review
+                        Questions</a>
+                </div>
+            </div>
+            <div id="review-section" class="space-y-6">
+                <h3 class="text-2xl font-black text-slate-800 border-b pb-2">Detailed Review</h3>
+                <div id="review-list" class="space-y-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const EXAM_CONFIG = [
+            { title: "Sample Test", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json" },
+            { title: "GH-300 - GitHub Copilot", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-300/gh-300.json" },
+            { title: "AI-102 - Azure AI Engineer Associate - Set 1", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json" },
+            { title: "AI-102 - Azure AI Engineer Associate - Set 2", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json" },
+            { title: "AI-102 - Azure AI Engineer Associate - Set 3", file: "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json" }
+        ];
+
+        let currentExam = null, currentIndex = 0, userAnswers = {}, mode = 'online';
+
+        $(document).ready(function () {
+            // Populate Dropdown
+            EXAM_CONFIG.forEach(e => $('#exam-selector').append(`<option value="${e.file}">${e.title}</option>`));
+
+            // Tab Switching Logic
+            $('#tab-online').click(function () {
+                mode = 'online';
+                $(this).addClass('tab-active'); $('#tab-local').removeClass('tab-active');
+                $('#section-online').show(); $('#section-local').hide();
+                validateStart();
+            });
+
+            $('#tab-local').click(function () {
+                mode = 'local';
+                $(this).addClass('tab-active'); $('#tab-online').removeClass('tab-active');
+                $('#section-local').show(); $('#section-online').hide();
+                validateStart();
+            });
+
+            function validateStart() {
+                const isReady = mode === 'online' ? $('#exam-selector').val() !== "" : $('#file-input').val() !== "";
+                $('#start-btn').prop('disabled', !isReady);
+                $('#error-alert').hide();
+            }
+
+            $('#exam-selector, #file-input').change(validateStart);
+
+            // Start Button Handler
+            $('#start-btn').click(function () {
+                if (mode === 'online') {
+                    const url = $('#exam-selector').val();
+                    fetch(url)
+                        .then(response => response.json())
+                        .then(data => initExam(data))
+                        .catch(err => showError("Failed to fetch online exam. Please check your internet connection."));
+                } else {
+                    const fileInput = document.getElementById('file-input');
+                    if (fileInput.files.length > 0) {
+                        const reader = new FileReader();
+                        reader.onload = (e) => {
+                            try {
+                                const data = JSON.parse(e.target.result);
+                                if (!data.questions || !Array.isArray(data.questions)) throw new Error("JSON is missing 'questions' array.");
+                                initExam(data);
+                            } catch (err) {
+                                showError("Invalid JSON format: " + err.message);
+                            }
+                        };
+                        reader.onerror = () => showError("Could not read the local file.");
+                        reader.readAsText(fileInput.files[0]);
+                    }
+                }
+            });
+
+            function showError(msg) {
+                $('#error-message').text(msg);
+                $('#error-alert').removeClass('hidden').show();
+            }
+
+            function initExam(data) {
+                currentExam = data;
+                $('#setup-view').fadeOut(300, () => {
+                    $('#sticky-header').removeClass('hidden').fadeIn();
+                    $('#exam-view').removeClass('hidden').fadeIn();
+                    $('#display-exam-title').text(currentExam.quizName || "Practice Exam");
+                    $('#total-q-num').text(currentExam.questions.length);
+                    renderQuestion();
+                });
+            }
+
+            // ... renderQuestion, Navigation, and Results logic remains the same as in your original file ...
+            // [Included below for completeness]
+
+            function renderQuestion() {
+                const q = currentExam.questions[currentIndex];
+                const max = q.MaxAnswerSelection || 1;
+                $('#q-text').text(q.Question);
+                $('#current-q-num').text(currentIndex + 1);
+                $('#selection-hint').text(max === 1 ? "Choose 1 Correct Option" : `Select ${max} Correct Options`);
+                $('#explanation-box').hide();
+                $('#progress-bar').css('width', ((currentIndex + 1) / currentExam.questions.length * 100) + '%');
+
+                const optionsList = $('#options-list').empty();
+                q.Options.forEach(opt => {
+                    const isSelected = (userAnswers[q.id] || []).includes(opt.id);
+                    const classes = isSelected ? 'border-blue-600 bg-blue-50 ring-2 ring-blue-100 shadow-sm' : 'border-slate-200 bg-white hover:bg-slate-50';
+                    optionsList.append(`
+                        <div class="option-item cursor-pointer border-2 p-4 rounded-xl transition-all flex items-center ${classes}" data-id="${opt.id}">
+                            <div class="w-5 h-5 rounded-full border-2 mr-4 flex items-center justify-center ${isSelected ? 'bg-blue-600 border-blue-600' : 'border-slate-300'}">
+                                ${isSelected ? '<div class="w-1.5 h-1.5 bg-white rounded-full"></div>' : ''}
+                            </div>
+                            <span class="font-bold text-slate-700">${opt.text}</span>
+                        </div>
+                    `);
+                });
+
+                $('#prev-btn').prop('disabled', currentIndex === 0);
+                if (currentIndex === currentExam.questions.length - 1) {
+                    $('#next-btn').addClass('hidden'); $('#finish-btn').removeClass('hidden');
+                } else {
+                    $('#next-btn').removeClass('hidden'); $('#finish-btn').addClass('hidden');
+                }
+                updateStats();
+                window.scrollTo(0, 0);
+            }
+
+            $(document).on('click', '.option-item', function () {
+                const q = currentExam.questions[currentIndex], id = $(this).data('id'), max = q.MaxAnswerSelection || 1;
+                if (!userAnswers[q.id]) userAnswers[q.id] = [];
+                const isSelected = userAnswers[q.id].includes(id);
+
+                if (max === 1) userAnswers[q.id] = [id];
+                else {
+                    if (isSelected) userAnswers[q.id] = userAnswers[q.id].filter(v => v !== id);
+                    else if (userAnswers[q.id].length < max) userAnswers[q.id].push(id);
+                    else { $('#selection-hint').addClass('shake'); setTimeout(() => $('#selection-hint').removeClass('shake'), 400); return; }
+                }
+                renderQuestion();
+            });
+
+            $('#next-btn').click(() => { currentIndex++; renderQuestion(); });
+            $('#prev-btn').click(() => { currentIndex--; renderQuestion(); });
+            $('#show-ans-btn').click(() => {
+                const q = currentExam.questions[currentIndex];
+                $('#exp-text').text(q.CorrectAnswerExplanation);
+                $('#explanation-box').slideToggle();
+            });
+
+            $('#finish-btn').click(() => {
+                if (!confirm("Finish exam and view results?")) return;
+                generateReview();
+            });
+
+            function generateReview() {
+                let totalPoints = 0;
+                const weight = currentExam.totalScore / currentExam.questions.length;
+                const list = $('#review-list').empty();
+
+                currentExam.questions.forEach((q, idx) => {
+                    const uArr = (userAnswers[q.id] || []).sort();
+                    const cArr = (q.CorrectAnswers || []).sort();
+                    const isCorrect = uArr.join(',') === cArr.join(',') && uArr.length > 0;
+                    if (isCorrect) totalPoints += weight;
+
+                    const reviewItem = $(`
+                        <div class="bg-white rounded-xl p-6 border-l-8 ${isCorrect ? 'border-green-500 shadow-sm' : 'border-red-500 shadow-md'}">
+                            <h4 class="font-black text-slate-800 mb-2">Q${idx + 1}: ${q.Question}</h4>
+                            <div class="space-y-2 mb-4">
+                                ${q.Options.map(opt => {
+                        const isUserChoice = uArr.includes(opt.id);
+                        const isCorrectChoice = cArr.includes(opt.id);
+                        let badge = "";
+                        if (isUserChoice && isCorrectChoice) badge = '<span class="ml-2 text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded font-bold">✓ Your Correct Choice</span>';
+                        else if (isUserChoice && !isCorrectChoice) badge = '<span class="ml-2 text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">✗ Your Wrong Choice</span>';
+                        else if (!isUserChoice && isCorrectChoice) badge = '<span class="ml-2 text-xs bg-blue-100 text-blue-700 px-2 py-0.5 rounded font-bold">★ Correct Answer</span>';
+                        return `<div class="p-2 rounded border ${isUserChoice ? 'bg-slate-50 border-slate-300' : 'border-transparent'} text-sm">${opt.text} ${badge}</div>`;
+                    }).join('')}
+                            </div>
+                            <div class="bg-emerald-50 p-4 rounded-lg text-sm text-emerald-900"><strong>Explanation:</strong> ${q.CorrectAnswerExplanation}</div>
+                        </div>
+                    `);
+                    list.append(reviewItem);
+                });
+
+                $('#sticky-header, #exam-view').fadeOut(300, () => {
+                    $('#result-view').removeClass('hidden').fadeIn();
+                    $('#final-score').text(Math.round(totalPoints));
+                    const passed = totalPoints >= (currentExam.passingScore || 700);
+                    $('#status-badge').text(passed ? 'PASSED' : 'FAILED')
+                        .addClass(passed ? 'bg-green-50 border-green-200 text-green-700' : 'bg-red-50 border-red-200 text-red-700');
+                    window.scrollTo(0, 0);
+                });
+            }
+
+            function updateStats() {
+                $('#attended-count').text(Object.values(userAnswers).filter(a => a.length > 0).length);
+            }
+        });
+    </script>
+</body>
+
+</html>
