@@ -1,0 +1,18 @@
+[
+	{
+        "title": "Sample Test",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json"
+    }, {
+        "title": "GH-300 - GitHub Copilot",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-300/gh-300.json"
+    }, {
+        "title": "AI-102 - Azure AI Engineer Associate - Set 1",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json"
+    }, {
+        "title": "AI-102 - Azure AI Engineer Associate - Set 2",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json"
+    }, {
+        "title": "AI-102 - Azure AI Engineer Associate - Set 3",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json"
+    }
+]
