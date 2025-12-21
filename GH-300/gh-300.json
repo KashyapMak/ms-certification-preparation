@@ -479,7 +479,7 @@
                 },
                 {
                     "id": 4,
-                    "D. Insights on the types of coding languages where GitHub Copilot is most helpful."
+                    "text":"D. Insights on the types of coding languages where GitHub Copilot is most helpful."
                 }
             ],
             "MaxAnswerSelection": 2,
@@ -658,7 +658,7 @@
                 },
                 {
                     "id": 4,
-                    "D. It flags the suggestion with a critical error warning."
+                    "text": "D. It flags the suggestion with a critical error warning."
                 }
             ],
             "MaxAnswerSelection": 1,
