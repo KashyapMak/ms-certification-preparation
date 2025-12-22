@@ -272,29 +272,66 @@
 
             // ... renderQuestion, Navigation, and Results logic remains the same as in your original file ...
             // [Included below for completeness]
-
-            function renderQuestion() {
+            function renderQuestion(isRevealed = false) {
                 const q = currentExam.questions[currentIndex];
                 const max = q.MaxAnswerSelection || 1;
+                const correctIds = q.CorrectAnswers || [];
+                const selectedIds = userAnswers[q.id] || [];
+
                 $('#q-text').text(q.Question);
                 $('#current-q-num').text(currentIndex + 1);
                 $('#selection-hint').text(max === 1 ? "Choose 1 Correct Option" : `Select ${max} Correct Options`);
-                $('#explanation-box').hide();
+
+                // Maintain the explanation box state across manual re-renders (like clicking an option)
+                if (!isRevealed) {
+                    $('#explanation-box').hide();
+                    $('#show-ans-btn').text('Show Answer');
+                }
+
                 $('#progress-bar').css('width', ((currentIndex + 1) / currentExam.questions.length * 100) + '%');
 
                 const optionsList = $('#options-list').empty();
                 q.Options.forEach(opt => {
-                    const isSelected = (userAnswers[q.id] || []).includes(opt.id);
-                    const classes = isSelected ? 'border-blue-600 bg-blue-50 ring-2 ring-blue-100 shadow-sm' : 'border-slate-200 bg-white hover:bg-slate-50';
+                    const isSelected = selectedIds.includes(opt.id);
+                    const isCorrect = correctIds.includes(opt.id);
+
+                    let colorClasses = 'border-slate-200 bg-white hover:bg-slate-50';
+                    let indicatorClasses = 'border-slate-300';
+                    let checkmark = '';
+
+                    if (isRevealed) {
+                        if (isCorrect) {
+                            // Correct Answer - Always Green
+                            colorClasses = 'border-green-500 bg-green-50 ring-2 ring-green-100';
+                            indicatorClasses = 'bg-green-600 border-green-600';
+                            checkmark = '<div class="text-white text-xs">✓</div>';
+                        } else if (isSelected && !isCorrect) {
+                            // Wrong Selection - Red
+                            colorClasses = 'border-red-500 bg-red-50 ring-2 ring-red-100';
+                            indicatorClasses = 'bg-red-600 border-red-600';
+                            checkmark = '<div class="text-white text-xs">✕</div>';
+                        }
+                    } else if (isSelected) {
+                        // Normal Selection Mode
+                        colorClasses = 'border-blue-600 bg-blue-50 ring-2 ring-blue-100 shadow-sm';
+                        indicatorClasses = 'bg-blue-600 border-blue-600';
+                        checkmark = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div>';
+                    }
+
                     optionsList.append(`
-                        <div class="option-item cursor-pointer border-2 p-4 rounded-xl transition-all flex items-center ${classes}" data-id="${opt.id}">
-                            <div class="w-5 h-5 rounded-full border-2 mr-4 flex items-center justify-center ${isSelected ? 'bg-blue-600 border-blue-600' : 'border-slate-300'}">
-                                ${isSelected ? '<div class="w-1.5 h-1.5 bg-white rounded-full"></div>' : ''}
-                            </div>
-                            <span class="font-bold text-slate-700">${opt.text}</span>
-                        </div>
-                    `);
+            <div class="option-item cursor-pointer border-2 p-4 rounded-xl transition-all flex items-center ${colorClasses}" data-id="${opt.id}">
+                <div class="w-5 h-5 rounded-full border-2 mr-4 flex items-center justify-center ${indicatorClasses}">
+                    ${checkmark}
+                </div>
+                <span class="font-bold text-slate-700">${opt.text}</span>
+            </div>
+        `);
                 });
+
+                // Disable interactions if answer is revealed
+                if (isRevealed) {
+                    $('.option-item').addClass('pointer-events-none');
+                }
 
                 $('#prev-btn').prop('disabled', currentIndex === 0);
                 if (currentIndex === currentExam.questions.length - 1) {
@@ -305,6 +342,7 @@
                 updateStats();
                 window.scrollTo(0, 0);
             }
+
 
             $(document).on('click', '.option-item', function () {
                 const q = currentExam.questions[currentIndex], id = $(this).data('id'), max = q.MaxAnswerSelection || 1;
@@ -322,10 +360,21 @@
 
             $('#next-btn').click(() => { currentIndex++; renderQuestion(); });
             $('#prev-btn').click(() => { currentIndex--; renderQuestion(); });
-            $('#show-ans-btn').click(() => {
-                const q = currentExam.questions[currentIndex];
-                $('#exp-text').text(q.CorrectAnswerExplanation);
-                $('#explanation-box').slideToggle();
+            $('#show-ans-btn').click(function () {
+                const isShowing = $('#explanation-box').is(':visible');
+
+                if (!isShowing) {
+                    // Show explanation and highlight answers
+                    $('#exp-text').text(currentExam.questions[currentIndex].CorrectAnswerExplanation);
+                    $('#explanation-box').slideDown();
+                    $(this).text('Hide Answer');
+                    renderQuestion(true); // Pass true to indicate we are in "reveal" mode
+                } else {
+                    // Hide explanation and reset highlights
+                    $('#explanation-box').slideUp();
+                    $(this).text('Show Answer');
+                    renderQuestion(false);
+                }
             });
 
             $('#finish-btn').click(() => {
