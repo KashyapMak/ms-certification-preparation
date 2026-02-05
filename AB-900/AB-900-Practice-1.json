@@ -1,1935 +1,1935 @@
 {
-    "quizName": "AB-900 Practice Exam - 1",
-    "totalScore": 1000,
-    "passingScore": 700,
-    "questions": [
+  "quizName": "AB-900 Practice Exam - 1",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "What is the primary purpose of Microsoft Copilot in Microsoft 365?",
+      "Options": [
         {
-            "id": 1,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "What is the primary purpose of Microsoft Copilot in Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "To provide AI-powered assistance within Microsoft 365 apps",
-                    "reason": "Correct — Copilot uses AI to assist with tasks like writing, summarizing, and analyzing data in Microsoft 365 apps."
-                },
-                {
-                    "id": 2,
-                    "text": "To replace all existing Microsoft 365 apps",
-                    "reason": "Incorrect — Copilot enhances existing apps; it does not replace them."
-                },
-                {
-                    "id": 3,
-                    "text": "To configure security policies across the tenant",
-                    "reason": "Incorrect — Security policies are configured using tools like Microsoft Defender and Microsoft Purview, not Copilot."
-                },
-                {
-                    "id": 4,
-                    "text": "To manage user identities and access",
-                    "reason": "Incorrect — Identity and access are managed by Microsoft Entra ID, not Copilot."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Microsoft Copilot is designed to provide AI-powered assistance inside Microsoft 365 apps, helping users be more productive."
+          "id": 1,
+          "text": "To replace all existing Microsoft 365 apps",
+          "reason": "Incorrect — Copilot enhances existing apps; it does not replace them."
         },
         {
-            "id": 2,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which statement best describes how Microsoft Copilot accesses organizational data?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It stores all data in a separate Copilot database",
-                    "reason": "Incorrect — Copilot does not move data to a separate database; it works with existing data sources."
-                },
-                {
-                    "id": 2,
-                    "text": "It requires global admin rights for every user",
-                    "reason": "Incorrect — Users do not need global admin rights to use Copilot."
-                },
-                {
-                    "id": 3,
-                    "text": "It bypasses permissions to access all tenant data",
-                    "reason": "Incorrect — Copilot respects existing permissions and does not bypass access controls."
-                },
-                {
-                    "id": 4,
-                    "text": "It uses the Microsoft Graph and existing user permissions",
-                    "reason": "Correct — Copilot uses Microsoft Graph and only accesses data the user is already permitted to see."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot uses Microsoft Graph and respects existing user permissions, ensuring it only accesses data the user is allowed to see."
+          "id": 2,
+          "text": "To provide AI-powered assistance within Microsoft 365 apps",
+          "reason": "Correct — Copilot uses AI to assist with tasks like writing, summarizing, and analyzing data in Microsoft 365 apps."
         },
         {
-            "id": 3,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following are typical use cases for Microsoft Copilot in Microsoft 365? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Drafting emails and documents",
-                    "reason": "Correct — Copilot can help draft emails in Outlook and documents in Word."
-                },
-                {
-                    "id": 2,
-                    "text": "Designing network topologies",
-                    "reason": "Incorrect — Network design is not a primary Copilot use case."
-                },
-                {
-                    "id": 3,
-                    "text": "Managing firmware updates on devices",
-                    "reason": "Incorrect — Device firmware management is not handled by Copilot."
-                },
-                {
-                    "id": 4,
-                    "text": "Summarizing meetings and chats",
-                    "reason": "Correct — Copilot can summarize Teams meetings and chat conversations."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                1,
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot is commonly used to draft content and summarize information, such as emails, documents, meetings, and chats."
+          "id": 3,
+          "text": "To manage user identities and access",
+          "reason": "Incorrect — Identity and access are managed by Microsoft Entra ID, not Copilot."
         },
         {
-            "id": 4,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which Microsoft service provides the underlying data access layer that Copilot uses to retrieve organizational content?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Microsoft Entra ID",
-                    "reason": "Incorrect — Entra ID manages identities and access, but Graph is the API layer used for data access."
-                },
-                {
-                    "id": 2,
-                    "text": "Azure Virtual Desktop",
-                    "reason": "Incorrect — Azure Virtual Desktop provides virtualized desktops, not the data access layer for Copilot."
-                },
-                {
-                    "id": 3,
-                    "text": "Microsoft Defender for Cloud",
-                    "reason": "Incorrect — Defender for Cloud is a security solution, not the data access layer for Copilot."
-                },
-                {
-                    "id": 4,
-                    "text": "Microsoft Graph",
-                    "reason": "Correct — Microsoft Graph is the unified API that Copilot uses to access organizational data."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Microsoft Graph is the unified API that Copilot uses to access data across Microsoft 365 services."
-        },
-        {
-            "id": 5,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "What is a key benefit of using Microsoft Copilot for end users?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It replaces the need for training on Microsoft 365 apps",
-                    "reason": "Incorrect — Users still benefit from understanding how to use Microsoft 365 apps effectively."
-                },
-                {
-                    "id": 2,
-                    "text": "It guarantees 100% accurate answers every time",
-                    "reason": "Incorrect — Copilot can make mistakes and should be reviewed by users."
-                },
-                {
-                    "id": 3,
-                    "text": "It automates all IT administration tasks",
-                    "reason": "Incorrect — Copilot does not fully automate IT administration."
-                },
-                {
-                    "id": 4,
-                    "text": "It helps users be more productive by generating and summarizing content",
-                    "reason": "Correct — Copilot boosts productivity by helping users create and understand content faster."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot is designed to increase productivity by helping users generate, transform, and summarize content."
-        },
-        {
-            "id": 6,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following best describes how Copilot responses should be treated by users?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "As final, authoritative answers that never need review",
-                    "reason": "Incorrect — Users should always review Copilot outputs for accuracy and appropriateness."
-                },
-                {
-                    "id": 2,
-                    "text": "As a replacement for subject matter experts",
-                    "reason": "Incorrect — Copilot supports experts but does not replace them."
-                },
-                {
-                    "id": 3,
-                    "text": "As legal advice for compliance decisions",
-                    "reason": "Incorrect — Copilot does not provide legal advice and should not be used as such."
-                },
-                {
-                    "id": 4,
-                    "text": "As suggestions that should be reviewed and edited as needed",
-                    "reason": "Correct — Copilot provides suggestions that users should validate and refine."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot responses are suggestions that should be reviewed and edited by users, not treated as final or authoritative."
-        },
-        {
-            "id": 7,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "Which Microsoft 365 apps commonly integrate with Copilot for Microsoft 365? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Hyper-V Manager",
-                    "reason": "Incorrect — Hyper-V Manager is not integrated with Copilot for Microsoft 365."
-                },
-                {
-                    "id": 2,
-                    "text": "Word",
-                    "reason": "Correct — Copilot integrates with Word to help draft and edit documents."
-                },
-                {
-                    "id": 3,
-                    "text": "System Center Configuration Manager",
-                    "reason": "Incorrect — SCCM is not a primary Copilot for Microsoft 365 integration surface."
-                },
-                {
-                    "id": 4,
-                    "text": "Excel",
-                    "reason": "Correct — Copilot integrates with Excel to help analyze and summarize data."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                2,
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot for Microsoft 365 integrates with apps like Word and Excel to assist with content creation and data analysis."
-        },
-        {
-            "id": 8,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "In Microsoft Teams, what can Copilot help users do?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Replace the need for meeting recordings",
-                    "reason": "Incorrect — Recordings can still be valuable; Copilot summaries complement them."
-                },
-                {
-                    "id": 2,
-                    "text": "Manage Teams licenses for all users",
-                    "reason": "Incorrect — License management is handled in the Microsoft 365 admin center."
-                },
-                {
-                    "id": 3,
-                    "text": "Summarize meeting discussions and action items",
-                    "reason": "Correct — Copilot can summarize meetings and highlight key points and actions."
-                },
-                {
-                    "id": 4,
-                    "text": "Configure Teams policies for the entire tenant",
-                    "reason": "Incorrect — Policy configuration is done by admins in the Teams admin center."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "In Teams, Copilot can summarize meetings, helping users quickly understand key points and action items."
-        },
-        {
-            "id": 9,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "Which of the following is a capability of Copilot in Outlook?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Enforcing retention policies",
-                    "reason": "Incorrect — Retention policies are configured in Microsoft Purview, not by Copilot."
-                },
-                {
-                    "id": 2,
-                    "text": "Drafting replies to emails based on context",
-                    "reason": "Correct — Copilot can draft email responses using the context of the conversation."
-                },
-                {
-                    "id": 3,
-                    "text": "Creating new user mailboxes",
-                    "reason": "Incorrect — Mailbox creation is an admin task, not a Copilot feature."
-                },
-                {
-                    "id": 4,
-                    "text": "Changing mailbox storage quotas",
-                    "reason": "Incorrect — Storage quotas are configured by administrators, not Copilot."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot in Outlook can help draft email replies using the context of existing email threads."
-        },
-        {
-            "id": 10,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "How does Copilot in Excel assist users?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "By backing up all Excel files to external storage",
-                    "reason": "Incorrect — Backup is not a Copilot feature."
-                },
-                {
-                    "id": 2,
-                    "text": "By automatically fixing all formula errors without user input",
-                    "reason": "Incorrect — Copilot can suggest formulas but does not automatically fix all errors."
-                },
-                {
-                    "id": 3,
-                    "text": "By summarizing data and suggesting insights",
-                    "reason": "Correct — Copilot can analyze data and provide summaries and insights."
-                },
-                {
-                    "id": 4,
-                    "text": "By managing workbook permissions for all users",
-                    "reason": "Incorrect — Permissions are managed through sharing and access controls, not Copilot."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Copilot in Excel can summarize data, identify patterns, and suggest insights to help users understand their data."
-        },
-        {
-            "id": 11,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "Which licensing consideration is important for Copilot for Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Only global admins can be assigned Copilot licenses",
-                    "reason": "Incorrect — Any eligible user can be assigned a Copilot license, not just admins."
-                },
-                {
-                    "id": 2,
-                    "text": "Users must have a qualifying Microsoft 365 license plus a Copilot license",
-                    "reason": "Correct — Copilot for Microsoft 365 requires a base Microsoft 365 license and an additional Copilot license."
-                },
-                {
-                    "id": 3,
-                    "text": "Copilot licenses can only be assigned to guest users",
-                    "reason": "Incorrect — Copilot licenses are typically assigned to internal users, not guests."
-                },
-                {
-                    "id": 4,
-                    "text": "Copilot is automatically included in all Microsoft 365 plans",
-                    "reason": "Incorrect — Copilot is not automatically included; it requires specific licensing."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot for Microsoft 365 requires a qualifying Microsoft 365 license plus a separate Copilot license for each user."
-        },
-        {
-            "id": 12,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "Which of the following best describes the role of the Microsoft 365 admin center in Copilot deployment?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It is used to write prompts for Copilot",
-                    "reason": "Incorrect — Prompts are written by users in apps, not in the admin center."
-                },
-                {
-                    "id": 2,
-                    "text": "It is used to assign Copilot licenses to users",
-                    "reason": "Correct — Admins use the Microsoft 365 admin center to assign Copilot licenses."
-                },
-                {
-                    "id": 3,
-                    "text": "It is used to manage on-premises Active Directory",
-                    "reason": "Incorrect — On-premises AD is managed separately, not through the Microsoft 365 admin center."
-                },
-                {
-                    "id": 4,
-                    "text": "It is used to configure Azure virtual machines for Copilot",
-                    "reason": "Incorrect — VM configuration is not part of Copilot deployment in the admin center."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "The Microsoft 365 admin center is where admins assign Copilot licenses and manage user access."
-        },
-        {
-            "id": 13,
-            "topic": "Copilot Studio",
-            "Question": "What is Microsoft Copilot Studio primarily used for?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Managing device compliance policies",
-                    "reason": "Incorrect — Device compliance is managed through Intune, not Copilot Studio."
-                },
-                {
-                    "id": 2,
-                    "text": "Monitoring network firewalls",
-                    "reason": "Incorrect — Network firewall monitoring is not a Copilot Studio function."
-                },
-                {
-                    "id": 3,
-                    "text": "Configuring Microsoft Entra ID conditional access",
-                    "reason": "Incorrect — Conditional access is configured in the Entra admin center."
-                },
-                {
-                    "id": 4,
-                    "text": "Building and customizing copilots using a graphical interface",
-                    "reason": "Correct — Copilot Studio allows users to build and customize copilots with a low-code interface."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio is used to build, customize, and manage copilots using a low-code graphical interface."
-        },
-        {
-            "id": 14,
-            "topic": "Copilot Studio",
-            "Question": "Which of the following are capabilities of Copilot Studio? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Managing Microsoft 365 tenant-wide security defaults",
-                    "reason": "Incorrect — Security defaults are managed in Entra ID, not Copilot Studio."
-                },
-                {
-                    "id": 2,
-                    "text": "Creating conversational flows for copilots",
-                    "reason": "Correct — Copilot Studio allows you to design conversational flows."
-                },
-                {
-                    "id": 3,
-                    "text": "Configuring Windows Update rings",
-                    "reason": "Incorrect — Update rings are configured in Intune, not Copilot Studio."
-                },
-                {
-                    "id": 4,
-                    "text": "Integrating external data sources via connectors",
-                    "reason": "Correct — Copilot Studio supports connectors to integrate external data."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                2,
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio is used to design conversational experiences and connect to external data sources using connectors."
-        },
-        {
-            "id": 15,
-            "topic": "Copilot Studio",
-            "Question": "Which type of user is most likely to work with Copilot Studio?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Network hardware engineers only",
-                    "reason": "Incorrect — Copilot Studio is not specific to network hardware engineering."
-                },
-                {
-                    "id": 2,
-                    "text": "Only external guest users",
-                    "reason": "Incorrect — Copilot Studio is typically used by internal users with appropriate permissions."
-                },
-                {
-                    "id": 3,
-                    "text": "Low-code or no-code solution builders",
-                    "reason": "Correct — Copilot Studio is designed for low-code/no-code builders to create copilots."
-                },
-                {
-                    "id": 4,
-                    "text": "Only global administrators",
-                    "reason": "Incorrect — Many roles can use Copilot Studio, not just global admins."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio is aimed at low-code/no-code builders who want to create and customize copilots."
-        },
-        {
-            "id": 16,
-            "topic": "Copilot Studio",
-            "Question": "What is a key benefit of using Copilot Studio with Copilot for Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It allows you to extend Copilot with custom experiences and data",
-                    "reason": "Correct — Copilot Studio lets you extend Copilot with custom logic and data sources."
-                },
-                {
-                    "id": 2,
-                    "text": "It disables all default Copilot features",
-                    "reason": "Incorrect — Copilot Studio extends Copilot; it does not disable core features."
-                },
-                {
-                    "id": 3,
-                    "text": "It automatically grants admin rights to copilots",
-                    "reason": "Incorrect — Copilot Studio does not grant admin rights."
-                },
-                {
-                    "id": 4,
-                    "text": "It replaces the need for Microsoft Graph",
-                    "reason": "Incorrect — Copilot Studio does not replace Microsoft Graph."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio enables organizations to extend Copilot with custom experiences and data integrations."
-        },
-        {
-            "id": 17,
-            "topic": "Copilot Studio",
-            "Question": "Which of the following can be used as data sources in Copilot Studio via connectors? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Physical network switches",
-                    "reason": "Incorrect — Physical switches are not connected as data sources in Copilot Studio."
-                },
-                {
-                    "id": 2,
-                    "text": "BIOS configuration of user devices",
-                    "reason": "Incorrect — BIOS settings are not a data source for Copilot Studio."
-                },
-                {
-                    "id": 3,
-                    "text": "OneDrive",
-                    "reason": "Correct — OneDrive can also be connected as a data source."
-                },
-                {
-                    "id": 4,
-                    "text": "SharePoint",
-                    "reason": "Correct — SharePoint can be connected as a data source via connectors."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                3,
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio can use connectors to integrate with data sources like SharePoint and OneDrive."
-        },
-        {
-            "id": 18,
-            "topic": "Copilot Studio",
-            "Question": "Which environment is typically used to host solutions built with Copilot Studio?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "On-premises Active Directory forest",
-                    "reason": "Incorrect — Copilot Studio is cloud-based and uses Power Platform environments."
-                },
-                {
-                    "id": 2,
-                    "text": "Local Windows Server file shares",
-                    "reason": "Incorrect — File shares are not hosting environments for Copilot Studio solutions."
-                },
-                {
-                    "id": 3,
-                    "text": "Azure Virtual Desktop host pools",
-                    "reason": "Incorrect — AVD host pools are not used to host Copilot Studio solutions."
-                },
-                {
-                    "id": 4,
-                    "text": "Power Platform environment",
-                    "reason": "Correct — Copilot Studio solutions are hosted in Power Platform environments."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio is part of the Power Platform and uses Power Platform environments to host solutions."
-        },
-        {
-            "id": 19,
-            "topic": "Extensibility and connectors",
-            "Question": "What is the purpose of connectors when extending Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "To replace Microsoft Graph",
-                    "reason": "Incorrect — Connectors complement Graph; they do not replace it."
-                },
-                {
-                    "id": 2,
-                    "text": "To manage user passwords",
-                    "reason": "Incorrect — Password management is not the role of connectors."
-                },
-                {
-                    "id": 3,
-                    "text": "To configure device compliance policies",
-                    "reason": "Incorrect — Device compliance is handled by Intune, not connectors."
-                },
-                {
-                    "id": 4,
-                    "text": "To connect Copilot to external and internal data sources",
-                    "reason": "Correct — Connectors allow Copilot to access data from various systems."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Connectors are used to extend Copilot by connecting it to additional data sources and services."
-        },
-        {
-            "id": 20,
-            "topic": "Extensibility and connectors",
-            "Question": "Which of the following are examples of data sources that can be integrated with Copilot using connectors? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Social media platforms",
-                    "reason": "Correct — Some social platforms can be integrated using connectors."
-                },
-                {
-                    "id": 2,
-                    "text": "Third-party CRM systems",
-                    "reason": "Correct — Many CRM systems can be integrated via connectors."
-                },
-                {
-                    "id": 3,
-                    "text": "Physical printers",
-                    "reason": "Incorrect — Physical printers are not typical connector-based data sources."
-                },
-                {
-                    "id": 4,
-                    "text": "BIOS firmware of laptops",
-                    "reason": "Incorrect — BIOS firmware is not integrated via connectors."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                1,
-                2
-            ],
-            "CorrectAnswerExplanation": "Connectors can integrate Copilot with external systems like CRM tools and some social platforms."
-        },
-        {
-            "id": 21,
-            "topic": "Extensibility and connectors",
-            "Question": "What is a key consideration when connecting external data sources to Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Ensuring appropriate authentication and authorization are in place",
-                    "reason": "Correct — Secure authentication and authorization are critical when connecting external data."
-                },
-                {
-                    "id": 2,
-                    "text": "Granting anonymous access to speed up queries",
-                    "reason": "Incorrect — Anonymous access is insecure and not recommended."
-                },
-                {
-                    "id": 3,
-                    "text": "Disabling all encryption to improve performance",
-                    "reason": "Incorrect — Encryption should not be disabled; security is essential."
-                },
-                {
-                    "id": 4,
-                    "text": "Allowing all users full control over connectors",
-                    "reason": "Incorrect — Connector permissions should be carefully controlled."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "When integrating external data, secure authentication and authorization must be in place to protect data."
-        },
-        {
-            "id": 22,
-            "topic": "Extensibility and connectors",
-            "Question": "Which platform provides many of the connectors used to extend Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Microsoft Power Platform",
-                    "reason": "Correct — Power Platform provides a large library of connectors."
-                },
-                {
-                    "id": 2,
-                    "text": "Azure Virtual Desktop",
-                    "reason": "Incorrect — AVD is not a connector platform."
-                },
-                {
-                    "id": 3,
-                    "text": "System Center Operations Manager",
-                    "reason": "Incorrect — SCOM is for monitoring, not connectors."
-                },
-                {
-                    "id": 4,
-                    "text": "Windows Server Manager",
-                    "reason": "Incorrect — Windows Server Manager is not a connector platform."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Many connectors used to extend Copilot are provided through the Microsoft Power Platform."
-        },
-        {
-            "id": 23,
-            "topic": "Extensibility and connectors",
-            "Question": "Which of the following is a benefit of using custom connectors with Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Replacing Microsoft Entra ID",
-                    "reason": "Incorrect — Custom connectors do not replace Entra ID."
-                },
-                {
-                    "id": 2,
-                    "text": "Automatically granting admin rights to all users",
-                    "reason": "Incorrect — Custom connectors do not grant admin rights."
-                },
-                {
-                    "id": 3,
-                    "text": "Accessing line-of-business systems not covered by standard connectors",
-                    "reason": "Correct — Custom connectors allow integration with unique or custom systems."
-                },
-                {
-                    "id": 4,
-                    "text": "Eliminating the need for authentication",
-                    "reason": "Incorrect — Authentication is still required for secure access."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Custom connectors enable Copilot to access specialized or custom line-of-business systems."
-        },
-        {
-            "id": 24,
-            "topic": "Extensibility and connectors",
-            "Question": "When designing an extension for Copilot, what should you consider about data latency?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Latency only matters for on-premises data",
-                    "reason": "Incorrect — Latency matters for any data source, cloud or on-premises."
-                },
-                {
-                    "id": 2,
-                    "text": "Latency has no impact on user experience",
-                    "reason": "Incorrect — Latency directly affects how quickly users receive responses."
-                },
-                {
-                    "id": 3,
-                    "text": "High latency can negatively affect Copilot response times",
-                    "reason": "Correct — Slow data sources can delay Copilot responses."
-                },
-                {
-                    "id": 4,
-                    "text": "Latency is managed only by Microsoft and cannot be influenced",
-                    "reason": "Incorrect — Design choices, such as data location and architecture, can influence latency."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "High latency from data sources can slow down Copilot responses, so performance should be considered in design."
-        },
-        {
-            "id": 25,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which Microsoft solution helps manage data governance and compliance for Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Azure Virtual Desktop",
-                    "reason": "Incorrect — AVD is a virtualization solution, not a governance tool."
-                },
-                {
-                    "id": 2,
-                    "text": "Microsoft Intune",
-                    "reason": "Incorrect — Intune focuses on device and app management."
-                },
-                {
-                    "id": 3,
-                    "text": "Windows Admin Center",
-                    "reason": "Incorrect — Windows Admin Center is for managing Windows servers, not data governance for Copilot."
-                },
-                {
-                    "id": 4,
-                    "text": "Microsoft Purview",
-                    "reason": "Correct — Microsoft Purview provides data governance and compliance capabilities."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Microsoft Purview is used to manage data governance, classification, and compliance, which also applies to data used by Copilot."
-        },
-        {
-            "id": 26,
-            "topic": "Governance, security, and compliance",
-            "Question": "How does Copilot respect data access controls in Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It stores a copy of all tenant data in its own database",
-                    "reason": "Incorrect — Copilot does not create a separate copy of all tenant data."
-                },
-                {
-                    "id": 2,
-                    "text": "It uses the signed-in user's permissions to access data",
-                    "reason": "Correct — Copilot only accesses data the user is allowed to see."
-                },
-                {
-                    "id": 3,
-                    "text": "It uses global admin permissions for all users",
-                    "reason": "Incorrect — Copilot does not elevate permissions."
-                },
-                {
-                    "id": 4,
-                    "text": "It ignores permissions to provide the most complete answer",
-                    "reason": "Incorrect — Copilot does not ignore permissions."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot respects existing access controls by using the signed-in user's permissions to access data."
-        },
-        {
-            "id": 27,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which of the following can help prevent Copilot from accessing sensitive content?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Turning off multi-factor authentication",
-                    "reason": "Incorrect — Turning off MFA reduces security and does not control data access."
-                },
-                {
-                    "id": 2,
-                    "text": "Applying sensitivity labels to documents",
-                    "reason": "Correct — Sensitivity labels can restrict access to sensitive content."
-                },
-                {
-                    "id": 3,
-                    "text": "Disabling Microsoft Graph",
-                    "reason": "Incorrect — Disabling Graph would break many services and is not a practical control."
-                },
-                {
-                    "id": 4,
-                    "text": "Removing all user licenses",
-                    "reason": "Incorrect — Removing licenses would prevent users from using services entirely."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Sensitivity labels can be used to classify and protect content, which also affects what Copilot can access."
-        },
-        {
-            "id": 28,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which Microsoft feature helps ensure that Copilot does not expose data to users who should not see it?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Printer sharing settings",
-                    "reason": "Incorrect — Printer sharing does not affect Copilot data access."
-                },
-                {
-                    "id": 2,
-                    "text": "Local administrator rights on devices",
-                    "reason": "Incorrect — Local admin rights are unrelated to Copilot data access."
-                },
-                {
-                    "id": 3,
-                    "text": "Desktop wallpaper policies",
-                    "reason": "Incorrect — Wallpaper policies are unrelated to data access."
-                },
-                {
-                    "id": 4,
-                    "text": "Role-based access control (RBAC)",
-                    "reason": "Correct — RBAC and permissions ensure users only access data they are allowed to see."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Role-based access control and permissions ensure that Copilot only surfaces data users are authorized to access."
-        },
-        {
-            "id": 29,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which of the following are examples of compliance features that can work with Copilot-related data? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Screen saver timeout settings",
-                    "reason": "Incorrect — Screen saver settings are not compliance features."
-                },
-                {
-                    "id": 2,
-                    "text": "Local group policy for printers",
-                    "reason": "Incorrect — Printer policies are not compliance features for Copilot data."
-                },
-                {
-                    "id": 3,
-                    "text": "eDiscovery",
-                    "reason": "Correct — eDiscovery can be used to search and manage content, including content Copilot interacts with."
-                },
-                {
-                    "id": 4,
-                    "text": "Data loss prevention (DLP)",
-                    "reason": "Correct — DLP policies can help protect sensitive data used by Copilot."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                3,
-                4
-            ],
-            "CorrectAnswerExplanation": "DLP and eDiscovery are compliance features that can apply to data used by Copilot."
-        },
-        {
-            "id": 30,
-            "topic": "Governance, security, and compliance",
-            "Question": "What is a key security consideration when enabling Copilot for Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Granting all users global admin rights",
-                    "reason": "Incorrect — Granting global admin rights broadly is a security risk."
-                },
-                {
-                    "id": 2,
-                    "text": "Disabling all encryption to improve performance",
-                    "reason": "Incorrect — Encryption should remain enabled to protect data."
-                },
-                {
-                    "id": 3,
-                    "text": "Reviewing and tightening data access permissions before rollout",
-                    "reason": "Correct — Ensuring proper permissions helps prevent unintended data exposure."
-                },
-                {
-                    "id": 4,
-                    "text": "Turning off Microsoft Purview",
-                    "reason": "Incorrect — Purview helps with governance and should not be turned off."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Before enabling Copilot, organizations should review and adjust data access permissions to avoid exposing sensitive information."
-        },
-        {
-            "id": 31,
-            "topic": "Responsible AI",
-            "Question": "Which of the following is a core principle of Microsoft’s approach to responsible AI?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Unlimited data retention",
-                    "reason": "Incorrect — Unlimited retention is not a responsible AI principle."
-                },
-                {
-                    "id": 2,
-                    "text": "Ignoring user feedback",
-                    "reason": "Incorrect — User feedback is important for responsible AI."
-                },
-                {
-                    "id": 3,
-                    "text": "Maximizing data collection at all costs",
-                    "reason": "Incorrect — Responsible AI emphasizes appropriate data use, not maximum collection."
-                },
-                {
-                    "id": 4,
-                    "text": "Fairness",
-                    "reason": "Correct — Fairness is one of Microsoft’s responsible AI principles."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Fairness is one of Microsoft’s responsible AI principles, along with reliability, safety, privacy, security, inclusiveness, and accountability."
-        },
-        {
-            "id": 32,
-            "topic": "Responsible AI",
-            "Question": "Which responsible AI principle is most related to protecting user data and confidentiality?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Privacy and security",
-                    "reason": "Correct — This principle focuses on protecting data and ensuring secure systems."
-                },
-                {
-                    "id": 2,
-                    "text": "Maximizing ad revenue",
-                    "reason": "Incorrect — Ad revenue is not a responsible AI principle."
-                },
-                {
-                    "id": 3,
-                    "text": "Entertainment",
-                    "reason": "Incorrect — Entertainment is not a responsible AI principle."
-                },
-                {
-                    "id": 4,
-                    "text": "Unlimited transparency of all internal data",
-                    "reason": "Incorrect — Responsible AI does not require exposing all internal data."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "The privacy and security principle focuses on protecting user data and ensuring secure AI systems."
-        },
-        {
-            "id": 33,
-            "topic": "Responsible AI",
-            "Question": "How should organizations guide users in working with Copilot to support responsible AI usage?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Encourage users to always review and verify Copilot outputs",
-                    "reason": "Correct — Users should validate AI-generated content for accuracy and appropriateness."
-                },
-                {
-                    "id": 2,
-                    "text": "Instruct users to treat Copilot outputs as unquestionable facts",
-                    "reason": "Incorrect — Copilot outputs can be wrong and must be reviewed."
-                },
-                {
-                    "id": 3,
-                    "text": "Ask users to share sensitive personal data in prompts",
-                    "reason": "Incorrect — Users should avoid sharing unnecessary sensitive data."
-                },
-                {
-                    "id": 4,
-                    "text": "Disable all human oversight of AI-generated content",
-                    "reason": "Incorrect — Human oversight is essential for responsible AI use."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Responsible AI usage includes having users review and verify AI-generated content rather than accepting it blindly."
-        },
-        {
-            "id": 34,
-            "topic": "Responsible AI",
-            "Question": "Which of the following are examples of responsible AI practices when using Copilot? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Sharing confidential data in public channels",
-                    "reason": "Incorrect — Sharing confidential data publicly is not responsible."
-                },
-                {
-                    "id": 2,
-                    "text": "Reviewing outputs for bias or inappropriate content",
-                    "reason": "Correct — Checking for bias and appropriateness is part of responsible AI use."
-                },
-                {
-                    "id": 3,
-                    "text": "Avoiding prompts that include unnecessary personal data",
-                    "reason": "Correct — Limiting personal data in prompts supports privacy."
-                },
-                {
-                    "id": 4,
-                    "text": "Using Copilot outputs as legal or medical advice",
-                    "reason": "Incorrect — Copilot outputs should not be treated as professional legal or medical advice."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                2,
-                3
-            ],
-            "CorrectAnswerExplanation": "Responsible AI practices include minimizing personal data in prompts and reviewing outputs for bias or inappropriate content."
-        },
-        {
-            "id": 35,
-            "topic": "Responsible AI",
-            "Question": "Why is transparency important in responsible AI usage with Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It removes the need for user training",
-                    "reason": "Incorrect — Training is still important even with transparency."
-                },
-                {
-                    "id": 2,
-                    "text": "It helps users understand that AI-generated content may not be perfect",
-                    "reason": "Correct — Transparency helps set realistic expectations about AI outputs."
-                },
-                {
-                    "id": 3,
-                    "text": "It guarantees that AI will never make mistakes",
-                    "reason": "Incorrect — AI can still make mistakes even with transparency."
-                },
-                {
-                    "id": 4,
-                    "text": "It allows users to bypass all security controls",
-                    "reason": "Incorrect — Transparency does not mean bypassing security."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Transparency helps users understand how AI works and that outputs should be reviewed and not assumed to be perfect."
-        },
-        {
-            "id": 36,
-            "topic": "Responsible AI",
-            "Question": "Which group in an organization should typically be involved in defining responsible AI usage guidelines for Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Only the facilities management team",
-                    "reason": "Incorrect — Facilities teams are not typically responsible for AI usage guidelines."
-                },
-                {
-                    "id": 2,
-                    "text": "Only external customers",
-                    "reason": "Incorrect — Internal stakeholders must define guidelines."
-                },
-                {
-                    "id": 3,
-                    "text": "Only individual end users without guidance",
-                    "reason": "Incorrect — Organizational guidance is needed for consistent responsible AI use."
-                },
-                {
-                    "id": 4,
-                    "text": "Legal and compliance teams",
-                    "reason": "Correct — Legal and compliance teams help define responsible usage policies."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Legal and compliance teams should be involved in defining responsible AI usage guidelines for tools like Copilot."
-        },
-        {
-            "id": 37,
-            "topic": "Licensing and administration basics",
-            "Question": "Which portal is primarily used to assign Copilot for Microsoft 365 licenses to users?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Microsoft 365 admin center",
-                    "reason": "Correct — Admins assign licenses in the Microsoft 365 admin center."
-                },
-                {
-                    "id": 2,
-                    "text": "Azure Virtual Desktop portal",
-                    "reason": "Incorrect — AVD is not used for license assignment."
-                },
-                {
-                    "id": 3,
-                    "text": "Windows Settings app",
-                    "reason": "Incorrect — Windows Settings is not used for Microsoft 365 licensing."
-                },
-                {
-                    "id": 4,
-                    "text": "Microsoft Store",
-                    "reason": "Incorrect — The Microsoft Store is not used for enterprise license assignment."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "The Microsoft 365 admin center is where administrators assign Copilot and other Microsoft 365 licenses."
-        },
-        {
-            "id": 38,
-            "topic": "Licensing and administration basics",
-            "Question": "Which of the following is typically required before assigning a Copilot for Microsoft 365 license?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Local administrator rights on their device",
-                    "reason": "Incorrect — Local admin rights are not a licensing requirement."
-                },
-                {
-                    "id": 2,
-                    "text": "A dedicated on-premises SQL Server",
-                    "reason": "Incorrect — Copilot licensing does not require a dedicated SQL Server."
-                },
-                {
-                    "id": 3,
-                    "text": "A qualifying base Microsoft 365 license",
-                    "reason": "Correct — Users must have a qualifying Microsoft 365 license before Copilot can be assigned."
-                },
-                {
-                    "id": 4,
-                    "text": "A separate Windows Server CAL",
-                    "reason": "Incorrect — Windows Server CALs are unrelated to Copilot licensing."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Copilot for Microsoft 365 requires that users already have a qualifying Microsoft 365 license."
-        },
-        {
-            "id": 39,
-            "topic": "Licensing and administration basics",
-            "Question": "Which role is most appropriate for managing Copilot license assignments?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Standard user with no admin roles",
-                    "reason": "Incorrect — Standard users cannot assign licenses."
-                },
-                {
-                    "id": 2,
-                    "text": "Local device administrator only",
-                    "reason": "Incorrect — Local device admin rights do not grant tenant-level license management."
-                },
-                {
-                    "id": 3,
-                    "text": "Global administrator or license administrator",
-                    "reason": "Correct — These roles can manage license assignments."
-                },
-                {
-                    "id": 4,
-                    "text": "Printer operator",
-                    "reason": "Incorrect — Printer operator roles are unrelated to license management."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Global administrators or license administrators are typically responsible for assigning Copilot licenses."
-        },
-        {
-            "id": 40,
-            "topic": "Licensing and administration basics",
-            "Question": "Which of the following can be used to automate license assignment for Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Manual registry edits on user devices",
-                    "reason": "Incorrect — Registry edits are not used for license assignment."
-                },
-                {
-                    "id": 2,
-                    "text": "Local group policy on Windows devices",
-                    "reason": "Incorrect — Local group policy does not manage Microsoft 365 licenses."
-                },
-                {
-                    "id": 3,
-                    "text": "Group-based licensing in Microsoft Entra ID",
-                    "reason": "Correct — Group-based licensing can automatically assign licenses to group members."
-                },
-                {
-                    "id": 4,
-                    "text": "Printer configuration scripts",
-                    "reason": "Incorrect — Printer scripts are unrelated to license assignment."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Group-based licensing in Microsoft Entra ID can automatically assign Copilot licenses to users in specific groups."
-        },
-        {
-            "id": 41,
-            "topic": "Licensing and administration basics",
-            "Question": "Which report can help administrators understand Copilot usage in their organization?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Printer queue statistics",
-                    "reason": "Incorrect — Printer statistics do not show Copilot usage."
-                },
-                {
-                    "id": 2,
-                    "text": "Usage reports in the Microsoft 365 admin center",
-                    "reason": "Correct — Usage reports can show how services like Copilot are being used."
-                },
-                {
-                    "id": 3,
-                    "text": "BIOS logs on user devices",
-                    "reason": "Incorrect — BIOS logs are unrelated to Copilot usage."
-                },
-                {
-                    "id": 4,
-                    "text": "Windows Event Viewer logs",
-                    "reason": "Incorrect — Event Viewer is not used for Copilot usage reporting."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Usage reports in the Microsoft 365 admin center can provide insights into how Copilot is being used."
-        },
-        {
-            "id": 42,
-            "topic": "Licensing and administration basics",
-            "Question": "What is a common administrative task when rolling out Copilot for Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Communicating usage guidelines and training to end users",
-                    "reason": "Correct — Admins should provide guidance and training for Copilot usage."
-                },
-                {
-                    "id": 2,
-                    "text": "Turning off Microsoft Graph",
-                    "reason": "Incorrect — Graph is required for Copilot to function."
-                },
-                {
-                    "id": 3,
-                    "text": "Replacing all existing Microsoft 365 licenses",
-                    "reason": "Incorrect — Existing licenses are not necessarily replaced."
-                },
-                {
-                    "id": 4,
-                    "text": "Disabling Microsoft Teams for all users",
-                    "reason": "Incorrect — Teams is often used with Copilot, not disabled."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "A successful Copilot rollout includes user communication and training on how to use it effectively and responsibly."
-        },
-        {
-            "id": 43,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following best describes a prompt in the context of Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "A security policy in Microsoft Purview",
-                    "reason": "Incorrect — Prompts are not security policies."
-                },
-                {
-                    "id": 2,
-                    "text": "A request or instruction given to Copilot",
-                    "reason": "Correct — A prompt is the input or instruction provided to Copilot."
-                },
-                {
-                    "id": 3,
-                    "text": "A license type for Copilot",
-                    "reason": "Incorrect — A prompt is not a license type."
-                },
-                {
-                    "id": 4,
-                    "text": "A device configuration profile",
-                    "reason": "Incorrect — Device profiles are unrelated to prompts."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "A prompt is the instruction or request that a user gives to Copilot to generate a response."
-        },
-        {
-            "id": 44,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following can improve the quality of Copilot responses?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Avoiding any context in the prompt",
-                    "reason": "Incorrect — Context helps Copilot understand the request."
-                },
-                {
-                    "id": 2,
-                    "text": "Providing clear and specific prompts",
-                    "reason": "Correct — Clear, specific prompts help Copilot generate better responses."
-                },
-                {
-                    "id": 3,
-                    "text": "Disabling access to all data sources",
-                    "reason": "Incorrect — Copilot needs data access to provide useful responses."
-                },
-                {
-                    "id": 4,
-                    "text": "Using only one-word prompts",
-                    "reason": "Incorrect — One-word prompts are often too vague."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Clear, specific prompts with relevant context help Copilot generate more accurate and useful responses."
-        },
-        {
-            "id": 45,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following is a limitation of Copilot?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It can only be used offline",
-                    "reason": "Incorrect — Copilot requires cloud connectivity."
-                },
-                {
-                    "id": 2,
-                    "text": "It can sometimes generate inaccurate or outdated information",
-                    "reason": "Correct — Copilot can make mistakes and should be reviewed."
-                },
-                {
-                    "id": 3,
-                    "text": "It always requires global admin rights to use",
-                    "reason": "Incorrect — End users do not need admin rights to use Copilot."
-                },
-                {
-                    "id": 4,
-                    "text": "It cannot be used in any Microsoft 365 app",
-                    "reason": "Incorrect — Copilot is integrated into several Microsoft 365 apps."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot can generate inaccurate or outdated information, so users must review its outputs."
-        },
-        {
-            "id": 46,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "In Word, which of the following tasks can Copilot assist with? (Select 2)",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Installing Word on user devices",
-                    "reason": "Incorrect — Installation is not handled by Copilot."
-                },
-                {
-                    "id": 2,
-                    "text": "Summarizing a long document",
-                    "reason": "Correct — Copilot can summarize existing content."
-                },
-                {
-                    "id": 3,
-                    "text": "Drafting a first version of a document",
-                    "reason": "Correct — Copilot can generate draft content based on prompts."
-                },
-                {
-                    "id": 4,
-                    "text": "Formatting a physical printer",
-                    "reason": "Incorrect — Printer formatting is not a Copilot feature."
-                }
-            ],
-            "MaxAnswerSelection": 2,
-            "CorrectAnswers": [
-                2,
-                3
-            ],
-            "CorrectAnswerExplanation": "In Word, Copilot can help draft new content and summarize existing documents."
-        },
-        {
-            "id": 47,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "In PowerPoint, how can Copilot help users?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Configuring network firewalls",
-                    "reason": "Incorrect — Firewall configuration is unrelated to PowerPoint."
-                },
-                {
-                    "id": 2,
-                    "text": "Creating a slide deck from a Word document",
-                    "reason": "Correct — Copilot can generate presentations from existing documents."
-                },
-                {
-                    "id": 3,
-                    "text": "Managing tenant-wide security policies",
-                    "reason": "Incorrect — Security policies are managed by admins, not Copilot in PowerPoint."
-                },
-                {
-                    "id": 4,
-                    "text": "Assigning Microsoft 365 licenses",
-                    "reason": "Incorrect — License assignment is done in the admin center, not PowerPoint."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot in PowerPoint can create slide decks from existing content such as Word documents."
-        },
-        {
-            "id": 48,
-            "topic": "Copilot Studio",
-            "Question": "Which of the following best describes a scenario for using Copilot Studio?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Configuring Wi-Fi access points",
-                    "reason": "Incorrect — Network configuration is unrelated to Copilot Studio."
-                },
-                {
-                    "id": 2,
-                    "text": "Building a custom copilot that answers HR policy questions",
-                    "reason": "Correct — Copilot Studio can be used to build a custom HR copilot."
-                },
-                {
-                    "id": 3,
-                    "text": "Managing physical access badges",
-                    "reason": "Incorrect — Physical access control is not handled by Copilot Studio."
-                },
-                {
-                    "id": 4,
-                    "text": "Installing device drivers on user laptops",
-                    "reason": "Incorrect — Device driver installation is not a Copilot Studio scenario."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot Studio is well-suited for building custom copilots, such as one that answers HR policy questions."
-        },
-        {
-            "id": 49,
-            "topic": "Extensibility and connectors",
-            "Question": "Which of the following is a risk if connectors are misconfigured?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Automatic deletion of all Microsoft 365 data",
-                    "reason": "Incorrect — Misconfiguration does not automatically delete all data."
-                },
-                {
-                    "id": 2,
-                    "text": "Unintended exposure of sensitive data",
-                    "reason": "Correct — Misconfigured connectors can expose data to unauthorized users."
-                },
-                {
-                    "id": 3,
-                    "text": "Permanent disabling of Microsoft Graph",
-                    "reason": "Incorrect — Connectors do not permanently disable Graph."
-                },
-                {
-                    "id": 4,
-                    "text": "Automatic assignment of global admin rights",
-                    "reason": "Incorrect — Connectors do not assign admin rights."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "If connectors are misconfigured, they can expose sensitive data to users who should not have access."
-        },
-        {
-            "id": 50,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which feature can help classify and protect documents that Copilot may access?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Printer drivers",
-                    "reason": "Incorrect — Printer drivers are unrelated to document classification."
-                },
-                {
-                    "id": 2,
-                    "text": "Desktop themes",
-                    "reason": "Incorrect — Desktop themes do not classify or protect documents."
-                },
-                {
-                    "id": 3,
-                    "text": "Local firewall rules",
-                    "reason": "Incorrect — Local firewalls do not classify documents."
-                },
-                {
-                    "id": 4,
-                    "text": "Sensitivity labels",
-                    "reason": "Correct — Sensitivity labels classify and protect documents."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Sensitivity labels can classify and protect documents, influencing how Copilot can access and use them."
-        },
-        {
-            "id": 51,
-            "topic": "Responsible AI",
-            "Question": "Which of the following should users avoid including in Copilot prompts?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Unnecessary personal or sensitive information",
-                    "reason": "Correct — Users should avoid including unnecessary sensitive data in prompts."
-                },
-                {
-                    "id": 2,
-                    "text": "Context about the document they are working on",
-                    "reason": "Incorrect — Relevant context can improve responses."
-                },
-                {
-                    "id": 3,
-                    "text": "Clear instructions about the task",
-                    "reason": "Incorrect — Clear instructions are helpful and appropriate."
-                },
-                {
-                    "id": 4,
-                    "text": "The desired tone or style of the output",
-                    "reason": "Incorrect — Specifying tone or style is a good practice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Users should avoid including unnecessary personal or sensitive information in prompts to support privacy and responsible AI use."
-        },
-        {
-            "id": 52,
-            "topic": "Licensing and administration basics",
-            "Question": "Which of the following can help an organization control who gets Copilot licenses?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Using desktop shortcuts",
-                    "reason": "Incorrect — Shortcuts do not control licensing."
-                },
-                {
-                    "id": 2,
-                    "text": "Changing the desktop wallpaper",
-                    "reason": "Incorrect — Wallpaper changes do not affect licensing."
-                },
-                {
-                    "id": 3,
-                    "text": "Using security groups for license assignment",
-                    "reason": "Correct — Security groups can be used with group-based licensing."
-                },
-                {
-                    "id": 4,
-                    "text": "Allowing users to assign licenses to themselves",
-                    "reason": "Incorrect — Users cannot self-assign enterprise licenses."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Security groups and group-based licensing help control which users receive Copilot licenses."
-        },
-        {
-            "id": 53,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following best describes how Copilot uses organizational data?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "It deletes data after each query",
-                    "reason": "Incorrect — Copilot does not delete tenant data after queries."
-                },
-                {
-                    "id": 2,
-                    "text": "It permanently copies all data to external servers",
-                    "reason": "Incorrect — Copilot does not permanently copy all tenant data externally."
-                },
-                {
-                    "id": 3,
-                    "text": "It uses data to generate context-aware responses while respecting permissions",
-                    "reason": "Correct — Copilot uses available data within the user’s permissions to generate responses."
-                },
-                {
-                    "id": 4,
-                    "text": "It ignores all organizational data and uses only public internet data",
-                    "reason": "Incorrect — Copilot uses organizational data via Microsoft Graph."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Copilot uses organizational data available through Microsoft Graph and respects user permissions to generate context-aware responses."
-        },
-        {
-            "id": 54,
-            "topic": "Copilot for Microsoft 365",
-            "Question": "In Excel, which type of task is Copilot particularly well-suited for?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Installing device drivers",
-                    "reason": "Incorrect — Driver installation is not handled by Copilot."
-                },
-                {
-                    "id": 2,
-                    "text": "Summarizing trends in a dataset",
-                    "reason": "Correct — Copilot can summarize and explain trends in data."
-                },
-                {
-                    "id": 3,
-                    "text": "Configuring BIOS settings",
-                    "reason": "Incorrect — BIOS configuration is unrelated to Excel."
-                },
-                {
-                    "id": 4,
-                    "text": "Physically repairing damaged hard drives",
-                    "reason": "Incorrect — Hardware repair is not a Copilot function."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Copilot in Excel is well-suited for summarizing and explaining trends and patterns in data."
-        },
-        {
-            "id": 55,
-            "topic": "Copilot Studio",
-            "Question": "Which of the following is a typical step when building a copilot in Copilot Studio?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Installing physical network cables",
-                    "reason": "Incorrect — Physical cabling is not part of Copilot Studio."
-                },
-                {
-                    "id": 2,
-                    "text": "Defining topics and conversational flows",
-                    "reason": "Correct — Defining topics and flows is a core part of building a copilot."
-                },
-                {
-                    "id": 3,
-                    "text": "Configuring device BIOS settings",
-                    "reason": "Incorrect — BIOS settings are unrelated to Copilot Studio."
-                },
-                {
-                    "id": 4,
-                    "text": "Formatting local hard drives",
-                    "reason": "Incorrect — Disk formatting is unrelated to Copilot Studio."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Building a copilot in Copilot Studio involves defining topics and conversational flows."
-        },
-        {
-            "id": 56,
-            "topic": "Extensibility and connectors",
-            "Question": "Which of the following best describes a connector in the context of Copilot and Power Platform?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "A component that allows communication with an external service or data source",
-                    "reason": "Correct — Connectors enable integration with external systems."
-                },
-                {
-                    "id": 2,
-                    "text": "A local Windows service for printing",
-                    "reason": "Incorrect — Printing services are unrelated to connectors."
-                },
-                {
-                    "id": 3,
-                    "text": "A physical network cable",
-                    "reason": "Incorrect — Physical cables are not software connectors."
-                },
-                {
-                    "id": 4,
-                    "text": "A BIOS configuration utility",
-                    "reason": "Incorrect — BIOS utilities are not connectors."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Connectors are software components that allow Copilot and Power Platform solutions to communicate with external services and data sources."
-        },
-        {
-            "id": 57,
-            "topic": "Governance, security, and compliance",
-            "Question": "Which of the following can help organizations audit how Copilot is being used?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Printer queue logs",
-                    "reason": "Incorrect — Printer logs are unrelated to Copilot usage."
-                },
-                {
-                    "id": 2,
-                    "text": "BIOS event logs",
-                    "reason": "Incorrect — BIOS logs do not track Copilot usage."
-                },
-                {
-                    "id": 3,
-                    "text": "Audit logs and activity reports",
-                    "reason": "Correct — Audit logs and reports can show how services, including Copilot, are used."
-                },
-                {
-                    "id": 4,
-                    "text": "Desktop wallpaper settings",
-                    "reason": "Incorrect — Wallpaper settings do not provide audit information."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Audit logs and activity reports can help organizations understand how Copilot and other services are being used."
-        },
-        {
-            "id": 58,
-            "topic": "Responsible AI",
-            "Question": "Which of the following is a good practice when sharing AI-generated content with others?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Sharing content without reading it",
-                    "reason": "Incorrect — Content should be reviewed before sharing."
-                },
-                {
-                    "id": 2,
-                    "text": "Claiming the AI-generated content is guaranteed to be correct",
-                    "reason": "Incorrect — AI content is not guaranteed to be correct."
-                },
-                {
-                    "id": 3,
-                    "text": "Removing all context so others cannot understand it",
-                    "reason": "Incorrect — Removing context can make content confusing and less useful."
-                },
-                {
-                    "id": 4,
-                    "text": "Reviewing the content for accuracy and appropriateness before sharing",
-                    "reason": "Correct — Reviewing AI-generated content supports responsible use."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Responsible AI use includes reviewing AI-generated content for accuracy and appropriateness before sharing it."
-        },
-        {
-            "id": 59,
-            "topic": "Licensing and administration basics",
-            "Question": "Which of the following can help ensure only certain departments receive Copilot licenses?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Using local group policy on individual PCs",
-                    "reason": "Incorrect — Local group policy does not manage cloud licenses."
-                },
-                {
-                    "id": 2,
-                    "text": "Asking users to install Copilot themselves",
-                    "reason": "Incorrect — Users do not install Copilot; it is enabled via licensing."
-                },
-                {
-                    "id": 3,
-                    "text": "Creating department-based security groups and using group-based licensing",
-                    "reason": "Correct — Department-based groups can control which users receive licenses."
-                },
-                {
-                    "id": 4,
-                    "text": "Changing the color of the Teams app icon",
-                    "reason": "Incorrect — Icon color does not control licensing."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Department-based security groups combined with group-based licensing can ensure only specific departments receive Copilot licenses."
-        },
-        {
-            "id": 60,
-            "topic": "Microsoft Copilot fundamentals",
-            "Question": "Which of the following best summarizes the administrator’s role in enabling Copilot for Microsoft 365?",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Assign licenses, configure governance and security, and support user adoption",
-                    "reason": "Correct — Admins handle licensing, governance, security, and adoption planning."
-                },
-                {
-                    "id": 2,
-                    "text": "Disable all Microsoft 365 services except Copilot",
-                    "reason": "Incorrect — Copilot relies on other Microsoft 365 services."
-                },
-                {
-                    "id": 3,
-                    "text": "Manage only on-premises servers",
-                    "reason": "Incorrect — Copilot is a cloud service and is managed in Microsoft 365."
-                },
-                {
-                    "id": 4,
-                    "text": "Write all prompts for users",
-                    "reason": "Incorrect — Users write their own prompts."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Admins are responsible for licensing, governance, security configuration, and supporting user adoption of Copilot for Microsoft 365."
+          "id": 4,
+          "text": "To configure security policies across the tenant",
+          "reason": "Incorrect — Security policies are configured using tools like Microsoft Defender and Microsoft Purview, not Copilot."
         }
-    ]
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Microsoft Copilot is designed to provide AI-powered assistance inside Microsoft 365 apps, helping users be more productive."
+    },
+    {
+      "id": 2,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which statement best describes how Microsoft Copilot accesses organizational data?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It bypasses permissions to access all tenant data",
+          "reason": "Incorrect — Copilot respects existing permissions and does not bypass access controls."
+        },
+        {
+          "id": 2,
+          "text": "It uses the Microsoft Graph and existing user permissions",
+          "reason": "Correct — Copilot uses Microsoft Graph and only accesses data the user is already permitted to see."
+        },
+        {
+          "id": 3,
+          "text": "It stores all data in a separate Copilot database",
+          "reason": "Incorrect — Copilot does not move data to a separate database; it works with existing data sources."
+        },
+        {
+          "id": 4,
+          "text": "It requires global admin rights for every user",
+          "reason": "Incorrect — Users do not need global admin rights to use Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot uses Microsoft Graph and respects existing user permissions, ensuring it only accesses data the user is allowed to see."
+    },
+    {
+      "id": 3,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following are typical use cases for Microsoft Copilot in Microsoft 365? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Drafting emails and documents",
+          "reason": "Correct — Copilot can help draft emails in Outlook and documents in Word."
+        },
+        {
+          "id": 2,
+          "text": "Designing network topologies",
+          "reason": "Incorrect — Network design is not a primary Copilot use case."
+        },
+        {
+          "id": 3,
+          "text": "Summarizing meetings and chats",
+          "reason": "Correct — Copilot can summarize Teams meetings and chat conversations."
+        },
+        {
+          "id": 4,
+          "text": "Managing firmware updates on devices",
+          "reason": "Incorrect — Device firmware management is not handled by Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Copilot is commonly used to draft content and summarize information, such as emails, documents, meetings, and chats."
+    },
+    {
+      "id": 4,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which Microsoft service provides the underlying data access layer that Copilot uses to retrieve organizational content?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Microsoft Graph",
+          "reason": "Correct — Microsoft Graph is the unified API that Copilot uses to access organizational data."
+        },
+        {
+          "id": 2,
+          "text": "Microsoft Entra ID",
+          "reason": "Incorrect — Entra ID manages identities and access, but Graph is the API layer used for data access."
+        },
+        {
+          "id": 3,
+          "text": "Microsoft Defender for Cloud",
+          "reason": "Incorrect — Defender for Cloud is a security solution, not the data access layer for Copilot."
+        },
+        {
+          "id": 4,
+          "text": "Azure Virtual Desktop",
+          "reason": "Incorrect — Azure Virtual Desktop provides virtualized desktops, not the data access layer for Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Microsoft Graph is the unified API that Copilot uses to access data across Microsoft 365 services."
+    },
+    {
+      "id": 5,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "What is a key benefit of using Microsoft Copilot for end users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It guarantees 100% accurate answers every time",
+          "reason": "Incorrect — Copilot can make mistakes and should be reviewed by users."
+        },
+        {
+          "id": 2,
+          "text": "It automates all IT administration tasks",
+          "reason": "Incorrect — Copilot does not fully automate IT administration."
+        },
+        {
+          "id": 3,
+          "text": "It helps users be more productive by generating and summarizing content",
+          "reason": "Correct — Copilot boosts productivity by helping users create and understand content faster."
+        },
+        {
+          "id": 4,
+          "text": "It replaces the need for training on Microsoft 365 apps",
+          "reason": "Incorrect — Users still benefit from understanding how to use Microsoft 365 apps effectively."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Copilot is designed to increase productivity by helping users generate, transform, and summarize content."
+    },
+    {
+      "id": 6,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following best describes how Copilot responses should be treated by users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "As final, authoritative answers that never need review",
+          "reason": "Incorrect — Users should always review Copilot outputs for accuracy and appropriateness."
+        },
+        {
+          "id": 2,
+          "text": "As suggestions that should be reviewed and edited as needed",
+          "reason": "Correct — Copilot provides suggestions that users should validate and refine."
+        },
+        {
+          "id": 3,
+          "text": "As legal advice for compliance decisions",
+          "reason": "Incorrect — Copilot does not provide legal advice and should not be used as such."
+        },
+        {
+          "id": 4,
+          "text": "As a replacement for subject matter experts",
+          "reason": "Incorrect — Copilot supports experts but does not replace them."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot responses are suggestions that should be reviewed and edited by users, not treated as final or authoritative."
+    },
+    {
+      "id": 7,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "Which Microsoft 365 apps commonly integrate with Copilot for Microsoft 365? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Word",
+          "reason": "Correct — Copilot integrates with Word to help draft and edit documents."
+        },
+        {
+          "id": 2,
+          "text": "Excel",
+          "reason": "Correct — Copilot integrates with Excel to help analyze and summarize data."
+        },
+        {
+          "id": 3,
+          "text": "System Center Configuration Manager",
+          "reason": "Incorrect — SCCM is not a primary Copilot for Microsoft 365 integration surface."
+        },
+        {
+          "id": 4,
+          "text": "Hyper-V Manager",
+          "reason": "Incorrect — Hyper-V Manager is not integrated with Copilot for Microsoft 365."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot for Microsoft 365 integrates with apps like Word and Excel to assist with content creation and data analysis."
+    },
+    {
+      "id": 8,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "In Microsoft Teams, what can Copilot help users do?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Summarize meeting discussions and action items",
+          "reason": "Correct — Copilot can summarize meetings and highlight key points and actions."
+        },
+        {
+          "id": 2,
+          "text": "Configure Teams policies for the entire tenant",
+          "reason": "Incorrect — Policy configuration is done by admins in the Teams admin center."
+        },
+        {
+          "id": 3,
+          "text": "Manage Teams licenses for all users",
+          "reason": "Incorrect — License management is handled in the Microsoft 365 admin center."
+        },
+        {
+          "id": 4,
+          "text": "Replace the need for meeting recordings",
+          "reason": "Incorrect — Recordings can still be valuable; Copilot summaries complement them."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "In Teams, Copilot can summarize meetings, helping users quickly understand key points and action items."
+    },
+    {
+      "id": 9,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "Which of the following is a capability of Copilot in Outlook?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Drafting replies to emails based on context",
+          "reason": "Correct — Copilot can draft email responses using the context of the conversation."
+        },
+        {
+          "id": 2,
+          "text": "Changing mailbox storage quotas",
+          "reason": "Incorrect — Storage quotas are configured by administrators, not Copilot."
+        },
+        {
+          "id": 3,
+          "text": "Creating new user mailboxes",
+          "reason": "Incorrect — Mailbox creation is an admin task, not a Copilot feature."
+        },
+        {
+          "id": 4,
+          "text": "Enforcing retention policies",
+          "reason": "Incorrect — Retention policies are configured in Microsoft Purview, not by Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in Outlook can help draft email replies using the context of existing email threads."
+    },
+    {
+      "id": 10,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "How does Copilot in Excel assist users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "By automatically fixing all formula errors without user input",
+          "reason": "Incorrect — Copilot can suggest formulas but does not automatically fix all errors."
+        },
+        {
+          "id": 2,
+          "text": "By summarizing data and suggesting insights",
+          "reason": "Correct — Copilot can analyze data and provide summaries and insights."
+        },
+        {
+          "id": 3,
+          "text": "By managing workbook permissions for all users",
+          "reason": "Incorrect — Permissions are managed through sharing and access controls, not Copilot."
+        },
+        {
+          "id": 4,
+          "text": "By backing up all Excel files to external storage",
+          "reason": "Incorrect — Backup is not a Copilot feature."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot in Excel can summarize data, identify patterns, and suggest insights to help users understand their data."
+    },
+    {
+      "id": 11,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "Which licensing consideration is important for Copilot for Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Users must have a qualifying Microsoft 365 license plus a Copilot license",
+          "reason": "Correct — Copilot for Microsoft 365 requires a base Microsoft 365 license and an additional Copilot license."
+        },
+        {
+          "id": 2,
+          "text": "Only global admins can be assigned Copilot licenses",
+          "reason": "Incorrect — Any eligible user can be assigned a Copilot license, not just admins."
+        },
+        {
+          "id": 3,
+          "text": "Copilot is automatically included in all Microsoft 365 plans",
+          "reason": "Incorrect — Copilot is not automatically included; it requires specific licensing."
+        },
+        {
+          "id": 4,
+          "text": "Copilot licenses can only be assigned to guest users",
+          "reason": "Incorrect — Copilot licenses are typically assigned to internal users, not guests."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot for Microsoft 365 requires a qualifying Microsoft 365 license plus a separate Copilot license for each user."
+    },
+    {
+      "id": 12,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "Which of the following best describes the role of the Microsoft 365 admin center in Copilot deployment?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It is used to assign Copilot licenses to users",
+          "reason": "Correct — Admins use the Microsoft 365 admin center to assign Copilot licenses."
+        },
+        {
+          "id": 2,
+          "text": "It is used to write prompts for Copilot",
+          "reason": "Incorrect — Prompts are written by users in apps, not in the admin center."
+        },
+        {
+          "id": 3,
+          "text": "It is used to configure Azure virtual machines for Copilot",
+          "reason": "Incorrect — VM configuration is not part of Copilot deployment in the admin center."
+        },
+        {
+          "id": 4,
+          "text": "It is used to manage on-premises Active Directory",
+          "reason": "Incorrect — On-premises AD is managed separately, not through the Microsoft 365 admin center."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "The Microsoft 365 admin center is where admins assign Copilot licenses and manage user access."
+    },
+    {
+      "id": 13,
+      "topic": "Copilot Studio",
+      "Question": "What is Microsoft Copilot Studio primarily used for?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Building and customizing copilots using a graphical interface",
+          "reason": "Correct — Copilot Studio allows users to build and customize copilots with a low-code interface."
+        },
+        {
+          "id": 2,
+          "text": "Managing device compliance policies",
+          "reason": "Incorrect — Device compliance is managed through Intune, not Copilot Studio."
+        },
+        {
+          "id": 3,
+          "text": "Configuring Microsoft Entra ID conditional access",
+          "reason": "Incorrect — Conditional access is configured in the Entra admin center."
+        },
+        {
+          "id": 4,
+          "text": "Zero Trust access control",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio is used to build, customize, and manage copilots using a low-code graphical interface."
+    },
+    {
+      "id": 14,
+      "topic": "Copilot Studio",
+      "Question": "Which of the following are capabilities of Copilot Studio? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Creating conversational flows for copilots",
+          "reason": "Correct — Copilot Studio allows you to design conversational flows."
+        },
+        {
+          "id": 2,
+          "text": "Integrating external data sources via connectors",
+          "reason": "Correct — Copilot Studio supports connectors to integrate external data."
+        },
+        {
+          "id": 3,
+          "text": "Managing Microsoft 365 tenant-wide security defaults",
+          "reason": "Incorrect — Security defaults are managed in Entra ID, not Copilot Studio."
+        },
+        {
+          "id": 4,
+          "text": "Configuring Windows Update rings",
+          "reason": "Incorrect — Update rings are configured in Intune, not Copilot Studio."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio is used to design conversational experiences and connect to external data sources using connectors."
+    },
+    {
+      "id": 15,
+      "topic": "Copilot Studio",
+      "Question": "Which type of user is most likely to work with Copilot Studio?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Low-code or no-code solution builders",
+          "reason": "Correct — Copilot Studio is designed for low-code/no-code builders to create copilots."
+        },
+        {
+          "id": 2,
+          "text": "Network hardware engineers only",
+          "reason": "Incorrect — Copilot Studio is not specific to network hardware engineering."
+        },
+        {
+          "id": 3,
+          "text": "Only global administrators",
+          "reason": "Incorrect — Many roles can use Copilot Studio, not just global admins."
+        },
+        {
+          "id": 4,
+          "text": "Only external guest users",
+          "reason": "Incorrect — Copilot Studio is typically used by internal users with appropriate permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio is aimed at low-code/no-code builders who want to create and customize copilots."
+    },
+    {
+      "id": 16,
+      "topic": "Copilot Studio",
+      "Question": "What is a key benefit of using Copilot Studio with Copilot for Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It allows you to extend Copilot with custom experiences and data",
+          "reason": "Correct — Copilot Studio lets you extend Copilot with custom logic and data sources."
+        },
+        {
+          "id": 2,
+          "text": "It replaces the need for Microsoft Graph",
+          "reason": "Incorrect — Copilot Studio does not replace Microsoft Graph."
+        },
+        {
+          "id": 3,
+          "text": "It disables all default Copilot features",
+          "reason": "Incorrect — Copilot Studio extends Copilot; it does not disable core features."
+        },
+        {
+          "id": 4,
+          "text": "It automatically grants admin rights to copilots",
+          "reason": "Incorrect — Copilot Studio does not grant admin rights."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio enables organizations to extend Copilot with custom experiences and data integrations."
+    },
+    {
+      "id": 17,
+      "topic": "Copilot Studio",
+      "Question": "Which of the following can be used as data sources in Copilot Studio via connectors? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SharePoint",
+          "reason": "Correct — SharePoint can be connected as a data source via connectors."
+        },
+        {
+          "id": 2,
+          "text": "OneDrive",
+          "reason": "Correct — OneDrive can also be connected as a data source."
+        },
+        {
+          "id": 3,
+          "text": "Encrypted data at rest enforcement",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Conditional Access policy failure mode",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio can use connectors to integrate with data sources like SharePoint and OneDrive."
+    },
+    {
+      "id": 18,
+      "topic": "Copilot Studio",
+      "Question": "Which environment is typically used to host solutions built with Copilot Studio?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Power Platform environment",
+          "reason": "Correct — Copilot Studio solutions are hosted in Power Platform environments."
+        },
+        {
+          "id": 2,
+          "text": "On-premises Active Directory forest",
+          "reason": "Incorrect — Copilot Studio is cloud-based and uses Power Platform environments."
+        },
+        {
+          "id": 3,
+          "text": "Local Windows Server file shares",
+          "reason": "Incorrect — File shares are not hosting environments for Copilot Studio solutions."
+        },
+        {
+          "id": 4,
+          "text": "Azure Virtual Desktop host pools",
+          "reason": "Incorrect — AVD host pools are not used to host Copilot Studio solutions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio is part of the Power Platform and uses Power Platform environments to host solutions."
+    },
+    {
+      "id": 19,
+      "topic": "Extensibility and connectors",
+      "Question": "What is the purpose of connectors when extending Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To connect Copilot to external and internal data sources",
+          "reason": "Correct — Connectors allow Copilot to access data from various systems."
+        },
+        {
+          "id": 2,
+          "text": "To manage user passwords",
+          "reason": "Incorrect — Password management is not the role of connectors."
+        },
+        {
+          "id": 3,
+          "text": "To configure device compliance policies",
+          "reason": "Incorrect — Device compliance is handled by Intune, not connectors."
+        },
+        {
+          "id": 4,
+          "text": "To replace Microsoft Graph",
+          "reason": "Incorrect — Connectors complement Graph; they do not replace it."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Connectors are used to extend Copilot by connecting it to additional data sources and services."
+    },
+    {
+      "id": 20,
+      "topic": "Extensibility and connectors",
+      "Question": "Which of the following are examples of data sources that can be integrated with Copilot using connectors? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Third-party CRM systems",
+          "reason": "Correct — Many CRM systems can be integrated via connectors."
+        },
+        {
+          "id": 2,
+          "text": "Social media platforms",
+          "reason": "Correct — Some social platforms can be integrated using connectors."
+        },
+        {
+          "id": 3,
+          "text": "Advanced eDiscovery hold scope",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Purview DLP rule conflict",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Connectors can integrate Copilot with external systems like CRM tools and some social platforms."
+    },
+    {
+      "id": 21,
+      "topic": "Extensibility and connectors",
+      "Question": "What is a key consideration when connecting external data sources to Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ensuring appropriate authentication and authorization are in place",
+          "reason": "Correct — Secure authentication and authorization are critical when connecting external data."
+        },
+        {
+          "id": 2,
+          "text": "Disabling all encryption to improve performance",
+          "reason": "Incorrect — Encryption should not be disabled; security is essential."
+        },
+        {
+          "id": 3,
+          "text": "Granting anonymous access to speed up queries",
+          "reason": "Incorrect — Anonymous access is insecure and not recommended."
+        },
+        {
+          "id": 4,
+          "text": "Allowing all users full control over connectors",
+          "reason": "Incorrect — Connector permissions should be carefully controlled."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "When integrating external data, secure authentication and authorization must be in place to protect data."
+    },
+    {
+      "id": 22,
+      "topic": "Extensibility and connectors",
+      "Question": "Which platform provides many of the connectors used to extend Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Microsoft Power Platform",
+          "reason": "Correct — Power Platform provides a large library of connectors."
+        },
+        {
+          "id": 2,
+          "text": "Windows Server Manager",
+          "reason": "Incorrect — Windows Server Manager is not a connector platform."
+        },
+        {
+          "id": 3,
+          "text": "System Center Operations Manager",
+          "reason": "Incorrect — SCOM is for monitoring, not connectors."
+        },
+        {
+          "id": 4,
+          "text": "Azure Virtual Desktop",
+          "reason": "Incorrect — AVD is not a connector platform."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Many connectors used to extend Copilot are provided through the Microsoft Power Platform."
+    },
+    {
+      "id": 23,
+      "topic": "Extensibility and connectors",
+      "Question": "Which of the following is a benefit of using custom connectors with Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Accessing line-of-business systems not covered by standard connectors",
+          "reason": "Correct — Custom connectors allow integration with unique or custom systems."
+        },
+        {
+          "id": 2,
+          "text": "Automatically granting admin rights to all users",
+          "reason": "Incorrect — Custom connectors do not grant admin rights."
+        },
+        {
+          "id": 3,
+          "text": "Eliminating the need for authentication",
+          "reason": "Incorrect — Authentication is still required for secure access."
+        },
+        {
+          "id": 4,
+          "text": "Replacing Microsoft Entra ID",
+          "reason": "Incorrect — Custom connectors do not replace Entra ID."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Custom connectors enable Copilot to access specialized or custom line-of-business systems."
+    },
+    {
+      "id": 24,
+      "topic": "Extensibility and connectors",
+      "Question": "When designing an extension for Copilot, what should you consider about data latency?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "High latency can negatively affect Copilot response times",
+          "reason": "Correct — Slow data sources can delay Copilot responses."
+        },
+        {
+          "id": 2,
+          "text": "Latency has no impact on user experience",
+          "reason": "Incorrect — Latency directly affects how quickly users receive responses."
+        },
+        {
+          "id": 3,
+          "text": "Latency only matters for on-premises data",
+          "reason": "Incorrect — Latency matters for any data source, cloud or on-premises."
+        },
+        {
+          "id": 4,
+          "text": "Latency is managed only by Microsoft and cannot be influenced",
+          "reason": "Incorrect — Design choices, such as data location and architecture, can influence latency."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "High latency from data sources can slow down Copilot responses, so performance should be considered in design."
+    },
+    {
+      "id": 25,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which Microsoft solution helps manage data governance and compliance for Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Microsoft Purview",
+          "reason": "Correct — Microsoft Purview provides data governance and compliance capabilities."
+        },
+        {
+          "id": 2,
+          "text": "Microsoft Intune",
+          "reason": "Incorrect — Intune focuses on device and app management."
+        },
+        {
+          "id": 3,
+          "text": "Azure Virtual Desktop",
+          "reason": "Incorrect — AVD is a virtualization solution, not a governance tool."
+        },
+        {
+          "id": 4,
+          "text": "Windows Admin Center",
+          "reason": "Incorrect — Windows Admin Center is for managing Windows servers, not data governance for Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Microsoft Purview is used to manage data governance, classification, and compliance, which also applies to data used by Copilot."
+    },
+    {
+      "id": 26,
+      "topic": "Governance, security, and compliance",
+      "Question": "How does Copilot respect data access controls in Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It ignores permissions to provide the most complete answer",
+          "reason": "Incorrect — Copilot does not ignore permissions."
+        },
+        {
+          "id": 2,
+          "text": "It uses the signed-in user's permissions to access data",
+          "reason": "Correct — Copilot only accesses data the user is allowed to see."
+        },
+        {
+          "id": 3,
+          "text": "It uses global admin permissions for all users",
+          "reason": "Incorrect — Copilot does not elevate permissions."
+        },
+        {
+          "id": 4,
+          "text": "It stores a copy of all tenant data in its own database",
+          "reason": "Incorrect — Copilot does not create a separate copy of all tenant data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot respects existing access controls by using the signed-in user's permissions to access data."
+    },
+    {
+      "id": 27,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which of the following can help prevent Copilot from accessing sensitive content?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Applying sensitivity labels to documents",
+          "reason": "Correct — Sensitivity labels can restrict access to sensitive content."
+        },
+        {
+          "id": 2,
+          "text": "Disabling Microsoft Graph",
+          "reason": "Incorrect — Disabling Graph would break many services and is not a practical control."
+        },
+        {
+          "id": 3,
+          "text": "Removing all user licenses",
+          "reason": "Incorrect — Removing licenses would prevent users from using services entirely."
+        },
+        {
+          "id": 4,
+          "text": "Turning off multi-factor authentication",
+          "reason": "Incorrect — Turning off MFA reduces security and does not control data access."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Sensitivity labels can be used to classify and protect content, which also affects what Copilot can access."
+    },
+    {
+      "id": 28,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which Microsoft feature helps ensure that Copilot does not expose data to users who should not see it?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Role-based access control (RBAC)",
+          "reason": "Correct — RBAC and permissions ensure users only access data they are allowed to see."
+        },
+        {
+          "id": 2,
+          "text": "Local administrator rights on devices",
+          "reason": "Incorrect — Local admin rights are unrelated to Copilot data access."
+        },
+        {
+          "id": 3,
+          "text": "Endpoint hardening baseline",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Desktop wallpaper policies",
+          "reason": "Incorrect — Wallpaper policies are unrelated to data access."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Role-based access control and permissions ensure that Copilot only surfaces data users are authorized to access."
+    },
+    {
+      "id": 29,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which of the following are examples of compliance features that can work with Copilot-related data? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Data loss prevention (DLP)",
+          "reason": "Correct — DLP policies can help protect sensitive data used by Copilot."
+        },
+        {
+          "id": 2,
+          "text": "eDiscovery",
+          "reason": "Correct — eDiscovery can be used to search and manage content, including content Copilot interacts with."
+        },
+        {
+          "id": 3,
+          "text": "Screen saver timeout settings",
+          "reason": "Incorrect — Screen saver settings are not compliance features."
+        },
+        {
+          "id": 4,
+          "text": "Insider Risk detection signal",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "DLP and eDiscovery are compliance features that can apply to data used by Copilot."
+    },
+    {
+      "id": 30,
+      "topic": "Governance, security, and compliance",
+      "Question": "What is a key security consideration when enabling Copilot for Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Reviewing and tightening data access permissions before rollout",
+          "reason": "Correct — Ensuring proper permissions helps prevent unintended data exposure."
+        },
+        {
+          "id": 2,
+          "text": "Disabling all encryption to improve performance",
+          "reason": "Incorrect — Encryption should remain enabled to protect data."
+        },
+        {
+          "id": 3,
+          "text": "Granting all users global admin rights",
+          "reason": "Incorrect — Granting global admin rights broadly is a security risk."
+        },
+        {
+          "id": 4,
+          "text": "Turning off Microsoft Purview",
+          "reason": "Incorrect — Purview helps with governance and should not be turned off."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Before enabling Copilot, organizations should review and adjust data access permissions to avoid exposing sensitive information."
+    },
+    {
+      "id": 31,
+      "topic": "Responsible AI",
+      "Question": "Which of the following is a core principle of Microsoft’s approach to responsible AI?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Fairness",
+          "reason": "Correct — Fairness is one of Microsoft’s responsible AI principles."
+        },
+        {
+          "id": 2,
+          "text": "Unlimited data retention",
+          "reason": "Incorrect — Unlimited retention is not a responsible AI principle."
+        },
+        {
+          "id": 3,
+          "text": "Maximizing data collection at all costs",
+          "reason": "Incorrect — Responsible AI emphasizes appropriate data use, not maximum collection."
+        },
+        {
+          "id": 4,
+          "text": "Ignoring user feedback",
+          "reason": "Incorrect — User feedback is important for responsible AI."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Fairness is one of Microsoft’s responsible AI principles, along with reliability, safety, privacy, security, inclusiveness, and accountability."
+    },
+    {
+      "id": 32,
+      "topic": "Responsible AI",
+      "Question": "Which responsible AI principle is most related to protecting user data and confidentiality?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Privacy and security",
+          "reason": "Correct — This principle focuses on protecting data and ensuring secure systems."
+        },
+        {
+          "id": 2,
+          "text": "Entertainment",
+          "reason": "Incorrect — Entertainment is not a responsible AI principle."
+        },
+        {
+          "id": 3,
+          "text": "Unlimited transparency of all internal data",
+          "reason": "Incorrect — Responsible AI does not require exposing all internal data."
+        },
+        {
+          "id": 4,
+          "text": "Maximizing ad revenue",
+          "reason": "Incorrect — Ad revenue is not a responsible AI principle."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "The privacy and security principle focuses on protecting user data and ensuring secure AI systems."
+    },
+    {
+      "id": 33,
+      "topic": "Responsible AI",
+      "Question": "How should organizations guide users in working with Copilot to support responsible AI usage?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Encourage users to always review and verify Copilot outputs",
+          "reason": "Correct — Users should validate AI-generated content for accuracy and appropriateness."
+        },
+        {
+          "id": 2,
+          "text": "Instruct users to treat Copilot outputs as unquestionable facts",
+          "reason": "Incorrect — Copilot outputs can be wrong and must be reviewed."
+        },
+        {
+          "id": 3,
+          "text": "Ask users to share sensitive personal data in prompts",
+          "reason": "Incorrect — Users should avoid sharing unnecessary sensitive data."
+        },
+        {
+          "id": 4,
+          "text": "Disable all human oversight of AI-generated content",
+          "reason": "Incorrect — Human oversight is essential for responsible AI use."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Responsible AI usage includes having users review and verify AI-generated content rather than accepting it blindly."
+    },
+    {
+      "id": 34,
+      "topic": "Responsible AI",
+      "Question": "Which of the following are examples of responsible AI practices when using Copilot? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Avoiding prompts that include unnecessary personal data",
+          "reason": "Correct — Limiting personal data in prompts supports privacy."
+        },
+        {
+          "id": 2,
+          "text": "Reviewing outputs for bias or inappropriate content",
+          "reason": "Correct — Checking for bias and appropriateness is part of responsible AI use."
+        },
+        {
+          "id": 3,
+          "text": "Sharing confidential data in public channels",
+          "reason": "Incorrect — Sharing confidential data publicly is not responsible."
+        },
+        {
+          "id": 4,
+          "text": "Using Copilot outputs as legal or medical advice",
+          "reason": "Incorrect — Copilot outputs should not be treated as professional legal or medical advice."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Responsible AI practices include minimizing personal data in prompts and reviewing outputs for bias or inappropriate content."
+    },
+    {
+      "id": 35,
+      "topic": "Responsible AI",
+      "Question": "Why is transparency important in responsible AI usage with Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It helps users understand that AI-generated content may not be perfect",
+          "reason": "Correct — Transparency helps set realistic expectations about AI outputs."
+        },
+        {
+          "id": 2,
+          "text": "It allows users to bypass all security controls",
+          "reason": "Incorrect — Transparency does not mean bypassing security."
+        },
+        {
+          "id": 3,
+          "text": "It guarantees that AI will never make mistakes",
+          "reason": "Incorrect — AI can still make mistakes even with transparency."
+        },
+        {
+          "id": 4,
+          "text": "It removes the need for user training",
+          "reason": "Incorrect — Training is still important even with transparency."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Transparency helps users understand how AI works and that outputs should be reviewed and not assumed to be perfect."
+    },
+    {
+      "id": 36,
+      "topic": "Responsible AI",
+      "Question": "Which group in an organization should typically be involved in defining responsible AI usage guidelines for Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Legal and compliance teams",
+          "reason": "Correct — Legal and compliance teams help define responsible usage policies."
+        },
+        {
+          "id": 2,
+          "text": "Only external customers",
+          "reason": "Incorrect — Internal stakeholders must define guidelines."
+        },
+        {
+          "id": 3,
+          "text": "Only the facilities management team",
+          "reason": "Incorrect — Facilities teams are not typically responsible for AI usage guidelines."
+        },
+        {
+          "id": 4,
+          "text": "Only individual end users without guidance",
+          "reason": "Incorrect — Organizational guidance is needed for consistent responsible AI use."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Legal and compliance teams should be involved in defining responsible AI usage guidelines for tools like Copilot."
+    },
+    {
+      "id": 37,
+      "topic": "Licensing and administration basics",
+      "Question": "Which portal is primarily used to assign Copilot for Microsoft 365 licenses to users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Microsoft 365 admin center",
+          "reason": "Correct — Admins assign licenses in the Microsoft 365 admin center."
+        },
+        {
+          "id": 2,
+          "text": "Windows Settings app",
+          "reason": "Incorrect — Windows Settings is not used for Microsoft 365 licensing."
+        },
+        {
+          "id": 3,
+          "text": "Azure Virtual Desktop portal",
+          "reason": "Incorrect — AVD is not used for license assignment."
+        },
+        {
+          "id": 4,
+          "text": "Microsoft Store",
+          "reason": "Incorrect — The Microsoft Store is not used for enterprise license assignment."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "The Microsoft 365 admin center is where administrators assign Copilot and other Microsoft 365 licenses."
+    },
+    {
+      "id": 38,
+      "topic": "Licensing and administration basics",
+      "Question": "Which of the following is typically required before assigning a Copilot for Microsoft 365 license?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A qualifying base Microsoft 365 license",
+          "reason": "Correct — Users must have a qualifying Microsoft 365 license before Copilot can be assigned."
+        },
+        {
+          "id": 2,
+          "text": "Local administrator rights on their device",
+          "reason": "Incorrect — Local admin rights are not a licensing requirement."
+        },
+        {
+          "id": 3,
+          "text": "A separate Windows Server CAL",
+          "reason": "Incorrect — Windows Server CALs are unrelated to Copilot licensing."
+        },
+        {
+          "id": 4,
+          "text": "A dedicated on-premises SQL Server",
+          "reason": "Incorrect — Copilot licensing does not require a dedicated SQL Server."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot for Microsoft 365 requires that users already have a qualifying Microsoft 365 license."
+    },
+    {
+      "id": 39,
+      "topic": "Licensing and administration basics",
+      "Question": "Which role is most appropriate for managing Copilot license assignments?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Global administrator or license administrator",
+          "reason": "Correct — These roles can manage license assignments."
+        },
+        {
+          "id": 2,
+          "text": "Standard user with no admin roles",
+          "reason": "Incorrect — Standard users cannot assign licenses."
+        },
+        {
+          "id": 3,
+          "text": "DLP policy collision analysis",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Local device administrator only",
+          "reason": "Incorrect — Local device admin rights do not grant tenant-level license management."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Global administrators or license administrators are typically responsible for assigning Copilot licenses."
+    },
+    {
+      "id": 40,
+      "topic": "Licensing and administration basics",
+      "Question": "Which of the following can be used to automate license assignment for Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Group-based licensing in Microsoft Entra ID",
+          "reason": "Correct — Group-based licensing can automatically assign licenses to group members."
+        },
+        {
+          "id": 2,
+          "text": "Local group policy on Windows devices",
+          "reason": "Incorrect — Local group policy does not manage Microsoft 365 licenses."
+        },
+        {
+          "id": 3,
+          "text": "Manual registry edits on user devices",
+          "reason": "Incorrect — Registry edits are not used for license assignment."
+        },
+        {
+          "id": 4,
+          "text": "Sensitivity label propagation behavior",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Group-based licensing in Microsoft Entra ID can automatically assign Copilot licenses to users in specific groups."
+    },
+    {
+      "id": 41,
+      "topic": "Licensing and administration basics",
+      "Question": "Which report can help administrators understand Copilot usage in their organization?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Usage reports in the Microsoft 365 admin center",
+          "reason": "Correct — Usage reports can show how services like Copilot are being used."
+        },
+        {
+          "id": 2,
+          "text": "Windows Event Viewer logs",
+          "reason": "Incorrect — Event Viewer is not used for Copilot usage reporting."
+        },
+        {
+          "id": 3,
+          "text": "Purview Data Map lineage gap",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Zero Trust access control",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Usage reports in the Microsoft 365 admin center can provide insights into how Copilot is being used."
+    },
+    {
+      "id": 42,
+      "topic": "Licensing and administration basics",
+      "Question": "What is a common administrative task when rolling out Copilot for Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Communicating usage guidelines and training to end users",
+          "reason": "Correct — Admins should provide guidance and training for Copilot usage."
+        },
+        {
+          "id": 2,
+          "text": "Replacing all existing Microsoft 365 licenses",
+          "reason": "Incorrect — Existing licenses are not necessarily replaced."
+        },
+        {
+          "id": 3,
+          "text": "Disabling Microsoft Teams for all users",
+          "reason": "Incorrect — Teams is often used with Copilot, not disabled."
+        },
+        {
+          "id": 4,
+          "text": "Turning off Microsoft Graph",
+          "reason": "Incorrect — Graph is required for Copilot to function."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A successful Copilot rollout includes user communication and training on how to use it effectively and responsibly."
+    },
+    {
+      "id": 43,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following best describes a prompt in the context of Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A request or instruction given to Copilot",
+          "reason": "Correct — A prompt is the input or instruction provided to Copilot."
+        },
+        {
+          "id": 2,
+          "text": "A license type for Copilot",
+          "reason": "Incorrect — A prompt is not a license type."
+        },
+        {
+          "id": 3,
+          "text": "A security policy in Microsoft Purview",
+          "reason": "Incorrect — Prompts are not security policies."
+        },
+        {
+          "id": 4,
+          "text": "A device configuration profile",
+          "reason": "Incorrect — Device profiles are unrelated to prompts."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A prompt is the instruction or request that a user gives to Copilot to generate a response."
+    },
+    {
+      "id": 44,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following can improve the quality of Copilot responses?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Providing clear and specific prompts",
+          "reason": "Correct — Clear, specific prompts help Copilot generate better responses."
+        },
+        {
+          "id": 2,
+          "text": "Using only one-word prompts",
+          "reason": "Incorrect — One-word prompts are often too vague."
+        },
+        {
+          "id": 3,
+          "text": "Avoiding any context in the prompt",
+          "reason": "Incorrect — Context helps Copilot understand the request."
+        },
+        {
+          "id": 4,
+          "text": "Disabling access to all data sources",
+          "reason": "Incorrect — Copilot needs data access to provide useful responses."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Clear, specific prompts with relevant context help Copilot generate more accurate and useful responses."
+    },
+    {
+      "id": 45,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following is a limitation of Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It can sometimes generate inaccurate or outdated information",
+          "reason": "Correct — Copilot can make mistakes and should be reviewed."
+        },
+        {
+          "id": 2,
+          "text": "It cannot be used in any Microsoft 365 app",
+          "reason": "Incorrect — Copilot is integrated into several Microsoft 365 apps."
+        },
+        {
+          "id": 3,
+          "text": "It always requires global admin rights to use",
+          "reason": "Incorrect — End users do not need admin rights to use Copilot."
+        },
+        {
+          "id": 4,
+          "text": "It can only be used offline",
+          "reason": "Incorrect — Copilot requires cloud connectivity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot can generate inaccurate or outdated information, so users must review its outputs."
+    },
+    {
+      "id": 46,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "In Word, which of the following tasks can Copilot assist with? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Drafting a first version of a document",
+          "reason": "Correct — Copilot can generate draft content based on prompts."
+        },
+        {
+          "id": 2,
+          "text": "Summarizing a long document",
+          "reason": "Correct — Copilot can summarize existing content."
+        },
+        {
+          "id": 3,
+          "text": "Encrypted data at rest enforcement",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Installing Word on user devices",
+          "reason": "Incorrect — Installation is not handled by Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "In Word, Copilot can help draft new content and summarize existing documents."
+    },
+    {
+      "id": 47,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "In PowerPoint, how can Copilot help users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Creating a slide deck from a Word document",
+          "reason": "Correct — Copilot can generate presentations from existing documents."
+        },
+        {
+          "id": 2,
+          "text": "Managing tenant-wide security policies",
+          "reason": "Incorrect — Security policies are managed by admins, not Copilot in PowerPoint."
+        },
+        {
+          "id": 3,
+          "text": "Conditional Access policy failure mode",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Assigning Microsoft 365 licenses",
+          "reason": "Incorrect — License assignment is done in the admin center, not PowerPoint."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in PowerPoint can create slide decks from existing content such as Word documents."
+    },
+    {
+      "id": 48,
+      "topic": "Copilot Studio",
+      "Question": "Which of the following best describes a scenario for using Copilot Studio?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Building a custom copilot that answers HR policy questions",
+          "reason": "Correct — Copilot Studio can be used to build a custom HR copilot."
+        },
+        {
+          "id": 2,
+          "text": "Installing device drivers on user laptops",
+          "reason": "Incorrect — Device driver installation is not a Copilot Studio scenario."
+        },
+        {
+          "id": 3,
+          "text": "Configuring Wi-Fi access points",
+          "reason": "Incorrect — Network configuration is unrelated to Copilot Studio."
+        },
+        {
+          "id": 4,
+          "text": "Advanced eDiscovery hold scope",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot Studio is well-suited for building custom copilots, such as one that answers HR policy questions."
+    },
+    {
+      "id": 49,
+      "topic": "Extensibility and connectors",
+      "Question": "Which of the following is a risk if connectors are misconfigured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Unintended exposure of sensitive data",
+          "reason": "Correct — Misconfigured connectors can expose data to unauthorized users."
+        },
+        {
+          "id": 2,
+          "text": "Automatic deletion of all Microsoft 365 data",
+          "reason": "Incorrect — Misconfiguration does not automatically delete all data."
+        },
+        {
+          "id": 3,
+          "text": "Permanent disabling of Microsoft Graph",
+          "reason": "Incorrect — Connectors do not permanently disable Graph."
+        },
+        {
+          "id": 4,
+          "text": "Automatic assignment of global admin rights",
+          "reason": "Incorrect — Connectors do not assign admin rights."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "If connectors are misconfigured, they can expose sensitive data to users who should not have access."
+    },
+    {
+      "id": 50,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which feature can help classify and protect documents that Copilot may access?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Sensitivity labels",
+          "reason": "Correct — Sensitivity labels classify and protect documents."
+        },
+        {
+          "id": 2,
+          "text": "Desktop themes",
+          "reason": "Incorrect — Desktop themes do not classify or protect documents."
+        },
+        {
+          "id": 3,
+          "text": "Purview DLP rule conflict",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Endpoint hardening baseline",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Sensitivity labels can classify and protect documents, influencing how Copilot can access and use them."
+    },
+    {
+      "id": 51,
+      "topic": "Responsible AI",
+      "Question": "Which of the following should users avoid including in Copilot prompts?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Unnecessary personal or sensitive information",
+          "reason": "Correct — Users should avoid including unnecessary sensitive data in prompts."
+        },
+        {
+          "id": 2,
+          "text": "Clear instructions about the task",
+          "reason": "Incorrect — Clear instructions are helpful and appropriate."
+        },
+        {
+          "id": 3,
+          "text": "Context about the document they are working on",
+          "reason": "Incorrect — Relevant context can improve responses."
+        },
+        {
+          "id": 4,
+          "text": "The desired tone or style of the output",
+          "reason": "Incorrect — Specifying tone or style is a good practice."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Users should avoid including unnecessary personal or sensitive information in prompts to support privacy and responsible AI use."
+    },
+    {
+      "id": 52,
+      "topic": "Licensing and administration basics",
+      "Question": "Which of the following can help an organization control who gets Copilot licenses?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Using security groups for license assignment",
+          "reason": "Correct — Security groups can be used with group-based licensing."
+        },
+        {
+          "id": 2,
+          "text": "Allowing users to assign licenses to themselves",
+          "reason": "Incorrect — Users cannot self-assign enterprise licenses."
+        },
+        {
+          "id": 3,
+          "text": "Using desktop shortcuts",
+          "reason": "Incorrect — Shortcuts do not control licensing."
+        },
+        {
+          "id": 4,
+          "text": "Changing the desktop wallpaper",
+          "reason": "Incorrect — Wallpaper changes do not affect licensing."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Security groups and group-based licensing help control which users receive Copilot licenses."
+    },
+    {
+      "id": 53,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following best describes how Copilot uses organizational data?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It uses data to generate context-aware responses while respecting permissions",
+          "reason": "Correct — Copilot uses available data within the user’s permissions to generate responses."
+        },
+        {
+          "id": 2,
+          "text": "It permanently copies all data to external servers",
+          "reason": "Incorrect — Copilot does not permanently copy all tenant data externally."
+        },
+        {
+          "id": 3,
+          "text": "It deletes data after each query",
+          "reason": "Incorrect — Copilot does not delete tenant data after queries."
+        },
+        {
+          "id": 4,
+          "text": "It ignores all organizational data and uses only public internet data",
+          "reason": "Incorrect — Copilot uses organizational data via Microsoft Graph."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot uses organizational data available through Microsoft Graph and respects user permissions to generate context-aware responses."
+    },
+    {
+      "id": 54,
+      "topic": "Copilot for Microsoft 365",
+      "Question": "In Excel, which type of task is Copilot particularly well-suited for?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Summarizing trends in a dataset",
+          "reason": "Correct — Copilot can summarize and explain trends in data."
+        },
+        {
+          "id": 2,
+          "text": "Insider Risk detection signal",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 3,
+          "text": "DLP policy collision analysis",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Installing device drivers",
+          "reason": "Incorrect — Driver installation is not handled by Copilot."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in Excel is well-suited for summarizing and explaining trends and patterns in data."
+    },
+    {
+      "id": 55,
+      "topic": "Copilot Studio",
+      "Question": "Which of the following is a typical step when building a copilot in Copilot Studio?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Defining topics and conversational flows",
+          "reason": "Correct — Defining topics and flows is a core part of building a copilot."
+        },
+        {
+          "id": 2,
+          "text": "Sensitivity label propagation behavior",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 3,
+          "text": "Purview Data Map lineage gap",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Zero Trust access control",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Building a copilot in Copilot Studio involves defining topics and conversational flows."
+    },
+    {
+      "id": 56,
+      "topic": "Extensibility and connectors",
+      "Question": "Which of the following best describes a connector in the context of Copilot and Power Platform?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A component that allows communication with an external service or data source",
+          "reason": "Correct — Connectors enable integration with external systems."
+        },
+        {
+          "id": 2,
+          "text": "Encrypted data at rest enforcement",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 3,
+          "text": "A local Windows service for printing",
+          "reason": "Incorrect — Printing services are unrelated to connectors."
+        },
+        {
+          "id": 4,
+          "text": "Conditional Access policy failure mode",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Connectors are software components that allow Copilot and Power Platform solutions to communicate with external services and data sources."
+    },
+    {
+      "id": 57,
+      "topic": "Governance, security, and compliance",
+      "Question": "Which of the following can help organizations audit how Copilot is being used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Audit logs and activity reports",
+          "reason": "Correct — Audit logs and reports can show how services, including Copilot, are used."
+        },
+        {
+          "id": 2,
+          "text": "Desktop wallpaper settings",
+          "reason": "Incorrect — Wallpaper settings do not provide audit information."
+        },
+        {
+          "id": 3,
+          "text": "Advanced eDiscovery hold scope",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        },
+        {
+          "id": 4,
+          "text": "Purview DLP rule conflict",
+          "reason": "Updated to a more challenging and domain‑relevant distractor."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Audit logs and activity reports can help organizations understand how Copilot and other services are being used."
+    },
+    {
+      "id": 58,
+      "topic": "Responsible AI",
+      "Question": "Which of the following is a good practice when sharing AI-generated content with others?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Reviewing the content for accuracy and appropriateness before sharing",
+          "reason": "Correct — Reviewing AI-generated content supports responsible use."
+        },
+        {
+          "id": 2,
+          "text": "Sharing content without reading it",
+          "reason": "Incorrect — Content should be reviewed before sharing."
+        },
+        {
+          "id": 3,
+          "text": "Removing all context so others cannot understand it",
+          "reason": "Incorrect — Removing context can make content confusing and less useful."
+        },
+        {
+          "id": 4,
+          "text": "Claiming the AI-generated content is guaranteed to be correct",
+          "reason": "Incorrect — AI content is not guaranteed to be correct."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Responsible AI use includes reviewing AI-generated content for accuracy and appropriateness before sharing it."
+    },
+    {
+      "id": 59,
+      "topic": "Licensing and administration basics",
+      "Question": "Which of the following can help ensure only certain departments receive Copilot licenses?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Creating department-based security groups and using group-based licensing",
+          "reason": "Correct — Department-based groups can control which users receive licenses."
+        },
+        {
+          "id": 2,
+          "text": "Asking users to install Copilot themselves",
+          "reason": "Incorrect — Users do not install Copilot; it is enabled via licensing."
+        },
+        {
+          "id": 3,
+          "text": "Changing the color of the Teams app icon",
+          "reason": "Incorrect — Icon color does not control licensing."
+        },
+        {
+          "id": 4,
+          "text": "Using local group policy on individual PCs",
+          "reason": "Incorrect — Local group policy does not manage cloud licenses."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Department-based security groups combined with group-based licensing can ensure only specific departments receive Copilot licenses."
+    },
+    {
+      "id": 60,
+      "topic": "Microsoft Copilot fundamentals",
+      "Question": "Which of the following best summarizes the administrator’s role in enabling Copilot for Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Assign licenses, configure governance and security, and support user adoption",
+          "reason": "Correct — Admins handle licensing, governance, security, and adoption planning."
+        },
+        {
+          "id": 2,
+          "text": "Write all prompts for users",
+          "reason": "Incorrect — Users write their own prompts."
+        },
+        {
+          "id": 3,
+          "text": "Disable all Microsoft 365 services except Copilot",
+          "reason": "Incorrect — Copilot relies on other Microsoft 365 services."
+        },
+        {
+          "id": 4,
+          "text": "Manage only on-premises servers",
+          "reason": "Incorrect — Copilot is a cloud service and is managed in Microsoft 365."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Admins are responsible for licensing, governance, security configuration, and supporting user adoption of Copilot for Microsoft 365."
+    }
+  ]
 }
