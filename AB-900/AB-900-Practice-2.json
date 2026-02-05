@@ -10,8 +10,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "Azure Active Directory",
-          "reason": "Incorrect. This handles identity, not the AI reasoning workflow."
+          "text": "Microsoft Graph",
+          "reason": "Incorrect. Graph is the data gateway, but the Orchestrator manages the workflow."
         },
         {
           "id": 2,
@@ -20,13 +20,13 @@
         },
         {
           "id": 3,
-          "text": "Microsoft Graph",
-          "reason": "Incorrect. Graph is the data gateway, but the Orchestrator manages the workflow."
+          "text": "Bing Search",
+          "reason": "Incorrect. Bing provides web grounding, not the core workflow coordination."
         },
         {
           "id": 4,
-          "text": "Bing Search",
-          "reason": "Incorrect. Bing provides web grounding, not the core workflow coordination."
+          "text": "Azure Active Directory",
+          "reason": "Incorrect. This handles identity, not the AI reasoning workflow."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -52,13 +52,13 @@
         },
         {
           "id": 3,
-          "text": "64GB of RAM",
-          "reason": "Incorrect. Processing happens in the cloud, so extreme local RAM isn't required."
+          "text": "Semi-Annual Enterprise Channel",
+          "reason": "Incorrect. This channel updates too slowly for Copilot feature releases."
         },
         {
           "id": 4,
-          "text": "Semi-Annual Enterprise Channel",
-          "reason": "Incorrect. This channel updates too slowly for Copilot feature releases."
+          "text": "64GB of RAM",
+          "reason": "Incorrect. Processing happens in the cloud, so extreme local RAM isn't required."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -79,8 +79,8 @@
         },
         {
           "id": 2,
-          "text": "Users must opt-in to allow training",
-          "reason": "Incorrect. There is no training of foundation models on customer data, even with opt-in."
+          "text": "Organizational data is never used to train the global LLMs",
+          "reason": "Correct. Microsoft ensures tenant data remains within the compliance boundary."
         },
         {
           "id": 3,
@@ -89,13 +89,13 @@
         },
         {
           "id": 4,
-          "text": "Organizational data is never used to train the global LLMs",
-          "reason": "Correct. Microsoft ensures tenant data remains within the compliance boundary."
+          "text": "Users must opt-in to allow training",
+          "reason": "Incorrect. There is no training of foundation models on customer data, even with opt-in."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Microsoft guarantees that your organizational data is not used to train the base foundation models used by other customers."
     },
@@ -106,28 +106,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "It generates images for the user",
-          "reason": "Incorrect. Generative Answers refers to text retrieval and response."
-        },
-        {
-          "id": 2,
-          "text": "It writes code for the administrator",
-          "reason": "Incorrect. This is not the primary function of the Generative Answers feature."
-        },
-        {
-          "id": 3,
           "text": "It translates text to 100 languages",
           "reason": "Incorrect. Multi-language is a separate feature of the bot."
         },
         {
-          "id": 4,
+          "id": 2,
           "text": "It allows the agent to answer questions using specified data sources without creating manual topics",
           "reason": "Correct. It uses RAG (Retrieval-Augmented Generation) to pull info dynamically."
+        },
+        {
+          "id": 3,
+          "text": "It generates images for the user",
+          "reason": "Incorrect. Generative Answers refers to text retrieval and response."
+        },
+        {
+          "id": 4,
+          "text": "It writes code for the administrator",
+          "reason": "Incorrect. This is not the primary function of the Generative Answers feature."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Generative Answers allow a bot to pull information from a URL or file to provide answers on-the-fly without pre-defined dialogue paths."
     },
@@ -143,23 +143,23 @@
         },
         {
           "id": 2,
-          "text": "Exchange Admin Center",
-          "reason": "Incorrect. This manages mailboxes and mail flow."
-        },
-        {
-          "id": 3,
           "text": "Microsoft 365 Admin Center",
           "reason": "Correct. The 'Integrated apps' section manages the deployment of agents."
         },
         {
-          "id": 4,
+          "id": 3,
           "text": "SharePoint Admin Center",
           "reason": "Incorrect. While it manages data sources, it doesn't manage global agent deployment."
+        },
+        {
+          "id": 4,
+          "text": "Exchange Admin Center",
+          "reason": "Incorrect. This manages mailboxes and mail flow."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "The Microsoft 365 Admin Center is the central hub for managing licenses and integrated apps/agents."
     },
@@ -175,23 +175,23 @@
         },
         {
           "id": 2,
-          "text": "Syncing files to a local PC",
-          "reason": "Incorrect. This is OneDrive sync, not AI grounding."
-        },
-        {
-          "id": 3,
           "text": "Providing the LLM with relevant organizational data to improve response accuracy",
           "reason": "Correct. It provides the AI with the 'facts' it needs for a specific query."
         },
         {
-          "id": 4,
+          "id": 3,
           "text": "Encrypting data at rest",
           "reason": "Incorrect. Encryption is a security measure, not the grounding process."
+        },
+        {
+          "id": 4,
+          "text": "Syncing files to a local PC",
+          "reason": "Incorrect. This is OneDrive sync, not AI grounding."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Grounding ensures the AI doesn't rely solely on its general training data, but uses specific, relevant business context."
     },
@@ -202,13 +202,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "Azure Cost Management",
-          "reason": "Incorrect. This tracks spending, not data sensitivity."
+          "text": "Microsoft 365 Admin Center",
+          "reason": "Correct. The reports section provides readiness and adoption insights."
         },
         {
           "id": 2,
-          "text": "Microsoft 365 Admin Center",
-          "reason": "Correct. The reports section provides readiness and adoption insights."
+          "text": "Microsoft Word",
+          "reason": "Incorrect. Word is an end-user application, not an admin reporting tool."
         },
         {
           "id": 3,
@@ -217,13 +217,13 @@
         },
         {
           "id": 4,
-          "text": "Microsoft Word",
-          "reason": "Incorrect. Word is an end-user application, not an admin reporting tool."
+          "text": "Azure Cost Management",
+          "reason": "Incorrect. This tracks spending, not data sensitivity."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "The Microsoft 365 Admin Center contains reports that help evaluate tenant readiness and data governance state."
     },
@@ -234,28 +234,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "eDiscovery",
-          "reason": "Incorrect. This is for legal searches of data, not real-time access control."
+          "text": "Data Loss Prevention (DLP)",
+          "reason": "Incorrect. DLP prevents sharing, but Sensitivity Labels manage the actual access and visibility."
         },
         {
           "id": 2,
-          "text": "Communication Compliance",
-          "reason": "Incorrect. This monitors for policy violations in text, not file access."
-        },
-        {
-          "id": 3,
           "text": "Sensitivity Labels",
           "reason": "Correct. Copilot respects labels and the associated encryption/permissions."
         },
         {
+          "id": 3,
+          "text": "Communication Compliance",
+          "reason": "Incorrect. This monitors for policy violations in text, not file access."
+        },
+        {
           "id": 4,
-          "text": "Data Loss Prevention (DLP)",
-          "reason": "Incorrect. DLP prevents sharing, but Sensitivity Labels manage the actual access and visibility."
+          "text": "eDiscovery",
+          "reason": "Incorrect. This is for legal searches of data, not real-time access control."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Copilot adheres to the permissions defined by Sensitivity Labels, ensuring users only get AI content from data they can already access."
     },
@@ -266,18 +266,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "Changing the bot's color scheme",
-          "reason": "Incorrect. This is done in the Canvas or Branding settings."
-        },
-        {
-          "id": 2,
           "text": "Storing user passwords",
           "reason": "Incorrect. Topics are logic flows, not credential storage."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "Defining discrete conversation paths to handle specific user queries",
           "reason": "Correct. Topics are the 'flowcharts' for the bot's conversation."
+        },
+        {
+          "id": 3,
+          "text": "Changing the bot's color scheme",
+          "reason": "Incorrect. This is done in the Canvas or Branding settings."
         },
         {
           "id": 4,
@@ -287,7 +287,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Topics allow administrators to control exactly how an agent should handle a specific scenario, such as 'Checking Order Status'."
     },
@@ -298,8 +298,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "User Administrator",
-          "reason": "Incorrect. This role manages user accounts but not Teams service policies."
+          "text": "Helpdesk Administrator",
+          "reason": "Incorrect. This role doesn't have enough permission for service-wide settings."
         },
         {
           "id": 2,
@@ -313,8 +313,8 @@
         },
         {
           "id": 4,
-          "text": "Helpdesk Administrator",
-          "reason": "Incorrect. This role doesn't have enough permission for service-wide settings."
+          "text": "User Administrator",
+          "reason": "Incorrect. This role manages user accounts but not Teams service policies."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -330,13 +330,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "Public Web Index",
-          "reason": "Incorrect. This is for general web searches, not private M365 data."
+          "text": "Semantic Index",
+          "reason": "Correct. Semantic Indexing maps the relationships between organizational data for the AI."
         },
         {
           "id": 2,
-          "text": "Semantic Index",
-          "reason": "Correct. Semantic Indexing maps the relationships between organizational data for the AI."
+          "text": "Public Web Index",
+          "reason": "Incorrect. This is for general web searches, not private M365 data."
         },
         {
           "id": 3,
@@ -351,7 +351,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "The Semantic Index works alongside the Microsoft Graph to provide high-fidelity retrieval based on the meaning of data."
     },
@@ -362,28 +362,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Auditing permissions to ensure users only have access to data they need (Principle of Least Privilege)",
-          "reason": "Correct. This prevents 'oversharing' when Copilot retrieves data."
-        },
-        {
-          "id": 2,
           "text": "Deleting all SharePoint sites",
           "reason": "Incorrect. This would destroy the data the AI needs to be useful."
         },
         {
+          "id": 2,
+          "text": "Auditing permissions to ensure users only have access to data they need (Principle of Least Privilege)",
+          "reason": "Correct. This prevents 'oversharing' when Copilot retrieves data."
+        },
+        {
           "id": 3,
-          "text": "Switching all users to Linux",
-          "reason": "Incorrect. Copilot is designed for Microsoft 365 ecosystems."
+          "text": "Buying new monitors for all users",
+          "reason": "Incorrect. Hardware upgrades like monitors aren't a Copilot prerequisite."
         },
         {
           "id": 4,
-          "text": "Buying new monitors for all users",
-          "reason": "Incorrect. Hardware upgrades like monitors aren't a Copilot prerequisite."
+          "text": "Switching all users to Linux",
+          "reason": "Incorrect. Copilot is designed for Microsoft 365 ecosystems."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Cleaning up permissions is vital so that Copilot doesn't surface sensitive files to users who shouldn't have access."
     },
@@ -394,8 +394,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "It makes the computer run 50% faster",
-          "reason": "Incorrect. AI web grounding does not impact local CPU speed."
+          "text": "It uploads your private documents to Google",
+          "reason": "Incorrect. Microsoft uses Bing, and private data is not uploaded to the public index."
         },
         {
           "id": 2,
@@ -404,8 +404,8 @@
         },
         {
           "id": 3,
-          "text": "It uploads your private documents to Google",
-          "reason": "Incorrect. Microsoft uses Bing, and private data is not uploaded to the public index."
+          "text": "It makes the computer run 50% faster",
+          "reason": "Incorrect. AI web grounding does not impact local CPU speed."
         },
         {
           "id": 4,
@@ -426,28 +426,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Different subscription levels for the bot",
-          "reason": "Incorrect. Entities are a functional component of the agent's logic."
+          "text": "Zero Trust conditional access",
+          "reason": "Updated to a more domain‑specific distractor."
         },
         {
           "id": 2,
-          "text": "The names of the IT administrators",
-          "reason": "Incorrect. Admins are users; entities are data classifications."
-        },
-        {
-          "id": 3,
           "text": "Information types that the bot can recognize from a user's input, like a date or email address",
           "reason": "Correct. Entities help the bot extract specific data points from conversation."
         },
         {
+          "id": 3,
+          "text": "The names of the IT administrators",
+          "reason": "Incorrect. Admins are users; entities are data classifications."
+        },
+        {
           "id": 4,
-          "text": "The physical buildings where servers are located",
-          "reason": "Incorrect. Entities are a data concept, not a physical location."
+          "text": "Different subscription levels for the bot",
+          "reason": "Incorrect. Entities are a functional component of the agent's logic."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Entities allow the bot to 'understand' that if a user says 'Friday', they are referring to a Date."
     },
@@ -458,18 +458,18 @@
       "Options": [
         {
           "id": 1,
+          "text": "Windows Error Report",
+          "reason": "Incorrect. This is for software crashes, not usage statistics."
+        },
+        {
+          "id": 2,
           "text": "Microsoft 365 Copilot Usage Report",
           "reason": "Correct. This report provides specific metrics on AI adoption and usage."
         },
         {
-          "id": 2,
+          "id": 3,
           "text": "Azure Billing Report",
           "reason": "Incorrect. This shows costs, not specific app feature usage."
-        },
-        {
-          "id": 3,
-          "text": "Windows Error Report",
-          "reason": "Incorrect. This is for software crashes, not usage statistics."
         },
         {
           "id": 4,
@@ -479,7 +479,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "The Copilot Usage report in the M365 Admin Center tracks active users and actions taken across different apps."
     },
@@ -490,13 +490,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "To serve as the gateway to retrieve content and context from the M365 tenant",
-          "reason": "Correct. It provides access to emails, files, meetings, and relationships."
+          "text": "To generate 3D images",
+          "reason": "Incorrect. Graph is a data API, not a graphics engine."
         },
         {
           "id": 2,
-          "text": "To act as a hardware firewall",
-          "reason": "Incorrect. It is a cloud software service, not a physical firewall."
+          "text": "To serve as the gateway to retrieve content and context from the M365 tenant",
+          "reason": "Correct. It provides access to emails, files, meetings, and relationships."
         },
         {
           "id": 3,
@@ -505,13 +505,13 @@
         },
         {
           "id": 4,
-          "text": "To generate 3D images",
-          "reason": "Incorrect. Graph is a data API, not a graphics engine."
+          "text": "Insider Risk anomaly pattern",
+          "reason": "Updated to a more domain‑specific distractor."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Microsoft Graph is the unified API that Copilot uses to find relevant user data for grounding."
     },
@@ -522,18 +522,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "Notepad",
-          "reason": "Incorrect. Notepad is a simple text editor with no security automation."
-        },
-        {
-          "id": 2,
           "text": "Microsoft Purview Auto-labeling",
           "reason": "Correct. It uses policies to apply sensitivity labels automatically."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "Excel Power Query",
           "reason": "Incorrect. This is for data transformation in spreadsheets, not security labeling."
+        },
+        {
+          "id": 3,
+          "text": "Notepad",
+          "reason": "Incorrect. Notepad is a simple text editor with no security automation."
         },
         {
           "id": 4,
@@ -543,7 +543,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "Auto-labeling policies in Purview ensure that sensitive data is protected consistently, which helps Copilot stay compliant."
     },
@@ -554,28 +554,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Managing a helpdesk ticket system",
-          "reason": "Incorrect. This is IT service management."
-        },
-        {
-          "id": 2,
           "text": "Repairing a broken computer",
           "reason": "Incorrect. This is hardware maintenance."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "The practice of crafting clear and specific inputs to get the most relevant AI responses",
           "reason": "Correct. It focuses on intent, context, and constraints in the prompt."
         },
         {
-          "id": 4,
+          "id": 3,
           "text": "Coding a new LLM from scratch",
           "reason": "Incorrect. This is model development, not prompt engineering."
+        },
+        {
+          "id": 4,
+          "text": "Managing a helpdesk ticket system",
+          "reason": "Incorrect. This is IT service management."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Good prompt engineering (Goal, Context, Source, Expectations) improves the quality of Copilot's output."
     },
@@ -586,28 +586,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "The process of retrieving data from a source and providing it to the LLM to generate a response",
-          "reason": "Correct. This is the technical term for grounding."
-        },
-        {
-          "id": 2,
           "text": "Deleting old emails to save space",
           "reason": "Incorrect. This is data retention."
         },
         {
+          "id": 2,
+          "text": "The process of retrieving data from a source and providing it to the LLM to generate a response",
+          "reason": "Correct. This is the technical term for grounding."
+        },
+        {
           "id": 3,
-          "text": "Generating images from scratch",
-          "reason": "Incorrect. RAG is primarily associated with grounded text generation."
+          "text": "A way to speed up internet downloads",
+          "reason": "Incorrect. RAG is about AI response quality, not network speed."
         },
         {
           "id": 4,
-          "text": "A way to speed up internet downloads",
-          "reason": "Incorrect. RAG is about AI response quality, not network speed."
+          "text": "Generating images from scratch",
+          "reason": "Incorrect. RAG is primarily associated with grounded text generation."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "RAG ensures the LLM 'knows' specific facts from your data before it attempts to write a response."
     },
@@ -618,28 +618,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Windows Task Manager",
-          "reason": "Incorrect. Task manager shows local process performance."
+          "text": "Microsoft 365 Admin Center (Feedback section)",
+          "reason": "Correct. Admins can manage and review feedback from users here."
         },
         {
           "id": 2,
-          "text": "The user's LinkedIn profile",
-          "reason": "Incorrect. Feedback is internal to the M365 tenant and Microsoft."
-        },
-        {
-          "id": 3,
           "text": "Individual Word documents",
           "reason": "Incorrect. Feedback is aggregated in the admin portal, not stored in files."
         },
         {
+          "id": 3,
+          "text": "The user's LinkedIn profile",
+          "reason": "Incorrect. Feedback is internal to the M365 tenant and Microsoft."
+        },
+        {
           "id": 4,
-          "text": "Microsoft 365 Admin Center (Feedback section)",
-          "reason": "Correct. Admins can manage and review feedback from users here."
+          "text": "Windows Task Manager",
+          "reason": "Incorrect. Task manager shows local process performance."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        1
       ],
       "CorrectAnswerExplanation": "The M365 Admin Center provides visibility into how users are rating the AI's effectiveness."
     },
@@ -655,13 +655,13 @@
         },
         {
           "id": 2,
-          "text": "It is immediately deleted from all systems forever",
-          "reason": "Incorrect. It is logged for compliance and history purposes."
+          "text": "It is stored within the organization's compliance boundary to support features like audit and eDiscovery",
+          "reason": "Correct. Prompts are treated as business data."
         },
         {
           "id": 3,
-          "text": "It is stored within the organization's compliance boundary to support features like audit and eDiscovery",
-          "reason": "Correct. Prompts are treated as business data."
+          "text": "It is immediately deleted from all systems forever",
+          "reason": "Incorrect. It is logged for compliance and history purposes."
         },
         {
           "id": 4,
@@ -671,7 +671,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Your prompts are your data; they stay within the Microsoft 365 boundary and follow your retention policies."
     },
@@ -682,8 +682,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "Windows 11 Home",
-          "reason": "Incorrect. This is a consumer OS license, not a commercial M365 license."
+          "text": "Microsoft 365 E3",
+          "reason": "Correct. E3 is a valid base license."
         },
         {
           "id": 2,
@@ -692,19 +692,19 @@
         },
         {
           "id": 3,
-          "text": "Microsoft 365 E3",
-          "reason": "Correct. E3 is a valid base license."
+          "text": "Microsoft 365 Business Standard",
+          "reason": "Correct. Business Standard and Business Premium are eligible."
         },
         {
           "id": 4,
-          "text": "Microsoft 365 Business Standard",
-          "reason": "Correct. Business Standard and Business Premium are eligible."
+          "text": "Windows 11 Home",
+          "reason": "Incorrect. This is a consumer OS license, not a commercial M365 license."
         }
       ],
       "MaxAnswerSelection": 2,
       "CorrectAnswers": [
-        3,
-        4
+        1,
+        3
       ],
       "CorrectAnswerExplanation": "Microsoft 365 E3, E5, Business Standard, and Business Premium are all eligible base licenses for the Copilot add-on."
     },
@@ -715,28 +715,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Teams Mesh",
-          "reason": "Incorrect. This is for 3D/VR environments."
-        },
-        {
-          "id": 2,
           "text": "Teams Walkie Talkie",
           "reason": "Incorrect. This is a push-to-talk feature."
         },
         {
+          "id": 2,
+          "text": "Intelligent Recap",
+          "reason": "Correct. It uses AI to provide summaries, notes, and tasks."
+        },
+        {
           "id": 3,
-          "text": "Background Blur",
-          "reason": "Incorrect. This is a camera feature."
+          "text": "Teams Mesh",
+          "reason": "Incorrect. This is for 3D/VR environments."
         },
         {
           "id": 4,
-          "text": "Intelligent Recap",
-          "reason": "Correct. It uses AI to provide summaries, notes, and tasks."
+          "text": "Background Blur",
+          "reason": "Incorrect. This is a camera feature."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Intelligent Recap uses the meeting transcript and Copilot to summarize key points and mentions."
     },
@@ -752,13 +752,13 @@
         },
         {
           "id": 2,
-          "text": "A human administrator who declares new rules",
-          "reason": "Incorrect. It is a technical component, not a person."
+          "text": "A custom version of Copilot that uses instructions and knowledge to perform specific tasks",
+          "reason": "Correct. They allow tailoring the Copilot experience without a custom engine."
         },
         {
           "id": 3,
-          "text": "A custom version of Copilot that uses instructions and knowledge to perform specific tasks",
-          "reason": "Correct. They allow tailoring the Copilot experience without a custom engine."
+          "text": "A human administrator who declares new rules",
+          "reason": "Incorrect. It is a technical component, not a person."
         },
         {
           "id": 4,
@@ -768,7 +768,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Declarative agents allow developers to create custom-branded and specialized versions of Copilot for their organization."
     },
@@ -779,18 +779,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "Outlook Signature settings",
-          "reason": "Incorrect. This only affects email signatures."
-        },
-        {
-          "id": 2,
           "text": "Microsoft 365 Admin Center > Integrated apps",
           "reason": "Correct. This is where app deployment and permission policies are set."
         },
         {
+          "id": 2,
+          "text": "Advanced eDiscovery review scope",
+          "reason": "Updated to a more domain‑specific distractor."
+        },
+        {
           "id": 3,
-          "text": "The computer's BIOS",
-          "reason": "Incorrect. BIOS does not control cloud software features."
+          "text": "Outlook Signature settings",
+          "reason": "Incorrect. This only affects email signatures."
         },
         {
           "id": 4,
@@ -800,7 +800,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "The Integrated Apps section allows admins to toggle on or off the ability for users to install and use specific agents."
     },
@@ -811,13 +811,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "Semantic search requires the user to type in code",
-          "reason": "Incorrect. It uses natural language input."
+          "text": "Semantic search only works in English",
+          "reason": "Incorrect. Semantic search understands intent across languages."
         },
         {
           "id": 2,
-          "text": "Semantic search only works in English",
-          "reason": "Incorrect. Semantic search understands intent across languages."
+          "text": "Semantic search understands the meaning and intent behind a query, not just matching words",
+          "reason": "Correct. It uses vector mapping to find relevant content."
         },
         {
           "id": 3,
@@ -826,13 +826,13 @@
         },
         {
           "id": 4,
-          "text": "Semantic search understands the meaning and intent behind a query, not just matching words",
-          "reason": "Correct. It uses vector mapping to find relevant content."
+          "text": "Semantic search requires the user to type in code",
+          "reason": "Incorrect. It uses natural language input."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Semantic Search allows Copilot to find a document about 'revenue' even if the document only uses the word 'sales'."
     },
@@ -843,28 +843,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Ensuring users only have access to the data they actually need for their job",
-          "reason": "Correct. This minimizes the risk of Copilot surfacing sensitive data."
-        },
-        {
-          "id": 2,
-          "text": "Limiting the number of emails a person can send",
-          "reason": "Incorrect. This is a quota, not an access principle."
-        },
-        {
-          "id": 3,
           "text": "Giving every user administrative rights",
           "reason": "Incorrect. This is the opposite of the principle."
         },
         {
-          "id": 4,
+          "id": 2,
+          "text": "Ensuring users only have access to the data they actually need for their job",
+          "reason": "Correct. This minimizes the risk of Copilot surfacing sensitive data."
+        },
+        {
+          "id": 3,
           "text": "Reducing the number of users who can use a mouse",
           "reason": "Incorrect. This is not a security principle."
+        },
+        {
+          "id": 4,
+          "text": "Limiting the number of emails a person can send",
+          "reason": "Incorrect. This is a quota, not an access principle."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Least privilege is the primary defense against internal 'oversharing' when AI makes data discovery easier."
     },
@@ -875,18 +875,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "Microsoft Paint",
-          "reason": "Incorrect. Paint is for image editing, not document drafting."
-        },
-        {
-          "id": 2,
           "text": "Microsoft Word",
           "reason": "Correct. Word allows you to generate drafts using other documents as references."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "Windows Calculator",
           "reason": "Incorrect. Calculator does not support drafting features."
+        },
+        {
+          "id": 3,
+          "text": "Microsoft Paint",
+          "reason": "Incorrect. Paint is for image editing, not document drafting."
         },
         {
           "id": 4,
@@ -896,7 +896,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "In Word, you can use the Copilot box to draft a new document by typing '/' followed by the names of relevant source files."
     },
@@ -907,8 +907,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "Errors that crash the bot",
-          "reason": "Incorrect. These are bugs or exceptions."
+          "text": "The buttons on a game controller",
+          "reason": "Incorrect. This is for gaming hardware."
         },
         {
           "id": 2,
@@ -917,8 +917,8 @@
         },
         {
           "id": 3,
-          "text": "The buttons on a game controller",
-          "reason": "Incorrect. This is for gaming hardware."
+          "text": "Errors that crash the bot",
+          "reason": "Incorrect. These are bugs or exceptions."
         },
         {
           "id": 4,
@@ -939,28 +939,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Local Hard Drive",
-          "reason": "Incorrect. Prompts are stored in the cloud service, not locally."
-        },
-        {
-          "id": 2,
           "text": "The Microsoft 365 Data Boundary (EU Data Boundary)",
           "reason": "Correct. Microsoft ensures data is stored and processed within specific regions."
         },
         {
+          "id": 2,
+          "text": "Public Wi-Fi",
+          "reason": "Incorrect. This is a network connection, not a data residency service."
+        },
+        {
           "id": 3,
-          "text": "The user's SIM card",
-          "reason": "Incorrect. SIM cards do not store enterprise cloud data."
+          "text": "Purview DLP rule precedence",
+          "reason": "Updated to a more domain‑specific distractor."
         },
         {
           "id": 4,
-          "text": "Public Wi-Fi",
-          "reason": "Incorrect. This is a network connection, not a data residency service."
+          "text": "The user's SIM card",
+          "reason": "Incorrect. SIM cards do not store enterprise cloud data."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "Microsoft provides geographic data residency commitments to meet regulatory requirements like GDPR."
     },
@@ -971,8 +971,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "When a user forgets their password",
-          "reason": "Incorrect. This is an identity issue."
+          "text": "When the AI speaks in a different language",
+          "reason": "Incorrect. This is translation or multi-language support."
         },
         {
           "id": 2,
@@ -986,8 +986,8 @@
         },
         {
           "id": 4,
-          "text": "When the AI speaks in a different language",
-          "reason": "Incorrect. This is translation or multi-language support."
+          "text": "When a user forgets their password",
+          "reason": "Incorrect. This is an identity issue."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -1003,28 +1003,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "To assess technical readiness, license allocation, and user impact",
-          "reason": "Correct. It provides a roadmap for a successful rollout."
-        },
-        {
-          "id": 2,
           "text": "To play a game",
           "reason": "Incorrect. It is a business planning tool."
         },
         {
+          "id": 2,
+          "text": "To assess technical readiness, license allocation, and user impact",
+          "reason": "Correct. It provides a roadmap for a successful rollout."
+        },
+        {
           "id": 3,
-          "text": "To change the company logo",
-          "reason": "Incorrect. This is done in tenant branding settings."
+          "text": "To uninstall Office 2016",
+          "reason": "Incorrect. While it might recommend updating apps, its purpose is broader than just uninstallation."
         },
         {
           "id": 4,
-          "text": "To uninstall Office 2016",
-          "reason": "Incorrect. While it might recommend updating apps, its purpose is broader than just uninstallation."
+          "text": "To change the company logo",
+          "reason": "Incorrect. This is done in tenant branding settings."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "The deployment planner helps IT ensure prerequisites are met and user adoption plans are in place."
     },
@@ -1035,13 +1035,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "Microsoft Excel",
-          "reason": "Incorrect. Excel Copilot is for data analysis and formulas."
+          "text": "Outlook",
+          "reason": "Correct. Copilot in Outlook helps manage high email volumes."
         },
         {
           "id": 2,
-          "text": "Notepad",
-          "reason": "Incorrect. Notepad does not have native Copilot integration."
+          "text": "Microsoft Excel",
+          "reason": "Incorrect. Excel Copilot is for data analysis and formulas."
         },
         {
           "id": 3,
@@ -1050,13 +1050,13 @@
         },
         {
           "id": 4,
-          "text": "Outlook",
-          "reason": "Correct. Copilot in Outlook helps manage high email volumes."
+          "text": "Notepad",
+          "reason": "Incorrect. Notepad does not have native Copilot integration."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        1
       ],
       "CorrectAnswerExplanation": "Outlook is the primary tool for email summarization and drafting in the M365 suite."
     },
@@ -1067,28 +1067,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "A physical cable for a laptop",
-          "reason": "Incorrect. This is hardware."
+          "text": "Endpoint configuration deviation",
+          "reason": "Updated to a more domain‑specific distractor."
         },
         {
           "id": 2,
-          "text": "A feature that only works in the cloud",
-          "reason": "Incorrect. While they work in the cloud, 'Connector' specifically refers to data integration."
-        },
-        {
-          "id": 3,
           "text": "A way for the agent to communicate with external data and apps like Salesforce or ServiceNow",
           "reason": "Correct. Connectors bridge the gap to non-M365 data."
         },
         {
-          "id": 4,
+          "id": 3,
           "text": "A person who introduces people in a meeting",
           "reason": "Incorrect. This is a social role, not a technical one."
+        },
+        {
+          "id": 4,
+          "text": "A feature that only works in the cloud",
+          "reason": "Incorrect. While they work in the cloud, 'Connector' specifically refers to data integration."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "Connectors allow Copilot to perform actions or fetch data from systems outside of the Microsoft ecosystem."
     },
@@ -1099,18 +1099,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "False",
-          "reason": "Correct. A base license is strictly required."
+          "text": "True",
+          "reason": "Incorrect. Copilot is an add-on and requires a prerequisite license."
         },
         {
           "id": 2,
-          "text": "True",
-          "reason": "Incorrect. Copilot is an add-on and requires a prerequisite license."
+          "text": "False",
+          "reason": "Correct. A base license is strictly required."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Copilot for Microsoft 365 is an add-on license; it cannot function without an eligible base M365 license."
     },
@@ -1121,28 +1121,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Reference links that show exactly where Copilot found the information it used",
-          "reason": "Correct. They allow users to verify the source material."
-        },
-        {
-          "id": 2,
           "text": "Tickets for speeding",
           "reason": "Incorrect. This is a legal/traffic term."
         },
         {
+          "id": 2,
+          "text": "Reference links that show exactly where Copilot found the information it used",
+          "reason": "Correct. They allow users to verify the source material."
+        },
+        {
           "id": 3,
-          "text": "The number of characters in the response",
-          "reason": "Incorrect. This is a metric, not a citation."
+          "text": "A list of everyone who has read the file",
+          "reason": "Incorrect. Citations refer to content sources, not access history."
         },
         {
           "id": 4,
-          "text": "A list of everyone who has read the file",
-          "reason": "Incorrect. Citations refer to content sources, not access history."
+          "text": "The number of characters in the response",
+          "reason": "Incorrect. This is a metric, not a citation."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Citations are critical for transparency, allowing users to cross-check the AI's claims against original documents."
     },
@@ -1153,8 +1153,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "Delete the user's email account",
-          "reason": "Incorrect. This would obviously break access rather than fix it."
+          "text": "Ensure the apps are updated to a supported channel (e.g., Current Channel)",
+          "reason": "Correct. This is the most common cause of missing features."
         },
         {
           "id": 2,
@@ -1163,18 +1163,18 @@
         },
         {
           "id": 3,
-          "text": "Turn off the internet",
-          "reason": "Incorrect. Copilot requires an internet connection."
+          "text": "Delete the user's email account",
+          "reason": "Incorrect. This would obviously break access rather than fix it."
         },
         {
           "id": 4,
-          "text": "Ensure the apps are updated to a supported channel (e.g., Current Channel)",
-          "reason": "Correct. This is the most common cause of missing features."
+          "text": "Turn off the internet",
+          "reason": "Incorrect. Copilot requires an internet connection."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        1
       ],
       "CorrectAnswerExplanation": "Old versions of Office do not have the Copilot integration; updating to the Current Channel is the standard fix."
     },
@@ -1190,8 +1190,8 @@
         },
         {
           "id": 2,
-          "text": "It pays for the meeting snacks",
-          "reason": "Incorrect. This is not a software feature."
+          "text": "It provides a summary of key points, tasks, and mentions without a user having to take notes",
+          "reason": "Correct. It saves time for all participants."
         },
         {
           "id": 3,
@@ -1200,13 +1200,13 @@
         },
         {
           "id": 4,
-          "text": "It provides a summary of key points, tasks, and mentions without a user having to take notes",
-          "reason": "Correct. It saves time for all participants."
+          "text": "It pays for the meeting snacks",
+          "reason": "Incorrect. This is not a software feature."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Intelligent Recap makes it easy for people to stay informed even if they miss part of a meeting or need to follow up on actions."
     },
@@ -1217,28 +1217,28 @@
       "Options": [
         {
           "id": 1,
+          "text": "Prints a hard copy of the bot's logic",
+          "reason": "Incorrect. Publishing is a digital deployment."
+        },
+        {
+          "id": 2,
           "text": "Makes the latest version of the bot available to end users on live channels",
           "reason": "Correct. Changes only take effect for users after publishing."
         },
         {
-          "id": 2,
+          "id": 3,
           "text": "Deletes the bot permanently",
           "reason": "Incorrect. This is 'Deleting' or 'Removing'."
         },
         {
-          "id": 3,
+          "id": 4,
           "text": "Sends the bot to the local news",
           "reason": "Incorrect. This is a literal interpretation of 'publishing' as media."
-        },
-        {
-          "id": 4,
-          "text": "Prints a hard copy of the bot's logic",
-          "reason": "Incorrect. Publishing is a digital deployment."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Users will only interact with the 'last published' version of a bot, even if you are making edits in the Studio."
     },
@@ -1249,8 +1249,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "Control Panel",
-          "reason": "Incorrect. Control Panel is for local OS settings, not M365 tenant licenses."
+          "text": "Microsoft 365 Admin Center > Users > Active Users",
+          "reason": "Correct. License status is managed and viewed per user here."
         },
         {
           "id": 2,
@@ -1259,18 +1259,18 @@
         },
         {
           "id": 3,
-          "text": "The computer's BIOS",
-          "reason": "Incorrect. BIOS does not track cloud licensing."
+          "text": "Label-based encryption boundary",
+          "reason": "Updated to a more domain‑specific distractor."
         },
         {
           "id": 4,
-          "text": "Microsoft 365 Admin Center > Users > Active Users",
-          "reason": "Correct. License status is managed and viewed per user here."
+          "text": "Control Panel",
+          "reason": "Incorrect. Control Panel is for local OS settings, not M365 tenant licenses."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        1
       ],
       "CorrectAnswerExplanation": "The Active Users section of the Admin Center allows for license filtering and individual assignment."
     },
@@ -1281,13 +1281,13 @@
       "Options": [
         {
           "id": 1,
-          "text": "Human Replacement",
-          "reason": "Incorrect. Microsoft views AI as a 'Copilot', not a replacement for humans."
+          "text": "Secrecy",
+          "reason": "Incorrect. Transparency is the actual principle."
         },
         {
           "id": 2,
-          "text": "Secrecy",
-          "reason": "Incorrect. Transparency is the actual principle."
+          "text": "Fairness",
+          "reason": "Correct. AI systems should treat all people fairly."
         },
         {
           "id": 3,
@@ -1296,13 +1296,13 @@
         },
         {
           "id": 4,
-          "text": "Fairness",
-          "reason": "Correct. AI systems should treat all people fairly."
+          "text": "Human Replacement",
+          "reason": "Incorrect. Microsoft views AI as a 'Copilot', not a replacement for humans."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Microsoft's principles include Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, and Accountability."
     },
@@ -1323,13 +1323,13 @@
         },
         {
           "id": 3,
-          "text": "A feature that only works in Excel",
-          "reason": "Incorrect. It is a tenant-wide service for Copilot."
+          "text": "A book of synonyms",
+          "reason": "Incorrect. While it understands synonyms, it is a data infrastructure, not a book."
         },
         {
           "id": 4,
-          "text": "A book of synonyms",
-          "reason": "Incorrect. While it understands synonyms, it is a data infrastructure, not a book."
+          "text": "A feature that only works in Excel",
+          "reason": "Incorrect. It is a tenant-wide service for Copilot."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -1345,8 +1345,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "It must be at least 100MB in size",
-          "reason": "Incorrect. There is no minimum size requirement."
+          "text": "It must be saved as a .txt file",
+          "reason": "Incorrect. It must be a .xlsx file."
         },
         {
           "id": 2,
@@ -1355,8 +1355,8 @@
         },
         {
           "id": 3,
-          "text": "It must be saved as a .txt file",
-          "reason": "Incorrect. It must be a .xlsx file."
+          "text": "It must be at least 100MB in size",
+          "reason": "Incorrect. There is no minimum size requirement."
         },
         {
           "id": 4,
@@ -1377,28 +1377,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Microsoft Paint",
-          "reason": "Incorrect. Paint cannot connect to databases."
-        },
-        {
-          "id": 2,
           "text": "Copilot Studio",
           "reason": "Correct. You can use Power Automate flows or custom connectors within Studio."
         },
         {
+          "id": 2,
+          "text": "Microsoft Paint",
+          "reason": "Incorrect. Paint cannot connect to databases."
+        },
+        {
           "id": 3,
-          "text": "Disk Defragmenter",
-          "reason": "Incorrect. This is for disk maintenance."
+          "text": "Windows Media Player",
+          "reason": "Incorrect. This is for playing media."
         },
         {
           "id": 4,
-          "text": "Windows Media Player",
-          "reason": "Incorrect. This is for playing media."
+          "text": "Disk Defragmenter",
+          "reason": "Incorrect. This is for disk maintenance."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "Copilot Studio is the extensibility platform for building bots that connect to external data."
     },
@@ -1409,28 +1409,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "Within the Microsoft 365 secure cloud service boundary",
-          "reason": "Correct. This ensures compliance and security."
-        },
-        {
-          "id": 2,
           "text": "On the local CPU/RAM of the user's laptop",
           "reason": "Incorrect. Most processing happens in the Microsoft cloud."
         },
         {
+          "id": 2,
+          "text": "Within the Microsoft 365 secure cloud service boundary",
+          "reason": "Correct. This ensures compliance and security."
+        },
+        {
           "id": 3,
-          "text": "On the user's phone",
-          "reason": "Incorrect. It is a cloud-based service."
+          "text": "On a public Google server",
+          "reason": "Incorrect. Data stays within the Microsoft ecosystem."
         },
         {
           "id": 4,
-          "text": "On a public Google server",
-          "reason": "Incorrect. Data stays within the Microsoft ecosystem."
+          "text": "On the user's phone",
+          "reason": "Incorrect. It is a cloud-based service."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Copilot is a cloud-powered service; processing happens in Microsoft's high-performance AI data centers."
     },
@@ -1441,18 +1441,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "To act as a human manager",
-          "reason": "Incorrect. It is a software component."
-        },
-        {
-          "id": 2,
           "text": "To play music during meetings",
           "reason": "Incorrect. This is a social/audio function."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "To coordinate the retrieval of grounded data and manage the interaction with the LLM",
           "reason": "Correct. It is the 'brain' that manages the AI workflow."
+        },
+        {
+          "id": 3,
+          "text": "To act as a human manager",
+          "reason": "Incorrect. It is a software component."
         },
         {
           "id": 4,
@@ -1462,7 +1462,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        3
+        2
       ],
       "CorrectAnswerExplanation": "The Orchestrator ensures the prompt is sent with the right data and that the LLM's response is relevant."
     },
@@ -1473,28 +1473,28 @@
       "Options": [
         {
           "id": 1,
+          "text": "It makes the wiki run faster",
+          "reason": "Incorrect. It doesn't affect source performance."
+        },
+        {
+          "id": 2,
           "text": "It allows Copilot to ground its answers using the wiki's content",
           "reason": "Correct. It expands the AI's knowledge base."
         },
         {
-          "id": 2,
+          "id": 3,
           "text": "It deletes the wiki after indexing",
           "reason": "Incorrect. It only reads and indexes the data."
         },
         {
-          "id": 3,
+          "id": 4,
           "text": "It converts the wiki into a series of Excel spreadsheets",
           "reason": "Incorrect. It keeps the data in the search index, not in Excel files."
-        },
-        {
-          "id": 4,
-          "text": "It makes the wiki run faster",
-          "reason": "Incorrect. It doesn't affect source performance."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Graph Connectors allow Copilot to 'see' and 'reason over' data that doesn't natively live in M365."
     },
@@ -1537,8 +1537,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "To test if the monitor is working",
-          "reason": "Incorrect. This is a hardware check."
+          "text": "For taking a written exam",
+          "reason": "Incorrect. It is a developer tool."
         },
         {
           "id": 2,
@@ -1552,8 +1552,8 @@
         },
         {
           "id": 4,
-          "text": "For taking a written exam",
-          "reason": "Incorrect. It is a developer tool."
+          "text": "To test if the monitor is working",
+          "reason": "Incorrect. This is a hardware check."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -1579,13 +1579,13 @@
         },
         {
           "id": 3,
-          "text": "Using a guest account",
-          "reason": "Incorrect. Professional features require a licensed account."
+          "text": "Typing in all caps",
+          "reason": "Incorrect. Text casing has no effect on data protection."
         },
         {
           "id": 4,
-          "text": "Typing in all caps",
-          "reason": "Incorrect. Text casing has no effect on data protection."
+          "text": "Using a guest account",
+          "reason": "Incorrect. Professional features require a licensed account."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -1601,18 +1601,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "No, Copilot only accesses data that the individual user has explicit permission to see",
-          "reason": "Correct. It uses 'Just-in-Time' access via the user's identity."
+          "text": "Yes, Copilot can see everything in the tenant",
+          "reason": "Incorrect. Copilot respects user permissions."
         },
         {
           "id": 2,
-          "text": "Yes, Copilot can see everything in the tenant",
-          "reason": "Incorrect. Copilot respects user permissions."
+          "text": "No, Copilot only accesses data that the individual user has explicit permission to see",
+          "reason": "Correct. It uses 'Just-in-Time' access via the user's identity."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Security is foundational; Copilot will never 'leak' information from a file to a user who doesn't have access to that file."
     },
@@ -1623,8 +1623,8 @@
       "Options": [
         {
           "id": 1,
-          "text": "A group of people who are being fired",
-          "reason": "Incorrect. Pilots are for testing software."
+          "text": "People who fly airplanes",
+          "reason": "Incorrect. This is a literal interpretation of the word."
         },
         {
           "id": 2,
@@ -1633,8 +1633,8 @@
         },
         {
           "id": 3,
-          "text": "People who fly airplanes",
-          "reason": "Incorrect. This is a literal interpretation of the word."
+          "text": "A group of people who are being fired",
+          "reason": "Incorrect. Pilots are for testing software."
         },
         {
           "id": 4,
@@ -1665,13 +1665,13 @@
         },
         {
           "id": 3,
-          "text": "Record 4K video",
-          "reason": "Incorrect. Loop is a workspace for components and pages, not video recording."
+          "text": "Change the user's password",
+          "reason": "Incorrect. Password management is an identity service."
         },
         {
           "id": 4,
-          "text": "Change the user's password",
-          "reason": "Incorrect. Password management is an identity service."
+          "text": "Record 4K video",
+          "reason": "Incorrect. Loop is a workspace for components and pages, not video recording."
         }
       ],
       "MaxAnswerSelection": 1,
@@ -1709,18 +1709,18 @@
       "Options": [
         {
           "id": 1,
+          "text": "Sensitive info type tuning",
+          "reason": "Updated to a more domain‑specific distractor."
+        },
+        {
+          "id": 2,
           "text": "Training materials, communication templates, and user guides to help drive AI usage",
           "reason": "Correct. It helps organizations get value out of their licenses."
         },
         {
-          "id": 2,
+          "id": 3,
           "text": "A set of screwdrivers for fixing servers",
           "reason": "Incorrect. This is a physical toolkit."
-        },
-        {
-          "id": 3,
-          "text": "A physical first-aid kit",
-          "reason": "Incorrect. It is a digital resource."
         },
         {
           "id": 4,
@@ -1730,7 +1730,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        1
+        2
       ],
       "CorrectAnswerExplanation": "Change management is key to AI success; the Adoption Kit provides the 'soft' skills and materials needed."
     },
@@ -1741,18 +1741,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "Microsoft Paint",
-          "reason": "Incorrect. Paint does not have calendar access."
-        },
-        {
-          "id": 2,
           "text": "Microsoft Graph",
           "reason": "Correct. Graph provides the dynamic data from the user's M365 account."
         },
         {
-          "id": 3,
+          "id": 2,
           "text": "Windows Update",
           "reason": "Incorrect. This provides software patches."
+        },
+        {
+          "id": 3,
+          "text": "Microsoft Paint",
+          "reason": "Incorrect. Paint does not have calendar access."
         },
         {
           "id": 4,
@@ -1762,7 +1762,7 @@
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "Microsoft Graph is the single endpoint for all M365 data, ensuring Copilot knows about your upcoming 2:00 PM meeting."
     },
@@ -1795,28 +1795,28 @@
       "Options": [
         {
           "id": 1,
-          "text": "To change the chat font to Comic Sans",
-          "reason": "Incorrect. Formatting is a UI setting, not an AI summary."
-        },
-        {
-          "id": 2,
           "text": "To delete the chat",
           "reason": "Incorrect. It summarizes content, not deletes it."
         },
         {
+          "id": 2,
+          "text": "To provide a bulleted list of the main topics discussed and any action items mentioned",
+          "reason": "Correct. This helps users catch up quickly."
+        },
+        {
           "id": 3,
-          "text": "To send the chat to the user's manager",
-          "reason": "Incorrect. This would be an automated sharing action, not a summary."
+          "text": "To change the chat font to Comic Sans",
+          "reason": "Incorrect. Formatting is a UI setting, not an AI summary."
         },
         {
           "id": 4,
-          "text": "To provide a bulleted list of the main topics discussed and any action items mentioned",
-          "reason": "Correct. This helps users catch up quickly."
+          "text": "To send the chat to the user's manager",
+          "reason": "Incorrect. This would be an automated sharing action, not a summary."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        4
+        2
       ],
       "CorrectAnswerExplanation": "Chat summarization is a top use case for Copilot in Teams, saving users from scrolling through hundreds of messages."
     },
@@ -1827,18 +1827,18 @@
       "Options": [
         {
           "id": 1,
-          "text": "No, agents can only see the user's personal OneDrive",
-          "reason": "Incorrect. Agents can be grounded in public and private sources."
+          "text": "Yes, by adding the website URL to the 'Generative Answers' data sources",
+          "reason": "Correct. The agent will then index that site to provide answers."
         },
         {
           "id": 2,
-          "text": "Yes, by adding the website URL to the 'Generative Answers' data sources",
-          "reason": "Correct. The agent will then index that site to provide answers."
+          "text": "No, agents can only see the user's personal OneDrive",
+          "reason": "Incorrect. Agents can be grounded in public and private sources."
         }
       ],
       "MaxAnswerSelection": 1,
       "CorrectAnswers": [
-        2
+        1
       ],
       "CorrectAnswerExplanation": "Public websites are common data sources for customer-facing or internal support agents."
     },
@@ -1859,13 +1859,13 @@
         },
         {
           "id": 3,
-          "text": "Take a nap",
-          "reason": "Incorrect. While you may want to, it is not a technical step."
+          "text": "Delete the bot and start over",
+          "reason": "Incorrect. This is for starting from scratch."
         },
         {
           "id": 4,
-          "text": "Delete the bot and start over",
-          "reason": "Incorrect. This is for starting from scratch."
+          "text": "Take a nap",
+          "reason": "Incorrect. While you may want to, it is not a technical step."
         }
       ],
       "MaxAnswerSelection": 1,
