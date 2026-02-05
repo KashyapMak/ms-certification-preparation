@@ -1,0 +1,637 @@
+{
+    "quizName": "Microsoft Purview (AB-900 Preparation) Tutorial Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Purview Data Map",
+            "Question": "A company needs to create a unified map of their data assets across Azure, AWS S3, and on-premises SQL servers. Which Microsoft Purview component provides the foundation for this?",
+            "Options": [
+                { "id": 1, "text": "A. Data Catalog", "reason": "Incorrect. The Data Catalog is the user-facing search tool, but it is built on top of the Data Map." },
+                { "id": 2, "text": "B. Data Map", "reason": "Correct. The Data Map is the cloud-native capability that captures metadata and lineage from various sources." },
+                { "id": 3, "text": "C. Data Estate Insights", "reason": "Incorrect. This provides a high-level overview and metrics, not the base mapping of assets." },
+                { "id": 4, "text": "D. Compliance Manager", "reason": "Incorrect. This tracks regulatory compliance scores rather than technical data mapping." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Microsoft Purview Data Map provides the foundation for data discovery and effective data governance by capturing metadata about data present in analytics and operation systems."
+        },
+        {
+            "id": 2,
+            "topic": "Information Protection",
+            "Question": "You want to ensure that any document containing a Credit Card Number is automatically marked as 'Confidential'. Which Purview feature should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Retention Labels", "reason": "Incorrect. Retention labels manage how long data is kept, not its confidentiality classification." },
+                { "id": 2, "text": "B. Sensitivity Labels", "reason": "Correct. Sensitivity labels are used to classify and protect data based on its level of sensitivity." },
+                { "id": 3, "text": "C. eDiscovery Review Sets", "reason": "Incorrect. Review sets are used for legal investigations, not automated classification." },
+                { "id": 4, "text": "D. Audit Logs", "reason": "Incorrect. Audit logs track user activity but do not classify documents." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Sensitivity labels allow you to classify data across your organization and enforce protection settings (like encryption or watermarks) based on that classification."
+        },
+        {
+            "id": 3,
+            "topic": "Data Loss Prevention",
+            "Question": "A healthcare organization must prevent employees from sharing Patient Health Information (PHI) via Microsoft Teams chats. Which solution should they implement?",
+            "Options": [
+                { "id": 1, "text": "A. Insider Risk Management", "reason": "Incorrect. This identifies risky behavior but doesn't specifically block real-time sharing of data patterns." },
+                { "id": 2, "text": "B. Communication Compliance", "reason": "Incorrect. This is primarily for detecting harassment or policy violations in text, not protecting sensitive data types like PHI." },
+                { "id": 3, "text": "C. Data Loss Prevention (DLP)", "reason": "Correct. DLP policies can identify, monitor, and automatically protect sensitive information across Office 365 services." },
+                { "id": 4, "text": "D. Records Management", "reason": "Incorrect. This is used for lifecycle management and legal retention." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Microsoft Purview DLP policies allow you to detect and prevent the accidental or intentional sharing of sensitive information types like PHI in Teams, SharePoint, and OneDrive."
+        },
+        {
+            "id": 4,
+            "topic": "Data Catalog",
+            "Question": "A data analyst is looking for a specific dataset but doesn't know where it is stored. They want to search by technical name and business glossary terms. Where should they look?",
+            "Options": [
+                { "id": 1, "text": "A. Microsoft Purview Data Map", "reason": "Incorrect. The Data Map is the backend metadata store, not the search interface." },
+                { "id": 2, "text": "B. Microsoft Purview Data Catalog", "reason": "Correct. The Data Catalog provides a search portal for users to find assets by keywords, tags, and glossary terms." },
+                { "id": 3, "text": "C. Azure Resource Manager", "reason": "Incorrect. This manages Azure resources but does not provide a searchable inventory of data assets inside those resources." },
+                { "id": 4, "text": "D. Compliance Portal", "reason": "Incorrect. This is for risk and compliance tasks, not data discovery." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Data Catalog enables self-service data discovery for users by providing a searchable index of the metadata stored in the Data Map."
+        },
+        {
+            "id": 5,
+            "topic": "Insider Risk Management",
+            "Question": "Your company is concerned that employees leaving the company might download sensitive source code before their last day. Which Purview solution helps detect this specific pattern of behavior?",
+            "Options": [
+                { "id": 1, "text": "A. Information Protection", "reason": "Incorrect. While it labels the data, it doesn't analyze the behavioral pattern of the user." },
+                { "id": 2, "text": "B. Insider Risk Management", "reason": "Correct. It uses behavioral signals to identify potential malicious or inadvertent risky activities within the organization." },
+                { "id": 3, "text": "C. Audit (Standard)", "reason": "Incorrect. Audit provides the logs, but it doesn't proactively detect patterns of 'resignation-related data theft' without manual analysis." },
+                { "id": 4, "text": "D. Data Policy", "reason": "Incorrect. Data Policy manages access but doesn't analyze intent or behavior patterns." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Insider Risk Management focuses on identifying risky activities (like mass downloading or exfiltration) by correlating signals from across Microsoft 365 and HR systems."
+        },
+        {
+            "id": 6,
+            "topic": "Records Management",
+            "Question": "An organization needs to ensure that financial tax records are kept for exactly seven years and cannot be deleted by anyone, including administrators, during that time. What should they use?",
+            "Options": [
+                { "id": 1, "text": "A. Sensitivity Labels", "reason": "Incorrect. These protect data but do not enforce retention or deletion schedules." },
+                { "id": 2, "text": "B. Retention Labels with a 'Regulatory' policy", "reason": "Correct. Regulatory records can be made immutable, preventing deletion even by admins for the duration of the retention period." },
+                { "id": 3, "text": "C. Data Loss Prevention", "reason": "Incorrect. DLP prevents sharing but doesn't manage the lifecycle/retention of a file." },
+                { "id": 4, "text": "D. Audit Premium", "reason": "Incorrect. Audit tracks who did what, but it doesn't prevent deletion of the files." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Purview Records Management allows for the creation of retention labels that can be declared as 'Regulatory Records' to enforce immutability and compliance."
+        },
+        {
+            "id": 7,
+            "topic": "Compliance Manager",
+            "Question": "Which tool provides a 'Compliance Score' to help organizations measure their progress in completing actions that reduce risks around data protection and regulatory standards?",
+            "Options": [
+                { "id": 1, "text": "A. Purview Data Map", "reason": "Incorrect. The Data Map is for metadata management." },
+                { "id": 2, "text": "B. Compliance Manager", "reason": "Correct. Compliance Manager is a feature in the Purview portal that helps you manage your compliance requirements." },
+                { "id": 3, "text": "C. Data Estate Insights", "reason": "Incorrect. This provides insights into your data estate's health, not regulatory compliance actions." },
+                { "id": 4, "text": "D. Priva", "reason": "Incorrect. Priva is specifically for privacy risk management and subject rights requests." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Compliance Manager provides a dashboard that tracks your organization's compliance posture relative to common regulations and provides improvement actions."
+        },
+        {
+            "id": 8,
+            "topic": "Communication Compliance",
+            "Question": "Scenario: A manager wants to ensure that the workplace is inclusive and wants to be alerted if any communication on Microsoft Teams contains offensive language or harassment. Which Purview solution is designed for this?",
+            "Options": [
+                { "id": 1, "text": "A. eDiscovery", "reason": "Incorrect. eDiscovery is for finding evidence after a legal event has occurred, not for real-time monitoring of workplace conduct." },
+                { "id": 2, "text": "B. Communication Compliance", "reason": "Correct. It helps minimize communication risks by helping you detect, capture, and act on inappropriate messages in your organization." },
+                { "id": 3, "text": "C. Insider Risk Management", "reason": "Incorrect. This focuses on data-related risks (theft/leaks), not the content of interpersonal workplace communication." },
+                { "id": 4, "text": "D. Privacy Risk Management", "reason": "Incorrect. This focuses on protecting personal data (PII)." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Communication Compliance uses machine learning to identify violations of code-of-conduct policies in emails and Teams chats."
+        },
+        {
+            "id": 9,
+            "topic": "eDiscovery",
+            "Question": "A legal team needs to place a 'Legal Hold' on all emails belonging to a specific executive involved in a lawsuit. Which Purview solution provides this capability?",
+            "Options": [
+                { "id": 1, "text": "A. Data Loss Prevention", "reason": "Incorrect. DLP prevents sharing but doesn't preserve data for legal discovery." },
+                { "id": 2, "text": "B. Records Management", "reason": "Incorrect. While it manages retention, eDiscovery is the specific tool for litigation-driven holds." },
+                { "id": 3, "text": "C. eDiscovery (Standard or Premium)", "reason": "Correct. eDiscovery cases allow you to place holds on content to ensure it is preserved for legal investigation." },
+                { "id": 4, "text": "D. Audit", "reason": "Incorrect. Audit logs can show what happened, but they don't 'hold' the underlying content in place." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "eDiscovery in Microsoft Purview is used to identify, preserve, and collect electronic information for legal cases, including applying holds to mailboxes and SharePoint sites."
+        },
+        {
+            "id": 10,
+            "topic": "Data Lineage",
+            "Question": "You want to see how data moves from an Azure SQL Database, through an Azure Data Factory pipeline, and finally into a Power BI report. Which feature of Microsoft Purview provides this visualization?",
+            "Options": [
+                { "id": 1, "text": "A. Data Estate Insights", "reason": "Incorrect. Insights show high-level metrics like 'top sensitive data', not the path of a specific dataset." },
+                { "id": 2, "text": "B. Data Lineage", "reason": "Correct. Data Lineage in Purview visualizes the movement of data from source to destination across different platforms." },
+                { "id": 3, "text": "C. Workflow Orchestration", "reason": "Incorrect. Workflows are for governance approvals, not for visualizing data movement." },
+                { "id": 4, "text": "D. Sensitivity Labeling", "reason": "Incorrect. Labels classify the data but don't track its transformation history." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Data Lineage provides a visual map showing how data assets are related and how they change as they move through the data estate."
+        },
+        {
+            "id": 11,
+            "topic": "Privacy Risk Management",
+            "Question": "A customer requests that your organization provide a copy of all personal data you have stored about them. Which Microsoft Purview (Priva) feature simplifies this process?",
+            "Options": [
+                { "id": 1, "text": "A. Privacy Risk Management", "reason": "Incorrect. This helps find and mitigate privacy risks like data oversharing." },
+                { "id": 2, "text": "B. Subject Rights Requests", "reason": "Correct. Subject Rights Requests (SRR) automate the discovery and collection of a specific individual's data for GDPR/CCPA compliance." },
+                { "id": 3, "text": "C. Compliance Manager", "reason": "Incorrect. This manages the overall compliance posture, not individual data requests." },
+                { "id": 4, "text": "D. Information Protection", "reason": "Incorrect. Labels help identify PII, but they don't automate the 'request and package' process." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Subject Rights Requests in Microsoft Purview Priva help organizations automate the search for a person's data across their Microsoft 365 environment."
+        },
+        {
+            "id": 12,
+            "topic": "Purview Roles",
+            "Question": "An employee needs to be able to create and manage data scans in Microsoft Purview, but they should not be allowed to see the actual data content. Which role should be assigned?",
+            "Options": [
+                { "id": 1, "text": "A. Data Reader", "reason": "Incorrect. Data Readers can search the catalog but cannot manage scans." },
+                { "id": 2, "text": "B. Data Curator", "reason": "Incorrect. Data Curators manage the catalog and business glossary." },
+                { "id": 3, "text": "C. Data Source Administrator", "reason": "Correct. This role can manage data sources and scans but doesn't grant access to the data itself or the catalog management." },
+                { "id": 4, "text": "D. Collection Admin", "reason": "Incorrect. Collection Admins manage the hierarchy of Purview and role assignments, not the scanning operations directly." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "The Data Source Administrator role is responsible for managing scans and data sources within a specific collection."
+        },
+        {
+            "id": 13,
+            "topic": "Data Estate Insights",
+            "Question": "Which Microsoft Purview feature would a Chief Data Officer use to identify which parts of the organization have the most 'Uncurated' data (data without owners or descriptions)?",
+            "Options": [
+                { "id": 1, "text": "A. Data Catalog", "reason": "Incorrect. The catalog is for finding specific assets, not for organization-wide governance reporting." },
+                { "id": 2, "text": "B. Data Estate Insights", "reason": "Correct. It provides governance-level reports on the health, sensitivity, and curation of the entire data estate." },
+                { "id": 3, "text": "C. Insider Risk Management", "reason": "Incorrect. This tracks behavioral risk, not data hygiene." },
+                { "id": 4, "text": "D. Microsoft Purview Workflow", "reason": "Incorrect. Workflows automate approvals, not reporting." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Data Estate Insights provides pre-built reports that help governance teams understand their data landscape, including curation and sensitivity status."
+        },
+        {
+            "id": 14,
+            "topic": "Audit",
+            "Question": "An IT administrator needs to investigate who deleted a specific file from a SharePoint site three months ago. Which Purview solution should they use?",
+            "Options": [
+                { "id": 1, "text": "A. eDiscovery", "reason": "Incorrect. While eDiscovery can find the file if it's on hold, it doesn't provide the activity log of 'who deleted what'." },
+                { "id": 2, "text": "B. Audit", "reason": "Correct. The Audit solution captures activities across Microsoft 365 services, including file deletions." },
+                { "id": 3, "text": "C. Data Map", "reason": "Incorrect. Data Map stores metadata about the existence of files, not the history of user actions on them." },
+                { "id": 4, "text": "D. Priva", "reason": "Incorrect. Priva is for privacy management, not system activity logging." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Purview Audit provides organizations with a way to search and export records of user and admin activities."
+        },
+        {
+            "id": 15,
+            "topic": "Business Glossary",
+            "Question": "Your company uses the term 'SKU' for products, but new employees often search for 'Stock Keeping Unit'. How can you ensure both terms lead to the same data assets in Purview?",
+            "Options": [
+                { "id": 1, "text": "A. Create two different sensitivity labels", "reason": "Incorrect. Labels are for protection, not terminology mapping." },
+                { "id": 2, "text": "B. Use Business Glossary 'Synonyms'", "reason": "Correct. The glossary allows you to define terms and their synonyms so searches are more effective." },
+                { "id": 3, "text": "C. Run a new scan of the data sources", "reason": "Incorrect. Scanning metadata won't bridge the terminology gap automatically." },
+                { "id": 4, "text": "D. Assign the Data Reader role to everyone", "reason": "Incorrect. Roles don't affect search term logic." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Business Glossary in Microsoft Purview allows you to define a vocabulary for business users, including synonyms for common terms."
+        },
+        {
+            "id": 16,
+            "topic": "Data Policy",
+            "Question": "You want to grant a specific group of Data Scientists read access to various Azure Storage accounts across different subscriptions without having to manually set permissions on each individual resource. Which feature should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Data Map Scans", "reason": "Incorrect. Scans read metadata but do not grant data access permissions to users." },
+                { "id": 2, "text": "B. Microsoft Purview Data Policy", "reason": "Correct. Data policies allow you to manage access to data across your estate centrally from Purview." },
+                { "id": 3, "text": "C. Insider Risk Policy", "reason": "Incorrect. This monitors risk; it does not provision access." },
+                { "id": 4, "text": "D. Communication Compliance Policy", "reason": "Incorrect. This monitors communications; it does not manage storage access." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Purview Data Policy enables centralized access management for data sources like Azure SQL and Azure Storage."
+        },
+        {
+            "id": 17,
+            "topic": "Information Protection",
+            "Question": "Which of the following can be applied to a file via a Microsoft Purview Sensitivity Label? (Select 2)",
+            "Options": [
+                { "id": 1, "text": "A. Encryption", "reason": "Correct. Sensitivity labels can automatically encrypt files to prevent unauthorized access." },
+                { "id": 2, "text": "B. Content Watermarking", "reason": "Correct. Labels can add headers, footers, or watermarks to documents." },
+                { "id": 3, "text": "C. Automatic Deletion after 1 year", "reason": "Incorrect. This is a function of a Retention Label, not a Sensitivity Label." },
+                { "id": 4, "text": "D. Hardware Firewall Rules", "reason": "Incorrect. Sensitivity labels do not manage network hardware settings." }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [1, 2],
+            "CorrectAnswerExplanation": "Sensitivity labels primarily provide protection through encryption, access restrictions, and visual markings like watermarks."
+        },
+        {
+            "id": 18,
+            "topic": "Sensitive Information Types (SIT)",
+            "Question": "What is an 'Exact Data Match' (EDM) in the context of Microsoft Purview?",
+            "Options": [
+                { "id": 1, "text": "A. A search for exact keywords in the Data Catalog", "reason": "Incorrect. This describes a standard keyword search." },
+                { "id": 2, "text": "B. A way to identify sensitive information based on exact values from a database (like specific employee IDs)", "reason": "Correct. EDM allows you to create custom SITs based on actual database values for higher accuracy." },
+                { "id": 3, "text": "C. A feature that matches data lineage sources exactly", "reason": "Incorrect. Lineage is about data flow, not exact value matching for classification." },
+                { "id": 4, "text": "D. A method for matching user login passwords", "reason": "Incorrect. Purview does not handle password matching/verification." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Exact Data Match (EDM) uses a database of sensitive values to find exact matches in documents, reducing false positives compared to generic patterns."
+        },
+        {
+            "id": 19,
+            "topic": "eDiscovery Premium",
+            "Question": "Which feature of eDiscovery (Premium) helps reduce the volume of data that needs to be reviewed by legal teams by grouping similar documents together?",
+            "Options": [
+                { "id": 1, "text": "A. Legal Hold", "reason": "Incorrect. This preserves data but does not group it for review efficiency." },
+                { "id": 2, "text": "B. Review Sets with 'Near-Duplicate' detection", "reason": "Correct. Near-duplicate detection groups similar documents to speed up the review process." },
+                { "id": 3, "text": "C. Sensitivity Labeling", "reason": "Incorrect. This is for classification, not grouping legal evidence." },
+                { "id": 4, "text": "D. Audit Logs", "reason": "Incorrect. Audit logs show activity but are not used for legal review grouping." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "eDiscovery (Premium) includes advanced analytics like document threading and near-duplicate detection to streamline investigations."
+        },
+        {
+            "id": 20,
+            "topic": "Managed Attributes",
+            "Question": "In Microsoft Purview, you want to add a custom field called 'Department-ID' to all your SQL table assets in the Data Map. What feature should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Sensitivity Labels", "reason": "Incorrect. Labels are for security, not for adding custom business metadata fields." },
+                { "id": 2, "text": "B. Managed Attributes", "reason": "Correct. Managed attributes allow you to define custom metadata fields for your data assets." },
+                { "id": 3, "text": "C. Glossary Terms", "reason": "Incorrect. Glossary terms define language but don't act as structured attribute fields for assets." },
+                { "id": 4, "text": "D. Asset Classification", "reason": "Incorrect. Classification identifies PII (e.g., 'Email'), it doesn't add custom business fields like 'Department-ID'." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Managed attributes are user-defined keys that can be applied to assets in the Data Map to provide more context."
+        },
+        {
+            "id": 21,
+            "topic": "Collections",
+            "Question": "What is the primary purpose of 'Collections' in Microsoft Purview?",
+            "Options": [
+                { "id": 1, "text": "A. To collect data for eDiscovery cases", "reason": "Incorrect. This is a function of the eDiscovery tool, not the Purview 'Collection' structural unit." },
+                { "id": 2, "text": "B. To organize data assets and manage permissions based on the organization's structure", "reason": "Correct. Collections are the logical boundaries for managing assets, scans, and roles." },
+                { "id": 3, "text": "C. To group sensitivity labels together", "reason": "Incorrect. Labels are grouped in 'Label Policies'." },
+                { "id": 4, "text": "D. To store backup copies of your data", "reason": "Incorrect. Purview does not store data; it only stores metadata." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Collections allow you to create a hierarchy to manage access and organize sources according to your business needs (e.g., by department or region)."
+        },
+        {
+            "id": 22,
+            "topic": "Trainable Classifiers",
+            "Question": "You need to identify documents that look like 'Resumes' or 'Source Code' across your environment. Standard patterns (like Regex) aren't working well. What should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Sensitive Information Types (SIT)", "reason": "Incorrect. SITs usually rely on patterns like numbers or keywords, which are hard to use for 'Resumes'." },
+                { "id": 2, "text": "B. Trainable Classifiers", "reason": "Correct. These use machine learning to recognize content based on what it is, rather than just patterns." },
+                { "id": 3, "text": "C. Managed Attributes", "reason": "Incorrect. These are for metadata tagging, not automated content recognition." },
+                { "id": 4, "text": "D. Data Sharing", "reason": "Incorrect. This is for external data collaboration." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Trainable classifiers are AI models that learn to identify categories of data (like resumes or contracts) by looking at many examples."
+        },
+        {
+            "id": 23,
+            "topic": "Workflows",
+            "Question": "A company wants to ensure that whenever a new Glossary Term is created, it is reviewed and approved by a Data Steward before becoming public. What Purview feature enables this?",
+            "Options": [
+                { "id": 1, "text": "A. Data Map Scans", "reason": "Incorrect. Scans find data; they don't manage human approval processes." },
+                { "id": 2, "text": "B. Purview Workflows", "reason": "Correct. Purview workflows allow you to orchestrate and automate business processes like glossary approvals." },
+                { "id": 3, "text": "C. Information Protection Policies", "reason": "Incorrect. These are for security, not process orchestration." },
+                { "id": 4, "text": "D. Compliance Manager", "reason": "Incorrect. This tracks regulations, not internal data governance tasks." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Purview Workflow allows you to create approval chains for business glossary terms and other governance actions."
+        },
+        {
+            "id": 24,
+            "topic": "Data Sharing",
+            "Question": "Your company needs to share a large dataset stored in Azure Data Lake Storage Gen2 with an external partner. You want to do this without moving or copying the data. Which feature do you use?",
+            "Options": [
+                { "id": 1, "text": "A. Emailing an attachment", "reason": "Incorrect. This copies the data and is insecure for large datasets." },
+                { "id": 2, "text": "B. Microsoft Purview Data Sharing", "reason": "Correct. It allows for 'in-place' data sharing, meaning the recipient sees the data where it lives without a copy being made." },
+                { "id": 3, "text": "C. Sensitivity Labeling", "reason": "Incorrect. Labeling protects data but does not facilitate the 'sharing' mechanism itself." },
+                { "id": 4, "text": "D. Data Estate Insights", "reason": "Incorrect. This is a reporting tool." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Purview Data Sharing enables near-real-time sharing of data between organizations without data duplication."
+        },
+        {
+            "id": 25,
+            "topic": "Adaptive Scopes",
+            "Question": "You want to apply a retention policy only to users who belong to the 'Legal' department. As users join or leave the department, the policy should update automatically. What should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Static Scopes", "reason": "Incorrect. Static scopes require manual updates when users change departments." },
+                { "id": 2, "text": "B. Adaptive Scopes", "reason": "Correct. Adaptive scopes use attributes (like 'Department') to dynamically include or exclude users." },
+                { "id": 3, "text": "C. Sensitivity Labels", "reason": "Incorrect. Labels don't define the 'scope' of a policy; they are what is applied by the policy." },
+                { "id": 4, "text": "D. Purview Collections", "reason": "Incorrect. Collections organize metadata assets, not M365 user retention policies." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Adaptive policy scopes in Purview allow for more flexible and automated management of where policies are applied based on user/group attributes."
+        },
+        {
+            "id": 26,
+            "topic": "Customer Key",
+            "Question": "A highly regulated bank wants to manage the encryption keys used for their data at rest in Microsoft 365 services to meet strict compliance requirements. Which feature provides this?",
+            "Options": [
+                { "id": 1, "text": "A. Standard Microsoft Encryption", "reason": "Incorrect. This uses keys managed by Microsoft, not the customer." },
+                { "id": 2, "text": "B. Customer Key (BYOK)", "reason": "Correct. Customer Key allows organizations to use their own encryption keys from Azure Key Vault." },
+                { "id": 3, "text": "C. Purview Data Policy", "reason": "Incorrect. This manages access, not the underlying encryption keys." },
+                { "id": 4, "text": "D. Audit Premium", "reason": "Incorrect. This is for activity logging." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Customer Key helps organizations meet compliance obligations by allowing them to control the keys used to encrypt data at rest."
+        },
+        {
+            "id": 27,
+            "topic": "Priva",
+            "Question": "Which Priva solution is used specifically to identify 'Overexposed' personal data (e.g., PII that is shared too broadly in SharePoint)?",
+            "Options": [
+                { "id": 1, "text": "A. Subject Rights Requests", "reason": "Incorrect. This is for fulfilling individual data access requests." },
+                { "id": 2, "text": "B. Privacy Risk Management", "reason": "Correct. It helps identify risks such as data transfers, oversharing, and data minimization." },
+                { "id": 3, "text": "C. Data Loss Prevention", "reason": "Incorrect. DLP blocks sharing, but Privacy Risk Management provides a broader view of privacy hygiene and overexposure." },
+                { "id": 4, "text": "D. Compliance Manager", "reason": "Incorrect. This is for general regulatory tracking." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Priva Privacy Risk Management helps you detect personal data that is overshared or has remained stale for too long."
+        },
+        {
+            "id": 28,
+            "topic": "Classification vs Labeling",
+            "Question": "What is the difference between 'Classification' and 'Labeling' in Purview?",
+            "Options": [
+                { "id": 1, "text": "A. They are exactly the same thing", "reason": "Incorrect. They are related but distinct steps." },
+                { "id": 2, "text": "B. Classification identifies the data type (e.g., SSN), while Labeling applies a business policy (e.g., Secret)", "reason": "Correct. Classification is the discovery of sensitive types; labels are the containers for the security policies applied." },
+                { "id": 3, "text": "C. Labeling is for technical metadata, Classification is for business glossary", "reason": "Incorrect. Both can be applied to business and technical contexts." },
+                { "id": 4, "text": "D. Classification is manual, Labeling is automatic", "reason": "Incorrect. Both can be automated or manual." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Classification determines what is in the data, while labels assign a level of sensitivity and associated protection to that data."
+        },
+        {
+            "id": 29,
+            "topic": "Audit Retention",
+            "Question": "By default, how long are Audit logs kept for users assigned an Office 365 E3 license?",
+            "Options": [
+                { "id": 1, "text": "A. 30 days", "reason": "Incorrect. This is shorter than the standard retention." },
+                { "id": 2, "text": "B. 90 days", "reason": "Correct. Standard audit retention for E3 licenses is 90 days." },
+                { "id": 3, "text": "C. 1 year", "reason": "Incorrect. 1 year (or more) is usually reserved for Audit (Premium) / E5 licenses." },
+                { "id": 4, "text": "D. Forever", "reason": "Incorrect. Retention is limited unless specifically configured otherwise." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Standard audit log retention is 90 days. Audit (Premium) allows for longer retention periods, typically up to 1 year or 10 years."
+        },
+        {
+            "id": 30,
+            "topic": "Double Key Encryption (DKE)",
+            "Question": "Scenario: A government agency has extremely sensitive data that they want to store in the cloud, but they want to ensure Microsoft has absolutely no way to decrypt it under any circumstances. Which solution is required?",
+            "Options": [
+                { "id": 1, "text": "A. Sensitivity Labels with standard encryption", "reason": "Incorrect. Microsoft manages one of the keys in standard encryption." },
+                { "id": 2, "text": "B. Double Key Encryption (DKE)", "reason": "Correct. DKE uses two keys: one managed by Microsoft and one managed by the customer. Only the customer has access to both." },
+                { "id": 3, "text": "C. Insider Risk Management", "reason": "Incorrect. This doesn't prevent Microsoft's technical access to data." },
+                { "id": 4, "text": "D. Data Loss Prevention", "reason": "Incorrect. This is for preventing sharing, not encryption management." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Double Key Encryption ensures that only the customer can decrypt the data because they hold the second key required for decryption."
+        },
+        {
+            "id": 31,
+            "topic": "Purview Governance Portal",
+            "Question": "Where would you go to configure a new 'Scan' for an Azure SQL database?",
+            "Options": [
+                { "id": 1, "text": "A. Microsoft Purview Governance Portal", "reason": "Correct. Governance tasks like scanning and mapping are done in the Governance Portal (formerly the Purview Studio)." },
+                { "id": 2, "text": "B. Microsoft Purview Compliance Portal", "reason": "Incorrect. This portal is for risk, compliance, and information protection tasks like DLP and eDiscovery." },
+                { "id": 3, "text": "C. Azure Active Directory", "reason": "Incorrect. This is for identity management, not data asset scanning." },
+                { "id": 4, "text": "D. Power BI Admin Center", "reason": "Incorrect. This is only for Power BI specific settings." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "The Purview Governance Portal is where users manage the Data Map, Data Catalog, and Data Estate Insights."
+        },
+        {
+            "id": 32,
+            "topic": "Records Management",
+            "Question": "What is the benefit of using 'Event-based retention'?",
+            "Options": [
+                { "id": 1, "text": "A. It starts the retention clock as soon as a file is created", "reason": "Incorrect. This is 'Creation-based' retention." },
+                { "id": 2, "text": "B. It starts the retention clock based on a specific event, like an employee leaving the company or a contract expiring", "reason": "Correct. Event-based retention is ideal for lifecycles that don't depend on the age of the file." },
+                { "id": 3, "text": "C. It deletes files whenever a user logs out", "reason": "Incorrect. Logouts are not typical governance retention events." },
+                { "id": 4, "text": "D. It automatically classifies files based on events in the news", "reason": "Incorrect. News events do not trigger Purview retention." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Event-based retention allows organizations to manage data lifecycles based on business milestones rather than file metadata alone."
+        },
+        {
+            "id": 33,
+            "topic": "DLP for Endpoint",
+            "Question": "You want to prevent employees from copying sensitive files to a USB drive on their company-issued Windows 11 laptops. Which feature do you use?",
+            "Options": [
+                { "id": 1, "text": "A. Purview Data Policy", "reason": "Incorrect. This manages cloud data access, not local hardware actions." },
+                { "id": 2, "text": "B. Endpoint Data Loss Prevention (Endpoint DLP)", "reason": "Correct. Endpoint DLP extends Purview DLP capabilities to physical devices (PCs)." },
+                { "id": 3, "text": "C. Communication Compliance", "reason": "Incorrect. This is for messaging systems." },
+                { "id": 4, "text": "D. eDiscovery", "reason": "Incorrect. This is for legal investigations." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Endpoint DLP monitors activities like printing, copying to USB, or uploading to non-corporate cloud storage from the device itself."
+        },
+        {
+            "id": 34,
+            "topic": "Resource Sets",
+            "Question": "When Microsoft Purview scans an Azure Storage account and finds thousands of files that follow the same schema (e.g., daily logs), it groups them into a single entry in the Data Map. What is this entry called?",
+            "Options": [
+                { "id": 1, "text": "A. Data Collection", "reason": "Incorrect. Collections are organizational units for humans, not metadata grouping for files." },
+                { "id": 2, "text": "B. Resource Set", "reason": "Correct. Resource sets represent a group of objects in storage that share the same schema." },
+                { "id": 3, "text": "C. Managed Attribute", "reason": "Incorrect. These are custom metadata fields." },
+                { "id": 4, "text": "D. Data Insight", "reason": "Incorrect. Insights are reports, not map assets." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Resource Sets prevent the Data Map from being cluttered with millions of individual log or partition files that are logically part of one dataset."
+        },
+        {
+            "id": 35,
+            "topic": "Compliance Manager",
+            "Question": "What are 'Improvement Actions' in Compliance Manager?",
+            "Options": [
+                { "id": 1, "text": "A. Automatic updates to the Windows operating system", "reason": "Incorrect. These are general system updates, not compliance-specific actions." },
+                { "id": 2, "text": "B. Recommended steps to reduce compliance risks and increase your compliance score", "reason": "Correct. These actions guide admins on how to configure Purview or M365 to be more compliant." },
+                { "id": 3, "text": "C. Deleting old audit logs to save space", "reason": "Incorrect. This is a maintenance task, usually not a compliance 'improvement' action." },
+                { "id": 4, "text": "D. Hiring new compliance officers", "reason": "Incorrect. Purview manages technical/administrative actions, not HR hiring." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Improvement actions provide specific guidance (e.g., 'Turn on Multi-Factor Authentication') to help you meet regulatory requirements."
+        },
+        {
+            "id": 36,
+            "topic": "Purview API",
+            "Question": "You want to programmatically export metadata from the Microsoft Purview Data Map into a custom application. Which API should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Microsoft Graph API", "reason": "Incorrect. While Graph handles some M365 data, the Data Map specifically uses the Atlas API." },
+                { "id": 2, "text": "B. Apache Atlas API", "reason": "Correct. Microsoft Purview's Data Map is compatible with Apache Atlas open-source APIs." },
+                { "id": 3, "text": "C. Azure Resource Manager (ARM) API", "reason": "Incorrect. ARM is for deploying the Purview account itself, not interacting with its metadata." },
+                { "id": 4, "text": "D. Power BI REST API", "reason": "Incorrect. This is only for Power BI assets." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Purview's Data Map uses Apache Atlas APIs for a standardized way to interact with data metadata and lineage."
+        },
+        {
+            "id": 37,
+            "topic": "Data Curation",
+            "Question": "A user is assigned the 'Data Curator' role. What are they primarily responsible for?",
+            "Options": [
+                { "id": 1, "text": "A. Managing hardware in the data center", "reason": "Incorrect. This is an infrastructure role." },
+                { "id": 2, "text": "B. Defining glossary terms and enriching data asset metadata", "reason": "Correct. Curators improve the 'readability' and usefulness of the data catalog." },
+                { "id": 3, "text": "C. Performing legal searches for lawsuits", "reason": "Incorrect. This is an eDiscovery Manager role." },
+                { "id": 4, "text": "D. Creating Azure subscriptions", "reason": "Incorrect. This is an Azure Global Admin or Contributor role." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Data Curators manage the business glossary and ensure that assets in the catalog are properly tagged and described."
+        },
+        {
+            "id": 38,
+            "topic": "Communication Compliance",
+            "Question": "Can Communication Compliance monitor communications in third-party apps like Slack or Zoom?",
+            "Options": [
+                { "id": 1, "text": "A. No, it only works for Microsoft Teams", "reason": "Incorrect. While native to Teams, it can ingest other data." },
+                { "id": 2, "text": "B. Yes, by using data connectors to ingest content into Microsoft Purview", "reason": "Correct. Microsoft provides connectors for many 3rd party platforms to be monitored for compliance." },
+                { "id": 3, "text": "C. Yes, by installing a special agent on the Slack servers", "reason": "Incorrect. It uses API-based data connectors, not server agents." },
+                { "id": 4, "text": "D. No, it is a privacy violation to monitor non-Microsoft apps", "reason": "Incorrect. Companies can monitor corporate-owned communication channels for compliance." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Purview Data Connectors allow organizations to ingest and analyze data from non-Microsoft sources for compliance purposes."
+        },
+        {
+            "id": 39,
+            "topic": "Sensitivity Labels",
+            "Question": "You have a sensitivity label named 'Highly Confidential'. You want this label to be applied automatically to any document in SharePoint that contains a Social Security Number. How is this achieved?",
+            "Options": [
+                { "id": 1, "text": "A. Manual tagging by every user", "reason": "Incorrect. The requirement is for it to be 'automatic'." },
+                { "id": 2, "text": "B. Using Auto-labeling policies", "reason": "Correct. Auto-labeling policies scan content at rest in SharePoint/OneDrive and apply labels based on rules." },
+                { "id": 3, "text": "C. Running a Data Map scan", "reason": "Incorrect. Data Map scans identify classification but don't apply M365 sensitivity labels." },
+                { "id": 4, "text": "D. Enabling Compliance Manager", "reason": "Incorrect. This is for scoring and guidance, not active labeling." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Auto-labeling policies allow for automated protection across your data estate based on predefined conditions."
+        },
+        {
+            "id": 40,
+            "topic": "Data Policy",
+            "Question": "What is the requirement for a data source (like Azure SQL) to be managed by Microsoft Purview Data Policies?",
+            "Options": [
+                { "id": 1, "text": "A. It must be registered in the Purview Data Map with 'Data Policy' enforcement enabled", "reason": "Correct. Enforcement must be specifically turned on for the policy to take effect on the resource." },
+                { "id": 2, "text": "B. It must be deleted and recreated", "reason": "Incorrect. Existing resources can be used." },
+                { "id": 3, "text": "C. It must be in the same region as the Purview account", "reason": "Incorrect. Purview can manage resources across different regions." },
+                { "id": 4, "text": "D. It must use a basic pricing tier", "reason": "Incorrect. Advanced tiers are often required for governance features." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "For a data source to honor Purview's access policies, the 'Data Policy' toggle must be enabled during registration or in the source settings."
+        },
+        {
+            "id": 41,
+            "topic": "Insider Risk Management",
+            "Question": "Which of these is a typical 'Triggering Event' for an Insider Risk Management policy?",
+            "Options": [
+                { "id": 1, "text": "A. A user changing their password", "reason": "Incorrect. This is a common security event, not necessarily an insider risk trigger." },
+                { "id": 2, "text": "B. A user's resignation date being entered into the HR system", "reason": "Correct. HR triggers (like resignation or termination) are key for detecting potential data theft by departing employees." },
+                { "id": 3, "text": "C. A user logging in from a new device", "reason": "Incorrect. This is an identity security trigger (Azure AD), not usually an 'insider risk' lifecycle trigger." },
+                { "id": 4, "text": "D. A user installing a new web browser", "reason": "Incorrect. This is a workstation management event." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Insider Risk policies often wait for a 'triggering event' (like an HR record change) before they start analyzing the user's historical activity for risky patterns."
+        },
+        {
+            "id": 42,
+            "topic": "eDiscovery Review",
+            "Question": "In eDiscovery (Premium), what is the purpose of a 'Review Set'?",
+            "Options": [
+                { "id": 1, "text": "A. To delete data permanently", "reason": "Incorrect. Review sets are for analysis, not deletion." },
+                { "id": 2, "text": "B. To provide a static set of documents that legal teams can tag, annotate, and analyze", "reason": "Correct. Review sets 'freeze' a subset of discovered data for investigation." },
+                { "id": 3, "text": "C. To send documents to a printer", "reason": "Incorrect. While you can print, the purpose is digital analysis." },
+                { "id": 4, "text": "D. To train machine learning models for DLP", "reason": "Incorrect. DLP training is done in the DLP settings, not in an eDiscovery review set." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "A Review Set allows legal investigators to search within a specific collection of data and apply tags like 'Privileged' or 'Responsive'."
+        },
+        {
+            "id": 43,
+            "topic": "Data Lifecycle Management",
+            "Question": "What is the main difference between Microsoft Purview 'Data Lifecycle Management' and 'Records Management'?",
+            "Options": [
+                { "id": 1, "text": "A. One is for cloud, one is for on-premises", "reason": "Incorrect. Both can handle cloud data." },
+                { "id": 2, "text": "B. Lifecycle Management is for broad data deletion/retention, Records Management is for high-value legal/regulatory documents", "reason": "Correct. Records Management is a subset of lifecycle management with more granular controls and immutability." },
+                { "id": 3, "text": "C. Records Management only works for physical paper files", "reason": "Incorrect. It is primarily for electronic records." },
+                { "id": 4, "text": "D. There is no difference; they are different names for the same thing", "reason": "Incorrect. They are separate solutions in the Purview portal." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Lifecycle Management (retention policies) is for general 'housekeeping' of data, while Records Management is for specific items that require a strict evidence trail."
+        },
+        {
+            "id": 44,
+            "topic": "Information Protection",
+            "Question": "Which tool can be used to scan on-premises file shares to apply sensitivity labels?",
+            "Options": [
+                { "id": 1, "text": "A. Microsoft Purview Information Protection Scanner", "reason": "Correct. The scanner allows you to discover and protect files on local file shares and SharePoint Server." },
+                { "id": 2, "text": "B. Windows Update", "reason": "Incorrect. This manages OS patches." },
+                { "id": 3, "text": "C. Microsoft Teams client", "reason": "Incorrect. Teams is for communication, not for scanning on-premises servers." },
+                { "id": 4, "text": "D. Azure Data Factory", "reason": "Incorrect. ADF moves data but is not the primary tool for applying M365 sensitivity labels to files on-prem." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "The Information Protection scanner is an on-premises agent that extends cloud-based labeling to local storage."
+        },
+        {
+            "id": 45,
+            "topic": "Compliance Portal",
+            "Question": "You want to view all the 'Sensitivity Labels' created in your organization. Which portal should you use?",
+            "Options": [
+                { "id": 1, "text": "A. Purview Governance Portal", "reason": "Incorrect. This is for Data Map and Catalog." },
+                { "id": 2, "text": "B. Purview Compliance Portal", "reason": "Correct. Information Protection and Sensitivity Labels are managed in the Compliance portal." },
+                { "id": 3, "text": "C. Azure Portal", "reason": "Incorrect. While some Purview settings are here, labels are managed in the specific M365/Compliance portal." },
+                { "id": 4, "text": "D. OneDrive Settings", "reason": "Incorrect. This is for personal storage settings." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Purview Compliance Portal (formerly Microsoft 365 Compliance Center) is the hub for Information Protection, Risk, and Compliance solutions."
+        }
+    ]
+}
