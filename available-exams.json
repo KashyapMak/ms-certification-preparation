@@ -26,5 +26,9 @@
     {
         "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 2",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json"
+    },
+    {
+        "title": "AB-900 - Copilot and Agent Administration Fundamentals - Purview",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json"
     }
 ]
