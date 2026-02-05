@@ -5,12 +5,13 @@
     "questions": [
         {
             "id": 1,
+            "topic": "Geography: Asia",
             "Question": "What is the capital city of India?",
             "Options": [
-                { "id": 1, "text": "A. Mumbai" },
-                { "id": 2, "text": "B. New Delhi" },
-                { "id": 3, "text": "C. Bangalore" },
-                { "id": 4, "text": "D. Kolkata" }
+                { "id": 1, "text": "A. Mumbai", "reason": "Incorrect. Mumbai is the financial capital, but not the political capital." },
+                { "id": 2, "text": "B. New Delhi", "reason": "Correct. New Delhi is the seat of all three branches of the Government of India." },
+                { "id": 3, "text": "C. Bangalore", "reason": "Incorrect. Bangalore is known as the 'Silicon Valley' of India." },
+                { "id": 4, "text": "D. Kolkata", "reason": "Incorrect. Kolkata was the capital until it was moved in 1911." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [2],
@@ -18,12 +19,13 @@
         },
         {
             "id": 2,
+            "topic": "Environmental Science",
             "Question": "Which of the following are among the world's top two largest rainforests? (Select 2)",
             "Options": [
-                { "id": 1, "text": "A. The Amazon Rainforest" },
-                { "id": 2, "text": "B. The Sahara Forest" },
-                { "id": 3, "text": "C. The Congo Rainforest" },
-                { "id": 4, "text": "D. The Sherwood Forest" }
+                { "id": 1, "text": "A. The Amazon Rainforest", "reason": "Correct. The Amazon is the largest tropical rainforest in the world." },
+                { "id": 2, "text": "B. The Sahara Forest", "reason": "Incorrect. The Sahara is a desert, not a rainforest." },
+                { "id": 3, "text": "C. The Congo Rainforest", "reason": "Correct. The Congo Basin is the second largest rainforest on Earth." },
+                { "id": 4, "text": "D. The Sherwood Forest", "reason": "Incorrect. Sherwood is a royal forest in England, but very small compared to tropical rainforests." }
             ],
             "MaxAnswerSelection": 2,
             "CorrectAnswers": [1, 3],
@@ -31,12 +33,13 @@
         },
         {
             "id": 3,
+            "topic": "Astronomy",
             "Question": "Which planet is known as the 'Red Planet'?",
             "Options": [
-                { "id": 1, "text": "A. Venus" },
-                { "id": 2, "text": "B. Mars" },
-                { "id": 3, "text": "C. Jupiter" },
-                { "id": 4, "text": "D. Saturn" }
+                { "id": 1, "text": "A. Venus", "reason": "Incorrect. Venus is often called the 'Evening Star' or 'Morning Star'." },
+                { "id": 2, "text": "B. Mars", "reason": "Correct. Iron oxide on its surface gives it a distinct reddish appearance." },
+                { "id": 3, "text": "C. Jupiter", "reason": "Incorrect. Jupiter is known for its Great Red Spot, but is a gas giant, not a red planet." },
+                { "id": 4, "text": "D. Saturn", "reason": "Incorrect. Saturn is best known for its extensive ring system." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [2],
@@ -44,13 +47,14 @@
         },
         {
             "id": 4,
+            "topic": "Arts and Design",
             "Question": "Which of the following are primary colors? (Select 3)",
             "Options": [
-                { "id": 1, "text": "A. Red" },
-                { "id": 2, "text": "B. Green" },
-                { "id": 3, "text": "C. Blue" },
-                { "id": 4, "text": "D. Yellow" },
-                { "id": 5, "text": "E. Orange" }
+                { "id": 1, "text": "A. Red", "reason": "Correct. Red is a fundamental primary color in the RYB model." },
+                { "id": 2, "text": "B. Green", "reason": "Incorrect. In the RYB model, Green is a secondary color made from Yellow and Blue." },
+                { "id": 3, "text": "C. Blue", "reason": "Correct. Blue cannot be created by mixing other colors in the RYB model." },
+                { "id": 4, "text": "D. Yellow", "reason": "Correct. Yellow is the third primary color in traditional art theory." },
+                { "id": 5, "text": "E. Orange", "reason": "Incorrect. Orange is a secondary color created by mixing Red and Yellow." }
             ],
             "MaxAnswerSelection": 3,
             "CorrectAnswers": [1, 3, 4],
@@ -58,12 +62,13 @@
         },
         {
             "id": 5,
+            "topic": "Physical Geography",
             "Question": "Which is the largest ocean on Earth?",
             "Options": [
-                { "id": 1, "text": "A. Atlantic Ocean" },
-                { "id": 2, "text": "B. Indian Ocean" },
-                { "id": 3, "text": "C. Arctic Ocean" },
-                { "id": 4, "text": "D. Pacific Ocean" }
+                { "id": 1, "text": "A. Atlantic Ocean", "reason": "Incorrect. The Atlantic is the second-largest ocean." },
+                { "id": 2, "text": "B. Indian Ocean", "reason": "Incorrect. The Indian Ocean is the third-largest." },
+                { "id": 3, "text": "C. Arctic Ocean", "reason": "Incorrect. The Arctic is the smallest and shallowest of the five major oceans." },
+                { "id": 4, "text": "D. Pacific Ocean", "reason": "Correct. The Pacific covers more than 30% of the Earth's surface." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [4],
