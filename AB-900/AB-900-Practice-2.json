@@ -1,0 +1,837 @@
+{
+  "quizName": "AB-900: Microsoft 365 Certified: Copilot and Agent Administration Fundamentals Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "Which component acts as the secure interface between the user prompt, the Large Language Model (LLM), and organizational data?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft Graph", "reason": "Incorrect. Graph is the data gateway, but the Orchestrator manages the workflow." },
+        { "id": 2, "text": "B. Copilot Orchestrator", "reason": "Correct. The orchestrator coordinates the retrieval and grounding process." },
+        { "id": 3, "text": "C. Bing Search", "reason": "Incorrect. Bing provides web grounding, not the core workflow coordination." },
+        { "id": 4, "text": "D. Azure Active Directory", "reason": "Incorrect. This handles identity, not the AI reasoning workflow." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Copilot Orchestrator manages the iterative process of grounding, prompting the LLM, and returning the final response."
+    },
+    {
+      "id": 2,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "What is a technical requirement for a user to access Copilot features in Microsoft 365 Apps for Desktop?",
+      "Options": [
+        { "id": 1, "text": "A. Windows 11 only", "reason": "Incorrect. It also works on Windows 10 and macOS." },
+        { "id": 2, "text": "B. Current Channel or Monthly Enterprise Channel", "reason": "Correct. These channels ensure the latest AI integration features are available." },
+        { "id": 3, "text": "C. Semi-Annual Enterprise Channel", "reason": "Incorrect. This channel updates too slowly for Copilot feature releases." },
+        { "id": 4, "text": "D. 64GB of RAM", "reason": "Incorrect. Processing happens in the cloud, so extreme local RAM isn't required." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot requires the Current Channel or Monthly Enterprise Channel to support the frequent updates required for AI services."
+    },
+    {
+      "id": 3,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "How does Microsoft Copilot for Microsoft 365 ensure data privacy regarding the training of Large Language Models (LLMs)?",
+      "Options": [
+        { "id": 1, "text": "A. Data is deleted after 24 hours", "reason": "Incorrect. Data retention is governed by tenant policies, not a 24-hour limit." },
+        { "id": 2, "text": "B. Organizational data is never used to train the global LLMs", "reason": "Correct. Microsoft ensures tenant data remains within the compliance boundary." },
+        { "id": 3, "text": "C. Data is anonymized before training", "reason": "Incorrect. No training of the foundation models occurs using customer data." },
+        { "id": 4, "text": "D. Users must opt-in to allow training", "reason": "Incorrect. There is no training of foundation models on customer data, even with opt-in." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Microsoft guarantees that your organizational data is not used to train the base foundation models used by other customers."
+    },
+    {
+      "id": 4,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What is the primary benefit of using 'Generative Answers' in Copilot Studio?",
+      "Options": [
+        { "id": 1, "text": "A. It translates text to 100 languages", "reason": "Incorrect. Multi-language is a separate feature of the bot." },
+        { "id": 2, "text": "B. It allows the agent to answer questions using specified data sources without creating manual topics", "reason": "Correct. It uses RAG (Retrieval-Augmented Generation) to pull info dynamically." },
+        { "id": 3, "text": "C. It generates images for the user", "reason": "Incorrect. Generative Answers refers to text retrieval and response." },
+        { "id": 4, "text": "D. It writes code for the administrator", "reason": "Incorrect. This is not the primary function of the Generative Answers feature." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Generative Answers allow a bot to pull information from a URL or file to provide answers on-the-fly without pre-defined dialogue paths."
+    },
+    {
+      "id": 5,
+      "topic": "Manage Copilot agents",
+      "Question": "Which administrative portal is used to manage the availability of Copilot agents across the tenant?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft Purview", "reason": "Incorrect. Purview is for data governance and compliance." },
+        { "id": 2, "text": "B. Microsoft 365 Admin Center", "reason": "Correct. The 'Integrated apps' section manages the deployment of agents." },
+        { "id": 3, "text": "C. SharePoint Admin Center", "reason": "Incorrect. While it manages data sources, it doesn't manage global agent deployment." },
+        { "id": 4, "text": "D. Exchange Admin Center", "reason": "Incorrect. This manages mailboxes and mail flow." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Microsoft 365 Admin Center is the central hub for managing licenses and integrated apps/agents."
+    },
+    {
+      "id": 6,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "What is 'Grounding' in the context of Microsoft Copilot?",
+      "Options": [
+        { "id": 1, "text": "A. Deleting old user accounts", "reason": "Incorrect. Grounding is a data retrieval process, not account management." },
+        { "id": 2, "text": "B. Providing the LLM with relevant organizational data to improve response accuracy", "reason": "Correct. It provides the AI with the 'facts' it needs for a specific query." },
+        { "id": 3, "text": "C. Encrypting data at rest", "reason": "Incorrect. Encryption is a security measure, not the grounding process." },
+        { "id": 4, "text": "D. Syncing files to a local PC", "reason": "Incorrect. This is OneDrive sync, not AI grounding." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Grounding ensures the AI doesn't rely solely on its general training data, but uses specific, relevant business context."
+    },
+    {
+      "id": 7,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "An organization is concerned about 'Oversharing'. Which tool provides a 'Copilot Readiness Report' to identify sensitive data risks?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 Admin Center", "reason": "Correct. The reports section provides readiness and adoption insights." },
+        { "id": 2, "text": "B. Microsoft Word", "reason": "Incorrect. Word is an end-user application, not an admin reporting tool." },
+        { "id": 3, "text": "C. Windows Update for Business", "reason": "Incorrect. This manages OS patches, not AI data readiness." },
+        { "id": 4, "text": "D. Azure Cost Management", "reason": "Incorrect. This tracks spending, not data sensitivity." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The Microsoft 365 Admin Center contains reports that help evaluate tenant readiness and data governance state."
+    },
+    {
+      "id": 8,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "Which Microsoft Purview feature allows Copilot to respect data access restrictions on specific documents?",
+      "Options": [
+        { "id": 1, "text": "A. Data Loss Prevention (DLP)", "reason": "Incorrect. DLP prevents sharing, but Sensitivity Labels manage the actual access and visibility." },
+        { "id": 2, "text": "B. Sensitivity Labels", "reason": "Correct. Copilot respects labels and the associated encryption/permissions." },
+        { "id": 3, "text": "C. Communication Compliance", "reason": "Incorrect. This monitors for policy violations in text, not file access." },
+        { "id": 4, "text": "D. eDiscovery", "reason": "Incorrect. This is for legal searches of data, not real-time access control." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot adheres to the permissions defined by Sensitivity Labels, ensuring users only get AI content from data they can already access."
+    },
+    {
+      "id": 9,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "In Copilot Studio, what are 'Topics' used for?",
+      "Options": [
+        { "id": 1, "text": "A. Storing user passwords", "reason": "Incorrect. Topics are logic flows, not credential storage." },
+        { "id": 2, "text": "B. Defining discrete conversation paths to handle specific user queries", "reason": "Correct. Topics are the 'flowcharts' for the bot's conversation." },
+        { "id": 3, "text": "C. Changing the bot's color scheme", "reason": "Incorrect. This is done in the Canvas or Branding settings." },
+        { "id": 4, "text": "D. Installing Windows updates", "reason": "Incorrect. Topics are conversational logic within the agent." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Topics allow administrators to control exactly how an agent should handle a specific scenario, such as 'Checking Order Status'."
+    },
+    {
+      "id": 10,
+      "topic": "Manage Copilot agents",
+      "Question": "Which role is required to enable or disable the use of Copilot in Microsoft Teams meetings at the tenant level?",
+      "Options": [
+        { "id": 1, "text": "A. Helpdesk Administrator", "reason": "Incorrect. This role doesn't have enough permission for service-wide settings." },
+        { "id": 2, "text": "B. Teams Administrator", "reason": "Correct. Teams admins manage meeting policies, including AI features." },
+        { "id": 3, "text": "C. Billing Administrator", "reason": "Incorrect. This role handles payments and invoices." },
+        { "id": 4, "text": "D. User Administrator", "reason": "Incorrect. This role manages user accounts but not Teams service policies." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Teams meeting policies (including recording and AI summarization) are managed by the Teams Administrator role."
+    },
+    {
+      "id": 11,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "Which technology does Microsoft use to process user prompts within the M365 boundary to ensure the LLM understands the specific data context?",
+      "Options": [
+        { "id": 1, "text": "A. Semantic Index", "reason": "Correct. Semantic Indexing maps the relationships between organizational data for the AI." },
+        { "id": 2, "text": "B. Public Web Index", "reason": "Incorrect. This is for general web searches, not private M365 data." },
+        { "id": 3, "text": "C. CSV Export", "reason": "Incorrect. CSV is a file format, not an AI indexing technology." },
+        { "id": 4, "text": "D. Local Hardware Indexing", "reason": "Incorrect. Indexing for Copilot happens at the service/tenant level in the cloud." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The Semantic Index works alongside the Microsoft Graph to provide high-fidelity retrieval based on the meaning of data."
+    },
+    {
+      "id": 12,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "Which of the following is a key step in the 'Prepare' phase of a Copilot deployment?",
+      "Options": [
+        { "id": 1, "text": "A. Deleting all SharePoint sites", "reason": "Incorrect. This would destroy the data the AI needs to be useful." },
+        { "id": 2, "text": "B. Auditing permissions to ensure users only have access to data they need (Principle of Least Privilege)", "reason": "Correct. This prevents 'oversharing' when Copilot retrieves data." },
+        { "id": 3, "text": "C. Buying new monitors for all users", "reason": "Incorrect. Hardware upgrades like monitors aren't a Copilot prerequisite." },
+        { "id": 4, "text": "D. Switching all users to Linux", "reason": "Incorrect. Copilot is designed for Microsoft 365 ecosystems." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Cleaning up permissions is vital so that Copilot doesn't surface sensitive files to users who shouldn't have access."
+    },
+    {
+      "id": 13,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "What is the result of using 'Web Search' within Copilot for Microsoft 365?",
+      "Options": [
+        { "id": 1, "text": "A. It uploads your private documents to Google", "reason": "Incorrect. Microsoft uses Bing, and private data is not uploaded to the public index." },
+        { "id": 2, "text": "B. It allows Copilot to incorporate public internet information into its responses", "reason": "Correct. This provides context on current events or public facts." },
+        { "id": 3, "text": "C. It makes the computer run 50% faster", "reason": "Incorrect. AI web grounding does not impact local CPU speed." },
+        { "id": 4, "text": "D. It disables access to SharePoint", "reason": "Incorrect. Web search is an additional source, not a replacement for internal data." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Web grounding (via Bing) allows Copilot to answer questions about things that aren't in your internal documents."
+    },
+    {
+      "id": 14,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What are 'Entities' in Copilot Studio?",
+      "Options": [
+        { "id": 1, "text": "A. The physical buildings where servers are located", "reason": "Incorrect. Entities are a data concept, not a physical location." },
+        { "id": 2, "text": "B. Information types that the bot can recognize from a user's input, like a date or email address", "reason": "Correct. Entities help the bot extract specific data points from conversation." },
+        { "id": 3, "text": "C. The names of the IT administrators", "reason": "Incorrect. Admins are users; entities are data classifications." },
+        { "id": 4, "text": "D. Different subscription levels for the bot", "reason": "Incorrect. Entities are a functional component of the agent's logic." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Entities allow the bot to 'understand' that if a user says 'Friday', they are referring to a Date."
+    },
+    {
+      "id": 15,
+      "topic": "Manage Copilot agents",
+      "Question": "An administrator wants to view how often users are interacting with Copilot across Word, Excel, and Teams. Which report should they use?",
+      "Options": [
+        { "id": 1, "text": "A. Windows Error Report", "reason": "Incorrect. This is for software crashes, not usage statistics." },
+        { "id": 2, "text": "B. Microsoft 365 Copilot Usage Report", "reason": "Correct. This report provides specific metrics on AI adoption and usage." },
+        { "id": 3, "text": "C. Azure Billing Report", "reason": "Incorrect. This shows costs, not specific app feature usage." },
+        { "id": 4, "text": "D. Outlook Junk Mail Report", "reason": "Incorrect. This handles spam filtering metrics." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Copilot Usage report in the M365 Admin Center tracks active users and actions taken across different apps."
+    },
+    {
+      "id": 16,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "In the Copilot architecture, what is the role of 'Microsoft Graph'?",
+      "Options": [
+        { "id": 1, "text": "A. To generate 3D images", "reason": "Incorrect. Graph is a data API, not a graphics engine." },
+        { "id": 2, "text": "B. To serve as the gateway to retrieve content and context from the M365 tenant", "reason": "Correct. It provides access to emails, files, meetings, and relationships." },
+        { "id": 3, "text": "C. To replace the Large Language Model", "reason": "Incorrect. Graph provides the data; the LLM provides the reasoning." },
+        { "id": 4, "text": "D. To act as a hardware firewall", "reason": "Incorrect. It is a cloud software service, not a physical firewall." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Microsoft Graph is the unified API that Copilot uses to find relevant user data for grounding."
+    },
+    {
+      "id": 17,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "Which tool can help administrators automate the discovery and labeling of sensitive data across SharePoint and OneDrive?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft Purview Auto-labeling", "reason": "Correct. It uses policies to apply sensitivity labels automatically." },
+        { "id": 2, "text": "B. Excel Power Query", "reason": "Incorrect. This is for data transformation in spreadsheets, not security labeling." },
+        { "id": 3, "text": "C. Notepad", "reason": "Incorrect. Notepad is a simple text editor with no security automation." },
+        { "id": 4, "text": "D. Teams Chat", "reason": "Incorrect. Teams is a collaboration tool, not a data security automation engine." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Auto-labeling policies in Purview ensure that sensitive data is protected consistently, which helps Copilot stay compliant."
+    },
+    {
+      "id": 18,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "What is 'Prompt Engineering'?",
+      "Options": [
+        { "id": 1, "text": "A. Repairing a broken computer", "reason": "Incorrect. This is hardware maintenance." },
+        { "id": 2, "text": "B. The practice of crafting clear and specific inputs to get the most relevant AI responses", "reason": "Correct. It focuses on intent, context, and constraints in the prompt." },
+        { "id": 3, "text": "C. Coding a new LLM from scratch", "reason": "Incorrect. This is model development, not prompt engineering." },
+        { "id": 4, "text": "D. Managing a helpdesk ticket system", "reason": "Incorrect. This is IT service management." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Good prompt engineering (Goal, Context, Source, Expectations) improves the quality of Copilot's output."
+    },
+    {
+      "id": 19,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What does 'Retrieval-Augmented Generation' (RAG) describe?",
+      "Options": [
+        { "id": 1, "text": "A. Deleting old emails to save space", "reason": "Incorrect. This is data retention." },
+        { "id": 2, "text": "B. The process of retrieving data from a source and providing it to the LLM to generate a response", "reason": "Correct. This is the technical term for grounding." },
+        { "id": 3, "text": "C. A way to speed up internet downloads", "reason": "Incorrect. RAG is about AI response quality, not network speed." },
+        { "id": 4, "text": "D. Generating images from scratch", "reason": "Incorrect. RAG is primarily associated with grounded text generation." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "RAG ensures the LLM 'knows' specific facts from your data before it attempts to write a response."
+    },
+    {
+      "id": 20,
+      "topic": "Manage Copilot agents",
+      "Question": "When a user provides feedback (Thumbs Up/Down) on a Copilot response, where can a tenant administrator see aggregated feedback data?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 Admin Center (Feedback section)", "reason": "Correct. Admins can manage and review feedback from users here." },
+        { "id": 2, "text": "B. Individual Word documents", "reason": "Incorrect. Feedback is aggregated in the admin portal, not stored in files." },
+        { "id": 3, "text": "C. The user's LinkedIn profile", "reason": "Incorrect. Feedback is internal to the M365 tenant and Microsoft." },
+        { "id": 4, "text": "D. Windows Task Manager", "reason": "Incorrect. Task manager shows local process performance." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The M365 Admin Center provides visibility into how users are rating the AI's effectiveness."
+    },
+    {
+      "id": 21,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "What happens to a user's prompt after it has been processed by Copilot?",
+      "Options": [
+        { "id": 1, "text": "A. It is publicly posted on the internet", "reason": "Incorrect. Prompts remain within the secure tenant boundary." },
+        { "id": 2, "text": "B. It is stored within the organization's compliance boundary to support features like audit and eDiscovery", "reason": "Correct. Prompts are treated as business data." },
+        { "id": 3, "text": "C. It is immediately deleted from all systems forever", "reason": "Incorrect. It is logged for compliance and history purposes." },
+        { "id": 4, "text": "D. It is used to train Google's AI models", "reason": "Incorrect. Microsoft does not share this data with competitors or train global models with it." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Your prompts are your data; they stay within the Microsoft 365 boundary and follow your retention policies."
+    },
+    {
+      "id": 22,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "Which of the following base licenses allows an organization to purchase the Microsoft 365 Copilot add-on? (Select 2)",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 E3", "reason": "Correct. E3 is a valid base license." },
+        { "id": 2, "text": "B. Office 365 F1", "reason": "Incorrect. Frontline licenses generally do not support the Copilot add-on currently." },
+        { "id": 3, "text": "C. Microsoft 365 Business Standard", "reason": "Correct. Business Standard and Business Premium are eligible." },
+        { "id": 4, "text": "D. Windows 11 Home", "reason": "Incorrect. This is a consumer OS license, not a commercial M365 license." }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [1, 3],
+      "CorrectAnswerExplanation": "Microsoft 365 E3, E5, Business Standard, and Business Premium are all eligible base licenses for the Copilot add-on."
+    },
+    {
+      "id": 23,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "Which feature in Microsoft Teams allows Copilot to summarize a meeting for a user who missed it?",
+      "Options": [
+        { "id": 1, "text": "A. Teams Walkie Talkie", "reason": "Incorrect. This is a push-to-talk feature." },
+        { "id": 2, "text": "B. Intelligent Recap", "reason": "Correct. It uses AI to provide summaries, notes, and tasks." },
+        { "id": 3, "text": "C. Teams Mesh", "reason": "Incorrect. This is for 3D/VR environments." },
+        { "id": 4, "text": "D. Background Blur", "reason": "Incorrect. This is a camera feature." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Intelligent Recap uses the meeting transcript and Copilot to summarize key points and mentions."
+    },
+    {
+      "id": 24,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What is a 'Declarative Agent'?",
+      "Options": [
+        { "id": 1, "text": "A. A bot that only uses rigid, hard-coded code", "reason": "Incorrect. Declarative agents use instructions and AI." },
+        { "id": 2, "text": "B. A custom version of Copilot that uses instructions and knowledge to perform specific tasks", "reason": "Correct. They allow tailoring the Copilot experience without a custom engine." },
+        { "id": 3, "text": "C. A human administrator who declares new rules", "reason": "Incorrect. It is a technical component, not a person." },
+        { "id": 4, "text": "D. A feature that only works in Microsoft Word", "reason": "Incorrect. Declarative agents work across the M365 Copilot ecosystem." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Declarative agents allow developers to create custom-branded and specialized versions of Copilot for their organization."
+    },
+    {
+      "id": 25,
+      "topic": "Manage Copilot agents",
+      "Question": "An administrator wants to prevent users from using third-party agents in Copilot. Where should they configure this?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 Admin Center > Integrated apps", "reason": "Correct. This is where app deployment and permission policies are set." },
+        { "id": 2, "text": "B. The computer's BIOS", "reason": "Incorrect. BIOS does not control cloud software features." },
+        { "id": 3, "text": "C. Outlook Signature settings", "reason": "Incorrect. This only affects email signatures." },
+        { "id": 4, "text": "D. SharePoint User Profile service", "reason": "Incorrect. This manages user metadata, not app permissions." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The Integrated Apps section allows admins to toggle on or off the ability for users to install and use specific agents."
+    },
+    {
+      "id": 26,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "How does 'Semantic Search' differ from 'Keyword Search'?",
+      "Options": [
+        { "id": 1, "text": "A. Semantic search only works in English", "reason": "Incorrect. Semantic search understands intent across languages." },
+        { "id": 2, "text": "B. Semantic search understands the meaning and intent behind a query, not just matching words", "reason": "Correct. It uses vector mapping to find relevant content." },
+        { "id": 3, "text": "C. Keyword search is much faster and more accurate", "reason": "Incorrect. Semantic search is generally more accurate for complex queries." },
+        { "id": 4, "text": "D. Semantic search requires the user to type in code", "reason": "Incorrect. It uses natural language input." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Semantic Search allows Copilot to find a document about 'revenue' even if the document only uses the word 'sales'."
+    },
+    {
+      "id": 27,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "What is the 'Principle of Least Privilege' in the context of Copilot?",
+      "Options": [
+        { "id": 1, "text": "A. Giving every user administrative rights", "reason": "Incorrect. This is the opposite of the principle." },
+        { "id": 2, "text": "B. Ensuring users only have access to the data they actually need for their job", "reason": "Correct. This minimizes the risk of Copilot surfacing sensitive data." },
+        { "id": 3, "text": "C. Reducing the number of users who can use a mouse", "reason": "Incorrect. This is not a security principle." },
+        { "id": 4, "text": "D. Limiting the number of emails a person can send", "reason": "Incorrect. This is a quota, not an access principle." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Least privilege is the primary defense against internal 'oversharing' when AI makes data discovery easier."
+    },
+    {
+      "id": 28,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "Which application allows a user to 'Draft with Copilot' to create content based on other files?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft Word", "reason": "Correct. Word allows you to generate drafts using other documents as references." },
+        { "id": 2, "text": "B. Windows Calculator", "reason": "Incorrect. Calculator does not support drafting features." },
+        { "id": 3, "text": "C. Microsoft Paint", "reason": "Incorrect. Paint is for image editing, not document drafting." },
+        { "id": 4, "text": "D. OneDrive Settings", "reason": "Incorrect. This is a configuration menu, not a content creation tool." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "In Word, you can use the Copilot box to draft a new document by typing '/' followed by the names of relevant source files."
+    },
+    {
+      "id": 29,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What are 'Triggers' in Copilot Studio?",
+      "Options": [
+        { "id": 1, "text": "A. The buttons on a game controller", "reason": "Incorrect. This is for gaming hardware." },
+        { "id": 2, "text": "B. Phrases or events that start a conversation with a specific topic", "reason": "Correct. They tell the bot when to execute a certain path." },
+        { "id": 3, "text": "C. Errors that crash the bot", "reason": "Incorrect. These are bugs or exceptions." },
+        { "id": 4, "text": "D. The time it takes for the bot to respond", "reason": "Incorrect. This is latency." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Triggers (like typing 'Refund') help the bot identify which Topic should be activated to help the user."
+    },
+    {
+      "id": 30,
+      "topic": "Manage Copilot agents",
+      "Question": "Which service manages data residency for Copilot prompts and responses for a European tenant?",
+      "Options": [
+        { "id": 1, "text": "A. The Microsoft 365 Data Boundary (EU Data Boundary)", "reason": "Correct. Microsoft ensures data is stored and processed within specific regions." },
+        { "id": 2, "text": "B. Public Wi-Fi", "reason": "Incorrect. This is a network connection, not a data residency service." },
+        { "id": 3, "text": "C. Local Hard Drive", "reason": "Incorrect. Prompts are stored in the cloud service, not locally." },
+        { "id": 4, "text": "D. The user's SIM card", "reason": "Incorrect. SIM cards do not store enterprise cloud data." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Microsoft provides geographic data residency commitments to meet regulatory requirements like GDPR."
+    },
+    {
+      "id": 31,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "What does 'Hallucination' refer to in generative AI?",
+      "Options": [
+        { "id": 1, "text": "A. When the AI speaks in a different language", "reason": "Incorrect. This is translation or multi-language support." },
+        { "id": 2, "text": "B. When the AI generates a response that is factually incorrect but sounds convincing", "reason": "Correct. This is a primary reason for 'Human-in-the-loop' verification." },
+        { "id": 3, "text": "C. When the AI runs out of memory", "reason": "Incorrect. This is a resource error." },
+        { "id": 4, "text": "D. When a user forgets their password", "reason": "Incorrect. This is an identity issue." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Users must verify Copilot's outputs because the model can sometimes 'hallucinate' plausible-sounding but false information."
+    },
+    {
+      "id": 32,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "Why should an administrator use the 'Microsoft 365 Copilot Deployment Planner'?",
+      "Options": [
+        { "id": 1, "text": "A. To play a game", "reason": "Incorrect. It is a business planning tool." },
+        { "id": 2, "text": "B. To assess technical readiness, license allocation, and user impact", "reason": "Correct. It provides a roadmap for a successful rollout." },
+        { "id": 3, "text": "C. To uninstall Office 2016", "reason": "Incorrect. While it might recommend updating apps, its purpose is broader than just uninstallation." },
+        { "id": 4, "text": "D. To change the company logo", "reason": "Incorrect. This is done in tenant branding settings." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The deployment planner helps IT ensure prerequisites are met and user adoption plans are in place."
+    },
+    {
+      "id": 33,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "Which application uses Copilot to summarize long email threads and draft suggested replies?",
+      "Options": [
+        { "id": 1, "text": "A. Outlook", "reason": "Correct. Copilot in Outlook helps manage high email volumes." },
+        { "id": 2, "text": "B. Microsoft Excel", "reason": "Incorrect. Excel Copilot is for data analysis and formulas." },
+        { "id": 3, "text": "C. Microsoft PowerPoint", "reason": "Incorrect. PowerPoint Copilot is for slide design and creation." },
+        { "id": 4, "text": "D. Notepad", "reason": "Incorrect. Notepad does not have native Copilot integration." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Outlook is the primary tool for email summarization and drafting in the M365 suite."
+    },
+    {
+      "id": 34,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What is the function of a 'Connector' in Copilot Studio?",
+      "Options": [
+        { "id": 1, "text": "A. A physical cable for a laptop", "reason": "Incorrect. This is hardware." },
+        { "id": 2, "text": "B. A way for the agent to communicate with external data and apps like Salesforce or ServiceNow", "reason": "Correct. Connectors bridge the gap to non-M365 data." },
+        { "id": 3, "text": "C. A person who introduces people in a meeting", "reason": "Incorrect. This is a social role, not a technical one." },
+        { "id": 4, "text": "D. A feature that only works in the cloud", "reason": "Incorrect. While they work in the cloud, 'Connector' specifically refers to data integration." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Connectors allow Copilot to perform actions or fetch data from systems outside of the Microsoft ecosystem."
+    },
+    {
+      "id": 35,
+      "topic": "Manage Copilot agents",
+      "Question": "True or False: An administrator can assign a Microsoft 365 Copilot license to a user who does not have a base license (like E3 or E5).",
+      "Options": [
+        { "id": 1, "text": "A. True", "reason": "Incorrect. Copilot is an add-on and requires a prerequisite license." },
+        { "id": 2, "text": "B. False", "reason": "Correct. A base license is strictly required." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot for Microsoft 365 is an add-on license; it cannot function without an eligible base M365 license."
+    },
+    {
+      "id": 36,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "What are 'Citations' in a Copilot response?",
+      "Options": [
+        { "id": 1, "text": "A. Tickets for speeding", "reason": "Incorrect. This is a legal/traffic term." },
+        { "id": 2, "text": "B. Reference links that show exactly where Copilot found the information it used", "reason": "Correct. They allow users to verify the source material." },
+        { "id": 3, "text": "C. A list of everyone who has read the file", "reason": "Incorrect. Citations refer to content sources, not access history." },
+        { "id": 4, "text": "D. The number of characters in the response", "reason": "Incorrect. This is a metric, not a citation." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Citations are critical for transparency, allowing users to cross-check the AI's claims against original documents."
+    },
+    {
+      "id": 37,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "What should an IT administrator check if users report they cannot see Copilot in their Office desktop apps?",
+      "Options": [
+        { "id": 1, "text": "A. Ensure the apps are updated to a supported channel (e.g., Current Channel)", "reason": "Correct. This is the most common cause of missing features." },
+        { "id": 2, "text": "B. Change the desktop wallpaper", "reason": "Incorrect. Wallpaper has no effect on software features." },
+        { "id": 3, "text": "C. Delete the user's email account", "reason": "Incorrect. This would obviously break access rather than fix it." },
+        { "id": 4, "text": "D. Turn off the internet", "reason": "Incorrect. Copilot requires an internet connection." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Old versions of Office do not have the Copilot integration; updating to the Current Channel is the standard fix."
+    },
+    {
+      "id": 38,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "How does 'Intelligent Recap' in Teams improve meeting productivity?",
+      "Options": [
+        { "id": 1, "text": "A. It records the video in 4K", "reason": "Incorrect. Recording quality is a hardware/bandwidth setting." },
+        { "id": 2, "text": "B. It provides a summary of key points, tasks, and mentions without a user having to take notes", "reason": "Correct. It saves time for all participants." },
+        { "id": 3, "text": "C. It automatically kicks out people who don't talk", "reason": "Incorrect. It is a recap tool, not a moderator bot." },
+        { "id": 4, "text": "D. It pays for the meeting snacks", "reason": "Incorrect. This is not a software feature." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Intelligent Recap makes it easy for people to stay informed even if they miss part of a meeting or need to follow up on actions."
+    },
+    {
+      "id": 39,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "In Copilot Studio, what does 'Publishing' a bot do?",
+      "Options": [
+        { "id": 1, "text": "A. Prints a hard copy of the bot's logic", "reason": "Incorrect. Publishing is a digital deployment." },
+        { "id": 2, "text": "B. Makes the latest version of the bot available to end users on live channels", "reason": "Correct. Changes only take effect for users after publishing." },
+        { "id": 3, "text": "C. Deletes the bot permanently", "reason": "Incorrect. This is 'Deleting' or 'Removing'." },
+        { "id": 4, "text": "D. Sends the bot to the local news", "reason": "Incorrect. This is a literal interpretation of 'publishing' as media." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Users will only interact with the 'last published' version of a bot, even if you are making edits in the Studio."
+    },
+    {
+      "id": 40,
+      "topic": "Manage Copilot agents",
+      "Question": "Which tool would you use to find out which users have been assigned a Copilot license?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 Admin Center > Users > Active Users", "reason": "Correct. License status is managed and viewed per user here." },
+        { "id": 2, "text": "B. Windows Paint", "reason": "Incorrect. Paint is an image editor." },
+        { "id": 3, "text": "C. The computer's BIOS", "reason": "Incorrect. BIOS does not track cloud licensing." },
+        { "id": 4, "text": "D. Control Panel", "reason": "Incorrect. Control Panel is for local OS settings, not M365 tenant licenses." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The Active Users section of the Admin Center allows for license filtering and individual assignment."
+    },
+    {
+      "id": 41,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "Which of these is a core 'Responsible AI' principle at Microsoft?",
+      "Options": [
+        { "id": 1, "text": "A. Secrecy", "reason": "Incorrect. Transparency is the actual principle." },
+        { "id": 2, "text": "B. Fairness", "reason": "Correct. AI systems should treat all people fairly." },
+        { "id": 3, "text": "C. Complexity", "reason": "Incorrect. Complexity is not a core principle." },
+        { "id": 4, "text": "D. Human Replacement", "reason": "Incorrect. Microsoft views AI as a 'Copilot', not a replacement for humans." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Microsoft's principles include Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, and Accountability."
+    },
+    {
+      "id": 42,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "What is 'Semantic Index' for Copilot?",
+      "Options": [
+        { "id": 1, "text": "A. A list of all files in alphabetical order", "reason": "Incorrect. This is a standard file list." },
+        { "id": 2, "text": "B. A sophisticated map of user and company data that allows Copilot to understand context and relationships", "reason": "Correct. It maps data into vectors for better retrieval." },
+        { "id": 3, "text": "C. A book of synonyms", "reason": "Incorrect. While it understands synonyms, it is a data infrastructure, not a book." },
+        { "id": 4, "text": "D. A feature that only works in Excel", "reason": "Incorrect. It is a tenant-wide service for Copilot." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Semantic Index helps the AI find data based on 'intent' rather than just 'keywords'."
+    },
+    {
+      "id": 43,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "What must be true about an Excel workbook to use Copilot within it?",
+      "Options": [
+        { "id": 1, "text": "A. It must be saved as a .txt file", "reason": "Incorrect. It must be a .xlsx file." },
+        { "id": 2, "text": "B. The data must be formatted as an Excel Table", "reason": "Correct. Copilot needs Table formatting to identify columns and rows." },
+        { "id": 3, "text": "C. It must be at least 100MB in size", "reason": "Incorrect. There is no minimum size requirement." },
+        { "id": 4, "text": "D. It must be protected with a password", "reason": "Incorrect. Password protection can actually block the service." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot requires data to be in a 'Table' object (Insert > Table) to perform analysis and generate formulas."
+    },
+    {
+      "id": 44,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "Which tool would you use to build a custom agent that can look up data in a custom SQL database?",
+      "Options": [
+        { "id": 1, "text": "A. Copilot Studio", "reason": "Correct. You can use Power Automate flows or custom connectors within Studio." },
+        { "id": 2, "text": "B. Microsoft Paint", "reason": "Incorrect. Paint cannot connect to databases." },
+        { "id": 3, "text": "C. Windows Media Player", "reason": "Incorrect. This is for playing media." },
+        { "id": 4, "text": "D. Disk Defragmenter", "reason": "Incorrect. This is for disk maintenance." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Copilot Studio is the extensibility platform for building bots that connect to external data."
+    },
+    {
+      "id": 45,
+      "topic": "Manage Copilot agents",
+      "Question": "When a user asks Copilot to summarize a file, where does the processing of that data occur?",
+      "Options": [
+        { "id": 1, "text": "A. On the local CPU/RAM of the user's laptop", "reason": "Incorrect. Most processing happens in the Microsoft cloud." },
+        { "id": 2, "text": "B. Within the Microsoft 365 secure cloud service boundary", "reason": "Correct. This ensures compliance and security." },
+        { "id": 3, "text": "C. On a public Google server", "reason": "Incorrect. Data stays within the Microsoft ecosystem." },
+        { "id": 4, "text": "D. On the user's phone", "reason": "Incorrect. It is a cloud-based service." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot is a cloud-powered service; processing happens in Microsoft's high-performance AI data centers."
+    },
+    {
+      "id": 46,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "What is the primary function of the 'Copilot Orchestrator'?",
+      "Options": [
+        { "id": 1, "text": "A. To play music during meetings", "reason": "Incorrect. This is a social/audio function." },
+        { "id": 2, "text": "B. To coordinate the retrieval of grounded data and manage the interaction with the LLM", "reason": "Correct. It is the 'brain' that manages the AI workflow." },
+        { "id": 3, "text": "C. To act as a human manager", "reason": "Incorrect. It is a software component." },
+        { "id": 4, "text": "D. To delete old user files", "reason": "Incorrect. It manages AI prompts, not file deletion." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Orchestrator ensures the prompt is sent with the right data and that the LLM's response is relevant."
+    },
+    {
+      "id": 47,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "An administrator wants to use 'Graph Connectors' to bring data from an external wiki into Copilot. What is the benefit?",
+      "Options": [
+        { "id": 1, "text": "A. It makes the wiki run faster", "reason": "Incorrect. It doesn't affect source performance." },
+        { "id": 2, "text": "B. It allows Copilot to ground its answers using the wiki's content", "reason": "Correct. It expands the AI's knowledge base." },
+        { "id": 3, "text": "C. It deletes the wiki after indexing", "reason": "Incorrect. It only reads and indexes the data." },
+        { "id": 4, "text": "D. It converts the wiki into a series of Excel spreadsheets", "reason": "Incorrect. It keeps the data in the search index, not in Excel files." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Graph Connectors allow Copilot to 'see' and 'reason over' data that doesn't natively live in M365."
+    },
+    {
+      "id": 48,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "In PowerPoint, what can Copilot do with a Word document?",
+      "Options": [
+        { "id": 1, "text": "A. Convert the Word document into a full presentation with slides and themes", "reason": "Correct. This is a major productivity feature." },
+        { "id": 2, "text": "B. Read the Word document aloud in a funny voice", "reason": "Incorrect. While it can read text, its primary PPT function is slide generation." },
+        { "id": 3, "text": "C. Delete the Word document", "reason": "Incorrect. It only reads the file as a source." },
+        { "id": 4, "text": "D. Email the Word document to everyone on the internet", "reason": "Incorrect. This would be a security violation." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "You can use the 'Create presentation from file' prompt in PowerPoint to transform documents into decks."
+    },
+    {
+      "id": 49,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "What is the 'Test Pane' used for in Copilot Studio?",
+      "Options": [
+        { "id": 1, "text": "A. For taking a written exam", "reason": "Incorrect. It is a developer tool." },
+        { "id": 2, "text": "B. To interact with and debug the bot's conversation flow before publishing", "reason": "Correct. It allows real-time testing of topics." },
+        { "id": 3, "text": "C. To test the speed of the internet", "reason": "Incorrect. This is a speed test tool." },
+        { "id": 4, "text": "D. To test if the monitor is working", "reason": "Incorrect. This is a hardware check." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Test Pane helps builders see which topics are being triggered and where a conversation might be breaking."
+    },
+    {
+      "id": 50,
+      "topic": "Manage Copilot agents",
+      "Question": "Which feature helps prevent data from a Copilot prompt from being sent to the public Bing search engine for web grounding?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft 365 Service Boundary / Commercial Data Protection", "reason": "Correct. Microsoft ensures that prompts sent for web grounding are anonymized and not stored by Bing." },
+        { "id": 2, "text": "B. Unplugging the router", "reason": "Incorrect. This would stop the service from working." },
+        { "id": 3, "text": "C. Typing in all caps", "reason": "Incorrect. Text casing has no effect on data protection." },
+        { "id": 4, "text": "D. Using a guest account", "reason": "Incorrect. Professional features require a licensed account." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "With commercial data protection, user prompts and responses are not used to train the public web search models."
+    },
+    {
+      "id": 51,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "Is it possible for a user to see a file in a Copilot summary that they do not have permission to open?",
+      "Options": [
+        { "id": 1, "text": "A. Yes, Copilot can see everything in the tenant", "reason": "Incorrect. Copilot respects user permissions." },
+        { "id": 2, "text": "B. No, Copilot only accesses data that the individual user has explicit permission to see", "reason": "Correct. It uses 'Just-in-Time' access via the user's identity." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Security is foundational; Copilot will never 'leak' information from a file to a user who doesn't have access to that file."
+    },
+    {
+      "id": 52,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "What is a 'Pilot' group in the context of Copilot deployment?",
+      "Options": [
+        { "id": 1, "text": "A. People who fly airplanes", "reason": "Incorrect. This is a literal interpretation of the word." },
+        { "id": 2, "text": "B. A small group of users who test the service before a full organization rollout", "reason": "Correct. Pilots help identify issues and gather early feedback." },
+        { "id": 3, "text": "C. A group of people who are being fired", "reason": "Incorrect. Pilots are for testing software." },
+        { "id": 4, "text": "D. A type of database table", "reason": "Incorrect. This is not a technical term for a table." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Selecting a diverse pilot group (different departments) helps ensure the AI meets various business needs before global release."
+    },
+    {
+      "id": 53,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "In Microsoft Loop, what can Copilot do?",
+      "Options": [
+        { "id": 1, "text": "A. Create collaborative content and summarize workspace pages", "reason": "Correct. Loop is a primary collaborative surface for Copilot." },
+        { "id": 2, "text": "B. Automatically delete all old loops", "reason": "Incorrect. It is a creation tool, not a cleanup bot." },
+        { "id": 3, "text": "C. Change the user's password", "reason": "Incorrect. Password management is an identity service." },
+        { "id": 4, "text": "D. Record 4K video", "reason": "Incorrect. Loop is a workspace for components and pages, not video recording." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Copilot in Loop helps teams brainstorm, draft, and summarize components in real-time."
+    },
+    {
+      "id": 54,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "Can you use Copilot Studio to build a bot that works in Microsoft Teams?",
+      "Options": [
+        { "id": 1, "text": "A. Yes, Teams is a supported channel for Copilot Studio bots", "reason": "Correct. It is one of the most common deployment targets." },
+        { "id": 2, "text": "B. No, Studio bots only work on websites", "reason": "Incorrect. Studio supports many channels, including Teams." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Copilot Studio allows for easy integration into Teams as a personal app or for use in channels."
+    },
+    {
+      "id": 55,
+      "topic": "Manage Copilot agents",
+      "Question": "What does the 'Adoption Kit' provided by Microsoft contain?",
+      "Options": [
+        { "id": 1, "text": "A. A physical first-aid kit", "reason": "Incorrect. It is a digital resource." },
+        { "id": 2, "text": "B. Training materials, communication templates, and user guides to help drive AI usage", "reason": "Correct. It helps organizations get value out of their licenses." },
+        { "id": 3, "text": "C. A set of screwdrivers for fixing servers", "reason": "Incorrect. This is a physical toolkit." },
+        { "id": 4, "text": "D. Free coffee for the IT team", "reason": "Incorrect. This is not included in a digital software kit." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Change management is key to AI success; the Adoption Kit provides the 'soft' skills and materials needed."
+    },
+    {
+      "id": 56,
+      "topic": "Describe Microsoft Copilot for Microsoft 365",
+      "Question": "Which service is responsible for providing 'Real-time' data like the user's current calendar to Copilot?",
+      "Options": [
+        { "id": 1, "text": "A. Microsoft Graph", "reason": "Correct. Graph provides the dynamic data from the user's M365 account." },
+        { "id": 2, "text": "B. Windows Update", "reason": "Incorrect. This provides software patches." },
+        { "id": 3, "text": "C. Microsoft Paint", "reason": "Incorrect. Paint does not have calendar access." },
+        { "id": 4, "text": "D. Adobe Acrobat", "reason": "Incorrect. This is a third-party PDF tool." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Microsoft Graph is the single endpoint for all M365 data, ensuring Copilot knows about your upcoming 2:00 PM meeting."
+    },
+    {
+      "id": 57,
+      "topic": "Prepare for Microsoft Copilot for Microsoft 365",
+      "Question": "True or False: Microsoft 365 Copilot requires all data to be moved to a special 'AI Folder' before it can be used.",
+      "Options": [
+        { "id": 1, "text": "A. True", "reason": "Incorrect. It works with data where it currently lives (SharePoint, OneDrive, etc.)." },
+        { "id": 2, "text": "B. False", "reason": "Correct. It indexes data in place." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "One of the benefits of Copilot is that it uses your existing SharePoint/OneDrive structure without requiring data migration."
+    },
+    {
+      "id": 58,
+      "topic": "Configure and manage Microsoft Copilot for Microsoft 365",
+      "Question": "What is the function of the 'Summarize' button in a long Teams chat thread?",
+      "Options": [
+        { "id": 1, "text": "A. To delete the chat", "reason": "Incorrect. It summarizes content, not deletes it." },
+        { "id": 2, "text": "B. To provide a bulleted list of the main topics discussed and any action items mentioned", "reason": "Correct. This helps users catch up quickly." },
+        { "id": 3, "text": "C. To change the chat font to Comic Sans", "reason": "Incorrect. Formatting is a UI setting, not an AI summary." },
+        { "id": 4, "text": "D. To send the chat to the user's manager", "reason": "Incorrect. This would be an automated sharing action, not a summary." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Chat summarization is a top use case for Copilot in Teams, saving users from scrolling through hundreds of messages."
+    },
+    {
+      "id": 59,
+      "topic": "Describe Copilot agents and Copilot Studio",
+      "Question": "Can a Copilot Agent be configured to look at a public website for its knowledge?",
+      "Options": [
+        { "id": 1, "text": "A. Yes, by adding the website URL to the 'Generative Answers' data sources", "reason": "Correct. The agent will then index that site to provide answers." },
+        { "id": 2, "text": "B. No, agents can only see the user's personal OneDrive", "reason": "Incorrect. Agents can be grounded in public and private sources." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Public websites are common data sources for customer-facing or internal support agents."
+    },
+    {
+      "id": 60,
+      "topic": "Manage Copilot agents",
+      "Question": "What is the final step after building a bot in Copilot Studio if you want other people to use it?",
+      "Options": [
+        { "id": 1, "text": "A. Turn off the computer", "reason": "Incorrect. This doesn't deploy the bot." },
+        { "id": 2, "text": "B. Publish the bot and share it to the desired channel (like Teams)", "reason": "Correct. Deployment is the final step." },
+        { "id": 3, "text": "C. Delete the bot and start over", "reason": "Incorrect. This is for starting from scratch." },
+        { "id": 4, "text": "D. Take a nap", "reason": "Incorrect. While you may want to, it is not a technical step." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Publishing makes the code live; sharing (or submitting for admin approval) makes it accessible to the target audience."
+    }
+  ]
+}
