@@ -1,0 +1,594 @@
+{
+    "quizName": "AB-900: Microsoft 365 Copilot & Agent Administration Fundamentals Practice Exam (Shuffled)",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Core Microsoft 365 services",
+            "Question": "Which Microsoft 365 service primarily provides email, calendar, and contact functionality for users?",
+            "Options": [
+                { "id": 1, "text": "SharePoint in Microsoft 365", "reason": "Incorrect. SharePoint is mainly used for sites and document libraries." },
+                { "id": 2, "text": "Microsoft Teams", "reason": "Incorrect. Teams focuses on chat and collaboration." },
+                { "id": 3, "text": "Exchange Online", "reason": "Correct. Exchange Online provides cloud-based email, calendar, and contacts." },
+                { "id": 4, "text": "OneDrive for Business", "reason": "Incorrect. OneDrive is for personal file storage." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Exchange Online is the cloud-based email and calendaring service in Microsoft 365 that hosts user mailboxes."
+        },
+        {
+            "id": 2,
+            "topic": "Admin centers and roles",
+            "Question": "You need to configure Conditional Access policies and enforce multi-factor authentication for users. Which admin portal should you use?",
+            "Options": [
+                { "id": 1, "text": "Microsoft Entra admin center", "reason": "Correct. Conditional Access and MFA policies are configured here." },
+                { "id": 2, "text": "Microsoft 365 admin center", "reason": "Incorrect. This portal manages tenants and licenses but not Conditional Access." },
+                { "id": 3, "text": "Microsoft Teams admin center", "reason": "Incorrect. This manages Teams policies, not identity sign-in policies." },
+                { "id": 4, "text": "Microsoft Purview portal", "reason": "Incorrect. Purview focuses on data protection and compliance." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Conditional Access and MFA enforcement are identity and access features managed in the Microsoft Entra admin center."
+        },
+        {
+            "id": 3, "topic": "Zero Trust & security foundations",
+            "Question": "Which statement best describes the Zero Trust security model used in Microsoft 365?",
+            "Options": [
+                { "id": 1, "text": "Access is granted based on device location only, ignoring user identity and risk.", "reason": "Incorrect. Zero Trust considers multiple signals." },
+                { "id": 2, "text": "Users on the corporate network are always trusted.", "reason": "Incorrect. Zero Trust does not inherently trust any network location." },
+                { "id": 3, "text": "Once a user signs in successfully, they are trusted on all devices.", "reason": "Incorrect. Zero Trust assumes continuous verification is required." },
+                { "id": 4, "text": "\"Never trust, always verify\" with continuous validation of user, device, and risk.", "reason": "Correct. Zero Trust emphasizes continuous verification for every request." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Zero Trust in Microsoft 365 follows the \"never trust, always verify\" principle."
+        },
+        {
+            "id": 4, "topic": "Data protection with Microsoft Purview",
+            "Question": "Your organization wants to automatically classify files as 'Confidential' and apply encryption when they contain sensitive information. Which feature should you use?",
+            "Options": [
+                { "id": 1, "text": "eDiscovery (Standard)", "reason": "Incorrect. eDiscovery is used for legal investigations." },
+                { "id": 2, "text": "Sensitivity labels in Microsoft Purview", "reason": "Correct. Sensitivity labels classify and protect content with encryption." },
+                { "id": 3, "text": "Retention labels", "reason": "Incorrect. Retention labels control how long content is kept." },
+                { "id": 4, "text": "Microsoft Defender XDR incidents", "reason": "Incorrect. Defender XDR focuses on threat response." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Sensitivity labels in Microsoft Purview can classify content and apply protection such as encryption."
+        },
+        {
+            "id": 5, "topic": "Data Loss Prevention (DLP)",
+            "Question": "Which scenario is the best fit for a Data Loss Prevention (DLP) policy in Microsoft 365?",
+            "Options": [
+                { "id": 1, "text": "Preventing users from sending emails with credit card numbers to external recipients.", "reason": "Correct. DLP policies restrict sharing of sensitive information." },
+                { "id": 2, "text": "Archiving mailboxes for inactive employees.", "reason": "Incorrect. This is handled through retention policies." },
+                { "id": 3, "text": "Configuring Teams meeting policies.", "reason": "Incorrect. This is configured in the Teams admin center." },
+                { "id": 4, "text": "Resetting user passwords after a phishing attack.", "reason": "Incorrect. This is an identity operation." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "DLP policies are designed to detect and protect sensitive information from leaving the organization."
+        },
+        {
+            "id": 6, "topic": "Microsoft 365 Copilot fundamentals",
+            "Question": "How does Microsoft 365 Copilot determine which organizational data it can use when generating a response for a user?",
+            "Options": [
+                { "id": 1, "text": "It has unrestricted access to all content stored in the tenant.", "reason": "Incorrect. Copilot does not bypass permissions." },
+                { "id": 2, "text": "It reads all content labeled as 'Confidential' regardless of permissions.", "reason": "Incorrect. Sensitivity labels and permissions still control access." },
+                { "id": 3, "text": "It uses the user’s existing permissions in Microsoft Graph to access only allowed content.", "reason": "Correct. Copilot respects user permissions via Microsoft Graph." },
+                { "id": 4, "text": "It only uses public internet data.", "reason": "Incorrect. Copilot uses data from Microsoft Graph when permitted." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Copilot enforces the user’s existing permissions, accessing only data the user is authorized to view."
+        },
+        {
+            "id": 7, "topic": "Copilot licensing and billing",
+            "Question": "Your organization wants to start using Microsoft 365 Copilot for a small pilot group and pay based on usage rather than per user. Which licensing approach should you consider?",
+            "Options": [
+                { "id": 1, "text": "Assigning only Microsoft 365 E3 licenses.", "reason": "Incorrect. E3 alone does not provide Copilot capabilities." },
+                { "id": 2, "text": "Enabling Copilot in the Microsoft Defender portal.", "reason": "Incorrect. Defender is for security, not licensing." },
+                { "id": 3, "text": "Creating a new tenant solely for Copilot.", "reason": "Incorrect. This does not avoid licensing costs." },
+                { "id": 4, "text": "Using Copilot pay-as-you-go billing linked to an Azure subscription.", "reason": "Correct. This allows payment based on consumption." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Copilot pay-as-you-go billing uses an Azure subscription to meter usage, suited for pilot scenarios."
+        },
+        {
+            "id": 8, "topic": "Copilot usage and governance",
+            "Question": "As a Microsoft 365 administrator, how can you best monitor adoption of Microsoft 365 Copilot in your organization?",
+            "Options": [
+                { "id": 1, "text": "Review Copilot usage analytics and reports in the Microsoft 365 admin center.", "reason": "Correct. Admin reports show how users are adopting Copilot." },
+                { "id": 2, "text": "Ask each user to email weekly summaries.", "reason": "Incorrect. This is manual and inefficient." },
+                { "id": 3, "text": "Check the Microsoft Store download statistics.", "reason": "Incorrect. Copilot is integrated, not a separate Store app." },
+                { "id": 4, "text": "Run a full eDiscovery search across all prompts.", "reason": "Incorrect. eDiscovery is for legal matters." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot usage and adoption are monitored through built-in analytics available to administrators."
+        },
+        {
+            "id": 9, "topic": "Agents vs Microsoft 365 Copilot",
+            "Question": "Which statement best differentiates an agent from the core Microsoft 365 Copilot experience?",
+            "Options": [
+                { "id": 1, "text": "Agents are always created automatically when Copilot is enabled.", "reason": "Incorrect. Agents must be explicitly created." },
+                { "id": 2, "text": "Agents replace the need for Copilot in Word and Excel.", "reason": "Incorrect. Agents complement the core experience." },
+                { "id": 3, "text": "Agents are specialized AI entities tailored to specific tasks or business processes.", "reason": "Correct. Agents are scenario-focused assistants." },
+                { "id": 4, "text": "Agents can only run outside Microsoft 365.", "reason": "Incorrect. Agents can integrate with Microsoft 365 data." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Agents are custom, scenario-specific AI assistants, often built in Copilot Studio."
+        },
+        {
+            "id": 10, "topic": "Agent administration lifecycle",
+            "Question": "You have created a new Copilot agent for HR FAQs using Microsoft Copilot Studio. Which set of steps represents a typical basic administration lifecycle for this agent?",
+            "Options": [
+                { "id": 1, "text": "Create the agent, assign Global admin role to it, and enable anonymous access.", "reason": "Incorrect. Anonymous access is risky for HR data." },
+                { "id": 2, "text": "Create the agent, configure topics, test in a safe environment, publish to a pilot group, and monitor usage.", "reason": "Correct. This reflects a controlled lifecycle." },
+                { "id": 3, "text": "Create the agent, immediately publish it to all users, and disable logging.", "reason": "Incorrect. Skips testing and governance." },
+                { "id": 4, "text": "Create the agent, remove all data connections, and schedule it to delete itself.", "reason": "Incorrect. Not a useful production lifecycle." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "A sound agent lifecycle includes configuration, testing, limited pilot release, and ongoing monitoring."
+        },
+        {
+            "id": 11, "topic": "Microsoft 365 core services",
+            "Question": "Which Microsoft 365 service is primarily used to host team sites and document libraries for collaboration within departments or projects?",
+            "Options": [
+                { "id": 1, "text": "OneDrive for Business", "reason": "Incorrect. OneDrive is for personal storage." },
+                { "id": 2, "text": "Microsoft Teams", "reason": "Incorrect. Teams is a hub but uses SharePoint for file storage." },
+                { "id": 3, "text": "Exchange Online", "reason": "Incorrect. Exchange is for email." },
+                { "id": 4, "text": "SharePoint in Microsoft 365", "reason": "Correct. SharePoint hosts team sites and document libraries." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "SharePoint in Microsoft 365 hosts team sites and document libraries for collaboration."
+        },
+        {
+            "id": 12, "topic": "Microsoft 365 admin center",
+            "Question": "Which task is most appropriate to perform in the Microsoft 365 admin center?",
+            "Options": [
+                { "id": 1, "text": "Creating users and assigning product licenses", "reason": "Correct. This is the primary portal for user management." },
+                { "id": 2, "text": "Creating a new Conditional Access policy", "reason": "Incorrect. This is done in the Entra admin center." },
+                { "id": 3, "text": "Configuring a DLP policy for credit card data", "reason": "Incorrect. This is done in the Purview portal." },
+                { "id": 4, "text": "Creating a new Copilot agent in Copilot Studio", "reason": "Incorrect. This is done in Copilot Studio." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "The Microsoft 365 admin center is the primary portal for managing users and licenses."
+        },
+        {
+            "id": 13, "topic": "Identity and access",
+            "Question": "Which capability is provided by Microsoft Entra ID for securing user sign-ins to Microsoft 365?",
+            "Options": [
+                { "id": 1, "text": "Sensitivity labels", "reason": "Incorrect. These are for data classification." },
+                { "id": 2, "text": "Multi-factor authentication (MFA)", "reason": "Correct. MFA is an Entra ID feature for secure sign-ins." },
+                { "id": 3, "text": "eDiscovery (Standard)", "reason": "Incorrect. This is for legal search." },
+                { "id": 4, "text": "Retention policies", "reason": "Incorrect. These are for data lifecycles." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Entra ID provides MFA as a core identity protection mechanism."
+        },
+        {
+            "id": 14, "topic": "Role-based access control",
+            "Question": "You want a helpdesk technician to reset user passwords without granting broad administrative privileges. Which approach should you use?",
+            "Options": [
+                { "id": 1, "text": "Assign the Global Administrator role", "reason": "Incorrect. Violates least-privilege." },
+                { "id": 2, "text": "Assign the Security Administrator role", "reason": "Incorrect. Focuses on security tools, not user management." },
+                { "id": 3, "text": "Assign the User Administrator role", "reason": "Correct. Can reset passwords and manage users." },
+                { "id": 4, "text": "Assign no role", "reason": "Incorrect. Admins still need permissions for assisted resets." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "The User Administrator role allows password resets while avoiding full tenant control."
+        },
+        {
+            "id": 15, "topic": "Threat protection",
+            "Question": "Which feature is designed to protect users from malicious links and attachments in email and Microsoft 365 workloads?",
+            "Options": [
+                { "id": 1, "text": "Microsoft Defender for Office 365", "reason": "Correct. Provides Safe Links and Safe Attachments." },
+                { "id": 2, "text": "Microsoft Purview Data Lifecycle Management", "reason": "Incorrect. Focuses on retention." },
+                { "id": 3, "text": "Microsoft Viva Insights", "reason": "Incorrect. Focuses on productivity analytics." },
+                { "id": 4, "text": "Microsoft Copilot Studio", "reason": "Incorrect. Used for building AI agents." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Microsoft Defender for Office 365 protects against malicious links and attachments."
+        },
+        {
+            "id": 16, "topic": "Microsoft Purview capabilities",
+            "Question": "Which Microsoft Purview capability helps you identify and manage risky user behavior such as potential data exfiltration?",
+            "Options": [
+                { "id": 1, "text": "Communication Compliance", "reason": "Incorrect. Monitors messages for policy violations." },
+                { "id": 2, "text": "Insider Risk Management", "reason": "Correct. Detects and acts on risky internal user activities." },
+                { "id": 3, "text": "eDiscovery (Premium)", "reason": "Incorrect. Focused on legal case management." },
+                { "id": 4, "text": "Retention policies", "reason": "Incorrect. Governs data retention." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft Purview Insider Risk Management analyzes activity to detect risky behavior like data leakage."
+        },
+        {
+            "id": 17, "topic": "Data lifecycle management",
+            "Question": "Your organization must retain project documents for seven years and then delete them automatically. Which feature should you use?",
+            "Options": [
+                { "id": 1, "text": "Sensitivity labels", "reason": "Incorrect. Focuses on protection, not duration." },
+                { "id": 2, "text": "Microsoft Defender XDR incidents", "reason": "Incorrect. Relates to threat detection." },
+                { "id": 3, "text": "Retention labels and policies", "reason": "Correct. Allows retaining and then deleting content automatically." },
+                { "id": 4, "text": "Teams messaging policies", "reason": "Incorrect. Controls chat behavior." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Retention labels and policies enable retention and deletion schedules for content."
+        },
+        {
+            "id": 18, "topic": "Microsoft 365 Copilot capabilities",
+            "Question": "Which is a typical use case for Microsoft 365 Copilot in Word?",
+            "Options": [
+                { "id": 1, "text": "Drafting a proposal by summarizing relevant emails and documents", "reason": "Correct. Copilot generates content based on accessible data." },
+                { "id": 2, "text": "Automatically patching Windows clients", "reason": "Incorrect. Handled by update management tools." },
+                { "id": 3, "text": "Configuring Conditional Access policies", "reason": "Incorrect. Done in the Entra portal." },
+                { "id": 4, "text": "Editing Exchange Online transport rules", "reason": "Incorrect. Done in the Exchange admin center." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot in Word can generate and refine documents using content the user can access."
+        },
+        {
+            "id": 19, "topic": "Copilot data boundaries",
+            "Question": "Which statement accurately describes how Microsoft 365 Copilot respects data protection in Microsoft 365?",
+            "Options": [
+                { "id": 1, "text": "Copilot can access any document in the tenant.", "reason": "Incorrect. Constrained by user permissions." },
+                { "id": 2, "text": "Copilot uses existing permissions, sensitivity labels, and governance controls.", "reason": "Correct. Adheres to the security and compliance model." },
+                { "id": 3, "text": "Copilot can only access content stored on the user’s device.", "reason": "Incorrect. Accesses cloud resources via Graph." },
+                { "id": 4, "text": "Copilot ignores sensitivity labels.", "reason": "Incorrect. Labels are respected." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft 365 Copilot respects user permissions and labels when retrieving data."
+        },
+        {
+            "id": 20, "topic": "Copilot licensing prerequisites",
+            "Question": "Which prerequisite is typically required before assigning Microsoft 365 Copilot licenses to users?",
+            "Options": [
+                { "id": 1, "text": "Users must be assigned the Global Administrator role.", "reason": "Incorrect. End users do not need admin roles." },
+                { "id": 2, "text": "Users must be excluded from all Purview policies.", "reason": "Incorrect. Policies can coexist." },
+                { "id": 3, "text": "Users must have a compatible Microsoft 365 base license (e.g., E3 or E5).", "reason": "Correct. Copilot is sold as an add-on." },
+                { "id": 4, "text": "Users must have a separate tenant.", "reason": "Incorrect. Used within the existing tenant." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Microsoft 365 Copilot requires underlying eligible Microsoft 365 base licenses."
+        },
+        {
+            "id": 21, "topic": "Copilot pay-as-you-go",
+            "Question": "What is a key characteristic of Microsoft 365 Copilot pay-as-you-go billing?",
+            "Options": [
+                { "id": 1, "text": "It requires an on-premises license server.", "reason": "Incorrect. It is a cloud service." },
+                { "id": 2, "text": "It bills usage against an associated Azure subscription based on consumption.", "reason": "Correct. Ties usage to metered Azure billing." },
+                { "id": 3, "text": "It eliminates the need for base licenses.", "reason": "Incorrect. Base licenses are still required." },
+                { "id": 4, "text": "It is only for tenants with over 10,000 users.", "reason": "Incorrect. Size is not the defining characteristic." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "In the pay-as-you-go model, usage is metered and billed through an Azure subscription."
+        },
+        {
+            "id": 22, "topic": "Copilot adoption strategies",
+            "Question": "Which action best supports successful adoption of Microsoft 365 Copilot in an organization?",
+            "Options": [
+                { "id": 1, "text": "Enabling Copilot for all users at once without training.", "reason": "Incorrect. Can lead to confusion." },
+                { "id": 2, "text": "Disabling access to all admin reports.", "reason": "Incorrect. Reports provide insight." },
+                { "id": 3, "text": "Running a pilot with a selected group, providing training, and reviewing usage reports.", "reason": "Correct. A structured pilot is best practice." },
+                { "id": 4, "text": "Allowing only Global Administrators to use Copilot.", "reason": "Incorrect. Intended for broad productivity." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Piloting Copilot with training and monitoring analytics supports effective adoption."
+        },
+        {
+            "id": 23, "topic": "Prompt governance",
+            "Question": "Which measure best aligns with prompt governance for Microsoft 365 Copilot?",
+            "Options": [
+                { "id": 1, "text": "Establishing acceptable-use guidelines and educating users.", "reason": "Correct. Education is central to governance." },
+                { "id": 2, "text": "Prohibiting all use of Copilot.", "reason": "Incorrect. Governance aims for responsible use, not a ban." },
+                { "id": 3, "text": "Enabling anonymous access.", "reason": "Incorrect. Conflicts with identity governance." },
+                { "id": 4, "text": "Removing all Purview policies.", "reason": "Incorrect. Policies are important for compliance." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Prompt governance involves defining acceptable use and educating users."
+        },
+        {
+            "id": 24, "topic": "What are agents?",
+            "Question": "Which description best defines an agent in the context of Microsoft 365 Copilot and agents?",
+            "Options": [
+                { "id": 1, "text": "A background Windows service.", "reason": "Incorrect. Not a Copilot agent." },
+                { "id": 2, "text": "An automatic license assignment script.", "reason": "Incorrect. Not what agents refer to." },
+                { "id": 3, "text": "A specialized AI assistant tailored to specific tasks or business processes.", "reason": "Correct. Agents are scenario-specific." },
+                { "id": 4, "text": "A built-in antivirus engine.", "reason": "Incorrect. This refers to security." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Agents are AI-powered entities focused on specific business scenarios."
+        },
+        {
+            "id": 25, "topic": "Agent channels and deployment",
+            "Question": "You created an IT helpdesk agent in Microsoft Copilot Studio. Where can you typically deploy this agent so users can interact with it?",
+            "Options": [
+                { "id": 1, "text": "Microsoft Teams and web chat experiences", "reason": "Correct. Agents can be deployed to Teams and web chat." },
+                { "id": 2, "text": "The BIOS startup screen.", "reason": "Incorrect. Not deployed at firmware level." },
+                { "id": 3, "text": "Only the Microsoft 365 admin center.", "reason": "Incorrect. Admin center is for administration." },
+                { "id": 4, "text": "Only as a browser extension for Microsoft Edge.", "reason": "Incorrect. Uses channels like Teams." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot agents are commonly deployed in channels such as Microsoft Teams and web chat."
+        },
+        {
+            "id": 26, "topic": "Agent data access",
+            "Question": "When designing a Copilot agent that answers HR policy questions, what is the most important data access consideration?",
+            "Options": [
+                { "id": 1, "text": "Ensuring the agent bypasses permissions.", "reason": "Incorrect. Must respect governance." },
+                { "id": 2, "text": "Connecting the agent only to public internet data.", "reason": "Incorrect. Internal content is usually more useful." },
+                { "id": 3, "text": "Disabling logging.", "reason": "Incorrect. Monitoring is important." },
+                { "id": 4, "text": "Connecting the agent to appropriate HR sites that enforce Microsoft 365 permissions.", "reason": "Correct. Relies on secured and governed data." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Agents should use governed internal sources while respecting Microsoft 365 permissions."
+        },
+        {
+            "id": 27, "topic": "Agent lifecycle governance",
+            "Question": "Which step is typically part of a governed lifecycle for Copilot agents?",
+            "Options": [
+                { "id": 1, "text": "Allowing any user to publish without review.", "reason": "Incorrect. Governance requires approval." },
+                { "id": 2, "text": "Documenting the agent’s purpose, sources, and owner, and reviewing usage.", "reason": "Correct. Includes documentation and review." },
+                { "id": 3, "text": "Blocking access to all analytics.", "reason": "Incorrect. Analytics support monitoring." },
+                { "id": 4, "text": "Ensuring agents are never updated.", "reason": "Incorrect. Agents should be updated as needed." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Good governance includes documenting agents and reviewing their usage over time."
+        },
+        {
+            "id": 28, "topic": "Admin centers overview",
+            "Question": "Which admin center is primarily used to configure DLP policies and sensitivity labels?",
+            "Options": [
+                { "id": 1, "text": "Microsoft 365 admin center", "reason": "Incorrect. It links to Purview but doesn't host the configuration." },
+                { "id": 2, "text": "Microsoft Entra admin center", "reason": "Incorrect. Focuses on identity." },
+                { "id": 3, "text": "Microsoft Purview portal", "reason": "Correct. Used for DLP and labels." },
+                { "id": 4, "text": "Microsoft Teams admin center", "reason": "Incorrect. Manages Teams settings." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "DLP policies and sensitivity labels are configured in the Microsoft Purview portal."
+        },
+        {
+            "id": 29, "topic": "Teams and file storage",
+            "Question": "Where are files shared in a standard channel in Microsoft Teams typically stored?",
+            "Options": [
+                { "id": 1, "text": "In the user’s local Downloads folder.", "reason": "Incorrect. Uses cloud storage." },
+                { "id": 2, "text": "In a SharePoint site associated with the team.", "reason": "Correct. Files are stored in the team's SharePoint library." },
+                { "id": 3, "text": "In Exchange Online public folders.", "reason": "Incorrect. Not used for Teams files." },
+                { "id": 4, "text": "In Microsoft Dataverse.", "reason": "Incorrect. Not the default store for channel files." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Teams standard channel files are stored in the underlying SharePoint site’s document library."
+        },
+        {
+            "id": 30, "topic": "Guest access in Microsoft 365",
+            "Question": "What is a primary consideration when enabling guest access in Microsoft 365 for collaboration with external partners?",
+            "Options": [
+                { "id": 1, "text": "Guests automatically receive Global Admin privileges.", "reason": "Incorrect. No admin roles by default." },
+                { "id": 2, "text": "Guest access is only possible if Copilot is disabled.", "reason": "Incorrect. Unrelated." },
+                { "id": 3, "text": "Guest access should be governed with policies that control sharing and access reviews.", "reason": "Correct. Governance ensures appropriate access levels." },
+                { "id": 4, "text": "Guests must be given a dedicated tenant.", "reason": "Incorrect. Use B2B features." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Guest access should be controlled with governance policies and access reviews."
+        },
+        {
+            "id": 31, "topic": "Oversharing and Copilot",
+            "Question": "Why is it important to address oversharing in SharePoint and OneDrive before enabling Copilot broadly?",
+            "Options": [
+                { "id": 1, "text": "Copilot creates new permissions.", "reason": "Incorrect. Does not change permissions." },
+                { "id": 2, "text": "Copilot may surface content that users have access to but should not realistically see.", "reason": "Correct. Oversharing is exposed by AI queries." },
+                { "id": 3, "text": "Copilot only works with public content.", "reason": "Incorrect. Respects (overshared) permissions." },
+                { "id": 4, "text": "Oversharing has no impact.", "reason": "Incorrect. Influences what AI surfaces." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "If files are overshared, Copilot can surface that data to the wrong people, making cleanup essential."
+        },
+        {
+            "id": 32, "topic": "Core Microsoft 365 concepts",
+            "Question": "Which description best matches Microsoft 365 as a product?",
+            "Options": [
+                { "id": 1, "text": "A cloud-based suite of productivity, collaboration, and security services.", "reason": "Correct. Combines apps, collaboration, and security." },
+                { "id": 2, "text": "A standalone desktop suite that runs only on Windows.", "reason": "Incorrect. It is cloud-based." },
+                { "id": 3, "text": "A collection of on-premises server products.", "reason": "Incorrect. Servers are different from the M365 subscription." },
+                { "id": 4, "text": "A developer-only platform.", "reason": "Incorrect. Primarily for end-user productivity." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Microsoft 365 is a cloud-based subscription integrating productivity and security tools."
+        },
+        {
+            "id": 33, "topic": "Exchange admin basics",
+            "Question": "Which task would you typically perform in the Exchange admin center?",
+            "Options": [
+                { "id": 1, "text": "Configuring Copilot licenses.", "reason": "Incorrect. Handled in M365 admin center." },
+                { "id": 2, "text": "Creating a new shared mailbox for the finance department.", "reason": "Correct. Mailboxes are managed here." },
+                { "id": 3, "text": "Creating a new HR agent.", "reason": "Incorrect. Done in Copilot Studio." },
+                { "id": 4, "text": "Defining global retention labels.", "reason": "Incorrect. Done in Purview." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The Exchange admin center is used to manage mailboxes and mail flow."
+        },
+        {
+            "id": 34, "topic": "Teams admin basics",
+            "Question": "You need to restrict which users can schedule live events in Microsoft Teams. Which admin center should you use?",
+            "Options": [
+                { "id": 1, "text": "Microsoft 365 admin center.", "reason": "Incorrect. Links to it but doesn't host the policy." },
+                { "id": 2, "text": "Microsoft Entra admin center.", "reason": "Incorrect. Manages identity." },
+                { "id": 3, "text": "Microsoft Purview portal.", "reason": "Incorrect. Manages compliance." },
+                { "id": 4, "text": "Microsoft Teams admin center.", "reason": "Correct. Central place for Teams policies." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "The Teams admin center is the central place to configure Teams-specific policies."
+        },
+        {
+            "id": 35, "topic": "Zero Trust components",
+            "Question": "Which combination of features most directly supports the Zero Trust model in Microsoft 365?",
+            "Options": [
+                { "id": 1, "text": "Sensitivity labels and eDiscovery.", "reason": "Incorrect. Helps with governance but not access control." },
+                { "id": 2, "text": "MFA, Conditional Access, and device compliance policies.", "reason": "Correct. Enforces continuous verification." },
+                { "id": 3, "text": "Teams message policies and emojis.", "reason": "Incorrect. collaboration features." },
+                { "id": 4, "text": "Mail flow rules and automatic replies.", "reason": "Incorrect. Email features." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "MFA, Conditional Access, and device compliance policies are central to Zero Trust."
+        },
+        {
+            "id": 36, "topic": "Microsoft Defender XDR",
+            "Question": "What is a primary purpose of Microsoft Defender XDR in a Microsoft 365 environment?",
+            "Options": [
+                { "id": 1, "text": "To provide a unified experience for detecting and responding to threats across domains.", "reason": "Correct. Correlates signals to manage threats." },
+                { "id": 2, "text": "To manage product licenses.", "reason": "Incorrect. Handled in M365 admin center." },
+                { "id": 3, "text": "To schedule Teams meetings.", "reason": "Incorrect. Handled in Outlook/Teams." },
+                { "id": 4, "text": "To host SharePoint sites.", "reason": "Incorrect. Handled in SharePoint." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Microsoft Defender XDR aggregates security signals and enables investigation across workloads."
+        },
+        {
+            "id": 37, "topic": "eDiscovery usage",
+            "Question": "When would you typically use Microsoft Purview eDiscovery (Standard)?",
+            "Options": [
+                { "id": 1, "text": "To create a chat-based Copilot agent.", "reason": "Incorrect. Done in Copilot Studio." },
+                { "id": 2, "text": "To search and preserve content for a legal investigation.", "reason": "Correct. Designed for legal and compliance search." },
+                { "id": 3, "text": "To encrypt confidential documents.", "reason": "Incorrect. Done by sensitivity labels." },
+                { "id": 4, "text": "To reset user passwords.", "reason": "Incorrect. Done in Entra or M365 admin center." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "eDiscovery is used to search, preserve, and export content for legal investigations."
+        },
+        {
+            "id": 38, "topic": "Sensitivity labels behavior",
+            "Question": "Which behavior can sensitivity labels enforce on documents and emails?",
+            "Options": [
+                { "id": 1, "text": "Automatically migrating content.", "reason": "Incorrect. Labels don't perform migrations." },
+                { "id": 2, "text": "Scheduling Teams meetings.", "reason": "Incorrect. Labels don't schedule meetings." },
+                { "id": 3, "text": "Encrypting content and restricting access.", "reason": "Correct. Can apply encryption and access rules." },
+                { "id": 4, "text": "Assigning Copilot licenses.", "reason": "Incorrect. Licensing is independent." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Sensitivity labels can automatically encrypt content and control access."
+        },
+        {
+            "id": 39, "topic": "DLP policy actions",
+            "Question": "Which action can a Data Loss Prevention (DLP) policy perform when it detects sensitive information in an outbound email?",
+            "Options": [
+                { "id": 1, "text": "Block the email or show a policy tip that warns the user.", "reason": "Correct. Can block, warn, or allow overrides." },
+                { "id": 2, "text": "Automatically delete the mailbox.", "reason": "Incorrect. DLP doesn't delete mailboxes." },
+                { "id": 3, "text": "Change the user’s password.", "reason": "Incorrect. Not a DLP action." },
+                { "id": 4, "text": "Disable Copilot for that user.", "reason": "Incorrect. DLP is not for license management." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "DLP policies can block messages, log events, and display policy tips."
+        },
+        {
+            "id": 40, "topic": "Copilot vs public AI",
+            "Question": "What is a key distinction between Microsoft 365 Copilot and using a public, consumer AI chatbot?",
+            "Options": [
+                { "id": 1, "text": "Copilot runs entirely offline.", "reason": "Incorrect. It is a cloud service." },
+                { "id": 2, "text": "Copilot integrates with Microsoft Graph and respects enterprise permissions.", "reason": "Correct. Honors existing governance." },
+                { "id": 3, "text": "Copilot only answers questions about public web content.", "reason": "Incorrect. Uses organizational content." },
+                { "id": 4, "text": "Copilot is limited to a single app.", "reason": "Incorrect. Integrated across Word, Excel, etc." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft 365 Copilot uses Microsoft Graph and respects enterprise security controls."
+        },
+        {
+            "id": 41, "topic": "Copilot admin tasks",
+            "Question": "Which task is an example of a basic administrative responsibility for Microsoft 365 Copilot?",
+            "Options": [
+                { "id": 1, "text": "Developing the underlying LLM.", "reason": "Incorrect. Managed by Microsoft." },
+                { "id": 2, "text": "Manually reviewing every prompt in real time.", "reason": "Incorrect. Not practical." },
+                { "id": 3, "text": "Assigning Copilot licenses to users and monitoring usage analytics.", "reason": "Correct. Admins manage licensing and monitoring." },
+                { "id": 4, "text": "Rewriting Office applications.", "reason": "Incorrect. Provided by M365 updates." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Admins are responsible for assigning Copilot licenses and monitoring usage reports."
+        },
+        {
+            "id": 42, "topic": "Copilot prompt management",
+            "Question": "Which capability is part of managing prompts for Microsoft 365 Copilot according to the AB-900 skills outline?",
+            "Options": [
+                { "id": 1, "text": "Compiling prompts into executable code.", "reason": "Incorrect. Prompts are inputs." },
+                { "id": 2, "text": "Saving, sharing, and deleting prompts in supported experiences.", "reason": "Correct. Can manage stored prompts for reuse." },
+                { "id": 3, "text": "Running prompts only from the admin center.", "reason": "Incorrect. Prompts are used in apps." },
+                { "id": 4, "text": "Requiring Global Admin approval for each prompt.", "reason": "Incorrect. Not a standard feature." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The AB-900 outline includes managing prompts such as saving, sharing, and deleting them."
+        },
+        {
+            "id": 43, "topic": "Agent user access",
+            "Question": "You published a Copilot agent for the finance team. How should you restrict access so that only finance staff can use it?",
+            "Options": [
+                { "id": 1, "text": "Assign the agent to the Global Administrator role.", "reason": "Incorrect. Agents don't receive roles." },
+                { "id": 2, "text": "Enable anonymous access.", "reason": "Incorrect. Undermines security." },
+                { "id": 3, "text": "Share the agent only with a Microsoft 365 group containing finance users.", "reason": "Correct. Restricts access by group membership." },
+                { "id": 4, "text": "Publish the agent globally.", "reason": "Incorrect. Doesn't enforce restriction." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Agents should be shared with specific security or Microsoft 365 groups."
+        },
+        {
+            "id": 44, "topic": "Agent approval process",
+            "Question": "Which practice best aligns with a good approval process for Copilot agents?",
+            "Options": [
+                { "id": 1, "text": "Publishing agents directly to all users without review.", "reason": "Incorrect. Introduces risks." },
+                { "id": 2, "text": "Requiring review by security stakeholders for agents accessing sensitive data.", "reason": "Correct. Formal approval is needed for sensitive data." },
+                { "id": 3, "text": "Preventing any updates after publication.", "reason": "Incorrect. Agents should be updated." },
+                { "id": 4, "text": "Allowing only end users to approve their own agents.", "reason": "Incorrect. Requires central oversight." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Agents using sensitive data should follow a formal approval process involving security stakeholders."
+        },
+        {
+            "id": 45, "topic": "Agent monitoring and lifecycle",
+            "Question": "Which combination of activities best represents ongoing monitoring and lifecycle management for Copilot agents?",
+            "Options": [
+                { "id": 1, "text": "Create the agent once, never change it.", "reason": "Incorrect. Agents should be updated." },
+                { "id": 2, "text": "Limit monitoring to license counts only.", "reason": "Incorrect. Usage insights are important." },
+                { "id": 3, "text": "Delete all agents monthly.", "reason": "Incorrect. Disrupts business." },
+                { "id": 4, "text": "Track usage and performance, gather feedback, and update or retire the agent as needed.", "reason": "Correct. Lifecycle management includes monitoring and retirement." }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Lifecycle management includes monitoring via analytics and managing updates or retirement."
+        }
+    ]
+}
