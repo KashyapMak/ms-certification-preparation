@@ -27,12 +27,20 @@
         "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 2",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json"
     },
-     {
+    {
         "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 3",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-3.json"
     },
     {
         "title": "AB-900 - Copilot and Agent Administration Fundamentals - Purview",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json"
+    },
+    {
+        "title": "AB-730 - AI Business Professional - Set 1",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-1.json"
+    },
+    {
+        "title": "AB-730 - AI Business Professional - Set 2",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-2.json"
     }
 ]

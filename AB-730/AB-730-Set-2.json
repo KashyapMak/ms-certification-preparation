@@ -1,0 +1,1583 @@
+{
+  "quizName": "AB-730: AI Business Professional - Set 2",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "questions": [
+    {
+      "id": 1,
+      "Question": "You’re asked to explain the value of AB-730 to a non-technical stakeholder. Which outcome best captures the exam’s focus for business users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Demonstrate practical use of Microsoft 365 Copilot to streamline everyday business workflows and decisions without writing code."
+        },
+        {
+          "id": 2,
+          "text": "Design custom neural networks and deploy them on Azure Machine Learning using Python."
+        },
+        {
+          "id": 3,
+          "text": "Build enterprise data lakes and pipelines using Fabric and Synapse."
+        },
+        {
+          "id": 4,
+          "text": "Configure tenant-wide conditional access and advanced threat protection rules."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "AB-730 validates the ability to apply generative AI—especially Microsoft 365 Copilot—to practical, non-coding business scenarios such as writing, analysis, meetings, and decision support."
+    },
+    {
+      "id": 2,
+      "Question": "A sales manager wants to summarize long email threads and generate follow-up actions after customer meetings. Which Microsoft 365 capability is most directly aligned?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Power Platform AI Builder form processing"
+        },
+        {
+          "id": 2,
+          "text": "Microsoft 365 Copilot for Outlook and Teams meeting recap features"
+        },
+        {
+          "id": 3,
+          "text": "Microsoft Purview eDiscovery (Premium)"
+        },
+        {
+          "id": 4,
+          "text": "Azure OpenAI Service with custom fine-tuning"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot in Outlook and Teams generates summaries, suggested replies, action items, and meeting recaps to streamline communication and follow-ups."
+    },
+    {
+      "id": 3,
+      "Question": "Which statement best describes responsible AI expectations for business professionals using Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "They must approve all model updates in Azure ML before using Copilot features."
+        },
+        {
+          "id": 2,
+          "text": "They should apply responsible AI principles such as transparency, privacy, and accountability when prompting and sharing AI-generated content."
+        },
+        {
+          "id": 3,
+          "text": "They must configure differential privacy parameters in every prompt."
+        },
+        {
+          "id": 4,
+          "text": "They are responsible for disabling telemetry across the tenant."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Business users are expected to follow responsible AI guidance—e.g., verify outputs, respect privacy, avoid sensitive data in prompts, and attribute sources appropriately."
+    },
+    {
+      "id": 4,
+      "Question": "In Copilot Chat, which prompt is MOST likely to yield a focused, high-quality result when preparing a customer QBR (Quarterly Business Review)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a presentation."
+        },
+        {
+          "id": 2,
+          "text": "Make a deck for our client."
+        },
+        {
+          "id": 3,
+          "text": "Draft a 6-slide QBR for Contoso covering revenue trends (last 2 quarters), top 3 wins, open risks, and next steps. Use a confident, concise tone and propose two actions per risk."
+        },
+        {
+          "id": 4,
+          "text": "QBR please."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Effective prompts specify audience, length, scope, tone, required sections, and constraints, which helps Copilot deliver targeted business outputs."
+    },
+    {
+      "id": 5,
+      "Question": "A product marketer wants to research competitor positioning and draft a first-pass blog post in Word. Which Copilot approach is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Copilot in Word to outline sections, ask for competitor highlights, and generate a draft with citations, then fact-check and revise."
+        },
+        {
+          "id": 2,
+          "text": "Export CRM data to CSV and upload it to Azure OpenAI for auto-publishing."
+        },
+        {
+          "id": 3,
+          "text": "Ask Copilot in PowerPoint to export notes into a blog without review."
+        },
+        {
+          "id": 4,
+          "text": "Disable Track Changes and publish any draft Copilot generates to reduce review effort."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in Word helps plan, generate, and refine content; the user remains responsible for verification, tone, and approvals before publishing."
+    },
+    {
+      "id": 6,
+      "Question": "You need to transform a data table of quarterly sales into insights and a visual for an executive summary. Which workflow is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Copilot in Excel to analyze trends, ask for key drivers, and generate a chart and a short narrative summary you can reuse in PowerPoint."
+        },
+        {
+          "id": 2,
+          "text": "Paste the data into Word and manually calculate quarter-over-quarter changes."
+        },
+        {
+          "id": 3,
+          "text": "Use Teams to tag every stakeholder manually for input."
+        },
+        {
+          "id": 4,
+          "text": "Email the spreadsheet and request everyone reply-all with observations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in Excel can analyze data, surface patterns, produce charts, and generate summaries, accelerating insight creation and reuse across apps."
+    },
+    {
+      "id": 7,
+      "Question": "Which of the following is a primary benefit of Copilot meeting features for project managers?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Automatic Gantt chart creation in Project Online"
+        },
+        {
+          "id": 2,
+          "text": "Real-time code reviews during standups"
+        },
+        {
+          "id": 3,
+          "text": "Meeting summaries, decisions, tasks, and follow-up drafts without rewatching the recording"
+        },
+        {
+          "id": 4,
+          "text": "Tenant-wide DLP policy configuration"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Copilot in Teams captures and summarizes key meeting outcomes, action items, and next steps to improve follow-through and save time."
+    },
+    {
+      "id": 8,
+      "Question": "A department lead asks if using Copilot will automatically make content compliant with company retention rules. Is this assumption correct?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes"
+        },
+        {
+          "id": 2,
+          "text": "No"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot operates within your Microsoft 365 compliance posture, but governance (e.g., retention, DLP) is configured by admins. Users should still follow policy."
+    },
+    {
+      "id": 9,
+      "Question": "You’re coaching a team to iterate on prompts. Which practice is BEST for improving Copilot results?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use a single vague prompt and accept the first output."
+        },
+        {
+          "id": 2,
+          "text": "Add specific role, context, format, and constraints; then review, critique, and refine the output with follow-up prompts."
+        },
+        {
+          "id": 3,
+          "text": "Avoid providing examples because they bias the model."
+        },
+        {
+          "id": 4,
+          "text": "Disable citations to make responses shorter."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Providing role, context, structure, and constraints—and then refining—improves quality. Examples are often helpful; users should still verify facts."
+    },
+    {
+      "id": 10,
+      "Question": "Which scenario best fits the Researcher agent’s role within Microsoft 365 Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Scheduling recurring meetings and sending invites"
+        },
+        {
+          "id": 2,
+          "text": "Aggregating sources, extracting key points, and assembling background material for a proposal"
+        },
+        {
+          "id": 3,
+          "text": "Enforcing legal holds across SharePoint sites"
+        },
+        {
+          "id": 4,
+          "text": "Provisioning user accounts in Entra ID"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "The Researcher agent is designed to gather and synthesize information, helping users build source-informed narratives and backgrounders."
+    },
+    {
+      "id": 11,
+      "Question": "While preparing an executive update deck, you want Copilot in PowerPoint to keep the tone concise and data-driven. Which guidance should you include in the prompt?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ask for a casual tone, long anecdotes, and minimal charts."
+        },
+        {
+          "id": 2,
+          "text": "Request a concise executive tone, 6–8 slides, one key chart per section, and bullets limited to 5 words."
+        },
+        {
+          "id": 3,
+          "text": "Let Copilot pick any tone; constraints reduce creativity."
+        },
+        {
+          "id": 4,
+          "text": "Avoid specifying slide count; ask for 30+ slides to be safe."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Clear instructions on tone, length, visuals, and constraints guide Copilot to produce focused, executive-ready content."
+    },
+    {
+      "id": 12,
+      "Question": "A finance analyst uses Copilot in Excel to detect anomalies in expense data. What is the analyst still responsible for?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Validating insights, confirming business context, and deciding actions based on reviewed evidence"
+        },
+        {
+          "id": 2,
+          "text": "Re-training the underlying LLM with corporate data"
+        },
+        {
+          "id": 3,
+          "text": "Creating custom connectors in Fabric"
+        },
+        {
+          "id": 4,
+          "text": "Modifying retention labels in Purview"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Human oversight remains essential—users must verify, contextualize, and decide how to act on AI-generated insights."
+    },
+    {
+      "id": 13,
+      "Question": "Your legal team reminds staff not to paste sensitive customer information into prompts. Which principle does this reinforce?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Transparency"
+        },
+        {
+          "id": 2,
+          "text": "Privacy and security"
+        },
+        {
+          "id": 3,
+          "text": "Inclusiveness"
+        },
+        {
+          "id": 4,
+          "text": "Reliability through redundancy"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Responsible AI emphasizes privacy and security. Users should avoid sharing sensitive data in prompts unless policy allows and controls are in place."
+    },
+    {
+      "id": 14,
+      "Question": "You need to roll out Copilot usage norms for a marketing department. Which two elements should the guidance prioritize? (Choose TWO.)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "How to write role-aware prompts with target audience, tone, and brand guidelines"
+        },
+        {
+          "id": 2,
+          "text": "Mandatory fine-tuning of the base model for each campaign"
+        },
+        {
+          "id": 3,
+          "text": "Verification steps: fact-checking, source attribution, and legal review before publishing"
+        },
+        {
+          "id": 4,
+          "text": "Blocking Copilot for email to reduce volume"
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Quality prompting plus governance (review and attribution) elevates output quality while mitigating risk; fine-tuning is unnecessary for routine business tasks."
+    },
+    {
+      "id": 15,
+      "Question": "SCENARIO: A regional operations team must produce a weekly status report spanning supply delays, cost impacts, and mitigation plans. They want to standardize content quality and shorten the cycle. What’s the best end-to-end approach?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Copilot in Word with a templated prompt that requests sections (delays, costs, mitigations), import highlights from Teams meeting recaps, and generate an executive summary."
+        },
+        {
+          "id": 2,
+          "text": "Collect updates via reply-all and paste into a long email for leadership."
+        },
+        {
+          "id": 3,
+          "text": "Create a 40-slide deck every week regardless of change."
+        },
+        {
+          "id": 4,
+          "text": "Use PowerPoint only; visuals alone remove the need for analysis."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A structured prompt and template in Word, plus reuse of Teams recaps, standardizes inputs and accelerates consistent reporting with an executive-ready summary."
+    },
+    {
+      "id": 16,
+      "Question": "SCENARIO: HR must draft inclusive job descriptions faster while reducing bias risk. Which Copilot practice helps most?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Prompt Copilot to analyze language for inclusiveness and neutrality, propose alternatives, and cite rationale before HR final review."
+        },
+        {
+          "id": 2,
+          "text": "Ask Copilot to auto-post roles without review to save time."
+        },
+        {
+          "id": 3,
+          "text": "Disable track changes to avoid feedback loops."
+        },
+        {
+          "id": 4,
+          "text": "Use Copilot only for formatting final PDFs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot can suggest inclusive language and highlight potential biases, but HR must review and approve before publishing."
+    },
+    {
+      "id": 17,
+      "Question": "SCENARIO: A customer success leader wants a client health briefing that pulls from recent emails, meetings, and a spreadsheet of usage metrics. What should they do first?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Copilot Chat to summarize communications and ask Copilot in Excel to analyze usage trends; then combine the outputs into a briefing in Word or PowerPoint."
+        },
+        {
+          "id": 2,
+          "text": "Export everything to a third-party LLM without any review."
+        },
+        {
+          "id": 3,
+          "text": "Send a mass survey to all clients and wait for responses."
+        },
+        {
+          "id": 4,
+          "text": "Create a static PDF and avoid updates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot across Outlook/Teams and Excel enables quick synthesis of communications and metrics; assembling into a briefing completes the workflow."
+    },
+    {
+      "id": 18,
+      "Question": "SCENARIO: The CIO asks if Copilot will access only the data a user can already see in Microsoft 365. As a business lead, how should you respond?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes—Copilot respects existing Microsoft 365 permissions and only surfaces what the signed-in user can access."
+        },
+        {
+          "id": 2,
+          "text": "No—Copilot reads all tenant data regardless of permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot adheres to Microsoft 365 permissions and context; it does not override access controls."
+    },
+    {
+      "id": 19,
+      "Question": "SCENARIO: A VP wants a one-page executive brief from a 40-page market report and three internal memos. Which Copilot pattern is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ask Copilot Chat to extract top 5 trends with supporting bullets, contradictions, and open questions; then generate a one-page brief in Word."
+        },
+        {
+          "id": 2,
+          "text": "Paste all 40 pages into an email and ask for comments."
+        },
+        {
+          "id": 3,
+          "text": "Create a Teams channel and upload without instructions."
+        },
+        {
+          "id": 4,
+          "text": "Ask for a 50-page expansion of the content."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Focused extraction plus a structured brief request yields an executive-ready summary with traceable rationale."
+    },
+    {
+      "id": 20,
+      "Question": "SCENARIO: A field sales team wants to generate tailored follow-up emails after demos. Which guidance will most improve Copilot output quality?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Provide the buyer persona, pain points discussed, desired CTA, and a concise tone; ask Copilot to include 3 bulleted benefits linked to the demo."
+        },
+        {
+          "id": 2,
+          "text": "Ask Copilot to write a long generic email for all prospects."
+        },
+        {
+          "id": 3,
+          "text": "Remove any constraints to let Copilot be creative."
+        },
+        {
+          "id": 4,
+          "text": "Avoid specifying the CTA to keep it neutral."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Role, context, tone, and structure yield targeted follow-ups; CTAs and benefits improve clarity and actionability."
+    },
+    {
+      "id": 21,
+      "Question": "Which is a best practice for using Copilot when discussing regulated content?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Bypass internal review because Copilot cites sources."
+        },
+        {
+          "id": 2,
+          "text": "Follow organizational compliance policies, avoid sensitive data in prompts unless permitted, and route final content for required approvals."
+        },
+        {
+          "id": 3,
+          "text": "Share client PII in prompts to get personalized outputs."
+        },
+        {
+          "id": 4,
+          "text": "Disable all labels to reduce friction."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Users must align with compliance rules and protect sensitive data; approvals remain mandatory for regulated materials."
+    },
+    {
+      "id": 22,
+      "Question": "Which Copilot feature pairing is MOST suitable for building a client proposal faster?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Outlook’s sweep rules + calendar sharing"
+        },
+        {
+          "id": 2,
+          "text": "Word drafting with Researcher agent for sources and PowerPoint generation for the client-facing deck"
+        },
+        {
+          "id": 3,
+          "text": "Teams emojis + GIF reactions"
+        },
+        {
+          "id": 4,
+          "text": "Excel pivot tables only"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Use Copilot in Word to research and draft, then generate a tailored presentation in PowerPoint for client delivery."
+    },
+    {
+      "id": 23,
+      "Question": "Your team wants to standardize prompts for recurring work (e.g., weekly updates). What is the intended value of creating and managing such prompt patterns?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "They guarantee perfect answers every time."
+        },
+        {
+          "id": 2,
+          "text": "They reduce variability, accelerate production, and promote consistency while still requiring human review."
+        },
+        {
+          "id": 3,
+          "text": "They eliminate the need for any subject-matter expertise."
+        },
+        {
+          "id": 4,
+          "text": "They replace retention and labeling policies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Reusable prompt patterns speed up work and improve consistency but do not remove human accountability or governance needs."
+    },
+    {
+      "id": 24,
+      "Question": "Which Copilot capability best helps a business analyst convert raw metrics into a narrative for executives?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Copilot in Excel to identify trends and then generate a concise text summary suitable for use in a Word brief"
+        },
+        {
+          "id": 2,
+          "text": "Manual transcription of tables into email"
+        },
+        {
+          "id": 3,
+          "text": "Posting screenshots without commentary in Teams"
+        },
+        {
+          "id": 4,
+          "text": "Copying numbers into PowerPoint without context"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot can analyze and summarize data, producing narratives that translate metrics into executive insights."
+    },
+    {
+      "id": 25,
+      "Question": "A team wants to use Copilot to draft a policy memo and ensure all statements are evidence-based. What should they include in the prompt?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Request citations to source documents and ask Copilot to flag assumptions or missing evidence for follow-up."
+        },
+        {
+          "id": 2,
+          "text": "Ask Copilot to remove references to keep it brief."
+        },
+        {
+          "id": 3,
+          "text": "Request only bullet points and no links to sources."
+        },
+        {
+          "id": 4,
+          "text": "Instruct Copilot to approve the memo automatically."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Requesting citations and gaps enables traceability and targeted follow-up before publishing."
+    },
+    {
+      "id": 26,
+      "Question": "YES/NO: Is Copilot intended to replace human judgment for critical business decisions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes"
+        },
+        {
+          "id": 2,
+          "text": "No"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot augments human work; users remain accountable for verification, judgment, and approvals."
+    },
+    {
+      "id": 27,
+      "Question": "Which two elements make a prompt more effective for a customer escalation response? (Choose TWO.)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Customer context (issue summary, impact, desired outcome)"
+        },
+        {
+          "id": 2,
+          "text": "Tone and length guidance (e.g., empathetic, under 150 words)"
+        },
+        {
+          "id": 3,
+          "text": "Intentionally vague instructions to allow creativity"
+        },
+        {
+          "id": 4,
+          "text": "Requests to omit any supporting details"
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Context plus tone/length constraints guide Copilot to produce targeted, empathetic, on-brief responses."
+    },
+    {
+      "id": 28,
+      "Question": "Which Teams capability with Copilot is most helpful for absent stakeholders who need the gist of a meeting?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Automatic meeting recap with summary, decisions, and action items"
+        },
+        {
+          "id": 2,
+          "text": "Manual timestamping of every discussion point by the organizer"
+        },
+        {
+          "id": 3,
+          "text": "Forbidding recordings to reduce storage"
+        },
+        {
+          "id": 4,
+          "text": "Disabling chat during meetings"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Meeting recap condenses the discussion into actionable highlights for quick catch-up."
+    },
+    {
+      "id": 29,
+      "Question": "Which statement is accurate regarding data access and Copilot across Microsoft 365?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Copilot exposes all tenant content to everyone by default."
+        },
+        {
+          "id": 2,
+          "text": "Copilot honors existing file, site, and mailbox permissions and surfaces results within that access scope."
+        },
+        {
+          "id": 3,
+          "text": "Copilot requires global admin rights for all users."
+        },
+        {
+          "id": 4,
+          "text": "Copilot can bypass sensitivity labels at runtime."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Copilot respects Microsoft 365 permissions and sensitivity configuration; it does not grant broader access than the user already has."
+    },
+    {
+      "id": 30,
+      "Question": "A marketing team wants a fresh slide design from a written brief. Which flow is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Draft a concise narrative in Word with key messages and ask Copilot in PowerPoint to generate slides with a clean design; then edit."
+        },
+        {
+          "id": 2,
+          "text": "Paste raw spreadsheets into slides without headers."
+        },
+        {
+          "id": 3,
+          "text": "Use Teams to send emojis and ask others to design."
+        },
+        {
+          "id": 4,
+          "text": "Export to PDF first, then retype into PowerPoint."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot can transform structured narrative inputs into slide frameworks that can be refined visually."
+    },
+    {
+      "id": 31,
+      "Question": "SCENARIO: You lead change management for a Copilot rollout. Which action best drives adoption and responsible use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Publish role-based prompt libraries with examples, set expectations for verification, and run office-hours for Q&A."
+        },
+        {
+          "id": 2,
+          "text": "Disable Copilot after 30 days to measure impact."
+        },
+        {
+          "id": 3,
+          "text": "Announce once via email and consider the program complete."
+        },
+        {
+          "id": 4,
+          "text": "Avoid training to prevent bias in usage patterns."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Adoption improves with curated examples, clear norms, and ongoing support channels."
+    },
+    {
+      "id": 32,
+      "Question": "SCENARIO: A finance VP asks for a quick variance analysis with commentary for a board pack. Which Copilot sequence is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Analyze variances in Excel with Copilot, ask for key drivers and risks, and export the commentary to Word for the board narrative."
+        },
+        {
+          "id": 2,
+          "text": "Screenshot the spreadsheet and email it without context."
+        },
+        {
+          "id": 3,
+          "text": "Create a 50-page appendix of raw tables."
+        },
+        {
+          "id": 4,
+          "text": "Ask Copilot in PowerPoint to remove all numbers and keep only images."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Excel + Copilot is ideal for analysis and commentary; Word consolidates the final board narrative."
+    },
+    {
+      "id": 33,
+      "Question": "SCENARIO: Customer support wants to turn a troubleshooting guide into a short internal FAQ quickly. What should they ask Copilot to do?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Extract top issues and convert steps into Q&A format, 1–2 sentences per answer, with links to the detailed guide."
+        },
+        {
+          "id": 2,
+          "text": "Hide all links to avoid distractions."
+        },
+        {
+          "id": 3,
+          "text": "Rewrite everything as a long essay."
+        },
+        {
+          "id": 4,
+          "text": "Publish without SME review."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Targeted extraction and formatting accelerate knowledge reuse; SME review remains essential."
+    },
+    {
+      "id": 34,
+      "Question": "SCENARIO: A program lead wants Copilot to monitor a channel and summarize blockers daily. Which practice helps most?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Define the reporting cadence, scope (e.g., blockers and owners), and the output format (bulleted list with dates) in the prompt."
+        },
+        {
+          "id": 2,
+          "text": "Avoid specifying a schedule so results vary."
+        },
+        {
+          "id": 3,
+          "text": "Include confidential passwords to improve accuracy."
+        },
+        {
+          "id": 4,
+          "text": "Request only emojis for brevity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Clear scope, cadence, and structure make automated summaries more actionable and consistent."
+    },
+    {
+      "id": 35,
+      "Question": "SCENARIO: A bid team must produce a proposal and wants to differentiate tone by audience (executives vs. technical evaluators). How can Copilot help?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Generate two versions: a concise executive summary and a detailed technical appendix; specify audience, tone, and length in prompts."
+        },
+        {
+          "id": 2,
+          "text": "Create one generic document for all audiences."
+        },
+        {
+          "id": 3,
+          "text": "Only provide images to save time."
+        },
+        {
+          "id": 4,
+          "text": "Exclude any constraints so Copilot decides the tone."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Audience-aware prompting enables tailored outputs appropriate to executive vs. technical reviewers."
+    },
+    {
+      "id": 36,
+      "Question": "Which Copilot behavior should users expect regarding hallucinations and factual accuracy?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Copilot never makes mistakes if you ask nicely."
+        },
+        {
+          "id": 2,
+          "text": "Users must review, fact-check, and request citations; Copilot can err, so human validation is required."
+        },
+        {
+          "id": 3,
+          "text": "Copilot auto-corrects facts at publish time."
+        },
+        {
+          "id": 4,
+          "text": "Accuracy is guaranteed if prompts are short."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Human oversight is essential; requesting citations and verifying claims reduces risk from hallucinations."
+    },
+    {
+      "id": 37,
+      "Question": "A team wants to track decisions and owners from weekly meetings. Which Copilot-enabled approach is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Teams meeting recap to extract decisions and action items with owners and due dates, and summarize into a weekly status note."
+        },
+        {
+          "id": 2,
+          "text": "Rely on memory and rebuild notes monthly."
+        },
+        {
+          "id": 3,
+          "text": "Disable recordings and avoid any notes."
+        },
+        {
+          "id": 4,
+          "text": "Send a blank document after each meeting."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Meeting recap focuses on outcomes and actions, enabling consistent tracking."
+    },
+    {
+      "id": 38,
+      "Question": "What’s the best way to minimize bias and improve inclusivity in AI-assisted content?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ask Copilot to scan for biased terms and suggest inclusive alternatives; include a review checklist."
+        },
+        {
+          "id": 2,
+          "text": "Trust Copilot blindly because it is unbiased."
+        },
+        {
+          "id": 3,
+          "text": "Disable inclusive language checks."
+        },
+        {
+          "id": 4,
+          "text": "Avoid any human review to stay neutral."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Prompting for bias checks plus human review helps align with inclusivity goals."
+    },
+    {
+      "id": 39,
+      "Question": "YES/NO: Should users rely on Copilot alone to interpret sensitive legal clauses without consulting legal counsel?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes"
+        },
+        {
+          "id": 2,
+          "text": "No"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Legal content should be reviewed by qualified counsel; Copilot can assist with summaries but not replace expert judgment."
+    },
+    {
+      "id": 40,
+      "Question": "A PM needs a RACI view from a long project plan. Which Copilot instruction is most effective?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Create a RACI matrix from the attached plan; list tasks as rows and roles as columns with clear R/A/C/I tags, then summarize top 5 ownership risks.”"
+        },
+        {
+          "id": 2,
+          "text": "“Make it better.”"
+        },
+        {
+          "id": 3,
+          "text": "“Write a poem about the plan.”"
+        },
+        {
+          "id": 4,
+          "text": "“Remove all owner names to protect privacy.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Specific output format (RACI), inputs, and risk summary produce an actionable artifact."
+    },
+    {
+      "id": 41,
+      "Question": "Which pairing correctly matches Copilot app and typical value?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Word → Draft and refine long-form content with citations"
+        },
+        {
+          "id": 2,
+          "text": "Excel → Compose orchestral scores automatically"
+        },
+        {
+          "id": 3,
+          "text": "Outlook → Configure tenant retention labels"
+        },
+        {
+          "id": 4,
+          "text": "Teams → Create VM images for developers"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Copilot in Word assists with structured drafting and refinement; the other options are unrelated."
+    },
+    {
+      "id": 42,
+      "Question": "Which practice best supports transparency when publishing AI-assisted reports?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Note that AI tools aided drafting, include citations, and document assumptions and limitations."
+        },
+        {
+          "id": 2,
+          "text": "Hide all sources to appear authoritative."
+        },
+        {
+          "id": 3,
+          "text": "Claim no human was involved to increase trust."
+        },
+        {
+          "id": 4,
+          "text": "Avoid disclosing any AI usage to keep it simple."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Transparency includes acknowledging AI assistance, citing sources, and clarifying assumptions."
+    },
+    {
+      "id": 43,
+      "Question": "SCENARIO: An HR partner needs a balanced performance summary from manager notes and peer feedback. What should the Copilot prompt include?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Requested structure (strengths, opportunities, examples), neutral tone, and 200-word limit; flag ambiguous evidence."
+        },
+        {
+          "id": 2,
+          "text": "Ask Copilot to use superlatives only."
+        },
+        {
+          "id": 3,
+          "text": "Exclude examples to save space."
+        },
+        {
+          "id": 4,
+          "text": "Publish without employee review."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Structure, tone, length, and requests for flags help ensure fairness and clarity."
+    },
+    {
+      "id": 44,
+      "Question": "SCENARIO: The communications team wants a press release draft and a matching social post. Which cross-app flow is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Draft the press release in Word with Copilot and request a 100-word social version with 3 key hashtags; review and route for approvals."
+        },
+        {
+          "id": 2,
+          "text": "Only write the social post; skip the press release."
+        },
+        {
+          "id": 3,
+          "text": "Ask Copilot to publish externally without review."
+        },
+        {
+          "id": 4,
+          "text": "Avoid any length constraints to preserve creativity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Creating a long-form piece and its social variant with constraints supports omnichannel consistency and approvals."
+    },
+    {
+      "id": 45,
+      "Question": "SCENARIO: The COO requests a weekly operational dashboard narrative. Which Copilot practice adds the MOST value?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ask for outlier detection, driver analysis, and a risk/mitigation table with owners; limit to 150 words."
+        },
+        {
+          "id": 2,
+          "text": "Include all charts without commentary."
+        },
+        {
+          "id": 3,
+          "text": "Omit owner names to reduce accountability."
+        },
+        {
+          "id": 4,
+          "text": "Avoid highlighting risks to maintain positivity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Directed analysis plus a structured risk view yields concise, actionable leadership insights."
+    },
+    {
+      "id": 46,
+      "Question": "SCENARIO: A sales enablement lead wants a skills-playbook from top reps’ notes and call summaries. What should they request from Copilot?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Synthesize patterns into a playbook with scenarios, messaging, objection handling, and do/don’t lists; include anonymized examples."
+        },
+        {
+          "id": 2,
+          "text": "Copy raw notes verbatim into a long appendix only."
+        },
+        {
+          "id": 3,
+          "text": "Delete all examples to save space."
+        },
+        {
+          "id": 4,
+          "text": "Publish without legal review of customer references."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Pattern synthesis with structured sections and examples creates a reusable, high-value playbook."
+    },
+    {
+      "id": 47,
+      "Question": "Which pairing is most accurate for Copilot agents in business workflows?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Researcher agent → gather and synthesize sources; Analyst agent → explore data for insights"
+        },
+        {
+          "id": 2,
+          "text": "Researcher agent → configure retention labels; Analyst agent → create user accounts"
+        },
+        {
+          "id": 3,
+          "text": "Researcher agent → reimage devices; Analyst agent → manage Wi-Fi"
+        },
+        {
+          "id": 4,
+          "text": "Researcher agent → schedule meetings; Analyst agent → file legal holds"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Researcher focuses on sourcing and synthesis; Analyst focuses on data-driven insighting."
+    },
+    {
+      "id": 48,
+      "Question": "Which is an example of an effective constraint to improve Copilot output for executives?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Keep to 120 words, highlight 3 KPIs, and propose 2 actions with owners.”"
+        },
+        {
+          "id": 2,
+          "text": "“Write as much as possible.”"
+        },
+        {
+          "id": 3,
+          "text": "“Avoid any structure.”"
+        },
+        {
+          "id": 4,
+          "text": "“Exclude all numbers for readability.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Concise length, KPI focus, and action owners guide executive-ready outputs."
+    },
+    {
+      "id": 49,
+      "Question": "YES/NO: Is it acceptable to publish AI-generated content externally without human review if Copilot included citations?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes"
+        },
+        {
+          "id": 2,
+          "text": "No"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Human review is required to validate accuracy, tone, and compliance—even when citations are present."
+    },
+    {
+      "id": 50,
+      "Question": "Which is the best way to direct Copilot to compare two product proposals?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Compare proposals A and B by cost, timeline, risks, and benefits. Create a 4-row table and conclude with a recommendation and 2 assumptions.”"
+        },
+        {
+          "id": 2,
+          "text": "“Which is better?”"
+        },
+        {
+          "id": 3,
+          "text": "“Rewrite both proposals instead of comparing.”"
+        },
+        {
+          "id": 4,
+          "text": "“Ignore risks to keep it positive.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Clear criteria, format, and a requested recommendation produce focused decision support."
+    },
+    {
+      "id": 51,
+      "Question": "SCENARIO: A product manager needs a customer interview guide. What prompt is most effective?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Create a 10-question interview guide for enterprise IT buyers evaluating SaaS security; include open-ended questions and a consent reminder.”"
+        },
+        {
+          "id": 2,
+          "text": "“Write questions.”"
+        },
+        {
+          "id": 3,
+          "text": "“Only yes/no questions.”"
+        },
+        {
+          "id": 4,
+          "text": "“Skip consent to reduce friction.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Audience, topic, length, and ethical reminders yield a usable interview guide."
+    },
+    {
+      "id": 52,
+      "Question": "SCENARIO: The CFO wants a sensitivity analysis on pricing using last quarter’s data. Which Copilot flow is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Copilot in Excel to model price changes vs. revenue and margin, visualize outcomes, and summarize implications for leadership."
+        },
+        {
+          "id": 2,
+          "text": "Manually re-enter data into Word."
+        },
+        {
+          "id": 3,
+          "text": "Send the spreadsheet without commentary."
+        },
+        {
+          "id": 4,
+          "text": "Only produce a static pie chart."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Excel with Copilot supports scenario modeling, visualization, and executive summaries."
+    },
+    {
+      "id": 53,
+      "Question": "SCENARIO: A PMO wants to reduce status churn. Which approach aligns with Copilot’s strengths?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a standard status template and prompt Copilot to populate it from meeting recaps, email threads, and tracker data; then review."
+        },
+        {
+          "id": 2,
+          "text": "Collect updates ad hoc in chat without structure."
+        },
+        {
+          "id": 3,
+          "text": "Publish any AI output immediately."
+        },
+        {
+          "id": 4,
+          "text": "Avoid templates to keep it flexible."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Templates + Copilot reduce variance and time-to-complete; human review remains essential."
+    },
+    {
+      "id": 54,
+      "Question": "Which statement best reflects AB-730’s audience and scope?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Designed for developers building ML models in Python."
+        },
+        {
+          "id": 2,
+          "text": "Designed for business professionals using generative AI in Microsoft 365 to enhance productivity and outcomes."
+        },
+        {
+          "id": 3,
+          "text": "Focused on Azure infrastructure deployment."
+        },
+        {
+          "id": 4,
+          "text": "Focused on Dynamics 365 ERP configuration only."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "AB-730 targets business users leveraging Copilot and gen AI across common Microsoft 365 workflows."
+    },
+    {
+      "id": 55,
+      "Question": "Which two are appropriate governance reminders for AI-assisted content? (Choose TWO.)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Respect sensitivity labels and avoid disclosing confidential data in prompts unless policy allows."
+        },
+        {
+          "id": 2,
+          "text": "Publish drafts without review to speed time-to-market."
+        },
+        {
+          "id": 3,
+          "text": "Attribute sources where required and document assumptions."
+        },
+        {
+          "id": 4,
+          "text": "Ignore mandatory approvals if Copilot provided citations."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Data handling and transparent attribution are core governance expectations; approvals remain mandatory."
+    },
+    {
+      "id": 56,
+      "Question": "Which Copilot instruction most helps a recruiter prepare for an intake meeting with a hiring manager?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Summarize role requirements from these notes, list top 5 must-have competencies, and propose 8 targeted interview questions.”"
+        },
+        {
+          "id": 2,
+          "text": "“Write a generic job post with no details.”"
+        },
+        {
+          "id": 3,
+          "text": "“Only produce a long narrative.”"
+        },
+        {
+          "id": 4,
+          "text": "“Remove all competencies to reduce bias.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Structured extraction plus targeted questions accelerates preparation and alignment."
+    },
+    {
+      "id": 57,
+      "Question": "YES/NO: Should users store personal passwords inside prompts to help Copilot access systems?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes"
+        },
+        {
+          "id": 2,
+          "text": "No"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Never include passwords or secrets in prompts; follow security best practices."
+    },
+    {
+      "id": 58,
+      "Question": "Which instruction best helps Copilot write a customer case study?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Draft a 400-word case study for Contoso (industry: retail) with problem, solution, outcomes (3 metrics), and a customer quote placeholder; neutral, professional tone.”"
+        },
+        {
+          "id": 2,
+          "text": "“Write something long.”"
+        },
+        {
+          "id": 3,
+          "text": "“Make it funny and vague.”"
+        },
+        {
+          "id": 4,
+          "text": "“Exclude outcomes.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Audience, structure, outcomes, length, and tone constraints yield a usable case study draft."
+    },
+    {
+      "id": 59,
+      "Question": "Multiple-answer: Which two activities are well-suited for Copilot in Excel during a quarterly business review? (Choose TWO.)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Detecting trends and outliers across regions"
+        },
+        {
+          "id": 2,
+          "text": "Applying legal holds to mailboxes"
+        },
+        {
+          "id": 3,
+          "text": "Generating a narrative summary of KPI movements"
+        },
+        {
+          "id": 4,
+          "text": "Creating new Entra ID users"
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Trend/outlier detection and narrative summaries align to Copilot in Excel capabilities; the other options are administrative tasks outside Excel."
+    },
+    {
+      "id": 60,
+      "Question": "You must brief executives on AI adoption progress. Which Copilot request is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "“Create a one-page executive summary of Copilot adoption with usage metrics, top 3 wins, 3 risks with mitigations, and next 2 actions.”"
+        },
+        {
+          "id": 2,
+          "text": "“Write everything you can about AI.”"
+        },
+        {
+          "id": 3,
+          "text": "“Remove risks to keep the tone positive.”"
+        },
+        {
+          "id": 4,
+          "text": "“Only include screenshots.”"
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Clear structure, metrics, risks/mitigations, and next actions produce an executive-ready brief aligned to leadership needs."
+    }
+  ]
+}
