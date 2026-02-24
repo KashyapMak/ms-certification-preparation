@@ -6,8 +6,7 @@ Generate a practice exam question and answer set for the Microsoft certification
 OUTPUT REQUIREMENTS  
 - Output MUST be a **single valid JSON object**, fully formatted (pretty-printed) with indentation.  
 - Output MUST be placed **inside a code-highlighted block** using ```json at the start and ``` at the end.  
-- JSON must conform EXACTLY to this schema (no alterations):  
-  https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json  
+- JSON must conform EXACTLY to JSON FORMAT schema (no alterations) avilable.
 - NO citations, reference links, or URLs are allowed inside JSON fields (questions, options, explanations, IDs, etc.).  
 - If citations are generated, they MUST appear **after the JSON**, as plain text.  
 - The JSON must be copy-paste-ready.
@@ -71,6 +70,40 @@ FINAL OUTPUT FORMAT
 2. After closing the code block, you MAY include:  
    - A plaintext “Citations” section listing any sources used.  
    - No citations, URLs, or markers may appear inside the JSON.
+
+JSON FORMAT
+{
+    "quizName": "General Knowledge Tutorial Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [{
+            "id": 1,
+            "topic": "Geography: Asia",
+            "Question": "What is the capital city of India?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Mumbai",
+                    "reason": "Incorrect. Mumbai is the financial capital, but not the political capital."
+                }, {
+                    "id": 2,
+                    "text": "New Delhi",
+                    "reason": "Correct. New Delhi is the seat of all three branches of the Government of India."
+                }, {
+                    "id": 3,
+                    "text": "Bangalore",
+                    "reason": "Incorrect. Bangalore is known as the 'Silicon Valley' of India."
+                }, {
+                    "id": 4,
+                    "text": "Kolkata",
+                    "reason": "Incorrect. Kolkata was the capital until it was moved in 1911."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata)."
+        }
+    ]
+}
 
 PARAMETERS FOR THIS RUN  
 Use the following parameter values:

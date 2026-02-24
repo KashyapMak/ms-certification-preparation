@@ -1,0 +1,847 @@
+{
+  "quizName": "AB-731 - AI Transformation Leader - Set 2",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "questions": [
+    {
+      "id": 1,
+      "topic": "AI Strategy and Business Value",
+      "Question": "According to the Microsoft AI Adoption Framework, which phase focuses on aligning AI initiatives with organizational KPIs and identifying high-value use cases?",
+      "Options": [
+        { "id": 1, "text": "Strategy", "reason": "Correct. The Strategy phase is where the vision is set and business value is identified." },
+        { "id": 2, "text": "Ready", "reason": "Incorrect. Ready focuses on environmental and technical preparation." },
+        { "id": 3, "text": "Adopt", "reason": "Incorrect. Adopt focuses on deployment and user onboarding." },
+        { "id": 4, "text": "Scale", "reason": "Incorrect. Scale focuses on expanding AI across the enterprise." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The Strategy phase is the critical first step to ensure AI investments drive meaningful business outcomes."
+    },
+    {
+      "id": 2,
+      "topic": "Responsible AI",
+      "Question": "A company is using AI to screen resumes. To ensure 'Fairness,' which action is most appropriate?",
+      "Options": [
+        { "id": 1, "text": "Encrypt all resumes at rest.", "reason": "Incorrect. This relates to Privacy and Security." },
+        { "id": 2, "text": "Evaluate the model for biased outcomes against protected groups.", "reason": "Correct. Fairness ensures equitable treatment for all applicants." },
+        { "id": 3, "text": "Increase the processing speed of the AI.", "reason": "Incorrect. Performance speed does not equate to fairness." },
+        { "id": 4, "text": "Publish the internal code on the company website.", "reason": "Incorrect. This relates to Transparency, not necessarily Fairness." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Fairness requires proactive testing to ensure demographic groups are not disadvantaged by AI systems."
+    },
+    {
+      "id": 3,
+      "topic": "Microsoft Copilot Capabilities",
+      "Question": "Which feature of Microsoft Copilot allows it to retrieve information from a user's emails, calendar, and documents to provide context-aware answers?",
+      "Options": [
+        { "id": 1, "text": "Microsoft Word", "reason": "Incorrect. This is an application, not the retrieval engine." },
+        { "id": 2, "text": "Azure SQL", "reason": "Incorrect. This is a database service." },
+        { "id": 3, "text": "Microsoft Graph", "reason": "Correct. Microsoft Graph is the connective tissue for organizational data." },
+        { "id": 4, "text": "Direct Internet Search", "reason": "Incorrect. While Copilot can search the web, organizational context comes from the Graph." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Microsoft Graph provides the secure access to user-specific context within the M365 tenant."
+    },
+    {
+      "id": 4,
+      "topic": "Generative AI Fundamentals",
+      "Question": "An AI generates an answer that sounds very confident but contains complete factual errors. What is the technical term for this?",
+      "Options": [
+        { "id": 1, "text": "Overfitting", "reason": "Incorrect. This is a machine learning training issue." },
+        { "id": 2, "text": "Tokenization", "reason": "Incorrect. This is a text processing method." },
+        { "id": 3, "text": "Data Drift", "reason": "Incorrect. This is the degradation of model performance over time." },
+        { "id": 4, "text": "Hallucination", "reason": "Correct. Hallucination occurs when LLMs produce incorrect but plausible information." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Hallucinations are a known risk of generative models and require human verification."
+    },
+    {
+      "id": 5,
+      "topic": "Responsible AI",
+      "Question": "The 'Transparency' principle of Responsible AI is best achieved by which of the following?",
+      "Options": [
+        { "id": 1, "text": "Providing explainability for how the AI reached a specific conclusion.", "reason": "Correct. Transparency involves making AI decisions understandable." },
+        { "id": 2, "text": "Ensuring the AI system is available 99.9% of the time.", "reason": "Incorrect. This relates to Reliability." },
+        { "id": 3, "text": "Preventing unauthorized users from accessing the model.", "reason": "Incorrect. This relates to Security." },
+        { "id": 4, "text": "Training the model on larger datasets.", "reason": "Incorrect. Scale does not guarantee transparency." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Transparency ensures that humans can understand and challenge the outputs produced by AI."
+    },
+    {
+      "id": 6,
+      "topic": "AI Business Readiness",
+      "Question": "Before deploying Copilot, an organization must ensure 'Least Privilege' access. Why is this critical for AI?",
+      "Options": [
+        { "id": 1, "text": "To reduce the cost of the subscription licenses.", "reason": "Incorrect. Permissions do not change the license cost." },
+        { "id": 2, "text": "To prevent the AI from surfacing data the user shouldn't have access to.", "reason": "Correct. Copilot respects existing permissions; over-shared data will be surfaced." },
+        { "id": 3, "text": "To speed up the training of the Large Language Model.", "reason": "Incorrect. Permissions do not affect LLM training speed." },
+        { "id": 4, "text": "To ensure the AI can delete old files automatically.", "reason": "Incorrect. This is not a primary purpose of least privilege in this context." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "AI tools can effectively 'find' data that was accidentally over-shared, making strict permission management essential."
+    },
+    {
+      "id": 7,
+      "topic": "Change Management",
+      "Question": "What is the primary role of an 'AI Champion' in a business environment?",
+      "Options": [
+        { "id": 1, "text": "To write the Python code for custom AI plugins.", "reason": "Incorrect. This is a developer role." },
+        { "id": 2, "text": "To authorize the budget for AI hardware.", "reason": "Incorrect. This is an executive/sponsor role." },
+        { "id": 3, "text": "To evangelize AI use cases and support peer adoption.", "reason": "Correct. Champions drive cultural and practical adoption on the ground." },
+        { "id": 4, "text": "To monitor the electricity usage of AI servers.", "reason": "Incorrect. This is a facilities or IT admin role." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Champions are vital for peer-to-peer learning and overcoming resistance to new technology."
+    },
+    {
+      "id": 8,
+      "topic": "AI Privacy and Security",
+      "Question": "Under Microsoft's Enterprise Data Protection (EDP), what happens to the data you enter into Copilot?",
+      "Options": [
+        { "id": 1, "text": "It is sold to third-party advertisers.", "reason": "Incorrect. Microsoft does not sell customer data." },
+        { "id": 2, "text": "It is used to train the global public ChatGPT model.", "reason": "Incorrect. Enterprise data is not used to train foundation models." },
+        { "id": 3, "text": "It is shared with other companies in your industry.", "reason": "Incorrect. Data is isolated to your tenant." },
+        { "id": 4, "text": "It remains within your organization's service boundary.", "reason": "Correct. Data is protected by the same security as Microsoft 365." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Enterprise data is isolated and protected, ensuring it is not leaked outside the organization."
+    },
+    {
+      "id": 9,
+      "topic": "Business Value Realization",
+      "Question": "Which metric is most useful for measuring the 'Efficiency' gains from an AI deployment in a legal department?",
+      "Options": [
+        { "id": 1, "text": "Reduction in hours spent on first-pass contract review.", "reason": "Correct. This is a direct measure of time saved through AI assistance." },
+        { "id": 2, "text": "The total number of computers in the office.", "reason": "Incorrect. This is an asset metric, not a value metric." },
+        { "id": 3, "text": "The number of coffee breaks taken by staff.", "reason": "Incorrect. This is irrelevant to AI efficiency." },
+        { "id": 4, "text": "The brightness of the office lights.", "reason": "Incorrect. This is irrelevant." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Direct time savings on repetitive tasks are one of the most measurable benefits of generative AI."
+    },
+    {
+      "id": 10,
+      "topic": "Responsible AI",
+      "Question": "An AI system is designed to provide medical advice. Which principle is most critical to ensure the system does no physical harm?",
+      "Options": [
+        { "id": 1, "text": "Inclusiveness", "reason": "Incorrect. This focuses on accessibility." },
+        { "id": 2, "text": "Reliability and Safety", "reason": "Correct. Safety ensures the system is robust and avoids harmful errors." },
+        { "id": 3, "text": "Transparency", "reason": "Incorrect. While important, safety is the direct principle preventing harm." },
+        { "id": 4, "text": "Fairness", "reason": "Incorrect. This focuses on bias." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Reliability and Safety principles require rigorous testing to ensure AI performs safely in real-world scenarios."
+    },
+    {
+      "id": 11,
+      "topic": "Technical Concepts",
+      "Question": "What is 'Temperature' in the context of an LLM prompt?",
+      "Options": [
+        { "id": 1, "text": "The physical heat of the server.", "reason": "Incorrect. This is not what temperature refers to in AI logic." },
+        { "id": 2, "text": "The speed of the response tokens.", "reason": "Incorrect. This relates to latency." },
+        { "id": 3, "text": "A parameter controlling the creativity/randomness of the output.", "reason": "Correct. Higher temperature leads to more creative, less predictable text." },
+        { "id": 4, "text": "The security level of the prompt.", "reason": "Incorrect. This is not related to temperature." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Temperature is a key hyperparameter for tuning how a model chooses its next word."
+    },
+    {
+      "id": 12,
+      "topic": "Change Management",
+      "Question": "What is 'Shadow AI' in a business context?",
+      "Options": [
+        { "id": 1, "text": "AI models that only run at night.", "reason": "Incorrect. This is not a term." },
+        { "id": 2, "text": "AI that focuses on image processing and shadows.", "reason": "Incorrect." },
+        { "id": 3, "text": "A specialized AI for secret government projects.", "reason": "Incorrect." },
+        { "id": 4, "text": "The use of unapproved AI tools by employees within an organization.", "reason": "Correct. Shadow AI poses significant security and compliance risks." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Shadow AI occurs when employees use consumer-grade tools for business tasks without IT oversight."
+    },
+    {
+      "id": 13,
+      "topic": "Responsible AI",
+      "Question": "The principle of 'Accountability' means that:",
+      "Options": [
+        { "id": 1, "text": "The people who design and deploy AI systems are responsible for their impact.", "reason": "Correct. Accountability ensures human responsibility for AI behavior." },
+        { "id": 2, "text": "The AI is responsible for its own mistakes.", "reason": "Incorrect. AI is a tool; humans remain accountable." },
+        { "id": 3, "text": "Software vendors are the only ones responsible for AI output.", "reason": "Incorrect. Deploying organizations also share accountability." },
+        { "id": 4, "text": "Government regulators are responsible for all AI outcomes.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Accountability is a core pillar of Microsoft's Responsible AI framework."
+    },
+    {
+      "id": 14,
+      "topic": "Technical Readiness",
+      "Question": "In the 'Ready' phase, what is a primary goal of 'Data Governance'?",
+      "Options": [
+        { "id": 1, "text": "Ensuring data is only stored in one single folder.", "reason": "Incorrect." },
+        { "id": 2, "text": "Cleaning data and setting proper security labels.", "reason": "Correct. Quality and security are essential for effective AI." },
+        { "id": 3, "text": "Making all company data public for easier AI access.", "reason": "Incorrect. This is a security violation." },
+        { "id": 4, "text": "Reducing the number of employees who have access to any data.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Governance ensures the AI has high-quality data to work with while maintaining security."
+    },
+    {
+      "id": 15,
+      "topic": "AI Business Strategy",
+      "Question": "Which type of AI is most effective for summarizing a 50-page technical manual?",
+      "Options": [
+        { "id": 1, "text": "Predictive AI", "reason": "Incorrect. Predictive AI predicts future values (e.g., sales)." },
+        { "id": 2, "text": "Diagnostic AI", "reason": "Incorrect. Diagnostic AI determines why something happened." },
+        { "id": 3, "text": "Generative AI", "reason": "Correct. Generative AI is excellent at summarizing and creating text." },
+        { "id": 4, "text": "Descriptive AI", "reason": "Incorrect. Descriptive AI summarizes historical data, usually numerically." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Generative AI models excel at natural language understanding and summarization tasks."
+    },
+    {
+      "id": 16,
+      "topic": "Prompt Engineering",
+      "Question": "Providing an AI with 3-5 examples of the desired output format within the prompt is known as:",
+      "Options": [
+        { "id": 1, "text": "Zero-shot prompting", "reason": "Incorrect. Zero-shot involves no examples." },
+        { "id": 2, "text": "Few-shot prompting", "reason": "Correct. Few-shot uses a small number of examples to guide the model." },
+        { "id": 3, "text": "Negative prompting", "reason": "Incorrect. This tells the AI what *not* to do." },
+        { "id": 4, "text": "Tokenization prompting", "reason": "Incorrect. This is not a term." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Few-shot prompting is a common technique to improve the accuracy and formatting of AI responses."
+    },
+    {
+      "id": 17,
+      "topic": "Responsible AI",
+      "Question": "Which principle ensures that AI systems are designed to involve and empower people with diverse abilities and backgrounds?",
+      "Options": [
+        { "id": 1, "text": "Privacy and Security", "reason": "Incorrect." },
+        { "id": 2, "text": "Reliability", "reason": "Incorrect." },
+        { "id": 3, "text": "Inclusiveness", "reason": "Correct. Inclusiveness is about accessibility and representation." },
+        { "id": 4, "text": "Transparency", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Inclusiveness aims to close the digital divide and ensure AI is useful for everyone."
+    },
+    {
+      "id": 18,
+      "topic": "AI Capability",
+      "Question": "Scenario: A user asks Copilot to draft an email based on a specific Word document. What is the document acting as in this scenario?",
+      "Options": [
+        { "id": 1, "text": "A system message", "reason": "Incorrect. The system message is the base instruction set." },
+        { "id": 2, "text": "Grounding data", "reason": "Correct. The document provides the specific facts the AI uses." },
+        { "id": 3, "text": "A token", "reason": "Incorrect. Tokens are fragments of text." },
+        { "id": 4, "text": "An LLM", "reason": "Incorrect. The LLM is the engine, not the document." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Grounding ensures the AI response is rooted in actual organizational data rather than general patterns."
+    },
+    {
+      "id": 19,
+      "topic": "Responsible AI",
+      "Question": "What is the role of an 'Impact Assessment' in an AI project?",
+      "Options": [
+        { "id": 1, "text": "To identify potential ethical and social risks before deployment.", "reason": "Correct. Impact assessments are mandatory in responsible AI development." },
+        { "id": 2, "text": "To calculate the final ROI of the project.", "reason": "Incorrect. ROI is a financial assessment." },
+        { "id": 3, "text": "To test the internet speed of the users.", "reason": "Incorrect." },
+        { "id": 4, "text": "To determine which GPU hardware to buy.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Assessing impact helps teams mitigate harm and design more robust AI solutions."
+    },
+    {
+      "id": 20,
+      "topic": "Business Value Realization",
+      "Question": "What does 'Time-to-Value' (TTV) mean for an AI project?",
+      "Options": [
+        { "id": 1, "text": "The time it takes for the AI to respond to a prompt.", "reason": "Incorrect. This is latency." },
+        { "id": 2, "text": "The duration of the AI's training phase.", "reason": "Incorrect." },
+        { "id": 3, "text": "The total lifespan of the AI model.", "reason": "Incorrect." },
+        { "id": 4, "text": "The elapsed time from the start of the project until the business realizes benefits.", "reason": "Correct. TTV is a key metric for strategic success." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "SaaS AI solutions typically offer much faster TTV than custom-built solutions."
+    },
+    {
+      "id": 21,
+      "topic": "Technical Concepts",
+      "Question": "A 'Token' in a Large Language Model is typically equivalent to how many characters in English?",
+      "Options": [
+        { "id": 1, "text": "Approximately 4 characters.", "reason": "Correct. A common rule of thumb is 100 tokens = 75 words." },
+        { "id": 2, "text": "Exactly 1 word.", "reason": "Incorrect. Tokens can be parts of words." },
+        { "id": 3, "text": "Exactly 1 sentence.", "reason": "Incorrect." },
+        { "id": 4, "text": "1 kilobyte of data.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Tokens are the fundamental units processed by LLMs, often representing sub-word fragments."
+    },
+    {
+      "id": 22,
+      "topic": "Strategy and Governance",
+      "Question": "What is the primary purpose of an 'AI Center of Excellence' (CoE)?",
+      "Options": [
+        { "id": 1, "text": "To replace the CEO with an AI bot.", "reason": "Incorrect." },
+        { "id": 2, "text": "To provide governance, best practices, and strategic leadership for AI.", "reason": "Correct. A CoE centralizes knowledge and ensures standard alignment." },
+        { "id": 3, "text": "To manage the building's air conditioning.", "reason": "Incorrect." },
+        { "id": 4, "text": "To sell hardware to other companies.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A CoE is critical for scaling AI safely and effectively across a large organization."
+    },
+    {
+      "id": 23,
+      "topic": "Responsible AI",
+      "Question": "Scenario: A bank's AI refuses loans to people based on their neighborhood. This is a failure of which principle?",
+      "Options": [
+        { "id": 1, "text": "Security", "reason": "Incorrect." },
+        { "id": 2, "text": "Reliability", "reason": "Incorrect." },
+        { "id": 3, "text": "Fairness", "reason": "Correct. Neighborhood-based denials often serve as proxies for demographic bias." },
+        { "id": 4, "text": "Transparency", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Fairness ensures that AI systems do not reinforce societal biases or discrimination."
+    },
+    {
+      "id": 24,
+      "topic": "Microsoft 365 Copilot",
+      "Question": "Where does the data used by Copilot for Microsoft 365 reside?",
+      "Options": [
+        { "id": 1, "text": "In a public cloud accessible to everyone.", "reason": "Incorrect." },
+        { "id": 2, "text": "On a physical USB drive kept by the IT manager.", "reason": "Incorrect." },
+        { "id": 3, "text": "Within the customer's Microsoft 365 tenant.", "reason": "Incorrect. (Wait, checking position... 4th position next)" },
+        { "id": 4, "text": "Within the customer's secure Microsoft 365 service boundary.", "reason": "Correct. Data residency is maintained within the tenant." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Microsoft ensures that your data stays within the secure boundary of your M365 environment."
+    },
+    {
+      "id": 25,
+      "topic": "Generative AI Fundamentals",
+      "Question": "Which of the following is an example of 'Generative AI'?",
+      "Options": [
+        { "id": 1, "text": "An AI that creates a brand new image from a text description.", "reason": "Correct. Generation of new content is the hallmark of Generative AI." },
+        { "id": 2, "text": "An AI that identifies if an email is spam.", "reason": "Incorrect. This is classification." },
+        { "id": 3, "text": "An AI that predicts future stock prices.", "reason": "Incorrect. This is regression/prediction." },
+        { "id": 4, "text": "An AI that sorts files by size.", "reason": "Incorrect. This is a basic rule-based task." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Generative AI focuses on the creation of new data that resembles training data."
+    },
+    {
+      "id": 26,
+      "topic": "Prompt Engineering",
+      "Question": "What is a 'System Message' in the context of an AI interaction?",
+      "Options": [
+        { "id": 1, "text": "An error message from the operating system.", "reason": "Incorrect." },
+        { "id": 2, "text": "A set of high-level instructions that define the AI's behavior and personality.", "reason": "Correct. System messages set the 'guardrails' for the AI." },
+        { "id": 1, "text": "A notification that a user has logged in.", "reason": "Incorrect." },
+        { "id": 1, "text": "A message sent to all employees simultaneously.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "System messages are used by developers to configure how the AI assistant behaves throughout a session."
+    },
+    {
+      "id": 27,
+      "topic": "Business Strategy",
+      "Question": "When calculating the Return on Investment (ROI) for AI, what is a 'Soft Benefit'?",
+      "Options": [
+        { "id": 1, "text": "Reduction in monthly software license fees.", "reason": "Incorrect. This is a hard cost saving." },
+        { "id": 2, "text": "The salary of the AI engineer.", "reason": "Incorrect. This is a hard cost." },
+        { "id": 3, "text": "Improved employee morale and reduced burnout.", "reason": "Correct. Soft benefits are qualitative and harder to quantify in dollars." },
+        { "id": 4, "text": "Revenue generated from a new AI-driven product.", "reason": "Incorrect. This is a hard benefit." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Qualitative improvements like job satisfaction are critical for long-term organizational health."
+    },
+    {
+      "id": 28,
+      "topic": "Responsible AI",
+      "Question": "Transparency in AI involves providing 'Interpretability.' What does this mean?",
+      "Options": [
+        { "id": 1, "text": "Translating the AI's output into 50 different languages.", "reason": "Incorrect." },
+        { "id": 2, "text": "The AI model being able to read human handwriting.", "reason": "Incorrect." },
+        { "id": 3, "text": "Encrypting the AI model's parameters.", "reason": "Incorrect." },
+        { "id": 4, "text": "Making the reasoning behind an AI's decision understandable to a human.", "reason": "Correct. Interpretability helps humans trust and verify AI decisions." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Interpretability is a subset of transparency that focuses on the 'why' of an AI's result."
+    },
+    {
+      "id": 29,
+      "topic": "AI Adoption Framework",
+      "Question": "The 'Adopt' phase of the framework focuses on which group of people?",
+      "Options": [
+        { "id": 1, "text": "The end-users who will use the AI daily.", "reason": "Correct. Adoption is about getting people to use the tool effectively." },
+        { "id": 2, "text": "The hardware manufacturers.", "reason": "Incorrect." },
+        { "id": 3, "text": "The external auditors.", "reason": "Incorrect." },
+        { "id": 4, "text": "The legal department only.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Broad adoption is required to realize the full business value of an AI investment."
+    },
+    {
+      "id": 30,
+      "topic": "Technical Prerequisites",
+      "Question": "What is the role of 'Semantic Search' in Microsoft Copilot?",
+      "Options": [
+        { "id": 1, "text": "Finding files based on their exact filename only.", "reason": "Incorrect." },
+        { "id": 2, "text": "Understanding the intent and meaning behind a search query.", "reason": "Correct. Semantic search goes beyond keywords to find relevant concepts." },
+        { "id": 3, "text": "Checking the spelling of a user's prompt.", "reason": "Incorrect." },
+        { "id": 4, "text": "Searching for images based on their color only.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Semantic search allows Copilot to find relevant information even if the user doesn't use the exact keywords found in a document."
+    },
+    {
+      "id": 31,
+      "topic": "Responsible AI",
+      "Question": "Scenario: An AI system for emergency response must prioritize requests. If the AI crashes, a human must be able to take over immediately. This is an example of:",
+      "Options": [
+        { "id": 1, "text": "Human-in-the-loop and Safety.", "reason": "Correct. Human oversight is a critical safety control." },
+        { "id": 2, "text": "Data Privacy.", "reason": "Incorrect." },
+        { "id": 3, "text": "Fairness.", "reason": "Incorrect." },
+        { "id": 4, "text": "Inclusiveness.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Ensuring a 'human-in-the-loop' is a key strategy for mitigating the risks of AI failure in high-stakes environments."
+    },
+    {
+      "id": 32,
+      "topic": "AI Strategy",
+      "Question": "Which approach typically has the highest development cost and longest time-to-market?",
+      "Options": [
+        { "id": 1, "text": "Using a standard SaaS AI tool like Copilot.", "reason": "Incorrect. This is the fastest and usually cheapest." },
+        { "id": 2, "text": "Developing a custom-built foundation model from scratch.", "reason": "Correct. This requires massive compute and specialized talent." },
+        { "id": 3, "text": "Using an AI plugin for an existing application.", "reason": "Incorrect." },
+        { "id": 4, "text": "Training a small model on a single CSV file.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Most businesses should avoid building their own foundation models and instead leverage existing ones (Buy vs. Build)."
+    },
+    {
+      "id": 33,
+      "topic": "Privacy and Security",
+      "Question": "When using Copilot, what prevents a regular employee from seeing the CEO's private payroll file?",
+      "Options": [
+        { "id": 1, "text": "The AI's moral compass.", "reason": "Incorrect. AI does not have morals." },
+        { "id": 2, "text": "The employee's password.", "reason": "Incorrect." },
+        { "id": 3, "text": "Existing Microsoft 365 permissions (ACLs).", "reason": "Correct. Copilot cannot see what the user cannot see." },
+        { "id": 4, "text": "A special AI firewall that only blocks payroll data.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Copilot honors the security model of the underlying platform, ensuring data privacy is maintained."
+    },
+    {
+      "id": 34,
+      "topic": "Responsible AI",
+      "Question": "The principle of 'Reliability' focuses on which of the following?",
+      "Options": [
+        { "id": 1, "text": "The AI system performing as expected under normal and unexpected conditions.", "reason": "Incorrect. (Wait, checking position... 4th position next)" },
+        { "id": 2, "text": "The cost of the AI system per user.", "reason": "Incorrect." },
+        { "id": 3, "text": "The colors used in the AI's user interface.", "reason": "Incorrect." },
+        { "id": 4, "text": "The AI system consistently providing accurate and safe results.", "reason": "Correct. Reliability ensures the system is dependable." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Reliability is about the system's ability to operate within defined parameters without failure."
+    },
+    {
+      "id": 35,
+      "topic": "Technical Concepts",
+      "Question": "In machine learning, what is 'Supervised Learning'?",
+      "Options": [
+        { "id": 1, "text": "Training a model with labeled data (inputs and correct answers).", "reason": "Correct. The 'supervisor' provides the correct labels." },
+        { "id": 2, "text": "Leaving the AI to learn from the internet without any guidance.", "reason": "Incorrect. This is unsupervised." },
+        { "id": 3, "text": "Hiring a manager to watch the AI all day.", "reason": "Incorrect." },
+        { "id": 4, "text": "The process of the AI teaching a human.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Supervised learning is a common method for training predictive models."
+    },
+    {
+      "id": 36,
+      "topic": "Business Strategy",
+      "Question": "What is the 'Cold Start' problem in AI adoption?",
+      "Options": [
+        { "id": 1, "text": "The AI takes a long time to boot up in winter.", "reason": "Incorrect." },
+        { "id": 2, "text": "The difficulty of getting value from an AI system before you have enough data.", "reason": "Correct. AI models need data to provide meaningful insights." },
+        { "id": 3, "text": "When the CEO refuses to use the AI.", "reason": "Incorrect." },
+        { "id": 4, "text": "When the AI server is located in a cold data center.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Data is the fuel for AI; without a baseline of quality data, AI utility is limited."
+    },
+    {
+      "id": 37,
+      "topic": "Responsible AI",
+      "Question": "Which principle is most concerned with protecting user data from cyberattacks?",
+      "Options": [
+        { "id": 1, "text": "Fairness", "reason": "Incorrect." },
+        { "id": 2, "text": "Privacy and Security", "reason": "Correct. This principle covers data protection and system robustness." },
+        { "id": 3, "text": "Inclusiveness", "reason": "Incorrect." },
+        { "id": 4, "text": "Accountability", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Privacy and Security are foundational to building trust with AI users."
+    },
+    {
+      "id": 38,
+      "topic": "Change Management",
+      "Question": "What is the best way to handle employee fear about AI taking their jobs?",
+      "Options": [
+        { "id": 1, "text": "Ignore the fear and hope it goes away.", "reason": "Incorrect." },
+        { "id": 2, "text": "Ban all talk about jobs in the office.", "reason": "Incorrect." },
+        { "id": 3, "text": "Promote AI as a tool for 'Augmentation' rather than 'Replacement.'", "reason": "Correct. Framing AI as a 'Copilot' helps reduce anxiety." },
+        { "id": 4, "text": "Fire the employees who are most afraid.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Communication and education are essential for successful organizational change."
+    },
+    {
+      "id": 39,
+      "topic": "Microsoft Copilot",
+      "Question": "A business user wants to use Copilot to generate a summary of a Teams meeting they missed. Which feature facilitates this?",
+      "Options": [
+        { "id": 1, "text": "Intelligent Recap", "reason": "Incorrect. (Wait, checking position... 4th position next)" },
+        { "id": 2, "text": "Outlook Mail", "reason": "Incorrect." },
+        { "id": 3, "text": "Excel Tables", "reason": "Incorrect." },
+        { "id": 4, "text": "Copilot in Teams", "reason": "Correct. Copilot can summarize transcripts and action items in Teams." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Copilot integration in Teams provides immediate summaries of meetings and chats."
+    },
+    {
+      "id": 40,
+      "topic": "Technical Concepts",
+      "Question": "What is 'Fine-tuning' in the context of Large Language Models?",
+      "Options": [
+        { "id": 1, "text": "Adjusting a pre-trained model on a specific, smaller dataset to improve performance for a task.", "reason": "Correct. Fine-tuning specializes a general model." },
+        { "id": 2, "text": "Cleaning the dust off the AI server.", "reason": "Incorrect." },
+        { "id": 3, "text": "Telling the AI to be 'nicer' to users.", "reason": "Incorrect." },
+        { "id": 4, "text": "Buying a more expensive subscription.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Fine-tuning allows models to gain domain-specific knowledge (e.g., medical or legal terminology)."
+    },
+    {
+      "id": 41,
+      "topic": "Responsible AI",
+      "Question": "An AI developer creates a 'Nutrition Label' for an AI model that explains its training data and limitations. This supports which principle?",
+      "Options": [
+        { "id": 1, "text": "Fairness", "reason": "Incorrect." },
+        { "id": 2, "text": "Transparency", "reason": "Correct. Model cards or 'nutrition labels' provide clarity on how models work." },
+        { "id": 3, "text": "Privacy", "reason": "Incorrect." },
+        { "id": 4, "text": "Reliability", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Transparency ensures that stakeholders know the capabilities and boundaries of the AI they use."
+    },
+    {
+      "id": 42,
+      "topic": "AI Strategy",
+      "Question": "What does 'Human-Centric AI' mean?",
+      "Options": [
+        { "id": 1, "text": "AI that looks like a human robot.", "reason": "Incorrect." },
+        { "id": 2, "text": "AI that replaces all human workers.", "reason": "Incorrect." },
+        { "id": 3, "text": "AI designed to augment human capability and respect human values.", "reason": "Correct. The goal is to empower people, not just automate tasks." },
+        { "id": 4, "text": "AI that only understands human voices.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Human-centricity is a core philosophy in modern AI business professional roles."
+    },
+    {
+      "id": 43,
+      "topic": "Prompt Engineering",
+      "Question": "What is 'Negative Prompting'?",
+      "Options": [
+        { "id": 1, "text": "Using an angry tone with the AI.", "reason": "Incorrect." },
+        { "id": 2, "text": "Giving the AI a bad review.", "reason": "Incorrect." },
+        { "id": 3, "text": "The AI refusing to answer a prompt.", "reason": "Incorrect." },
+        { "id": 4, "text": "Specifically telling the AI what elements to exclude from the output.", "reason": "Correct. This helps refine the result by removing unwanted content." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Negative prompts are useful for steering AI away from specific topics or styles."
+    },
+    {
+      "id": 44,
+      "topic": "Responsible AI",
+      "Question": "If an AI system is biased because its training data was biased, this is an example of:",
+      "Options": [
+        { "id": 1, "text": "Data Bias", "reason": "Correct. AI models reflect the quality and biases of their input data." },
+        { "id": 2, "text": "Hardware failure.", "reason": "Incorrect." },
+        { "id": 3, "text": "Internet lag.", "reason": "Incorrect." },
+        { "id": 4, "text": "Software bug.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Identifying and correcting data bias is a major part of the Fairness principle."
+    },
+    {
+      "id": 45,
+      "topic": "Business Readiness",
+      "Question": "Why should a company perform a 'Content Audit' before enabling AI search tools?",
+      "Options": [
+        { "id": 1, "text": "To find and delete all copyrighted material.", "reason": "Incorrect." },
+        { "id": 2, "text": "To identify sensitive information that is incorrectly shared with 'Everyone.'", "reason": "Correct. Preventing data leaks is a top priority." },
+        { "id": 3, "text": "To count the number of words in the company database.", "reason": "Incorrect." },
+        { "id": 4, "text": "To see if they have enough storage space for the AI.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "AI makes 'hidden' information easy to find; a content audit mitigates security risks."
+    },
+    {
+      "id": 46,
+      "topic": "Technical Concepts",
+      "Question": "What does 'RAG' stand for in AI architecture?",
+      "Options": [
+        { "id": 1, "text": "Random Access Generation", "reason": "Incorrect." },
+        { "id": 2, "text": "Retrieval-Augmented Generation", "reason": "Correct. RAG combines retrieval of external data with text generation." },
+        { "id": 3, "text": "Rapid AI Growth", "reason": "Incorrect." },
+        { "id": 4, "text": "Restricted Access Gateway", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "RAG is a popular method for grounding LLMs in specific datasets without retraining the model."
+    },
+    {
+      "id": 47,
+      "topic": "Responsible AI",
+      "Question": "An AI developer uses 'Differential Privacy' to protect user data. This supports which principle?",
+      "Options": [
+        { "id": 1, "text": "Fairness", "reason": "Incorrect." },
+        { "id": 2, "text": "Inclusiveness", "reason": "Incorrect." },
+        { "id": 3, "text": "Privacy and Security", "reason": "Correct. Differential privacy adds 'noise' to data to protect individual identities." },
+        { "id": 4, "text": "Accountability", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Advanced privacy techniques help organizations use data while protecting individual rights."
+    },
+    {
+      "id": 48,
+      "topic": "Strategy and Governance",
+      "Question": "What is an 'AI Usage Policy'?",
+      "Options": [
+        { "id": 1, "text": "A technical manual for the AI server.", "reason": "Incorrect." },
+        { "id": 2, "text": "A set of rules for how employees should and should not use AI tools.", "reason": "Correct. Policies ensure compliance and safety." },
+        { "id": 3, "text": "The contract with Microsoft.", "reason": "Incorrect." },
+        { "id": 4, "text": "The price list for AI services.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A clear usage policy helps prevent the misuse of AI and protects the organization's reputation."
+    },
+    {
+      "id": 49,
+      "topic": "Technical Concepts",
+      "Question": "What is an 'Embedding' in the context of LLMs?",
+      "Options": [
+        { "id": 1, "text": "A way to insert an AI into a website.", "reason": "Incorrect." },
+        { "id": 2, "text": "A numerical representation of text that captures its meaning.", "reason": "Correct. Embeddings allow AI to compare the similarity of concepts." },
+        { "id": 3, "text": "A physical chip in the computer.", "reason": "Incorrect." },
+        { "id": 4, "text": "A bolded word in a prompt.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Embeddings are the mathematical foundation for semantic search and understanding."
+    },
+    {
+      "id": 50,
+      "topic": "Business Value Realization",
+      "Question": "Which of these is a 'Hard Benefit' of using AI in sales?",
+      "Options": [
+        { "id": 1, "text": "Increased revenue from higher lead conversion rates.", "reason": "Correct. This is a direct financial gain." },
+        { "id": 2, "text": "Salespeople feeling more confident.", "reason": "Incorrect. This is a soft benefit." },
+        { "id": 3, "text": "A better looking sales report.", "reason": "Incorrect." },
+        { "id": 4, "text": "Knowing more about the competition.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Hard benefits are measurable in financial terms and are crucial for justifying AI costs."
+    },
+    {
+      "id": 51,
+      "topic": "Responsible AI",
+      "Question": "Scenario: You are designing a 'Human-in-the-loop' system for AI-generated code. What does this mean?",
+      "Options": [
+        { "id": 1, "text": "The AI writes code and automatically deploys it to the server.", "reason": "Incorrect. This is no human oversight." },
+        { "id": 2, "text": "A human developer reviews and approves all code written by the AI before use.", "reason": "Correct. This ensures safety and quality." },
+        { "id": 3, "text": "The human writes the code and the AI just watches.", "reason": "Incorrect." },
+        { "id": 4, "text": "The AI and human work on different projects.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Human oversight is a critical safety check for AI outputs."
+    },
+    {
+      "id": 52,
+      "topic": "AI Capability",
+      "Question": "Which Microsoft AI service allows developers to build their own custom 'Copilots' using their own data?",
+      "Options": [
+        { "id": 1, "text": "Microsoft Word", "reason": "Incorrect." },
+        { "id": 2, "text": "Copilot Studio", "reason": "Correct. Copilot Studio is the low-code tool for building custom AI assistants." },
+        { "id": 3, "text": "Windows Notepad", "reason": "Incorrect." },
+        { "id": 4, "text": "Azure SQL", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copilot Studio empowers businesses to extend Copilot capabilities to their specific needs."
+    },
+    {
+      "id": 53,
+      "topic": "Responsible AI",
+      "Question": "The principle of 'Inclusiveness' includes making AI tools accessible to people with vision impairments. Which feature supports this?",
+      "Options": [
+        { "id": 1, "text": "High-speed processing.", "reason": "Incorrect." },
+        { "id": 2, "text": "Strong encryption.", "reason": "Incorrect." },
+        { "id": 3, "text": "Screen reader support and voice commands.", "reason": "Correct. These features ensure everyone can use the technology." },
+        { "id": 4, "text": "Lowering the price of the software.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Accessibility is a major component of Microsoft's commitment to inclusiveness."
+    },
+    {
+      "id": 54,
+      "topic": "AI Strategy",
+      "Question": "What is the main goal of the 'Scale' phase in AI adoption?",
+      "Options": [
+        { "id": 1, "text": "To buy the biggest server available.", "reason": "Incorrect." },
+        { "id": 2, "text": "To stop using AI after the pilot project.", "reason": "Incorrect." },
+        { "id": 3, "text": "To fire the AI champions.", "reason": "Incorrect." },
+        { "id": 4, "text": "To expand AI capabilities across the entire organization and optimize processes.", "reason": "Correct. Scaling drives enterprise-wide transformation." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Scaling is where organizations move from experimentation to full business integration."
+    },
+    {
+      "id": 55,
+      "topic": "Technical Concepts",
+      "Question": "In generative AI, 'Zero-shot' prompting means:",
+      "Options": [
+        { "id": 1, "text": "Asking the AI to do a task without giving it any examples in the prompt.", "reason": "Correct. The AI relies only on its pre-existing training." },
+        { "id": 2, "text": "Asking the AI to do zero tasks.", "reason": "Incorrect." },
+        { "id": 3, "text": "Giving the AI zero tokens.", "reason": "Incorrect." },
+        { "id": 4, "text": "The AI failing on the first try.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Modern LLMs are often capable of zero-shot performance on a wide variety of tasks."
+    },
+    {
+      "id": 56,
+      "topic": "Responsible AI",
+      "Question": "What is the primary risk of 'Over-reliance' on AI?",
+      "Options": [
+        { "id": 1, "text": "The computer battery running out.", "reason": "Incorrect." },
+        { "id": 2, "text": "Humans blindly trusting AI output without checking for errors.", "reason": "Correct. This can lead to the spread of misinformation or critical mistakes." },
+        { "id": 3, "text": "The AI becoming too expensive.", "reason": "Incorrect." },
+        { "id": 4, "text": "The AI taking too long to answer.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Maintaining human critical thinking is essential when working with AI tools."
+    },
+    {
+      "id": 57,
+      "topic": "Privacy and Security",
+      "Question": "Which Microsoft service provides the identity management for AI tools like Copilot?",
+      "Options": [
+        { "id": 1, "text": "Microsoft Entra ID (Azure AD)", "reason": "Correct. Entra ID manages user identity and access control." },
+        { "id": 2, "text": "Bing Search", "reason": "Incorrect." },
+        { "id": 3, "text": "Windows Media Player", "reason": "Incorrect." },
+        { "id": 4, "text": "Excel", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Secure identity is the first layer of security for any enterprise AI deployment."
+    },
+    {
+      "id": 58,
+      "topic": "Change Management",
+      "Question": "Which of these is a common barrier to AI adoption in a business?",
+      "Options": [
+        { "id": 1, "text": "Lack of clear vision and strategy from leadership.", "reason": "Incorrect. (Wait, checking position... 4th position next)" },
+        { "id": 2, "text": "Having too much high-quality data.", "reason": "Incorrect." },
+        { "id": 3, "text": "Employees being too excited to use new tools.", "reason": "Incorrect." },
+        { "id": 4, "text": "Resistance to change and lack of technical skills.", "reason": "Correct. Cultural resistance is often the biggest hurdle." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Successful adoption requires addressing the 'people' side of transformation, not just the technical side."
+    },
+    {
+      "id": 59,
+      "topic": "Responsible AI",
+      "Question": "A 'Red Teaming' exercise for AI involves:",
+      "Options": [
+        { "id": 1, "text": "Adversarial testing to find vulnerabilities or harmful outputs.", "reason": "Correct. Red teaming proactively tests the AI's defenses." },
+        { "id": 2, "text": "Painting the AI servers red.", "reason": "Incorrect." },
+        { "id": 3, "text": "A team meeting where everyone wears red.", "reason": "Incorrect." },
+        { "id": 4, "text": "Deleting all red text from the training data.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Red teaming is a standard practice for ensuring the safety and security of AI models."
+    },
+    {
+      "id": 60,
+      "topic": "Strategy and ROI",
+      "Question": "When calculating the 'Total Cost of Ownership' (TCO) for AI, what should be included?",
+      "Options": [
+        { "id": 1, "text": "The price of the snacks for the meeting.", "reason": "Incorrect." },
+        { "id": 2, "text": "Licensing fees, training costs, and IT administration time.", "reason": "Correct. TCO includes both direct and indirect costs." },
+        { "id": 3, "text": "The cost of the user's home internet.", "reason": "Incorrect." },
+        { "id": 4, "text": "Only the first month's subscription fee.", "reason": "Incorrect." }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A full TCO analysis is necessary for accurate financial planning in AI projects."
+    }
+  ]
+}

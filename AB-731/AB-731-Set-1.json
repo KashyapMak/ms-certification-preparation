@@ -1,0 +1,1507 @@
+{
+    "quizName": "AB-731 - AI Transformation Leader - Set 1",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [{
+            "id": 1,
+            "topic": "Generative AI Fundamentals",
+            "Question": "You are explaining generative AI to a group of business leaders. Which description best differentiates generative AI from traditional rule-based automation?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Generative AI executes only predefined rules and workflows without creating new content.",
+                    "reason": "Incorrect. That describes traditional rule-based automation, not generative AI."
+                }, {
+                    "id": 2,
+                    "text": "Generative AI can create new content such as text, images, or summaries based on patterns it has learned from large datasets.",
+                    "reason": "Correct. Generative AI produces new outputs by learning patterns from training data."
+                }, {
+                    "id": 3,
+                    "text": "Generative AI is limited to numerical calculations and cannot work with language or images.",
+                    "reason": "Incorrect. Generative AI is widely used for language, images, and other unstructured data."
+                }, {
+                    "id": 4,
+                    "text": "Generative AI always requires developers to write custom code for each new response.",
+                    "reason": "Incorrect. Business users can interact with generative AI using natural language, not just code."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Generative AI models create new content by learning patterns from large datasets instead of just following predefined rules."
+        }, {
+            "id": 2,
+            "topic": "Business Value of Generative AI",
+            "Question": "Which scenario best illustrates how generative AI can create business value for a sales organization?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Automatically rebuilding the organization’s entire CRM from scratch each month.",
+                    "reason": "Incorrect. This is disruptive and not a typical value scenario for generative AI."
+                }, {
+                    "id": 2,
+                    "text": "Using AI-generated art to decorate the office walls.",
+                    "reason": "Incorrect. This may be useful but is not a core business value scenario for sales."
+                }, {
+                    "id": 3,
+                    "text": "Using generative AI to draft tailored proposal summaries and follow-up emails based on opportunity notes and prior communications.",
+                    "reason": "Correct. This improves productivity and personalization in the sales cycle."
+                }, {
+                    "id": 4,
+                    "text": "Using generative AI to randomly remove half of the sales opportunities from the pipeline.",
+                    "reason": "Incorrect. This destroys value rather than creating it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Drafting personalized proposals and follow-up emails based on existing customer context is a high-value generative AI scenario for sales teams."
+        }, {
+            "id": 3,
+            "topic": "Cost Drivers and ROI",
+            "Question": "As an AI transformation leader, you must explain cost drivers for generative AI solutions built on large language models. Which factor is a primary driver of variable cost for these solutions?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Number of different fonts used in user prompts.",
+                    "reason": "Incorrect. Fonts do not affect model processing cost."
+                }, {
+                    "id": 2,
+                    "text": "Number of tokens processed in prompts and responses over time.",
+                    "reason": "Correct. Token volume is a core usage and cost driver for many generative AI services."
+                }, {
+                    "id": 3,
+                    "text": "Number of team meetings scheduled in the calendar.",
+                    "reason": "Incorrect. Meetings do not directly determine model compute cost."
+                }, {
+                    "id": 4,
+                    "text": "Number of printers connected to the network.",
+                    "reason": "Incorrect. Printer count is unrelated to generative AI cost."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Many generative AI services charge based on token usage, so the number of tokens in prompts and responses is a key cost driver."
+        }, {
+            "id": 4,
+            "topic": "Scenario: Selecting AI Solutions",
+            "Question": "Your organization wants to summarize thousands of customer emails and chat transcripts to identify recurring issues and sentiment. You need a solution that scales and supports natural language search over this content.\n\nWhich type of Microsoft AI capability is the best fit?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Azure AI Search combined with generative AI for retrieval-augmented summaries.",
+                    "reason": "Correct. Azure AI Search can index large volumes of content and feed relevant passages to a generative model for summarization."
+                }, {
+                    "id": 2,
+                    "text": "A spreadsheet with manual filters created by one analyst.",
+                    "reason": "Incorrect. This approach does not scale to thousands of records or provide semantic search."
+                }, {
+                    "id": 3,
+                    "text": "A file share with documents organized in random folders.",
+                    "reason": "Incorrect. Unstructured storage without search or AI does not address the requirement."
+                }, {
+                    "id": 4,
+                    "text": "A traditional on-premises email archiving system without AI features.",
+                    "reason": "Incorrect. Archiving alone does not provide AI-based search or summarization."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Azure AI Search provides scalable indexing and relevance ranking, and can be combined with generative AI to produce contextual summaries over large unstructured datasets."
+        }, {
+            "id": 5,
+            "topic": "Generative AI Challenges",
+            "Question": "Which of the following is a well-known risk associated with generative AI systems that leaders must manage?",
+            "Options": [{
+                    "id": 1,
+                    "text": "The AI refuses to accept any input that contains numbers.",
+                    "reason": "Incorrect. This is not a typical risk discussed in AI governance."
+                }, {
+                    "id": 2,
+                    "text": "The AI may fabricate plausible but incorrect information, sometimes called hallucinations.",
+                    "reason": "Correct. Fabrication of believable but wrong content is a key risk that requires human oversight."
+                }, {
+                    "id": 3,
+                    "text": "The AI can only run during business hours.",
+                    "reason": "Incorrect. Service availability is separate from this exam’s typical risk topics."
+                }, {
+                    "id": 4,
+                    "text": "The AI refuses to process any text in English.",
+                    "reason": "Incorrect. This is not a typical generative AI risk addressed in governance discussions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Generative AI models can produce confident but incorrect content, so leaders must plan mitigation with review processes and grounding in reliable data."
+        }, {
+            "id": 6,
+            "topic": "Prompt Engineering",
+            "Question": "Which prompt will most likely yield a focused and useful response from an AI assistant when preparing for a customer renewal meeting?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Tell me everything.",
+                    "reason": "Incorrect. This prompt is vague and does not give direction about the context or desired output."
+                }, {
+                    "id": 2,
+                    "text": "Summarize the last three meetings, main risks, and next steps for the Contoso renewal, in less than 10 bullet points for the account team.",
+                    "reason": "Correct. This prompt specifies customer, scope, focus areas, length, and audience."
+                }, {
+                    "id": 3,
+                    "text": "Write something about sales.",
+                    "reason": "Incorrect. This is too broad and lacks context about the specific account or outcome."
+                }, {
+                    "id": 4,
+                    "text": "Create any document you want.",
+                    "reason": "Incorrect. This gives no direction and will not reliably support a renewal meeting."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Effective prompts provide context, constraints, and a clear outcome, which improves the relevance and structure of AI-generated responses."
+        }, {
+            "id": 7,
+            "topic": "Scenario: Grounding and RAG",
+            "Question": "Your company is building an internal AI assistant for policy questions. The assistant must answer users based on approved policies stored in SharePoint, not just general web information.\n\nWhich approach should you recommend?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Use a generative model with retrieval-augmented generation (RAG) that pulls relevant policy documents from SharePoint at query time.",
+                    "reason": "Correct. RAG allows the model to ground responses in organizational policy documents."
+                }, {
+                    "id": 2,
+                    "text": "Train a model only on public blogs and ignore internal policies.",
+                    "reason": "Incorrect. This would not align answers with approved internal policies."
+                }, {
+                    "id": 3,
+                    "text": "Disable access to all internal content to simplify the architecture.",
+                    "reason": "Incorrect. Without access to internal policies, the assistant cannot provide policy-aligned answers."
+                }, {
+                    "id": 4,
+                    "text": "Rely on manual email responses from a single policy expert.",
+                    "reason": "Incorrect. This does not scale and does not use an AI assistant as requested."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Retrieval-augmented generation lets the model retrieve and use approved policies at query time so answers are grounded in trusted internal content."
+        }, {
+            "id": 8,
+            "topic": "AI Models and Data",
+            "Question": "You need to explain why data quality is critical when building AI solutions that use organizational data. Which statement best captures this relationship?",
+            "Options": [{
+                    "id": 1,
+                    "text": "High-quality, representative data improves the relevance and fairness of AI outputs.",
+                    "reason": "Correct. Clean, representative data leads to better performance and reduces some bias risks."
+                }, {
+                    "id": 2,
+                    "text": "AI solutions do not need accurate data because they can correct it automatically.",
+                    "reason": "Incorrect. AI cannot guarantee correction of poor data quality."
+                }, {
+                    "id": 3,
+                    "text": "Only the user interface matters; data quality has no impact on AI results.",
+                    "reason": "Incorrect. Data quality is fundamental to model performance."
+                }, {
+                    "id": 4,
+                    "text": "AI solutions always ignore organizational data and only use training data from the internet.",
+                    "reason": "Incorrect. Many solutions rely heavily on organizational data for grounding and relevance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "AI solutions that rely on organizational data perform best when that data is accurate, complete, and representative, which reduces errors and some forms of bias."
+        }, {
+            "id": 9,
+            "topic": "Scenario: Choosing Fine-tuned vs Pretrained Models",
+            "Question": "Your team is evaluating whether to use a general-purpose language model or a fine-tuned model for generating responses to your company’s specific support knowledge base.\n\nWhich consideration most strongly supports using a fine-tuned model?",
+            "Options": [{
+                    "id": 1,
+                    "text": "You need a model that supports a very broad range of topics across the entire internet.",
+                    "reason": "Incorrect. This favors a general-purpose pretrained model rather than a fine-tuned one."
+                }, {
+                    "id": 2,
+                    "text": "You require highly specialized responses aligned to your organization’s support policies and terminology.",
+                    "reason": "Correct. Fine-tuning helps align model behavior with domain-specific language and policies."
+                }, {
+                    "id": 3,
+                    "text": "You want to avoid training or customization of any kind.",
+                    "reason": "Incorrect. Avoiding customization points to using a general-purpose model."
+                }, {
+                    "id": 4,
+                    "text": "You plan to use only numeric data without any text.",
+                    "reason": "Incorrect. This is not a primary driver for fine-tuning a language model."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Fine-tuned models are trained further on domain-specific content, making them better suited when you need responses closely aligned to your organization’s policies and terminology."
+        }, {
+            "id": 10,
+            "topic": "Security and Permissions",
+            "Question": "When deploying Microsoft 365 Copilot, how does the service typically determine which documents a user can see in AI-generated responses?",
+            "Options": [{
+                    "id": 1,
+                    "text": "It ignores all existing permissions and exposes all tenant data to all users.",
+                    "reason": "Incorrect. Copilot is designed to respect existing access controls."
+                }, {
+                    "id": 2,
+                    "text": "It uses the signed-in user’s existing permissions and only surfaces content the user is allowed to access.",
+                    "reason": "Correct. Copilot relies on underlying Microsoft 365 permissions to control access."
+                }, {
+                    "id": 3,
+                    "text": "It grants temporary read access to every document containing the searched keyword.",
+                    "reason": "Incorrect. Permissions are not broadened in this way."
+                }, {
+                    "id": 4,
+                    "text": "It requires all data to be manually copied into a separate unsecured repository.",
+                    "reason": "Incorrect. Copilot uses existing data stores and access controls."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Microsoft 365 Copilot respects existing permissions, so users only see data they already have access to through Microsoft 365."
+        }, {
+            "id": 11,
+            "topic": "Scenario: Secure AI Use",
+            "Question": "Your organization must ensure that AI-generated content does not expose sensitive information to unauthorized users. You are reviewing your AI implementation.\n\nWhich action best supports this goal?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Enforce data classification and sensitivity labels, and ensure AI systems respect these labels and underlying permissions.",
+                    "reason": "Correct. Sensitivity labels and permissions help prevent unauthorized access to sensitive content."
+                }, {
+                    "id": 2,
+                    "text": "Remove all sensitivity labels to simplify AI access to data.",
+                    "reason": "Incorrect. This increases the risk of exposing sensitive data."
+                }, {
+                    "id": 3,
+                    "text": "Allow any user to disable auditing for AI-related activities.",
+                    "reason": "Incorrect. Disabling auditing reduces visibility and control."
+                }, {
+                    "id": 4,
+                    "text": "Store all sensitive documents in personal, unmanaged devices.",
+                    "reason": "Incorrect. This weakens security and governance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Data classification with labels and robust permissions is key to ensuring AI systems do not expose sensitive content to unauthorized users."
+        }, {
+            "id": 12,
+            "topic": "Responsible AI Principles",
+            "Question": "Which practice best aligns with responsible AI principles when deploying generative AI in customer-facing processes?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Automatically sending AI-generated responses to customers without human review, even for complex or sensitive topics.",
+                    "reason": "Incorrect. This can create significant risk and lacks human oversight."
+                }, {
+                    "id": 2,
+                    "text": "Reviewing AI-generated responses for fairness, accuracy, and tone before sending them in high-impact situations.",
+                    "reason": "Correct. Human oversight is key to responsible AI, especially in sensitive or high-impact contexts."
+                }, {
+                    "id": 3,
+                    "text": "Hiding the fact that AI was used so customers cannot tell.",
+                    "reason": "Incorrect. Transparency is an important responsible AI principle."
+                }, {
+                    "id": 4,
+                    "text": "Allowing AI to override established compliance policies when needed.",
+                    "reason": "Incorrect. AI should operate within compliance and policy guidelines."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Responsible AI use includes human review and accountability for AI-generated content, particularly in sensitive or high-impact scenarios."
+        }, {
+            "id": 13,
+            "topic": "Scenario: Bias and Fairness",
+            "Question": "A recruiting team wants to use generative AI to draft job advertisements and candidate communications. They are concerned about potential bias.\n\nWhich approach should you recommend?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Encourage teams to send all AI-generated content without review to avoid introducing human bias.",
+                    "reason": "Incorrect. Removing human review can amplify AI bias instead of mitigating it."
+                }, {
+                    "id": 2,
+                    "text": "Establish guidelines for inclusive language, review AI outputs for bias, and regularly update AI prompts and templates based on feedback.",
+                    "reason": "Correct. Governance, review, and iterative improvement are key to managing bias."
+                }, {
+                    "id": 3,
+                    "text": "Instruct the AI never to mention diversity or inclusion topics.",
+                    "reason": "Incorrect. This does not meaningfully address fairness and may conflict with inclusion goals."
+                }, {
+                    "id": 4,
+                    "text": "Disable AI for all hiring communications permanently.",
+                    "reason": "Incorrect. This avoids the opportunity to use AI responsibly with proper controls."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Combining inclusive-language guidelines, human review, and ongoing feedback helps mitigate bias risks in AI-generated hiring content."
+        }, {
+            "id": 14,
+            "topic": "AI Governance and Councils",
+            "Question": "Your organization is formalizing AI governance. Which responsibility is most appropriate for an AI council?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Managing day-to-day password reset requests for all users.",
+                    "reason": "Incorrect. This is an operational IT task, not an AI governance responsibility."
+                }, {
+                    "id": 2,
+                    "text": "Defining AI principles, approving high-impact AI use cases, and overseeing adherence to responsible AI standards.",
+                    "reason": "Correct. AI councils typically guide strategy, risk, and alignment with responsible AI principles."
+                }, {
+                    "id": 3,
+                    "text": "Approving every single email drafted by employees.",
+                    "reason": "Incorrect. This is not realistic or related to AI strategy."
+                }, {
+                    "id": 4,
+                    "text": "Selecting office furniture for AI project teams.",
+                    "reason": "Incorrect. This is unrelated to AI governance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "AI councils typically provide strategic guidance, approve significant AI initiatives, and ensure they align with responsible AI principles and business goals."
+        }, {
+            "id": 15,
+            "topic": "Scenario: AI Strategy Alignment",
+            "Question": "You have been asked to design an AI roadmap for a company that wants to improve customer service, reduce manual reporting, and support data-driven decisions.\n\nWhich approach best aligns the AI roadmap with business strategy?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Focus on deploying the most advanced technical features without mapping them to specific business outcomes.",
+                    "reason": "Incorrect. Technical features alone do not guarantee business value."
+                }, {
+                    "id": 2,
+                    "text": "Identify priority business outcomes, map them to AI use cases such as AI-assisted support, automated reporting, and decision support, and phase implementation accordingly.",
+                    "reason": "Correct. A business-outcome-driven roadmap aligns AI investments with strategic priorities."
+                }, {
+                    "id": 3,
+                    "text": "Start with a large, organization-wide rollout with no defined goals or metrics.",
+                    "reason": "Incorrect. This does not create accountable outcomes."
+                }, {
+                    "id": 4,
+                    "text": "Limit AI usage to a single employee to reduce complexity.",
+                    "reason": "Incorrect. This approach does not support broad transformation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Effective AI roadmaps start from business outcomes, align use cases with those outcomes, and plan phased deployment with clear measures of success."
+        }, {
+            "id": 16,
+            "topic": "Generative AI Business Value",
+            "Question": "You are advising a retail organization that wants to reduce the time spent creating weekly performance summaries for leadership. Which generative AI scenario delivers the clearest business value?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Using AI to randomly rewrite product descriptions each week.",
+                    "reason": "Incorrect. Random rewrites add little strategic value and can confuse customers."
+                }, {
+                    "id": 2,
+                    "text": "Using AI to generate weekly performance summaries from sales, inventory, and customer feedback data, tailored to executive audiences.",
+                    "reason": "Correct. This scenario directly reduces reporting effort and delivers decision-ready insights."
+                }, {
+                    "id": 3,
+                    "text": "Using AI to shuffle the order of reports in a shared folder.",
+                    "reason": "Incorrect. This does not meaningfully improve productivity or insights."
+                }, {
+                    "id": 4,
+                    "text": "Using AI to change fonts and colors in existing slide decks.",
+                    "reason": "Incorrect. Styling changes alone are not a strong business value driver."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Automating the creation of executive-ready summaries from operational data is a clear example of generative AI driving productivity and insight for leadership."
+        }, {
+            "id": 17,
+            "topic": "Foundational Concepts of Generative AI",
+            "Question": "Which statement best describes how a large language model (LLM) generates text?",
+            "Options": [{
+                    "id": 1,
+                    "text": "It retrieves entire paragraphs from a fixed database and never creates new sentences.",
+                    "reason": "Incorrect. LLMs generate new text token by token rather than just copying stored paragraphs."
+                }, {
+                    "id": 2,
+                    "text": "It predicts the next token in a sequence based on patterns learned from large volumes of training data.",
+                    "reason": "Correct. LLMs work by probabilistically predicting the next token to generate text."
+                }, {
+                    "id": 3,
+                    "text": "It only runs prewritten scripts created by software developers.",
+                    "reason": "Incorrect. While prompts can be templated, LLMs generate novel responses."
+                }, {
+                    "id": 4,
+                    "text": "It depends solely on real-time web search results and has no internal parameters.",
+                    "reason": "Incorrect. LLMs rely on trained parameters; web search may be an additional source for grounding."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "LLMs learn statistical patterns from training data and generate text by predicting the most likely next token in context."
+        }, {
+            "id": 18,
+            "topic": "Selecting Generative AI Solutions",
+            "Question": "A healthcare organization wants to build a virtual assistant that can answer clinicians’ questions using internal guidelines while preventing access to patient-identifiable information. Which requirement most strongly influences the solution approach?",
+            "Options": [{
+                    "id": 1,
+                    "text": "The assistant must invent new clinical procedures.",
+                    "reason": "Incorrect. Inventing procedures would be unsafe and is not a requirement."
+                }, {
+                    "id": 2,
+                    "text": "The assistant must ground responses in internal guidelines and respect strict privacy and access controls.",
+                    "reason": "Correct. Grounding and security constraints are central to the solution design."
+                }, {
+                    "id": 3,
+                    "text": "The assistant must be accessible only outside business hours.",
+                    "reason": "Incorrect. Access hours are less important than grounding and privacy in this context."
+                }, {
+                    "id": 4,
+                    "text": "The assistant must respond only with images, without any text.",
+                    "reason": "Incorrect. That does not align with guideline-based question answering."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Solutions for regulated industries must prioritize grounding on approved content and strict enforcement of privacy and access controls."
+        }, {
+            "id": 19,
+            "topic": "Pretrained vs Fine-tuned Models",
+            "Question": "Your company uses a general-purpose language model for customer support responses but finds that answers sometimes ignore internal terminology and policies. What is the most appropriate next step?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Fine-tune the model or use grounding so it better reflects internal terminology and support policies.",
+                    "reason": "Correct. Fine-tuning or grounding using internal content improves alignment with enterprise language and rules."
+                }, {
+                    "id": 2,
+                    "text": "Disable the model and return to handwritten responses only.",
+                    "reason": "Incorrect. This abandons AI benefits instead of improving the solution."
+                }, {
+                    "id": 3,
+                    "text": "Reduce the number of supported languages in the model.",
+                    "reason": "Incorrect. Language count does not directly address terminology and policy alignment."
+                }, {
+                    "id": 4,
+                    "text": "Increase font size in the chat interface.",
+                    "reason": "Incorrect. Interface changes do not fix policy misalignment in responses."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Fine-tuning or grounding the model on internal content helps responses better follow organization-specific terminology and policies."
+        }, {
+            "id": 20,
+            "topic": "Cost and ROI of Generative AI",
+            "Question": "Which metric best helps an AI transformation leader demonstrate ROI for a generative AI deployment in a knowledge worker environment?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Average time saved per user per week on drafting, summarizing, and reviewing content.",
+                    "reason": "Correct. Time saved on core knowledge work tasks is a direct productivity and ROI indicator."
+                }, {
+                    "id": 2,
+                    "text": "Number of different fonts used in AI-generated documents.",
+                    "reason": "Incorrect. Fonts are unrelated to ROI."
+                }, {
+                    "id": 3,
+                    "text": "Size of the organization’s office space.",
+                    "reason": "Incorrect. Office size does not reflect generative AI ROI."
+                }, {
+                    "id": 4,
+                    "text": "Number of printer cartridges purchased each year.",
+                    "reason": "Incorrect. This is not a primary ROI metric for AI adoption."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Time saved on high-value tasks like drafting and summarization is a tangible productivity metric that supports ROI calculations."
+        }, {
+            "id": 21,
+            "topic": "Prompt Engineering Techniques",
+            "Question": "Which prompt structure is most effective for guiding an AI system to prepare a project status summary for senior leadership?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Describe the project.",
+                    "reason": "Incorrect. This does not specify audience, scope, or output format."
+                }, {
+                    "id": 2,
+                    "text": "Summarize the current status, key risks, milestones, and next steps for Project Orion in one page, using clear language suitable for senior leadership.",
+                    "reason": "Correct. The prompt includes project name, required sections, length, and target audience."
+                }, {
+                    "id": 3,
+                    "text": "Send me all project files.",
+                    "reason": "Incorrect. This is a retrieval request, not a clear summarization instruction."
+                }, {
+                    "id": 4,
+                    "text": "Explain everything the AI knows about leadership.",
+                    "reason": "Incorrect. This is broad and unrelated to the specific project status need."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Effective prompts describe the context, audience, structure, and length, which helps AI generate focused and appropriate content."
+        }, {
+            "id": 22,
+            "topic": "Scenario: Improving Prompt Quality",
+            "Question": "A marketing manager complains that AI-generated campaign briefs are vague and not aligned with target segments. You review the prompts and find they are only one sentence long with no audience details. What should you recommend first?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Ask the manager to provide detailed prompts that specify target audience, product, channel mix, and tone, and include examples of past successful briefs.",
+                    "reason": "Correct. Richer prompts with context and examples guide the AI toward more relevant, tailored outputs."
+                }, {
+                    "id": 2,
+                    "text": "Disable AI tools for the entire marketing team.",
+                    "reason": "Incorrect. This prevents improvement and value realization."
+                }, {
+                    "id": 3,
+                    "text": "Reduce all prompts to a single keyword.",
+                    "reason": "Incorrect. Less context will further reduce quality."
+                }, {
+                    "id": 4,
+                    "text": "Instruct the AI to ignore any information about target segments.",
+                    "reason": "Incorrect. Target segment details are essential for relevant briefs."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Providing clear audience and campaign context, with examples, is a key prompt-engineering technique for improving AI-generated marketing content."
+        }, {
+            "id": 23,
+            "topic": "Grounding and Data Sources",
+            "Question": "Which situation is the best example of grounding an AI solution using trusted data?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Allowing the AI to base legal advice only on social media posts.",
+                    "reason": "Incorrect. Social media posts are not a trusted legal source."
+                }, {
+                    "id": 2,
+                    "text": "Configuring the AI to use the company’s approved policy documents and knowledge base articles stored in SharePoint when answering policy questions.",
+                    "reason": "Correct. This uses curated internal content as a trusted grounding source."
+                }, {
+                    "id": 3,
+                    "text": "Asking the AI to ignore any company data and answer only from memory.",
+                    "reason": "Incorrect. This prevents grounding on reliable internal sources."
+                }, {
+                    "id": 4,
+                    "text": "Using personal notes on an unmanaged device as the only reference.",
+                    "reason": "Incorrect. Personal notes are not systematically curated or governed content."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Grounding uses vetted, trusted data sources—such as internal policy repositories—to anchor AI responses in authoritative information."
+        }, {
+            "id": 24,
+            "topic": "Scenario: Retrieval-Augmented Generation (RAG)",
+            "Question": "Your team is designing an AI assistant to help employees find accurate answers in hundreds of product manuals. You want answers that quote relevant passages from the manuals rather than rely on the model’s general knowledge. Which design should you use?",
+            "Options": [{
+                    "id": 1,
+                    "text": "A retrieval-augmented generation approach that searches indexed manuals and passes relevant excerpts to the model for answer generation.",
+                    "reason": "Correct. RAG retrieves relevant content and uses it as context for the model to generate grounded answers."
+                }, {
+                    "id": 2,
+                    "text": "A purely generative model with no access to the manuals.",
+                    "reason": "Incorrect. Without access to manuals, answers cannot reliably reflect product specifics."
+                }, {
+                    "id": 3,
+                    "text": "A solution that deletes all manuals to simplify storage.",
+                    "reason": "Incorrect. Removing source content prevents accurate product answers."
+                }, {
+                    "id": 4,
+                    "text": "A system that uses only manual keyword search without any AI components.",
+                    "reason": "Incorrect. This lacks the generative summarization and explanation capability requested."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "RAG combines retrieval from indexed content with generative answering, ensuring responses are grounded in authoritative product manuals."
+        }, {
+            "id": 25,
+            "topic": "Secure AI",
+            "Question": "Which practice best supports secure use of AI in an enterprise environment?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Granting the AI system full access to all company data regardless of user permissions.",
+                    "reason": "Incorrect. This violates the principle of least privilege and increases risk."
+                }, {
+                    "id": 2,
+                    "text": "Ensuring the AI respects role-based access control and existing data classification policies.",
+                    "reason": "Correct. Aligning AI access with existing security controls helps protect sensitive data."
+                }, {
+                    "id": 3,
+                    "text": "Allowing users to bypass authentication when using AI tools.",
+                    "reason": "Incorrect. Removing authentication weakens security posture."
+                }, {
+                    "id": 4,
+                    "text": "Storing AI logs on unsecured personal devices.",
+                    "reason": "Incorrect. Logs should be stored securely for compliance and monitoring."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "AI solutions should inherit and respect established access controls and data classification to maintain a secure environment."
+        }, {
+            "id": 26,
+            "topic": "Scenario: Data Security in AI Projects",
+            "Question": "A project team wants to copy sensitive customer data into a non-enterprise AI tool to accelerate analysis. As the AI transformation leader, what should you do?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Approve the plan because any AI tool will improve analysis.",
+                    "reason": "Incorrect. Sensitive data must not be shared with unapproved tools."
+                }, {
+                    "id": 2,
+                    "text": "Redirect the team to use approved, enterprise-grade AI services that align with data protection and compliance requirements.",
+                    "reason": "Correct. Enterprise-grade tools with proper controls must be used for sensitive data."
+                }, {
+                    "id": 3,
+                    "text": "Advise the team to email spreadsheets to themselves at personal accounts.",
+                    "reason": "Incorrect. This further increases risk and violates data handling policies."
+                }, {
+                    "id": 4,
+                    "text": "Tell the team to delete the data so no analysis is needed.",
+                    "reason": "Incorrect. Deleting data avoids analysis rather than addressing the requirement securely."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "AI initiatives involving sensitive data should be built on governed, enterprise-grade platforms that support compliance and security requirements."
+        }, {
+            "id": 27,
+            "topic": "Business Value of Machine Learning",
+            "Question": "Which business problem is best suited for a machine learning solution rather than simple rules?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Determining whether to add tax, based only on a fixed list of countries.",
+                    "reason": "Incorrect. This is a simple rule-based decision."
+                }, {
+                    "id": 2,
+                    "text": "Predicting which customers are likely to churn based on historical behavior and engagement data.",
+                    "reason": "Correct. Predictive models can uncover complex patterns that rules cannot easily capture."
+                }, {
+                    "id": 3,
+                    "text": "Converting temperatures from Celsius to Fahrenheit.",
+                    "reason": "Incorrect. This is a straightforward formula, not a machine learning task."
+                }, {
+                    "id": 4,
+                    "text": "Sorting names alphabetically in a spreadsheet.",
+                    "reason": "Incorrect. Sorting is a deterministic function that does not require learning."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Churn prediction relies on patterns in historical data, which is a typical machine learning use case."
+        }, {
+            "id": 28,
+            "topic": "Machine Learning Lifecycle",
+            "Question": "Which sequence best reflects the typical lifecycle of a machine learning solution?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Collect data, train model, evaluate, deploy, monitor, and improve.",
+                    "reason": "Correct. This reflects the standard iterative lifecycle for machine learning solutions."
+                }, {
+                    "id": 2,
+                    "text": "Deploy model, destroy the data, then collect requirements.",
+                    "reason": "Incorrect. Destroying data and deploying before requirements contradict good practice."
+                }, {
+                    "id": 3,
+                    "text": "Monitor results, then train model, and never evaluate.",
+                    "reason": "Incorrect. Evaluation is a critical step before deployment."
+                }, {
+                    "id": 4,
+                    "text": "Collect data once, train a model once, and never update it.",
+                    "reason": "Incorrect. Models often need retraining as data and conditions change."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Machine learning solutions follow an iterative lifecycle, from data collection through deployment and ongoing monitoring and improvement."
+        }, {
+            "id": 29,
+            "topic": "Scenario: Identifying ML Opportunities",
+            "Question": "A subscription media service wants to increase engagement by recommending content that users are likely to enjoy, based on viewing history and similar users. Which approach should you suggest?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Use a recommendation model that learns from user behavior and content patterns.",
+                    "reason": "Correct. Recommendation systems are a classic machine learning scenario."
+                }, {
+                    "id": 2,
+                    "text": "Manually assign one show to each user at random.",
+                    "reason": "Incorrect. Random assignment ignores user preferences and behavior."
+                }, {
+                    "id": 3,
+                    "text": "Sort all shows alphabetically and display the first one.",
+                    "reason": "Incorrect. This does not consider user behavior or interest."
+                }, {
+                    "id": 4,
+                    "text": "Disable recommendations and ask users to browse only by genre.",
+                    "reason": "Incorrect. This misses an opportunity for machine learning–based personalization."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Recommendation models use user and item data to predict content relevance and improve engagement."
+        }, {
+            "id": 30,
+            "topic": "AI Security Considerations",
+            "Question": "Which security consideration is especially important when deploying AI systems that access sensitive customer data?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Ensuring model access is governed by strong authentication and authorization controls.",
+                    "reason": "Correct. Strong identity and access controls are essential when sensitive data is involved."
+                }, {
+                    "id": 2,
+                    "text": "Allowing anonymous access to increase convenience.",
+                    "reason": "Incorrect. Anonymous access weakens security."
+                }, {
+                    "id": 3,
+                    "text": "Disabling encryption to speed up processing.",
+                    "reason": "Incorrect. Encryption protects data at rest and in transit and should be maintained."
+                }, {
+                    "id": 4,
+                    "text": "Sharing admin credentials among all team members.",
+                    "reason": "Incorrect. Shared credentials are a serious security risk."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "AI systems that access sensitive data must be protected by robust identity and access management, alongside encryption and monitoring."
+        }, {
+            "id": 31,
+            "topic": "Scenario: Application Security in AI",
+            "Question": "Your team is building an internal AI-powered dashboard for executives. The dashboard surfaces sensitive financial forecasts generated by a model. What is the most appropriate security measure?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Restrict access to the dashboard using role-based access control aligned with executive roles.",
+                    "reason": "Correct. Role-based access ensures only authorized users see sensitive forecasts."
+                }, {
+                    "id": 2,
+                    "text": "Host the dashboard on a public website without authentication.",
+                    "reason": "Incorrect. Public access would expose sensitive financial data."
+                }, {
+                    "id": 3,
+                    "text": "Share a single admin account with all employees for easy access.",
+                    "reason": "Incorrect. Shared accounts undermine accountability and security."
+                }, {
+                    "id": 4,
+                    "text": "Allow anyone with a link to edit the dashboard configuration.",
+                    "reason": "Incorrect. Unrestricted editing increases risk of misuse or misconfiguration."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Application security for sensitive dashboards should use role-based access and follow least-privilege principles."
+        }, {
+            "id": 32,
+            "topic": "Microsoft AI Apps and Services",
+            "Question": "Which Microsoft solution is best suited for building a custom AI-powered chatbot that integrates with internal line-of-business systems?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Microsoft Copilot for Microsoft 365 only.",
+                    "reason": "Incorrect. Copilot in Microsoft 365 is focused on productivity scenarios, not custom LOB chatbots."
+                }, {
+                    "id": 2,
+                    "text": "Azure OpenAI Service combined with Azure AI and integration services.",
+                    "reason": "Correct. Azure OpenAI and related services can be used to build and integrate custom AI chatbots."
+                }, {
+                    "id": 3,
+                    "text": "Microsoft Paint.",
+                    "reason": "Incorrect. Paint is a graphics application, not a chatbot platform."
+                }, {
+                    "id": 4,
+                    "text": "A standalone spreadsheet with no AI capabilities.",
+                    "reason": "Incorrect. A spreadsheet alone cannot serve as a custom chatbot."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Azure OpenAI and related Azure services support building custom AI chatbots integrated with organizational systems."
+        }, {
+            "id": 33,
+            "topic": "Scenario: Choosing Microsoft AI Services",
+            "Question": "A global company wants to automate translation and summarization of support tickets across multiple languages, and then route them to appropriate regional teams. Which combination of capabilities is most appropriate?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Azure AI language capabilities for translation and summarization integrated with workflow automation for routing.",
+                    "reason": "Correct. Language services combined with workflow automation can translate, summarize, and route tickets efficiently."
+                }, {
+                    "id": 2,
+                    "text": "Manual translation by a single employee using email only.",
+                    "reason": "Incorrect. This does not scale to a global volume of tickets."
+                }, {
+                    "id": 3,
+                    "text": "A static website displaying a list of ticket IDs without content.",
+                    "reason": "Incorrect. This does not support translation, summarization, or routing."
+                }, {
+                    "id": 4,
+                    "text": "A file share with random folders for each ticket.",
+                    "reason": "Incorrect. This lacks AI automation and structured routing."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Translation and summarization services combined with workflows can automate multilingual ticket handling and routing."
+        }, {
+            "id": 34,
+            "topic": "Microsoft 365 Copilot Scenarios",
+            "Question": "Which scenario best demonstrates the value of Microsoft 365 Copilot for a project manager?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Using Copilot to summarize Teams meetings, identify decisions and action items, and generate follow-up emails.",
+                    "reason": "Correct. This improves meeting productivity and follow-through for project managers."
+                }, {
+                    "id": 2,
+                    "text": "Using Copilot to change the color of spreadsheets without any analysis.",
+                    "reason": "Incorrect. Cosmetic changes do not drive significant value."
+                }, {
+                    "id": 3,
+                    "text": "Using Copilot to uninstall project management tools.",
+                    "reason": "Incorrect. Removing tools does not enhance productivity."
+                }, {
+                    "id": 4,
+                    "text": "Using Copilot to reset user passwords in the tenant.",
+                    "reason": "Incorrect. Password management is not a Copilot project-management scenario."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot’s ability to summarize meetings and generate follow-ups directly supports project managers’ coordination and communication tasks."
+        }, {
+            "id": 35,
+            "topic": "Scenario: Mapping Processes to Copilot",
+            "Question": "A sales operations leader wants to map existing workflows to Copilot capabilities. They identify manual tasks such as creating account plans, summarizing pipeline status, and drafting renewal emails. What is the best recommendation?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Use Copilot in Word, Excel, and Outlook to draft account plans, summarize CRM exports, and generate email drafts for renewals.",
+                    "reason": "Correct. These tasks align well with Copilot’s strengths in content creation and summarization."
+                }, {
+                    "id": 2,
+                    "text": "Use Copilot only to change fonts in reports.",
+                    "reason": "Incorrect. This does not address the identified workflow pain points."
+                }, {
+                    "id": 3,
+                    "text": "Disable Copilot for the sales organization.",
+                    "reason": "Incorrect. This prevents them from gaining AI benefits."
+                }, {
+                    "id": 4,
+                    "text": "Ask each salesperson to build their own custom AI model from scratch.",
+                    "reason": "Incorrect. This is unrealistic for a business-focused audience and ignores Copilot’s integrated capabilities."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Mapping manual content and summarization tasks to Copilot in core apps is a practical way to drive sales operations efficiency."
+        }, {
+            "id": 36,
+            "topic": "Extending and Customizing Copilot",
+            "Question": "Which solution allows organizations to extend Microsoft Copilot with custom workflows and data integrations for line-of-business scenarios?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Copilot Studio (formerly Power Virtual Agents and related extensibility tools).",
+                    "reason": "Correct. Copilot Studio enables building and connecting custom Copilot experiences and workflows."
+                }, {
+                    "id": 2,
+                    "text": "Microsoft Paint.",
+                    "reason": "Incorrect. Paint is not a tool for extending Copilot."
+                }, {
+                    "id": 3,
+                    "text": "Notepad.",
+                    "reason": "Incorrect. Notepad is a basic text editor with no Copilot extensibility features."
+                }, {
+                    "id": 4,
+                    "text": "A local file system without any cloud connectivity.",
+                    "reason": "Incorrect. Local file systems alone do not provide hosted extensibility for Copilot."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot Studio and related extensibility capabilities allow organizations to build custom Copilot solutions and integrations."
+        }, {
+            "id": 37,
+            "topic": "Scenario: Copilot Licensing Considerations",
+            "Question": "An organization plans to roll out Microsoft 365 Copilot to 2,000 users. Leadership asks how licensing will influence who can access Copilot features. How should you respond?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Copilot features are automatically available to all users without any license requirements.",
+                    "reason": "Incorrect. Copilot availability depends on licenses and entitlements."
+                }, {
+                    "id": 2,
+                    "text": "Copilot capabilities depend on having the appropriate Microsoft 365 and Copilot licenses assigned to each user.",
+                    "reason": "Correct. Licensing and entitlements determine Copilot access per user."
+                }, {
+                    "id": 3,
+                    "text": "Only users with on-premises email servers can use Copilot.",
+                    "reason": "Incorrect. Copilot is associated with cloud-based Microsoft 365 environments."
+                }, {
+                    "id": 4,
+                    "text": "Licensing is set once at the tenant level and cannot differ per user.",
+                    "reason": "Incorrect. Licenses can be assigned to specific users or groups."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot usage is subject to licensing, and organizations must assign the correct combination of Microsoft 365 and Copilot licenses to users."
+        }, {
+            "id": 38,
+            "topic": "Responsible AI in Copilot",
+            "Question": "Which practice reflects responsible AI usage in the context of Copilot-generated documents?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Publishing AI-generated policy documents without any human review.",
+                    "reason": "Incorrect. High-impact documents require careful human review."
+                }, {
+                    "id": 2,
+                    "text": "Reviewing AI-generated content for accuracy, bias, and policy alignment before publishing, especially for external audiences.",
+                    "reason": "Correct. Human oversight is essential for responsible AI use."
+                }, {
+                    "id": 3,
+                    "text": "Removing audit logs to prevent tracking of AI usage.",
+                    "reason": "Incorrect. Logging helps support accountability and oversight."
+                }, {
+                    "id": 4,
+                    "text": "Instructing users never to question AI-generated outputs.",
+                    "reason": "Incorrect. Critical thinking is important when working with AI systems."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Responsible AI requires human review and accountability for AI-generated outputs, particularly for sensitive or external-facing content."
+        }, {
+            "id": 39,
+            "topic": "Scenario: Scaling AI Adoption",
+            "Question": "Your organization is moving from a small Copilot pilot to a broader rollout. Which step best supports scaling AI adoption responsibly?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Document lessons learned from the pilot, refine guidelines, and expand to new departments with targeted training and governance.",
+                    "reason": "Correct. Iterative refinement and structured rollout are key for scaling AI adoption."
+                }, {
+                    "id": 2,
+                    "text": "Turn on all AI features for everyone without providing guidance.",
+                    "reason": "Incorrect. This increases risk and may lead to poor adoption behaviors."
+                }, {
+                    "id": 3,
+                    "text": "End the pilot and cancel all AI initiatives.",
+                    "reason": "Incorrect. This discards the value achieved from the pilot."
+                }, {
+                    "id": 4,
+                    "text": "Require all AI usage to stop until a new CRM system is deployed.",
+                    "reason": "Incorrect. This unnecessarily blocks progress unrelated to CRM deployment."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Scaling AI adoption should build on pilot insights, with updated guidance, training, and governance as usage grows."
+        }, {
+            "id": 40,
+            "topic": "Organizing for AI Success",
+            "Question": "Which structure best supports successful AI transformation in a large organization?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Central AI leadership, cross-functional stakeholders, and distributed champions embedded in business units.",
+                    "reason": "Correct. This combination provides strategic direction and local adoption support."
+                }, {
+                    "id": 2,
+                    "text": "A single person in IT making all AI decisions without business input.",
+                    "reason": "Incorrect. Transformation requires broad stakeholder involvement."
+                }, {
+                    "id": 3,
+                    "text": "Independent teams launching uncoordinated AI projects with no shared standards.",
+                    "reason": "Incorrect. Fragmentation risks duplicated effort and inconsistent practices."
+                }, {
+                    "id": 4,
+                    "text": "Complete outsourcing of all AI strategy to a third party with no internal ownership.",
+                    "reason": "Incorrect. Internal ownership is crucial for sustainable transformation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "A mix of centralized strategy and distributed champions helps coordinate AI initiatives while supporting local adoption and innovation."
+        }, {
+            "id": 41,
+            "topic": "Scenario: Empowering Business Users",
+            "Question": "A finance department wants to use Copilot for variance analysis and narrative reporting but lacks confidence with prompts. How can you best empower them?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Provide reusable prompt templates tailored to common finance scenarios, and run hands-on workshops to practice and refine prompts.",
+                    "reason": "Correct. Templates and practice build confidence and consistency for business users."
+                }, {
+                    "id": 2,
+                    "text": "Limit Copilot access only to the CIO.",
+                    "reason": "Incorrect. This prevents business users from gaining value."
+                }, {
+                    "id": 3,
+                    "text": "Instruct finance users to experiment without any structure or guidance.",
+                    "reason": "Incorrect. Some structure and training are needed for effective use."
+                }, {
+                    "id": 4,
+                    "text": "Require finance users to learn programming languages before using Copilot.",
+                    "reason": "Incorrect. Copilot is designed for natural language, not coding skills, in this context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Providing targeted training and prompt templates empowers finance users to apply Copilot effectively to their domain-specific tasks."
+        }, {
+            "id": 42,
+            "topic": "Empowering Subject Matter Experts",
+            "Question": "Which action best empowers subject matter experts (SMEs) to contribute to AI solutions?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Involving SMEs in defining use cases, shaping prompts, and curating the knowledge sources used for grounding.",
+                    "reason": "Correct. SME input ensures AI solutions reflect real-world processes and knowledge."
+                }, {
+                    "id": 2,
+                    "text": "Excluding SMEs from AI projects to avoid non-technical opinions.",
+                    "reason": "Incorrect. SMEs are critical to AI relevance and adoption."
+                }, {
+                    "id": 3,
+                    "text": "Requiring SMEs to build and deploy models entirely by themselves.",
+                    "reason": "Incorrect. Technical teams typically handle model deployment; SMEs contribute domain knowledge."
+                }, {
+                    "id": 4,
+                    "text": "Limiting SMEs to reading AI marketing material only.",
+                    "reason": "Incorrect. This does not leverage their expertise in solution design."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "SMEs add value by defining real-world requirements, shaping prompts, and curating content for grounding AI responses."
+        }, {
+            "id": 43,
+            "topic": "Scenario: Identifying AI Opportunities",
+            "Question": "You are facilitating a workshop to identify high-impact AI opportunities. Which question is most useful to uncover promising use cases?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Which tasks require complex human judgment and should never be assisted by AI?",
+                    "reason": "Incorrect. This helps define boundaries, but not high-impact opportunities."
+                }, {
+                    "id": 2,
+                    "text": "Which repetitive, text-heavy tasks consume significant time and could benefit from drafting or summarization support?",
+                    "reason": "Correct. This question surfaces tasks where generative AI can quickly add value."
+                }, {
+                    "id": 3,
+                    "text": "Which tasks rely solely on simple arithmetic?",
+                    "reason": "Incorrect. Simple arithmetic can be handled by existing tools without AI."
+                }, {
+                    "id": 4,
+                    "text": "Which tasks depend on physical labor only?",
+                    "reason": "Incorrect. Purely physical tasks are less suited to generative AI."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Focusing on repetitive, text-heavy tasks is a proven way to find quick-win generative AI use cases."
+        }, {
+            "id": 44,
+            "topic": "AI Transformation Leader Role",
+            "Question": "Which responsibility most accurately describes the role of an AI transformation leader for the AB-731 exam?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Writing low-level code for every AI model used in the organization.",
+                    "reason": "Incorrect. The role focuses on strategy and leadership, not coding."
+                }, {
+                    "id": 2,
+                    "text": "Evaluating AI opportunities, aligning them with business goals, and leading adoption and change across the organization.",
+                    "reason": "Correct. The AI transformation leader focuses on strategy, value, and change management."
+                }, {
+                    "id": 3,
+                    "text": "Configuring network switches and cabling in the data center.",
+                    "reason": "Incorrect. This is an infrastructure role."
+                }, {
+                    "id": 4,
+                    "text": "Managing only physical security in office buildings.",
+                    "reason": "Incorrect. Physical security is outside the AI transformation leader’s primary scope."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "The AI transformation leader’s responsibility is to guide strategic AI adoption and ensure it supports business objectives."
+        }, {
+            "id": 45,
+            "topic": "Scenario: Change Management and AI",
+            "Question": "A business unit is skeptical about adopting Copilot, fearing it will replace jobs. As the AI transformation leader, how should you respond?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Communicate that Copilot is intended to augment employees by reducing repetitive work, provide training on new workflows, and highlight opportunities for higher-value tasks.",
+                    "reason": "Correct. Addressing concerns and focusing on augmentation and skill growth supports change adoption."
+                }, {
+                    "id": 2,
+                    "text": "Inform staff that job losses are inevitable and ignore further questions.",
+                    "reason": "Incorrect. This approach undermines trust and change management."
+                }, {
+                    "id": 3,
+                    "text": "Deploy Copilot secretly without telling employees.",
+                    "reason": "Incorrect. Lack of transparency is inconsistent with responsible AI practices."
+                }, {
+                    "id": 4,
+                    "text": "Ban questions about AI during all-hands meetings.",
+                    "reason": "Incorrect. Open dialogue is critical for successful change management."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Successful change management requires transparent communication, training, and emphasis on AI as a tool that augments human work."
+        }, {
+            "id": 46,
+            "topic": "Measuring AI Impact",
+            "Question": "Which combination of metrics best helps you measure the impact of AI adoption?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Time saved on key workflows, user satisfaction, and quality improvements in outputs.",
+                    "reason": "Correct. These metrics link AI usage to productivity, experience, and quality outcomes."
+                }, {
+                    "id": 2,
+                    "text": "Number of emails sent per day and office temperature.",
+                    "reason": "Incorrect. These do not directly indicate AI impact."
+                }, {
+                    "id": 3,
+                    "text": "Quantity of coffee consumed in the office.",
+                    "reason": "Incorrect. Coffee consumption is not tied to AI effectiveness."
+                }, {
+                    "id": 4,
+                    "text": "Total number of AI prompts sent without context.",
+                    "reason": "Incorrect. Prompt count alone does not reflect value or impact."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Impact is best captured by improvements in efficiency, satisfaction, and output quality, not just raw usage counts."
+        }, {
+            "id": 47,
+            "topic": "Scenario: AI Risks and Controls",
+            "Question": "Executives are concerned that generative AI might expose proprietary product information externally. Which control is most effective at mitigating this risk?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Restrict AI tools to approved environments, enforce data loss prevention (DLP) policies, and educate users on safe sharing practices.",
+                    "reason": "Correct. Technical controls and user education together help reduce data exfiltration risk."
+                }, {
+                    "id": 2,
+                    "text": "Allow employees to copy sensitive content into any public AI tool.",
+                    "reason": "Incorrect. Public tools may not meet security and compliance requirements."
+                }, {
+                    "id": 3,
+                    "text": "Disable all logging to avoid creating audit trails.",
+                    "reason": "Incorrect. Logging is important for monitoring and response."
+                }, {
+                    "id": 4,
+                    "text": "Publish proprietary information on public websites to make it less sensitive.",
+                    "reason": "Incorrect. This undermines competitive advantage and confidentiality."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Using enterprise-grade AI environments with DLP and awareness training helps protect proprietary information."
+        }, {
+            "id": 48,
+            "topic": "Transparency and Explainability",
+            "Question": "Which practice best supports transparency when using AI in customer-facing processes?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Clearly indicating when AI assistance was used and ensuring humans can explain decisions made using AI outputs.",
+                    "reason": "Correct. Transparency involves disclosure and the ability to explain decisions."
+                }, {
+                    "id": 2,
+                    "text": "Ensuring customers can never find out that AI was involved.",
+                    "reason": "Incorrect. Hiding AI usage conflicts with transparency principles."
+                }, {
+                    "id": 3,
+                    "text": "Preventing staff from understanding how AI contributes to decisions.",
+                    "reason": "Incorrect. Staff need understanding to use AI responsibly."
+                }, {
+                    "id": 4,
+                    "text": "Removing any documentation of AI processes.",
+                    "reason": "Incorrect. Documentation supports transparency and governance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Transparent AI use requires disclosure and human ability to explain AI-assisted decisions."
+        }, {
+            "id": 49,
+            "topic": "Scenario: Ethical AI Decisions",
+            "Question": "A marketing AI model suggests excluding a certain demographic from a campaign based solely on historical engagement data. What is your best response as an AI transformation leader?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Approve the suggestion without review because it is data-driven.",
+                    "reason": "Incorrect. Data-driven suggestions can still encode bias and require ethical review."
+                }, {
+                    "id": 2,
+                    "text": "Evaluate the recommendation against fairness and anti-discrimination policies, and involve ethics or legal experts if needed before making a decision.",
+                    "reason": "Correct. Ethical review is necessary when recommendations may affect protected groups."
+                }, {
+                    "id": 3,
+                    "text": "Delete all performance data so the model cannot make suggestions.",
+                    "reason": "Incorrect. Deleting data avoids learning but does not address ethical governance."
+                }, {
+                    "id": 4,
+                    "text": "Ignore organizational policies and rely only on model output.",
+                    "reason": "Incorrect. Policies and principles must guide AI decisions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "AI-driven recommendations must be evaluated for fairness and compliance, especially when they may impact specific demographic groups."
+        }, {
+            "id": 50,
+            "topic": "Identifying Implementation Strategies",
+            "Question": "Which approach best describes a phased implementation strategy for Microsoft’s AI apps and services?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Start with a targeted pilot, measure outcomes, refine governance and training, then expand to other groups in waves.",
+                    "reason": "Correct. A phased approach reduces risk and supports learning and iteration."
+                }, {
+                    "id": 2,
+                    "text": "Roll out every AI feature to all users on day one with no training.",
+                    "reason": "Incorrect. This increases adoption risk and confusion."
+                }, {
+                    "id": 3,
+                    "text": "Block AI access until every process has been fully redesigned.",
+                    "reason": "Incorrect. Overly delaying adoption slows value realization."
+                }, {
+                    "id": 4,
+                    "text": "Limit AI usage permanently to a single pilot team.",
+                    "reason": "Incorrect. This prevents organization-wide benefits."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Phased implementation allows organizations to learn from pilots and scale AI adoption responsibly."
+        }, {
+            "id": 51,
+            "topic": "Scenario: Selecting Early Use Cases",
+            "Question": "You are prioritizing initial AI use cases for a financial services firm. Which candidate use case is most suitable for early adoption?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Automatically approving high-value loans without any human review.",
+                    "reason": "Incorrect. This is high risk and not suitable as an early use case."
+                }, {
+                    "id": 2,
+                    "text": "Using AI to draft internal risk reports and meeting summaries that are reviewed by analysts before distribution.",
+                    "reason": "Correct. This balances value with human oversight, making it a good early use case."
+                }, {
+                    "id": 3,
+                    "text": "Allowing AI to alter regulatory filings without controls.",
+                    "reason": "Incorrect. Regulatory filings require strict governance and control."
+                }, {
+                    "id": 4,
+                    "text": "Using AI to randomly delete customer records.",
+                    "reason": "Incorrect. This is obviously unsuitable and harmful."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Drafting internal documents for review is a low-risk, high-value scenario appropriate for early AI adoption."
+        }, {
+            "id": 52,
+            "topic": "Change Readiness and Training",
+            "Question": "Which action helps assess and improve organizational readiness for AI adoption?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Conducting a readiness assessment, gathering feedback on current skills, and designing targeted training programs for different roles.",
+                    "reason": "Correct. Assessments and targeted training support successful change."
+                }, {
+                    "id": 2,
+                    "text": "Assuming all employees already understand AI tools and skipping training.",
+                    "reason": "Incorrect. Assumptions can lead to poor adoption and misuse."
+                }, {
+                    "id": 3,
+                    "text": "Limiting AI to senior executives only.",
+                    "reason": "Incorrect. Transformation requires involvement from a broad set of users."
+                }, {
+                    "id": 4,
+                    "text": "Prohibiting questions about AI during training sessions.",
+                    "reason": "Incorrect. Questions are essential for learning and buy-in."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Readiness assessments and role-based training enable organizations to support AI adoption effectively."
+        }, {
+            "id": 53,
+            "topic": "Scenario: AI Usage Policies",
+            "Question": "You are drafting AI usage policies for your organization. Which guideline is most appropriate?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Users remain accountable for AI-assisted outputs and must verify accuracy, especially for high-impact content.",
+                    "reason": "Correct. Human accountability and verification are central to responsible AI usage."
+                }, {
+                    "id": 2,
+                    "text": "AI is fully responsible for all decisions and outcomes.",
+                    "reason": "Incorrect. AI does not replace human accountability."
+                }, {
+                    "id": 3,
+                    "text": "Users may ignore compliance obligations when AI is used.",
+                    "reason": "Incorrect. Compliance remains mandatory regardless of AI usage."
+                }, {
+                    "id": 4,
+                    "text": "AI tools should be used only in secret, without transparency.",
+                    "reason": "Incorrect. Transparency is part of responsible AI practice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Policies should reinforce that humans retain accountability and must validate AI outputs, especially in critical areas."
+        }, {
+            "id": 54,
+            "topic": "Monitoring and Continuous Improvement",
+            "Question": "Which practice best supports continuous improvement of AI solutions after deployment?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Collecting user feedback, monitoring usage patterns, and iteratively updating prompts, content, and governance.",
+                    "reason": "Correct. Ongoing feedback and iteration help keep AI solutions effective and aligned with needs."
+                }, {
+                    "id": 2,
+                    "text": "Deploying AI once and never revisiting configuration or training materials.",
+                    "reason": "Incorrect. Static configurations can become misaligned as needs change."
+                }, {
+                    "id": 3,
+                    "text": "Ignoring user complaints about AI behavior.",
+                    "reason": "Incorrect. Complaints are important input for improvement."
+                }, {
+                    "id": 4,
+                    "text": "Disabling all logging so performance cannot be assessed.",
+                    "reason": "Incorrect. Logs support monitoring, troubleshooting, and improvement."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Continuous improvement depends on monitoring performance and incorporating user feedback into updates and refinements."
+        }, {
+            "id": 55,
+            "topic": "AI and Data Residency",
+            "Question": "Stakeholders ask how AI services will handle data residency. Which statement is most appropriate?",
+            "Options": [{
+                    "id": 1,
+                    "text": "AI services follow the underlying cloud service’s data residency and compliance commitments applicable to the tenant.",
+                    "reason": "Correct. AI services typically inherit the data residency and compliance posture of the underlying platform."
+                }, {
+                    "id": 2,
+                    "text": "AI services always move data to a single global region, ignoring tenant settings.",
+                    "reason": "Incorrect. This contradicts platform commitments and documentation."
+                }, {
+                    "id": 3,
+                    "text": "Data residency only applies to physical paper documents.",
+                    "reason": "Incorrect. Data residency concerns digital data location and handling."
+                }, {
+                    "id": 4,
+                    "text": "AI usage removes all previous compliance obligations.",
+                    "reason": "Incorrect. Compliance obligations remain in force with AI usage."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "AI services are generally designed to align with the same data residency and compliance commitments as their underlying cloud platform."
+        }, {
+            "id": 56,
+            "topic": "Scenario: Executive AI Briefings",
+            "Question": "Executives ask for a recurring AI-driven briefing that highlights key developments across AI projects, risks, and business outcomes each month. What is the best way to deliver this?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Use AI to summarize project documents, risk logs, and outcome metrics into a concise executive briefing, then have a leader review and approve it.",
+                    "reason": "Correct. This uses AI for summarization while keeping leadership oversight."
+                }, {
+                    "id": 2,
+                    "text": "Ask each project team to send raw data without any synthesis.",
+                    "reason": "Incorrect. Raw data does not provide an executive-level overview."
+                }, {
+                    "id": 3,
+                    "text": "Provide no briefing at all.",
+                    "reason": "Incorrect. Executives need visibility into AI initiatives."
+                }, {
+                    "id": 4,
+                    "text": "Create a briefing only once at the start of the year and never update it.",
+                    "reason": "Incorrect. AI initiatives and risks evolve over time."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "AI-assisted summarization with human oversight can efficiently deliver up-to-date executive briefings on AI initiatives."
+        }, {
+            "id": 57,
+            "topic": "Scenario: Cross-functional AI Collaboration",
+            "Question": "A new AI initiative requires collaboration between IT, data, and multiple business units. Conflicting priorities are slowing progress. What should you do as the AI transformation leader?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Establish a cross-functional steering group with clear decision rights, shared goals, and a prioritized roadmap.",
+                    "reason": "Correct. Structured governance and shared objectives help resolve conflicts and align efforts."
+                }, {
+                    "id": 2,
+                    "text": "Let each team work independently with no coordination.",
+                    "reason": "Incorrect. Lack of coordination leads to fragmentation and inefficiency."
+                }, {
+                    "id": 3,
+                    "text": "Cancel the initiative because collaboration is difficult.",
+                    "reason": "Incorrect. Cancellation avoids addressing the core need."
+                }, {
+                    "id": 4,
+                    "text": "Assign decisions to whichever team complains the loudest.",
+                    "reason": "Incorrect. Decision-making should be structured, not based on noise."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Cross-functional governance with clear roles and shared goals is essential for complex AI initiatives."
+        }, {
+            "id": 58,
+            "topic": "AI Risk Management",
+            "Question": "Which action is part of a sound AI risk management approach?",
+            "Options": [{
+                    "id": 1,
+                    "text": "Identifying high-risk use cases, assessing potential impacts, and defining mitigation controls before deployment.",
+                    "reason": "Correct. Proactive risk assessment and mitigation are key to responsible AI deployment."
+                }, {
+                    "id": 2,
+                    "text": "Deploying high-risk AI systems without any review.",
+                    "reason": "Incorrect. High-risk systems require careful evaluation."
+                }, {
+                    "id": 3,
+                    "text": "Relying solely on AI vendors to manage all risk.",
+                    "reason": "Incorrect. Organizations share responsibility for AI risk management."
+                }, {
+                    "id": 4,
+                    "text": "Ignoring regulatory guidance while building AI solutions.",
+                    "reason": "Incorrect. Regulatory requirements are a critical aspect of AI risk management."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "AI risk management involves identifying high-risk scenarios, assessing impact, and implementing controls before deployment."
+        }, {
+            "id": 59,
+            "topic": "Scenario: AI Feedback Mechanisms",
+            "Question": "Users report that some AI-generated responses are inaccurate or unhelpful. You want to improve solution quality over time. What should you implement?",
+            "Options": [{
+                    "id": 1,
+                    "text": "In-product feedback mechanisms, regular review of flagged responses, and updates to prompts, grounding data, or model configuration.",
+                    "reason": "Correct. Feedback loops and iterative improvements help enhance AI solution quality."
+                }, {
+                    "id": 2,
+                    "text": "A policy that forbids users from reporting AI issues.",
+                    "reason": "Incorrect. This prevents learning and improvement."
+                }, {
+                    "id": 3,
+                    "text": "Immediate decommissioning of all AI tools.",
+                    "reason": "Incorrect. Decommissioning addresses issues by removal instead of improvement."
+                }, {
+                    "id": 4,
+                    "text": "A rule that AI responses are always correct and cannot be questioned.",
+                    "reason": "Incorrect. Critical review of AI outputs is essential."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Collecting feedback and refining AI configurations based on real-world usage is key to continuous improvement."
+        }, {
+            "id": 60,
+            "topic": "Leadership Mindset for AI Transformation",
+            "Question": "Which statement best reflects the mindset of an effective AI transformation leader?",
+            "Options": [{
+                    "id": 1,
+                    "text": "AI transformation is purely a technology project managed by IT with minimal business involvement.",
+                    "reason": "Incorrect. AI transformation is a business and cultural change as much as a technology change."
+                }, {
+                    "id": 2,
+                    "text": "AI transformation is a strategic initiative that requires aligning technology, people, processes, and governance to deliver business value.",
+                    "reason": "Correct. Successful AI leaders align technology with strategy, culture, and governance."
+                }, {
+                    "id": 3,
+                    "text": "AI transformation is successful when the organization buys the most advanced tools, regardless of use cases.",
+                    "reason": "Incorrect. Tool acquisition alone does not guarantee transformation or value."
+                }, {
+                    "id": 4,
+                    "text": "AI transformation is only about reducing headcount.",
+                    "reason": "Incorrect. Transformation focuses on value, capability, and new ways of working, not simply cost-cutting."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "AI transformation leaders focus on aligning technology with business strategy, people, processes, and governance to achieve sustainable value."
+        }
+    ]
+}
