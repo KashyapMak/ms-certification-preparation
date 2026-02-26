@@ -1,0 +1,1807 @@
+{
+    "quizName": "AB-730 - AI Business Professional - Set 3",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "What is a primary way Microsoft 365 Copilot ensures an organization's information remains private and secure during use?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "It processes data within the organization's Microsoft 365 boundary and applies enterprise data protection controls.",
+                    "reason": "Correct. Responses are grounded in organizational data with security boundaries."
+                },
+                {
+                    "id": 1,
+                    "text": "It stores all prompts in a public cloud repository for training.",
+                    "reason": "Incorrect. Copilot does not use customer data for training by default."
+                },
+                {
+                    "id": 4,
+                    "text": "It disables encryption for faster response times.",
+                    "reason": "Incorrect. Security features like encryption are maintained."
+                },
+                {
+                    "id": 2,
+                    "text": "It shares context only with external public web sources.",
+                    "reason": "Incorrect. Context prioritizes internal work files and apps."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Copilot operates within the Microsoft 365 trust boundary, applying the same data protection as other M365 services."
+        },
+        {
+            "id": 2,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Which factor most significantly influences the relevance and accuracy of a Microsoft 365 Copilot response?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The number of users in the organization.",
+                    "reason": "Incorrect. User count does not directly affect response quality."
+                },
+                {
+                    "id": 4,
+                    "text": "The device type (mobile vs desktop).",
+                    "reason": "Incorrect. Device type affects access but not core response logic."
+                },
+                {
+                    "id": 3,
+                    "text": "The color theme selected in Microsoft Teams.",
+                    "reason": "Incorrect. UI preferences have no impact on AI output."
+                },
+                {
+                    "id": 2,
+                    "text": "The current app being used and the context from associated work files or recent activity.",
+                    "reason": "Correct. Context from the app and files shapes grounded responses."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Copilot uses contextual signals from the app, files, and activity to generate relevant responses."
+        },
+        {
+            "id": 3,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "What best describes the difference between a chat experience and an agent experience in Microsoft 365 Copilot?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Agents are only available in preview, while chat is GA.",
+                    "reason": "Incorrect. Availability varies but is not the defining difference."
+                },
+                {
+                    "id": 1,
+                    "text": "Chat is one-time only, while agents support recurring tasks.",
+                    "reason": "Incorrect. Both can be interactive, but agents are more specialized."
+                },
+                {
+                    "id": 2,
+                    "text": "A chat is general-purpose conversation, while an agent is purpose-built with specific instructions, knowledge, and actions.",
+                    "reason": "Correct. Agents extend Copilot for targeted workflows."
+                },
+                {
+                    "id": 3,
+                    "text": "Chat uses external data only, while agents use internal only.",
+                    "reason": "Incorrect. Both can use mixed sources based on config."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Agents are configured for specific roles or tasks, unlike general chat interactions."
+        },
+        {
+            "id": 4,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Scenario: A marketing manager needs recurring competitor analysis reports. Which Copilot experience is most appropriate?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Create a custom Copilot agent configured with knowledge sources and instructions for analysis.",
+                    "reason": "Correct. Agents suit repeatable, specialized tasks."
+                },
+                {
+                    "id": 1,
+                    "text": "Use standard Copilot chat each week.",
+                    "reason": "Incorrect. This lacks automation and consistency."
+                },
+                {
+                    "id": 4,
+                    "text": "Schedule emails via Outlook rules.",
+                    "reason": "Incorrect. This does not leverage AI generation."
+                },
+                {
+                    "id": 2,
+                    "text": "Rely solely on Power BI dashboards.",
+                    "reason": "Incorrect. This may not incorporate generative summaries."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Custom agents are ideal for recurring, knowledge-grounded business processes."
+        },
+        {
+            "id": 5,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Which is a common risk associated with generative AI tools like Copilot?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Fabrications, where the AI generates plausible but incorrect information.",
+                    "reason": "Correct. This is a known limitation requiring verification."
+                },
+                {
+                    "id": 4,
+                    "text": "Preventing any use of internal files.",
+                    "reason": "Incorrect. Internal data is a key grounding source."
+                },
+                {
+                    "id": 1,
+                    "text": "Always producing 100% accurate facts without verification.",
+                    "reason": "Incorrect. AI can fabricate information (hallucinations)."
+                },
+                {
+                    "id": 3,
+                    "text": "Automatically deleting all user data after each session.",
+                    "reason": "Incorrect. Data retention follows M365 policies."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Fabrications (hallucinations) occur when AI generates confident but wrong content."
+        },
+        {
+            "id": 6,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "What is the best first step to mitigate the risk of sensitive data exposure in Copilot prompts?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Include all company financials in every prompt.",
+                    "reason": "Incorrect. This increases exposure risk."
+                },
+                {
+                    "id": 4,
+                    "text": "Share prompts publicly for feedback.",
+                    "reason": "Incorrect. This violates data protection."
+                },
+                {
+                    "id": 3,
+                    "text": "Turn off Copilot entirely.",
+                    "reason": "Incorrect. This avoids benefits of responsible use."
+                },
+                {
+                    "id": 2,
+                    "text": "Review and apply data protection classifications before entering sensitive information.",
+                    "reason": "Correct. Use sensitivity labels and policies to restrict."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Data protection features and classification help prevent unintended exposure."
+        },
+        {
+            "id": 7,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Why should users perform citation checks on Copilot-generated content?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "To delete the conversation history.",
+                    "reason": "Incorrect. Citations are for validation."
+                },
+                {
+                    "id": 3,
+                    "text": "To change the tone of the output.",
+                    "reason": "Incorrect. Tone is controlled via prompts."
+                },
+                {
+                    "id": 1,
+                    "text": "To increase response length.",
+                    "reason": "Incorrect. Citations verify accuracy."
+                },
+                {
+                    "id": 2,
+                    "text": "To verify that facts and summaries are supported by referenced sources.",
+                    "reason": "Correct. This mitigates fabrication risks."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Citations allow users to confirm grounding and accuracy."
+        },
+        {
+            "id": 8,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "In which Microsoft 365 app does Copilot offer unique capabilities for generating slide content and speaker notes?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "PowerPoint",
+                    "reason": "Correct. PowerPoint Copilot specializes in presentations."
+                },
+                {
+                    "id": 1,
+                    "text": "Word",
+                    "reason": "Incorrect. Word focuses on documents."
+                },
+                {
+                    "id": 4,
+                    "text": "Outlook",
+                    "reason": "Incorrect. Outlook focuses on email and calendar."
+                },
+                {
+                    "id": 3,
+                    "text": "Excel",
+                    "reason": "Incorrect. Excel focuses on data analysis."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "PowerPoint Copilot helps create decks, summarize, and suggest designs."
+        },
+        {
+            "id": 9,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Scenario: Your team is concerned about over-reliance on Copilot outputs. What practice should you recommend?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Always perform human review and cross-check key facts.",
+                    "reason": "Correct. Human oversight mitigates AI limitations."
+                },
+                {
+                    "id": 4,
+                    "text": "Use only public internet data.",
+                    "reason": "Incorrect. Grounding in work data is preferred."
+                },
+                {
+                    "id": 1,
+                    "text": "Accept all suggestions without review.",
+                    "reason": "Incorrect. This increases error risk."
+                },
+                {
+                    "id": 2,
+                    "text": "Disable Copilot for all users.",
+                    "reason": "Incorrect. Balanced use is recommended."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Responsible AI includes human verification to prevent over-reliance."
+        },
+        {
+            "id": 10,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "What capability distinguishes Microsoft 365 Copilot agents from standard chat?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Agents delete themselves after use.",
+                    "reason": "Incorrect. Agents persist until deleted."
+                },
+                {
+                    "id": 1,
+                    "text": "Agents cannot access files.",
+                    "reason": "Incorrect. Agents can be configured with knowledge."
+                },
+                {
+                    "id": 3,
+                    "text": "Agents are limited to one response per day.",
+                    "reason": "Incorrect. No such limitation exists."
+                },
+                {
+                    "id": 2,
+                    "text": "Agents can be customized with specific instructions and knowledge sources for targeted tasks.",
+                    "reason": "Correct. This enables specialized automation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Customization makes agents suitable for repeatable workflows."
+        },
+        {
+            "id": 11,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Which risk involves an attacker crafting inputs to bypass safeguards in AI systems?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Fabrication",
+                    "reason": "Incorrect. Fabrication is hallucination."
+                },
+                {
+                    "id": 3,
+                    "text": "Over-reliance",
+                    "reason": "Incorrect. This is user behavior."
+                },
+                {
+                    "id": 4,
+                    "text": "Data leakage",
+                    "reason": "Incorrect. This is broader exposure."
+                },
+                {
+                    "id": 2,
+                    "text": "Prompt injection",
+                    "reason": "Correct. This manipulates AI behavior."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Prompt injection attempts to override intended instructions."
+        },
+        {
+            "id": 12,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Scenario: An HR specialist generates a job description with Copilot but notices factual inaccuracies. What should they do?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Check citations, edit manually, and have a colleague review.",
+                    "reason": "Correct. Combine AI with human oversight."
+                },
+                {
+                    "id": 4,
+                    "text": "Blame the tool publicly.",
+                    "reason": "Incorrect. Responsible use includes verification."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete the conversation.",
+                    "reason": "Incorrect. This does not fix output."
+                },
+                {
+                    "id": 1,
+                    "text": "Publish it immediately.",
+                    "reason": "Incorrect. Verification is required."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Verification and review ensure accuracy in business outputs."
+        },
+        {
+            "id": 13,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "How does Microsoft 365 Copilot primarily ground its responses to reduce hallucinations?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "By randomizing outputs.",
+                    "reason": "Incorrect. Grounding is deterministic where possible."
+                },
+                {
+                    "id": 1,
+                    "text": "By ignoring user files.",
+                    "reason": "Incorrect. Files provide grounding."
+                },
+                {
+                    "id": 3,
+                    "text": "By using only public web data.",
+                    "reason": "Incorrect. Internal context is prioritized."
+                },
+                {
+                    "id": 2,
+                    "text": "By using context from work files, app data, and organizational sources.",
+                    "reason": "Correct. Contextual grounding from M365 data reduces errors."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Contextual grounding from M365 data reduces errors."
+        },
+        {
+            "id": 14,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "In Copilot for Excel, what is a key capability?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Scheduling meetings.",
+                    "reason": "Incorrect. This is Teams/Outlook."
+                },
+                {
+                    "id": 1,
+                    "text": "Generating slide decks.",
+                    "reason": "Incorrect. This is PowerPoint."
+                },
+                {
+                    "id": 2,
+                    "text": "Analyzing data trends and generating insights or formulas.",
+                    "reason": "Correct. Excel Copilot handles data tasks."
+                },
+                {
+                    "id": 4,
+                    "text": "Editing images.",
+                    "reason": "Incorrect. Image gen is Designer/Copilot."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Excel Copilot assists with analysis and visualization."
+        },
+        {
+            "id": 15,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "What should you do if Copilot refuses to process a prompt due to data protection policies?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Bypass the policy with advanced syntax.",
+                    "reason": "Incorrect. Policies enforce compliance."
+                },
+                {
+                    "id": 3,
+                    "text": "Report it as a bug.",
+                    "reason": "Incorrect. It's likely intentional protection."
+                },
+                {
+                    "id": 4,
+                    "text": "Use a personal account instead.",
+                    "reason": "Incorrect. This risks compliance."
+                },
+                {
+                    "id": 2,
+                    "text": "Respect the restriction and rephrase or remove sensitive elements.",
+                    "reason": "Correct. This maintains security."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Data protection features block risky actions."
+        },
+        {
+            "id": 16,
+            "topic": "Understand generative AI fundamentals",
+            "Question": "Which statement accurately describes Copilot in Teams?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "It can summarize discussions, suggest action items, and answer questions about the meeting.",
+                    "reason": "Correct. Teams Copilot enhances collaboration."
+                },
+                {
+                    "id": 4,
+                    "text": "It deletes recordings automatically.",
+                    "reason": "Incorrect. Retention follows policy."
+                },
+                {
+                    "id": 1,
+                    "text": "It cannot summarize meetings.",
+                    "reason": "Incorrect. Meeting recap is a feature."
+                },
+                {
+                    "id": 3,
+                    "text": "It only works post-meeting.",
+                    "reason": "Incorrect. It supports during and after."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot in Teams provides intelligent meeting assistance."
+        },
+        {
+            "id": 17,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What is the most effective way to create a prompt that yields precise results in Microsoft 365 Copilot?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Ask Copilot to guess the intent.",
+                    "reason": "Incorrect. Explicit direction is better."
+                },
+                {
+                    "id": 3,
+                    "text": "Enter only keywords.",
+                    "reason": "Incorrect. This leads to generic output."
+                },
+                {
+                    "id": 1,
+                    "text": "Use vague language to allow creativity.",
+                    "reason": "Incorrect. Specificity improves accuracy."
+                },
+                {
+                    "id": 2,
+                    "text": "Provide clear instructions, context, desired format, and examples.",
+                    "reason": "Correct. Effective prompting follows best practices."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Good prompts are specific, contextual, and structured."
+        },
+        {
+            "id": 18,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Which resource should you reference in a prompt to ground Copilot's response in company-specific data?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Personal notes from a phone call.",
+                    "reason": "Incorrect. These are not accessible."
+                },
+                {
+                    "id": 1,
+                    "text": "Public Wikipedia articles.",
+                    "reason": "Incorrect. Internal sources are preferred."
+                },
+                {
+                    "id": 2,
+                    "text": "Relevant Microsoft 365 files, SharePoint pages, or recent emails.",
+                    "reason": "Correct. This grounds output in trusted data."
+                },
+                {
+                    "id": 4,
+                    "text": "External vendor websites.",
+                    "reason": "Incorrect. Internal context is prioritized."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Referencing internal resources improves relevance."
+        },
+        {
+            "id": 19,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "How can you reuse a frequently used prompt in Copilot?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Type it manually each time.",
+                    "reason": "Incorrect. Reuse is supported."
+                },
+                {
+                    "id": 4,
+                    "text": "Share it externally.",
+                    "reason": "Incorrect. Sharing is internal."
+                },
+                {
+                    "id": 2,
+                    "text": "Save the prompt for quick access in future sessions.",
+                    "reason": "Correct. Saved prompts streamline workflows."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete after one use.",
+                    "reason": "Incorrect. Deletion prevents reuse."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Saving prompts enables efficiency."
+        },
+        {
+            "id": 20,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Scenario: You run a weekly sales report prompt. How can you automate starting it?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Schedule the saved prompt to run automatically.",
+                    "reason": "Correct. Scheduling supports recurring tasks."
+                },
+                {
+                    "id": 1,
+                    "text": "Manually open Copilot each Monday.",
+                    "reason": "Incorrect. Automation exists."
+                },
+                {
+                    "id": 4,
+                    "text": "Use Power Automate only.",
+                    "reason": "Incorrect. Copilot supports scheduling."
+                },
+                {
+                    "id": 2,
+                    "text": "Ask a colleague to run it.",
+                    "reason": "Incorrect. Self-service is better."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Scheduled prompts enable hands-free execution."
+        },
+        {
+            "id": 21,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What is the benefit of sharing a saved prompt with your team?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "It locks editing for everyone.",
+                    "reason": "Incorrect. Permissions vary."
+                },
+                {
+                    "id": 2,
+                    "text": "Team members can access and use the same effective prompt.",
+                    "reason": "Correct. Sharing promotes consistency."
+                },
+                {
+                    "id": 1,
+                    "text": "It becomes public on the internet.",
+                    "reason": "Incorrect. Sharing is controlled."
+                },
+                {
+                    "id": 3,
+                    "text": "It deletes from your account.",
+                    "reason": "Incorrect. Sharing retains ownership."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Shared prompts standardize processes."
+        },
+        {
+            "id": 22,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "How can you locate a previous Copilot conversation from last month?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Start a new chat only.",
+                    "reason": "Incorrect. History is preserved."
+                },
+                {
+                    "id": 3,
+                    "text": "Ask Copilot to forget everything.",
+                    "reason": "Incorrect. This clears data."
+                },
+                {
+                    "id": 4,
+                    "text": "Contact Microsoft support.",
+                    "reason": "Incorrect. Self-service is available."
+                },
+                {
+                    "id": 2,
+                    "text": "Use the conversation history or search feature in Copilot.",
+                    "reason": "Correct. History allows retrieval."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Conversation history supports continuity."
+        },
+        {
+            "id": 23,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What action permanently removes a Copilot chat from your history?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Add it to a notebook.",
+                    "reason": "Incorrect. This preserves it."
+                },
+                {
+                    "id": 4,
+                    "text": "Share it.",
+                    "reason": "Incorrect. Sharing does not delete."
+                },
+                {
+                    "id": 1,
+                    "text": "Rename it.",
+                    "reason": "Incorrect. Renaming keeps it."
+                },
+                {
+                    "id": 2,
+                    "text": "Delete the chat.",
+                    "reason": "Correct. Deletion removes it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Delete removes conversations when no longer needed."
+        },
+        {
+            "id": 24,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Why rename a Copilot conversation?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "To delete attachments.",
+                    "reason": "Incorrect. Renaming affects title only."
+                },
+                {
+                    "id": 1,
+                    "text": "To make it easier to find later.",
+                    "reason": "Correct. Descriptive names improve organization."
+                },
+                {
+                    "id": 4,
+                    "text": "To share externally.",
+                    "reason": "Incorrect. Sharing is separate."
+                },
+                {
+                    "id": 2,
+                    "text": "To change the AI model.",
+                    "reason": "Incorrect. Model is not user-controlled."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Renaming helps manage and retrieve chats."
+        },
+        {
+            "id": 25,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What is the purpose of adding a Copilot conversation to a notebook?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "To run it faster.",
+                    "reason": "Incorrect. No performance impact."
+                },
+                {
+                    "id": 2,
+                    "text": "To delete it permanently.",
+                    "reason": "Incorrect. This preserves."
+                },
+                {
+                    "id": 1,
+                    "text": "To archive and organize it for future reference or collaboration.",
+                    "reason": "Correct. Notebooks centralize content."
+                },
+                {
+                    "id": 3,
+                    "text": "To change permissions.",
+                    "reason": "Incorrect. Permissions are separate."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Notebooks help organize AI-generated content."
+        },
+        {
+            "id": 26,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "When should you create a new Copilot agent instead of using one from Agent Store?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "When your workflow requires custom instructions, knowledge, or capabilities not in existing agents.",
+                    "reason": "Correct. Custom agents address unique needs."
+                },
+                {
+                    "id": 1,
+                    "text": "When a pre-built agent meets all needs.",
+                    "reason": "Incorrect. Store agents are for common scenarios."
+                },
+                {
+                    "id": 3,
+                    "text": "To avoid sharing.",
+                    "reason": "Incorrect. Both can be shared."
+                },
+                {
+                    "id": 4,
+                    "text": "To reduce costs.",
+                    "reason": "Incorrect. Cost model is similar."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Custom agents fill gaps in pre-built options."
+        },
+        {
+            "id": 27,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Scenario: Your sales team needs a consistent lead qualification agent. What is the best starting point?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Purchase third-party agents.",
+                    "reason": "Incorrect. Use M365 tools."
+                },
+                {
+                    "id": 1,
+                    "text": "Build from scratch without a template.",
+                    "reason": "Incorrect. Templates accelerate creation."
+                },
+                {
+                    "id": 3,
+                    "text": "Use only chat for leads.",
+                    "reason": "Incorrect. Agents are better for consistency."
+                },
+                {
+                    "id": 2,
+                    "text": "Create an agent using a relevant template and customize it.",
+                    "reason": "Correct. Templates provide a foundation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [4],
+            "CorrectAnswerExplanation": "Templates speed up agent development."
+        },
+        {
+            "id": 28,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What can you configure on a Copilot agent to improve its performance?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "The background color.",
+                    "reason": "Incorrect. UI only."
+                },
+                {
+                    "id": 4,
+                    "text": "External API keys.",
+                    "reason": "Incorrect. No-code focus."
+                },
+                {
+                    "id": 1,
+                    "text": "Custom instructions, knowledge sources, capabilities, and suggested prompts.",
+                    "reason": "Correct. These tailor behavior."
+                },
+                {
+                    "id": 2,
+                    "text": "Only the name.",
+                    "reason": "Incorrect. More options exist."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Configuration options make agents effective."
+        },
+        {
+            "id": 29,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "How can you make a custom Copilot agent available to your team?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Share it with specific team members or groups.",
+                    "reason": "Correct. Sharing controls access."
+                },
+                {
+                    "id": 4,
+                    "text": "Export as code.",
+                    "reason": "Incorrect. No-code tool."
+                },
+                {
+                    "id": 1,
+                    "text": "Publish it to the public store.",
+                    "reason": "Incorrect. Internal sharing first."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete after one use.",
+                    "reason": "Incorrect. Sharing retains."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Sharing enables team collaboration."
+        },
+        {
+            "id": 30,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Scenario: A project manager wants Copilot to always include risk assessment in status updates. How to achieve this?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Type it manually every time.",
+                    "reason": "Incorrect. Repetitive."
+                },
+                {
+                    "id": 4,
+                    "text": "Use Excel only.",
+                    "reason": "Incorrect. Agent suits text tasks."
+                },
+                {
+                    "id": 3,
+                    "text": "Create an agent with instructions to include risk sections.",
+                    "reason": "Correct. Instructions enforce behavior."
+                },
+                {
+                    "id": 2,
+                    "text": "Ignore risks.",
+                    "reason": "Incorrect. Risks are important."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Agent instructions standardize outputs."
+        },
+        {
+            "id": 31,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What is a benefit of suggested prompts in an agent?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "They limit access.",
+                    "reason": "Incorrect. Suggested prompts aid use."
+                },
+                {
+                    "id": 2,
+                    "text": "They delete old chats.",
+                    "reason": "Incorrect. No such function."
+                },
+                {
+                    "id": 1,
+                    "text": "They guide users to common effective queries.",
+                    "reason": "Correct. Improves usability."
+                },
+                {
+                    "id": 3,
+                    "text": "They change encryption.",
+                    "reason": "Incorrect. Security separate."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Suggested prompts encourage best practices."
+        },
+        {
+            "id": 32,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Which feature allows recurring execution of a prompt?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Renaming",
+                    "reason": "Incorrect. Renaming organizes."
+                },
+                {
+                    "id": 1,
+                    "text": "Scheduling",
+                    "reason": "Correct. Scheduling automates runs."
+                },
+                {
+                    "id": 4,
+                    "text": "Sharing",
+                    "reason": "Incorrect. Sharing distributes."
+                },
+                {
+                    "id": 2,
+                    "text": "Deleting",
+                    "reason": "Incorrect. Deletes content."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Scheduling supports periodic tasks."
+        },
+        {
+            "id": 33,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Scenario: Your finance team needs consistent budget summary prompts. Best approach?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Create and share a saved prompt.",
+                    "reason": "Correct. Saved and shared for consistency."
+                },
+                {
+                    "id": 3,
+                    "text": "Type new each time.",
+                    "reason": "Incorrect. Inefficient."
+                },
+                {
+                    "id": 1,
+                    "text": "Use Teams chat only.",
+                    "reason": "Incorrect. Prompt reuse better."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable Copilot.",
+                    "reason": "Incorrect. Use responsibly."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Saved prompts ensure uniformity."
+        },
+        {
+            "id": 34,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "What should you do before sharing an agent?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Make it public.",
+                    "reason": "Incorrect. Internal first."
+                },
+                {
+                    "id": 1,
+                    "text": "Test it thoroughly for accuracy and security.",
+                    "reason": "Correct. Validation prevents issues."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete knowledge sources.",
+                    "reason": "Incorrect. Sources needed."
+                },
+                {
+                    "id": 2,
+                    "text": "Share without testing.",
+                    "reason": "Incorrect. Risks errors."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Testing ensures quality."
+        },
+        {
+            "id": 35,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "How does Copilot memory affect conversations?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "It retains context across interactions for better continuity.",
+                    "reason": "Correct. Improves follow-up quality."
+                },
+                {
+                    "id": 1,
+                    "text": "It forgets everything immediately.",
+                    "reason": "Incorrect. Memory retains context."
+                },
+                {
+                    "id": 4,
+                    "text": "It blocks file access.",
+                    "reason": "Incorrect. Memory aids grounding."
+                },
+                {
+                    "id": 2,
+                    "text": "It only works in agents.",
+                    "reason": "Incorrect. Applies broadly."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Memory enhances conversational flow."
+        },
+        {
+            "id": 36,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Which is NOT a standard way to manage Copilot conversations?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Export to PDF externally",
+                    "reason": "Correct. Export not native; use copy or notebook."
+                },
+                {
+                    "id": 4,
+                    "text": "Add to notebook",
+                    "reason": "Incorrect. Supported."
+                },
+                {
+                    "id": 1,
+                    "text": "Delete chat",
+                    "reason": "Incorrect. This is supported."
+                },
+                {
+                    "id": 3,
+                    "text": "Rename chat",
+                    "reason": "Incorrect. Supported."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Management options include delete, rename, notebook."
+        },
+        {
+            "id": 37,
+            "topic": "Manage prompts and conversations by using AI",
+            "Question": "Scenario: A user wants Copilot to analyze competitor pricing monthly. Recommended solution?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Schedule a prompt with references to pricing files.",
+                    "reason": "Correct. Combines scheduling and grounding."
+                },
+                {
+                    "id": 4,
+                    "text": "Ignore competitors.",
+                    "reason": "Incorrect. Analysis valuable."
+                },
+                {
+                    "id": 3,
+                    "text": "Use only web search.",
+                    "reason": "Incorrect. Internal data better."
+                },
+                {
+                    "id": 2,
+                    "text": "Manually prompt each month.",
+                    "reason": "Incorrect. Less efficient."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Scheduling + references automate analysis."
+        },
+        {
+            "id": 38,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "How can you quickly start a new business document using Copilot?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Use PowerPoint instead.",
+                    "reason": "Incorrect. Word for docs."
+                },
+                {
+                    "id": 3,
+                    "text": "Copy from email only.",
+                    "reason": "Incorrect. Prompt better."
+                },
+                {
+                    "id": 1,
+                    "text": "Open Word and type a detailed prompt in Copilot pane.",
+                    "reason": "Correct. Prompt creates from scratch."
+                },
+                {
+                    "id": 2,
+                    "text": "Manually type the entire document.",
+                    "reason": "Incorrect. AI accelerates drafting."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Prompt-based creation starts documents fast."
+        },
+        {
+            "id": 39,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: You have an existing long report in Word. How to generate an executive summary?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Ask Copilot to generate a management summary based on the document.",
+                    "reason": "Correct. Summarization is supported."
+                },
+                {
+                    "id": 1,
+                    "text": "Rewrite manually.",
+                    "reason": "Incorrect. AI faster."
+                },
+                {
+                    "id": 4,
+                    "text": "Export to PDF first.",
+                    "reason": "Incorrect. Unnecessary."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete sections.",
+                    "reason": "Incorrect. Loses content."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot can condense documents effectively."
+        },
+        {
+            "id": 40,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What feature allows moving insights from Copilot in Excel to a Word report?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Email attachment only.",
+                    "reason": "Incorrect. Direct transfer better."
+                },
+                {
+                    "id": 1,
+                    "text": "Copy and paste or use Copilot to transfer data and insights between apps.",
+                    "reason": "Correct. Cross-app flow supported."
+                },
+                {
+                    "id": 4,
+                    "text": "Delete Excel file.",
+                    "reason": "Incorrect. Keep source."
+                },
+                {
+                    "id": 2,
+                    "text": "Manual retyping.",
+                    "reason": "Incorrect. Inefficient."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot facilitates moving content across M365."
+        },
+        {
+            "id": 41,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "How does Copilot assist during Teams meetings?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "It ends meetings automatically.",
+                    "reason": "Incorrect. No such feature."
+                },
+                {
+                    "id": 2,
+                    "text": "It can provide real-time summaries, action items, and answers to questions.",
+                    "reason": "Correct. Enhances meeting productivity."
+                },
+                {
+                    "id": 1,
+                    "text": "It records video without permission.",
+                    "reason": "Incorrect. Compliance required."
+                },
+                {
+                    "id": 3,
+                    "text": "It mutes participants.",
+                    "reason": "Incorrect. User controlled."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot in meetings captures key points."
+        },
+        {
+            "id": 42,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What is Copilot Pages used for?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Collaborative content creation with AI assistance.",
+                    "reason": "Correct. Pages support team editing with Copilot."
+                },
+                {
+                    "id": 3,
+                    "text": "Data modeling.",
+                    "reason": "Incorrect. Excel for data."
+                },
+                {
+                    "id": 4,
+                    "text": "Email archiving.",
+                    "reason": "Incorrect. Outlook for email."
+                },
+                {
+                    "id": 2,
+                    "text": "Video editing.",
+                    "reason": "Incorrect. Not video tool."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot Pages enable AI-enhanced collaboration."
+        },
+        {
+            "id": 43,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: A team is brainstorming in a meeting. How can Copilot help post-meeting?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Generate a summary, list action items, and suggest follow-ups.",
+                    "reason": "Correct. Post-meeting recap is powerful."
+                },
+                {
+                    "id": 1,
+                    "text": "Delete the recording.",
+                    "reason": "Incorrect. Retention needed."
+                },
+                {
+                    "id": 4,
+                    "text": "Change attendee list.",
+                    "reason": "Incorrect. Not editing attendees."
+                },
+                {
+                    "id": 2,
+                    "text": "Ignore the discussion.",
+                    "reason": "Incorrect. AI captures value."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Copilot turns meetings into actionable outputs."
+        },
+        {
+            "id": 44,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "How does Copilot use memory in content creation?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "It recalls previous interactions to maintain consistency in tone or facts.",
+                    "reason": "Correct. Memory improves coherence."
+                },
+                {
+                    "id": 4,
+                    "text": "It blocks cross-app use.",
+                    "reason": "Incorrect. Memory aids flow."
+                },
+                {
+                    "id": 1,
+                    "text": "It forgets after each prompt.",
+                    "reason": "Incorrect. Memory persists."
+                },
+                {
+                    "id": 3,
+                    "text": "It only remembers files.",
+                    "reason": "Incorrect. Broader context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Memory supports consistent AI assistance."
+        },
+        {
+            "id": 45,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: You need to turn meeting notes into a polished proposal. Best Copilot approach?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Paste notes into Word and prompt Copilot to draft a proposal.",
+                    "reason": "Correct. Leverages context."
+                },
+                {
+                    "id": 3,
+                    "text": "Use Excel charts only.",
+                    "reason": "Incorrect. Word better for narrative."
+                },
+                {
+                    "id": 4,
+                    "text": "Ignore notes.",
+                    "reason": "Incorrect. Use available content."
+                },
+                {
+                    "id": 2,
+                    "text": "Type from scratch.",
+                    "reason": "Incorrect. Less efficient."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot transforms raw notes into structured docs."
+        },
+        {
+            "id": 46,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What capability does Copilot offer for generating business visuals?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Code writing.",
+                    "reason": "Incorrect. No-code focus."
+                },
+                {
+                    "id": 3,
+                    "text": "Creating images or diagrams from prompts in supported apps.",
+                    "reason": "Correct. Image generation integrated."
+                },
+                {
+                    "id": 1,
+                    "text": "Only text output.",
+                    "reason": "Incorrect. Multimodal."
+                },
+                {
+                    "id": 2,
+                    "text": "Video recording.",
+                    "reason": "Incorrect. Not video."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Copilot supports visual content creation."
+        },
+        {
+            "id": 47,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: A manager wants key insights from a large Excel dataset moved to a presentation. How?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Use Copilot in Excel to summarize, then transfer to PowerPoint Copilot.",
+                    "reason": "Correct. Cross-app insights flow."
+                },
+                {
+                    "id": 1,
+                    "text": "Screenshot everything.",
+                    "reason": "Incorrect. Low quality."
+                },
+                {
+                    "id": 4,
+                    "text": "Delete dataset.",
+                    "reason": "Incorrect. Keep source."
+                },
+                {
+                    "id": 3,
+                    "text": "Email raw data.",
+                    "reason": "Incorrect. Less polished."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot bridges data to presentation."
+        },
+        {
+            "id": 48,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "In Word, Copilot can generate content from what sources?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "External USB only.",
+                    "reason": "Incorrect. M365 files."
+                },
+                {
+                    "id": 1,
+                    "text": "Prompts, existing documents, or files referenced.",
+                    "reason": "Correct. Multiple grounding options."
+                },
+                {
+                    "id": 4,
+                    "text": "Voice input only.",
+                    "reason": "Incorrect. Text primary."
+                },
+                {
+                    "id": 2,
+                    "text": "Only blank page.",
+                    "reason": "Incorrect. Flexible sources."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Word Copilot supports varied inputs."
+        },
+        {
+            "id": 49,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What is a key responsible practice when drafting with Copilot?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Disable citations.",
+                    "reason": "Incorrect. Citations help verify."
+                },
+                {
+                    "id": 2,
+                    "text": "Review and edit AI-generated content for accuracy and tone.",
+                    "reason": "Correct. Human oversight essential."
+                },
+                {
+                    "id": 1,
+                    "text": "Publish without checking.",
+                    "reason": "Incorrect. Risks errors."
+                },
+                {
+                    "id": 3,
+                    "text": "Use only images.",
+                    "reason": "Incorrect. Combine modalities."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Review ensures quality outputs."
+        },
+        {
+            "id": 50,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: During collaboration, team needs real-time AI suggestions. Best tool?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use Copilot Pages for shared editing with AI.",
+                    "reason": "Correct. Designed for collaborative drafting."
+                },
+                {
+                    "id": 3,
+                    "text": "Email drafts back and forth.",
+                    "reason": "Incorrect. Inefficient."
+                },
+                {
+                    "id": 4,
+                    "text": "Avoid AI.",
+                    "reason": "Incorrect. AI enhances."
+                },
+                {
+                    "id": 2,
+                    "text": "Use personal Word files.",
+                    "reason": "Incorrect. Less collaborative."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Copilot Pages support team + AI work."
+        },
+        {
+            "id": 51,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "How can Copilot help with email drafting in Outlook?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Generate replies, summaries, or full emails from prompts or context.",
+                    "reason": "Correct. Email productivity boosted."
+                },
+                {
+                    "id": 1,
+                    "text": "Delete inbox.",
+                    "reason": "Incorrect. No deletion."
+                },
+                {
+                    "id": 4,
+                    "text": "Block senders.",
+                    "reason": "Incorrect. User feature."
+                },
+                {
+                    "id": 2,
+                    "text": "Change calendar only.",
+                    "reason": "Incorrect. Broader."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Outlook Copilot streamlines communication."
+        },
+        {
+            "id": 52,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What output format can Copilot generate from a prompt in Word?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Audio files.",
+                    "reason": "Incorrect. Text/visual."
+                },
+                {
+                    "id": 2,
+                    "text": "Tables, bullet lists, paragraphs, or full sections.",
+                    "reason": "Correct. Flexible formatting."
+                },
+                {
+                    "id": 1,
+                    "text": "Only images.",
+                    "reason": "Incorrect. Multimodal but text primary."
+                },
+                {
+                    "id": 3,
+                    "text": "Code snippets.",
+                    "reason": "Incorrect. Business focus."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot adapts to requested structure."
+        },
+        {
+            "id": 53,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: Need to analyze sales data and draft a report. Workflow?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use Excel Copilot for insights, then Word Copilot for narrative report.",
+                    "reason": "Correct. Leverages app strengths."
+                },
+                {
+                    "id": 4,
+                    "text": "Delete data.",
+                    "reason": "Incorrect. Analyze it."
+                },
+                {
+                    "id": 3,
+                    "text": "Manual calculation.",
+                    "reason": "Incorrect. AI faster."
+                },
+                {
+                    "id": 2,
+                    "text": "Use Teams only.",
+                    "reason": "Incorrect. Not data-focused."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Cross-app Copilot optimizes analysis and drafting."
+        },
+        {
+            "id": 54,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Why review Copilot-generated presentations?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "To ensure brand alignment, factual accuracy, and appropriate tone.",
+                    "reason": "Correct. AI may need refinement."
+                },
+                {
+                    "id": 1,
+                    "text": "To slow down work.",
+                    "reason": "Incorrect. Review improves quality."
+                },
+                {
+                    "id": 4,
+                    "text": "To change fonts only.",
+                    "reason": "Incorrect. Broader review."
+                },
+                {
+                    "id": 2,
+                    "text": "To remove all slides.",
+                    "reason": "Incorrect. Refine not delete."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Human edit ensures professional output."
+        },
+        {
+            "id": 55,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What is a benefit of using Copilot for meeting follow-up?",
+            "Options": [
+                {
+                    "id": 2,
+                    "text": "Quick generation of minutes, actions, and decisions.",
+                    "reason": "Correct. Saves time post-meeting."
+                },
+                {
+                    "id": 4,
+                    "text": "Calendar deletion.",
+                    "reason": "Incorrect. No deletion."
+                },
+                {
+                    "id": 1,
+                    "text": "Automatic attendance adjustment.",
+                    "reason": "Incorrect. Not feature."
+                },
+                {
+                    "id": 3,
+                    "text": "Video editing.",
+                    "reason": "Incorrect. Text focus."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Follow-up automation improves efficiency."
+        },
+        {
+            "id": 56,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: Generate a marketing one-pager from product specs. Approach?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Prompt Copilot in Word with specs and desired style.",
+                    "reason": "Correct. Generates tailored content."
+                },
+                {
+                    "id": 3,
+                    "text": "Use Power BI.",
+                    "reason": "Incorrect. Not narrative."
+                },
+                {
+                    "id": 4,
+                    "text": "Avoid AI.",
+                    "reason": "Incorrect. AI accelerates."
+                },
+                {
+                    "id": 2,
+                    "text": "Copy specs only.",
+                    "reason": "Incorrect. Needs transformation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Prompts create polished marketing docs."
+        },
+        {
+            "id": 57,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "How does Copilot in PowerPoint assist with design?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Record audio.",
+                    "reason": "Incorrect. Separate feature."
+                },
+                {
+                    "id": 2,
+                    "text": "Suggest layouts, themes, and content organization.",
+                    "reason": "Correct. Enhances presentation quality."
+                },
+                {
+                    "id": 1,
+                    "text": "Write code.",
+                    "reason": "Incorrect. No-code."
+                },
+                {
+                    "id": 3,
+                    "text": "Manage email.",
+                    "reason": "Incorrect. App-specific."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "PowerPoint Copilot aids visual storytelling."
+        },
+        {
+            "id": 58,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "What should you include in a prompt for content generation?",
+            "Options": [
+                {
+                    "id": 3,
+                    "text": "Audience, tone, length, and key points.",
+                    "reason": "Correct. Specificity yields better results."
+                },
+                {
+                    "id": 1,
+                    "text": "Only topic.",
+                    "reason": "Incorrect. Vague output."
+                },
+                {
+                    "id": 4,
+                    "text": "Irrelevant files.",
+                    "reason": "Incorrect. Relevant context only."
+                },
+                {
+                    "id": 2,
+                    "text": "Personal opinions.",
+                    "reason": "Incorrect. Focus on facts."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [3],
+            "CorrectAnswerExplanation": "Detailed prompts improve relevance."
+        },
+        {
+            "id": 59,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Scenario: Need to summarize a 50-page contract quickly. Best method?",
+            "Options": [
+                {
+                    "id": 4,
+                    "text": "Ignore clauses.",
+                    "reason": "Incorrect. Summary needed."
+                },
+                {
+                    "id": 2,
+                    "text": "Upload to Word and prompt Copilot for a summary.",
+                    "reason": "Correct. Efficient extraction."
+                },
+                {
+                    "id": 1,
+                    "text": "Read manually.",
+                    "reason": "Incorrect. Time-consuming."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete pages.",
+                    "reason": "Incorrect. Loses info."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [2],
+            "CorrectAnswerExplanation": "Copilot summarizes long documents fast."
+        },
+        {
+            "id": 60,
+            "topic": "Draft and analyze business content by using AI",
+            "Question": "Why is human review important in AI-generated business content?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "To catch inaccuracies, ensure compliance, and align with brand voice.",
+                    "reason": "Correct. Mitigates AI limitations."
+                },
+                {
+                    "id": 3,
+                    "text": "To remove all AI traces.",
+                    "reason": "Incorrect. Transparency ok."
+                },
+                {
+                    "id": 4,
+                    "text": "To slow production.",
+                    "reason": "Incorrect. Review adds value."
+                },
+                {
+                    "id": 2,
+                    "text": "To make it longer.",
+                    "reason": "Incorrect. Quality over length."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [1],
+            "CorrectAnswerExplanation": "Human judgment complements AI strengths."
+        }
+    ]
+}

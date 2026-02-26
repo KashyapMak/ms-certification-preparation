@@ -12,10 +12,9 @@ OUTPUT REQUIREMENTS
 - The JSON must be copy-paste-ready.
 
 SOURCES TO USE  
-Use BOTH of the following official Microsoft sources for exam coverage, skill outline, topic depth, and scenarios:  
-1. Study Guide: {{StudyGuideUrl}}  
-2. Official Course (modules): {{StudyCourseUrl}} 
-3. Any other source where question set available like examtopics or itexam.  
+1. Study Guide ({{StudyGuideUrl}}): Use this to map the required skillset. Identify the weight (percentage) of each domain to determine how many questions to generate per topic and the specific level of proficiency required.
+2. Official Course ({{StudyCourseUrl}}): Use these modules as the primary source of truth for defining technical questions and answers. Extract specific scenarios, implementation steps, and service configurations directly from this curriculum.
+3. Reference external sets (e.g., ExamTopics, ITExam, Lead2Pass) strictly to understand samples and question patterns (Case Studies, Hot Areas, Drag-and-Drop)  
 
 Use both sources to determine:  
 - Topics  
@@ -39,11 +38,14 @@ QUESTION SET REQUIREMENTS
    - The official instructor-led training modules  
 5. Mix cognitive levels: recall, conceptual, applied reasoning, and scenario-based judgment.  
 6. Match exam difficulty level: **{{ExamLevel}}**.
+7. Keep same topic questions togather
 
 ANSWER OPTION RULES  
-- Each option MUST have a unique **option ID** per the sample.json schema.  
+- Each option MUST have a unique **option ID** per the json schema.  
 - `correctAnswers` MUST contain **option IDs**, not indexes or text.  
 - The correct option ID MUST exist in that question’s options list.
+- Incorrect answers must be contextually relevant and of similar character length to the correct answer. They should be "plausible alternatives" specifically designed to test the user's ability to discern the most accurate choice.
+- Distribute correct answers across all available option positions to prevent predictable patterns. No single option position (e.g., the first option) should be the correct choice for more than 30% of the total question set (e.g., a maximum of 18 instances in a 60-question batch).
 
 NO POSITION REPETITION RULE  
 This rule is REQUIRED:  
@@ -99,7 +101,7 @@ JSON FORMAT
                 }
             ],
             "MaxAnswerSelection": 1,
-            "CorrectAnswers": [2],
+            "CorrectAnswers": [2], /*IDs of correct answers*/
             "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata)."
         }
     ]
