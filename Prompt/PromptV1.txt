@@ -27,7 +27,8 @@ Do NOT copy any copyrighted Microsoft text verbatim. Paraphrase everything.
 
 QUESTION SET REQUIREMENTS  
 1. Generate exactly **{{NumberOfQuestions}}** questions.  
-2. Include at least **{{MinScenarioQuestions}}** scenario-based questions.  
+2. Organize the {{MinScenarioQuestions}} scenario questions into 3 distinct Case Studies. Each Case Study must start with a shared business context (e.g., 'Contoso Ltd is migrating to Azure AI...'), followed by 3-5 unique questions that test different technical domains within that specific business environment.
+3. Single question may include the scenario which can not be part group Case Studies
 3. Allowed question types:  
    - Standard single-answer multiple choice  
    - Multiple-answer questions (only if schema supports)  
@@ -44,7 +45,7 @@ ANSWER OPTION RULES
 - Each option MUST have a unique **option ID** per the json schema.  
 - `correctAnswers` MUST contain **option IDs**, not indexes or text.  
 - The correct option ID MUST exist in that question’s options list.
-- Incorrect answers must be contextually relevant and of similar character length to the correct answer. They should be "plausible alternatives" specifically designed to test the user's ability to discern the most accurate choice.
+- All distractors (incorrect options) must be grammatically parallel and similar in technical complexity to the correct answer. Avoid using 'None of the above' or negative phrasing like 'Do not use...'. Every distractor must be a real Microsoft service or business concept, even if it is the wrong choice for the specific scenario.
 - Distribute correct answers across all available option positions to prevent predictable patterns. No single option position (e.g., the first option) should be the correct choice for more than 30% of the total question set (e.g., a maximum of 18 instances in a 60-question batch).
 
 NO POSITION REPETITION RULE  
@@ -110,10 +111,10 @@ JSON FORMAT
 PARAMETERS FOR THIS RUN  
 Use the following parameter values:
 
-- {{ExamCode}} = AB-730  
-- {{ExamName}} = AI Business Professional  
-- {{StudyGuideUrl}} = https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-730  
-- {{StudyCourseUrl}} = https://learn.microsoft.com/en-us/training/courses/ab-730t00
+- {{ExamCode}} = AB-731  
+- {{ExamName}} = AI Transformation Leader
+- {{StudyGuideUrl}} = https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-731  
+- {{StudyCourseUrl}} = https://learn.microsoft.com/en-us/training/courses/ab-731t00
 - {{NumberOfQuestions}} = 60  
 - {{MinScenarioQuestions}} = 15  
 - {{ExamLevel}} = Business professional / role-based
