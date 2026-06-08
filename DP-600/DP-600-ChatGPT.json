@@ -1,1607 +1,906 @@
 {
-    "quizName": "DP-600 Practice Exam 3 - Fabric Analytics Engineer Associate",
-    "totalScore": 1000,
-    "passingScore": 700,
-    "questions": [
+  "quizName": "DP-600 Practice Exam 3 - Fabric Analytics Engineer Associate",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Maintain the analytics development lifecycle",
+      "Question": "You are developing a semantic model that contains more than 100 measures. For each measure, you must provide Month-to-Date, Year-to-Date, and Year-over-Year calculations. You need to minimize ongoing maintenance effort. What should you do?",
+      "Options": [
         {
-            "id": 1,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 1 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+          "id": 1,
+          "text": "Create separate DAX measures for every time-intelligence variation",
+          "reason": "Incorrect. This creates a large number of measures and increases maintenance."
         },
         {
-            "id": 2,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 2 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+          "id": 2,
+          "text": "Create a calculation group",
+          "reason": "Correct. Calculation groups allow reusable logic across many measures."
         },
         {
-            "id": 3,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 3 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+          "id": 3,
+          "text": "Store all calculations in Dataflow Gen2",
+          "reason": "Incorrect. Dataflow Gen2 transformations do not replace semantic model calculations."
         },
         {
-            "id": 4,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 4 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 5,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 5 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 6,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 6 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 7,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 7 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 8,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 8 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 9,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 9 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 10,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 10 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 11,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 11 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 12,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 12 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 13,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 13 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 14,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 14 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 15,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 15 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 16,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 16 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 17,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 17 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 18,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 18 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 19,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 19 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 20,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 20 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 21,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 21 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 22,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 22 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 23,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 23 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 24,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 24 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 25,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 25 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 26,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 26 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 27,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 27 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 28,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 28 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 29,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 29 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 30,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 30 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 31,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 31 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 32,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 32 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 33,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 33 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 34,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 34 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 35,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 35 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 36,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 36 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 37,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 37 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 38,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 38 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 39,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 39 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 40,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 40 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 41,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 41 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 42,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 42 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 43,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 43 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 44,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 44 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 45,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 45 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 46,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 46 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 47,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 47 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Correct choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                4
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 48,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 48 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                1
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 49,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 49 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                2
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
-        },
-        {
-            "id": 50,
-            "topic": "DP-600 Fabric Analytics",
-            "Question": "Practice question 50 related to Microsoft Fabric Analytics Engineer skills.",
-            "Options": [
-                {
-                    "id": 1,
-                    "text": "Option 1",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 2,
-                    "text": "Option 2",
-                    "reason": "Incorrect choice."
-                },
-                {
-                    "id": 3,
-                    "text": "Option 3",
-                    "reason": "Correct choice."
-                },
-                {
-                    "id": 4,
-                    "text": "Option 4",
-                    "reason": "Incorrect choice."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [
-                3
-            ],
-            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+          "id": 4,
+          "text": "Create report-level calculated columns",
+          "reason": "Incorrect. Calculated columns are not appropriate for reusable time intelligence."
         }
-    ]
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Calculation groups centralize common calculation logic and significantly reduce the number of measures that must be created and maintained."
+    },
+    {
+      "id": 2,
+      "topic": "Maintain the analytics development lifecycle",
+      "Question": "Two analytics engineers need to work simultaneously on different parts of the same Power BI solution while maintaining version history. Which approach should you recommend?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use Power BI Project (PBIP) files with Git version control",
+          "reason": "Correct. PBIP stores project components as files that can be version controlled."
+        },
+        {
+          "id": 2,
+          "text": "Email PBIX files between developers",
+          "reason": "Incorrect. This creates version conflicts."
+        },
+        {
+          "id": 3,
+          "text": "Store a single PBIX file in a shared folder",
+          "reason": "Incorrect. Concurrent development is limited."
+        },
+        {
+          "id": 4,
+          "text": "Export reports to PDF before making changes",
+          "reason": "Incorrect. PDFs do not support collaborative development."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "PBIP combined with Git enables collaborative development, branching, version history, and source control."
+    },
+    {
+      "id": 3,
+      "topic": "Maintain the analytics development lifecycle",
+      "Question": "A workspace must be integrated with Azure DevOps to provide code reviews, change tracking, and version control for Fabric artifacts. Which workspace feature should you enable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Workspace Identity",
+          "reason": "Incorrect. Workspace Identity manages authentication scenarios."
+        },
+        {
+          "id": 2,
+          "text": "Outbound Networking",
+          "reason": "Incorrect. This controls connectivity."
+        },
+        {
+          "id": 3,
+          "text": "Git integration",
+          "reason": "Correct. Git integration provides source control and lifecycle management."
+        },
+        {
+          "id": 4,
+          "text": "Spark workload settings",
+          "reason": "Incorrect. Spark settings control compute behavior."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Git integration enables Azure DevOps integration, change history, branching, and version control."
+    },
+    {
+      "id": 4,
+      "topic": "Maintain the analytics development lifecycle",
+      "Question": "You plan to rename a column in a certified semantic model that is used by multiple reports. You need to identify downstream dependencies before making the change. What should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dataflow Gen2",
+          "reason": "Incorrect. Dataflows do not provide dependency analysis."
+        },
+        {
+          "id": 2,
+          "text": "SQL analytics endpoint",
+          "reason": "Incorrect. SQL endpoints do not display report dependencies."
+        },
+        {
+          "id": 3,
+          "text": "Notebook lineage",
+          "reason": "Incorrect. Notebooks do not provide complete semantic model dependency tracking."
+        },
+        {
+          "id": 4,
+          "text": "Data lineage view",
+          "reason": "Correct. Lineage view displays upstream and downstream dependencies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Data lineage view helps identify reports, datasets, and workspaces affected by changes."
+    },
+    {
+      "id": 5,
+      "topic": "Maintain the analytics development lifecycle",
+      "Question": "Report authors need a reusable file that includes branding, standard layouts, and predefined visuals but contains no embedded data. What should you create?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Power BI template file (.pbit)",
+          "reason": "Correct. PBIT files store report definitions without embedded data."
+        },
+        {
+          "id": 2,
+          "text": "Power BI Desktop file (.pbix)",
+          "reason": "Incorrect. PBIX files contain data."
+        },
+        {
+          "id": 3,
+          "text": "Power BI data source file (.pbids)",
+          "reason": "Incorrect. PBIDS files only store connection information."
+        },
+        {
+          "id": 4,
+          "text": "CSV export",
+          "reason": "Incorrect. CSV files do not store report layouts."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "PBIT files are specifically designed for reusable report templates without embedded data."
+    },
+    {
+      "id": 6,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "You must ingest 500 million rows from Azure SQL Database into a Fabric lakehouse. No transformations are required. Which option provides the best balance of performance and operational simplicity?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dataflow Gen2",
+          "reason": "Incorrect. Dataflow Gen2 is better suited for transformation scenarios."
+        },
+        {
+          "id": 2,
+          "text": "Pipeline Copy activity",
+          "reason": "Correct. Copy activity is optimized for high-volume ingestion."
+        },
+        {
+          "id": 3,
+          "text": "Spark notebook",
+          "reason": "Incorrect. Notebooks add unnecessary complexity."
+        },
+        {
+          "id": 4,
+          "text": "Manual file upload",
+          "reason": "Incorrect. This is inefficient for very large datasets."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Copy activity is the recommended method for large-scale ingestion when transformations are not required."
+    },
+    {
+      "id": 7,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "You need to ingest data from multiple Azure storage accounts into a Fabric warehouse using a code-centric approach that supports high throughput. Which option should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "COPY (T-SQL)",
+          "reason": "Correct. COPY is optimized for high-throughput warehouse ingestion."
+        },
+        {
+          "id": 2,
+          "text": "Dataflow Gen2",
+          "reason": "Incorrect. Dataflow Gen2 is intended for transformation scenarios."
+        },
+        {
+          "id": 3,
+          "text": "Eventstream",
+          "reason": "Incorrect. Eventstreams target streaming workloads."
+        },
+        {
+          "id": 4,
+          "text": "Semantic model refresh",
+          "reason": "Incorrect. Refreshes do not perform warehouse ingestion."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "COPY provides efficient, high-throughput ingestion into Fabric warehouses."
+    },
+    {
+      "id": 8,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "A data pipeline must execute daily at midnight UTC regardless of the workspace region. Where should you configure the time zone?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Warehouse settings",
+          "reason": "Incorrect. Warehouse schedules do not control pipeline execution."
+        },
+        {
+          "id": 2,
+          "text": "Pipeline scheduler settings",
+          "reason": "Correct. Pipelines have their own time zone configuration."
+        },
+        {
+          "id": 3,
+          "text": "Semantic model refresh settings",
+          "reason": "Incorrect. These apply only to semantic model refreshes."
+        },
+        {
+          "id": 4,
+          "text": "Workspace regional settings",
+          "reason": "Incorrect. Pipeline schedules are configured independently."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Pipeline schedules include a dedicated time-zone setting that controls execution timing."
+    },
+    {
+      "id": 9,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "A Dataflow Gen2 query filters data after applying a transformation that breaks query folding. Performance is poor. What should you do first?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Move the filter step before the transformation",
+          "reason": "Correct. Filtering early can preserve query folding."
+        },
+        {
+          "id": 2,
+          "text": "Add Table.Buffer",
+          "reason": "Incorrect. Table.Buffer can prevent folding."
+        },
+        {
+          "id": 3,
+          "text": "Convert the query to DAX",
+          "reason": "Incorrect. DAX is not used for ingestion transformations."
+        },
+        {
+          "id": 4,
+          "text": "Create calculated columns",
+          "reason": "Incorrect. This does not restore query folding."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Applying filters before folding-breaking transformations allows the source system to perform filtering."
+    },
+    {
+      "id": 10,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "You experience timeout issues in a Dataflow Gen2 solution containing many transformations. Query optimization has already been completed. What should you recommend?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Replace the dataflow with a semantic model",
+          "reason": "Incorrect. Semantic models do not perform ingestion."
+        },
+        {
+          "id": 2,
+          "text": "Move the destination to a warehouse",
+          "reason": "Incorrect. This alone may not resolve timeouts."
+        },
+        {
+          "id": 3,
+          "text": "Create a staging dataflow and a second transformation dataflow",
+          "reason": "Correct. Separating ingestion and transformation is a recommended practice."
+        },
+        {
+          "id": 4,
+          "text": "Disable query folding",
+          "reason": "Incorrect. This would typically worsen performance."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "A staged architecture reduces complexity and helps avoid timeout issues."
+    },
+    {
+      "id": 11,
+      "topic": "Implement and manage data analytics solutions",
+      "Question": "You need to ingest data from Azure Data Lake Storage Gen2 into a Fabric lakehouse. The data already has the required structure and no transformations are needed. Which option should you choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Spark notebook",
+          "reason": "Incorrect. Notebooks are better for transformation workloads."
+        },
+        {
+          "id": 2,
+          "text": "Dataflow Gen2",
+          "reason": "Incorrect. Transformations are not required."
+        },
+        {
+          "id": 3,
+          "text": "Pipeline Copy activity",
+          "reason": "Correct. Copy activity efficiently transfers data without transformations."
+        },
+        {
+          "id": 4,
+          "text": "KQL Queryset",
+          "reason": "Incorrect. Querysets are used for querying."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Copy activity is the simplest and most cost-effective method for direct ingestion."
+    },
+    {
+      "id": 12,
+      "topic": "Optimize and monitor analytics solutions",
+      "Question": "A semantic model refresh currently processes three years of data and takes more than three hours. Only new and modified records should be refreshed. What should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Incremental refresh",
+          "reason": "Correct. Incremental refresh processes only changed partitions."
+        },
+        {
+          "id": 2,
+          "text": "Direct Lake mode",
+          "reason": "Incorrect. This does not automatically reduce refresh scope."
+        },
+        {
+          "id": 3,
+          "text": "Manual partitions only",
+          "reason": "Incorrect. Service-managed incremental refresh is preferred."
+        },
+        {
+          "id": 4,
+          "text": "Calculated tables",
+          "reason": "Incorrect. They do not optimize refresh scope."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Incremental refresh allows only new and updated data partitions to be processed."
+    },
+    {
+      "id": 13,
+      "topic": "Optimize and monitor analytics solutions",
+      "Question": "A Delta table contains thousands of very small Parquet files. Queries are slow and storage costs are increasing. Which maintenance action should you perform?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Run VACUUM only",
+          "reason": "Incorrect. VACUUM removes old files but does not compact active files."
+        },
+        {
+          "id": 2,
+          "text": "Run OPTIMIZE and VACUUM",
+          "reason": "Correct. OPTIMIZE compacts files and VACUUM removes obsolete data."
+        },
+        {
+          "id": 3,
+          "text": "Delete files manually",
+          "reason": "Incorrect. This can damage Delta table consistency."
+        },
+        {
+          "id": 4,
+          "text": "Disable Delta history",
+          "reason": "Incorrect. This does not solve the file fragmentation issue."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "OPTIMIZE improves performance by compacting files while VACUUM removes obsolete storage."
+    },
+    {
+      "id": 14,
+      "topic": "Optimize and monitor analytics solutions",
+      "Question": "You have a fact table containing 500 million rows. Most queries use aggregated data, but some users need transaction-level details. Which storage mode should the detailed fact table use in a user-defined aggregation design?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Import",
+          "reason": "Incorrect. Detailed tables in aggregation designs typically remain DirectQuery."
+        },
+        {
+          "id": 2,
+          "text": "Dual",
+          "reason": "Incorrect. Dual mode is typically used for dimensions."
+        },
+        {
+          "id": 3,
+          "text": "DirectQuery",
+          "reason": "Correct. Aggregation patterns require the detailed table to remain DirectQuery."
+        },
+        {
+          "id": 4,
+          "text": "Direct Lake",
+          "reason": "Incorrect. This is not the recommended answer for user-defined aggregations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "The detailed fact table should remain DirectQuery while aggregated tables are imported."
+    },
+    {
+      "id": 15,
+      "topic": "Optimize and monitor analytics solutions",
+      "Question": "A DirectQuery report sends excessive queries to the source database whenever users change slicers. You need to reduce the number of database requests. What should you do?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Enable automatic page refresh",
+          "reason": "Incorrect. This can increase query activity."
+        },
+        {
+          "id": 2,
+          "text": "Add Top N filters to every visual",
+          "reason": "Incorrect. This does not reduce query frequency."
+        },
+        {
+          "id": 3,
+          "text": "Change all visuals to tables",
+          "reason": "Incorrect. Visual type does not solve the issue."
+        },
+        {
+          "id": 4,
+          "text": "Use Apply buttons for filters and slicers",
+          "reason": "Correct. Apply buttons delay execution until selections are finalized."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [4],
+      "CorrectAnswerExplanation": "Apply buttons consolidate user selections into fewer database requests and improve DirectQuery performance."
+    },{
+      "id": 16,
+      "topic": "Design and implement semantic models",
+      "Question": "You need to model sales data that contains multiple fact tables sharing common dimensions. Which schema design should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Star schema",
+          "reason": "Correct. A star schema provides optimal performance and usability for analytical workloads."
+        },
+        {
+          "id": 2,
+          "text": "Flat table design",
+          "reason": "Incorrect. Flat tables often increase redundancy and model size."
+        },
+        {
+          "id": 3,
+          "text": "Network schema",
+          "reason": "Incorrect. Network schemas are not recommended for Fabric semantic models."
+        },
+        {
+          "id": 4,
+          "text": "Hierarchical schema",
+          "reason": "Incorrect. Hierarchical structures do not address shared dimensions effectively."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Star schemas simplify relationships, improve performance, and are the recommended modeling approach for Fabric semantic models."
+    },
+    {
+      "id": 17,
+      "topic": "Design and implement semantic models",
+      "Question": "A dimension table contains duplicate business keys. You need to ensure each row can be uniquely identified in the semantic model. What should you add?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A measure",
+          "reason": "Incorrect. Measures do not uniquely identify rows."
+        },
+        {
+          "id": 2,
+          "text": "A surrogate key",
+          "reason": "Correct. Surrogate keys provide unique row identifiers."
+        },
+        {
+          "id": 3,
+          "text": "A hierarchy",
+          "reason": "Incorrect. Hierarchies organize attributes but do not enforce uniqueness."
+        },
+        {
+          "id": 4,
+          "text": "A calculation group",
+          "reason": "Incorrect. Calculation groups do not identify rows."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Surrogate keys provide stable, unique identifiers for dimension records."
+    },
+    {
+      "id": 18,
+      "topic": "Design and implement semantic models",
+      "Question": "Users need to analyze sales by year, quarter, month, and day. Which feature should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Role-level security",
+          "reason": "Incorrect. RLS controls data access."
+        },
+        {
+          "id": 2,
+          "text": "Perspectives",
+          "reason": "Incorrect. Perspectives simplify model views."
+        },
+        {
+          "id": 3,
+          "text": "Date hierarchy",
+          "reason": "Correct. Date hierarchies support drill-down analysis."
+        },
+        {
+          "id": 4,
+          "text": "Aggregation table",
+          "reason": "Incorrect. Aggregations improve performance."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "Date hierarchies provide intuitive navigation across time-based levels."
+    },
+    {
+      "id": 19,
+      "topic": "Design and implement semantic models",
+      "Question": "You need to reduce semantic model size while maintaining report functionality. Which action should you take first?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Increase workspace capacity",
+          "reason": "Incorrect. Capacity does not reduce model size."
+        },
+        {
+          "id": 2,
+          "text": "Remove unused columns",
+          "reason": "Correct. Removing unnecessary columns directly reduces storage requirements."
+        },
+        {
+          "id": 3,
+          "text": "Create more measures",
+          "reason": "Incorrect. Measures generally do not reduce model size."
+        },
+        {
+          "id": 4,
+          "text": "Enable incremental refresh",
+          "reason": "Incorrect. Incremental refresh affects refresh performance."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Removing unused columns is one of the most effective ways to reduce semantic model size."
+    },
+    {
+      "id": 20,
+      "topic": "Design and implement semantic models",
+      "Question": "A dimension table must filter multiple fact tables. Which relationship cardinality is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "One-to-many",
+          "reason": "Correct. One dimension row typically relates to many fact rows."
+        },
+        {
+          "id": 2,
+          "text": "Many-to-many",
+          "reason": "Incorrect. Many-to-many should be avoided when possible."
+        },
+        {
+          "id": 3,
+          "text": "One-to-one",
+          "reason": "Incorrect. Fact tables rarely have one-to-one relationships with dimensions."
+        },
+        {
+          "id": 4,
+          "text": "No relationship",
+          "reason": "Incorrect. Filtering requires relationships."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "One-to-many relationships are the standard design pattern between dimensions and facts."
+    },
+    {
+      "id": 21,
+      "topic": "Implement DAX calculations",
+      "Question": "Which DAX function returns the total sales from the beginning of the year through the current context date?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "TOTALYTD",
+          "reason": "Correct. TOTALYTD calculates cumulative year-to-date values."
+        },
+        {
+          "id": 2,
+          "text": "SUMX",
+          "reason": "Incorrect. SUMX iterates over a table."
+        },
+        {
+          "id": 3,
+          "text": "RANKX",
+          "reason": "Incorrect. RANKX calculates rankings."
+        },
+        {
+          "id": 4,
+          "text": "DISTINCTCOUNT",
+          "reason": "Incorrect. DISTINCTCOUNT counts unique values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "TOTALYTD is specifically designed for year-to-date calculations."
+    },
+    {
+      "id": 22,
+      "topic": "Implement DAX calculations",
+      "Question": "You need a measure that evaluates an expression after modifying filter context. Which DAX function should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "RELATED",
+          "reason": "Incorrect. RELATED retrieves values from related tables."
+        },
+        {
+          "id": 2,
+          "text": "CALCULATE",
+          "reason": "Correct. CALCULATE modifies filter context before evaluation."
+        },
+        {
+          "id": 3,
+          "text": "COUNTROWS",
+          "reason": "Incorrect. COUNTROWS counts table rows."
+        },
+        {
+          "id": 4,
+          "text": "VALUES",
+          "reason": "Incorrect. VALUES returns distinct values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "CALCULATE is the primary DAX function for context transition and filter modification."
+    },
+    {
+      "id": 23,
+      "topic": "Implement DAX calculations",
+      "Question": "A measure should ignore report filters applied to the Product table while retaining all other filters. Which function should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "KEEPFILTERS",
+          "reason": "Incorrect. KEEPFILTERS preserves filters."
+        },
+        {
+          "id": 2,
+          "text": "USERELATIONSHIP",
+          "reason": "Incorrect. USERELATIONSHIP activates inactive relationships."
+        },
+        {
+          "id": 3,
+          "text": "REMOVEFILTERS",
+          "reason": "Correct. REMOVEFILTERS clears filters from specified tables or columns."
+        },
+        {
+          "id": 4,
+          "text": "LOOKUPVALUE",
+          "reason": "Incorrect. LOOKUPVALUE retrieves matching values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "REMOVEFILTERS selectively removes filters while preserving the remaining filter context."
+    },
+    {
+      "id": 24,
+      "topic": "Implement DAX calculations",
+      "Question": "You need to rank products by total revenue within each category. Which DAX function is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "RANKX",
+          "reason": "Correct. RANKX calculates rankings over a specified table."
+        },
+        {
+          "id": 2,
+          "text": "FILTER",
+          "reason": "Incorrect. FILTER returns a filtered table."
+        },
+        {
+          "id": 3,
+          "text": "TOPN",
+          "reason": "Incorrect. TOPN returns top rows but does not assign rankings."
+        },
+        {
+          "id": 4,
+          "text": "AVERAGEX",
+          "reason": "Incorrect. AVERAGEX calculates averages."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "RANKX is designed specifically for ranking calculations."
+    },
+    {
+      "id": 25,
+      "topic": "Implement DAX calculations",
+      "Question": "Which DAX function returns the value of an expression evaluated for each row of a table and then sums the results?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SUM",
+          "reason": "Incorrect. SUM only aggregates a column."
+        },
+        {
+          "id": 2,
+          "text": "SUMX",
+          "reason": "Correct. SUMX iterates row by row and aggregates the results."
+        },
+        {
+          "id": 3,
+          "text": "COUNTX",
+          "reason": "Incorrect. COUNTX counts values."
+        },
+        {
+          "id": 4,
+          "text": "MAXX",
+          "reason": "Incorrect. MAXX returns the highest value."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "SUMX is an iterator function that evaluates an expression for each row."
+    },
+    {
+      "id": 26,
+      "topic": "Implement and manage security",
+      "Question": "You need to restrict users so they can only view rows belonging to their assigned sales territory. Which feature should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Object-level security",
+          "reason": "Incorrect. OLS hides tables or columns."
+        },
+        {
+          "id": 2,
+          "text": "Workspace roles",
+          "reason": "Incorrect. Workspace roles control permissions."
+        },
+        {
+          "id": 3,
+          "text": "Row-level security",
+          "reason": "Correct. RLS filters rows based on user context."
+        },
+        {
+          "id": 4,
+          "text": "Sensitivity labels",
+          "reason": "Incorrect. Labels classify data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "RLS is used to restrict access to specific rows of data."
+    },
+    {
+      "id": 27,
+      "topic": "Implement and manage security",
+      "Question": "A table contains salary information that must be hidden from report authors while remaining available for calculations. Which feature should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Object-level security",
+          "reason": "Correct. OLS hides objects from users."
+        },
+        {
+          "id": 2,
+          "text": "Row-level security",
+          "reason": "Incorrect. RLS filters rows."
+        },
+        {
+          "id": 3,
+          "text": "Incremental refresh",
+          "reason": "Incorrect. Refresh settings do not control visibility."
+        },
+        {
+          "id": 4,
+          "text": "Deployment pipelines",
+          "reason": "Incorrect. Pipelines support release management."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "OLS hides tables and columns from users while preserving model functionality."
+    },
+    {
+      "id": 28,
+      "topic": "Implement and manage security",
+      "Question": "You need to classify a report containing personally identifiable information. Which capability should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Deployment rules",
+          "reason": "Incorrect. Deployment rules manage environment changes."
+        },
+        {
+          "id": 2,
+          "text": "Sensitivity labels",
+          "reason": "Correct. Sensitivity labels classify and protect data."
+        },
+        {
+          "id": 3,
+          "text": "Perspectives",
+          "reason": "Incorrect. Perspectives simplify model views."
+        },
+        {
+          "id": 4,
+          "text": "Bookmarks",
+          "reason": "Incorrect. Bookmarks save report states."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Sensitivity labels help classify and govern sensitive information."
+    },
+    {
+      "id": 29,
+      "topic": "Implement and manage security",
+      "Question": "A user must be able to publish reports and manage workspace content. Which workspace role should you assign?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Viewer",
+          "reason": "Incorrect. Viewers have read-only access."
+        },
+        {
+          "id": 2,
+          "text": "Contributor",
+          "reason": "Incorrect. Contributors cannot manage all workspace settings."
+        },
+        {
+          "id": 3,
+          "text": "Member",
+          "reason": "Correct. Members can create, publish, and manage content."
+        },
+        {
+          "id": 4,
+          "text": "None",
+          "reason": "Incorrect. Access is required."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "The Member role provides broad content management capabilities."
+    },
+    {
+      "id": 30,
+      "topic": "Implement and manage security",
+      "Question": "You need to test row-level security behavior for a specific user before deployment. Which capability should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "View As",
+          "reason": "Correct. View As simulates user security contexts."
+        },
+        {
+          "id": 2,
+          "text": "Analyze in Excel",
+          "reason": "Incorrect. Analyze in Excel does not simulate security roles."
+        },
+        {
+          "id": 3,
+          "text": "Performance Analyzer",
+          "reason": "Incorrect. Performance Analyzer measures query execution."
+        },
+        {
+          "id": 4,
+          "text": "Lineage view",
+          "reason": "Incorrect. Lineage view tracks dependencies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "View As allows validation of RLS and role behavior before publishing."
+    }
+  ]
 }
