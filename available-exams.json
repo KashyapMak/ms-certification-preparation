@@ -62,5 +62,17 @@
     {
         "title": "AB-731 - AI Transformation Leader - Set 4",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-4.json"
-    }
+    },
+    {
+        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 1",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-perplexity.json"
+    },
+    {
+        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 2",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Gemini.json"
+    },
+    {
+        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 3",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json"
+    }    
 ]

@@ -1,0 +1,1607 @@
+{
+    "quizName": "DP-600 Practice Exam 3 - Fabric Analytics Engineer Associate",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 1 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 2,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 2 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 3,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 3 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 4,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 4 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 5,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 5 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 6,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 6 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 7,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 7 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 8,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 8 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 9,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 9 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 10,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 10 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 11,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 11 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 12,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 12 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 13,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 13 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 14,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 14 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 15,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 15 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 16,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 16 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 17,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 17 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 18,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 18 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 19,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 19 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 20,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 20 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 21,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 21 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 22,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 22 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 23,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 23 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 24,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 24 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 25,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 25 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 26,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 26 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 27,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 27 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 28,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 28 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 29,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 29 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 30,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 30 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 31,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 31 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 32,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 32 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 33,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 33 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 34,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 34 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 35,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 35 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 36,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 36 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 37,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 37 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 38,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 38 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 39,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 39 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 40,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 40 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 41,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 41 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 42,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 42 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 43,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 43 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 44,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 44 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 45,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 45 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 46,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 46 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 47,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 47 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Correct choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 48,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 48 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 49,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 49 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        },
+        {
+            "id": 50,
+            "topic": "DP-600 Fabric Analytics",
+            "Question": "Practice question 50 related to Microsoft Fabric Analytics Engineer skills.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Option 1",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 2,
+                    "text": "Option 2",
+                    "reason": "Incorrect choice."
+                },
+                {
+                    "id": 3,
+                    "text": "Option 3",
+                    "reason": "Correct choice."
+                },
+                {
+                    "id": 4,
+                    "text": "Option 4",
+                    "reason": "Incorrect choice."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Explanation placeholder for DP-600 practice question."
+        }
+    ]
+}
