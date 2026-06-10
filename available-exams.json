@@ -1,82 +1,72 @@
-[
+{
+  "exams": [
     {
-        "title": "Sample Test",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json"
+      "code": "SAMPLE",
+      "name": "Sample Test",
+      "tests": [
+        {
+          "title": "Sample Test",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json"
+        }
+      ]
     },
     {
-        "title": "GH-300 - GitHub Copilot",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-300/gh-300.json"
+      "code": "GH-300",
+      "name": "GitHub Copilot",
+      "tests": [
+        {
+          "title": "Full Exam",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-300/gh-300.json"
+        }
+      ]
     },
     {
-        "title": "AI-102 - Azure AI Engineer Associate - Set 1",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json"
+      "code": "AI-102",
+      "name": "Azure AI Engineer Associate",
+      "tests": [
+        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json" },
+        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json" },
+        { "title": "Set 3 (Comprehensive)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json" }
+      ]
     },
     {
-        "title": "AI-102 - Azure AI Engineer Associate - Set 2",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json"
+      "code": "AB-900",
+      "name": "Copilot and Agent Administration Fundamentals",
+      "tests": [
+        { "title": "Practice 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-1.json" },
+        { "title": "Practice 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json" },
+        { "title": "Practice 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-3.json" },
+        { "title": "Purview Practice", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json" }
+      ]
     },
     {
-        "title": "AI-102 - Azure AI Engineer Associate - Set 3",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json"
+      "code": "AB-730",
+      "name": "AI Business Professional",
+      "tests": [
+        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-1.json" },
+        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-2.json" },
+        { "title": "Set 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-3.json" }
+      ]
     },
     {
-        "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 1",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-1.json"
+      "code": "AB-731",
+      "name": "AI Transformation Leader",
+      "tests": [
+        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-1.json" },
+        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-2.json" },
+        { "title": "Set 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-3.json" },
+        { "title": "Set 4", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-4.json" }
+      ]
     },
     {
-        "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 2",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json"
-    },
-    {
-        "title": "AB-900 - Copilot and Agent Administration Fundamentals - Practice 3",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-3.json"
-    },
-    {
-        "title": "AB-900 - Copilot and Agent Administration Fundamentals - Purview",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json"
-    },
-    {
-        "title": "AB-730 - AI Business Professional - Set 1",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-1.json"
-    },
-    {
-        "title": "AB-730 - AI Business Professional - Set 2",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-2.json"
-    },
-    {
-        "title": "AB-730 - AI Business Professional - Set 3",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-3.json"
-    },
-    {
-        "title": "AB-731 - AI Transformation Leader - Set 1",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-1.json"
-    },
-    {
-        "title": "AB-731 - AI Transformation Leader - Set 2",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-2.json"
-    },
-    {
-        "title": "AB-731 - AI Transformation Leader - Set 3",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-3.json"
-    },
-    {
-        "title": "AB-731 - AI Transformation Leader - Set 4",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-4.json"
-    },
-    {
-        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 1",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-perplexity.json"
-    },
-    {
-        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 2",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Gemini.json"
-    },
-    {
-        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 3",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json"
-    },
-    {
-        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 4",
-        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Claude.json"
-    }   
-]
+      "code": "DP-600",
+      "name": "Fabric Analytics Engineer Associate",
+      "tests": [
+        { "title": "Set 1 (Perplexity)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-perplexity.json" },
+        { "title": "Set 2 (Gemini)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Gemini.json" },
+        { "title": "Set 3 (ChatGPT)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json" },
+        { "title": "Set 4 (Claude)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Claude.json" }
+      ]
+    }
+  ]
+}

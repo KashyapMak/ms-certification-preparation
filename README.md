@@ -19,8 +19,11 @@ Hosted Link for Exam Engine - https://kashyapmak.github.io/ms-certification-prep
 ### 📌 Option 1: Online Exams (Cloud Mode)
 1. Open **`exam-engine.html`** in any modern web browser.
 2. By default, the **"Online Exams"** tab is active.
-3. Select an exam set from the dropdown menu (e.g., *GH-300 - GitHub Copilot*).
-4. Click **START EXAM** to fetch the questions directly from the GitHub repository.
+3. Choose an exam group from the first dropdown. The options are shown as `<code> - <name>`.
+4. After selecting the exam group, choose a specific test from the second dropdown.
+5. Click **START EXAM** to fetch the chosen question set directly from the GitHub repository.
+
+> The online exam engine loads exam metadata from `available-exams.json`, which must contain a top-level `exams` array.
 
 ### 📌 Option 2: Local JSON Upload (Offline Mode)
 1. Open **`exam-engine.html`**.
@@ -58,6 +61,7 @@ The repository is organized to separate the exam logic (engine) from the questio
 ```text
 ms-certification-preparation/
 │
+├── available-exams.json       # Online exam config with top-level exams array
 ├── exam-engine.html           # The central engine (open this in your browser)
 ├── question-set-schema.json    # Standard JSON schema for all question sets
 ├── README.md                   # Repository documentation

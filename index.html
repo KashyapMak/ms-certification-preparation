@@ -70,8 +70,11 @@
             <div class="space-y-6">
                 <div id="section-online">
                     <label class="block text-sm font-bold text-slate-700 mb-2">Select Configured Exam</label>
-                    <select id="exam-selector" class="w-full p-3 border-2 border-slate-200 rounded-xl bg-white outline-none focus:border-blue-500">
+                    <select id="exam-code-selector" class="w-full p-3 border-2 border-slate-200 rounded-xl bg-white outline-none focus:border-blue-500 mb-4">
                         <option value="">-- Choose Exam --</option>
+                    </select>
+                    <select id="exam-test-selector" class="w-full p-3 border-2 border-slate-200 rounded-xl bg-white outline-none focus:border-blue-500" disabled>
+                        <option value="">-- Choose Test --</option>
                     </select>
                 </div>
 
@@ -148,7 +151,8 @@
 
     <script>
         let EXAM_CONFIG = [];
-        const CONFIG_URL = "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/available-exams.json";
+        //const CONFIG_URL = "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/available-exams.json";
+        const CONFIG_URL = "available-exams.json";
         let currentExam = null, currentIndex = 0, userAnswers = {}, mode = 'online';
 
         // Helper function to convert line breaks to <br> tags
@@ -175,15 +179,18 @@
             });
 
             function validateStart() {
-                const isReady = mode === 'online' ? $('#exam-selector').val() !== "" : $('#file-input').val() !== "";
+                const isReady = mode === 'online' ? $('#exam-test-selector').val() !== "" : $('#file-input').val() !== "";
                 $('#start-btn').prop('disabled', !isReady);
             }
 
-            $('#exam-selector, #file-input').change(validateStart);
+            $('#exam-code-selector, #exam-test-selector, #file-input').change(function () {
+                if (this.id === 'exam-code-selector') populateTestList($(this).val());
+                validateStart();
+            });
 
             $('#start-btn').click(function () {
                 if (mode === 'online') {
-                    const url = $('#exam-selector').val();
+                    const url = $('#exam-test-selector').val();
                     fetch(url).then(r => r.json()).then(data => initExam(data)).catch(() => showError("Failed to fetch exam."));
                 } else {
                     const file = document.getElementById('file-input').files[0];
@@ -197,11 +204,37 @@
                 }
             });
 
+            function populateTestList(code) {
+                const testSelect = $('#exam-test-selector');
+                testSelect.empty().append('<option value="">-- Choose Test --</option>');
+
+                if (!code) {
+                    testSelect.prop('disabled', true);
+                    return;
+                }
+
+                const group = EXAM_CONFIG.find(item => item.code === code);
+                if (!group || !Array.isArray(group.tests) || !group.tests.length) {
+                    testSelect.prop('disabled', true);
+                    return;
+                }
+
+                group.tests.forEach(test => {
+                    testSelect.append(`<option value="${test.file}">${test.title}</option>`);
+                });
+                testSelect.prop('disabled', false);
+            }
+
             function getExamConfig() {
                 fetch(CONFIG_URL).then(r => r.json()).then(data => {
-                    EXAM_CONFIG = data;
-                    EXAM_CONFIG.forEach(e => $('#exam-selector').append(`<option value="${e.file}">${e.title}</option>`));
-                });
+                    if (!data || !Array.isArray(data.exams)) {
+                        showError("Exam configuration must contain a top-level exams array.");
+                        return;
+                    }
+
+                    EXAM_CONFIG = data.exams;
+                    EXAM_CONFIG.forEach(e => $('#exam-code-selector').append(`<option value="${e.code}">${e.code} - ${e.name}</option>`));
+                }).catch(() => showError("Failed to load exam configuration."));
             }
 
             function initExam(data) {
