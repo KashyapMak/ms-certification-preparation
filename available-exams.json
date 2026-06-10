@@ -74,5 +74,9 @@
     {
         "title": "DP-600 - Fabric Analytics Engineer Associate - Set 3",
         "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json"
-    }    
+    },
+    {
+        "title": "DP-600 - Fabric Analytics Engineer Associate - Set 4",
+        "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Claude.json"
+    }   
 ]

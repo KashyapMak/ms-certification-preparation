@@ -151,6 +151,12 @@
         const CONFIG_URL = "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/available-exams.json";
         let currentExam = null, currentIndex = 0, userAnswers = {}, mode = 'online';
 
+        // Helper function to convert line breaks to <br> tags
+        function formatText(text) {
+            if (!text) return '';
+            return text.split('\n').map(line => $('<div/>').text(line).html()).join('<br>');
+        }
+
         $(document).ready(function () {
             getExamConfig();
 
@@ -214,13 +220,13 @@
                 const correctIds = q.CorrectAnswers || [];
                 const selectedIds = userAnswers[q.id] || [];
 
-                if (q.topic) {
+                if (q.topic && isRevealed) {
                     $('#q-topic').show().find('span').text(q.topic);
                 } else {
                     $('#q-topic').hide();
                 }
 
-                $('#q-text').text(q.Question);
+                $('#q-text').html(formatText(q.Question));
                 $('#current-q-num').text(currentIndex + 1);
                 $('#selection-hint').text(max === 1 ? "Choose 1 Correct Option" : `Select ${max} Correct Options`);
                 $('#progress-bar').css('width', ((currentIndex + 1) / currentExam.questions.length * 100) + '%');
@@ -255,13 +261,13 @@
                         checkmark = '<div class="w-1.5 h-1.5 bg-white rounded-full"></div>';
                     }
 
-                    const reasonHtml = (isRevealed && opt.reason) ? `<div class="mt-2 text-[11px] italic opacity-80 border-t pt-1 border-slate-200">${opt.reason}</div>` : '';
+                    const reasonHtml = (isRevealed && opt.reason) ? `<div class="mt-2 text-[11px] italic opacity-80 border-t pt-1 border-slate-200">${formatText(opt.reason)}</div>` : '';
 
                     optionsList.append(`
                         <div class="option-item cursor-pointer border-2 p-4 rounded-xl transition-all ${colorClasses}" data-id="${opt.id}">
                             <div class="flex items-center">
                                 <div class="w-5 h-5 rounded-full border-2 mr-4 flex items-center justify-center flex-shrink-0 ${indicatorClasses}">${checkmark}</div>
-                                <span class="font-bold text-slate-700">${opt.text}</span>
+                                <span class="font-bold text-slate-700">${formatText(opt.text)}</span>
                             </div>
                             ${reasonHtml}
                         </div>
@@ -293,12 +299,12 @@
                 renderQuestion();
             });
 
-            $('#next-btn').click(() => { currentIndex++; renderQuestion(); });
-            $('#prev-btn').click(() => { currentIndex--; renderQuestion(); });
+            $('#next-btn').click(() => { currentIndex++; renderQuestion(); window.scrollTo(0, 0); });
+            $('#prev-btn').click(() => { currentIndex--; renderQuestion(); window.scrollTo(0, 0); });
             $('#show-ans-btn').click(function () {
                 const isShowing = $('#explanation-box').is(':visible');
                 if (!isShowing) {
-                    $('#exp-text').text(currentExam.questions[currentIndex].CorrectAnswerExplanation);
+                    $('#exp-text').html(formatText(currentExam.questions[currentIndex].CorrectAnswerExplanation));
                     $('#explanation-box').slideDown();
                     $(this).text('Hide Answer');
                     renderQuestion(true);
@@ -325,7 +331,7 @@
                     const reviewItem = $(`
                         <div class="bg-white rounded-xl p-6 border-l-8 ${isCorrect ? 'border-green-500' : 'border-red-500'} shadow-md">
                             ${q.topic ? `<div class="text-[9px] font-black text-blue-500 uppercase mb-1">${q.topic}</div>` : ''}
-                            <h4 class="font-black text-slate-800 mb-4">Q${idx + 1}: ${q.Question}</h4>
+                            <h4 class="font-black text-slate-800 mb-4">Q${idx + 1}: ${formatText(q.Question)}</h4>
                             <div class="space-y-3 mb-4">
                                 ${q.Options.map(opt => {
                                     const isUserChoice = uArr.includes(opt.id);
@@ -336,15 +342,15 @@
                                     return `
                                         <div class="p-3 rounded border ${isUserChoice ? 'bg-slate-50 border-slate-300' : 'border-slate-100'} text-sm">
                                             <div class="flex justify-between items-start">
-                                                <span>${opt.text}</span>
+                                                <span>${formatText(opt.text)}</span>
                                                 ${badge ? `<span class="ml-2 text-[10px] px-2 py-0.5 rounded font-bold uppercase ${badgeClass}">${badge}</span>` : ''}
                                             </div>
-                                            ${opt.reason ? `<div class="text-[11px] text-slate-500 mt-1 italic">${opt.reason}</div>` : ''}
+                                            ${opt.reason ? `<div class="text-[11px] text-slate-500 mt-1 italic">${formatText(opt.reason)}</div>` : ''}
                                         </div>`;
                                 }).join('')}
                             </div>
                             <div class="bg-emerald-50 p-4 rounded-lg text-sm text-emerald-900 border border-emerald-100">
-                                <strong>Explanation:</strong> ${q.CorrectAnswerExplanation}
+                                <strong>Explanation:</strong> ${formatText(q.CorrectAnswerExplanation)}
                             </div>
                         </div>
                     `);

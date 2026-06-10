@@ -1,0 +1,1646 @@
+{
+    "quizName": "DP-600: Implementing Analytics Solutions Using Microsoft Fabric - Practice Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Case Study 1 - Security: Row-Level Security",
+            "Question": "Case Study 1: Contoso Retail\n\nContoso Ltd is a multinational retail company migrating its on-premises data analytics platform to Microsoft Fabric. They have 15 regional offices worldwide. Their data includes a sales transactions database in Azure SQL Database containing 800 million rows, a product catalog stored in Azure Data Lake Storage Gen2 in Parquet format, and customer loyalty data from a third-party REST API. The company plans to implement a Fabric lakehouse for centralized storage, a Fabric warehouse for dimensional modeling, and Power BI semantic models for executive reporting. Regional managers must only see data for their own region.\n\nRegional managers must view only their own region's sales data in Power BI reports. You need to restrict data visibility based on the user's assigned region.\n\nWhat should you implement?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Column-level security",
+                    "reason": "Incorrect. Column-level security restricts access to specific columns, not rows of data by region."
+                },
+                {
+                    "id": 2,
+                    "text": "Dynamic data masking",
+                    "reason": "Incorrect. Dynamic data masking obscures sensitive column values but does not filter rows by region."
+                },
+                {
+                    "id": 3,
+                    "text": "Row-level security",
+                    "reason": "Correct. Row-level security filters data rows based on the signed-in user's identity, ensuring regional managers see only their assigned region's data."
+                },
+                {
+                    "id": 4,
+                    "text": "Object-level security",
+                    "reason": "Incorrect. Object-level security controls visibility of entire tables or columns in the model, not row-level filtering."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Row-level security (RLS) uses DAX filter expressions to restrict data access at the row level. By defining security roles with filters on the Region column, each regional manager sees only the rows that match their assigned region. Column-level security and object-level security operate at the column or object level, not the row level. Dynamic data masking hides data values but does not prevent row-level access."
+        },
+        {
+            "id": 2,
+            "topic": "Case Study 1 - Data Ingestion: Copy Activity",
+            "Question": "Refer to Case Study 1: Contoso Retail.\n\nYou need to migrate the 800 million rows from the Azure SQL Database sales transactions table to a Fabric lakehouse. No transformations are required during ingestion. You need to select the most performant method.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A pipeline with the Copy data activity",
+                    "reason": "Correct. The Copy data activity provides the fastest, most direct method for large-scale data migration without transformations."
+                },
+                {
+                    "id": 2,
+                    "text": "A Dataflow Gen2 query",
+                    "reason": "Incorrect. Dataflow Gen2 is better suited for smaller datasets or when transformations are needed during ingestion."
+                },
+                {
+                    "id": 3,
+                    "text": "A Spark notebook with PySpark",
+                    "reason": "Incorrect. Spark notebooks are recommended for complex transformations, not for simple data migration without transformations."
+                },
+                {
+                    "id": 4,
+                    "text": "A SQL stored procedure",
+                    "reason": "Incorrect. SQL stored procedures are a Fabric warehouse feature and are not available in a lakehouse context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The Copy data activity in a Fabric data pipeline is the fastest and most direct method for migrating large volumes of data from a source to a destination without applying transformations. Dataflow Gen2 is better for smaller datasets with transformation needs. Spark notebooks excel at complex data processing but add unnecessary overhead for simple data movement. SQL stored procedures are not available in lakehouses."
+        },
+        {
+            "id": 3,
+            "topic": "Case Study 1 - Transform: Star Schema Denormalization",
+            "Question": "Refer to Case Study 1: Contoso Retail.\n\nThe data engineering team is building a dimensional model in the Fabric warehouse. The product data consists of three separate normalized tables: ProductCategory, ProductSubcategory, and Product. Each table has its own primary key.\n\nYou need to optimize the model for analytical queries and reduce complexity.\n\nWhat should you do?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Create bridge tables between the normalized tables",
+                    "reason": "Incorrect. Bridge tables are used for many-to-many relationships, not for simplifying normalized dimension hierarchies."
+                },
+                {
+                    "id": 2,
+                    "text": "Implement role-playing dimensions for each product table",
+                    "reason": "Incorrect. Role-playing dimensions are used when the same dimension table serves multiple purposes through different relationships, not for consolidating normalized tables."
+                },
+                {
+                    "id": 3,
+                    "text": "Convert all product tables to DirectQuery storage mode",
+                    "reason": "Incorrect. Changing storage mode does not address the structural complexity of multiple normalized tables."
+                },
+                {
+                    "id": 4,
+                    "text": "Denormalize the snowflaked dimension tables into a single Product dimension",
+                    "reason": "Correct. Denormalizing snowflaked dimensions into a single table simplifies the model and reduces the number of joins required for analytical queries."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A snowflake dimension consists of a set of normalized tables for a single business entity. Implementing a proper star schema requires denormalizing these tables into a single dimension table containing all necessary attributes. This reduces join complexity and improves query performance for analytical workloads."
+        },
+        {
+            "id": 4,
+            "topic": "Case Study 1 - DAX: SUMX Iterator",
+            "Question": "Refer to Case Study 1: Contoso Retail.\n\nA data analyst needs to create a DAX measure named Total Profit. The Sales fact table contains columns named Quantity, UnitPrice, and UnitCost. The measure must calculate profit per transaction line and aggregate correctly when sliced by product or date.\n\nWhich DAX expression should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Total Profit = SUM(Sales[Quantity]) * (SUM(Sales[UnitPrice]) - SUM(Sales[UnitCost]))",
+                    "reason": "Incorrect. Multiplying aggregated sums produces incorrect results because quantities, prices, and costs vary across rows."
+                },
+                {
+                    "id": 2,
+                    "text": "Total Profit = SUMX(Sales, Sales[Quantity] * (Sales[UnitPrice] - Sales[UnitCost]))",
+                    "reason": "Correct. SUMX iterates over each row, calculates the per-row profit, and then sums the results."
+                },
+                {
+                    "id": 3,
+                    "text": "Total Profit = CALCULATE(SUM(Sales[Quantity]) * (Sales[UnitPrice] - Sales[UnitCost]))",
+                    "reason": "Incorrect. CALCULATE modifies filter context but does not support row-level column references outside an iterator."
+                },
+                {
+                    "id": 4,
+                    "text": "Total Profit = FILTER(Sales, Sales[Quantity] * (Sales[UnitPrice] - Sales[UnitCost]))",
+                    "reason": "Incorrect. FILTER returns a table, not a scalar value suitable for a measure."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "SUMX is an iterator function that evaluates an expression for each row in the specified table and returns the sum of those values. This ensures per-row profit calculation (Quantity * (UnitPrice - UnitCost)) is performed correctly before aggregation, producing accurate results regardless of filter context."
+        },
+        {
+            "id": 5,
+            "topic": "Case Study 1 - Semantic Model: Storage Modes",
+            "Question": "Refer to Case Study 1: Contoso Retail.\n\nThe analytics team plans to create a composite model with user-defined aggregations. The aggregated data will support most executive dashboard queries, while some analysts must still access detailed transaction-level data.\n\nWhich storage mode should you assign to the detailed fact table?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "DirectQuery",
+                    "reason": "Correct. The detailed fact table must use DirectQuery mode so that queries not satisfied by aggregations fall back to the source."
+                },
+                {
+                    "id": 2,
+                    "text": "Import",
+                    "reason": "Incorrect. Import mode for a detailed fact table with hundreds of millions of rows would consume excessive memory and is not recommended for user-defined aggregations."
+                },
+                {
+                    "id": 3,
+                    "text": "Dual",
+                    "reason": "Incorrect. Dual mode is recommended for dimension tables, not the detailed fact table in user-defined aggregation scenarios."
+                },
+                {
+                    "id": 4,
+                    "text": "Live Connection",
+                    "reason": "Incorrect. Live Connection is a connection type, not a table-level storage mode available in composite models."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "In user-defined aggregation scenarios, the detailed fact table must be set to DirectQuery mode. Queries that can be answered by the aggregation table use the cached Import data, while queries requiring detail automatically fall back to the DirectQuery source. Dimension tables should use Dual mode, and aggregation tables should use Import mode."
+        },
+        {
+            "id": 6,
+            "topic": "Case Study 2 - Lifecycle: Git Integration",
+            "Question": "Case Study 2: Adventure Works Manufacturing\n\nAdventure Works is a manufacturing company that uses Microsoft Fabric for enterprise analytics. Their Fabric workspace contains a lakehouse with raw manufacturing data, a warehouse with a dimensional model, and a Power BI semantic model with over 200 measures. The semantic model serves more than 500 report consumers across the finance, operations, and supply chain departments. The team uses Azure DevOps for source control and must implement version control, optimize report performance, and reduce measure maintenance overhead. A Dataflow Gen2 query ingests order data from an on-premises SQL Server, applying several transformations including a column split and date filter.\n\nThe team needs to enable version control and code reviews for Fabric workspace items using Azure DevOps.\n\nWhich workspace setting should you enable?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Workspace Identity",
+                    "reason": "Incorrect. Workspace Identity is used for authentication and authorization scenarios, not version control."
+                },
+                {
+                    "id": 2,
+                    "text": "Outbound Networking",
+                    "reason": "Incorrect. Outbound Networking controls connectivity and firewall settings for the workspace."
+                },
+                {
+                    "id": 3,
+                    "text": "Git integration",
+                    "reason": "Correct. Git integration connects the Fabric workspace to a Git repository for version control, change tracking, and Azure DevOps code reviews."
+                },
+                {
+                    "id": 4,
+                    "text": "Spark workload settings",
+                    "reason": "Incorrect. Spark workload settings configure compute behavior for Spark jobs and are unrelated to version control."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Git integration enables Fabric workspaces to connect to Azure DevOps or GitHub repositories for version control. This allows change tracking, branching, code reviews, and lifecycle management of workspace items including semantic models, reports, and notebooks."
+        },
+        {
+            "id": 7,
+            "topic": "Case Study 2 - Query Folding: Filter Before Transform",
+            "Question": "Refer to Case Study 2: Adventure Works.\n\nThe Dataflow Gen2 query that ingests order data takes longer than expected. The source table has 20 years of data. The applied steps are: Source, Navigation to Orders table, Split Column by position on OrderDateTime, then Filtered Rows to the current year.\n\nYou need to improve dataflow performance.\n\nWhat should you recommend?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Split the OrderDateTime column by delimiter instead of by position",
+                    "reason": "Incorrect. Splitting by delimiter also breaks query folding, and changing the split method does not address the root cause."
+                },
+                {
+                    "id": 2,
+                    "text": "Apply the date filter to the OrderDateTime column before the split column transformation",
+                    "reason": "Correct. Filtering before the split preserves query folding, pushing the filter to the source and reducing the volume of data loaded into Power Query."
+                },
+                {
+                    "id": 3,
+                    "text": "Insert a Table.Buffer step before the split transformation to cache the data",
+                    "reason": "Incorrect. Table.Buffer forces all data to load into memory and prevents any downstream query folding."
+                },
+                {
+                    "id": 4,
+                    "text": "Remove the unused split column from the data flow after filtering",
+                    "reason": "Incorrect. Removing a column after the split does not change the order of operations and does not restore query folding."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Splitting a column by position breaks query folding, which forces all 20 years of data to load into Power Query before the year filter is applied. By moving the date filter before the split transformation, the filter can fold back to the SQL source, retrieving only the current year's data and significantly improving performance."
+        },
+        {
+            "id": 8,
+            "topic": "Case Study 2 - Semantic Model: Calculation Groups",
+            "Question": "Refer to Case Study 2: Adventure Works.\n\nThe semantic model contains over 200 measures. For each measure, the team must create the same set of time intelligence calculations: month-to-date, year-to-date, and year-over-year change. The solution must minimize the total number of measures and administrative effort.\n\nWhat should you create?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A measure folder to organize the existing measures",
+                    "reason": "Incorrect. Measure folders provide organizational structure but do not reduce the number of measures that need to be created."
+                },
+                {
+                    "id": 2,
+                    "text": "All individual measures using Tabular Editor bulk creation",
+                    "reason": "Incorrect. Bulk creation still results in hundreds of additional measures that must be maintained individually."
+                },
+                {
+                    "id": 3,
+                    "text": "Dynamic format strings for each base measure",
+                    "reason": "Incorrect. Dynamic format strings control how measure values are displayed, not how time intelligence calculations are performed."
+                },
+                {
+                    "id": 4,
+                    "text": "A calculation group with time intelligence calculation items",
+                    "reason": "Correct. Calculation groups apply common calculation patterns across all measures, eliminating the need to create individual time intelligence measures for each base measure."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Calculation groups allow you to define reusable calculation patterns such as month-to-date, year-to-date, and year-over-year that automatically apply to any measure in the model. This dramatically reduces the number of measures from potentially 800+ to just the original 200 plus a single calculation group."
+        },
+        {
+            "id": 9,
+            "topic": "Case Study 2 - Optimization: Incremental Refresh",
+            "Question": "Refer to Case Study 2: Adventure Works.\n\nThe Sales fact table in the semantic model contains three years of historical data. A full refresh of the table takes more than three hours. You need to ensure that scheduled refreshes process only new and recently updated rows.\n\nWhat should you configure in Power BI Desktop?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Incremental refresh for the Sales table in Power Query",
+                    "reason": "Correct. Incremental refresh uses RangeStart and RangeEnd parameters to partition data and refresh only new or changed partitions."
+                },
+                {
+                    "id": 2,
+                    "text": "Large semantic model storage format for the workspace",
+                    "reason": "Incorrect. Large model storage format increases capacity limits but does not change refresh behavior to process only new data."
+                },
+                {
+                    "id": 3,
+                    "text": "Manual monthly partitions for the Sales table",
+                    "reason": "Incorrect. Manual partitions do not enable service-managed incremental refresh, which is needed for automatic processing of only new data."
+                },
+                {
+                    "id": 4,
+                    "text": "DirectQuery storage mode for the Sales table",
+                    "reason": "Incorrect. Switching to DirectQuery eliminates the need for refresh entirely but sacrifices Import mode performance benefits."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Incremental refresh requires defining RangeStart and RangeEnd parameters, applying them as filters on the date column in Power Query, and configuring a refresh policy. This enables the Power BI service to create and manage partitions automatically, refreshing only partitions that contain new or changed data rather than the entire table."
+        },
+        {
+            "id": 10,
+            "topic": "Case Study 3 - Security: Row-Level and Column-Level Security",
+            "Question": "Case Study 3: Fabrikam Financial Services\n\nFabrikam Inc is a financial services company using Microsoft Fabric for regulatory and operational analytics. They maintain three workspaces: Dev, PreProd, and Production. The Dev workspace contains a lakehouse with customer transaction data, a Fabric warehouse with a dimensional model, and multiple Power BI semantic models. The lakehouse includes an internal OneLake shortcut that references a table in another lakehouse within the same workspace. The team must implement deployment pipelines, enforce granular data security for auditors and analysts, and enable collaboration among multiple developers working simultaneously on shared assets.\n\nThe team must protect sensitive financial data in the Fabric warehouse from unauthorized access. You need to limit data visibility based on different user roles while following the principle of least privilege.\n\nWhich two actions should you take?\n\nSelect all answers that apply.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Assign workspace roles to control data access",
+                    "reason": "Incorrect. Workspace roles grant broad access to all items in the workspace and do not provide granular row or column-level restrictions."
+                },
+                {
+                    "id": 2,
+                    "text": "Use dynamic data masking to obscure sensitive values",
+                    "reason": "Incorrect. Dynamic data masking hides data values from unauthorized users but does not restrict access based on user roles at the row or column level."
+                },
+                {
+                    "id": 3,
+                    "text": "Implement row-level security",
+                    "reason": "Correct. Row-level security restricts which data rows each user role can access."
+                },
+                {
+                    "id": 4,
+                    "text": "Implement column-level security",
+                    "reason": "Correct. Column-level security restricts access to specific sensitive columns based on user roles."
+                },
+                {
+                    "id": 5,
+                    "text": "Set item-level permissions for each table",
+                    "reason": "Incorrect. Item-level permissions control access to Fabric items but do not provide the row and column-level granularity required."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                3,
+                4
+            ],
+            "CorrectAnswerExplanation": "To effectively limit data visibility based on user roles at the most granular level, both row-level security (RLS) and column-level security (CLS) must be implemented. RLS ensures users see only the rows they are authorized to view, while CLS restricts access to sensitive columns. Workspace roles and item-level permissions operate at a broader level and lack the required granularity."
+        },
+        {
+            "id": 11,
+            "topic": "Case Study 3 - Lifecycle: Deployment Pipelines",
+            "Question": "Refer to Case Study 3: Fabrikam Financial Services.\n\nYou need to set up a deployment pipeline across the Dev, PreProd, and Production workspaces. The pipeline must maintain item dependencies across stages and support efficient data refresh processes.\n\nEach correct answer presents part of the solution. Which three actions should you take?\n\nSelect all answers that apply.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Configure autobinding for item connections",
+                    "reason": "Correct. Autobinding maintains connections between dependent items when they are deployed across stages."
+                },
+                {
+                    "id": 2,
+                    "text": "Use deployment rules for data source connections",
+                    "reason": "Correct. Deployment rules ensure semantic models connect to the correct data sources in each stage."
+                },
+                {
+                    "id": 3,
+                    "text": "Create a new workspace manually for each stage",
+                    "reason": "Incorrect. Deployment pipelines manage stage workspaces; manually creating workspaces does not contribute to maintaining dependencies."
+                },
+                {
+                    "id": 4,
+                    "text": "Enable incremental refresh policies",
+                    "reason": "Correct. Incremental refresh ensures that refresh policies are consistently applied across deployment stages for efficient data processing."
+                },
+                {
+                    "id": 5,
+                    "text": "Use a static refresh schedule for all stages",
+                    "reason": "Incorrect. A static refresh schedule does not adapt to different stage requirements and does not help maintain dependencies."
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                1,
+                2,
+                4
+            ],
+            "CorrectAnswerExplanation": "Configuring autobinding ensures item connections are maintained when deploying between stages. Deployment rules manage data source connection strings so semantic models point to the correct sources in each environment. Enabling incremental refresh ensures efficient data processing is preserved across deployments."
+        },
+        {
+            "id": 12,
+            "topic": "Case Study 3 - Lifecycle: Deployment with Shortcuts",
+            "Question": "Refer to Case Study 3: Fabrikam Financial Services.\n\nThe Dev workspace lakehouse contains an internal OneLake shortcut that points to a table in another lakehouse in the same workspace. You need to deploy this lakehouse to the PreProd workspace using the deployment pipeline.\n\nWhat should you do?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use a Variable Library to remap shortcut targets during deployment",
+                    "reason": "Incorrect. Variable Libraries are not used to remap OneLake shortcut targets during deployment pipeline operations."
+                },
+                {
+                    "id": 2,
+                    "text": "Enable Git integration for the workspace to track lakehouse items in source control",
+                    "reason": "Incorrect. Git integration manages source control for artifacts but does not resolve missing shortcut targets during deployment."
+                },
+                {
+                    "id": 3,
+                    "text": "Map the lakehouse dependency to a different upstream lakehouse in the pipeline settings",
+                    "reason": "Incorrect. Mapping dependencies does not automatically create the referenced tables and folders required by the shortcut in the target workspace."
+                },
+                {
+                    "id": 4,
+                    "text": "Create the tables, folders, and files referenced by the shortcut in the target workspace before deployment",
+                    "reason": "Correct. Internal OneLake shortcuts require that the target objects exist in the destination workspace for the shortcut to resolve correctly after deployment."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "When deploying a lakehouse that contains an internal OneLake shortcut, the objects referenced by the shortcut must exist in the target workspace before the deployment occurs. Otherwise, the shortcut will fail to resolve in the destination environment."
+        },
+        {
+            "id": 13,
+            "topic": "Case Study 3 - Semantic Model: XMLA Endpoint",
+            "Question": "Refer to Case Study 3: Fabrikam Financial Services.\n\nThe analytics team needs to manage large semantic models using external tools such as Tabular Editor and SQL Server Management Studio. They require the ability to both read and write to the semantic models.\n\nWhat should you enable?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Large semantic model storage format",
+                    "reason": "Incorrect. Large model storage format increases capacity limits but does not enable write operations from external tools."
+                },
+                {
+                    "id": 2,
+                    "text": "Read-write access in the XMLA Endpoint settings",
+                    "reason": "Correct. Enabling read-write XMLA endpoint access allows external tools to both read and modify semantic models."
+                },
+                {
+                    "id": 3,
+                    "text": "Read-only access in the XMLA Endpoint settings",
+                    "reason": "Incorrect. Read-only access allows data consumption from external tools but does not permit write operations."
+                },
+                {
+                    "id": 4,
+                    "text": "Incremental refresh for the semantic models",
+                    "reason": "Incorrect. Incremental refresh manages data refresh policies but does not enable external tool connectivity."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The XMLA endpoint provides connectivity for external tools like Tabular Editor, SSMS, and ALM Toolkit. To enable both read and write operations on semantic models, the XMLA Endpoint setting must be configured to read-write at the capacity or workspace level."
+        },
+        {
+            "id": 14,
+            "topic": "Security: Workspace Roles - Least Privilege",
+            "Question": "A user named User1 needs to read data from a Fabric lakehouse using Lakehouse explorer. You need to assign a workspace role that follows the principle of least privilege.\n\nWhich workspace role should you assign to User1?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Admin",
+                    "reason": "Incorrect. Admin grants full control over the workspace, which violates the principle of least privilege."
+                },
+                {
+                    "id": 2,
+                    "text": "Member",
+                    "reason": "Incorrect. Member provides more permissions than necessary for reading lakehouse data."
+                },
+                {
+                    "id": 3,
+                    "text": "Contributor",
+                    "reason": "Correct. Contributor is the least privileged role that provides access to read lakehouse data through Lakehouse explorer."
+                },
+                {
+                    "id": 4,
+                    "text": "Viewer",
+                    "reason": "Incorrect. The Viewer role does not provide permission to read lakehouse data through Lakehouse explorer."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "To read data from a Fabric lakehouse using Lakehouse explorer, users need at minimum the Contributor role. The Viewer role does not provide access to read lakehouse data through Lakehouse explorer. Admin and Member roles provide more permissions than necessary, violating the principle of least privilege."
+        },
+        {
+            "id": 15,
+            "topic": "Security: Lakehouse Sharing - SQL Endpoint",
+            "Question": "You have a Fabric workspace containing a lakehouse, a data pipeline, a notebook, and several Power BI reports. A user named User1 must have read-only SQL access to the lakehouse. User1 must NOT access other workspace items and must NOT use Spark to query underlying files.\n\nWhat should you do?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add User1 as a workspace viewer and share the lakehouse with Read all SQL Endpoint data selected",
+                    "reason": "Incorrect. Adding User1 as a workspace viewer grants access to all Power BI reports in the workspace."
+                },
+                {
+                    "id": 2,
+                    "text": "Add User1 as a workspace member and share the lakehouse with Read all SQL Endpoint data selected",
+                    "reason": "Incorrect. Adding User1 as a workspace member grants broad access to all workspace items."
+                },
+                {
+                    "id": 3,
+                    "text": "Share the lakehouse with User1 directly and select Build reports on the default dataset",
+                    "reason": "Incorrect. Build reports permission enables report creation but does not specifically grant SQL endpoint read access."
+                },
+                {
+                    "id": 4,
+                    "text": "Share the lakehouse with User1 directly and select Read all SQL Endpoint data",
+                    "reason": "Correct. Sharing the lakehouse directly with SQL endpoint read permission provides SQL access without granting access to other workspace items."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Sharing the lakehouse directly (without adding the user to the workspace) with the Read all SQL Endpoint data permission ensures the user has SQL-only read access to the lakehouse data. This approach prevents access to other workspace items such as reports, notebooks, and pipelines, and does not enable Spark access to underlying files."
+        },
+        {
+            "id": 16,
+            "topic": "Security: External Sharing with Partners",
+            "Question": "Your company uses Microsoft Fabric for data analytics. The marketing department needs to share Power BI reports with external partners without compromising sensitive data.\n\nEach correct answer presents part of the solution. Which three actions should you take?\n\nSelect all answers that apply.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Assign external partners a Viewer role in the workspace",
+                    "reason": "Incorrect. Assigning a Viewer role grants access to all workspace reports, which is less restrictive than sharing via a Power BI app."
+                },
+                {
+                    "id": 2,
+                    "text": "Implement row-level security",
+                    "reason": "Correct. Row-level security controls data visibility based on user identity, ensuring partners see only authorized data."
+                },
+                {
+                    "id": 3,
+                    "text": "Share reports via email attachments",
+                    "reason": "Incorrect. Sharing via email attachments can lead to data leakage and unauthorized access, compromising security."
+                },
+                {
+                    "id": 4,
+                    "text": "Set data source credentials to a fixed identity",
+                    "reason": "Correct. Using a fixed identity ensures external partners access data through a controlled credential without exposing connection details."
+                },
+                {
+                    "id": 5,
+                    "text": "Configure a Power BI app",
+                    "reason": "Correct. Power BI apps provide a secure, curated experience for sharing reports with external partners."
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                2,
+                4,
+                5
+            ],
+            "CorrectAnswerExplanation": "Row-level security ensures partners see only the data they are authorized to view. Setting data source credentials to a fixed identity provides controlled data access. Power BI apps offer a more secure and curated sharing experience than workspace-level viewer access. Email attachments risk data leakage, and workspace viewer roles are overly permissive."
+        },
+        {
+            "id": 17,
+            "topic": "Governance: Sensitivity Labels",
+            "Question": "Your organization needs to classify and protect sensitive data items across multiple Fabric workspaces. The solution must integrate with your existing Microsoft Purview Information Protection policies.\n\nWhich feature should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Sensitivity labels",
+                    "reason": "Correct. Sensitivity labels from Microsoft Purview Information Protection can be applied to Fabric items to classify and protect sensitive data."
+                },
+                {
+                    "id": 2,
+                    "text": "Data loss prevention policies",
+                    "reason": "Incorrect. DLP policies monitor and restrict data sharing but do not classify individual Fabric items."
+                },
+                {
+                    "id": 3,
+                    "text": "Object-level security",
+                    "reason": "Incorrect. Object-level security restricts access to specific model objects but does not classify data for information protection."
+                },
+                {
+                    "id": 4,
+                    "text": "Workspace access controls",
+                    "reason": "Incorrect. Workspace access controls manage user permissions but do not classify or label data items."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Sensitivity labels from Microsoft Purview Information Protection can be applied to Fabric items such as semantic models, reports, lakehouses, and warehouses to classify and protect sensitive data. These labels integrate with existing organizational information protection policies."
+        },
+        {
+            "id": 18,
+            "topic": "Governance: Endorsement",
+            "Question": "A data engineer has created a high-quality semantic model that should appear as a trusted, recommended asset for other teams across the organization. You need to promote discoverability and trust in this asset.\n\nWhat should you request from a workspace admin?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Share the semantic model via a Power BI app",
+                    "reason": "Incorrect. Sharing via an app distributes the model but does not mark it as a trusted or endorsed asset."
+                },
+                {
+                    "id": 2,
+                    "text": "Enable the XMLA endpoint for the semantic model",
+                    "reason": "Incorrect. The XMLA endpoint enables external tool access but does not indicate endorsement or trust."
+                },
+                {
+                    "id": 3,
+                    "text": "Certify the semantic model",
+                    "reason": "Correct. Certification is the highest level of endorsement, marking the model as a trusted and authoritative data source."
+                },
+                {
+                    "id": 4,
+                    "text": "Publish the semantic model to a deployment pipeline",
+                    "reason": "Incorrect. Deployment pipelines manage lifecycle stages but do not endorse or certify items."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Endorsement in Fabric includes two levels: Promoted and Certified. Certification is the highest level and indicates that the item has been reviewed and approved as an authoritative, trustworthy data source. Only users with specific permissions can certify items."
+        },
+        {
+            "id": 19,
+            "topic": "Lifecycle: Data Lineage View",
+            "Question": "You have a Fabric workspace containing a lakehouse, a warehouse, a semantic model, and multiple Power BI reports. The semantic model is shared to other workspaces. You plan to rename a column in the semantic model.\n\nYou need to identify downstream reports and workspaces that depend on the semantic model and might be affected.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Dataflow Gen2",
+                    "reason": "Incorrect. Dataflow Gen2 is used for data transformation and ingestion, not for viewing dependency relationships."
+                },
+                {
+                    "id": 2,
+                    "text": "The SQL analytics endpoint",
+                    "reason": "Incorrect. The SQL analytics endpoint enables SQL querying but does not show dependency or lineage information."
+                },
+                {
+                    "id": 3,
+                    "text": "Fabric Copilot",
+                    "reason": "Incorrect. Fabric Copilot provides AI-assisted insights but is not designed for dependency analysis of workspace items."
+                },
+                {
+                    "id": 4,
+                    "text": "Data lineage view",
+                    "reason": "Correct. The data lineage view provides a visual representation of upstream and downstream dependencies between workspace items."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "The data lineage view in Fabric provides visibility into how items in a workspace are connected, showing upstream data sources and downstream consumers. This allows you to identify which reports, dashboards, and workspaces depend on a semantic model before making schema changes."
+        },
+        {
+            "id": 20,
+            "topic": "Lifecycle: Impact Analysis",
+            "Question": "You have a Fabric workspace containing a semantic model and five reports that use the model. You plan to share the semantic model with another workspace for use in five additional reports.\n\nYou need to analyze the downstream dependencies of the semantic model. The solution must minimize administrative effort.\n\nFrom the workspace, you open the semantic model. What should you do next?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Select Impact analysis",
+                    "reason": "Correct. Impact analysis automatically identifies and summarizes all downstream dependencies, including reports and cross-workspace usage."
+                },
+                {
+                    "id": 2,
+                    "text": "Select Lineage",
+                    "reason": "Incorrect. The lineage view provides a visual relationship map but requires more manual inspection than Impact analysis."
+                },
+                {
+                    "id": 3,
+                    "text": "Select Security",
+                    "reason": "Incorrect. Security settings manage access permissions, not downstream dependency information."
+                },
+                {
+                    "id": 4,
+                    "text": "Select View related",
+                    "reason": "Incorrect. View related does not provide a comprehensive dependency or impact assessment."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Impact analysis provides an automated, consolidated view of all downstream items that depend on the semantic model, including report counts and workspace distribution. It requires minimal effort compared to manually navigating lineage views or checking individual items."
+        },
+        {
+            "id": 21,
+            "topic": "Lifecycle: PBIP and Git Collaboration",
+            "Question": "You use Power BI Desktop to create a semantic model. You need to recommend a solution that allows two developers to work on different parts of the model simultaneously. The solution must provide the most efficient collaboration experience.\n\nWhat should you recommend?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Save the work as a PBIX file and email it to the other developer",
+                    "reason": "Incorrect. Emailing files back and forth is not efficient and does not support simultaneous editing."
+                },
+                {
+                    "id": 2,
+                    "text": "Save the work as a PBIX file to OneDrive and share it",
+                    "reason": "Incorrect. PBIX files on OneDrive cannot be opened simultaneously by multiple developers."
+                },
+                {
+                    "id": 3,
+                    "text": "Save the work as a Power BI Project (PBIP) and use a Git repository with version control",
+                    "reason": "Correct. PBIP saves the model as individual text files in a folder structure that can be checked into Git, enabling simultaneous collaboration."
+                },
+                {
+                    "id": 4,
+                    "text": "Publish a PBIX file to a shared workspace and use live connect",
+                    "reason": "Incorrect. Live connect allows reading the model but is not the most efficient approach for simultaneous development."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Power BI Projects (PBIP) save model components as individual plain text files in a structured folder. When combined with Git version control, multiple developers can work on different parts of the model simultaneously using branches, pull requests, and merge operations."
+        },
+        {
+            "id": 22,
+            "topic": "Lifecycle: Git Branching for Collaboration",
+            "Question": "You have a Fabric workspace connected to a Git repository named Repo1. The workspace contains a semantic model and a report.\n\nYou need to enable other users to collaborate on the semantic model and report while minimizing development effort.\n\nWhat should you do?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Commit the contents of Repo1 to the main branch",
+                    "reason": "Incorrect. Committing alone does not establish collaborative workflows for other users."
+                },
+                {
+                    "id": 2,
+                    "text": "From the workspace, create a branch and a new workspace",
+                    "reason": "Correct. Creating a branch mapped to a new workspace enables isolated development while maintaining version control through the shared repository."
+                },
+                {
+                    "id": 3,
+                    "text": "Create a Power BI Desktop project and add it to Repo1",
+                    "reason": "Incorrect. Creating a separate PBIP project is not required when the workspace is already connected to Git."
+                },
+                {
+                    "id": 4,
+                    "text": "Create a new workspace and connect it to a local folder",
+                    "reason": "Incorrect. Fabric workspaces do not support connecting directly to local folders for version control."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Fabric's Git integration supports creating branches that map to new workspaces. This enables multiple users to work in isolation on their own copies of workspace items while using the shared repository for version control, merging, and code reviews, all with minimal setup effort."
+        },
+        {
+            "id": 23,
+            "topic": "Lifecycle: Power BI Template Files",
+            "Question": "Report authors in your organization need a reusable starting point for new Power BI reports. The template must include company branding, preconfigured slicer placement, a standard report layout, and connect to the certified SalesCore semantic model. The template must NOT contain any embedded data.\n\nWhat should you create?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A Power BI data source file (.pbids)",
+                    "reason": "Incorrect. A .pbids file contains only connection information and does not define report layout, branding, or visual configurations."
+                },
+                {
+                    "id": 2,
+                    "text": "A Power BI Desktop file (.pbix) linked to OneDrive refresh",
+                    "reason": "Incorrect. A .pbix file includes embedded data and is not suitable as a data-free reusable template."
+                },
+                {
+                    "id": 3,
+                    "text": "A Power BI Project (.pbip) committed to Git",
+                    "reason": "Incorrect. PBIP files are intended for development workflows and source control, not for distributing standardized templates to report authors."
+                },
+                {
+                    "id": 4,
+                    "text": "A Power BI template file (.pbit)",
+                    "reason": "Correct. A .pbit file provides a reusable report definition with layout, visuals, branding, and configuration without embedding data."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Power BI template files (.pbit) contain the report definition including layout, visuals, themes, and configurations but do not embed data. When a user opens a .pbit file, they are prompted to provide parameter values and connect to data, making it ideal for standardized report templates."
+        },
+        {
+            "id": 24,
+            "topic": "Data Ingestion: Copy Activity for Large Data",
+            "Question": "You have a Fabric lakehouse named Lakehouse1. You need to ingest data from a large Azure SQL Database table containing more than 500 million records. No transformations are required. The solution must minimize costs and administrative effort.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A pipeline with the Copy data activity",
+                    "reason": "Correct. Copy data activity is the most efficient and cost-effective method for large-scale data ingestion without transformations."
+                },
+                {
+                    "id": 2,
+                    "text": "Dataflow Gen2",
+                    "reason": "Incorrect. Dataflow Gen2 is more suitable for smaller datasets or when data transformations are needed during ingestion."
+                },
+                {
+                    "id": 3,
+                    "text": "A Spark notebook",
+                    "reason": "Incorrect. Spark notebooks are recommended for complex data transformations, not simple large-scale data movement."
+                },
+                {
+                    "id": 4,
+                    "text": "A SQL stored procedure",
+                    "reason": "Incorrect. SQL stored procedures are a Fabric warehouse feature and are not available in a lakehouse."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The Copy data activity in Fabric data pipelines is the recommended method for ingesting large datasets without transformations. It provides direct, high-throughput data movement with minimal configuration. Dataflow Gen2 and notebooks add unnecessary overhead for simple data movement. SQL stored procedures are not available in lakehouses."
+        },
+        {
+            "id": 25,
+            "topic": "Data Ingestion: COPY T-SQL for Warehouse",
+            "Question": "Your organization uses Microsoft Fabric and needs to ingest data from multiple Azure storage accounts into a Fabric data warehouse. You need a code-rich method with high throughput.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Eventstreams",
+                    "reason": "Incorrect. Eventstreams are designed for real-time streaming data ingestion, not batch ingestion from storage accounts."
+                },
+                {
+                    "id": 2,
+                    "text": "Dataflows Gen2",
+                    "reason": "Incorrect. Dataflows Gen2 are intended for data preparation and transformation with a low-code interface, not code-rich high-throughput scenarios."
+                },
+                {
+                    "id": 3,
+                    "text": "COPY (T-SQL) statement",
+                    "reason": "Correct. The COPY statement is specifically designed for code-rich, high-throughput data ingestion into Fabric warehouses from Azure storage."
+                },
+                {
+                    "id": 4,
+                    "text": "Data pipelines with a ForEach activity",
+                    "reason": "Incorrect. Data pipelines provide a low-code orchestration experience rather than a code-rich ingestion method."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The COPY (T-SQL) statement provides the highest throughput for code-rich data ingestion into a Fabric warehouse from Azure storage accounts. It is optimized for bulk data loading of CSV and Parquet files. Eventstreams handle streaming scenarios, Dataflows Gen2 are low-code, and data pipelines provide orchestration rather than code-rich ingestion."
+        },
+        {
+            "id": 26,
+            "topic": "Data Ingestion: Copy Activity from ADLS",
+            "Question": "You have forecast data stored in Azure Data Lake Storage Gen2 that is already formatted correctly. You need to ingest this data into a Fabric lakehouse. No transformations are required, and the solution must minimize development effort and costs.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A Spark notebook with custom PySpark code",
+                    "reason": "Incorrect. Spark notebooks are suitable for complex transformations but add unnecessary development effort for simple data ingestion."
+                },
+                {
+                    "id": 2,
+                    "text": "The Copy activity in a data pipeline",
+                    "reason": "Correct. The Copy activity is the most efficient and lowest-effort method for ingesting pre-formatted data without transformations."
+                },
+                {
+                    "id": 3,
+                    "text": "Dataflow Gen2 with Power Query transformations",
+                    "reason": "Incorrect. Dataflow Gen2 is designed for transformation scenarios and adds overhead when no transformations are needed."
+                },
+                {
+                    "id": 4,
+                    "text": "Download the data locally and upload via Lakehouse explorer",
+                    "reason": "Incorrect. Manual download and upload is inefficient, incurs egress charges, and does not scale."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The Copy data activity should be used when copying data directly between a supported source and destination without applying transformations. It minimizes development effort and costs compared to Spark notebooks or Dataflow Gen2, which are better suited for transformation scenarios."
+        },
+        {
+            "id": 27,
+            "topic": "Data Ingestion: Copy Activity from Snowflake",
+            "Question": "You have an external Snowflake database containing a table with 200 million rows. You need to use a data pipeline to migrate this data to a Fabric lakehouse.\n\nWhat is the most performant method for ingesting this volume of data using a data pipeline?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Data Pipeline with a Dataflow Gen2 activity",
+                    "reason": "Incorrect. Dataflow Gen2 activities are not optimized for high-volume data migration and may encounter performance limitations."
+                },
+                {
+                    "id": 2,
+                    "text": "Data Pipeline with a Lookup activity",
+                    "reason": "Incorrect. The Lookup activity retrieves a small set of records for reference purposes, not for large-scale data migration."
+                },
+                {
+                    "id": 3,
+                    "text": "Data Pipeline with a Spark Notebook activity",
+                    "reason": "Incorrect. While Spark can handle large datasets, it adds complexity and is not the most direct method for simple data migration."
+                },
+                {
+                    "id": 4,
+                    "text": "Data Pipeline with the Copy data activity",
+                    "reason": "Correct. The Copy data activity provides the fastest and most direct method for migrating large volumes of data between systems."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "The Copy data activity within a data pipeline is the fastest and most direct method for migrating data from external sources like Snowflake to a Fabric lakehouse. It is optimized for high-throughput data movement without requiring transformations."
+        },
+        {
+            "id": 28,
+            "topic": "Data Ingestion: Multi-source Pipeline Design",
+            "Question": "Your organization plans to implement a data ingestion solution using Microsoft Fabric. Data sources include Azure Data Lake Storage Gen2 and Azure Blob Storage with data in CSV and Parquet formats. The solution must ensure efficient ingestion and allow for future transformations.\n\nEach correct answer presents part of the solution. Which three actions should you take?\n\nSelect all answers that apply.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Create a data pipeline",
+                    "reason": "Correct. Data pipelines orchestrate complex data workflows and automate ingestion tasks."
+                },
+                {
+                    "id": 2,
+                    "text": "Store data in Azure SQL Database",
+                    "reason": "Incorrect. Azure SQL Database is not optimized for high-throughput ingestion of CSV and Parquet files in a Fabric environment."
+                },
+                {
+                    "id": 3,
+                    "text": "Use the copy data activity",
+                    "reason": "Correct. The copy data activity efficiently handles high-volume data ingestion from Azure storage sources."
+                },
+                {
+                    "id": 4,
+                    "text": "Create a Dataflow Gen2",
+                    "reason": "Correct. Dataflow Gen2 provides code-free data transformation capabilities for preparing data after ingestion."
+                },
+                {
+                    "id": 5,
+                    "text": "Use Azure Synapse Analytics",
+                    "reason": "Incorrect. Azure Synapse Analytics is a separate service and is not required for data ingestion into Microsoft Fabric."
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                1,
+                3,
+                4
+            ],
+            "CorrectAnswerExplanation": "Data pipelines provide orchestration for automating ingestion workflows. The copy data activity handles efficient, high-throughput data movement from Azure storage. Dataflow Gen2 enables code-free transformations for future data preparation needs. Azure SQL Database and Azure Synapse Analytics are separate services not required for this Fabric-based solution."
+        },
+        {
+            "id": 29,
+            "topic": "Pipeline: Scheduling Time Zone",
+            "Question": "You have a Fabric workspace containing a data pipeline named Pipeline1 that runs in the US-West Azure region. The workspace also contains a semantic model and a warehouse.\n\nYou need to ensure that Pipeline1 runs at midnight (12:00 AM) UTC-0.\n\nHow should you configure the schedule?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add a notebook activity to the pipeline to convert the US-West time zone to UTC-0",
+                    "reason": "Incorrect. Time zone conversion logic in a notebook does not control the pipeline schedule time zone."
+                },
+                {
+                    "id": 2,
+                    "text": "Set the schedule time zone for the semantic model to UTC-0",
+                    "reason": "Incorrect. The semantic model schedule is independent of the pipeline schedule."
+                },
+                {
+                    "id": 3,
+                    "text": "Set the scheduler time zone for Pipeline1 to UTC-0",
+                    "reason": "Correct. Each data pipeline has its own time zone setting that controls when the scheduled run occurs."
+                },
+                {
+                    "id": 4,
+                    "text": "Set the scheduler time zone for the warehouse to UTC-0",
+                    "reason": "Incorrect. The warehouse schedule is independent of the pipeline schedule."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Each data pipeline artifact in Fabric has its own time zone configuration that applies exclusively to that pipeline's schedule. Setting the pipeline's scheduler time zone to UTC-0 ensures it runs at midnight UTC regardless of the Azure region where the workspace is hosted."
+        },
+        {
+            "id": 30,
+            "topic": "Dimensional Modeling: SCD Type 2",
+            "Question": "You are implementing a dimensional model in a Fabric warehouse. Whenever a customer's status changes, the change must be preserved in a table named DimCustomer. A new row must be added to include the timestamp of each status change. The solution must support point-in-time analysis.\n\nWhich type of dimension should you implement for DimCustomer?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Type 0 slowly changing dimension (SCD)",
+                    "reason": "Incorrect. Type 0 SCD does not track changes; the original value is always retained."
+                },
+                {
+                    "id": 2,
+                    "text": "Type 2 slowly changing dimension (SCD)",
+                    "reason": "Correct. Type 2 SCD preserves the full history of changes by adding a new row for each change with timestamps for point-in-time analysis."
+                },
+                {
+                    "id": 3,
+                    "text": "Type 1 slowly changing dimension (SCD)",
+                    "reason": "Incorrect. Type 1 SCD overwrites the existing value with the new one, losing the change history."
+                },
+                {
+                    "id": 4,
+                    "text": "Type 3 slowly changing dimension (SCD)",
+                    "reason": "Incorrect. Type 3 SCD stores only two versions of a value as separate columns, not a complete change history with timestamps."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Type 2 SCD maintains a complete history of changes by inserting a new row each time a change occurs. Timestamps or effective date columns enable point-in-time analysis. Type 0 does not track changes, Type 1 overwrites previous values, and Type 3 only stores two versions as columns."
+        },
+        {
+            "id": 31,
+            "topic": "Power Query: Split Column",
+            "Question": "You have a Dataflow Gen2 query containing a column named ProductID_Name that concatenates the product ID and product name. You need to use a single applied step to create two new columns for the ID and Name separately while also removing the original combined column.\n\nWhich applied step should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add Column From Example",
+                    "reason": "Incorrect. Add Column From Example creates a new column but does not remove the original column in the same step."
+                },
+                {
+                    "id": 2,
+                    "text": "Conditional Column",
+                    "reason": "Incorrect. Conditional Column creates a single new column based on logical conditions, not by splitting an existing column."
+                },
+                {
+                    "id": 3,
+                    "text": "Replace Values",
+                    "reason": "Incorrect. Replace Values modifies values within an existing column but does not split it into multiple columns."
+                },
+                {
+                    "id": 4,
+                    "text": "Split Column",
+                    "reason": "Correct. Split Column divides a column into multiple new columns and removes the original column, all in a single applied step."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Split Column is the only Power Query transformation that simultaneously removes the source column and creates two or more new columns from it in a single applied step. It can split by delimiter, position, or other criteria."
+        },
+        {
+            "id": 32,
+            "topic": "Warehouse: Views for Column Renaming",
+            "Question": "You have a Fabric workspace containing a Power BI report connected to a Fabric warehouse. You need to modify column names displayed in the report without changing the original column names in the underlying Delta table.\n\nWhich warehouse object should you create?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A view",
+                    "reason": "Correct. A view encapsulates a query definition that can rename columns through aliases without modifying the underlying table."
+                },
+                {
+                    "id": 2,
+                    "text": "A columnstore index",
+                    "reason": "Incorrect. A columnstore index optimizes query performance but does not rename or alias columns."
+                },
+                {
+                    "id": 3,
+                    "text": "A schema",
+                    "reason": "Incorrect. A schema is a namespace for organizing database objects but does not rename columns."
+                },
+                {
+                    "id": 4,
+                    "text": "A table-valued function",
+                    "reason": "Incorrect. A table-valued function returns a result set but is not the simplest solution for column renaming."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "A view provides a virtual table defined by a SQL query. By using column aliases in the view definition, you can present renamed columns to report consumers without altering the underlying Delta table structure."
+        },
+        {
+            "id": 33,
+            "topic": "Lakehouse: Notebooks for ETL",
+            "Question": "Your company has implemented a Fabric lakehouse to store and manage very large datasets. Raw data is loaded into staging tables and must be transformed before being loaded into final analytical tables.\n\nYou need to determine the most efficient way to perform this ETL process.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Data Factory pipelines",
+                    "reason": "Incorrect. Data Factory pipelines orchestrate workflows but are not optimized for complex in-lakehouse data transformations."
+                },
+                {
+                    "id": 2,
+                    "text": "Dataflows Gen2",
+                    "reason": "Incorrect. Dataflows Gen2 may not handle very large datasets as efficiently as Spark-based processing."
+                },
+                {
+                    "id": 3,
+                    "text": "Fabric notebooks",
+                    "reason": "Correct. Fabric notebooks use Apache Spark, which provides the scalability and processing power needed for large-scale ETL within a lakehouse."
+                },
+                {
+                    "id": 4,
+                    "text": "Eventstreams",
+                    "reason": "Incorrect. Eventstreams are designed for real-time streaming data processing, not batch ETL workloads."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Fabric notebooks leverage Apache Spark for distributed data processing, making them the most efficient choice for transforming large datasets within a lakehouse. Spark provides the scalability and parallel processing capabilities needed for big data ETL operations."
+        },
+        {
+            "id": 34,
+            "topic": "Dataflow Gen2: M Language",
+            "Question": "You plan to use Dataflow Gen2 to ingest and transform data from an Azure SQL Database into a Fabric lakehouse.\n\nWhich language should you use to define the data transformations in the dataflow?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "DAX",
+                    "reason": "Incorrect. DAX (Data Analysis Expressions) is used for creating measures and calculations in semantic models, not for Dataflow Gen2 transformations."
+                },
+                {
+                    "id": 2,
+                    "text": "M",
+                    "reason": "Correct. Dataflow Gen2 uses Power Query, which is built on the M formula language for data transformation."
+                },
+                {
+                    "id": 3,
+                    "text": "SQL",
+                    "reason": "Incorrect. While SQL can be used in other Fabric contexts, Dataflow Gen2 transformations are defined using the M language through Power Query."
+                },
+                {
+                    "id": 4,
+                    "text": "Python",
+                    "reason": "Incorrect. Python is used in Fabric notebooks, not in Dataflow Gen2 queries."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Dataflow Gen2 provides the same Power Query interface used in Power BI Desktop and Excel, which is built on the M formula language. All data transformations in Dataflow Gen2 are defined using M, regardless of the data source being connected to."
+        },
+        {
+            "id": 35,
+            "topic": "Dataflow Gen2: Left Outer Join",
+            "Question": "You have a Fabric warehouse and two tables: ProductCategory (with a ProductCategoryKey column) and Product (with a ProductCategoryKey column). You are using Dataflow Gen2 to merge these tables.\n\nThe combined table must contain all rows from the Product table and only the matching rows from ProductCategory.\n\nWhich join configuration should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A left outer join from Product to ProductCategory",
+                    "reason": "Correct. A left outer join keeps all rows from the left table (Product) and includes only matching rows from the right table (ProductCategory)."
+                },
+                {
+                    "id": 2,
+                    "text": "A left anti join from Product to ProductCategory",
+                    "reason": "Incorrect. A left anti join returns only Product rows that have no match in ProductCategory."
+                },
+                {
+                    "id": 3,
+                    "text": "A left outer join from ProductCategory to Product",
+                    "reason": "Incorrect. This join would keep all ProductCategory rows and only matching Product rows, which is the reverse of the requirement."
+                },
+                {
+                    "id": 4,
+                    "text": "A right outer join from Product to ProductCategory",
+                    "reason": "Incorrect. A right outer join keeps all rows from ProductCategory (right table), not from Product."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "A left outer join from Product to ProductCategory retains all rows from the left table (Product) and includes matching rows from the right table (ProductCategory). Rows in Product without a match in ProductCategory will have null values for the ProductCategory columns."
+        },
+        {
+            "id": 36,
+            "topic": "Dataflow Gen2: Staging Pattern",
+            "Question": "You have a Fabric workspace with a lakehouse and a Dataflow Gen2 query that ingests a FactSales table. The query has many applied transformations and experiences occasional timeout issues. The query cannot be further optimized, and changing the refresh schedule does not help.\n\nWhich additional action should you recommend?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Change the FactSales destination to a newly created Fabric warehouse",
+                    "reason": "Incorrect. Changing the destination does not address the root cause of timeout issues from excessive transformations."
+                },
+                {
+                    "id": 2,
+                    "text": "Create a new query group for the FactSales query",
+                    "reason": "Incorrect. Query groups are organizational features that do not affect processing performance or timeouts."
+                },
+                {
+                    "id": 3,
+                    "text": "Create a staging dataflow to ingest raw data first, then connect the original dataflow to transform the staged data",
+                    "reason": "Correct. Separating ingestion and transformation into two dataflows is a best practice that prevents timeouts by reducing the processing load per dataflow."
+                },
+                {
+                    "id": 4,
+                    "text": "Create a shortcut to FactSales and connect the dataflow to the shortcut",
+                    "reason": "Incorrect. Shortcuts provide data access but do not reduce the transformation workload causing timeouts."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Creating a staging dataflow that first ingests raw data without transformations, followed by a second dataflow that transforms the staged data, is a recommended best practice for complex dataflows. This pattern distributes the processing workload and prevents timeouts."
+        },
+        {
+            "id": 37,
+            "topic": "Data Profiling: Column Quality",
+            "Question": "You use Power BI Desktop to connect to a CSV file. Before loading the data, you need to use Power Query Editor to identify the percentage of valid, error, and empty records in each column.\n\nWhich Power Query option should you enable?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Column distribution",
+                    "reason": "Incorrect. Column distribution shows the frequency and distribution of distinct and unique values, not validity percentages."
+                },
+                {
+                    "id": 2,
+                    "text": "Column profile",
+                    "reason": "Incorrect. Column profile provides statistical summaries such as min, max, and average values for a column."
+                },
+                {
+                    "id": 3,
+                    "text": "Filter by value",
+                    "reason": "Incorrect. Filter by value is a transformation operation, not a data profiling feature."
+                },
+                {
+                    "id": 4,
+                    "text": "Column quality",
+                    "reason": "Correct. Column quality displays the percentage of valid, error, and empty values in each column."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Column quality in Power Query Editor shows a bar at the top of each column indicating the percentage of values that are valid, contain errors, or are empty. This helps assess data quality before loading."
+        },
+        {
+            "id": 38,
+            "topic": "Lakehouse: OPTIMIZE and VACUUM",
+            "Question": "A managed Delta table in a Fabric lakehouse receives new records daily and must retain change history for seven days. You notice the table contains 1,000 Parquet files, each approximately 1 MB in size. Query performance is slower than expected.\n\nYou need to improve query performance and reduce storage costs.\n\nWhat should you do from Lakehouse explorer?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Manually delete Parquet files with creation dates older than seven days",
+                    "reason": "Incorrect. Manually deleting Parquet files can corrupt the Delta table's transaction log and cause data loss."
+                },
+                {
+                    "id": 2,
+                    "text": "Run OPTIMIZE and VACUUM with a seven-day retention policy",
+                    "reason": "Correct. OPTIMIZE compacts small files into larger, more efficient files. VACUUM removes obsolete files beyond the retention period, reducing storage costs."
+                },
+                {
+                    "id": 3,
+                    "text": "Run only the OPTIMIZE command",
+                    "reason": "Incorrect. OPTIMIZE improves query performance by compacting files but does not remove old files to reduce storage costs."
+                },
+                {
+                    "id": 4,
+                    "text": "Run only the VACUUM command with a seven-day retention policy",
+                    "reason": "Incorrect. VACUUM removes old files to reduce storage but does not compact the remaining active files to improve query performance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The ideal file size for Fabric engines is between 128 MB and 1 GB. OPTIMIZE compacts the 1,000 small files into fewer, larger files, improving query performance. VACUUM removes obsolete Parquet files that are no longer referenced by the Delta log, reducing storage costs. Both commands are needed to address both performance and storage requirements."
+        },
+        {
+            "id": 39,
+            "topic": "Warehouse: Statistics for Query Optimization",
+            "Question": "You have a Fabric warehouse and discover that a SQL query performs poorly. Upon investigation, you find that table statistics are outdated.\n\nYou need to manually update statistics to improve query performance.\n\nWhich column statistics should you prioritize updating?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Columns used in GROUP BY clauses",
+                    "reason": "Correct. Statistics on columns used in GROUP BY, JOIN, and ORDER BY clauses have the greatest impact on query optimizer decisions."
+                },
+                {
+                    "id": 2,
+                    "text": "Columns of VARCHAR and NVARCHAR data types",
+                    "reason": "Incorrect. Data type alone does not determine which statistics are most important for query performance."
+                },
+                {
+                    "id": 3,
+                    "text": "Columns with high cardinality",
+                    "reason": "Incorrect. While cardinality matters, the most impactful statistics are on columns used in query predicates and grouping operations."
+                },
+                {
+                    "id": 4,
+                    "text": "Primary key columns",
+                    "reason": "Incorrect. Primary key statistics are typically auto-maintained and are not the first priority for manual updates."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "When manually updating statistics for query optimization, you should focus on columns used in JOIN, ORDER BY, and GROUP BY clauses. The query optimizer uses statistics on these columns to determine the most efficient execution plan."
+        },
+        {
+            "id": 40,
+            "topic": "Visual Query Editor: Merge then GroupBy",
+            "Question": "You have a Fabric warehouse with two tables: Trip (containing TripDateID and PassengerCount) and Date (containing DateID, Day, Month, Quarter, and Year).\n\nYou need to use the visual query editor in Warehouse explorer to create a query that summarizes the total number of passengers by year.\n\nWhich transformations should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Append queries to combine Trip and Date, then use GroupBy",
+                    "reason": "Incorrect. Append performs a union-like operation that stacks rows, which is not appropriate for joining two different tables."
+                },
+                {
+                    "id": 2,
+                    "text": "GroupBy to summarize Trip data, then Append queries to combine with Date",
+                    "reason": "Incorrect. Summarizing Trip data before joining loses the ability to associate trips with their corresponding year."
+                },
+                {
+                    "id": 3,
+                    "text": "GroupBy to summarize Trip data, then Merge queries to join with Date",
+                    "reason": "Incorrect. Summarizing before joining prevents correct year association since TripDateID is needed for the join."
+                },
+                {
+                    "id": 4,
+                    "text": "Merge queries to join Trip and Date, then GroupBy to summarize by year",
+                    "reason": "Correct. First merge the tables on the date key to associate each trip with its year, then group by year to calculate the total passengers."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "The correct approach is to first use Merge queries to join Trip and Date on the date key, then expand the Date columns to access the Year field, and finally use GroupBy to summarize the total PassengerCount by Year. Append queries performs a union operation and is not suitable for joining different tables."
+        },
+        {
+            "id": 41,
+            "topic": "KQL: KQL Queryset",
+            "Question": "You have a Microsoft KQL database connected to multiple data sources including an Azure Data Explorer cluster. You need to analyze recent event data using Kusto Query Language.\n\nWhat should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A KQL activity in a data pipeline",
+                    "reason": "Incorrect. A KQL activity in a pipeline is used for orchestrating KQL operations within a workflow, not for interactive data analysis."
+                },
+                {
+                    "id": 2,
+                    "text": "A KQL Queryset",
+                    "reason": "Correct. A KQL Queryset provides an interactive environment for writing and running KQL queries directly against KQL databases."
+                },
+                {
+                    "id": 3,
+                    "text": "The SQL analytics endpoint",
+                    "reason": "Incorrect. The SQL analytics endpoint uses SQL, not KQL, for querying data."
+                },
+                {
+                    "id": 4,
+                    "text": "A Power BI report with a KQL data source",
+                    "reason": "Incorrect. Power BI reports focus on visualization rather than direct interactive querying with KQL."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "A KQL Queryset is the dedicated Fabric item for interactively writing and running Kusto Query Language queries against KQL databases. It provides a rich query editing experience with syntax highlighting, intellisense, and result visualization."
+        },
+        {
+            "id": 42,
+            "topic": "KQL: Summarize with Bin",
+            "Question": "You have a KQL database with a table named requests containing columns: timestamp (datetime), success (bool), duration (real), and cloud_RoleName (string).\n\nYou need to write a KQL query that returns results from the last 24 hours. The query must include one row per hour per cloud role, the count of failed requests, and the average duration of failed requests.\n\nWhich query should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "requests\n| where timestamp > ago(24h)\n| where success == false\n| summarize failedCount = count(), avgDuration = avg(duration) by bin(timestamp, 1h), cloud_RoleName",
+                    "reason": "Correct. This query filters the last 24 hours, then filters failed requests, and summarizes by hourly bins and cloud role."
+                },
+                {
+                    "id": 2,
+                    "text": "requests\n| where timestamp > ago(24h)\n| summarize failedCount = count(), avgDuration = avg(duration) by timestamp, cloud_RoleName\n| where success == false",
+                    "reason": "Incorrect. Filtering by success after summarize is invalid because the success column is no longer available after aggregation."
+                },
+                {
+                    "id": 3,
+                    "text": "requests\n| where timestamp > ago(24h)\n| where success == false\n| summarize failedCount = count(), avgDuration = avg(duration) by cloud_RoleName",
+                    "reason": "Incorrect. This query groups only by cloud_RoleName and does not produce one row per hour as required."
+                },
+                {
+                    "id": 4,
+                    "text": "requests\n| where timestamp > ago(24h)\n| where success == false\n| project timestamp, cloud_RoleName, failedCount = count(), avgDuration = avg(duration)",
+                    "reason": "Incorrect. The project operator does not support aggregate functions like count() and avg()."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The correct query first filters the time range, then filters for failed requests (success == false), and uses summarize with bin(timestamp, 1h) to create hourly buckets grouped by cloud_RoleName. This produces one row per hour per cloud role with the count and average duration of failed requests."
+        },
+        {
+            "id": 43,
+            "topic": "Semantic Model: Dynamic Format Strings",
+            "Question": "You have a Power BI report with a table visual containing three DAX measures: Revenue, Units, and Customers. You need to apply logic-based formatting to the Revenue measure only. The solution must prevent modification of the other two measures and minimize effort.\n\nHow should you apply the formatting?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use calculation group measure formatting",
+                    "reason": "Incorrect. Calculation group formatting applies at the visual, page, or report level and cannot easily target a single measure."
+                },
+                {
+                    "id": 2,
+                    "text": "Use conditional formatting in the visual settings",
+                    "reason": "Incorrect. Conditional formatting applies visual-level formatting rules but does not provide DAX-based logic formatting for individual measures."
+                },
+                {
+                    "id": 3,
+                    "text": "Use dynamic measure formatting",
+                    "reason": "Correct. Dynamic format strings allow logic-based formatting to be applied directly to a single measure without affecting other measures."
+                },
+                {
+                    "id": 4,
+                    "text": "Use the fields parameter",
+                    "reason": "Incorrect. Field parameters allow users to switch between fields dynamically but do not control measure formatting."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Dynamic measure formatting (dynamic format strings) is the simplest and most targeted way to apply logic-based formatting to an individual measure. Unlike calculation groups, which apply at a broader scope, dynamic format strings are defined directly on the measure definition."
+        },
+        {
+            "id": 44,
+            "topic": "Semantic Model: Composite Model Storage Modes",
+            "Question": "You are developing a large semantic model with a fact table containing 500 million rows. Most queries will target aggregated data, but some users must access detailed records. You plan to create a composite model with user-defined aggregations.\n\nWhich three storage modes should you use? Each correct answer presents part of the solution.\n\nSelect all answers that apply.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Aggregated tables should use Dual mode",
+                    "reason": "Incorrect. Dual mode is recommended for dimension tables, not aggregation tables. Import mode provides better performance for cached aggregations."
+                },
+                {
+                    "id": 2,
+                    "text": "Aggregated tables should use Import mode",
+                    "reason": "Correct. Import mode for aggregation tables provides the best query performance for cached summary data."
+                },
+                {
+                    "id": 3,
+                    "text": "The detailed fact table should use DirectQuery mode",
+                    "reason": "Correct. DirectQuery for the detailed fact table enables fallback queries to the source when aggregations cannot answer the query."
+                },
+                {
+                    "id": 4,
+                    "text": "The detailed fact table should use Import mode",
+                    "reason": "Incorrect. Importing 500 million rows would consume excessive memory and is not practical for user-defined aggregation scenarios."
+                },
+                {
+                    "id": 5,
+                    "text": "Dimension tables should use Dual mode",
+                    "reason": "Correct. Dual mode for dimension tables allows them to function in both Import and DirectQuery contexts, avoiding limited relationship issues."
+                },
+                {
+                    "id": 6,
+                    "text": "Dimension tables should use DirectQuery mode",
+                    "reason": "Incorrect. DirectQuery for dimension tables can cause limited relationship behavior and reduced performance."
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                2,
+                3,
+                5
+            ],
+            "CorrectAnswerExplanation": "In user-defined aggregation scenarios: the detailed fact table must use DirectQuery mode so queries not satisfied by aggregations fall back to the source; aggregation tables should use Import mode for optimal performance; dimension tables should use Dual mode to work correctly with both Import aggregations and DirectQuery detail tables."
+        },
+        {
+            "id": 45,
+            "topic": "Semantic Model: Role-Playing Dimensions",
+            "Question": "You have a semantic model with a Sales fact table and a Date dimension table. The Sales table contains two date columns: OrderDate and ShipDate. Both columns need to relate to the Date dimension for time-based analysis.\n\nWhich relationship pattern does this scenario represent?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Bridge table pattern",
+                    "reason": "Incorrect. Bridge tables resolve many-to-many relationships, not scenarios where a single dimension serves multiple purposes."
+                },
+                {
+                    "id": 2,
+                    "text": "Many-to-many relationship",
+                    "reason": "Incorrect. This scenario involves multiple one-to-many relationships from the same dimension, not a many-to-many relationship."
+                },
+                {
+                    "id": 3,
+                    "text": "Factless fact table",
+                    "reason": "Incorrect. A factless fact table records events without numeric measures, which is unrelated to this relationship pattern."
+                },
+                {
+                    "id": 4,
+                    "text": "Role-playing dimension",
+                    "reason": "Correct. A role-playing dimension is a single dimension table that serves multiple analytical purposes through different relationships to the same fact table."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A role-playing dimension occurs when the same dimension table (Date) participates in multiple relationships with a fact table through different foreign keys (OrderDate, ShipDate). In Power BI, this is typically implemented using inactive relationships and the USERELATIONSHIP DAX function."
+        },
+        {
+            "id": 46,
+            "topic": "DAX: VAR Optimization",
+            "Question": "You have a DAX measure that classifies a Variance value into categories using nested IF statements. Each branch references the [Variance] measure directly.\n\nYou need to optimize the measure for faster calculation.\n\nWhich approach should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Declare [Variance] as a VAR, then use SWITCH(TRUE(), ...) referencing only the variable in all conditions",
+                    "reason": "Correct. Storing the measure result in a VAR caches it for reuse, and SWITCH(TRUE()) provides clean conditional logic."
+                },
+                {
+                    "id": 2,
+                    "text": "Use nested IF statements with direct references to the [Variance] measure in each condition",
+                    "reason": "Incorrect. Direct measure references in each IF branch cause the measure to be evaluated multiple times, reducing performance."
+                },
+                {
+                    "id": 3,
+                    "text": "Use SWITCH(TRUE(), ...) with direct references to the [Variance] measure in each condition",
+                    "reason": "Incorrect. While SWITCH improves readability, directly referencing the measure in each condition still evaluates it multiple times."
+                },
+                {
+                    "id": 4,
+                    "text": "Declare [Variance] as a VAR but reference the [Variance] measure directly in some conditions",
+                    "reason": "Incorrect. Mixing VAR references with direct measure references defeats the purpose of caching and does not fully optimize performance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Declaring the [Variance] measure as a VAR caches its result so it is evaluated only once, regardless of how many times the variable is referenced. Using SWITCH(TRUE()) with the cached variable provides both optimal performance and clean, readable code."
+        },
+        {
+            "id": 47,
+            "topic": "Semantic Model: Field Parameters",
+            "Question": "Report consumers need the ability to dynamically switch between different measures (such as Revenue, Profit, and Units) displayed on a chart axis without creating separate visuals for each measure.\n\nWhat should you implement?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Calculation groups",
+                    "reason": "Incorrect. Calculation groups apply common calculations across measures but do not allow users to switch which measures appear on a visual axis."
+                },
+                {
+                    "id": 2,
+                    "text": "Dynamic format strings",
+                    "reason": "Incorrect. Dynamic format strings control how values are displayed, not which measures appear in a visual."
+                },
+                {
+                    "id": 3,
+                    "text": "Field parameters",
+                    "reason": "Correct. Field parameters allow report consumers to dynamically choose which fields or measures appear on visual axes through slicer selections."
+                },
+                {
+                    "id": 4,
+                    "text": "Bookmarks",
+                    "reason": "Incorrect. Bookmarks capture report state and can toggle visual visibility, but they are less flexible and require more maintenance than field parameters."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Field parameters create a special table that allows report consumers to select which measures or fields are displayed on visual axes using a slicer. This provides a dynamic, user-driven experience without requiring multiple visuals or complex DAX logic."
+        },
+        {
+            "id": 48,
+            "topic": "Optimization: DirectQuery Apply Buttons",
+            "Question": "You have a Power BI report connected to a semantic model that uses a DirectQuery connection to an Azure SQL database. Users report slow performance when interacting with multiple filters and slicers.\n\nYou need to reduce the number of queries sent to the database during user interactions.\n\nWhat should you do?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add Top N filters to all visuals",
+                    "reason": "Incorrect. Top N filters limit the data shown in visuals but do not reduce the number of queries triggered during filter interactions."
+                },
+                {
+                    "id": 2,
+                    "text": "Add apply buttons to all basic filters",
+                    "reason": "Correct. Apply buttons pause query execution until the user finalizes filter selections and clicks Apply, reducing intermediate queries."
+                },
+                {
+                    "id": 3,
+                    "text": "Change default visual interaction from cross highlighting to cross filtering",
+                    "reason": "Incorrect. Changing visual interactions affects how visuals respond to selections but does not reduce the total number of queries."
+                },
+                {
+                    "id": 4,
+                    "text": "Enable automatic page refresh for each report page",
+                    "reason": "Incorrect. Automatic page refresh increases query frequency, which worsens performance rather than improving it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Apply buttons on filters and slicers prevent queries from being sent to the data source with each individual filter selection. Instead, users can adjust multiple filters and then click Apply to send a single consolidated query, significantly reducing the total number of queries to the DirectQuery source."
+        },
+        {
+            "id": 49,
+            "topic": "Optimization: Direct Lake Guardrails",
+            "Question": "You have a semantic model with a Direct Lake connection to a Fabric lakehouse. Users report that certain queries are slower than expected. You discover that the Direct Lake engine is falling back to DirectQuery mode for some operations.\n\nWhat should you investigate to resolve the fallback behavior?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Whether the XMLA endpoint is enabled for the workspace",
+                    "reason": "Incorrect. The XMLA endpoint enables external tool connectivity but does not cause Direct Lake fallback behavior."
+                },
+                {
+                    "id": 2,
+                    "text": "Whether incremental refresh is configured for the model",
+                    "reason": "Incorrect. Incremental refresh manages data refresh policies but is not related to Direct Lake fallback."
+                },
+                {
+                    "id": 3,
+                    "text": "Whether the semantic model uses calculation groups",
+                    "reason": "Incorrect. Calculation groups affect DAX evaluation but do not directly cause Direct Lake to fall back to DirectQuery."
+                },
+                {
+                    "id": 4,
+                    "text": "Whether the data volume exceeds Direct Lake guardrails or the Delta tables require optimization",
+                    "reason": "Correct. Direct Lake has guardrails for row counts, column counts, and table sizes. Exceeding these limits or having poorly optimized Delta tables triggers fallback to DirectQuery."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Direct Lake operates within specific guardrails including maximum row counts, column counts per table, and table sizes per SKU. When data exceeds these limits or when Delta tables are not properly optimized (e.g., too many small Parquet files), the engine falls back to DirectQuery mode. Running OPTIMIZE on the Delta tables and reviewing data volumes against the SKU guardrails can resolve fallback behavior."
+        },
+        {
+            "id": 50,
+            "topic": "Semantic Model: Composite Models",
+            "Question": "You have an existing published Power BI semantic model built on a Fabric lakehouse using Import mode. You need to add supplementary data from an Azure SQL database to the model for a new set of reports. The external data must NOT be imported into the existing model.\n\nWhich approach should you use?\n\nSelect only one answer.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Create a composite model by adding a DirectQuery connection to the Azure SQL database",
+                    "reason": "Correct. Composite models allow combining existing Import data with new DirectQuery sources without importing additional data."
+                },
+                {
+                    "id": 2,
+                    "text": "Create a new Import-mode semantic model and merge it with the existing model",
+                    "reason": "Incorrect. You cannot merge two separate semantic models, and importing the data violates the requirement."
+                },
+                {
+                    "id": 3,
+                    "text": "Use Dataflow Gen2 to import the Azure SQL data into the existing lakehouse",
+                    "reason": "Incorrect. This approach imports the data into the lakehouse rather than keeping it external as required."
+                },
+                {
+                    "id": 4,
+                    "text": "Create a live connection to the Azure SQL database from Power BI Desktop",
+                    "reason": "Incorrect. Live connections connect to Analysis Services or Power BI datasets, not directly to Azure SQL databases."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Composite models in Power BI allow you to extend an existing published semantic model by adding new tables from external sources using DirectQuery. This keeps the external data at the source without importing it, while the existing Import-mode data remains cached in the model."
+        }
+    ]
+}
