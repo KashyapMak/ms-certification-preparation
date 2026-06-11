@@ -14,7 +14,7 @@ OUTPUT REQUIREMENTS
 SOURCES TO USE  
 1. Study Guide ({{StudyGuideUrl}}): Use this to map the required skillset. Identify the weight (percentage) of each domain to determine how many questions to generate per topic and the specific level of proficiency required.
 2. Official Course ({{StudyCourseUrl}}): Use these modules as the primary source of truth for defining technical questions and answers. Extract specific scenarios, implementation steps, and service configurations directly from this curriculum.
-3. Reference external sets (e.g., ExamTopics, ITExam, Lead2Pass) strictly to understand samples and question patterns (Case Studies, Hot Areas, Drag-and-Drop)  
+3. Reference external sets (e.g., certyiq.com, ExamTopics, ITExam, Lead2Pass) strictly to understand samples and question patterns (Case Studies, Hot Areas, Drag-and-Drop)  
 
 Use both sources to determine:  
 - Topics  
