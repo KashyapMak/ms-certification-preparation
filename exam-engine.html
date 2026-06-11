@@ -7,11 +7,15 @@
     <title>Your Local Examination Engine</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
         .shake { animation: shake 0.2s ease-in-out 0s 2; }
         html { scroll-behavior: smooth; }
         .tab-active { border-bottom: 4px solid #2563eb; color: #1e40af; }
+        #timer-display, #time-taken-display { font-family: 'Orbitron', monospace; font-weight: 700; letter-spacing: 0.05em; }
     </style>
 </head>
 
@@ -19,7 +23,7 @@
 
     <header id="sticky-header" class="hidden sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center justify-between gap-4 flex-wrap">
                 <h1 id="display-exam-title" class="text-lg md:text-xl font-bold text-blue-900 truncate flex-1"></h1>
                 <div class="flex items-center gap-2 md:gap-4 text-sm font-bold bg-slate-100 px-3 py-2 rounded-full border border-slate-200">
                     <div class="whitespace-nowrap">
@@ -30,6 +34,11 @@
                     <div class="whitespace-nowrap">
                         <span class="text-slate-500">Attended:</span>
                         <span id="attended-count" class="text-green-600 font-black">0</span>
+                    </div>
+                    <div class="h-4 w-px bg-slate-300"></div>
+                    <div class="whitespace-nowrap" style="min-width: 100px;">
+                        <span class="text-slate-500">Timer:</span>
+                        <span id="timer-display" class="text-orange-600 font-black">00:00</span>
                     </div>
                 </div>
             </div>
@@ -62,6 +71,22 @@
                 <button id="tab-local" class="flex-1 py-3 font-bold text-slate-500">Local Upload</button>
             </div>
 
+            <div class="mb-6 p-4 bg-slate-50 rounded-xl border border-slate-200">
+                <label class="block text-sm font-bold text-slate-700 mb-4">Exam Mode</label>
+                <div class="flex gap-6">
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="exam-mode" value="practice" checked class="w-4 h-4 accent-blue-600">
+                        <span class="font-semibold text-slate-700">Practice</span>
+                        <span class="text-xs text-slate-500">(No time limit, Show Answer available)</span>
+                    </label>
+                    <label class="flex items-center gap-3 cursor-pointer">
+                        <input type="radio" name="exam-mode" value="exam" class="w-4 h-4 accent-blue-600">
+                        <span class="font-semibold text-slate-700">Exam</span>
+                        <span class="text-xs text-slate-500">(Timed, No Show Answer)</span>
+                    </label>
+                </div>
+            </div>
+
             <div id="error-alert" class="hidden mb-6 p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-r-lg">
                 <p class="font-bold">File Error</p>
                 <p id="error-message" class="text-sm"></p>
@@ -83,6 +108,15 @@
                     <input type="file" id="file-input" accept=".json" class="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-bold file:bg-blue-600 file:text-white border-2 border-dashed border-slate-200 p-4 rounded-xl cursor-pointer">
                 </div>
 
+                <div id="exam-time-config" class="hidden p-4 bg-blue-50 rounded-xl border border-blue-200">
+                    <label class="block text-sm font-bold text-slate-700 mb-2">Exam Duration (Minutes)</label>
+                    <p class="text-xs text-slate-600 mb-3">Total questions: <span id="exam-question-count">0</span> × 90 seconds = <span id="default-duration-display">0</span> minutes</p>
+                    <div class="flex gap-3">
+                        <input type="number" id="exam-duration-input" min="1" class="flex-1 p-3 border-2 border-blue-300 rounded-xl bg-white outline-none focus:border-blue-500" placeholder="Auto-calculated">
+                        <button id="reset-duration-btn" class="px-4 py-3 bg-white border-2 border-blue-300 text-blue-600 font-bold rounded-xl hover:bg-blue-50 transition-colors">Reset to Default</button>
+                    </div>
+                </div>
+
                 <button id="start-btn" disabled class="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-slate-200 text-white font-black py-4 rounded-xl transition-all shadow-lg">START EXAM</button>
             </div>
         </div>
@@ -95,6 +129,11 @@
                 
                 <div id="question-container" class="space-y-6">
                     <p id="q-text" class="text-xl font-semibold leading-snug text-slate-800"></p>
+                    <div id="scenario-button-container" class="hidden mt-2">
+                        <button id="view-scenario-btn" class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded border border-blue-300 hover:bg-blue-200 transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>View Scenario
+                        </button>
+                    </div>
                     <div id="selection-hint" class="px-3 py-1 bg-amber-50 text-amber-700 text-[11px] font-black uppercase rounded border border-amber-200 w-fit"></div>
                     <div id="options-list" class="grid gap-3"></div>
                 </div>
@@ -117,6 +156,21 @@
             </div>
         </div>
 
+        <!-- Scenario Modal -->
+        <div id="scenario-modal" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+                <div class="sticky top-0 bg-white border-b border-slate-200 p-4 flex justify-between items-center">
+                    <h3 class="text-xl font-bold text-slate-900">Scenario Details</h3>
+                    <button id="close-scenario-btn" class="text-slate-400 hover:text-slate-600 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div id="scenario-content" class="text-slate-800 leading-relaxed whitespace-pre-wrap"></div>
+                </div>
+            </div>
+        </div>
+
         <div id="result-view" class="hidden space-y-8">
             <div class="bg-white rounded-3xl shadow-2xl p-10 text-center border border-slate-200">
                 <h2 class="text-3xl font-black mb-6 text-slate-900">Exam Results</h2>
@@ -127,6 +181,13 @@
                 </div>
 
                 <div id="status-badge" class="max-w-xs mx-auto py-3 px-6 rounded-2xl text-xl font-black mb-8 border-2 shadow-sm"></div>
+
+                <div class="flex justify-center gap-8 mb-8 text-center">
+                    <div class="px-6 py-3 bg-slate-50 rounded-xl border border-slate-200">
+                        <div class="text-sm font-bold text-slate-500 uppercase">Time Taken</div>
+                        <div id="time-taken-display" class="text-2xl font-black text-slate-800 mt-1">00:00</div>
+                    </div>
+                </div>
 
                 <div class="flex justify-center gap-4 mb-10">
                     <button onclick="location.reload()" class="bg-slate-200 text-slate-700 font-bold px-6 py-2 rounded-xl hover:bg-slate-300 transition-colors">Restart</button>
@@ -151,9 +212,18 @@
 
     <script>
         let EXAM_CONFIG = [];
-        //const CONFIG_URL = "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/available-exams.json";
         const CONFIG_URL = "available-exams.json";
         let currentExam = null, currentIndex = 0, userAnswers = {}, mode = 'online';
+        let selectedExamData = null; // For preview before starting
+        let scenarios = []; // Store scenarios for the current exam
+        
+        // New variables for Practice/Exam mode
+        let examMode = 'practice'; // 'practice' or 'exam'
+        let examDurationMinutes = 0;
+        let examStartTime = null;
+        let timerInterval = null;
+        let timeRemainingMs = 0;
+        let timeTakenSeconds = 0; // Track time taken during exam
 
         // Helper function to convert line breaks to <br> tags
         function formatText(text) {
@@ -161,8 +231,99 @@
             return text.split('\n').map(line => $('<div/>').text(line).html()).join('<br>');
         }
 
+        // Format time as MM:SS
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Start the timer
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            
+            examStartTime = Date.now();
+            
+            timerInterval = setInterval(() => {
+                if (examMode === 'practice') {
+                    // Count up
+                    const elapsedSeconds = Math.floor((Date.now() - examStartTime) / 1000);
+                    $('#timer-display').text(formatTime(elapsedSeconds));
+                } else {
+                    // Count down
+                    const elapsedMs = Date.now() - examStartTime;
+                    const remainingMs = timeRemainingMs - elapsedMs;
+                    
+                    if (remainingMs <= 0) {
+                        clearInterval(timerInterval);
+                        $('#timer-display').text('00:00').addClass('text-red-600');
+                        alert('Time is up! Your exam has been submitted.');
+                        if (confirm("Finish exam?")) generateReview();
+                    } else {
+                        const remainingSeconds = Math.floor(remainingMs / 1000);
+                        $('#timer-display').text(formatTime(remainingSeconds));
+                        
+                        // Change color to red when less than 5 minutes
+                        if (remainingSeconds < 300) {
+                            $('#timer-display').addClass('text-red-600');
+                        }
+                    }
+                }
+            }, 100);
+        }
+
+        // Stop the timer
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+                timerInterval = null;
+            }
+        }
+
+        // Show scenario modal
+        function showScenario(scenarioId) {
+            const scenario = scenarios.find(s => s.id === scenarioId);
+            if (scenario) {
+                $('#scenario-content').html(formatText(scenario.text));
+                $('#scenario-modal').removeClass('hidden').fadeIn();
+            }
+        }
+
+        // Close scenario modal
+        function closeScenario() {
+            $('#scenario-modal').fadeOut(300, () => {
+                $('#scenario-modal').addClass('hidden');
+            });
+        }
+
         $(document).ready(function () {
             getExamConfig();
+
+            // Scenario modal event handlers
+            $('#close-scenario-btn').click(closeScenario);
+            $('#scenario-modal').click(function(e) {
+                if (e.target === this) closeScenario();
+            });
+
+            // Handle exam mode selection
+            $('input[name="exam-mode"]').change(function () {
+                examMode = $(this).val();
+                updateDurationConfigVisibility();
+            });
+
+            // Handle duration reset
+            $('#reset-duration-btn').click(function () {
+                if (selectedExamData) {
+                    const defaultMinutes = Math.ceil((selectedExamData.questions.length * 90) / 60);
+                    $('#exam-duration-input').val(defaultMinutes);
+                    examDurationMinutes = defaultMinutes;
+                }
+            });
+
+            // Update exam duration on input
+            $('#exam-duration-input').on('input', function () {
+                examDurationMinutes = parseInt($(this).val()) || 0;
+            });
 
             $('#tab-online').click(function () {
                 mode = 'online';
@@ -179,29 +340,105 @@
             });
 
             function validateStart() {
-                const isReady = mode === 'online' ? $('#exam-test-selector').val() !== "" : $('#file-input').val() !== "";
+                const isReady = selectedExamData !== null;
                 $('#start-btn').prop('disabled', !isReady);
             }
 
-            $('#exam-code-selector, #exam-test-selector, #file-input').change(function () {
-                if (this.id === 'exam-code-selector') populateTestList($(this).val());
+            function updateDurationConfigVisibility() {
+                if (examMode === 'exam' && selectedExamData) {
+                    $('#exam-time-config').removeClass('hidden');
+                    if (!$('#exam-duration-input').val()) {
+                        const defaultMinutes = Math.ceil((selectedExamData.questions.length * 90) / 60);
+                        $('#exam-duration-input').val(defaultMinutes);
+                        examDurationMinutes = defaultMinutes;
+                    }
+                } else {
+                    $('#exam-time-config').addClass('hidden');
+                }
+            }
+
+            function loadExamPreview(data) {
+                selectedExamData = data;
+                const questionCount = data.questions ? data.questions.length : 0;
+                const defaultMinutes = Math.ceil((questionCount * 90) / 60);
+                
+                // Load scenarios (handle legacy JSON without scenarios)
+                scenarios = data.scenarios && Array.isArray(data.scenarios) ? data.scenarios : [];
+                
+                $('#exam-question-count').text(questionCount);
+                $('#default-duration-display').text(defaultMinutes);
+                $('#exam-duration-input').val(defaultMinutes);
+                examDurationMinutes = defaultMinutes;
+                
+                updateDurationConfigVisibility();
                 validateStart();
+            }
+
+            $('#exam-code-selector, #exam-test-selector').change(function () {
+                if (this.id === 'exam-code-selector') {
+                    populateTestList($(this).val());
+                    selectedExamData = null;
+                    validateStart();
+                } else if (this.id === 'exam-test-selector' && $(this).val()) {
+                    // Load exam data for preview
+                    const url = $(this).val();
+                    fetch(url)
+                        .then(r => r.json())
+                        .then(data => loadExamPreview(data))
+                        .catch(() => showError("Failed to fetch exam."));
+                }
+            });
+
+            $('#file-input').change(function () {
+                const file = this.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const data = JSON.parse(e.target.result);
+                            loadExamPreview(data);
+                        } catch (err) {
+                            showError("Invalid JSON.");
+                            selectedExamData = null;
+                            validateStart();
+                        }
+                    };
+                    reader.readAsText(file);
+                } else {
+                    selectedExamData = null;
+                    validateStart();
+                }
             });
 
             $('#start-btn').click(function () {
-                if (mode === 'online') {
-                    const url = $('#exam-test-selector').val();
-                    fetch(url).then(r => r.json()).then(data => initExam(data)).catch(() => showError("Failed to fetch exam."));
+                if (!selectedExamData) return;
+                
+                currentExam = selectedExamData;
+                
+                // Calculate exam duration if in exam mode
+                if (examMode === 'exam') {
+                    examDurationMinutes = parseInt($('#exam-duration-input').val()) || Math.ceil((currentExam.questions.length * 90) / 60);
+                    timeRemainingMs = examDurationMinutes * 60 * 1000;
                 } else {
-                    const file = document.getElementById('file-input').files[0];
-                    if(!file) return;
-                    const reader = new FileReader();
-                    reader.onload = (e) => {
-                        try { initExam(JSON.parse(e.target.result)); } 
-                        catch (err) { showError("Invalid JSON."); }
-                    };
-                    reader.readAsText(file);
+                    timeRemainingMs = 0;
                 }
+                
+                $('#setup-view').fadeOut(300, () => {
+                    $('#sticky-header, #exam-view').removeClass('hidden').fadeIn();
+                    $('#display-exam-title').text(currentExam.quizName || "Practice Exam");
+                    $('#total-q-num').text(currentExam.questions.length);
+                    $('#timer-display').text('00:00').removeClass('text-red-600');
+                    
+                    // Hide show-answer button in exam mode
+                    if (examMode === 'exam') {
+                        $('#show-ans-btn').addClass('hidden');
+                    } else {
+                        $('#show-ans-btn').removeClass('hidden');
+                    }
+                    
+                    renderQuestion();
+                    startTimer();
+                });
             });
 
             function populateTestList(code) {
@@ -237,16 +474,6 @@
                 }).catch(() => showError("Failed to load exam configuration."));
             }
 
-            function initExam(data) {
-                currentExam = data;
-                $('#setup-view').fadeOut(300, () => {
-                    $('#sticky-header, #exam-view').removeClass('hidden').fadeIn();
-                    $('#display-exam-title').text(currentExam.quizName || "Practice Exam");
-                    $('#total-q-num').text(currentExam.questions.length);
-                    renderQuestion();
-                });
-            }
-
             function renderQuestion(isRevealed = false) {
                 const q = currentExam.questions[currentIndex];
                 const max = q.MaxAnswerSelection || 1;
@@ -260,6 +487,23 @@
                 }
 
                 $('#q-text').html(formatText(q.Question));
+                
+                // Show/hide scenario button based on current question
+                if (q.scenario_id) {
+                    const scenario = scenarios.find(s => s.id === q.scenario_id);
+                    if (scenario) {
+                        $('#scenario-button-container').removeClass('hidden');
+                        $('#view-scenario-btn').off('click').click(function(e) {
+                            e.preventDefault();
+                            showScenario(q.scenario_id);
+                        });
+                    } else {
+                        $('#scenario-button-container').addClass('hidden');
+                    }
+                } else {
+                    $('#scenario-button-container').addClass('hidden');
+                }
+                
                 $('#current-q-num').text(currentIndex + 1);
                 $('#selection-hint').text(max === 1 ? "Choose 1 Correct Option" : `Select ${max} Correct Options`);
                 $('#progress-bar').css('width', ((currentIndex + 1) / currentExam.questions.length * 100) + '%');
@@ -335,6 +579,9 @@
             $('#next-btn').click(() => { currentIndex++; renderQuestion(); window.scrollTo(0, 0); });
             $('#prev-btn').click(() => { currentIndex--; renderQuestion(); window.scrollTo(0, 0); });
             $('#show-ans-btn').click(function () {
+                // Show Answer button only available in Practice mode
+                if (examMode === 'exam') return;
+                
                 const isShowing = $('#explanation-box').is(':visible');
                 if (!isShowing) {
                     $('#exp-text').html(formatText(currentExam.questions[currentIndex].CorrectAnswerExplanation));
@@ -348,9 +595,16 @@
                 }
             });
 
-            $('#finish-btn').click(() => { if (confirm("Finish exam?")) generateReview(); });
+            $('#finish-btn').click(() => { 
+                stopTimer();
+                if (confirm("Finish exam?")) generateReview(); 
+            });
 
             function generateReview() {
+                stopTimer();
+                // Calculate time taken
+                timeTakenSeconds = Math.floor((Date.now() - examStartTime) / 1000);
+                
                 let totalPoints = 0;
                 const weight = currentExam.totalScore / currentExam.questions.length;
                 const list = $('#review-list').empty();
@@ -396,6 +650,7 @@
                     const passed = totalPoints >= (currentExam.passingScore || 700);
                     $('#status-badge').text(passed ? 'PASSED' : 'FAILED')
                         .addClass(passed ? 'bg-green-50 border-green-200 text-green-700' : 'bg-red-50 border-red-200 text-red-700');
+                    $('#time-taken-display').text(formatTime(timeTakenSeconds));
                     window.scrollTo(0, 0);
                 });
             }
