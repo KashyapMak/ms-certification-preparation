@@ -38,7 +38,7 @@ QUESTION SET REQUIREMENTS
    - The official study guide  
    - The official instructor-led training modules  
 5. Mix cognitive levels: recall, conceptual, applied reasoning, and scenario-based judgment.  
-6. Match exam difficulty level: **{{ExamLevel}}**.
+6. Match exam difficulties to official certification level
 7. Keep same topic questions togather
 
 ANSWER OPTION RULES  
@@ -60,7 +60,8 @@ CONTENT & STYLE RULES
 - Use clear, professional exam language.  
 - No ambiguous, trick, or misleading questions.  
 - All scenario questions must be realistic and consistent with exam role responsibilities.  
-- Explanations must be concise and informative (if schema supports them).
+- Explanations must be concise and informative (if schema supports them). Add a reference link if any available.
+- Question, Scenario, Options and Explanation supports multiline text, good to have core information and question have some space.
 
 JSON STRUCTURE RULES  
 - Do NOT add, remove, rename, or reorder any fields in the JSON schema.  
@@ -75,38 +76,7 @@ FINAL OUTPUT FORMAT
    - No citations, URLs, or markers may appear inside the JSON.
 
 JSON FORMAT
-{
-    "quizName": "General Knowledge Tutorial Exam",
-    "totalScore": 1000,
-    "passingScore": 700,
-    "questions": [{
-            "id": 1,
-            "topic": "Geography: Asia",
-            "Question": "What is the capital city of India?",
-            "Options": [{
-                    "id": 1,
-                    "text": "Mumbai",
-                    "reason": "Incorrect. Mumbai is the financial capital, but not the political capital."
-                }, {
-                    "id": 2,
-                    "text": "New Delhi",
-                    "reason": "Correct. New Delhi is the seat of all three branches of the Government of India."
-                }, {
-                    "id": 3,
-                    "text": "Bangalore",
-                    "reason": "Incorrect. Bangalore is known as the 'Silicon Valley' of India."
-                }, {
-                    "id": 4,
-                    "text": "Kolkata",
-                    "reason": "Incorrect. Kolkata was the capital until it was moved in 1911."
-                }
-            ],
-            "MaxAnswerSelection": 1,
-            "CorrectAnswers": [2], /*IDs of correct answers*/
-            "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata)."
-        }
-    ]
-}
+{"quizName":"General Knowledge Tutorial Exam","totalScore":1000,"passingScore":700,"scenarios":[{"id":1,"text":"CASE STUDY: Global Geopolitics & Regional Dominance\n\nIndia is a sovereign subcontinent located in South Asia, characterized by its immense geopolitical footprint, diverse historical evolution, and a population exceeding 1.4 billion people.\n\nHistorically, the seat of administrative power shifted dynamically across various dynasties. In the modern era, the structural foundation of the nation's governance relies entirely on a centralized federal district that acts as the core hub for the executive, legislative, and judicial branches."}],"questions":[{"id":1,"topic":"Geography: Asia","scenario_id":1,"Question":"Based on the administrative evolution described in the case study:\n\nIdentify the official capital city that currently serves as the seat of all three branches of the Government of India.","Options":[{"id":1,"text":"Mumbai","reason":"Incorrect. Mumbai serves as the primary financial and commercial hub, but does not hold political capital status."},{"id":2,"text":"New Delhi","reason":"Correct. New Delhi is the dedicated capital district hosting the Parliament, Supreme Court, and presidential estate."},{"id":3,"text":"Bangalore","reason":"Incorrect. Bangalore is the prominent technological hub ('Silicon Valley') rather than the political core."},{"id":4,"text":"Kolkata","reason":"Incorrect. Kolkata was the imperial capital during British rule until the administration officially relocated the seat in 1911."}],"MaxAnswerSelection":1,"CorrectAnswers":[2],"CorrectAnswerExplanation":"New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata) due to its centralized geographic and strategic advantages."},{"id":2,"topic":"Environmental Science","Question":"Review the details regarding 'Terrestrial Carbon Sinks' in the provided scenario.\n\nWhich of the following biological zones constitute the top two largest tropical rainforests on Earth? (Select 2)","Options":[{"id":1,"text":"The Amazon Rainforest","reason":"Correct. The Amazon is undisputed as the largest tropical rainforest, spanning multiple South American nations."},{"id":2,"text":"The Sahara Forest","reason":"Incorrect. The Sahara is categorized as an arid desert ecosystem, lacking the density or precipitation of a forest."},{"id":3,"text":"The Congo Rainforest","reason":"Correct. The Congo Basin in Central Africa forms the world's second-largest continuous tropical rainforest system."},{"id":4,"text":"The Sherwood Forest","reason":"Incorrect. Sherwood Forest is a historic woodland in England, covering a minor regional area rather than a massive tropical zone."}],"MaxAnswerSelection":2,"CorrectAnswers":[1,3],"CorrectAnswerExplanation":"The Amazon Basin (South America) is the world's largest tropical rainforest, followed closely by the Congo Basin (Africa) as the second largest."}]}
 
 PARAMETERS FOR THIS RUN  
 Use the following parameter values:
@@ -116,10 +86,10 @@ Use the following parameter values:
 - {{StudyGuideUrl}} = https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/ab-731  
 - {{StudyCourseUrl}} = https://learn.microsoft.com/en-us/training/courses/ab-731t00
 - {{NumberOfQuestions}} = 60  
-- {{MinScenarioQuestions}} = 15  
-- {{ExamLevel}} = Business professional / role-based
+- {{MinScenarioQuestions}} = 15
 
 Using ALL instructions above, generate and return:
 
 1. A fully formatted JSON block containing all {{NumberOfQuestions}} questions.  
+2. try to make it single downloadable format, else copy able format.
 2. (Optional) A text-only “Citations” section AFTER the JSON block.  
