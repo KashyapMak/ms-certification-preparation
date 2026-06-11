@@ -1,0 +1,54 @@
+GOAL  
+Create a highly focused "last-night exam preparation guide" for {{ExamCode}}: {{ExamName}}.  
+The output should help with quick revision, concept clarity, and identifying important exam topics.
+
+CONTEXT  
+The preparation is intended for final revision (1-day or last-night before exam).  
+Focus on clarity, prioritization, and memory-friendly summaries rather than lengthy explanations.
+
+SOURCES TO USE  
+1. Study Guide ({{StudyGuideUrl}}): Use this to identify exam domains, skills measured, and topic weightage.  
+2. Official Course ({{StudyCourseUrl}}): Use course modules to extract explanations, examples, and key concepts.
+
+INSTRUCTIONS  
+
+1. Topic Coverage  
+- Extract ALL topics from the study guide and organize them hierarchically  
+- Map each topic to relevant course modules  
+
+2. For EACH topic, provide:  
+- Brief explanation (what it is)  
+- Key concepts / subtopics  
+- Important points to remember for exam  
+- Common pitfalls or tricky areas  
+- Example (if applicable)  
+
+3. Prioritization  
+- Clearly highlight:  
+  - 🔥 High-priority / frequently tested topics  
+  - ⚠️ Commonly misunderstood areas  
+
+4. Exam-Focused Enhancements  
+- Add quick memory tips, keywords, or mnemonics wherever useful  
+- Provide likely question patterns or scenarios  
+
+5. Final Revision Section  
+Include:  
+- ✅ Quick cheat sheet (bullet summary of entire syllabus)  
+- ✅ Top 20–30 must-remember facts  
+- ✅ Rapid revision checklist  
+
+OUTPUT FORMAT  
+
+Use structured Markdown format:  
+- Clear headings for domains and topics  
+- Nested bullet points for readability  
+- Use icons (✅ 🔥 ⚠️) for emphasis  
+- Keep explanations concise but meaningful  
+
+PARAMETERS FOR THIS RUN  
+
+- {{ExamCode}} =  DP-600
+- {{ExamName}} = Microsoft Certified: Fabric Analytics Engineer Associate
+- {{StudyGuideUrl}} = https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/DP-600  
+- {{StudyCourseUrl}} = https://learn.microsoft.com/en-us/training/courses/dp-600t00 
