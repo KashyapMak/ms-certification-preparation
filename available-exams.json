@@ -5,7 +5,7 @@
       "name": "Sample Test",
       "tests": [
         {
-          "title": "Sample Test",
+          "title": "Sample Test",          
           "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json"
         }
       ]

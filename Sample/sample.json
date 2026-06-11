@@ -2,77 +2,90 @@
     "quizName": "General Knowledge Tutorial Exam",
     "totalScore": 1000,
     "passingScore": 700,
+    "scenarios": [
+        {
+            "id": 1,
+            "text": "CASE STUDY: Global Geopolitics & Regional Dominance\n\nIndia is a sovereign subcontinent located in South Asia, characterized by its immense geopolitical footprint, diverse historical evolution, and a population exceeding 1.4 billion people.\n\nHistorically, the seat of administrative power shifted dynamically across various dynasties. In the modern era, the structural foundation of the nation's governance relies entirely on a centralized federal district that acts as the core hub for the executive, legislative, and judicial branches."
+        },
+        {
+            "id": 2,
+            "text": "SCENARIO: Planetary Ecology and Atmospheric Balance\n\nEarth's biosphere relies on specialized natural systems to maintain equilibrium and sustain complex life forms. \n\n1. Terrestrial Carbon Sinks: Dense, multi-layered forest environments absorb billions of tons of carbon dioxide annually, acting as vital defense mechanisms against greenhouse warming.\n2. Oceanic Regulation: Vast aquatic bodies shield the planet by absorbing solar radiation and distributing thermal energy through global currents."
+        }
+    ],
     "questions": [
         {
             "id": 1,
             "topic": "Geography: Asia",
-            "Question": "What is the capital city of India?",
+            "scenario_id": 1,
+            "Question": "Based on the administrative evolution described in the case study:\n\nIdentify the official capital city that currently serves as the seat of all three branches of the Government of India.",
             "Options": [
-                { "id": 1, "text": "Mumbai", "reason": "Incorrect. Mumbai is the financial capital, but not the political capital." },
-                { "id": 2, "text": "New Delhi", "reason": "Correct. New Delhi is the seat of all three branches of the Government of India." },
-                { "id": 3, "text": "Bangalore", "reason": "Incorrect. Bangalore is known as the 'Silicon Valley' of India." },
-                { "id": 4, "text": "Kolkata", "reason": "Incorrect. Kolkata was the capital until it was moved in 1911." }
+                { "id": 1, "text": "Mumbai", "reason": "Incorrect. Mumbai serves as the primary financial and commercial hub, but does not hold political capital status." },
+                { "id": 2, "text": "New Delhi", "reason": "Correct. New Delhi is the dedicated capital district hosting the Parliament, Supreme Court, and presidential estate." },
+                { "id": 3, "text": "Bangalore", "reason": "Incorrect. Bangalore is the prominent technological hub ('Silicon Valley') rather than the political core." },
+                { "id": 4, "text": "Kolkata", "reason": "Incorrect. Kolkata was the imperial capital during British rule until the administration officially relocated the seat in 1911." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [2],
-            "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata)."
+            "CorrectAnswerExplanation": "New Delhi became the capital of India in 1911, replacing Calcutta (now Kolkata) due to its centralized geographic and strategic advantages."
         },
         {
             "id": 2,
             "topic": "Environmental Science",
-            "Question": "Which of the following are among the world's top two largest rainforests? (Select 2)",
+            "scenario_id": 2,
+            "Question": "Review the details regarding 'Terrestrial Carbon Sinks' in the provided scenario.\n\nWhich of the following biological zones constitute the top two largest tropical rainforests on Earth? (Select 2)",
             "Options": [
-                { "id": 1, "text": "The Amazon Rainforest", "reason": "Correct. The Amazon is the largest tropical rainforest in the world." },
-                { "id": 2, "text": "The Sahara Forest", "reason": "Incorrect. The Sahara is a desert, not a rainforest." },
-                { "id": 3, "text": "The Congo Rainforest", "reason": "Correct. The Congo Basin is the second largest rainforest on Earth." },
-                { "id": 4, "text": "The Sherwood Forest", "reason": "Incorrect. Sherwood is a royal forest in England, but very small compared to tropical rainforests." }
+                { "id": 1, "text": "The Amazon Rainforest", "reason": "Correct. The Amazon is undisputed as the largest tropical rainforest, spanning multiple South American nations." },
+                { "id": 2, "text": "The Sahara Forest", "reason": "Incorrect. The Sahara is categorized as an arid desert ecosystem, lacking the density or precipitation of a forest." },
+                { "id": 3, "text": "The Congo Rainforest", "reason": "Correct. The Congo Basin in Central Africa forms the world's second-largest continuous tropical rainforest system." },
+                { "id": 4, "text": "The Sherwood Forest", "reason": "Incorrect. Sherwood Forest is a historic woodland in England, covering a minor regional area rather than a massive tropical zone." }
             ],
             "MaxAnswerSelection": 2,
             "CorrectAnswers": [1, 3],
-            "CorrectAnswerExplanation": "The Amazon (South America) is the largest, and the Congo Basin (Africa) is the second largest rainforest in the world."
+            "CorrectAnswerExplanation": "The Amazon Basin (South America) is the world's largest tropical rainforest, followed closely by the Congo Basin (Africa) as the second largest."
         },
         {
             "id": 3,
             "topic": "Astronomy",
-            "Question": "Which planet is known as the 'Red Planet'?",
+            "Question": "Our solar system features diverse rocky terrestrial planets.\n\nWhich planet is universally recognized as the 'Red Planet' due to the widespread presence of iron oxide minerals on its surface?",
             "Options": [
-                { "id": 1, "text": "Venus", "reason": "Incorrect. Venus is often called the 'Evening Star' or 'Morning Star'." },
-                { "id": 2, "text": "Mars", "reason": "Correct. Iron oxide on its surface gives it a distinct reddish appearance." },
-                { "id": 3, "text": "Jupiter", "reason": "Incorrect. Jupiter is known for its Great Red Spot, but is a gas giant, not a red planet." },
-                { "id": 4, "text": "Saturn", "reason": "Incorrect. Saturn is best known for its extensive ring system." }
+                { "id": 1, "text": "Venus", "reason": "Incorrect. Venus has a highly reflective, thick atmosphere of sulfuric acid, giving it a bright yellowish-white glare." },
+                { "id": 2, "text": "Mars", "reason": "Correct. The rusted iron dust covering Martian terrain creates its distinct signature reddish-orange hue." },
+                { "id": 3, "text": "Jupiter", "reason": "Incorrect. Jupiter features a 'Great Red Spot' storm, but it is fundamentally classified as a gas giant, not a red terrestrial planet." },
+                { "id": 4, "text": "Saturn", "reason": "Incorrect. Saturn is characterized by its prominent ring system and pale yellow atmospheric bands." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [2],
-            "CorrectAnswerExplanation": "Mars appears red due to iron oxide (rust) on its surface."
+            "CorrectAnswerExplanation": "Mars appears distinctively red to the naked eye and instruments because iron oxide (rust) dominates its topsoil chemistry."
         },
         {
             "id": 4,
             "topic": "Arts and Design",
-            "Question": "Which of the following are primary colors? (Select 3)",
+            "Question": "In traditional art theory and classical design curricula:\n\nWhich of the following colors are classified as the foundational 'Primary Colors' within the historical RYB subtractive color model? (Select 3)",
             "Options": [
-                { "id": 1, "text": "Red", "reason": "Correct. Red is a fundamental primary color in the RYB model." },
-                { "id": 2, "text": "Green", "reason": "Incorrect. In the RYB model, Green is a secondary color made from Yellow and Blue." },
-                { "id": 3, "text": "Blue", "reason": "Correct. Blue cannot be created by mixing other colors in the RYB model." },
-                { "id": 4, "text": "Yellow", "reason": "Correct. Yellow is the third primary color in traditional art theory." },
-                { "id": 5, "text": "Orange", "reason": "Incorrect. Orange is a secondary color created by mixing Red and Yellow." }
+                { "id": 1, "text": "Red", "reason": "Correct. Red is a cornerstone primary hue that cannot be created by combining other pigments in this model." },
+                { "id": 2, "text": "Green", "reason": "Incorrect. Green is classified as a secondary hue, formulated by combining Yellow and Blue pigments." },
+                { "id": 3, "text": "Blue", "reason": "Correct. Blue is an essential primary pigment required to mix secondary cool shades." },
+                { "id": 4, "text": "Yellow", "reason": "Correct. Yellow completes the triad of primary pigments used to produce warm secondary colors." },
+                { "id": 5, "text": "Orange", "reason": "Incorrect. Orange is a secondary pigment produced by blending the primary hues Red and Yellow together." }
             ],
             "MaxAnswerSelection": 3,
             "CorrectAnswers": [1, 3, 4],
-            "CorrectAnswerExplanation": "In traditional color theory (RYB), Red, Yellow, and Blue are the primary colors."
+            "CorrectAnswerExplanation": "Under traditional subtractive color theory (the RYB model used in fine arts), Red, Yellow, and Blue cannot be created by mixing other colors and serve as the source for all other variations."
         },
         {
             "id": 5,
             "topic": "Physical Geography",
-            "Question": "Which is the largest ocean on Earth?",
+            "scenario_id": 2,
+            "Question": "Refer back to the clause regarding 'Oceanic Regulation' in the scenario.\n\nWhich individual body of water ranks as the single largest and deepest ocean basin on Earth, enveloping over 30% of the globe's surface?",
             "Options": [
-                { "id": 1, "text": "Atlantic Ocean", "reason": "Incorrect. The Atlantic is the second-largest ocean." },
-                { "id": 2, "text": "Indian Ocean", "reason": "Incorrect. The Indian Ocean is the third-largest." },
-                { "id": 3, "text": "Arctic Ocean", "reason": "Incorrect. The Arctic is the smallest and shallowest of the five major oceans." },
-                { "id": 4, "text": "Pacific Ocean", "reason": "Correct. The Pacific covers more than 30% of the Earth's surface." }
+                { "id": 1, "text": "Atlantic Ocean", "reason": "Incorrect. The Atlantic is the second-largest ocean basin, splitting the Americas from Europe and Africa." },
+                { "id": 2, "text": "Indian Ocean", "reason": "Incorrect. The Indian Ocean ranks as the third-largest global water body." },
+                { "id": 3, "text": "Arctic Ocean", "reason": "Incorrect. The Arctic Ocean is the smallest, shallowest, and coldest of the principal oceans." },
+                { "id": 4, "text": "Pacific Ocean", "reason": "Correct. The Pacific Ocean basin is immensely vast, exceeding the combined landmass area of all continents." }
             ],
             "MaxAnswerSelection": 1,
             "CorrectAnswers": [4],
-            "CorrectAnswerExplanation": "The Pacific Ocean is the largest and deepest of Earth's oceanic divisions."
+            "CorrectAnswerExplanation": "The Pacific Ocean is the largest, deepest global ocean basin, containing the Mariana Trench and extending from the Arctic to the Southern Ocean boundaries."
         }
     ]
 }
