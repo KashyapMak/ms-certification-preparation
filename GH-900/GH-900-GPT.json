@@ -1,0 +1,1956 @@
+{
+  "quizName": "GH-900: GitHub Foundations Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY: Contoso GitHub Adoption\n\nContoso is moving several product teams from shared file folders to GitHub. The teams need a simple workflow for version control, branching, commits, pull requests, and repository visibility. Team members have different experience levels, so the solution must use GitHub fundamentals and clear collaboration practices."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY: Fabrikam Developer Platform\n\nFabrikam is standardizing its cloud development environment on GitHub. The organization wants repeatable development workspaces, basic automation, AI-assisted coding, and project tracking for feature delivery. The platform team must recommend beginner-friendly GitHub features that align with GH-900 level responsibilities."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY: Adventure Works Secure Collaboration\n\nAdventure Works hosts internal and open-source repositories on GitHub. The company needs stronger repository governance, secure access, contributor guidance, and community health practices. Administrators want to use GitHub features that improve security, privacy, and sustainable collaboration without making the workflow unnecessarily complex."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Understand Git and GitHub basics",
+      "scenario_id": 1,
+      "Question": "Contoso wants to track every meaningful change to application files and allow the team to return to earlier states.\n\nWhich concept provides this capability?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Package management",
+          "reason": "Incorrect. It distributes dependencies rather than tracking source history."
+        },
+        {
+          "id": 2,
+          "text": "Version control",
+          "reason": "Correct. Version control records changes over time and supports review and recovery."
+        },
+        {
+          "id": 3,
+          "text": "Static web hosting",
+          "reason": "Incorrect. It publishes web content rather than managing change history."
+        },
+        {
+          "id": 4,
+          "text": "Identity federation",
+          "reason": "Incorrect. It manages authentication rather than file revisions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Version control is the foundation for tracking, comparing, and recovering changes in a project."
+    },
+    {
+      "id": 2,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A new user asks how Git differs from GitHub.\n\nWhich statement is most accurate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub is the command-line replacement for Git.",
+          "reason": "Incorrect. GitHub does not replace Git as the underlying version control system."
+        },
+        {
+          "id": 2,
+          "text": "Git is a cloud-only GitHub plan for enterprises.",
+          "reason": "Incorrect. Git is not a GitHub subscription plan."
+        },
+        {
+          "id": 3,
+          "text": "GitHub is only used for issue tracking and cannot host code.",
+          "reason": "Incorrect. GitHub hosts repositories as a core capability."
+        },
+        {
+          "id": 4,
+          "text": "Git is a distributed version control system, while GitHub is a platform that hosts Git repositories and collaboration features.",
+          "reason": "Correct. This separates the local version control tool from the hosted collaboration service."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Git manages repository history; GitHub adds hosting, collaboration, automation, and governance features.",
+      "scenario_id": 1
+    },
+    {
+      "id": 3,
+      "topic": "Understand Git and GitHub basics",
+      "scenario_id": 1,
+      "Question": "Contoso needs an isolated line of development for a UI change without immediately affecting the main code line.\n\nWhich Git concept should the team use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A branch",
+          "reason": "Correct. A branch lets work proceed independently before it is merged."
+        },
+        {
+          "id": 2,
+          "text": "A release",
+          "reason": "Incorrect. A release packages a version for distribution after work is complete."
+        },
+        {
+          "id": 3,
+          "text": "A gist",
+          "reason": "Incorrect. A gist is for sharing snippets, not managing product development lines."
+        },
+        {
+          "id": 4,
+          "text": "A license",
+          "reason": "Incorrect. A license defines usage terms, not a line of development."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Branches support GitHub Flow by isolating changes until review and merge."
+    },
+    {
+      "id": 4,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A developer has changed three files locally and wants to record the changes in repository history with a message.\n\nWhich Git operation should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Fork",
+          "reason": "Incorrect. A fork creates a copy of a repository under another account."
+        },
+        {
+          "id": 2,
+          "text": "Watch",
+          "reason": "Incorrect. Watching controls notifications for repository activity."
+        },
+        {
+          "id": 3,
+          "text": "Commit",
+          "reason": "Correct. A commit records staged changes as a point in history."
+        },
+        {
+          "id": 4,
+          "text": "Star",
+          "reason": "Incorrect. Starring bookmarks or shows interest in a repository."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "A commit is the unit of recorded change in Git history.",
+      "scenario_id": 1
+    },
+    {
+      "id": 5,
+      "topic": "Understand Git and GitHub basics",
+      "scenario_id": 1,
+      "Question": "Contoso wants a lightweight contribution model where developers branch, commit, open a pull request, review, and then merge.\n\nWhich workflow is being described?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Waterfall delivery",
+          "reason": "Incorrect. Waterfall is a project methodology, not a GitHub branch workflow."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Flow",
+          "reason": "Correct. GitHub Flow uses branches and pull requests for collaborative changes."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. GitHub Pages hosts static sites, not the end-to-end collaboration flow."
+        },
+        {
+          "id": 4,
+          "text": "Dependency graph",
+          "reason": "Incorrect. The dependency graph shows packages and dependencies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "GitHub Flow is the common GitHub collaboration workflow using branches and pull requests."
+    },
+    {
+      "id": 6,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A business analyst wants to format checklists, links, tables, and code snippets in issue comments.\n\nWhich syntax should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "YAML",
+          "reason": "Incorrect. YAML is commonly used for configuration files."
+        },
+        {
+          "id": 2,
+          "text": "SCIM",
+          "reason": "Incorrect. SCIM is used for identity provisioning."
+        },
+        {
+          "id": 3,
+          "text": "CodeQL",
+          "reason": "Incorrect. CodeQL is used for semantic code analysis."
+        },
+        {
+          "id": 4,
+          "text": "Markdown",
+          "reason": "Correct. Markdown is used across GitHub for formatted communication."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Markdown helps users communicate clearly in issues, pull requests, READMEs, and discussions."
+    },
+    {
+      "id": 7,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A developer wants to work with repositories through a graphical desktop application instead of the command line.\n\nWhich GitHub product best fits this need?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Desktop",
+          "reason": "Correct. GitHub Desktop provides a graphical client for common Git and GitHub tasks."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Advanced Security",
+          "reason": "Incorrect. It provides security capabilities, not a local GUI client."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Actions runner",
+          "reason": "Incorrect. It executes automation jobs, not interactive repository management."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Sponsors",
+          "reason": "Incorrect. It supports funding maintainers, not desktop repository operations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Desktop is appropriate for users who prefer a GUI for common Git workflows."
+    },
+    {
+      "id": 8,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A project manager wants to review notifications and participate in issues while away from a laptop.\n\nWhich option is designed for this mobile use case?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Enterprise Server",
+          "reason": "Incorrect. It is a self-hosted GitHub deployment option."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Packages",
+          "reason": "Incorrect. It hosts software packages."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Mobile",
+          "reason": "Correct. GitHub Mobile supports reviewing and collaborating from mobile devices."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Codespaces",
+          "reason": "Incorrect. It provides cloud development environments."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "GitHub Mobile is intended for on-the-go GitHub collaboration."
+    },
+    {
+      "id": 9,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "Which account type is best when multiple employees need shared ownership of repositories, teams, and permissions for a company?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Personal account",
+          "reason": "Incorrect. A personal account represents an individual user."
+        },
+        {
+          "id": 2,
+          "text": "Organization account",
+          "reason": "Correct. An organization supports shared repositories, teams, roles, and centralized management."
+        },
+        {
+          "id": 3,
+          "text": "Machine account",
+          "reason": "Incorrect. A machine account is for automation patterns, not typical company ownership."
+        },
+        {
+          "id": 4,
+          "text": "Gist account",
+          "reason": "Incorrect. Gist is a feature, not an account type."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Organizations are used to manage collaborative work for teams and companies."
+    },
+    {
+      "id": 10,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A company requires centralized enterprise policies across many organizations.\n\nWhich GitHub construct is designed for this scale?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository topic",
+          "reason": "Incorrect. Topics classify repositories but do not manage policy."
+        },
+        {
+          "id": 2,
+          "text": "Issue template",
+          "reason": "Incorrect. Templates standardize issue creation."
+        },
+        {
+          "id": 3,
+          "text": "Milestone",
+          "reason": "Incorrect. Milestones group issues and pull requests for planning."
+        },
+        {
+          "id": 4,
+          "text": "Enterprise account",
+          "reason": "Correct. An enterprise account can manage policy and billing across organizations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Enterprise accounts provide higher-level administration across organizations."
+    },
+    {
+      "id": 11,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A team member wants to download an existing repository and its history to a local machine for the first time.\n\nWhich Git operation should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Clone",
+          "reason": "Correct. Cloning creates a local copy of an existing repository including history."
+        },
+        {
+          "id": 2,
+          "text": "Merge",
+          "reason": "Incorrect. Merging combines changes from one branch into another."
+        },
+        {
+          "id": 3,
+          "text": "Rebase",
+          "reason": "Incorrect. Rebasing reapplies commits on another base."
+        },
+        {
+          "id": 4,
+          "text": "Tag",
+          "reason": "Incorrect. A tag marks a specific point in history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Clone is the initial action for creating a local working copy from a remote repository."
+    },
+    {
+      "id": 12,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A developer wants to upload local commits from a branch to the remote repository on GitHub.\n\nWhich Git operation should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Pull",
+          "reason": "Incorrect. Pull retrieves remote changes into the local branch."
+        },
+        {
+          "id": 2,
+          "text": "Status",
+          "reason": "Incorrect. Status shows working tree state."
+        },
+        {
+          "id": 3,
+          "text": "Push",
+          "reason": "Correct. Push publishes local commits to a remote repository."
+        },
+        {
+          "id": 4,
+          "text": "Blame",
+          "reason": "Incorrect. Blame shows line-level commit attribution."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Push sends local commits to the remote repository."
+    },
+    {
+      "id": 13,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A developer wants to bring remote changes into the current local branch and integrate them.\n\nWhich Git operation should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Add",
+          "reason": "Incorrect. Add stages changes for commit."
+        },
+        {
+          "id": 2,
+          "text": "Pull",
+          "reason": "Correct. Pull fetches remote changes and integrates them into the current branch."
+        },
+        {
+          "id": 3,
+          "text": "Init",
+          "reason": "Incorrect. Init creates a new local Git repository."
+        },
+        {
+          "id": 4,
+          "text": "Archive",
+          "reason": "Incorrect. Archive exports repository contents without normal collaboration history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Pull is commonly used to update a local branch from its remote counterpart."
+    },
+    {
+      "id": 14,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A repository owner wants contributors to understand the project purpose, setup instructions, and usage guidance immediately.\n\nWhich file should be prioritized?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "CODEOWNERS",
+          "reason": "Incorrect. CODEOWNERS assigns review responsibility."
+        },
+        {
+          "id": 2,
+          "text": "SECURITY",
+          "reason": "Incorrect. SECURITY explains how to report vulnerabilities."
+        },
+        {
+          "id": 3,
+          "text": "CODE_OF_CONDUCT",
+          "reason": "Incorrect. A code of conduct defines community behavior expectations."
+        },
+        {
+          "id": 4,
+          "text": "README",
+          "reason": "Correct. A README introduces the repository and provides essential usage information."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "A README is the primary entry point for understanding a repository."
+    },
+    {
+      "id": 15,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A team wants a repository visible to anyone on the internet.\n\nWhich visibility should they choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Public",
+          "reason": "Correct. Public repositories are visible to everyone."
+        },
+        {
+          "id": 2,
+          "text": "Private",
+          "reason": "Incorrect. Private repositories restrict access to selected users and teams."
+        },
+        {
+          "id": 3,
+          "text": "Internal",
+          "reason": "Incorrect. Internal repositories are visible within an enterprise where supported."
+        },
+        {
+          "id": 4,
+          "text": "Archived",
+          "reason": "Incorrect. Archived repositories are read-only and not a visibility category for public access."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Public visibility is used when a repository should be openly accessible."
+    },
+    {
+      "id": 16,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A team wants to preserve a meaningful point in history for version 1.0 without changing the files.\n\nWhich Git concept should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Branch protection",
+          "reason": "Incorrect. Branch protection controls changes to important branches."
+        },
+        {
+          "id": 2,
+          "text": "Issue label",
+          "reason": "Incorrect. Labels categorize issues and pull requests."
+        },
+        {
+          "id": 3,
+          "text": "Tag",
+          "reason": "Correct. A tag marks a specific commit, commonly for versions."
+        },
+        {
+          "id": 4,
+          "text": "Project view",
+          "reason": "Incorrect. Project views organize work items."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Tags are commonly used to identify release versions or notable commits."
+    },
+    {
+      "id": 17,
+      "topic": "Understand Git and GitHub basics",
+      "Question": "A team wants to use GitHub.dev for quick browser-based edits but needs a full cloud development environment with compute and terminal access for larger work.\n\nWhich feature should they use for the larger work?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages hosts static websites."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Codespaces",
+          "reason": "Correct. Codespaces provides a cloud-hosted development environment with compute resources."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Sponsors",
+          "reason": "Incorrect. Sponsors supports funding open-source maintainers."
+        },
+        {
+          "id": 4,
+          "text": "Repository insights",
+          "reason": "Incorrect. Insights provide repository activity and analytics."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Codespaces is appropriate when browser editing is not enough and a configured development environment is required."
+    },
+    {
+      "id": 18,
+      "topic": "Work with GitHub repositories",
+      "Question": "A team repeatedly creates repositories with the same starter structure, labels, and common files.\n\nWhich repository feature should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository star",
+          "reason": "Incorrect. A star bookmarks or highlights interest."
+        },
+        {
+          "id": 2,
+          "text": "Repository fork",
+          "reason": "Incorrect. A fork copies a repository for independent contribution."
+        },
+        {
+          "id": 3,
+          "text": "Repository watch",
+          "reason": "Incorrect. Watching controls notifications."
+        },
+        {
+          "id": 4,
+          "text": "Repository template",
+          "reason": "Correct. A template repository helps create new repositories from a predefined structure."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Repository templates help standardize new repositories."
+    },
+    {
+      "id": 19,
+      "topic": "Work with GitHub repositories",
+      "Question": "A project requires explicit terms explaining how others may use, modify, and distribute the code.\n\nWhich file is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "LICENSE",
+          "reason": "Correct. A LICENSE file states the legal terms for using the project."
+        },
+        {
+          "id": 2,
+          "text": "README",
+          "reason": "Incorrect. README explains usage and setup guidance."
+        },
+        {
+          "id": 3,
+          "text": "CONTRIBUTING",
+          "reason": "Incorrect. CONTRIBUTING explains how to contribute."
+        },
+        {
+          "id": 4,
+          "text": "CODEOWNERS",
+          "reason": "Incorrect. CODEOWNERS defines review ownership."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A LICENSE file communicates the project license terms."
+    },
+    {
+      "id": 20,
+      "topic": "Work with GitHub repositories",
+      "Question": "A team needs GitHub to automatically request reviews from the platform team when infrastructure files change.\n\nWhich repository file supports this?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SECURITY",
+          "reason": "Incorrect. SECURITY explains vulnerability reporting."
+        },
+        {
+          "id": 2,
+          "text": "README",
+          "reason": "Incorrect. README provides project overview."
+        },
+        {
+          "id": 3,
+          "text": "CODEOWNERS",
+          "reason": "Correct. CODEOWNERS maps files or paths to required owners for review."
+        },
+        {
+          "id": 4,
+          "text": "SUPPORT",
+          "reason": "Incorrect. SUPPORT explains how to get help."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "CODEOWNERS helps route review responsibility for specific paths."
+    },
+    {
+      "id": 21,
+      "topic": "Work with GitHub repositories",
+      "Question": "A repository owner wants to define expectations for external contributors, including how to propose changes and run tests.\n\nWhich file should be added?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "LICENSE",
+          "reason": "Incorrect. LICENSE defines usage rights."
+        },
+        {
+          "id": 2,
+          "text": "CONTRIBUTING",
+          "reason": "Correct. A CONTRIBUTING file documents contribution guidelines."
+        },
+        {
+          "id": 3,
+          "text": "Dependabot configuration",
+          "reason": "Incorrect. Dependabot configuration manages dependency update behavior."
+        },
+        {
+          "id": 4,
+          "text": "Release notes",
+          "reason": "Incorrect. Release notes summarize shipped changes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "CONTRIBUTING guidance improves consistency for incoming contributions."
+    },
+    {
+      "id": 22,
+      "topic": "Work with GitHub repositories",
+      "Question": "A maintainer wants to publish packaged version notes and downloadable artifacts for version 2.1.\n\nWhich GitHub feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Discussions",
+          "reason": "Incorrect. Discussions support community conversations."
+        },
+        {
+          "id": 2,
+          "text": "Projects",
+          "reason": "Incorrect. Projects track work items."
+        },
+        {
+          "id": 3,
+          "text": "Actions secrets",
+          "reason": "Incorrect. Actions secrets store sensitive automation values."
+        },
+        {
+          "id": 4,
+          "text": "Releases",
+          "reason": "Correct. Releases package versioned software and notes from repository history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "GitHub Releases are used to distribute versioned project outputs."
+    },
+    {
+      "id": 23,
+      "topic": "Work with GitHub repositories",
+      "Question": "A repository owner wants a high-level view of repository activity such as contributors, commits, and traffic.\n\nWhich feature area should they review?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Insights",
+          "reason": "Correct. Insights provide repository metrics and activity views."
+        },
+        {
+          "id": 2,
+          "text": "Gists",
+          "reason": "Incorrect. Gists share code snippets."
+        },
+        {
+          "id": 3,
+          "text": "Sponsors",
+          "reason": "Incorrect. Sponsors supports maintainer funding."
+        },
+        {
+          "id": 4,
+          "text": "Packages",
+          "reason": "Incorrect. Packages hosts package artifacts."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Repository Insights help owners understand repository activity and health."
+    },
+    {
+      "id": 24,
+      "topic": "Work with GitHub repositories",
+      "Question": "A developer wants to create a personal copy of an open-source repository under their own account before proposing changes back.\n\nWhich action should they perform?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Archive the repository",
+          "reason": "Incorrect. Archiving makes a repository read-only."
+        },
+        {
+          "id": 2,
+          "text": "Delete the repository",
+          "reason": "Incorrect. Deleting removes repository access and history from GitHub."
+        },
+        {
+          "id": 3,
+          "text": "Fork the repository",
+          "reason": "Correct. Forking creates a copy under another account for independent changes."
+        },
+        {
+          "id": 4,
+          "text": "Transfer every issue",
+          "reason": "Incorrect. Transferring issues does not create a working copy."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Forks are commonly used for open-source contribution workflows."
+    },
+    {
+      "id": 25,
+      "topic": "Work with GitHub repositories",
+      "Question": "A team wants to prevent accidental direct changes to the default branch and require review before merge.\n\nWhich capability should they configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository topics",
+          "reason": "Incorrect. Topics improve discoverability."
+        },
+        {
+          "id": 2,
+          "text": "Branch protection rules",
+          "reason": "Correct. Branch protection can require pull requests, checks, and restrictions before changes are merged."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages publishes static content."
+        },
+        {
+          "id": 4,
+          "text": "Git LFS",
+          "reason": "Incorrect. Git LFS stores large files outside normal Git object storage."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Branch protection helps enforce quality and review controls for important branches."
+    },
+    {
+      "id": 26,
+      "topic": "Collaborate using GitHub",
+      "Question": "A developer has completed work on a feature branch and wants teammates to review the changes before merging.\n\nWhich GitHub feature should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Milestone",
+          "reason": "Incorrect. A milestone groups issues and pull requests by target."
+        },
+        {
+          "id": 2,
+          "text": "Wiki",
+          "reason": "Incorrect. A wiki stores project documentation."
+        },
+        {
+          "id": 3,
+          "text": "Secret scanning",
+          "reason": "Incorrect. Secret scanning detects exposed secrets."
+        },
+        {
+          "id": 4,
+          "text": "Pull request",
+          "reason": "Correct. A pull request supports review, discussion, checks, and merging."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Pull requests are central to collaborative code review in GitHub."
+    },
+    {
+      "id": 27,
+      "topic": "Collaborate using GitHub",
+      "Question": "During a review, a teammate wants to request specific changes before a pull request can be merged.\n\nWhich review outcome should they choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Request changes",
+          "reason": "Correct. Request changes records that updates are required before approval."
+        },
+        {
+          "id": 2,
+          "text": "Close project",
+          "reason": "Incorrect. Closing a project does not review code."
+        },
+        {
+          "id": 3,
+          "text": "Star repository",
+          "reason": "Incorrect. Starring does not affect pull request review status."
+        },
+        {
+          "id": 4,
+          "text": "Create release",
+          "reason": "Incorrect. Creating a release publishes a version, not review feedback."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Pull request reviews can approve, comment, or request changes."
+    },
+    {
+      "id": 28,
+      "topic": "Collaborate using GitHub",
+      "Question": "A support team wants to track bugs and enhancement requests in a repository.\n\nWhich GitHub feature should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Tags",
+          "reason": "Incorrect. Git tags mark commits."
+        },
+        {
+          "id": 2,
+          "text": "Codespaces",
+          "reason": "Incorrect. Codespaces provides development environments."
+        },
+        {
+          "id": 3,
+          "text": "Issues",
+          "reason": "Correct. Issues track tasks, bugs, enhancements, and discussions tied to work."
+        },
+        {
+          "id": 4,
+          "text": "Dependabot alerts",
+          "reason": "Incorrect. Dependabot alerts identify vulnerable dependencies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Issues are the primary GitHub feature for tracking work and feedback."
+    },
+    {
+      "id": 29,
+      "topic": "Collaborate using GitHub",
+      "Question": "A community wants long-form conversations and Q&A that are not necessarily tied to a specific bug or code change.\n\nWhich feature is best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Pull requests",
+          "reason": "Incorrect. Pull requests focus on proposed code changes."
+        },
+        {
+          "id": 2,
+          "text": "Discussions",
+          "reason": "Correct. Discussions support community conversations, questions, and announcements."
+        },
+        {
+          "id": 3,
+          "text": "Branch rulesets",
+          "reason": "Incorrect. Rulesets enforce repository policies."
+        },
+        {
+          "id": 4,
+          "text": "Artifacts",
+          "reason": "Incorrect. Artifacts store workflow outputs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Discussions are suited for broader collaboration and community engagement."
+    },
+    {
+      "id": 30,
+      "topic": "Collaborate using GitHub",
+      "Question": "A maintainer wants to categorize issues as bugs, documentation, or enhancements.\n\nWhich feature should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Releases",
+          "reason": "Incorrect. Releases publish versions."
+        },
+        {
+          "id": 2,
+          "text": "Forks",
+          "reason": "Incorrect. Forks create repository copies."
+        },
+        {
+          "id": 3,
+          "text": "SSH keys",
+          "reason": "Incorrect. SSH keys authenticate Git operations."
+        },
+        {
+          "id": 4,
+          "text": "Labels",
+          "reason": "Correct. Labels classify and filter issues and pull requests."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Labels provide lightweight categorization for issues and pull requests."
+    },
+    {
+      "id": 31,
+      "topic": "Collaborate using GitHub",
+      "Question": "A team wants to group issues and pull requests for a specific product launch target date.\n\nWhich GitHub feature should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Milestones",
+          "reason": "Correct. Milestones group issues and pull requests around a goal or target."
+        },
+        {
+          "id": 2,
+          "text": "Gists",
+          "reason": "Incorrect. Gists share snippets."
+        },
+        {
+          "id": 3,
+          "text": "Repository topics",
+          "reason": "Incorrect. Topics improve repository discovery."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Mobile",
+          "reason": "Incorrect. Mobile supports collaboration from devices."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Milestones are useful for tracking progress toward a release or objective."
+    },
+    {
+      "id": 32,
+      "topic": "Collaborate using GitHub",
+      "Question": "A user receives too many alerts and wants to control which repository activities generate notifications.\n\nWhich configuration should they review?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "License usage stats",
+          "reason": "Incorrect. License usage relates to billing and seats."
+        },
+        {
+          "id": 2,
+          "text": "Dependency graph",
+          "reason": "Incorrect. The dependency graph lists dependencies."
+        },
+        {
+          "id": 3,
+          "text": "Notification and subscription settings",
+          "reason": "Correct. These settings control how and when GitHub sends updates."
+        },
+        {
+          "id": 4,
+          "text": "Branch comparison",
+          "reason": "Incorrect. Branch comparison compares code changes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "GitHub notifications and subscriptions help users manage collaboration signals."
+    },
+    {
+      "id": 33,
+      "topic": "Collaborate using GitHub",
+      "Question": "A reviewer wants to leave feedback on a specific changed line in a pull request.\n\nWhich capability should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository star",
+          "reason": "Incorrect. A star bookmarks the repository."
+        },
+        {
+          "id": 2,
+          "text": "Pull request line comment",
+          "reason": "Correct. Line comments attach feedback to specific code changes."
+        },
+        {
+          "id": 3,
+          "text": "Project field",
+          "reason": "Incorrect. A project field stores planning metadata."
+        },
+        {
+          "id": 4,
+          "text": "Environment secret",
+          "reason": "Incorrect. An environment secret stores sensitive workflow values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Line-level pull request comments make feedback precise and actionable."
+    },
+    {
+      "id": 34,
+      "topic": "Apply modern development practices",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants a repeatable cloud development environment that can be launched from a repository with predefined tools.\n\nWhich feature should the platform team recommend?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Discussions",
+          "reason": "Incorrect. Discussions are for conversations."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Sponsors",
+          "reason": "Incorrect. Sponsors helps fund maintainers."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages hosts static websites."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Codespaces",
+          "reason": "Correct. Codespaces provides hosted development environments that can use repository configuration."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Codespaces supports standardized development environments in the cloud."
+    },
+    {
+      "id": 35,
+      "topic": "Apply modern development practices",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants to automate build and test tasks whenever code is pushed or a pull request is opened.\n\nWhich GitHub feature should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Actions",
+          "reason": "Correct. GitHub Actions automates workflows triggered by repository events."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Wiki",
+          "reason": "Incorrect. A wiki stores documentation."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Desktop",
+          "reason": "Incorrect. Desktop is a GUI client."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Mobile",
+          "reason": "Incorrect. Mobile supports collaboration from devices."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Actions is used for CI/CD and event-driven automation."
+    },
+    {
+      "id": 36,
+      "topic": "Apply modern development practices",
+      "Question": "A workflow must run on compute provided by GitHub without maintaining company servers.\n\nWhich runner type should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Self-hosted runner",
+          "reason": "Incorrect. Self-hosted runners are managed by the customer."
+        },
+        {
+          "id": 2,
+          "text": "Repository topic",
+          "reason": "Incorrect. Topics classify repositories."
+        },
+        {
+          "id": 3,
+          "text": "GitHub-hosted runner",
+          "reason": "Correct. GitHub-hosted runners provide managed compute for workflow jobs."
+        },
+        {
+          "id": 4,
+          "text": "Project template",
+          "reason": "Incorrect. Project templates standardize planning views."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "GitHub-hosted runners reduce infrastructure management for workflow execution."
+    },
+    {
+      "id": 37,
+      "topic": "Apply modern development practices",
+      "Question": "Fabrikam needs workflow configuration stored as code inside the repository.\n\nWhich file format is commonly used for GitHub Actions workflow files?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "CSV",
+          "reason": "Incorrect. CSV stores tabular data."
+        },
+        {
+          "id": 2,
+          "text": "YAML",
+          "reason": "Correct. GitHub Actions workflows are commonly defined using YAML files."
+        },
+        {
+          "id": 3,
+          "text": "PNG",
+          "reason": "Incorrect. PNG is an image format."
+        },
+        {
+          "id": 4,
+          "text": "PDF",
+          "reason": "Incorrect. PDF is a document format."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Actions workflows are defined in YAML files in the repository."
+    },
+    {
+      "id": 38,
+      "topic": "Apply modern development practices",
+      "Question": "A developer wants AI-assisted autocomplete-style coding suggestions in the editor.\n\nWhich GitHub product provides this capability?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages publishes static sites."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Projects",
+          "reason": "Incorrect. Projects tracks work."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Packages",
+          "reason": "Incorrect. Packages hosts package artifacts."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Copilot",
+          "reason": "Correct. GitHub Copilot provides AI-assisted coding suggestions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "GitHub Copilot assists with coding by suggesting code and related content."
+    },
+    {
+      "id": 39,
+      "topic": "Apply modern development practices",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants to check source code for potential vulnerabilities using semantic analysis in GitHub.\n\nWhich capability should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Code scanning with CodeQL",
+          "reason": "Correct. Code scanning can use CodeQL to detect security issues in code."
+        },
+        {
+          "id": 2,
+          "text": "Repository stars",
+          "reason": "Incorrect. Stars show interest in repositories."
+        },
+        {
+          "id": 3,
+          "text": "Issue forms",
+          "reason": "Incorrect. Issue forms collect structured issue data."
+        },
+        {
+          "id": 4,
+          "text": "Branch comparison",
+          "reason": "Incorrect. Branch comparison shows differences between branches."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Code scanning helps identify security issues in code and can be powered by CodeQL."
+    },
+    {
+      "id": 40,
+      "topic": "Apply modern development practices",
+      "Question": "A team needs to store a password for a workflow without placing it in source code.\n\nWhich GitHub feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Issue label",
+          "reason": "Incorrect. Labels categorize work items."
+        },
+        {
+          "id": 2,
+          "text": "README badge",
+          "reason": "Incorrect. Badges display status or metadata."
+        },
+        {
+          "id": 3,
+          "text": "Actions secrets",
+          "reason": "Correct. Secrets store sensitive values for workflows."
+        },
+        {
+          "id": 4,
+          "text": "Repository topic",
+          "reason": "Incorrect. Topics improve discoverability."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Actions secrets help keep sensitive workflow values out of repository code."
+    },
+    {
+      "id": 41,
+      "topic": "Apply modern development practices",
+      "Question": "A workflow should deploy only after a pull request is merged into the main branch.\n\nWhich trigger design best matches this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Run the workflow only on issue comment events.",
+          "reason": "Incorrect. Issue comments do not represent merged source changes."
+        },
+        {
+          "id": 2,
+          "text": "Run the workflow on push events to the main branch.",
+          "reason": "Correct. A merge to main results in a push to that branch, which can trigger the workflow."
+        },
+        {
+          "id": 3,
+          "text": "Run the workflow only when a repository is starred.",
+          "reason": "Incorrect. Star events do not represent a deployment-ready change."
+        },
+        {
+          "id": 4,
+          "text": "Run the workflow only when a milestone is closed.",
+          "reason": "Incorrect. Milestones are planning objects, not source merge events."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Using a push trigger scoped to main aligns deployment with merged changes."
+    },
+    {
+      "id": 42,
+      "topic": "Manage projects with GitHub",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants a flexible planning board that can show issues and pull requests by status, owner, and iteration.\n\nWhich feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Packages",
+          "reason": "Incorrect. Packages hosts artifacts."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages hosts static websites."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Sponsors",
+          "reason": "Incorrect. Sponsors funds maintainers."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Projects",
+          "reason": "Correct. GitHub Projects supports flexible planning views and custom fields."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "GitHub Projects helps teams plan and track work across issues and pull requests."
+    },
+    {
+      "id": 43,
+      "topic": "Manage projects with GitHub",
+      "scenario_id": 2,
+      "Question": "A team wants project items automatically moved based on issue or pull request activity.\n\nWhich Projects capability supports this?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Built-in project workflows",
+          "reason": "Correct. Project workflows can automate item updates based on events."
+        },
+        {
+          "id": 2,
+          "text": "Repository archive",
+          "reason": "Incorrect. Archive makes a repository read-only."
+        },
+        {
+          "id": 3,
+          "text": "Secret scanning",
+          "reason": "Incorrect. Secret scanning detects exposed secrets."
+        },
+        {
+          "id": 4,
+          "text": "Git tag",
+          "reason": "Incorrect. A tag marks a commit."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Projects includes automation workflows for managing project item state."
+    },
+    {
+      "id": 44,
+      "topic": "Manage projects with GitHub",
+      "Question": "A product owner wants to view the same project work as a table and as a board.\n\nWhich Projects concept enables this?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Forks",
+          "reason": "Incorrect. Forks copy repositories."
+        },
+        {
+          "id": 2,
+          "text": "SSH keys",
+          "reason": "Incorrect. SSH keys authenticate access."
+        },
+        {
+          "id": 3,
+          "text": "Views",
+          "reason": "Correct. Views present project items in different layouts and filters."
+        },
+        {
+          "id": 4,
+          "text": "Releases",
+          "reason": "Incorrect. Releases publish software versions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Project views let teams represent the same data in different formats."
+    },
+    {
+      "id": 45,
+      "topic": "Manage projects with GitHub",
+      "Question": "A team wants to store planning metadata such as priority, size, and target iteration for project items.\n\nWhich GitHub Projects capability should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository topics",
+          "reason": "Incorrect. Topics classify repositories."
+        },
+        {
+          "id": 2,
+          "text": "Custom fields",
+          "reason": "Correct. Custom fields capture structured planning metadata."
+        },
+        {
+          "id": 3,
+          "text": "Code owners",
+          "reason": "Incorrect. Code owners map files to reviewers."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Pages themes",
+          "reason": "Incorrect. Themes style static sites."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Custom fields make project tracking more structured and adaptable."
+    },
+    {
+      "id": 46,
+      "topic": "Manage projects with GitHub",
+      "Question": "A manager wants to measure progress across project items without leaving GitHub Projects.\n\nWhich capability is most relevant?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Git blame",
+          "reason": "Incorrect. Git blame shows commit attribution for lines."
+        },
+        {
+          "id": 2,
+          "text": "Git LFS",
+          "reason": "Incorrect. Git LFS handles large files."
+        },
+        {
+          "id": 3,
+          "text": "Gists",
+          "reason": "Incorrect. Gists share snippets."
+        },
+        {
+          "id": 4,
+          "text": "Project insights",
+          "reason": "Correct. Project insights provide charts and visibility into project progress."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Project insights help teams understand status and delivery trends."
+    },
+    {
+      "id": 47,
+      "topic": "Understand privacy, security, and administration",
+      "scenario_id": 3,
+      "Question": "Adventure Works wants users to sign in with stronger protection than only a password.\n\nWhich approach should be recommended?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Enable two-factor authentication",
+          "reason": "Correct. Two-factor authentication adds an additional verification factor."
+        },
+        {
+          "id": 2,
+          "text": "Create a repository topic",
+          "reason": "Incorrect. Topics classify repositories."
+        },
+        {
+          "id": 3,
+          "text": "Open a discussion category",
+          "reason": "Incorrect. Discussion categories organize conversations."
+        },
+        {
+          "id": 4,
+          "text": "Add a project view",
+          "reason": "Incorrect. Project views organize work tracking."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Two-factor authentication improves account security by requiring an additional factor."
+    },
+    {
+      "id": 48,
+      "topic": "Understand privacy, security, and administration",
+      "scenario_id": 3,
+      "Question": "Adventure Works needs to grant repository permissions to groups of users rather than assigning access one person at a time.\n\nWhich organization feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Labels",
+          "reason": "Incorrect. Labels categorize issues and pull requests."
+        },
+        {
+          "id": 2,
+          "text": "Releases",
+          "reason": "Incorrect. Releases publish versioned outputs."
+        },
+        {
+          "id": 3,
+          "text": "Teams",
+          "reason": "Correct. Teams group organization members for permissions and collaboration."
+        },
+        {
+          "id": 4,
+          "text": "Gists",
+          "reason": "Incorrect. Gists share snippets."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Teams simplify permission management within GitHub organizations."
+    },
+    {
+      "id": 49,
+      "topic": "Understand privacy, security, and administration",
+      "Question": "A repository contains a supported package manifest, and the owner wants visibility into dependencies and related security alerts.\n\nWhich feature area should be enabled or reviewed?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Pages and custom domains",
+          "reason": "Incorrect. These features publish static websites."
+        },
+        {
+          "id": 2,
+          "text": "Dependency graph and Dependabot alerts",
+          "reason": "Correct. These features provide dependency visibility and vulnerability notifications."
+        },
+        {
+          "id": 3,
+          "text": "Repository stars and watchers",
+          "reason": "Incorrect. These features reflect interest and notification preferences."
+        },
+        {
+          "id": 4,
+          "text": "Milestones and labels",
+          "reason": "Incorrect. These features organize planning work."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Dependency graph and Dependabot alerts help maintainers understand and respond to dependency risk."
+    },
+    {
+      "id": 50,
+      "topic": "Understand privacy, security, and administration",
+      "scenario_id": 3,
+      "Question": "Adventure Works wants GitHub to detect committed tokens and credentials in repositories.\n\nWhich capability should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Issue templates",
+          "reason": "Incorrect. Issue templates standardize issue creation."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Sponsors",
+          "reason": "Incorrect. Sponsors supports maintainer funding."
+        },
+        {
+          "id": 3,
+          "text": "Repository wiki",
+          "reason": "Incorrect. A wiki stores documentation."
+        },
+        {
+          "id": 4,
+          "text": "Secret scanning",
+          "reason": "Correct. Secret scanning helps detect exposed secrets in repository content."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Secret scanning is used to help identify leaked secrets."
+    },
+    {
+      "id": 51,
+      "topic": "Understand privacy, security, and administration",
+      "scenario_id": 3,
+      "Question": "A security team wants clear instructions for reporting vulnerabilities privately.\n\nWhich repository file should they add?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SECURITY",
+          "reason": "Correct. A SECURITY file explains how to report vulnerabilities and supported versions."
+        },
+        {
+          "id": 2,
+          "text": "README",
+          "reason": "Incorrect. README introduces the project."
+        },
+        {
+          "id": 3,
+          "text": "LICENSE",
+          "reason": "Incorrect. LICENSE defines project usage terms."
+        },
+        {
+          "id": 4,
+          "text": "CODEOWNERS",
+          "reason": "Incorrect. CODEOWNERS assigns review responsibility."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A SECURITY file improves vulnerability reporting and response clarity."
+    },
+    {
+      "id": 52,
+      "topic": "Understand privacy, security, and administration",
+      "Question": "An organization needs to define what members can do across repositories and administrative areas.\n\nWhich concept is most relevant?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Markdown tables",
+          "reason": "Incorrect. Markdown tables format text."
+        },
+        {
+          "id": 2,
+          "text": "Repository topics",
+          "reason": "Incorrect. Topics improve discovery."
+        },
+        {
+          "id": 3,
+          "text": "Roles and permissions",
+          "reason": "Correct. Roles and permissions determine allowed actions in GitHub."
+        },
+        {
+          "id": 4,
+          "text": "Git aliases",
+          "reason": "Incorrect. Git aliases shorten local Git commands."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "GitHub administration relies on appropriate roles and permissions."
+    },
+    {
+      "id": 53,
+      "topic": "Understand privacy, security, and administration",
+      "Question": "A developer wants to authenticate Git operations over SSH from a trusted workstation.\n\nWhich credential type is appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Issue label",
+          "reason": "Incorrect. Labels categorize work items."
+        },
+        {
+          "id": 2,
+          "text": "SSH key",
+          "reason": "Correct. SSH keys can authenticate Git operations to GitHub."
+        },
+        {
+          "id": 3,
+          "text": "Project field",
+          "reason": "Incorrect. Project fields store planning metadata."
+        },
+        {
+          "id": 4,
+          "text": "Repository release",
+          "reason": "Incorrect. Releases package versions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "SSH keys are commonly used for secure Git authentication."
+    },
+    {
+      "id": 54,
+      "topic": "Understand privacy, security, and administration",
+      "Question": "A repository should be made read-only because active development has ended, but its history must remain visible.\n\nWhich action should the owner take?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Delete the repository",
+          "reason": "Incorrect. Deleting removes the repository instead of preserving it read-only."
+        },
+        {
+          "id": 2,
+          "text": "Fork the repository",
+          "reason": "Incorrect. Forking creates a copy but does not freeze the original."
+        },
+        {
+          "id": 3,
+          "text": "Star the repository",
+          "reason": "Incorrect. Starring does not change repository state."
+        },
+        {
+          "id": 4,
+          "text": "Archive the repository",
+          "reason": "Correct. Archiving makes the repository read-only while preserving it."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Archiving is appropriate when a project is no longer maintained but should remain accessible."
+    },
+    {
+      "id": 55,
+      "topic": "Understand privacy, security, and administration",
+      "Question": "An enterprise wants a policy-oriented approach that can enforce rules consistently across repositories.\n\nWhich capability is most relevant?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository rulesets",
+          "reason": "Correct. Rulesets help enforce repository policies such as branch and tag rules."
+        },
+        {
+          "id": 2,
+          "text": "Gists",
+          "reason": "Incorrect. Gists share snippets."
+        },
+        {
+          "id": 3,
+          "text": "Markdown footnotes",
+          "reason": "Incorrect. Footnotes format documentation."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Sponsors tiers",
+          "reason": "Incorrect. Sponsor tiers define funding options."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Rulesets provide a centralized way to apply repository governance rules."
+    },
+    {
+      "id": 56,
+      "topic": "Explore the GitHub community",
+      "scenario_id": 3,
+      "Question": "Adventure Works wants to make expectations for respectful participation clear to external contributors.\n\nWhich file should be added?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "CODEOWNERS",
+          "reason": "Incorrect. CODEOWNERS routes review ownership."
+        },
+        {
+          "id": 2,
+          "text": "Dependabot configuration",
+          "reason": "Incorrect. Dependabot configuration manages dependency updates."
+        },
+        {
+          "id": 3,
+          "text": "CODE_OF_CONDUCT",
+          "reason": "Correct. A code of conduct defines expected community behavior."
+        },
+        {
+          "id": 4,
+          "text": "Workflow artifact",
+          "reason": "Incorrect. Artifacts store workflow outputs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "A CODE_OF_CONDUCT file supports healthy and inclusive community participation."
+    },
+    {
+      "id": 57,
+      "topic": "Explore the GitHub community",
+      "Question": "A maintainer wants to show that the repository welcomes contributions and explain suitable first tasks.\n\nWhich practice best supports this goal?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Disable all issues and discussions.",
+          "reason": "Incorrect. This reduces collaboration channels."
+        },
+        {
+          "id": 2,
+          "text": "Use contributor guidance and helpful issue labels.",
+          "reason": "Correct. Guidance and labels such as beginner-friendly categories help new contributors participate."
+        },
+        {
+          "id": 3,
+          "text": "Require every contributor to be an organization owner.",
+          "reason": "Incorrect. This is excessive and inappropriate for community contribution."
+        },
+        {
+          "id": 4,
+          "text": "Store all documentation outside the repository only.",
+          "reason": "Incorrect. This makes contribution guidance harder to discover."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Clear contribution guidance and well-organized issues help grow a healthy community."
+    },
+    {
+      "id": 58,
+      "topic": "Explore the GitHub community",
+      "Question": "A developer finds a useful open-source repository and wants to save it to revisit later while also signaling interest.\n\nWhich GitHub action should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Archive the repository",
+          "reason": "Incorrect. Archiving is controlled by owners and makes a repository read-only."
+        },
+        {
+          "id": 2,
+          "text": "Transfer the repository",
+          "reason": "Incorrect. Transferring changes repository ownership."
+        },
+        {
+          "id": 3,
+          "text": "Protect the branch",
+          "reason": "Incorrect. Branch protection enforces merge rules."
+        },
+        {
+          "id": 4,
+          "text": "Star the repository",
+          "reason": "Correct. Starring bookmarks a repository and can signal interest."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Stars are commonly used to bookmark and discover repositories."
+    },
+    {
+      "id": 59,
+      "topic": "Explore the GitHub community",
+      "Question": "A company wants to encourage internal teams to collaborate using open-source practices within the organization.\n\nWhich concept describes this approach?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "InnerSource",
+          "reason": "Correct. InnerSource applies open-source collaboration practices inside an organization."
+        },
+        {
+          "id": 2,
+          "text": "Secret scanning",
+          "reason": "Incorrect. Secret scanning detects exposed credentials."
+        },
+        {
+          "id": 3,
+          "text": "Git LFS",
+          "reason": "Incorrect. Git LFS handles large files."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. Pages publishes static sites."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "InnerSource uses open collaboration patterns for internal software development."
+    },
+    {
+      "id": 60,
+      "topic": "Explore the GitHub community",
+      "Question": "An open-source maintainer wants community members to ask questions, share ideas, and propose improvements without opening code changes.\n\nWhich GitHub feature best supports this?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Actions cache",
+          "reason": "Incorrect. Actions cache improves workflow performance."
+        },
+        {
+          "id": 2,
+          "text": "SSH certificate authority",
+          "reason": "Incorrect. SSH certificate authorities help authenticate SSH access."
+        },
+        {
+          "id": 3,
+          "text": "Discussions",
+          "reason": "Correct. Discussions provide a forum-like space for community conversation."
+        },
+        {
+          "id": 4,
+          "text": "Release asset",
+          "reason": "Incorrect. Release assets distribute versioned files."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Discussions are well suited for community Q&A, announcements, ideas, and general collaboration."
+    }
+  ]
+}

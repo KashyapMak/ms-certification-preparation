@@ -5,7 +5,7 @@
       "name": "Sample Test",
       "tests": [
         {
-          "title": "Sample Test",          
+          "title": "Sample Test",
           "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/Sample/sample.json"
         }
       ]
@@ -21,51 +21,150 @@
       ]
     },
     {
+      "code": "GH-900",
+      "name": "GitHub Foundations",
+      "tests": [
+        {
+          "title": "GPT Practice",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-900/GH-900-GPT.json"
+        },
+        {
+          "title": "Gemini Practice",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-900/GH-900-Gemini.json"
+        },
+        {
+          "title": "Perplexity Practice",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/GH-900/GH-900-perplexity.json"
+        }
+      ]
+    },
+    {
       "code": "AI-102",
       "name": "Azure AI Engineer Associate",
       "tests": [
-        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json" },
-        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json" },
-        { "title": "Set 3 (Comprehensive)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json" }
+        {
+          "title": "Set 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-1.json"
+        },
+
+        {
+          "title": "Set 2",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-2.json"
+        },
+        {
+          "title": "Set 3 (Comprehensive)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AI-102/ai-102-Set-3-Comprehensive.json"
+        }
       ]
     },
     {
       "code": "AB-900",
       "name": "Copilot and Agent Administration Fundamentals",
       "tests": [
-        { "title": "Practice 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-1.json" },
-        { "title": "Practice 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json" },
-        { "title": "Practice 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-3.json" },
-        { "title": "Purview Practice", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json" }
+        {
+          "title": "Practice 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-1.json"
+        },
+        {
+          "title": "Practice 2",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-2.json"
+        },
+        {
+          "title": "Practice 3",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Practice-3.json"
+        },
+        {
+          "title": "Purview Practice",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-900/AB-900-Purview-Practice.json"
+        }
       ]
     },
     {
       "code": "AB-730",
       "name": "AI Business Professional",
       "tests": [
-        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-1.json" },
-        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-2.json" },
-        { "title": "Set 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-3.json" }
+        {
+          "title": "Set 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-1.json"
+        },
+        {
+          "title": "Set 2",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-2.json"
+        },
+        {
+          "title": "Set 3",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-730/AB-730-Set-3.json"
+        }
       ]
     },
     {
       "code": "AB-731",
       "name": "AI Transformation Leader",
       "tests": [
-        { "title": "Set 1", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-1.json" },
-        { "title": "Set 2", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-2.json" },
-        { "title": "Set 3", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-3.json" },
-        { "title": "Set 4", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-4.json" }
+        {
+          "title": "Set 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-1.json"
+        },
+        {
+          "title": "Set 2",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-2.json"
+        },
+        {
+          "title": "Set 3",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-3.json"
+        },
+        {
+          "title": "Set 4",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-731/AB-731-Set-4.json"
+        }
       ]
     },
     {
       "code": "DP-600",
       "name": "Fabric Analytics Engineer Associate",
       "tests": [
-        { "title": "Set 1 (Perplexity)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-perplexity.json" },
-        { "title": "Set 2 (Gemini)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Gemini.json" },
-        { "title": "Set 3 (ChatGPT)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json" },
-        { "title": "Set 4 (Claude)", "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Claude.json" }
+        {
+          "title": "Set 1 (Perplexity)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-perplexity.json"
+        },
+        {
+          "title": "Set 2 (Gemini)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Gemini.json"
+        },
+        {
+          "title": "Set 3 (ChatGPT)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-ChatGPT.json"
+        },
+        {
+          "title": "Set 4 (Claude)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-600/DP-600-Claude.json"
+        }
+      ]
+    },
+    {
+      "code": "AB-100",
+      "name": "Agentic AI Business Solutions Architect",
+      "tests": [
+        {
+          "title": "Set 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-Set-1.json"
+        },
+        {
+          "title": "Set 2",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-Set-2.json"
+        },
+        {
+          "title": "Set 3 (Gemini)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-Gemini.json"
+        },
+        {
+          "title": "Set 4 (ChatGPT)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-GPT.json"
+        },
+        {
+          "title": "Set 5 (Claude)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-Claude.json"
+        }
       ]
     }
   ]

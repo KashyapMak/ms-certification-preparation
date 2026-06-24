@@ -1,0 +1,1806 @@
+{
+  "quizName": "GH-900: GitHub Foundations Practice Certification Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY 1: Contoso Ltd - GitHub Migration and Collaboration\n\nContoso Ltd is migrating its development team from an on-premises legacy source control system to GitHub Enterprise Cloud. The company has 150 developers organized into multiple product teams. \n\nCurrently, teams face communication silos and lack visibility into cross-team code changes. Project managers struggle to track progress across multiple repositories. Management requires a clear workflow for submitting, reviewing, and approving code changes while ensuring historical context is preserved through proper documentation and issue tracking mechanisms."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY 2: Fabrikam Inc - DevOps and GitHub Actions Workflows\n\nFabrikam Inc is establishing a robust Continuous Integration and Continuous Delivery (CI/CD) framework across all its software projects using GitHub Actions. \n\nThe operations team needs to automate code compilation, run automated testing suites upon branch changes, and securely deliver build artifacts to staging environments. Security constraints mandate that credentials for cloud platforms must not be hardcoded in scripts, and repetitive tasks should use reusable automation structures to minimize boilerplate code across 40 different repositories."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY 3: Wide World Importers - Security and Governance Implementation\n\nWide World Importers is an organization operating in a highly regulated industry. They utilize GitHub Enterprise to manage open-source projects alongside sensitive proprietary internal tools.\n\nThe Chief Information Security Officer (CISO) requires automated checks to ensure third-party dependencies are free of known vulnerabilities, sensitive API keys are never leaked to public repositories, and high-privilege administrative configurations are managed centrally to maintain strict regulatory compliance across the entire enterprise ecosystem."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Collaboration and Organization",
+      "scenario_id": 1,
+      "Question": "Based on the communication requirements for Contoso Ltd in Case Study 1:\n\nWhich GitHub feature should the development teams use to host high-level, open-ended conversations, ask questions, and share ideas outside of specific code-centric tasks or bugs?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Issues",
+          "reason": "Incorrect. GitHub Issues are optimized for tracking actionable items, bugs, and specific tasks rather than open-ended conversations."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Discussions",
+          "reason": "Correct. GitHub Discussions provide a collaborative forum for community and team conversations that are separate from tracking specific bugs or features."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Wikis",
+          "reason": "Incorrect. GitHub Wikis are intended for long-form documentation, user guides, and reference material."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Projects",
+          "reason": "Incorrect. GitHub Projects are used for project management, tracking tasks, and visual boards like Kanbans."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Discussions act as a forum for open communication and collaborative planning, ideal for breaking down communication silos without cluttering the issue tracker."
+    },
+    {
+      "id": 2,
+      "topic": "Project Management",
+      "scenario_id": 1,
+      "Question": "To address the project managers' requirement to track progress across multiple repositories as outlined in Case Study 1, which feature should be utilized?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository Milestones",
+          "reason": "Incorrect. Milestones are scoped to a single repository and cannot natively track work across multiple distinct repositories."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Wikis",
+          "reason": "Incorrect. Wikis are static documentation spaces and do not dynamic track progress of issues or pull requests."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Projects (built on the new Projects experience)",
+          "reason": "Correct. GitHub Projects operate at the organization level, allowing users to aggregate and track issues and pull requests across multiple repositories."
+        },
+        {
+          "id": 4,
+          "text": "Branch Protection Rules",
+          "reason": "Incorrect. Branch protection rules are used to enforce code review and status checks, not for project management visualization."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "The modernized GitHub Projects experience allows project managers to group, filter, and track items from multiple repositories within an organization on a single board or table view."
+    },
+    {
+      "id": 3,
+      "topic": "Code Management and Workflow",
+      "scenario_id": 1,
+      "Question": "As part of the migration strategy for Contoso Ltd in Case Study 1, developers must propose modifications to a repository's codebase and request feedback. \n\nWhich core GitHub mechanism natively facilitates this process?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Pull Request",
+          "reason": "Correct. Pull requests let developers tell others about changes they've pushed to a branch in a repository, facilitating code review and discussion."
+        },
+        {
+          "id": 2,
+          "text": "Forking",
+          "reason": "Incorrect. Forking copies a repository to a user's account but does not directly constitute the review or proposal mechanism within the same repository workflow."
+        },
+        {
+          "id": 3,
+          "text": "Issue Templates",
+          "reason": "Incorrect. Issue templates standardize bug reporting and feature requests, not the active submission of code modifications."
+        },
+        {
+          "id": 4,
+          "text": "Commit Tags",
+          "reason": "Incorrect. Tags are labels pointing to specific points in Git history, typically used for software releases."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Pull requests are the fundamental collaborative mechanism in GitHub for code review, discussion, and quality gate enforcement prior to merging."
+    },
+    {
+      "id": 4,
+      "topic": "Issue Tracking",
+      "scenario_id": 1,
+      "Question": "To optimize the issue tracking process for the 150 developers in Case Study 1, Contoso Ltd wants to ensure that all bug reports contain specific, reproducible details. \n\nWhat should they configure in their repositories?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository Webhooks",
+          "reason": "Incorrect. Webhooks notify external services about events but do not alter the UI input structure for users creating issues."
+        },
+        {
+          "id": 2,
+          "text": "Git Attributes",
+          "reason": "Incorrect. Git attributes define path-specific settings for files, such as line endings, and do not impact GitHub issues."
+        },
+        {
+          "id": 3,
+          "text": "Issue Forms or Templates",
+          "reason": "Correct. Issue forms and markdown templates allow administrators to define required fields and structures for users submitting new issues."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. GitHub Pages is a static site hosting service and has no relevance to issue structure."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "By establishing issue templates or yaml-based issue forms, organizations can enforce data consistency and ensure bug reports include required information."
+    },
+    {
+      "id": 5,
+      "topic": "Documentation",
+      "scenario_id": 1,
+      "Question": "Contoso Ltd wants to provide a dedicated, multi-page, comprehensive user guide inside each repository to document developer onboarding procedures. \n\nWhich GitHub feature is best suited for this long-form documentation?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The README.md file",
+          "reason": "Incorrect. The README file is best suited as a single-page introductory summary for a repository rather than a multi-page guide."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Gists",
+          "reason": "Incorrect. Gists are meant for sharing code snippets or notes, not for structured multi-page documentation within a repo."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Wiki",
+          "reason": "Correct. GitHub Wikis offer a separate section within a repository dedicated to comprehensive, multi-page project documentation."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Releases",
+          "reason": "Incorrect. GitHub Releases document version changes and software assets, not internal developer onboarding procedures."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "GitHub Wikis provide an integrated wiki system for each repository, allowing teams to construct detailed, multi-page documentation structures separate from the core codebase."
+    },
+    {
+      "id": 6,
+      "topic": "GitHub Actions",
+      "scenario_id": 2,
+      "Question": "Considering the CI/CD automation requirements for Fabrikam Inc in Case Study 2:\n\nWhat is the correct structural sequence of elements within a standard GitHub Actions workflow file configuration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Steps contain Workflows, which contain Jobs, which run Triggers",
+          "reason": "Incorrect. This reverses the hierarchy entirely."
+        },
+        {
+          "id": 2,
+          "text": "Workflows are triggered by Events, and contain Jobs, which consist of Steps",
+          "reason": "Correct. A workflow is an automated process triggered by an event. It contains one or more jobs, and each job contains a sequence of steps."
+        },
+        {
+          "id": 3,
+          "text": "Actions contain Runners, which contain Events, which execute YAML files",
+          "reason": "Incorrect. Runners are infrastructure components, and actions are individual tasks inside steps; they do not dictate this structural sequence."
+        },
+        {
+          "id": 4,
+          "text": "Jobs initiate Events, which execute Steps that build Workflows",
+          "reason": "Incorrect. Events occur outside the workflow to initiate it, not vice versa."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "In GitHub Actions architecture, workflows are top-level YAML configurations defined in `.github/workflows/`. They are activated by specific events, containing jobs that run on specified runners, and each job processes individual steps."
+    },
+    {
+      "id": 7,
+      "topic": "GitHub Actions Infrastructure",
+      "scenario_id": 2,
+      "Question": "Fabrikam Inc requires custom software tools to be pre-installed on the environment executing the automation workflows, which run behind their secure corporate firewall. \n\nWhich runner configuration should they implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub-hosted runner",
+          "reason": "Incorrect. GitHub-hosted runners run in a clean virtual environment managed by GitHub and cannot access private resources behind a corporate firewall natively."
+        },
+        {
+          "id": 2,
+          "text": "Self-hosted runner",
+          "reason": "Correct. Self-hosted runners offer more control over hardware, operating systems, and software tools, and can be deployed inside an on-premises private network."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Codespaces",
+          "reason": "Incorrect. Codespaces is a cloud-hosted development environment for editing code, not an execution runner for background CI/CD workflows."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Copilot Enterprise",
+          "reason": "Incorrect. GitHub Copilot is an AI code completion assistant, not an infrastructure execution layer."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Self-hosted runners are physical or virtual machines managed by the user that can be customized with specific software dependencies and placed inside specialized networks or behind corporate firewalls."
+    },
+    {
+      "id": 8,
+      "topic": "GitHub Actions Automation",
+      "scenario_id": 2,
+      "Question": "To meet the security constraint of avoiding hardcoded credentials for cloud platforms mentioned in Case Study 2, where should Fabrikam Inc store their environment configuration variables and deployment keys?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Inside the workflow `.yml` file text directly",
+          "reason": "Incorrect. Hardcoding plaintext credentials in a YAML file exposes secrets to anyone with access to the code."
+        },
+        {
+          "id": 2,
+          "text": "In a public repository file named `config.env`",
+          "reason": "Incorrect. Storing values in a plaintext file in a repository creates immediate security vulnerabilities."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Encrypted Secrets and Variables settings",
+          "reason": "Correct. GitHub Secrets allow organizations to store sensitive information securely at the environment, repository, or organization level."
+        },
+        {
+          "id": 4,
+          "text": "Within the repository's main README markdown file",
+          "reason": "Incorrect. README files are viewable by all users and are completely unencrypted."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "GitHub Secrets and Variables provide encrypted key-value storage mechanisms accessible by workflows while preventing their exposure in plaintext log outputs or source code."
+    },
+    {
+      "id": 9,
+      "topic": "GitHub Actions optimization",
+      "scenario_id": 2,
+      "Question": "To eliminate boilerplate configurations across their 40 different repositories, Fabrikam Inc wants to create standard workflow definitions that can be referenced from other workflows.\n\nWhich mechanism supports this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Reusable Workflows",
+          "reason": "Correct. Reusable workflows allow you to avoid duplication by calling an existing workflow from within another workflow configuration file."
+        },
+        {
+          "id": 2,
+          "text": "Git Submodules",
+          "reason": "Incorrect. Git submodules link entire distinct code repositories together but do not function as workflow-sharing constructs."
+        },
+        {
+          "id": 3,
+          "text": "Local Actions",
+          "reason": "Incorrect. Local actions are specific tasks restricted to the repository they reside in, not directly shared centrally across 40 repositories easily without publishing."
+        },
+        {
+          "id": 4,
+          "text": "Webhook Triggers",
+          "reason": "Incorrect. Webhooks trigger external integration events, not internal workflow reusability."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Reusable workflows allow organizations to define centralized CI/CD logic once and call it across multiple repositories using the `uses:` keyword, driving dry principles and consistency."
+    },
+    {
+      "id": 10,
+      "topic": "GitHub Actions Syntax",
+      "scenario_id": 2,
+      "Question": "Fabrikam Inc wants a specific job in a workflow to execute only if the preceding compilation job has completed successfully. \n\nWhich YAML key should they include in the dependent job definition?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "runs-on",
+          "reason": "Incorrect. This key specifies the type of runner machine to run the job on."
+        },
+        {
+          "id": 2,
+          "text": "needs",
+          "reason": "Correct. The `needs` keyword is used to identify any jobs that must complete successfully before this job can run."
+        },
+        {
+          "id": 3,
+          "text": "env",
+          "reason": "Incorrect. The `env` key is utilized to set environment variables for the scope of the job or workflow."
+        },
+        {
+          "id": 4,
+          "text": "uses",
+          "reason": "Incorrect. The `uses` key selects an action or reusable workflow to execute."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "By default, jobs in a GitHub Actions workflow execute concurrently. Using the `needs` parameter creates explicit sequential execution dependencies between jobs."
+    },
+    {
+      "id": 11,
+      "topic": "GitHub Security Features",
+      "scenario_id": 3,
+      "Question": "To meet the CISO's mandate in Case Study 3 requiring that automated checks identify known vulnerabilities in third-party software components, which native feature should Wide World Importers activate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Secret Scanning",
+          "reason": "Incorrect. Secret scanning is used to detect exposed credentials like API keys, not software dependency vulnerabilities."
+        },
+        {
+          "id": 2,
+          "text": "Dependabot Alerts and Security Updates",
+          "reason": "Correct. Dependabot regularly scans repository manifests for insecure out-of-date packages and alerts developers or submits automated patch pull requests."
+        },
+        {
+          "id": 3,
+          "text": "CodeQL Code Scanning",
+          "reason": "Incorrect. CodeQL scans the custom source code written by internal developers for structural bugs or security flaws, rather than tracking external supply-chain dependencies."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Gists",
+          "reason": "Incorrect. Gists are for sharing snippets, not a security assessment framework."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Dependabot monitors third-party package dependencies and alerts administrators when known CVE vulnerabilities exist, optionally producing automated pull requests to update the dependency version."
+    },
+    {
+      "id": 12,
+      "topic": "Secret Scanning",
+      "scenario_id": 3,
+      "Question": "Wide World Importers must block developers from accidentially pushing commits containing cleartext cloud API keys to any repository. \n\nWhich specific capability within GitHub's security offerings should be enabled?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Secret scanning push protection",
+          "reason": "Correct. Push protection checks pushes for high-confidence secrets and blocks the push if a credential is detected, preventing exposure."
+        },
+        {
+          "id": 2,
+          "text": "Dependabot Version Updates",
+          "reason": "Incorrect. Dependabot handles third-party package updating, not commit intercept filtering."
+        },
+        {
+          "id": 3,
+          "text": "CodeQL analysis",
+          "reason": "Incorrect. CodeQL runs post-push as part of the static analysis pipeline and does not proactively block git push operations."
+        },
+        {
+          "id": 4,
+          "text": "Repository Forking",
+          "reason": "Incorrect. Forking isolates a repository clone but does not block credential insertion."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Secret scanning push protection scans code pushes before they are written to the GitHub server database, actively blocking modifications that leak recognizable secret tokens."
+    },
+    {
+      "id": 13,
+      "topic": "Code Analysis",
+      "scenario_id": 3,
+      "Question": "To perform structural analysis of their custom internal software code for flaws like SQL Injection or Cross-Site Scripting (XSS), which tool should Wide World Importers incorporate into their repository workflows?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dependabot Alerts",
+          "reason": "Incorrect. Dependabot focuses exclusively on known vulnerabilities in open-source third-party dependencies."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Advisory Database",
+          "reason": "Incorrect. The database is a reference list of vulnerabilities, not an execution engine for custom local static code analysis."
+        },
+        {
+          "id": 3,
+          "text": "CodeQL (Code Scanning)",
+          "reason": "Correct. CodeQL treats code as data to detect security flaws and bugs via static analysis, highlighting exact locations in custom source code."
+        },
+        {
+          "id": 4,
+          "text": "Branch Protection Policies",
+          "reason": "Incorrect. Branch protection dictates rules like approval counts but does not itself parse source code structures for security vulnerabilities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "GitHub's Code Scanning powered by the CodeQL engine compiles or parses source files to discover code patterns that map to security weaknesses or semantic design bugs."
+    },
+    {
+      "id": 14,
+      "topic": "Governance and Administration",
+      "scenario_id": 3,
+      "Question": "The CISO requires that certain repository rules—such as requiring linear commit histories and signed commits—must be universally applied across all repositories within Wide World Importers without individual repository managers being able to disable them.\n\nWhere should this be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "In individual repository `.git/config` files",
+          "reason": "Incorrect. Git config files are local to individual checkouts and can easily be bypassed by users."
+        },
+        {
+          "id": 2,
+          "text": "Organization-level or Enterprise-level Repository Rulesets",
+          "reason": "Correct. Rulesets configured at the organization or enterprise layer target multiple repositories simultaneously, enforcing constraints uniformly."
+        },
+        {
+          "id": 3,
+          "text": "Within the local repository README markdown configurations",
+          "reason": "Incorrect. Markdown files are documentation artifacts and cannot enforce server-side programmatic restrictions."
+        },
+        {
+          "id": 4,
+          "text": "Using a customized `.gitignore` file mapping",
+          "reason": "Incorrect. The `.gitignore` file simply instructs Git which untracked files to avoid committing."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Organization and Enterprise Repository Rulesets allow high-level administrators to standardize control parameters and protect branches globally, overriding local repository settings."
+    },
+    {
+      "id": 15,
+      "topic": "Security Operations",
+      "scenario_id": 3,
+      "Question": "When Wide World Importers discovers a novel vulnerability in one of their open-source projects, they need a private workspace to collaborate on a fix before disclosing it to the public.\n\nWhich native GitHub tool should they use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Repository Security Advisories",
+          "reason": "Correct. Security advisories allow repository maintainers to privately discuss, fix, and publish security vulnerabilities affecting their software."
+        },
+        {
+          "id": 2,
+          "text": "Public Pull Requests",
+          "reason": "Incorrect. Public pull requests expose the vulnerability to the public immediately before a fix is ready, leaving users exposed."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Copilot Chat",
+          "reason": "Incorrect. Copilot Chat is an assistant interface, not a secure private collaboration workspace for tracking and publishing vulnerabilities."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Issues",
+          "reason": "Incorrect. standard issues in a public repo are fully visible to the public immediately."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "GitHub Security Advisories offer a built-in feature to draft advisories, collaborate on security patches privately within temporary forks, and securely coordinate public disclosure."
+    },
+    {
+      "id": 16,
+      "topic": "Introduction to GitHub",
+      "Question": "What is the primary technical distinction between standard open-source Git and the commercial GitHub platform?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Git is a distributed version control system tool used locally, whereas GitHub is a cloud-based hosting platform providing web-based collaboration features around Git.",
+          "reason": "Correct. Git is the underlying command-line tool, and GitHub provides the hosting infrastructure, visual UI, and collaboration ecosystem."
+        },
+        {
+          "id": 2,
+          "text": "GitHub uses an entirely proprietary alternative to the Git commit database architecture.",
+          "reason": "Incorrect. GitHub is fully compatible with standard Git and relies on standard Git repositories underneath."
+        },
+        {
+          "id": 3,
+          "text": "Git can only track text files, whereas GitHub introduces binary artifact version tracking natively into commits.",
+          "reason": "Incorrect. Git can track binaries (though not optimal for large ones), and this is not the main distinguishing factor."
+        },
+        {
+          "id": 4,
+          "text": "Git is managed entirely by Microsoft, while GitHub is managed by an open-source consortium.",
+          "reason": "Incorrect. Microsoft owns GitHub, while Git is open-source software originally designed by Linus Torvalds."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Git is a decentralized version control command-line tool, while GitHub is a collaborative web platform built on top of Git repositories."
+    },
+    {
+      "id": 17,
+      "topic": "Introduction to GitHub",
+      "Question": "You need to uniquely identify a specific repository on GitHub using its URL structure. What is the standard convention used by GitHub?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "github.com/repository-name",
+          "reason": "Incorrect. This omits the owner or organization scope entirely."
+        },
+        {
+          "id": 2,
+          "text": "github.com/owner-or-organization/repository-name",
+          "reason": "Correct. GitHub scopes repositories under a namespace belonging to an individual user account or a collective organization."
+        },
+        {
+          "id": 3,
+          "text": "github.com/account-type/owner/repo-id",
+          "reason": "Incorrect. GitHub uses the literal name of the repository in the URL rather than a database ID number."
+        },
+        {
+          "id": 4,
+          "text": "github.com/search?q=repository-name",
+          "reason": "Incorrect. This structure represents a search query, not a direct canonical reference URL."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub repositories are uniquely addressed via the pattern of `github.com/<owner>/<repository>`."
+    },
+    {
+      "id": 18,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Which file, when placed in the root directory of a repository, instructs Git which specific files or directories to intentionally ignore and exclude from version tracking?",
+      "Options": [
+        {
+          "id": 1,
+          "text": ".gitattributes",
+          "reason": "Incorrect. This file handles settings like line endings and large file tracking behaviors, not exclusions."
+        },
+        {
+          "id": 2,
+          "text": "LICENSE",
+          "reason": "Incorrect. This file contains the legal licensing statement for the repository."
+        },
+        {
+          "id": 3,
+          "text": ".gitignore",
+          "reason": "Correct. The `.gitignore` file defines patterns that tell Git which local files should not be committed to the tracking tree."
+        },
+        {
+          "id": 4,
+          "text": "CODEOWNERS",
+          "reason": "Incorrect. This file specifies individuals or teams responsible for reviewing code modifications in specific directories."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [3],
+      "CorrectAnswerExplanation": "The `.gitignore` text file prevents local configuration files, compiled builds, and temporary node logs from being committed and pushed to the remote repository."
+    },
+    {
+      "id": 19,
+      "topic": "Working with GitHub Repositories",
+      "Question": "You want to create an exact structural copy of an existing public open-source repository under your own personal user namespace on GitHub so you can freely experiment with changes. \n\nWhich capability should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Cloning",
+          "reason": "Incorrect. Cloning downloads a local copy of a repository to a local computer, but does not create a new upstream server copy on GitHub under your account."
+        },
+        {
+          "id": 2,
+          "text": "Forking",
+          "reason": "Correct. A fork is a copy of a repository that you manage on GitHub, allowing you to freely propose changes to the original project."
+        },
+        {
+          "id": 3,
+          "text": "Branching",
+          "reason": "Incorrect. Branching creates an isolated workspace within the same repository, which requires write permissions on that repository."
+        },
+        {
+          "id": 4,
+          "text": "Stashing",
+          "reason": "Incorrect. Git stash saves uncommitted local changes temporarily on a workstation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Forking creates an independent server-side instance of a repository under your account scope, frequently used to contribute to open source software via pull requests."
+    },
+    {
+      "id": 20,
+      "topic": "Working with GitHub Repositories",
+      "Question": "What is the primary difference between a Git branch and a GitHub Fork?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Branches exist purely on local development machines, while forks exist only on cloud servers.",
+          "reason": "Incorrect. Branches can exist on both local systems and remote GitHub servers."
+        },
+        {
+          "id": 2,
+          "text": "A branch is an isolated development line within a single repository, whereas a fork is a distinct copy of a repository tied to a specific user account.",
+          "reason": "Correct. Branches allow multiple streams of parallel work inside one repo, while forks create an entirely separate instance of the repository."
+        },
+        {
+          "id": 3,
+          "text": "Forks require paid enterprise subscription tiers, while branches are always free.",
+          "reason": "Incorrect. Both branching and forking are core features available to free accounts."
+        },
+        {
+          "id": 4,
+          "text": "Branches allow you to change history, while forks strictly forbid modifying previous commits.",
+          "reason": "Incorrect. Both environments allow history modifications depending on access rights."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Branches represent lightweight moving pointers to specific commits within a repository's history, while a fork instantiates an entirely standalone repository copy mapped to a different owner."
+    },
+    {
+      "id": 21,
+      "topic": "Working with GitHub Repositories",
+      "Question": "An organization wants to establish a template for new repositories so that they always contain a predefined standard directory structure, placeholder license, and README file. \n\nHow can this be accomplished on GitHub?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "By configuring a repository as a 'Template repository' in its settings.",
+          "reason": "Correct. Marking a repository as a template allows other users to generate new repositories with the same file structure and baseline history."
+        },
+        {
+          "id": 2,
+          "text": "By executing the `git init --template` command via a GitHub Action.",
+          "reason": "Incorrect. While Git has local template mechanisms, creating new repos via the web UI with specific structure is handled via GitHub Template Repositories."
+        },
+        {
+          "id": 3,
+          "text": "By setting up a branch named `template-main` across all organizational accounts.",
+          "reason": "Incorrect. Branch naming conventions do not automatically generate new repository templates."
+        },
+        {
+          "id": 4,
+          "text": "By registering an external webhook to manually push boilerplate code.",
+          "reason": "Incorrect. This adds unnecessary complexity compared to the native template repository setting."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Template repositories permit users to instantly deploy new code repositories that match the starter files and organization layouts defined in the template."
+    },
+    {
+      "id": 22,
+      "topic": "Collaborating on GitHub",
+      "Question": "You are reviewing a team member's Pull Request and want to specify that a particular colleague must review the changes because they own the affected code directory. \n\nWhat is the most effective native mechanism to enforce this assignment automatically?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Adding a comment tagging the user using their `@username` on every pull request.",
+          "reason": "Incorrect. This is a manual process and is not automatically enforced by the platform based on directory paths."
+        },
+        {
+          "id": 2,
+          "text": "Defining assignments in a `CODEOWNERS` file in the repository.",
+          "reason": "Correct. The `CODEOWNERS` file automatically requests reviews from defined users or teams when files they own are modified in a pull request."
+        },
+        {
+          "id": 3,
+          "text": "Creating an automation script within a custom `.gitignore` file.",
+          "reason": "Incorrect. `.gitignore` manages file visibility tracking, not user assignment roles."
+        },
+        {
+          "id": 4,
+          "text": "Adding the colleague's name to the repository's description box.",
+          "reason": "Incorrect. The description box is a static text field with no functional automation capabilities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A `CODEOWNERS` file defines which individuals or teams are responsible for code in a repository. When someone opens a pull request that modifies those files, the code owners are automatically added as reviewers."
+    },
+    {
+      "id": 23,
+      "topic": "Collaborating on GitHub",
+      "Question": "When reviewing a pull request, you notice a single line of code that contains a minor syntax error. You want to offer a direct correction that the author can accept and commit immediately with a single click. \n\nWhich GitHub feature should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Suggested Changes",
+          "reason": "Correct. Suggested changes allow a reviewer to provide inline code modifications that the PR author can apply directly from the web interface."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Gists",
+          "reason": "Incorrect. Gists require copying and pasting code manually between separate URLs."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Issues",
+          "reason": "Incorrect. Creating a separate issue is inefficient for a small inline fix during an active PR review."
+        },
+        {
+          "id": 4,
+          "text": "Commit Tagging",
+          "reason": "Incorrect. Tagging marks release milestones, it does not suggest code modifications."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Using the 'Suggested changes' block within a pull request line comment allows authors to immediately apply code edits directly into the branch history without manual local refactoring."
+    },
+    {
+      "id": 24,
+      "topic": "Collaborating on GitHub",
+      "Question": "You want to prevent pull requests from being merged into your primary branch unless they have received at least two formal approvals from senior engineers. \n\nWhere should this restriction be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "In the repository's `.github/workflows/ci.yml` file",
+          "reason": "Incorrect. Workflows run automation tests but do not directly manage native PR review approvals gates unless custom APIs are written."
+        },
+        {
+          "id": 2,
+          "text": "Inside the repository's Branch Protection Rules or Repository Rulesets",
+          "reason": "Correct. Branch protection rules and rulesets allow you to require a specific number of approving reviews before a pull request can be merged."
+        },
+        {
+          "id": 3,
+          "text": "Within the `CONTRIBUTING.md` guide",
+          "reason": "Incorrect. Contributing guidelines are text documents that inform contributors of policies but cannot programmatically block merges."
+        },
+        {
+          "id": 4,
+          "text": "In the user's personal account billing settings dashboard",
+          "reason": "Incorrect. This dashboard manages subscription payments, not branch workflows."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Branch Protection rules and Repository Rulesets provide server-side policy enforcement, including requiring approval minimums, passing status checks, or signed commits before merging."
+    },
+    {
+      "id": 25,
+      "topic": "Collaborating on GitHub",
+      "Question": "A project manager wants to classify issues and pull requests by difficulty level (e.g., 'good first issue', 'help wanted') and priority (e.g., 'high', 'low'). \n\nWhich native metadata feature should they use to organize these items within a repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Milestones",
+          "reason": "Incorrect. Milestones group issues or PRs based on a target completion date or project phase, not categorical attributes like difficulty."
+        },
+        {
+          "id": 2,
+          "text": "Labels",
+          "reason": "Correct. Labels provide a flexible way to categorize issues, pull requests, and discussions with custom titles and background colors."
+        },
+        {
+          "id": 3,
+          "text": "Webhooks",
+          "reason": "Incorrect. Webhooks are integration events, not classification metadata."
+        },
+        {
+          "id": 4,
+          "text": "Git Tags",
+          "reason": "Incorrect. Git tags mark specific commits in history, not metadata categorizations for open tracking issues."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Labels are the primary categorizing mechanism for issues and pull requests on GitHub, enabling filtering and structured triage workflows."
+    },
+    {
+      "id": 26,
+      "topic": "Collaborating on GitHub",
+      "Question": "To group issues and pull requests into a tracking container representing a specific product version release date, which feature should a repository maintainer use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Milestones",
+          "reason": "Correct. Milestones track progress toward a specific target date or release objective by linking relevant issues and pull requests."
+        },
+        {
+          "id": 2,
+          "text": "Discussions",
+          "reason": "Incorrect. Discussions are for community dialogue, not for tracking issues against a deadline calendar."
+        },
+        {
+          "id": 3,
+          "text": "Wikis",
+          "reason": "Incorrect. Wikis are static documentations, not scheduling trackers."
+        },
+        {
+          "id": 4,
+          "text": "Forks",
+          "reason": "Incorrect. Forks are duplicate repositories, completely unrelated to grouping tasks by release timelines."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Milestones allow teams to associate issues and PRs with specific targets and monitor completion percentages via a visual progress bar."
+    },
+    {
+      "id": 27,
+      "topic": "GitHub Actions",
+      "Question": "When editing a GitHub Actions workflow file, you want to specify that the job runs on a fresh Ubuntu Linux virtual environment provided and managed directly by GitHub. \n\nWhich parameter must be added to the job in the YAML configuration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "runs-on: self-hosted",
+          "reason": "Incorrect. This instructs the workflow to seek a user-managed execution infrastructure instead of GitHub's environment."
+        },
+        {
+          "id": 2,
+          "text": "runs-on: ubuntu-latest",
+          "reason": "Correct. Specifying `ubuntu-latest` configures the job to run on a GitHub-hosted virtual machine running the latest stable Ubuntu image."
+        },
+        {
+          "id": 3,
+          "text": "uses: actions/checkout@v4",
+          "reason": "Incorrect. This is an action step used to check out source repositories, not a job infrastructure target property."
+        },
+        {
+          "id": 4,
+          "text": "on: push",
+          "reason": "Incorrect. This defines the event trigger for the workflow, not the hosting operating system environment."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The `runs-on` property instructs GitHub Actions where to provision the execution context. Declaring `ubuntu-latest` spins up a standard GitHub-managed Linux runner."
+    },
+    {
+      "id": 28,
+      "topic": "GitHub Actions",
+      "Question": "You want to configure a GitHub Actions workflow to run automatically whenever someone opens a pull request targeting the 'main' branch. \n\nWhich block syntax correctly establishes this trigger?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "on:\n  pull_request:\n    branches: [main]",
+          "reason": "Correct. This syntax accurately targets the `pull_request` event filtered specifically to the `main` branch."
+        },
+        {
+          "id": 2,
+          "text": "trigger:\n  branches:\n    include: [main]",
+          "reason": "Incorrect. This syntax pattern is characteristic of Azure Pipelines or other CI engines, not native GitHub Actions."
+        },
+        {
+          "id": 3,
+          "text": "execute-when-merged: main",
+          "reason": "Incorrect. This is invalid YAML configuration parameters for GitHub Actions workflows."
+        },
+        {
+          "id": 4,
+          "text": "jobs:\n  build:\n    if: branch == main",
+          "reason": "Incorrect. While conditional `if` expressions exist inside jobs, the primary trigger is defined via the `on:` keyword at the top level."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The `on` block defines the events that cause a workflow to run. Combining `pull_request` with a `branches` filter isolates execution to targeted branches."
+    },
+    {
+      "id": 29,
+      "topic": "GitHub Actions",
+      "Question": "What is an 'Action' within the context of the GitHub Actions ecosystem?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A physical server hosted in a local data center that processes code modifications.",
+          "reason": "Incorrect. That describes a self-hosted runner infrastructure component."
+        },
+        {
+          "id": 2,
+          "text": "A standalone, reusable task configuration that can be combined into steps to create complex workflows.",
+          "reason": "Correct. Actions are the smallest building blocks of a workflow, representing individual operations like checking out code or uploading build artifacts."
+        },
+        {
+          "id": 3,
+          "text": "The command line interface client used to execute git clone operations manually.",
+          "reason": "Incorrect. This refers to the standard Git CLI or GitHub CLI (gh)."
+        },
+        {
+          "id": 4,
+          "text": "The audit trail that tracks user management events within an enterprise organization account.",
+          "reason": "Incorrect. This refers to the GitHub Audit Log."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Actions are custom extensions or packaged automation tasks that simplify workflow configuration files by referencing pre-built community or official steps."
+    },
+    {
+      "id": 30,
+      "topic": "GitHub Actions",
+      "Question": "You want to store a compiled binary file generated during a GitHub Actions workflow run so that team members can download it from the workflow's summary page. \n\nWhich action step should you include in your workflow?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "actions/checkout@v4",
+          "reason": "Incorrect. This action clones the source code repository into the runner workspace directory."
+        },
+        {
+          "id": 2,
+          "text": "actions/upload-artifact@v4",
+          "reason": "Correct. The upload-artifact action allows workflows to share data between jobs or preserve build products after a workflow run concludes."
+        },
+        {
+          "id": 3,
+          "text": "actions/download-artifact@v4",
+          "reason": "Incorrect. This action downloads assets that were saved earlier in the workflow, rather than uploading them for long-term storage."
+        },
+        {
+          "id": 4,
+          "text": "github/codeql-action/analyze",
+          "reason": "Incorrect. This step processes code vulnerability inspections, not arbitrary binary compilation outputs storage."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Artifacts allow you to persist data after a job has completed. The `upload-artifact` action sends files from the runner's workspace up to GitHub's asset storage."
+    },
+    {
+      "id": 31,
+      "topic": "GitHub Security",
+      "Question": "Which statement accurately describes the function of the GitHub Advisory Database?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A list of developers who have violated GitHub's terms of service.",
+          "reason": "Incorrect. The database focuses entirely on code security vulnerabilities, not individual user accounts."
+        },
+        {
+          "id": 2,
+          "text": "A curated repository of security vulnerabilities that have been mapped to open-source software dependencies.",
+          "reason": "Correct. The GitHub Advisory Database is a public directory of CVEs and security notices affecting open-source packages."
+        },
+        {
+          "id": 3,
+          "text": "A commercial tool used to block unauthorized logins from unrecognized IP addresses.",
+          "reason": "Incorrect. This describes authentication security features like two-factor auth or SAML single sign-on constraints."
+        },
+        {
+          "id": 4,
+          "text": "An internal logging system that tracks changes to branch permission settings.",
+          "reason": "Incorrect. This maps to the Audit Log or ruleset change history logs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The GitHub Advisory Database acts as the primary data source powering Dependabot alerts, cataloging vulnerabilities in common package registries."
+    },
+    {
+      "id": 32,
+      "topic": "GitHub Security",
+      "Question": "An administrator wants to view all security alerts across an entire GitHub organization from a single dashboard. \n\nWhich feature provides this aggregated management perspective?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The repository-level Issues tab",
+          "reason": "Incorrect. This only shows manually created issues within one specific repository."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Security Overview",
+          "reason": "Correct. The Security Overview dashboard provides high-level aggregation of security risks and alert statuses across all organization repositories."
+        },
+        {
+          "id": 3,
+          "text": "The local workstation git log output command",
+          "reason": "Incorrect. Local git logs track commit history, not server-side ecosystem security alerts."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Pages dashboard panels",
+          "reason": "Incorrect. GitHub Pages handles public website hosting configuration management."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Security Overview tab summarizes the enablement status and alert volumes for tools like Dependabot, Secret Scanning, and Code Scanning at the organization scale."
+    },
+    {
+      "id": 33,
+      "topic": "GitHub Security",
+      "Question": "When Dependabot discovers an out-of-date package in a repository that contains a known security flaw, what is its default corrective action if configured for updates?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It permanently deletes the repository to prevent breach vectors.",
+          "reason": "Incorrect. Dependabot never deletes resources or changes production state destructively."
+        },
+        {
+          "id": 2,
+          "text": "It opens a pull request that updates the vulnerable dependency to the minimum secure version.",
+          "reason": "Correct. Dependabot security updates automatically generate pull requests targeting package manifests to fix detected flaws."
+        },
+        {
+          "id": 3,
+          "text": "It emails the open-source author asking them to rewrite their custom code functions.",
+          "reason": "Incorrect. Dependabot interacts locally with the project configuration manifests via automation workflows."
+        },
+        {
+          "id": 4,
+          "text": "It automatically rewrites custom database execution methods inside the repository commits.",
+          "reason": "Incorrect. It updates version markers in dependency manifests, it does not write custom functional logic code revisions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Dependabot security updates save developer time by identifying vulnerable dependencies and automatically generating a Pull Request containing the updated dependency definition."
+    },
+    {
+      "id": 34,
+      "topic": "GitHub Security",
+      "Question": "You want to define a specific security contact email address for your public open-source project so that security researchers know how to responsibly report vulnerabilities. \n\nWhere should this file be placed?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "In a file named `SECURITY.md` in the root or `.github/` folder of the repository.",
+          "reason": "Correct. A `SECURITY.md` file defines the repository's security policies and instructions for reporting vulnerabilities."
+        },
+        {
+          "id": 2,
+          "text": "Inside the `.gitignore` configuration lines.",
+          "reason": "Incorrect. Files listed in `.gitignore` are excluded from tracking, making it impossible for public researchers to read them on GitHub."
+        },
+        {
+          "id": 3,
+          "text": "Within the comments section of the initial commit block.",
+          "reason": "Incorrect. Git commit history comments are difficult to locate and do not surface standard UI security reminders."
+        },
+        {
+          "id": 4,
+          "text": "In a configuration parameter inside `CODEOWNERS` settings.",
+          "reason": "Incorrect. `CODEOWNERS` manages code review assignments, not vulnerability reporting procedures."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Creating a `SECURITY.md` file ensures that users creating issues or interacting with the repository are presented with instructions on how to securely disclose issues to maintainers."
+    },
+    {
+      "id": 35,
+      "topic": "Administration and Governance",
+      "Question": "What is the primary operational difference between a GitHub Organization and a GitHub Enterprise account?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Organizations manage individual user repositories, while Enterprise accounts can manage and apply global policies across multiple organizations.",
+          "reason": "Correct. Enterprise accounts sit above organizations in the GitHub structural hierarchy, permitting centralized governance and billing management across multiple organizations."
+        },
+        {
+          "id": 2,
+          "text": "Organizations are entirely free public spaces, while Enterprise accounts are exclusively restricted to local on-premises hardware.",
+          "reason": "Incorrect. Organizations can contain private repos and require paid licenses, and Enterprise tiers exist on both Cloud and Server variants."
+        },
+        {
+          "id": 3,
+          "text": "Organizations only support Git version control, whereas Enterprise layers introduce non-Git data standardizations.",
+          "reason": "Incorrect. The underlying version control engine remains standard Git across all GitHub product tiers."
+        },
+        {
+          "id": 4,
+          "text": "Enterprise plans restrict developers from using GitHub Actions workflows entirely.",
+          "reason": "Incorrect. GitHub Actions is fully supported and highly manageable at the Enterprise level."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "GitHub Enterprise accounts provide enterprise administrators with a central locus to manage policies, compliance parameters, identity access providers, and consolidated invoices across several distinct organizations."
+    },
+    {
+      "id": 36,
+      "topic": "Administration and Governance",
+      "Question": "You want to configure your GitHub organization to require all members to authenticate using your company's central identity provider (IdP) via SAML. \n\nWhich feature must be established?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Personal Access Tokens (Classic)",
+          "reason": "Incorrect. Tokens are API access credentials, not identity federation solutions for web user access."
+        },
+        {
+          "id": 2,
+          "text": "SAML Single Sign-On (SSO)",
+          "reason": "Correct. Enabling SAML SSO allows organizations to manage repository access permissions through an identity provider."
+        },
+        {
+          "id": 3,
+          "text": "SSH Key pairs generation",
+          "reason": "Incorrect. SSH keys facilitate command-line authentication to repository data streams, not centralized IdP user account federation mappings."
+        },
+        {
+          "id": 4,
+          "text": "Repository Deploy Keys setup",
+          "reason": "Incorrect. Deploy keys grant specific servers single-repo read/write scopes, not user platform authentication synchronization."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "SAML Single Sign-On ensures that access to organizational code assets is regulated by a central Identity management ecosystem like Microsoft Entra ID."
+    },
+    {
+      "id": 37,
+      "topic": "Administration and Governance",
+      "Question": "Which organization role provides the highest level of administrative access, including the ability to change billing configurations, invite new members, and delete any repository within the organization?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Member",
+          "reason": "Incorrect. The Member role has base read/write permissions for projects but lacks administrative and billing oversight."
+        },
+        {
+          "id": 2,
+          "text": "Organization Owner",
+          "reason": "Correct. Organization Owners have complete administrative authorization control over the entire entity scope."
+        },
+        {
+          "id": 3,
+          "text": "Billing Manager",
+          "reason": "Incorrect. Billing managers can adjust payment details and subscription plans but cannot delete source code repositories or alter code permissions."
+        },
+        {
+          "id": 4,
+          "text": "Outside Collaborator",
+          "reason": "Incorrect. Outside collaborators are granted limited access to specific repositories and lack broad organization permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Owner role delivers comprehensive administrative oversight over a GitHub organization, managing memberships, policies, and repository life cycles."
+    },
+    {
+      "id": 38,
+      "topic": "Administration and Governance",
+      "Question": "To group organization members together based on their real-world departmental alignment (e.g., 'Frontend-Team', 'QA-Team') and enable bulk mentions via `@name`, which GitHub feature should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repositories",
+          "reason": "Incorrect. Repositories organize files and history, not people or permissions structures."
+        },
+        {
+          "id": 2,
+          "text": "Teams",
+          "reason": "Correct. Teams are groups of organization members that reflect a company's structure, simplifying access management and mentions."
+        },
+        {
+          "id": 3,
+          "text": "Milestones",
+          "reason": "Incorrect. Milestones group issues by schedules, not human organizational identities."
+        },
+        {
+          "id": 4,
+          "text": "Gists",
+          "reason": "Incorrect. Gists are structural sharing components for simple snippets of code."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Teams streamline administrative configurations by allowing permissions and review assignments to be granted to an aggregated group of users simultaneously."
+    },
+    {
+      "id": 39,
+      "topic": "GitHub Products",
+      "Question": "An enterprise requires absolute control over its physical data location and must host GitHub within an isolated private cloud infrastructure environment fully managed by their own infrastructure team. \n\nWhich GitHub product fits this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Enterprise Cloud",
+          "reason": "Incorrect. Enterprise Cloud is a multi-tenant cloud offering managed and hosted by GitHub on cloud infrastructure."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Enterprise Server",
+          "reason": "Correct. GitHub Enterprise Server is the self-hosted on-premises deployment tier that runs as an appliance inside a customer's data center or cloud instance."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Free for Organizations",
+          "reason": "Incorrect. The free tier runs publicly on GitHub's shared public cloud infrastructure framework."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Team Plan",
+          "reason": "Incorrect. The Team plan is a cloud-hosted SaaS option, lacking self-hosted server deployment features."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Enterprise Server provides companies with the exact same functionality as GitHub.com but packaged as a virtual machine appliance to satisfy strict internal isolation needs."
+    },
+    {
+      "id": 40,
+      "topic": "GitHub Communities",
+      "Question": "You want to support an open-source project developer financially directly through the GitHub platform interface. \n\nWhich capability allows users to provide recurring or one-time financial sponsorships to developers and organizations?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Marketplace",
+          "reason": "Incorrect. The Marketplace is for buying and listing developer tools, extensions, and GitHub Actions integrations."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Sponsors",
+          "reason": "Correct. GitHub Sponsors allows anyone to make a financial contribution to developers or organizations who maintain open source projects."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Advanced Security",
+          "reason": "Incorrect. Advanced Security is a paid package offering advanced features like Secret Scanning and CodeQL."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Packages",
+          "reason": "Incorrect. GitHub Packages is a software package hosting service for software package management (npm, NuGet, etc.)."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Sponsors provides an integrated mechanism to visually highlight support flags and directly fund dependencies or contributors in the open-source pipeline."
+    },
+    {
+      "id": 41,
+      "topic": "Markdown Formatting",
+      "Question": "You are writing a comment on an issue and want to display a block of code with correct syntax highlighting for Python. \n\nWhich markdown formatting sequence should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Surrounding the code blocks with single quotes: 'print(\"hello\")'",
+          "reason": "Incorrect. Single quotes render code inline without structural formatting or multi-line block grouping syntax features."
+        },
+        {
+          "id": 2,
+          "text": "Surrounding the code blocks with triple backticks followed by the language keyword:\n```python\nprint(\"hello\")\n```",
+          "reason": "Correct. Fenced code blocks with triple backticks and a language identifier enable syntax highlighting on GitHub."
+        },
+        {
+          "id": 3,
+          "text": "Using the HTML tag string sequence: <code-highlight=python>",
+          "reason": "Incorrect. GitHub Markdown doesn't use custom non-standard HTML tag parameters for code highlighting blocks."
+        },
+        {
+          "id": 4,
+          "text": "Prefixing every line with an exclamation mark: ! python print()",
+          "reason": "Incorrect. An exclamation mark is used for images in markdown parsing logic, not code containers."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Fenced code blocks created using triple backticks (``` followed by the language tag) provide clean formatting blocks across the GitHub interface."
+    },
+    {
+      "id": 42,
+      "topic": "Markdown Formatting",
+      "Question": "You want to create an interactive checklist within a GitHub issue description field. \n\nWhich markdown syntax creates a completed task checkbox item?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "- [ ] Task Completed",
+          "reason": "Incorrect. An empty space inside the square brackets represents an incomplete or unchecked task item."
+        },
+        {
+          "id": 2,
+          "text": "- [x] Task Completed",
+          "reason": "Correct. A lowercase or uppercase 'x' within the brackets renders a checked, completed task item."
+        },
+        {
+          "id": 3,
+          "text": "* (checked) Task Completed",
+          "reason": "Incorrect. This renders as a standard bullet point containing text parenthesis phrases instead of an interactive component."
+        },
+        {
+          "id": 4,
+          "text": "[done]: Task Completed",
+          "reason": "Incorrect. This represents standard link definition reference keys, not functional interactive checkboxes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Task lists are generated via `- [ ]` for empty blocks and `- [x]` for marked blocks, enabling users to track completed tasks dynamically."
+    },
+    {
+      "id": 43,
+      "topic": "GitHub Desktop and CLI",
+      "Question": "You prefer working directly in a command-line terminal environment instead of a web browser but still need to manage GitHub features like creating issues, checking PR statuses, and cloning repositories. \n\nWhich tool should you install?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Desktop",
+          "reason": "Incorrect. GitHub Desktop is a graphical user interface (GUI) application, not a command line interface environment."
+        },
+        {
+          "id": 2,
+          "text": "GitHub CLI (`gh`)",
+          "reason": "Correct. The GitHub CLI (`gh`) brings GitHub issues, pull requests, workflows, and other features directly to terminal command lines."
+        },
+        {
+          "id": 3,
+          "text": "Standard vanilla Git CLI tool alone",
+          "reason": "Incorrect. Vanilla Git only handles local version history trees and remotes; it cannot natively create or manipulate GitHub-specific abstractions like Issues or PR entities directly without using the API manually."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Pages Core Engine",
+          "reason": "Incorrect. GitHub Pages is a static site hosting compiler stack, not an interactive local terminal interface tool."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The `gh` command-line utility provides specialized arguments tailored to manage GitHub features and operations directly from the terminal."
+    },
+    {
+      "id": 44,
+      "topic": "GitHub Codespaces",
+      "Question": "What is the primary function of GitHub Codespaces?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To host public static documentation web pages for corporate branding operations.",
+          "reason": "Incorrect. This is the purpose of GitHub Pages."
+        },
+        {
+          "id": 2,
+          "text": "To provide a secure, cloud-hosted, customizable development environment accessible directly within a browser or local IDE.",
+          "reason": "Correct. GitHub Codespaces spins up cloud-powered containers configured with project prerequisites to streamline workspace onboarding."
+        },
+        {
+          "id": 3,
+          "text": "To run automatic code scans for finding exposed passwords in text strings.",
+          "reason": "Incorrect. This defines Secret Scanning capabilities."
+        },
+        {
+          "id": 4,
+          "text": "To aggregate cross-organizational accounting reports for enterprise billing audits.",
+          "reason": "Incorrect. This is handled by Enterprise Account licensing and financial tooling dashboards."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Codespaces provides lightweight cloud-backed dev environments, allowing developers to code on any device without configuring compilers locally."
+    },
+    {
+      "id": 45,
+      "topic": "GitHub Codespaces",
+      "Question": "Which configuration file, when placed in a repository, allows you to customize the cloud container environment for GitHub Codespaces (e.g., pre-installing specific VS Code extensions or runtime tools)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": ".github/workflows/main.yml",
+          "reason": "Incorrect. This path is used for GitHub Actions workflows, not container environments."
+        },
+        {
+          "id": 2,
+          "text": ".devcontainer/devcontainer.json",
+          "reason": "Correct. The `devcontainer.json` file configures development containers for environments like GitHub Codespaces."
+        },
+        {
+          "id": 3,
+          "text": "config.gitconfig",
+          "reason": "Incorrect. This is a local file used to customize the behavior of the Git command line utility."
+        },
+        {
+          "id": 4,
+          "text": "CODE_OF_CONDUCT.md",
+          "reason": "Incorrect. This file sets community interaction guidelines, not development environment configurations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The `devcontainer.json` file defines settings, tools, and extensions that GitHub Codespaces uses to configure the development container environment for a repository."
+    },
+    {
+      "id": 46,
+      "topic": "GitHub Copilot",
+      "Question": "How does GitHub Copilot assist software developers during their daily development activities?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "By automatically handling corporate billing processing tasks for the administration team.",
+          "reason": "Incorrect. Copilot is an AI coding assistant, not a financial accounting platform tool."
+        },
+        {
+          "id": 2,
+          "text": "By providing AI-powered inline code suggestions, autocompleting functions, and answering programming questions via chat directly inside the editor.",
+          "reason": "Correct. GitHub Copilot serves as an AI pair programmer, analyzing context to suggest code inline and answer development queries."
+        },
+        {
+          "id": 3,
+          "text": "By executing load testing scripts against deployed cloud databases automatically.",
+          "reason": "Incorrect. Copilot provides development assistance, it does not manage operational infrastructure testing execution frameworks."
+        },
+        {
+          "id": 4,
+          "text": "By restricting unauthorized external developers from downloading public open-source trees.",
+          "reason": "Incorrect. Public trees are by definition open to access; Copilot does not manage repository access permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Copilot utilizes machine learning algorithms to deliver contextual assistance, accelerating software creation cycles inside integrated development environments."
+    },
+    {
+      "id": 47,
+      "topic": "GitHub Pages",
+      "Question": "You want to quickly publish a static portfolio website directly from the contents of a specific folder in your GitHub repository. \n\nWhich native capability should you enable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Wikis",
+          "reason": "Incorrect. Wikis provide internal wiki style documentation pages rather than publishing standard standalone public websites."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Pages",
+          "reason": "Correct. GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository and publishes a website."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Packages",
+          "reason": "Incorrect. Packages serves as a software binary artifact repository (like npm or docker images), not a static website server framework."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Gists",
+          "reason": "Incorrect. Gists are for simple script notes sharing, not website hosting environments."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Pages automates static web hosting, rendering content from selected branches directly to a custom or public web domain address."
+    },
+    {
+      "id": 48,
+      "topic": "Authentication and Access",
+      "Question": "When performing git operations via the command line interface over HTTPS, GitHub requires authentication. \n\nWhich credential mechanism should you use instead of your standard plaintext account password?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Your organization billing ID number code",
+          "reason": "Incorrect. This is an administrative accounting reference, not an authentication credential."
+        },
+        {
+          "id": 2,
+          "text": "Personal Access Token (PAT)",
+          "reason": "Correct. GitHub requires Personal Access Tokens or SSH keys for command-line authentication, having deprecated standard account passwords for git actions."
+        },
+        {
+          "id": 3,
+          "text": "The repository unique SHA hash key string",
+          "reason": "Incorrect. A SHA hash identifies a specific commit, not a user's identity."
+        },
+        {
+          "id": 4,
+          "text": "The public URL of the upstream repository",
+          "reason": "Incorrect. The URL is a locator string, not a secure authentication token."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Personal Access Tokens act as scoped credentials that substitute for standard login passwords during programmatic API queries and Git command line authentications."
+    },
+    {
+      "id": 49,
+      "topic": "GitHub Packages",
+      "Question": "Your engineering team needs a centralized internal service to publish, host, and consume software packages such as npm, NuGet, or Docker container images. \n\nWhich GitHub solution addresses this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. GitHub Pages hosts static web pages, not package registries."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Packages",
+          "reason": "Correct. GitHub Packages is a software package hosting service that allows you to host your source code and packages in one place."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Gists",
+          "reason": "Incorrect. Gists are simple text snippets, not robust versioned registry package distribution solutions."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Projects",
+          "reason": "Incorrect. GitHub Projects are project management boards, not software registries."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub Packages integrates directly with GitHub Actions and permissions models to serve as a package registry for common package ecosystems."
+    },
+    {
+      "id": 50,
+      "topic": "Repository Management",
+      "Question": "Is the following statement true or false?\n\n'Changing a repository's visibility from private to public automatically makes all forks of that repository public as well.'",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes",
+          "reason": "Incorrect. Changing the visibility of a parent repository does not automatically change the visibility of its existing forks to prevent accidental exposures."
+        },
+        {
+          "id": 2,
+          "text": "No",
+          "reason": "Correct. Forks maintain their own independent visibility configurations and protection parameters to prevent accidental exposure."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "GitHub separates visibility models for safety; modifying the source upstream parent visibility does not automatically alter the visibility properties of existing downstream forks."
+    },
+    {
+      "id": 51,
+      "topic": "Collaboration and Visibility",
+      "Question": "You want to share an individual standalone script file with a client quickly without initializing a full repository structure or organizing directory paths. \n\nWhich feature is designed for sharing small code snippets?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Gists",
+          "reason": "Correct. GitHub Gists are a simple way to share code snippets, notes, or individual files with others without creating a full repository."
+        },
+        {
+          "id": 2,
+          "text": "GitHub Pages",
+          "reason": "Incorrect. GitHub Pages is a full static web hosting server pipeline, not a quick text-sharing tool."
+        },
+        {
+          "id": 3,
+          "text": "GitHub Projects",
+          "reason": "Incorrect. GitHub Projects are kanban boards used to manage team work items."
+        },
+        {
+          "id": 4,
+          "text": "GitHub Wikis",
+          "reason": "Incorrect. Wikis are long-form documentation platforms coupled to a parent repository context."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "Gists can be public or secret, providing a lightweight mechanism to version control and share individual code snippets."
+    },
+    {
+      "id": 52,
+      "topic": "Repository Management",
+      "Question": "Is the following statement true or false?\n\n'GitHub repositories can have multiple default branches simultaneously, allowing code pushes to route to all defaults at once.'",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes",
+          "reason": "Incorrect. A repository can only have exactly one default branch designated at any given time."
+        },
+        {
+          "id": 2,
+          "text": "No",
+          "reason": "Correct. Every repository has exactly one primary default branch (typically named main or master) that serves as the base for workflow operations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A repository can have many parallel branches, but exactly one branch is designated as the default branch for pull requests and initial cloning destinations."
+    },
+    {
+      "id": 53,
+      "topic": "GitHub Community",
+      "Question": "Which file, located in the root of a public repository, outlines the rules of conduct and engagement parameters to ensure a welcoming and inclusive environment for all community contributors?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "LICENSE.txt",
+          "reason": "Incorrect. This file contains the legal terms and distribution permissions for the code itself."
+        },
+        {
+          "id": 2,
+          "text": "CODE_OF_CONDUCT.md",
+          "reason": "Correct. The `CODE_OF_CONDUCT.md` file defines standards for community behavior and outlines reporting procedures for unhelpful behavior."
+        },
+        {
+          "id": 3,
+          "text": "CONTRIBUTING.md",
+          "reason": "Incorrect. While related, `CONTRIBUTING.md` provides instructions on how to submit code, open issues, and set up the dev environment."
+        },
+        {
+          "id": 4,
+          "text": "README.md",
+          "reason": "Incorrect. The README file serves as a general introduction to the repository's features and purpose."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "A `CODE_OF_CONDUCT.md` file helps establish community expectations for open source projects on GitHub."
+    },
+    {
+      "id": 54,
+      "topic": "GitHub Community",
+      "Question": "Which file should a repository maintainer create to guide external open-source developers on how to properly set up their environment, format pull requests, and submit bug reports to the project?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "CONTRIBUTING.md",
+          "reason": "Correct. A `CONTRIBUTING.md` file outlines the expectations and instructions for contributing to the repository."
+        },
+        {
+          "id": 2,
+          "text": "SECURITY.md",
+          "reason": "Incorrect. This file is used to outline the security vulnerability reporting pipeline."
+        },
+        {
+          "id": 3,
+          "text": "GOVERNANCE.md",
+          "reason": "Incorrect. This file usually details project leadership structures rather than contributor technical workflows."
+        },
+        {
+          "id": 4,
+          "text": "LICENSE",
+          "reason": "Incorrect. This file handles legal terms, not developer setup steps."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [1],
+      "CorrectAnswerExplanation": "The `CONTRIBUTING.md` file ensures contributors understand project guidelines before opening pull requests or issues."
+    },
+    {
+      "id": 55,
+      "topic": "Account Security",
+      "Question": "To safeguard a developer account from unauthorized access, GitHub strongly recommends and enforces what security authentication practice for all contributing users?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Changing passwords every 24 hours manually.",
+          "reason": "Incorrect. Frequent manual password adjustments are inefficient and do not replace multi-factor authentication paradigms."
+        },
+        {
+          "id": 2,
+          "text": "Two-Factor Authentication (2FA)",
+          "reason": "Correct. GitHub requires active contributors to enable Two-Factor Authentication (2FA) via passkeys, security keys, or authenticator apps."
+        },
+        {
+          "id": 3,
+          "text": "Sharing cleartext access strings across local text groups.",
+          "reason": "Incorrect. This is an insecure practice that increases exposure risk."
+        },
+        {
+          "id": 4,
+          "text": "Using public open networks without virtual private network wrappers.",
+          "reason": "Incorrect. This does not secure user account login authentication profiles."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Two-factor authentication adds an essential layer of safety by demanding a secondary token validation check alongside password verification during login."
+    },
+    {
+      "id": 56,
+      "topic": "Notifications and Subscriptions",
+      "Question": "You want to receive notifications for every single event—including all comments, code pushes, and status changes—that occurs within a specific public repository. \n\nWhich subscription level should you configure for that repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Participating",
+          "reason": "Incorrect. This option only sends notifications when you are @mentioned or actively participating in a thread."
+        },
+        {
+          "id": 2,
+          "text": "Watching (All Activity)",
+          "reason": "Correct. Choosing to watch all activity ensures you receive notifications for every update in that repository."
+        },
+        {
+          "id": 3,
+          "text": "Ignore",
+          "reason": "Incorrect. This suppresses all notifications from the repository entirely."
+        },
+        {
+          "id": 4,
+          "text": "Custom (Issues Only)",
+          "reason": "Incorrect. This filters updates strictly to issues, omitting pull request comments or other repository updates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The 'Watch' configuration determines notification frequencies. Selecting 'All Activity' maximizes insight outputs into your notification stream."
+    },
+    {
+      "id": 57,
+      "topic": "Repository Administration",
+      "Question": "Is the following statement true or false?\n\n'Archiving a GitHub repository deletes all its contents from the platform, making the codebase completely unrecoverable.'",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes",
+          "reason": "Incorrect. Archiving does not delete content; it marks the repository as read-only to lock modifications."
+        },
+        {
+          "id": 2,
+          "text": "No",
+          "reason": "Correct. Archiving a repository puts it into a read-only state, preserving its issues, pull requests, and file history for future reference."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "Archiving allows projects to be deprecated gracefully. The codebase remains visible and downloadable but locked against further code modifications or issue creations."
+    },
+    {
+      "id": 58,
+      "topic": "Collaboration Features",
+      "Question": "A developer wants to view a graphical timeline representation showing which contributors have made the most commits to a repository over the past 90 days. \n\nWhere in the GitHub UI can they find this view?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The Settings tab under the Actions section",
+          "reason": "Incorrect. This panel manages workflow run permissions, configurations, and self-hosted runners options."
+        },
+        {
+          "id": 2,
+          "text": "The Insights tab under Contributors charts",
+          "reason": "Correct. The Insights tab provides data visualizations, including charts that track commit frequencies, code frequency, and community interactions."
+        },
+        {
+          "id": 3,
+          "text": "The Pull Requests tab filter menus",
+          "reason": "Incorrect. The PR tab lists active and closed code reviews, lacking analytical developer charts visualizations."
+        },
+        {
+          "id": 4,
+          "text": "The Repository profile README description box text",
+          "reason": "Incorrect. The README contains static markdown copy text and lacks real-time, built-in graph generation analytics features."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The Insights tab surfaces project metrics and contribution velocities, helping maintainers monitor activity patterns across the codebase."
+    },
+    {
+      "id": 59,
+      "topic": "GitHub Actions Infrastructure",
+      "Question": "What happens to the virtual machine environment of a GitHub-hosted runner once its designated workflow job completes execution?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It remains active indefinitely awaiting the next push from any team member.",
+          "reason": "Incorrect. GitHub-hosted runners do not persist state across runs to guarantee secure isolation."
+        },
+        {
+          "id": 2,
+          "text": "The virtual machine is immediately destroyed, discarding all unsaved workspace data.",
+          "reason": "Correct. GitHub-hosted runners provide single-use, pristine virtual environments that are destroyed after job completion."
+        },
+        {
+          "id": 3,
+          "text": "It is saved as a new docker image and pushed to GitHub Packages automatically.",
+          "reason": "Incorrect. Job completions do not cause image registry compilation updates natively."
+        },
+        {
+          "id": 4,
+          "text": "It is transferred to a local developer workstation via an active web link connection.",
+          "reason": "Incorrect. The runner host environment is contained entirely within cloud infrastructure and discarded securely."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "To maintain security and environmental isolation, each GitHub-hosted runner instance is clean and destroyed post-run, meaning any required output data must be explicitly uploaded as an artifact."
+    },
+    {
+      "id": 60,
+      "topic": "GitHub Security",
+      "Question": "You want to check the status of all current known vulnerabilities across open-source codebases, along with corresponding CVE indicators, from an authoritative global directory provided by GitHub. \n\nWhich database should you consult?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The GitHub Audit Log directory",
+          "reason": "Incorrect. The Audit Log tracks administrative changes made within an organization or enterprise, not global software flaws."
+        },
+        {
+          "id": 2,
+          "text": "The GitHub Advisory Database",
+          "reason": "Correct. The GitHub Advisory Database maps security vulnerabilities to open source dependencies, serving as a foundational registry for toolsets like Dependabot."
+        },
+        {
+          "id": 3,
+          "text": "The repository local settings branch list",
+          "reason": "Incorrect. Local settings do not map global open source ecosystem threat lists."
+        },
+        {
+          "id": 4,
+          "text": "The Copilot suggested changes reference panel",
+          "reason": "Incorrect. Copilot handles code writing suggestions, not global threat inventory indexing."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [2],
+      "CorrectAnswerExplanation": "The GitHub Advisory Database is an open, community-aligned record of software flaws and vulnerabilities designed to simplify tracking risk parameters."
+    }
+  ]
+}

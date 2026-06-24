@@ -1,0 +1,1941 @@
+{
+  "quizName": "GitHub Foundations Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY: Contoso Platform Team\n\nContoso is moving an internal application to GitHub. The team wants a clean repository structure, protected collaboration on feature branches, and a repeatable review process before merging changes into the main branch."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY: Fabrikam DevOps Modernization\n\nFabrikam manages several services in GitHub and wants automation for build validation, a consistent way to track work, and clear visibility into issues and pull requests across multiple teams."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY: Northwind Open Source Program\n\nNorthwind is publishing a public project on GitHub. The maintainers need help onboarding contributors, managing community discussions, protecting sensitive settings, and organizing work across an organization."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which statement best describes Git?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A distributed version control system used to track changes and coordinate work.",
+          "reason": "Git is a distributed version control system."
+        },
+        {
+          "id": 2,
+          "text": "A cloud-only project board service.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "A code hosting service without local history.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "A build service for compiling apps.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Git stores project history locally and supports branching, merging, and collaboration."
+    },
+    {
+      "id": 2,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "What is the main purpose of cloning a repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To create a new branch on GitHub.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 2,
+          "text": "To create a local copy of a remote repository.",
+          "reason": "Cloning copies a remote repository to your machine."
+        },
+        {
+          "id": 3,
+          "text": "To delete remote branches.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "To publish a repository as a template.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Clone creates a local copy that you can work with and sync later."
+    },
+    {
+      "id": 3,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "What is the usual result of a successful git commit?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A saved snapshot of staged changes in the local repository.",
+          "reason": "A commit records staged changes."
+        },
+        {
+          "id": 2,
+          "text": "A copied issue from another repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "A published release on GitHub.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "A new organization member.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A commit captures staged changes as a snapshot in repository history."
+    },
+    {
+      "id": 4,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which GitHub feature is used to propose changes for review before merging?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Actions",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 2,
+          "text": "Issues",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Pull requests",
+          "reason": "Pull requests propose and review changes before merge."
+        },
+        {
+          "id": 4,
+          "text": "Packages",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Pull requests are the standard way to review and merge changes on GitHub."
+    },
+    {
+      "id": 5,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "What is the difference between a local repository and a remote repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Local is stored on your computer; remote is stored on GitHub or another server.",
+          "reason": "That is the key difference."
+        },
+        {
+          "id": 2,
+          "text": "Local is public; remote is private.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Local can only contain issues; remote can only contain code.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Local always has more branches than remote.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A local repository lives on your machine, while a remote repository is hosted elsewhere."
+    },
+    {
+      "id": 6,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which command initializes a new Git repository in an empty folder?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "git clone",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 2,
+          "text": "git init",
+          "reason": "git init creates a new repository."
+        },
+        {
+          "id": 3,
+          "text": "git pull",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "git merge",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "git init creates a new local repository in the current folder."
+    },
+    {
+      "id": 7,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which GitHub element is best for reporting and tracking a bug?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Issue",
+          "reason": "Issues are used to track bugs and tasks."
+        },
+        {
+          "id": 2,
+          "text": "Branch",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Commit",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Tag",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Issues help track bugs, tasks, and other work items."
+    },
+    {
+      "id": 8,
+      "topic": "Working with GitHub Repositories",
+      "Question": "What does a repository template help you do?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a new repository with prepopulated structure and files.",
+          "reason": "Templates speed up new repo creation."
+        },
+        {
+          "id": 2,
+          "text": "Encrypt repository secrets automatically.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Convert a private repository to public.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Run builds without workflows.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Templates provide a starting structure for new repositories."
+    },
+    {
+      "id": 9,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Which repository setting controls who can push or administer a repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository visibility",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 2,
+          "text": "Repository permissions",
+          "reason": "Permissions control access levels."
+        },
+        {
+          "id": 3,
+          "text": "Repository labels",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Repository milestones",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Repository permissions determine what users can do in the repo."
+    },
+    {
+      "id": 10,
+      "topic": "Working with GitHub Repositories",
+      "Question": "What is the best action to preserve a file's history when changing its content in a repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Edit the file and commit the change.",
+          "reason": "Editing and committing preserves history."
+        },
+        {
+          "id": 2,
+          "text": "Rename the repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Delete the branch.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create a discussion.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Editing and committing records file version history."
+    },
+    {
+      "id": 11,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Which GitHub Desktop capability is most relevant for file-based changes?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Visual management of commits and sync actions",
+          "reason": "GitHub Desktop helps manage commits and sync locally."
+        },
+        {
+          "id": 2,
+          "text": "Organization billing management",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Creating enterprise cloud regions",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Publishing marketplace apps",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Desktop provides a GUI for working with repositories and committing changes."
+    },
+    {
+      "id": 12,
+      "topic": "Working with GitHub Repositories",
+      "Question": "What happens when you delete a file in a Git repository and commit the change?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The deletion is recorded in version history.",
+          "reason": "Deletes are tracked through commits."
+        },
+        {
+          "id": 2,
+          "text": "The repository becomes archived.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "All branches are merged.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "The repository loses its remote URL.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Deletes are also versioned through commits."
+    },
+    {
+      "id": 13,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Which repository feature lets you start from a standard file and folder layout for multiple projects?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository template",
+          "reason": "Templates provide reusable scaffolding."
+        },
+        {
+          "id": 2,
+          "text": "Fork network",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Discussion category",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Security advisory",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Templates are useful when many projects share the same starting structure."
+    },
+    {
+      "id": 14,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Which change is typically made in repository settings rather than in code?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Changing default branch protection behavior",
+          "reason": "Settings control repository behavior."
+        },
+        {
+          "id": 2,
+          "text": "Fixing a syntax error in source code",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Updating a function body",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Changing a package import path in code",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Repository settings are used for branch rules, visibility, and access control."
+    },
+    {
+      "id": 15,
+      "topic": "Collaboration Features",
+      "Question": "What is the main purpose of forking a repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a personal copy of someone else's repository to work independently.",
+          "reason": "Forking creates an independent copy."
+        },
+        {
+          "id": 2,
+          "text": "Schedule an automated workflow.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Lock a repository from edits.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Merge a pull request automatically.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A fork is commonly used to propose changes without direct write access."
+    },
+    {
+      "id": 16,
+      "topic": "Collaboration Features",
+      "Question": "Which action is most appropriate after reviewing changes and approving them in a pull request?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Merge the pull request.",
+          "reason": "Approved changes are merged next."
+        },
+        {
+          "id": 2,
+          "text": "Archive the repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Convert the issue to a discussion.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Transfer the repository.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "After approval, the pull request can be merged into the target branch."
+    },
+    {
+      "id": 17,
+      "topic": "Collaboration Features",
+      "Question": "What is the primary purpose of GitHub Actions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Automate workflows such as build, test, and deployment.",
+          "reason": "Actions automate workflows."
+        },
+        {
+          "id": 2,
+          "text": "Store large media files.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Create organization billing reports.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Replace repository permissions.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Actions is used for automation and CI/CD workflows."
+    },
+    {
+      "id": 18,
+      "topic": "Collaboration Features",
+      "Question": "Which feature helps teams track bugs and feature requests?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Issues",
+          "reason": "Issues track work items and requests."
+        },
+        {
+          "id": 2,
+          "text": "Releases",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Wiki",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Sponsors",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Issues are the standard tracking tool for bugs and requests."
+    },
+    {
+      "id": 19,
+      "topic": "Collaboration Features",
+      "Question": "Which GitHub feature supports threaded conversations around ideas or questions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Discussions",
+          "reason": "Discussions are for community conversations."
+        },
+        {
+          "id": 2,
+          "text": "Tags",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Projects",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Branches",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Discussions provide a forum-style collaboration space."
+    },
+    {
+      "id": 20,
+      "topic": "Collaboration Features",
+      "Question": "Which GitHub workflow is the best fit for validating code before merge?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a pull request and run automated checks.",
+          "reason": "Pull requests are commonly paired with checks."
+        },
+        {
+          "id": 2,
+          "text": "Create a milestone and wait.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Open a discussion and close it.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Change repository visibility.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Pull requests often trigger checks that validate changes before merge."
+    },
+    {
+      "id": 21,
+      "topic": "Collaboration Features",
+      "Question": "How do labels help with issue management?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "They categorize and filter issues or pull requests.",
+          "reason": "Labels classify work items."
+        },
+        {
+          "id": 2,
+          "text": "They encrypt secrets.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "They create branches.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "They publish releases.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Labels make it easier to organize and search work items."
+    },
+    {
+      "id": 22,
+      "topic": "Collaboration Features",
+      "Question": "What is a milestone used for in GitHub?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Grouping related issues and pull requests toward a goal.",
+          "reason": "Milestones group work toward a target."
+        },
+        {
+          "id": 2,
+          "text": "Rewriting commit history.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Creating repository forks.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Reviewing code line by line.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Milestones help track progress against a target or release."
+    },
+    {
+      "id": 23,
+      "topic": "Collaboration Features",
+      "Question": "Which item is most associated with tracking work across a team visually?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Project",
+          "reason": "Projects track and organize work visually."
+        },
+        {
+          "id": 2,
+          "text": "Commit",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Tag",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Secret",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Projects helps organize team work and status."
+    },
+    {
+      "id": 24,
+      "topic": "Modern Development",
+      "Question": "What is the core benefit of CI in a GitHub workflow?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Automatically validating code changes early and often.",
+          "reason": "CI validates changes frequently."
+        },
+        {
+          "id": 2,
+          "text": "Creating private forks automatically.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Replacing pull requests.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Archiving issues after merge.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Continuous integration helps catch problems early."
+    },
+    {
+      "id": 25,
+      "topic": "Modern Development",
+      "Question": "Which GitHub feature is commonly used to define automated steps in response to repository events?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "GitHub Actions workflow",
+          "reason": "Workflows define automation steps."
+        },
+        {
+          "id": 2,
+          "text": "Repository topic",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Organization profile",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Gist",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Workflows define when and how automation runs."
+    },
+    {
+      "id": 26,
+      "topic": "Modern Development",
+      "Question": "What is a code review intended to accomplish?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Identify improvements, issues, and correctness concerns before merge.",
+          "reason": "Code review improves quality."
+        },
+        {
+          "id": 2,
+          "text": "Create a release tag.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Assign repository ownership.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Change branch visibility.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Code review improves quality, consistency, and maintainability."
+    },
+    {
+      "id": 27,
+      "topic": "Modern Development",
+      "Question": "Which review action is most appropriate for requesting changes from an author?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Leave a review comment and request changes.",
+          "reason": "That communicates required updates."
+        },
+        {
+          "id": 2,
+          "text": "Archive the repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Pin the issue.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Transfer the project.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Requesting changes is the standard way to block merge until issues are addressed."
+    },
+    {
+      "id": 28,
+      "topic": "Modern Development",
+      "Question": "What is one common reason to use branch protection rules?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Require reviews or status checks before merging.",
+          "reason": "Branch protection improves control."
+        },
+        {
+          "id": 2,
+          "text": "Increase file upload size.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Rename contributors.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create discussions automatically.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Branch protection can require reviews and checks before merge."
+    },
+    {
+      "id": 29,
+      "topic": "Modern Development",
+      "Question": "Which automation outcome is most associated with a successful CI pipeline?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Build and test results are reported automatically.",
+          "reason": "CI reports pipeline results."
+        },
+        {
+          "id": 2,
+          "text": "Repository topics are updated.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Discussion categories are created.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Secrets are displayed publicly.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "CI pipelines usually build and test code, then report status."
+    },
+    {
+      "id": 30,
+      "topic": "Project Management",
+      "Question": "Which GitHub feature is designed for planning and tracking work at scale?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Projects",
+          "reason": "Projects are for planning and tracking work."
+        },
+        {
+          "id": 2,
+          "text": "Gists",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Reactions",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Dependabot alerts",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Projects help organize work into a manageable workflow."
+    },
+    {
+      "id": 31,
+      "topic": "Project Management",
+      "Question": "What is the typical purpose of a project board column?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Representing work status such as To do, In progress, or Done.",
+          "reason": "Columns show status."
+        },
+        {
+          "id": 2,
+          "text": "Encrypting issues.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Creating forks.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Storing branch policies.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Project board columns help visualize progress."
+    },
+    {
+      "id": 32,
+      "topic": "Project Management",
+      "Question": "How can issues and pull requests be integrated with GitHub Projects?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "They can be added as project items.",
+          "reason": "Project items can include issues and PRs."
+        },
+        {
+          "id": 2,
+          "text": "They can only be stored as files.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "They can only be used in discussions.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "They must be converted to tags.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Projects can track issues and pull requests together."
+    },
+    {
+      "id": 33,
+      "topic": "Project Management",
+      "Question": "What is a practical use of milestones and projects together?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Group work by release and track delivery status.",
+          "reason": "That is a common combined use."
+        },
+        {
+          "id": 2,
+          "text": "Replace repository permissions.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Host package artifacts.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create forks from templates.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Milestones can target release goals while projects track progress."
+    },
+    {
+      "id": 34,
+      "topic": "Project Management",
+      "Question": "Which action best supports estimating future work in GitHub Projects?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Organize issues into a prioritized view.",
+          "reason": "Prioritization helps planning."
+        },
+        {
+          "id": 2,
+          "text": "Merge branches automatically.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Disable notifications.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Convert issues to secrets.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Prioritized views help teams plan upcoming work."
+    },
+    {
+      "id": 35,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "Which branch setting is used to reduce the risk of unstable changes reaching main?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Branch protection rule",
+          "reason": "Branch protection controls merges."
+        },
+        {
+          "id": 2,
+          "text": "Repository topic",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Pinned discussion",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Project insight",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Branch protection helps safeguard important branches."
+    },
+    {
+      "id": 36,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "What does Dependabot help with?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Identifying vulnerable or outdated dependencies.",
+          "reason": "Dependabot monitors dependencies."
+        },
+        {
+          "id": 2,
+          "text": "Managing issue labels.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Creating pull request templates.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Deploying releases directly to production.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Dependabot supports dependency security and updates."
+    },
+    {
+      "id": 37,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "What is the purpose of organization teams?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Manage access for groups of members.",
+          "reason": "Teams simplify access control."
+        },
+        {
+          "id": 2,
+          "text": "Store workflow logs.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Create releases.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Host documentation pages.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Teams make it easier to assign permissions to groups."
+    },
+    {
+      "id": 38,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "Which action best fits organization administration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Adding members and assigning team-based access.",
+          "reason": "That is an admin task."
+        },
+        {
+          "id": 2,
+          "text": "Editing code in a feature branch.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Submitting a pull request.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Closing an issue.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Organization admins manage members, teams, and access."
+    },
+    {
+      "id": 39,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "What is the main purpose of repository access permissions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Control who can view, push, or administer content.",
+          "reason": "Permissions control access."
+        },
+        {
+          "id": 2,
+          "text": "Track task status.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Create automation jobs.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Review code style.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Permissions define allowed actions for users and teams."
+    },
+    {
+      "id": 40,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "Which feature helps protect against accidental exposure of secrets?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Repository secret storage",
+          "reason": "Secrets store sensitive values safely."
+        },
+        {
+          "id": 2,
+          "text": "Public forks",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Issue templates",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Git tags",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Secrets are stored separately from source code."
+    },
+    {
+      "id": 41,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "Which GitHub feature is most useful for open-ended community Q&A?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Discussions",
+          "reason": "Discussions are ideal for community Q&A."
+        },
+        {
+          "id": 2,
+          "text": "Commits",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Branches",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Releases",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Discussions support community interaction around questions and ideas."
+    },
+    {
+      "id": 42,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "What does it mean to contribute to an open source project through GitHub?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Propose improvements and collaborate through issues and pull requests.",
+          "reason": "That is a core contribution flow."
+        },
+        {
+          "id": 2,
+          "text": "Only download code without changes.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Only create organizations.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Only manage billing.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Open source contribution commonly happens through issues and pull requests."
+    },
+    {
+      "id": 43,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "Which action is a common way to stay informed about repository activity?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Subscribe to notifications.",
+          "reason": "Notifications keep you informed."
+        },
+        {
+          "id": 2,
+          "text": "Delete old branches.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Archive the repo.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create a release draft.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Notifications and subscriptions help you monitor activity."
+    },
+    {
+      "id": 44,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "Why might a maintainer use a welcome or contribution-focused repository file?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To guide contributors on how to participate.",
+          "reason": "Contributor guidance improves participation."
+        },
+        {
+          "id": 2,
+          "text": "To hide source code from collaborators.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "To replace branch protection.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "To host workflow logs.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Contributor guidance helps standardize community participation."
+    },
+    {
+      "id": 45,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which statement best describes a branch?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An independent line of development.",
+          "reason": "Branches isolate work."
+        },
+        {
+          "id": 2,
+          "text": "A final published version.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "A hosted issue list.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "A permissions group.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Branches let you develop changes independently before merging."
+    },
+    {
+      "id": 46,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "What does merging do?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Combines changes from one branch into another.",
+          "reason": "Merging integrates changes."
+        },
+        {
+          "id": 2,
+          "text": "Creates a remote clone.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Deletes all previous commits.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Changes repository visibility.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Merge brings changes from one branch into another branch."
+    },
+    {
+      "id": 47,
+      "topic": "Collaboration Features",
+      "Question": "Which pull request activity is most useful for finding quality issues early?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Reviewing the diff and leaving comments.",
+          "reason": "Reviewing the diff helps catch issues."
+        },
+        {
+          "id": 2,
+          "text": "Changing repository topics.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Creating a milestone.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Adding a sponsor tier.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Code review helps identify issues before merge."
+    },
+    {
+      "id": 48,
+      "topic": "Collaboration Features",
+      "Question": "What is a good reason to use a fork instead of working directly in the main repository?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "You do not have write access and want to propose changes safely.",
+          "reason": "Forks support external contribution."
+        },
+        {
+          "id": 2,
+          "text": "You need to delete the repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "You want to disable issues.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "You need to create a new organization.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Forks are common when contributors do not have direct write access."
+    },
+    {
+      "id": 49,
+      "topic": "Modern Development",
+      "Question": "Which event commonly triggers a GitHub Actions workflow?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A push or pull request update.",
+          "reason": "Common workflow triggers."
+        },
+        {
+          "id": 2,
+          "text": "Changing the repo description only.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Viewing a discussion.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Opening a team page.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Workflows often run on pushes and pull requests."
+    },
+    {
+      "id": 50,
+      "topic": "Project Management",
+      "Question": "What is the best use of a project item field such as Priority?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To categorize and rank work for planning.",
+          "reason": "Fields help prioritize work."
+        },
+        {
+          "id": 2,
+          "text": "To store commit hashes only.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "To manage repository permissions.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "To publish packages.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Project fields help organize and prioritize work."
+    },
+    {
+      "id": 51,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "Which setting would you use to make a repository visible only to selected people?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Private visibility",
+          "reason": "Private repositories are restricted."
+        },
+        {
+          "id": 2,
+          "text": "Public visibility",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Repository archive",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Topic visibility",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Private visibility limits who can access the repository."
+    },
+    {
+      "id": 52,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "Which GitHub feature helps people ask and answer questions around a project without creating issues?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Discussions",
+          "reason": "Discussions support conversational collaboration."
+        },
+        {
+          "id": 2,
+          "text": "Forks",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Commits",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Tags",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Discussions are well suited to project conversations."
+    },
+    {
+      "id": 53,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "What is the purpose of pushing changes?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Send local commits to a remote repository.",
+          "reason": "Push uploads commits."
+        },
+        {
+          "id": 2,
+          "text": "Create a new local branch only.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Review code for merge conflicts.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create repository templates.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Push sends your local commits to the remote repository."
+    },
+    {
+      "id": 54,
+      "topic": "Working with GitHub Repositories",
+      "Question": "Why would you use a repository archive action?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To mark a repository as no longer active for development.",
+          "reason": "Archiving preserves history and stops updates."
+        },
+        {
+          "id": 2,
+          "text": "To add branch protections.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "To create new issues faster.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "To publish Actions logs.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Archiving indicates a repository is no longer active."
+    },
+    {
+      "id": 55,
+      "topic": "Collaboration Features",
+      "Question": "What is the primary benefit of GitHub’s issue templates?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Standardize the information contributors provide.",
+          "reason": "Templates improve consistency."
+        },
+        {
+          "id": 2,
+          "text": "Automatically merge pull requests.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Replace repository settings.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create organizations.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Issue templates improve the quality of submitted information."
+    },
+    {
+      "id": 56,
+      "topic": "Modern Development",
+      "Question": "Which statement about GitHub Actions is correct?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Workflows can be reused to standardize automation.",
+          "reason": "Reusable workflows standardize automation."
+        },
+        {
+          "id": 2,
+          "text": "Actions only work in private repositories.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Actions replace issues and discussions.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Actions remove the need for branches.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Actions can standardize automation across repositories."
+    },
+    {
+      "id": 57,
+      "topic": "Project Management",
+      "Question": "How do GitHub Projects help a team most directly?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "They provide a structured view of work and progress.",
+          "reason": "Projects give teams visibility."
+        },
+        {
+          "id": 2,
+          "text": "They store source code history.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "They enforce branch protection.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "They create release notes automatically.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Projects provide a structured way to plan and track work."
+    },
+    {
+      "id": 58,
+      "topic": "Privacy, Security, and Administration",
+      "Question": "What is a common reason to require pull request reviews on protected branches?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To ensure changes are examined before merge.",
+          "reason": "Reviews add control."
+        },
+        {
+          "id": 2,
+          "text": "To disable commits.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "To create labels automatically.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "To convert issues into discussions.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Reviews help ensure quality and governance before merge."
+    },
+    {
+      "id": 59,
+      "topic": "Benefits of the GitHub Community",
+      "Question": "What is one benefit of participating in GitHub Discussions for an open source project?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Build shared understanding around features and support questions.",
+          "reason": "Discussions support shared understanding."
+        },
+        {
+          "id": 2,
+          "text": "Reduce repository storage costs.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Replace branch protection.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Create CI workflows.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Discussions help the community share context and support."
+    },
+    {
+      "id": 60,
+      "topic": "Introduction to Git and GitHub",
+      "Question": "Which action best describes syncing local work after remote changes have been made?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Pulling changes from the remote repository.",
+          "reason": "Pull brings remote changes locally."
+        },
+        {
+          "id": 2,
+          "text": "Forking the repository.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 3,
+          "text": "Tagging the commit.",
+          "reason": "Incorrect."
+        },
+        {
+          "id": 4,
+          "text": "Archiving the repository.",
+          "reason": "Incorrect."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Pull downloads and integrates changes from the remote repository."
+    }
+  ]
+}

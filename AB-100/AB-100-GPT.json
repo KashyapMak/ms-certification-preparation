@@ -1,0 +1,1946 @@
+{
+    "quizName": "AB-100: Agentic AI Business Solutions Architect Practice Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "scenarios": [
+        {
+            "id": 1,
+            "text": "CASE STUDY: Contoso Manufacturing AI Transformation\n\nContoso Manufacturing operates global factories and service centres. The leadership team wants to introduce agentic AI to reduce manual work in sales quoting, field service scheduling, and production issue triage.\n\nThe architecture board requires every AI initiative to be linked to measurable business outcomes, reuse existing Dynamics 365 and Microsoft Power Platform investments, and avoid building isolated prototypes that cannot scale. The solution must support secure access, human review for high-impact decisions, and phased adoption across regions."
+        },
+        {
+            "id": 2,
+            "text": "CASE STUDY: Alpine Retail Multi-Agent Service Platform\n\nAlpine Retail runs online and in-store operations across Europe. The company plans to deploy several agents: a customer support agent, an inventory insight agent, a store operations agent, and an escalation agent for unresolved cases.\n\nThe agents must collaborate across Microsoft 365, Dynamics 365 Customer Service, Dataverse, and approved external APIs. The solution must use reusable actions, controlled knowledge sources, consistent identity enforcement, and monitoring to improve answer quality over time."
+        },
+        {
+            "id": 3,
+            "text": "CASE STUDY: Fabrikam Financial Services Governance Programme\n\nFabrikam Financial Services is modernising internal operations with agentic AI. The compliance office is concerned about sensitive customer data, prompt injection, auditability, lifecycle control, and responsible AI obligations.\n\nThe solution architect must design a governed operating model that includes environment strategy, data loss prevention, evaluation, testing, human oversight, deployment controls, and measurable production monitoring. Business stakeholders expect a roadmap that balances innovation, risk management, cost control, and operational readiness."
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Analyze requirements for AI-powered business solutions",
+            "scenario_id": 1,
+            "Question": "Contoso wants to identify the best first business process for agentic AI adoption.\n\nWhich criterion should the architect prioritize during initial process selection?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The process uses the newest AI model available in the tenant.",
+                    "reason": "Incorrect. Model novelty alone does not prove business value or readiness."
+                },
+                {
+                    "id": 2,
+                    "text": "The process has measurable outcomes, repeatable decisions, and available data sources.",
+                    "reason": "Correct. A strong candidate has measurable value, repeatability, and accessible data."
+                },
+                {
+                    "id": 3,
+                    "text": "The process affects only one user and has no documented baseline.",
+                    "reason": "Incorrect. A narrow process without a baseline is difficult to evaluate."
+                },
+                {
+                    "id": 4,
+                    "text": "The process requires unrestricted autonomous decisions for all exceptions.",
+                    "reason": "Incorrect. High-impact exceptions typically require governance and human review."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Architects should qualify agentic AI opportunities by business value, process repeatability, data availability, risk, and measurable success criteria."
+        },
+        {
+            "id": 2,
+            "topic": "Analyze requirements for AI-powered business solutions",
+            "scenario_id": 1,
+            "Question": "Contoso needs to document stakeholders, existing systems, process pain points, risks, and target outcomes before selecting an AI solution pattern.\n\nWhich activity best supports this requirement?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Creating a model benchmark report without business process analysis",
+                    "reason": "Incorrect. Model benchmarks do not replace business requirement discovery."
+                },
+                {
+                    "id": 2,
+                    "text": "Publishing a production agent before defining success metrics",
+                    "reason": "Incorrect. Production release should follow defined requirements and evaluation criteria."
+                },
+                {
+                    "id": 3,
+                    "text": "Conducting structured discovery and mapping the current and target business process",
+                    "reason": "Correct. Discovery and process mapping identify needs, constraints, dependencies, and outcomes."
+                },
+                {
+                    "id": 4,
+                    "text": "Selecting a custom application framework before assessing user roles",
+                    "reason": "Incorrect. Architecture decisions should follow understanding of users, roles, and processes."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "A solution architect should begin with structured requirement analysis, including current-state process mapping, stakeholders, systems, risks, and target outcomes."
+        },
+        {
+            "id": 3,
+            "topic": "Analyze requirements for AI-powered business solutions",
+            "scenario_id": 1,
+            "Question": "The field service team wants an AI agent to schedule technician visits automatically. Some visits involve safety-critical equipment and must be reviewed by a supervisor.\n\nWhat should the architect include in the requirement model?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A human-in-the-loop control for safety-critical scheduling decisions",
+                    "reason": "Correct. Human review is appropriate for high-impact or safety-sensitive actions."
+                },
+                {
+                    "id": 2,
+                    "text": "A rule that all generated schedules bypass existing service policies",
+                    "reason": "Incorrect. AI solutions should respect existing policies and business constraints."
+                },
+                {
+                    "id": 3,
+                    "text": "A design that stores all technician data outside approved systems",
+                    "reason": "Incorrect. Data handling must follow approved systems and governance."
+                },
+                {
+                    "id": 4,
+                    "text": "A requirement that users cannot override agent recommendations",
+                    "reason": "Incorrect. Architects should define appropriate override and escalation paths."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "High-impact actions should include review, approval, escalation, or override mechanisms based on organizational risk policies."
+        },
+        {
+            "id": 4,
+            "topic": "Analyze requirements for AI-powered business solutions",
+            "scenario_id": 1,
+            "Question": "Contoso wants to estimate whether an agentic AI solution is financially justified.\n\nWhich information is most important for the architect to collect first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The colour theme preferred for the agent interface",
+                    "reason": "Incorrect. UI preference is not the primary input for financial justification."
+                },
+                {
+                    "id": 2,
+                    "text": "The number of available icons in the design system",
+                    "reason": "Incorrect. Icon availability does not determine financial value."
+                },
+                {
+                    "id": 3,
+                    "text": "The name of every user who may access Microsoft Teams",
+                    "reason": "Incorrect. User identity may matter later, but not as the first business case input."
+                },
+                {
+                    "id": 4,
+                    "text": "Baseline process cost, expected efficiency gains, implementation cost, and risk controls",
+                    "reason": "Correct. These inputs support cost-benefit analysis and prioritisation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A cost-benefit assessment should compare baseline cost, expected benefits, implementation and operating costs, risk mitigation, and adoption effort."
+        },
+        {
+            "id": 5,
+            "topic": "Analyze requirements for AI-powered business solutions",
+            "scenario_id": 1,
+            "Question": "Contoso wants to measure whether the quote-generation agent improves the sales process after release.\n\nWhich success metric is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Reduction in average quote preparation time while maintaining pricing policy compliance",
+                    "reason": "Correct. This directly measures process efficiency and quality."
+                },
+                {
+                    "id": 2,
+                    "text": "Increase in the number of unused connectors in the environment",
+                    "reason": "Incorrect. Unused connectors do not indicate business value."
+                },
+                {
+                    "id": 3,
+                    "text": "Number of experimental prompts stored by individual users",
+                    "reason": "Incorrect. Prompt count alone does not measure outcome improvement."
+                },
+                {
+                    "id": 4,
+                    "text": "Percentage of users who can name the underlying model provider",
+                    "reason": "Incorrect. Model awareness is not a core process outcome."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Success metrics should connect agent output to business outcomes, quality expectations, and operational controls."
+        },
+        {
+            "id": 6,
+            "topic": "Design overall AI strategy for business solutions",
+            "scenario_id": 2,
+            "Question": "Alpine Retail wants multiple agents to support customer service, inventory, and store operations. The chief architect wants to avoid fragmented pilots.\n\nWhat should be established first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A separate unmanaged environment for every individual maker",
+                    "reason": "Incorrect. This can increase fragmentation and governance issues."
+                },
+                {
+                    "id": 2,
+                    "text": "A shared AI solution strategy with target capabilities, governance, integration principles, and adoption roadmap",
+                    "reason": "Correct. A strategy aligns agent designs, governance, platform use, and roadmap."
+                },
+                {
+                    "id": 3,
+                    "text": "A rule that all agents must use a single hard-coded prompt",
+                    "reason": "Incorrect. Agents may need different instructions, tools, and data sources."
+                },
+                {
+                    "id": 4,
+                    "text": "A decision to build every capability as a custom web application",
+                    "reason": "Incorrect. Platform capabilities should be evaluated before custom build decisions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "An enterprise AI strategy should define business priorities, architecture principles, governance, platform choices, integration patterns, and scale approach."
+        },
+        {
+            "id": 7,
+            "topic": "Design overall AI strategy for business solutions",
+            "scenario_id": 2,
+            "Question": "Alpine Retail must decide whether to use a prebuilt agent, extend an existing Microsoft business application, or create a custom agent.\n\nWhat should drive this decision?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The alphabetic order of the available Microsoft services",
+                    "reason": "Incorrect. Service selection should be based on requirements and fit."
+                },
+                {
+                    "id": 2,
+                    "text": "The personal preference of the first developer assigned to the project",
+                    "reason": "Incorrect. Architecture choices should be objective and governed."
+                },
+                {
+                    "id": 3,
+                    "text": "Business fit, required autonomy, integration needs, data sensitivity, and lifecycle requirements",
+                    "reason": "Correct. These factors determine the most suitable solution pattern."
+                },
+                {
+                    "id": 4,
+                    "text": "The option with the fewest documented configuration fields",
+                    "reason": "Incorrect. Simplicity is useful, but not sufficient for architectural suitability."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Architectural choice should be based on capability fit, risk, integration, governance, extensibility, data, and operational lifecycle needs."
+        },
+        {
+            "id": 8,
+            "topic": "Design overall AI strategy for business solutions",
+            "scenario_id": 2,
+            "Question": "Alpine Retail wants to use agents in Microsoft Teams and Dynamics 365 while keeping customer data governed in Dataverse.\n\nWhich strategy best supports this goal?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Export Dataverse data to unmanaged spreadsheets for each agent",
+                    "reason": "Incorrect. This weakens governance and introduces data quality risk."
+                },
+                {
+                    "id": 2,
+                    "text": "Allow each business unit to create unrelated data stores for the same customer record",
+                    "reason": "Incorrect. Duplicate data stores increase inconsistency and governance complexity."
+                },
+                {
+                    "id": 3,
+                    "text": "Prevent agents from using business application context",
+                    "reason": "Incorrect. The requirement is to use business application context securely."
+                },
+                {
+                    "id": 4,
+                    "text": "Use governed platform data sources and role-based access across Microsoft business applications",
+                    "reason": "Correct. Governed data sources and security trimming support secure cross-app scenarios."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A cross-platform AI strategy should reuse governed data, apply identity and role-based controls, and integrate with business applications."
+        },
+        {
+            "id": 9,
+            "topic": "Design overall AI strategy for business solutions",
+            "scenario_id": 2,
+            "Question": "Alpine Retail is assessing whether to use an agentic-first approach for store operations.\n\nWhich characteristic most strongly supports an agentic-first design?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The work requires goal-oriented reasoning, tool use, and orchestration across multiple steps.",
+                    "reason": "Correct. Agentic solutions are suited for goal-driven, multi-step tasks with tools and context."
+                },
+                {
+                    "id": 2,
+                    "text": "The work consists only of a static read-only FAQ with no contextual decisions.",
+                    "reason": "Incorrect. A simple knowledge experience may not require agentic orchestration."
+                },
+                {
+                    "id": 3,
+                    "text": "The work must avoid all enterprise data and actions.",
+                    "reason": "Incorrect. Agents often need governed access to data and actions."
+                },
+                {
+                    "id": 4,
+                    "text": "The work has no measurable user or operational outcome.",
+                    "reason": "Incorrect. Agentic initiatives should be outcome-driven."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Agentic-first design is appropriate when a solution must reason over goals, call tools, coordinate steps, and adapt to context within governed boundaries."
+        },
+        {
+            "id": 10,
+            "topic": "Design overall AI strategy for business solutions",
+            "scenario_id": 2,
+            "Question": "Alpine Retail must prioritize AI use cases for a 12-month roadmap.\n\nWhich approach should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Start with the most expensive use case regardless of readiness or risk",
+                    "reason": "Incorrect. Cost alone does not determine priority."
+                },
+                {
+                    "id": 2,
+                    "text": "Rank use cases by business value, feasibility, data readiness, risk, and adoption effort",
+                    "reason": "Correct. A balanced scorecard supports realistic prioritisation."
+                },
+                {
+                    "id": 3,
+                    "text": "Select only use cases that require no integration with existing systems",
+                    "reason": "Incorrect. Many valuable AI solutions require governed integration."
+                },
+                {
+                    "id": 4,
+                    "text": "Choose randomly to avoid stakeholder bias",
+                    "reason": "Incorrect. Prioritisation should be evidence-based and transparent."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Roadmap prioritisation should balance value, feasibility, readiness, risk, cost, and change management."
+        },
+        {
+            "id": 11,
+            "topic": "Design AI agents for business solutions",
+            "scenario_id": 3,
+            "Question": "Fabrikam wants an internal compliance agent to answer policy questions and create review tasks when required.\n\nWhich design element is most important for safe task creation?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Allowing the agent to create tasks without user identity or audit context",
+                    "reason": "Incorrect. Actions should preserve identity, authorization, and auditability."
+                },
+                {
+                    "id": 2,
+                    "text": "Storing all compliance policy content in user chat history only",
+                    "reason": "Incorrect. Knowledge should come from governed and maintainable sources."
+                },
+                {
+                    "id": 3,
+                    "text": "Defining authenticated actions with permission checks and confirmation for impactful operations",
+                    "reason": "Correct. Governed actions should use authentication, authorization, and confirmation where needed."
+                },
+                {
+                    "id": 4,
+                    "text": "Using a single generic response for every compliance request",
+                    "reason": "Incorrect. Compliance scenarios require contextual and accurate handling."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Agent actions should be designed with secure authentication, authorization, auditing, user confirmation, and appropriate safeguards."
+        },
+        {
+            "id": 12,
+            "topic": "Design AI agents for business solutions",
+            "scenario_id": 3,
+            "Question": "Fabrikam wants to reduce hallucinated answers from a policy agent.\n\nWhich design approach should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Remove all grounding data so the model answers from general knowledge",
+                    "reason": "Incorrect. Removing grounding increases the risk of unsupported answers."
+                },
+                {
+                    "id": 2,
+                    "text": "Ask users to paste confidential policy documents into every conversation",
+                    "reason": "Incorrect. This is not governed or scalable."
+                },
+                {
+                    "id": 3,
+                    "text": "Disable all monitoring because compliance answers are internal",
+                    "reason": "Incorrect. Internal agents still require monitoring and quality controls."
+                },
+                {
+                    "id": 4,
+                    "text": "Ground responses in approved knowledge sources and instruct the agent to state when information is unavailable",
+                    "reason": "Correct. Grounding and fallback behaviour improve reliability."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Grounded generation should use approved knowledge sources, clear instructions, and fallback handling when the answer is not supported."
+        },
+        {
+            "id": 13,
+            "topic": "Design AI agents for business solutions",
+            "scenario_id": 3,
+            "Question": "Fabrikam wants an agent to retrieve customer case details only for authorised compliance analysts.\n\nWhich control is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use role-based access and security trimming when retrieving customer case data.",
+                    "reason": "Correct. The agent should respect user permissions and data security boundaries."
+                },
+                {
+                    "id": 2,
+                    "text": "Copy all case records into a public knowledge article.",
+                    "reason": "Incorrect. Sensitive customer case data must not be made public."
+                },
+                {
+                    "id": 3,
+                    "text": "Share one service account credential with all analysts.",
+                    "reason": "Incorrect. Shared credentials weaken accountability and access control."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable audit logging for performance reasons.",
+                    "reason": "Incorrect. Auditability is important in regulated scenarios."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Agents that access sensitive business data should enforce identity-aware permissions and security trimming."
+        },
+        {
+            "id": 14,
+            "topic": "Design AI agents for business solutions",
+            "scenario_id": 3,
+            "Question": "Fabrikam needs an agent to handle requests, escalate exceptions, and avoid final decisions when confidence is low.\n\nWhich design pattern best meets the requirement?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A fully autonomous pattern with no escalation or confidence handling",
+                    "reason": "Incorrect. The requirement includes escalation and low-confidence handling."
+                },
+                {
+                    "id": 2,
+                    "text": "An agent pattern with defined intents, tools, fallback responses, and escalation to a human reviewer",
+                    "reason": "Correct. This supports controlled autonomy and exception handling."
+                },
+                {
+                    "id": 3,
+                    "text": "A static notification workflow with no conversational understanding",
+                    "reason": "Incorrect. The requirement involves request handling and agent reasoning."
+                },
+                {
+                    "id": 4,
+                    "text": "A local desktop macro that uses unmanaged credentials",
+                    "reason": "Incorrect. This does not provide governed agent design."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Agent design should define scope, intents, instructions, tools, fallback, escalation, and human oversight for uncertain or high-risk outcomes."
+        },
+        {
+            "id": 15,
+            "topic": "Design AI agents for business solutions",
+            "scenario_id": 3,
+            "Question": "Fabrikam wants the compliance agent to support future channels without rewriting core business logic.\n\nWhat should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Embed all business rules directly in one channel-specific welcome message",
+                    "reason": "Incorrect. Channel-specific hard-coding reduces reuse."
+                },
+                {
+                    "id": 2,
+                    "text": "Create separate unrelated implementations for every channel",
+                    "reason": "Incorrect. This increases maintenance and inconsistency."
+                },
+                {
+                    "id": 3,
+                    "text": "Separate agent instructions, reusable actions, and governed data access from the channel experience",
+                    "reason": "Correct. Separation of concerns improves reuse and evolvability."
+                },
+                {
+                    "id": 4,
+                    "text": "Avoid all extensibility until every possible future channel is known",
+                    "reason": "Incorrect. Architecture should support reasonable extensibility without overengineering."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Reusable actions, governed data access, and channel-independent logic make agent solutions easier to extend."
+        },
+        {
+            "id": 16,
+            "topic": "Design AI agents for business solutions",
+            "Question": "A solution architect is defining the scope of a Copilot Studio agent for HR policy support.\n\nWhich scope statement is best?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The agent can answer any question about any topic in the organisation.",
+                    "reason": "Incorrect. This scope is too broad and difficult to govern."
+                },
+                {
+                    "id": 2,
+                    "text": "The agent can replace all HR staff without escalation.",
+                    "reason": "Incorrect. This is not a realistic or governed scope."
+                },
+                {
+                    "id": 3,
+                    "text": "The agent can answer approved HR policy questions, create service requests, and escalate ambiguous cases.",
+                    "reason": "Correct. This scope is specific, actionable, and includes escalation."
+                },
+                {
+                    "id": 4,
+                    "text": "The agent can access all documents regardless of user permissions.",
+                    "reason": "Incorrect. Access must respect security and governance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Agent scope should clearly define supported tasks, approved knowledge, permitted actions, and escalation boundaries."
+        },
+        {
+            "id": 17,
+            "topic": "Design AI agents for business solutions",
+            "Question": "A support agent must create a Dynamics 365 case only after the user confirms the generated case summary.\n\nWhich capability should be included?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A silent background action that creates cases without showing details",
+                    "reason": "Incorrect. User confirmation is required."
+                },
+                {
+                    "id": 2,
+                    "text": "An action approval step that displays the case summary before record creation",
+                    "reason": "Correct. Confirmation helps ensure the user approves an impactful action."
+                },
+                {
+                    "id": 3,
+                    "text": "A static FAQ response that cannot create records",
+                    "reason": "Incorrect. The requirement includes case creation."
+                },
+                {
+                    "id": 4,
+                    "text": "A nightly batch import that ignores the conversation context",
+                    "reason": "Incorrect. The action should use the validated conversation context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "For impactful write operations, the agent should present generated details and obtain user confirmation before executing the action."
+        },
+        {
+            "id": 18,
+            "topic": "Design AI agents for business solutions",
+            "Question": "An architect is deciding how much autonomy to give an agent that approves supplier refunds.\n\nWhich factor should most influence the autonomy level?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The visual design of the chat avatar",
+                    "reason": "Incorrect. Visual design does not determine risk-based autonomy."
+                },
+                {
+                    "id": 2,
+                    "text": "The number of languages available in the browser",
+                    "reason": "Incorrect. Language support is separate from approval autonomy."
+                },
+                {
+                    "id": 3,
+                    "text": "The financial impact, policy complexity, audit requirements, and exception rate",
+                    "reason": "Correct. These factors determine the appropriate level of automation and oversight."
+                },
+                {
+                    "id": 4,
+                    "text": "The number of emojis supported in the chat channel",
+                    "reason": "Incorrect. Emoji support is unrelated to decision risk."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Autonomy should be risk-adjusted based on impact, confidence, policy constraints, auditability, and the need for human review."
+        },
+        {
+            "id": 19,
+            "topic": "Design AI agents for business solutions",
+            "Question": "A company wants an agent to provide answers using only approved product documentation.\n\nWhat instruction should be included in the agent design?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Prefer general internet knowledge when documentation is incomplete.",
+                    "reason": "Incorrect. The requirement limits answers to approved documentation."
+                },
+                {
+                    "id": 2,
+                    "text": "Invent a likely answer when no approved source exists.",
+                    "reason": "Incorrect. The agent should not fabricate unsupported answers."
+                },
+                {
+                    "id": 3,
+                    "text": "Allow users to override all source restrictions during conversation.",
+                    "reason": "Incorrect. Source restrictions should be enforced by design."
+                },
+                {
+                    "id": 4,
+                    "text": "Answer from approved documentation and state when the information is not found.",
+                    "reason": "Correct. This instruction supports grounded and transparent responses."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Agent instructions should define approved sources and fallback behaviour for unsupported questions."
+        },
+        {
+            "id": 20,
+            "topic": "Design AI agents for business solutions",
+            "Question": "A business wants to reuse an existing Power Automate cloud flow as an agent action.\n\nWhat should the architect verify before exposing the action?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The flow input and output schema, authentication, permissions, error handling, and business impact",
+                    "reason": "Correct. Reusable actions must be secure, predictable, and suitable for agent invocation."
+                },
+                {
+                    "id": 2,
+                    "text": "The number of comments in the flow designer only",
+                    "reason": "Incorrect. Comments alone do not prove readiness."
+                },
+                {
+                    "id": 3,
+                    "text": "Whether the flow name contains the word agent",
+                    "reason": "Incorrect. Naming alone does not determine suitability."
+                },
+                {
+                    "id": 4,
+                    "text": "Whether the flow was created by the most senior employee",
+                    "reason": "Incorrect. Ownership does not replace technical validation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Actions exposed to agents should have clear schemas, secure authentication, authorization, robust errors, and business safeguards."
+        },
+        {
+            "id": 21,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "An architect needs an agent to call an external inventory API through a governed enterprise integration layer.\n\nWhich design is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Place the API key directly in the agent response text.",
+                    "reason": "Incorrect. Secrets must not be exposed in prompts or responses."
+                },
+                {
+                    "id": 2,
+                    "text": "Create a secured connector or action that abstracts the API and enforces authentication.",
+                    "reason": "Correct. A governed connector or action provides controlled API access."
+                },
+                {
+                    "id": 3,
+                    "text": "Ask users to manually copy data from the external system.",
+                    "reason": "Incorrect. This does not provide reliable integration."
+                },
+                {
+                    "id": 4,
+                    "text": "Allow anonymous API access to simplify the agent conversation.",
+                    "reason": "Incorrect. Anonymous access is not appropriate for enterprise data."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Enterprise extensibility should use governed connectors, actions, APIs, and authentication rather than exposing secrets or bypassing controls."
+        },
+        {
+            "id": 22,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "A multi-agent solution needs to exchange task context between agents and tools using open integration patterns.\n\nWhich architectural consideration is most relevant?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use only screenshots as the integration contract.",
+                    "reason": "Incorrect. Screenshots are not reliable integration contracts."
+                },
+                {
+                    "id": 2,
+                    "text": "Avoid defining message structure because agents can infer everything.",
+                    "reason": "Incorrect. Clear contracts are needed for reliable orchestration."
+                },
+                {
+                    "id": 3,
+                    "text": "Define secure interaction contracts, supported capabilities, context boundaries, and protocol expectations.",
+                    "reason": "Correct. Open protocols and agent interactions require clear contracts and security boundaries."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable identity controls for all inter-agent messages.",
+                    "reason": "Incorrect. Identity and authorization remain important."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Extensible multi-agent designs should define interaction contracts, context exchange, capabilities, identity, security, and protocol boundaries."
+        },
+        {
+            "id": 23,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "A company wants to expose internal knowledge and tools to agents while controlling what context each tool receives.\n\nWhich design principle should be applied?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Send the full tenant data export to every tool call.",
+                    "reason": "Incorrect. Tool calls should receive only necessary context."
+                },
+                {
+                    "id": 2,
+                    "text": "Use least-privilege context passing and explicit input schemas for each tool.",
+                    "reason": "Correct. Tools should receive only the context required for the task."
+                },
+                {
+                    "id": 3,
+                    "text": "Let each tool request any data without audit records.",
+                    "reason": "Incorrect. Tool usage should be controlled and auditable."
+                },
+                {
+                    "id": 4,
+                    "text": "Use unmanaged personal storage for tool inputs.",
+                    "reason": "Incorrect. Inputs should be handled through governed systems."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Extensibility should follow least privilege, explicit schemas, minimal context, and auditable tool invocation."
+        },
+        {
+            "id": 24,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "An organisation wants to reuse the same business validation logic from a canvas app, an agent, and a workflow.\n\nWhich approach best supports maintainability?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Copy and paste the validation logic into each solution component.",
+                    "reason": "Incorrect. Duplicate logic increases maintenance risk."
+                },
+                {
+                    "id": 2,
+                    "text": "Store the validation logic only in a personal spreadsheet.",
+                    "reason": "Incorrect. Personal storage is not a maintainable enterprise pattern."
+                },
+                {
+                    "id": 3,
+                    "text": "Centralise the validation logic in a reusable service, Dataverse logic, or governed action.",
+                    "reason": "Correct. Centralising logic improves consistency and reuse."
+                },
+                {
+                    "id": 4,
+                    "text": "Remove validation from all components and rely on user memory.",
+                    "reason": "Incorrect. Validation should be implemented consistently."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Reusable governed services, actions, and data-layer rules reduce duplication and support consistent behaviour across channels."
+        },
+        {
+            "id": 25,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "A solution architect is evaluating whether to use Copilot Studio actions or a custom Azure service for an agent capability.\n\nWhich factor should most influence the choice?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The capability's complexity, performance needs, security model, lifecycle requirements, and platform fit",
+                    "reason": "Correct. These factors determine whether platform actions or custom services are appropriate."
+                },
+                {
+                    "id": 2,
+                    "text": "The shortest label available in the maker portal",
+                    "reason": "Incorrect. Labels do not determine architecture."
+                },
+                {
+                    "id": 3,
+                    "text": "The number of browser tabs currently open",
+                    "reason": "Incorrect. This is irrelevant to solution design."
+                },
+                {
+                    "id": 4,
+                    "text": "Whether the capability can be described in one sentence only",
+                    "reason": "Incorrect. Description length is not a reliable decision factor."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Architectural decisions should consider complexity, scale, performance, security, governance, maintainability, and fit with platform capabilities."
+        },
+        {
+            "id": 26,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "A custom connector will be used by an AI agent to retrieve order status.\n\nWhich connector design requirement is most important?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use ambiguous parameter names so the model can decide their meaning.",
+                    "reason": "Incorrect. Ambiguous parameters reduce reliability."
+                },
+                {
+                    "id": 2,
+                    "text": "Provide clear operation names, typed inputs, typed outputs, and secure authentication.",
+                    "reason": "Correct. Clear contracts help agents call tools reliably and securely."
+                },
+                {
+                    "id": 3,
+                    "text": "Return all possible customer records for every order query.",
+                    "reason": "Incorrect. Responses should be scoped to the request and permissions."
+                },
+                {
+                    "id": 4,
+                    "text": "Require users to paste credentials into the chat window.",
+                    "reason": "Incorrect. Credentials should be handled securely by the connector."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Agent-ready connectors need clear descriptions, schemas, authentication, permission enforcement, and predictable responses."
+        },
+        {
+            "id": 27,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "A company needs an AI solution to integrate with line-of-business APIs and enforce central logging.\n\nWhich Azure capability is commonly used to publish, secure, and monitor APIs?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Microsoft Planner",
+                    "reason": "Incorrect. Planner is for task management, not API governance."
+                },
+                {
+                    "id": 2,
+                    "text": "Microsoft Bookings",
+                    "reason": "Incorrect. Bookings manages appointments, not API publishing."
+                },
+                {
+                    "id": 3,
+                    "text": "Azure API Management",
+                    "reason": "Correct. Azure API Management helps publish, secure, and monitor APIs."
+                },
+                {
+                    "id": 4,
+                    "text": "Microsoft Forms",
+                    "reason": "Incorrect. Forms collects responses and does not provide API gateway capabilities."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Azure API Management is suitable for exposing APIs with policies, security, monitoring, and lifecycle management."
+        },
+        {
+            "id": 28,
+            "topic": "Design extensibility of AI solutions",
+            "Question": "An agent must retrieve structured product records and update inventory reservations.\n\nWhich combination is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Unstructured chat instructions only, with no backend action",
+                    "reason": "Incorrect. Updates require a governed backend action."
+                },
+                {
+                    "id": 2,
+                    "text": "Static knowledge articles only, with no transactional system integration",
+                    "reason": "Incorrect. Knowledge articles cannot update reservations."
+                },
+                {
+                    "id": 3,
+                    "text": "A shared email mailbox used as the system of record",
+                    "reason": "Incorrect. Email is not appropriate as the inventory transaction system."
+                },
+                {
+                    "id": 4,
+                    "text": "Grounded data retrieval plus authenticated actions for transactional updates",
+                    "reason": "Correct. The agent needs both retrieval and controlled write operations."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Solutions that both read and write business data should separate grounded retrieval from secure transactional actions."
+        },
+        {
+            "id": 29,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "A company wants to extend a prebuilt agent in a business application without replacing the entire application.\n\nWhat should the architect evaluate first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Built-in extension points, supported configuration options, data sources, and governance controls",
+                    "reason": "Correct. Existing extension points should be evaluated before custom replacement."
+                },
+                {
+                    "id": 2,
+                    "text": "Whether every user can modify production prompts directly",
+                    "reason": "Incorrect. Production changes should be controlled."
+                },
+                {
+                    "id": 3,
+                    "text": "Whether the application can be deleted and rebuilt from scratch",
+                    "reason": "Incorrect. Replacement may be unnecessary and risky."
+                },
+                {
+                    "id": 4,
+                    "text": "Whether the agent can ignore existing application permissions",
+                    "reason": "Incorrect. Permissions must be respected."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Architects should evaluate prebuilt capabilities, extension points, supported configuration, data connections, and governance before custom development."
+        },
+        {
+            "id": 30,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "A sales team wants Microsoft 365 Copilot, Dynamics 365, and a custom sales agent to provide consistent customer context.\n\nWhich design approach is best?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Maintain separate unmanaged customer lists for each assistant.",
+                    "reason": "Incorrect. Separate unmanaged lists create inconsistency."
+                },
+                {
+                    "id": 2,
+                    "text": "Use governed customer data sources and align permissions, actions, and knowledge across experiences.",
+                    "reason": "Correct. Shared governed context improves consistency and security."
+                },
+                {
+                    "id": 3,
+                    "text": "Allow each assistant to infer customer data without accessing records.",
+                    "reason": "Incorrect. Inference without records is unreliable."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable role-based security to avoid different answers.",
+                    "reason": "Incorrect. Security trimming is required even if answers vary by role."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Prebuilt and custom AI experiences should be orchestrated around governed data, consistent identity, permissions, and reusable actions."
+        },
+        {
+            "id": 31,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "An organisation wants agents to create follow-up tasks in Microsoft Planner and update related customer records in Dataverse.\n\nWhat should the architect define?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A separate unmanaged personal task list for every conversation",
+                    "reason": "Incorrect. This does not provide governed business integration."
+                },
+                {
+                    "id": 2,
+                    "text": "A rule that Dataverse is updated only by copying text manually",
+                    "reason": "Incorrect. The requirement is for orchestrated actions."
+                },
+                {
+                    "id": 3,
+                    "text": "An action orchestration pattern with authenticated connectors, error handling, and transaction boundaries",
+                    "reason": "Correct. Multiple system updates require controlled orchestration."
+                },
+                {
+                    "id": 4,
+                    "text": "A policy that prevents agents from using Microsoft 365 services",
+                    "reason": "Incorrect. Planner integration is part of the requirement."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Agent orchestration should define authenticated actions, sequencing, error handling, transaction boundaries, and rollback or reconciliation needs."
+        },
+        {
+            "id": 32,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "A business user asks whether a prebuilt agent should be used when it already satisfies most requirements.\n\nWhat is the best architectural response?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Always reject prebuilt agents because custom code provides more control.",
+                    "reason": "Incorrect. Prebuilt capabilities may reduce delivery risk and maintenance."
+                },
+                {
+                    "id": 2,
+                    "text": "Always use prebuilt agents even if they cannot meet compliance requirements.",
+                    "reason": "Incorrect. Compliance and fit must be assessed."
+                },
+                {
+                    "id": 3,
+                    "text": "Use only custom agents because they are easier to govern.",
+                    "reason": "Incorrect. Governance depends on design and platform controls."
+                },
+                {
+                    "id": 4,
+                    "text": "Use the prebuilt agent when capability fit, extensibility, governance, and lifecycle needs are satisfied.",
+                    "reason": "Correct. Prebuilt agents are suitable when they meet requirements and controls."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Architects should prefer platform capabilities when they meet business, governance, security, extensibility, and lifecycle requirements."
+        },
+        {
+            "id": 33,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "A company deploys an employee-facing agent in Teams. Users report that the agent cannot access records they can normally view in the business app.\n\nWhat should the architect check first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Whether the agent action and connector authentication respect the user's identity and permissions",
+                    "reason": "Correct. Access issues often relate to identity, permissions, or connector configuration."
+                },
+                {
+                    "id": 2,
+                    "text": "Whether the Teams icon is displayed in high contrast mode",
+                    "reason": "Incorrect. Icon visibility does not determine record access."
+                },
+                {
+                    "id": 3,
+                    "text": "Whether the agent greeting message contains more than one paragraph",
+                    "reason": "Incorrect. Greeting length is unrelated to business record access."
+                },
+                {
+                    "id": 4,
+                    "text": "Whether all users have been made tenant administrators",
+                    "reason": "Incorrect. Granting excessive privileges violates least privilege."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "When an agent accesses business data, the architect should verify authentication mode, user identity, permissions, and connector/data source configuration."
+        },
+        {
+            "id": 34,
+            "topic": "Orchestrate configuration of prebuilt agents and apps",
+            "Question": "An agent is configured with multiple knowledge sources. Responses sometimes come from outdated documents.\n\nWhat should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add more outdated documents so the agent has a larger corpus.",
+                    "reason": "Incorrect. More outdated content can worsen answer quality."
+                },
+                {
+                    "id": 2,
+                    "text": "Implement knowledge source governance, content ownership, freshness review, and source prioritisation.",
+                    "reason": "Correct. Knowledge governance improves reliability and freshness."
+                },
+                {
+                    "id": 3,
+                    "text": "Disable all source review because AI can choose the correct document automatically.",
+                    "reason": "Incorrect. Source governance remains necessary."
+                },
+                {
+                    "id": 4,
+                    "text": "Tell users to ignore answers that appear outdated.",
+                    "reason": "Incorrect. The system should be improved rather than relying on user guesswork."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Knowledge orchestration should include source ownership, freshness rules, content lifecycle, filtering, and prioritisation."
+        },
+        {
+            "id": 35,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "A production agent has low user satisfaction because it frequently fails to answer known policy questions.\n\nWhich monitoring data is most useful for tuning?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The number of unused colour themes in the tenant",
+                    "reason": "Incorrect. Theme count does not help tune answer quality."
+                },
+                {
+                    "id": 2,
+                    "text": "The browser window size used by each employee",
+                    "reason": "Incorrect. Window size is not the main signal for answer failures."
+                },
+                {
+                    "id": 3,
+                    "text": "Conversation transcripts, unanswered questions, fallback rates, source usage, and user feedback",
+                    "reason": "Correct. These signals help identify gaps and tune the agent."
+                },
+                {
+                    "id": 4,
+                    "text": "The number of icons available for the agent avatar",
+                    "reason": "Incorrect. Avatar icons do not identify policy answer gaps."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Monitoring should capture quality signals such as fallback rates, unresolved topics, user feedback, source usage, tool failures, and conversation outcomes."
+        },
+        {
+            "id": 36,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "An agent calls an order API, but users report intermittent failures.\n\nWhat should the architect review first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Whether the agent welcome message includes a greeting",
+                    "reason": "Incorrect. The issue is related to API reliability."
+                },
+                {
+                    "id": 2,
+                    "text": "Whether users have changed their profile pictures",
+                    "reason": "Incorrect. Profile pictures do not affect API calls."
+                },
+                {
+                    "id": 3,
+                    "text": "Whether the organisation has too many published knowledge articles",
+                    "reason": "Incorrect. Knowledge count may not explain API failures."
+                },
+                {
+                    "id": 4,
+                    "text": "Action telemetry, connector errors, authentication failures, timeout rates, and retry behaviour",
+                    "reason": "Correct. These signals identify integration failure patterns."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Tool and action failures should be diagnosed using telemetry for errors, authentication, latency, timeouts, retries, and downstream dependencies."
+        },
+        {
+            "id": 37,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "A company wants to improve an agent after launch without making uncontrolled production changes.\n\nWhich practice should be used?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Collect telemetry, identify improvement candidates, test changes in a non-production environment, and promote through controlled release.",
+                    "reason": "Correct. Tuning should be evidence-based and follow lifecycle controls."
+                },
+                {
+                    "id": 2,
+                    "text": "Allow every user to edit the production instruction set during conversations.",
+                    "reason": "Incorrect. Production configuration should be controlled."
+                },
+                {
+                    "id": 3,
+                    "text": "Delete historical telemetry after every chat session.",
+                    "reason": "Incorrect. Telemetry is needed for analysis and improvement."
+                },
+                {
+                    "id": 4,
+                    "text": "Make prompt changes directly in production without testing.",
+                    "reason": "Incorrect. Untested production changes increase risk."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Continuous improvement should use telemetry, triage, controlled non-production testing, approvals, and managed deployment."
+        },
+        {
+            "id": 38,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "A customer service agent receives many escalations because it asks for missing information too late in the conversation.\n\nWhat tuning action is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Remove all clarification questions from the agent.",
+                    "reason": "Incorrect. Clarification may be necessary for quality."
+                },
+                {
+                    "id": 2,
+                    "text": "Add required information collection earlier in the topic or action flow.",
+                    "reason": "Correct. Collecting necessary inputs earlier can reduce escalations."
+                },
+                {
+                    "id": 3,
+                    "text": "Disable escalation so the metric improves.",
+                    "reason": "Incorrect. Disabling escalation hides risk rather than solving it."
+                },
+                {
+                    "id": 4,
+                    "text": "Increase the response length for every answer.",
+                    "reason": "Incorrect. Longer responses do not necessarily collect missing data."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Tuning should address root causes, such as missing required inputs, unclear instructions, poor tool schema, or insufficient grounding."
+        },
+        {
+            "id": 39,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "An executive dashboard must show whether an agent is delivering value.\n\nWhich KPI set is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Number of background images, number of welcome messages, and font family",
+                    "reason": "Incorrect. These are not value KPIs."
+                },
+                {
+                    "id": 2,
+                    "text": "Count of unpublished drafts only",
+                    "reason": "Incorrect. Draft count does not prove value."
+                },
+                {
+                    "id": 3,
+                    "text": "Containment rate, resolution time, user satisfaction, task completion, cost per interaction, and escalation quality",
+                    "reason": "Correct. These KPIs connect agent performance to operational value."
+                },
+                {
+                    "id": 4,
+                    "text": "Number of hidden browser extensions installed by users",
+                    "reason": "Incorrect. This is unrelated to agent value."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Value monitoring should include business outcomes, quality, efficiency, cost, satisfaction, and escalation effectiveness."
+        },
+        {
+            "id": 40,
+            "topic": "Monitor, analyze, and tune AI agents",
+            "Question": "An agent has high token usage and high cost, but many conversations do not result in task completion.\n\nWhat should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Increase the maximum response length for every answer.",
+                    "reason": "Incorrect. Longer responses may raise cost without solving completion issues."
+                },
+                {
+                    "id": 2,
+                    "text": "Ignore cost because AI adoption always justifies spending.",
+                    "reason": "Incorrect. Cost should be managed against business value."
+                },
+                {
+                    "id": 3,
+                    "text": "Move all conversations to the most expensive model without analysis.",
+                    "reason": "Incorrect. Model choice should be justified by quality and value."
+                },
+                {
+                    "id": 4,
+                    "text": "Analyze conversation paths, grounding, prompt design, tool calls, and model selection to optimize cost and completion.",
+                    "reason": "Correct. Cost optimisation should be tied to task quality and completion."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Tuning should balance quality, completion, latency, and cost by reviewing prompts, grounding, model choice, and tool orchestration."
+        },
+        {
+            "id": 41,
+            "topic": "Manage testing AI-powered business solutions",
+            "Question": "A team is preparing to release an agent that creates purchase requests.\n\nWhich testing approach is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Test only the greeting message because purchase requests are handled by AI.",
+                    "reason": "Incorrect. Action and business rule testing are required."
+                },
+                {
+                    "id": 2,
+                    "text": "Test representative conversations, edge cases, permissions, action execution, negative paths, and human approval flows.",
+                    "reason": "Correct. AI-powered solutions need functional, security, integration, and risk-based testing."
+                },
+                {
+                    "id": 3,
+                    "text": "Release directly to production because users can report issues later.",
+                    "reason": "Incorrect. Production release should follow validation."
+                },
+                {
+                    "id": 4,
+                    "text": "Test only with administrators to avoid permission issues.",
+                    "reason": "Incorrect. Testing must include realistic user roles and permissions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Testing should cover expected and unexpected conversations, tool calls, permissions, data handling, approvals, errors, and business outcomes."
+        },
+        {
+            "id": 42,
+            "topic": "Manage testing AI-powered business solutions",
+            "Question": "A solution uses a knowledge source that changes weekly. The team wants to detect regressions in agent answers.\n\nWhich practice should be implemented?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Delete all test cases after every content update.",
+                    "reason": "Incorrect. Historical tests support regression detection."
+                },
+                {
+                    "id": 2,
+                    "text": "Use only one manual happy-path test once a year.",
+                    "reason": "Incorrect. Frequent content changes require stronger validation."
+                },
+                {
+                    "id": 3,
+                    "text": "Maintain a curated evaluation set and run regression tests after knowledge or prompt changes.",
+                    "reason": "Correct. Regression testing helps detect quality changes over time."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable knowledge updates to avoid testing.",
+                    "reason": "Incorrect. Content freshness is required; testing should support it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "AI testing should include curated evaluation prompts, expected outcomes, regression checks, and validation after prompt, model, source, or action changes."
+        },
+        {
+            "id": 43,
+            "topic": "Manage testing AI-powered business solutions",
+            "Question": "An agent must not reveal payroll information to unauthorised users.\n\nWhich test is most important?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A test that verifies unauthorised users receive no restricted payroll data",
+                    "reason": "Correct. Security and permission tests are critical for sensitive data."
+                },
+                {
+                    "id": 2,
+                    "text": "A test that verifies the agent can display a custom logo",
+                    "reason": "Incorrect. Branding does not validate data protection."
+                },
+                {
+                    "id": 3,
+                    "text": "A test that verifies every answer contains exactly five sentences",
+                    "reason": "Incorrect. Sentence count does not prove security."
+                },
+                {
+                    "id": 4,
+                    "text": "A test that verifies the chat opens in a specific browser tab",
+                    "reason": "Incorrect. Browser tab behaviour is not the key risk."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Sensitive data scenarios require role-based access tests, security trimming validation, prompt injection checks, and audit verification."
+        },
+        {
+            "id": 44,
+            "topic": "Manage testing AI-powered business solutions",
+            "Question": "A test plan includes prompts attempting to override the agent's instructions and access restricted data.\n\nWhat type of testing is this?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Brand consistency testing",
+                    "reason": "Incorrect. The test is not focused on brand tone."
+                },
+                {
+                    "id": 2,
+                    "text": "Adversarial and prompt injection testing",
+                    "reason": "Correct. The prompts attempt to bypass instructions and controls."
+                },
+                {
+                    "id": 3,
+                    "text": "Load testing only",
+                    "reason": "Incorrect. Load testing focuses on performance under demand."
+                },
+                {
+                    "id": 4,
+                    "text": "Localization testing only",
+                    "reason": "Incorrect. Localization focuses on language and regional behaviour."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Adversarial testing checks how the agent handles malicious or manipulative inputs, including prompt injection and data exfiltration attempts."
+        },
+        {
+            "id": 45,
+            "topic": "Manage testing AI-powered business solutions",
+            "Question": "A testing team wants to validate that an agent can complete an end-to-end refund request.\n\nWhich test scope is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Only verifying that the agent name appears in the header",
+                    "reason": "Incorrect. This does not test refund processing."
+                },
+                {
+                    "id": 2,
+                    "text": "Only checking that the user can send a message",
+                    "reason": "Incorrect. Message sending is not enough for end-to-end validation."
+                },
+                {
+                    "id": 3,
+                    "text": "Testing user intent recognition, data retrieval, policy validation, confirmation, action execution, and audit logging",
+                    "reason": "Correct. End-to-end testing should cover the complete business flow."
+                },
+                {
+                    "id": 4,
+                    "text": "Only testing the colour of the submit button",
+                    "reason": "Incorrect. Button colour does not validate business processing."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "End-to-end tests should validate the full path from user request through data access, decisions, action execution, confirmation, and logging."
+        },
+        {
+            "id": 46,
+            "topic": "Design ALM process for AI-powered business solutions",
+            "Question": "A company wants to move an agent from development to test and production with controlled changes.\n\nWhich ALM practice should be used?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Edit the production agent directly whenever a maker has an idea.",
+                    "reason": "Incorrect. Direct uncontrolled production edits increase risk."
+                },
+                {
+                    "id": 2,
+                    "text": "Use managed solutions, environment separation, source control where applicable, approvals, and deployment pipelines.",
+                    "reason": "Correct. These practices support governed ALM."
+                },
+                {
+                    "id": 3,
+                    "text": "Store production configuration only in screenshots.",
+                    "reason": "Incorrect. Screenshots are not a reliable ALM method."
+                },
+                {
+                    "id": 4,
+                    "text": "Give all users owner access to simplify releases.",
+                    "reason": "Incorrect. Excessive permissions violate least privilege."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "AI solutions should follow governed ALM with environments, solutions, deployment controls, approvals, testing, and rollback planning."
+        },
+        {
+            "id": 47,
+            "topic": "Design ALM process for AI-powered business solutions",
+            "Question": "An organisation needs separate lifecycle controls for experimental AI work and production business agents.\n\nWhat should the architect design?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A single production environment where all experiments and releases occur together",
+                    "reason": "Incorrect. Mixing experiments with production increases risk."
+                },
+                {
+                    "id": 2,
+                    "text": "A personal environment for production agents with no admin oversight",
+                    "reason": "Incorrect. Production agents require governance."
+                },
+                {
+                    "id": 3,
+                    "text": "An environment strategy that separates sandbox, development, test, and production with appropriate policies",
+                    "reason": "Correct. Environment separation supports controlled experimentation and release."
+                },
+                {
+                    "id": 4,
+                    "text": "A policy that prevents any experimentation before production release",
+                    "reason": "Incorrect. Experimentation is useful when separated and governed."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "An environment strategy should distinguish experimentation, development, validation, and production with policies and access controls."
+        },
+        {
+            "id": 48,
+            "topic": "Design ALM process for AI-powered business solutions",
+            "Question": "A release introduces new agent instructions and a new action that updates customer records.\n\nWhat should be included in the release plan?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Only a user announcement after production deployment",
+                    "reason": "Incorrect. The release requires validation and rollback planning before deployment."
+                },
+                {
+                    "id": 2,
+                    "text": "Only a visual comparison of the old and new chat icon",
+                    "reason": "Incorrect. The high-risk change is the instruction and record update action."
+                },
+                {
+                    "id": 3,
+                    "text": "Only deletion of older test cases",
+                    "reason": "Incorrect. Older test cases may be useful for regression validation."
+                },
+                {
+                    "id": 4,
+                    "text": "Impact assessment, regression testing, approval, deployment steps, monitoring plan, and rollback strategy",
+                    "reason": "Correct. These controls support safe release of AI and action changes."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Release plans should cover impact, testing, approvals, deployment sequencing, monitoring, communication, and rollback."
+        },
+        {
+            "id": 49,
+            "topic": "Design ALM process for AI-powered business solutions",
+            "Question": "A company wants to prevent unmanaged production changes to an agent that handles finance requests.\n\nWhich control is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Restrict production maker permissions and require changes to flow through approved ALM pipelines.",
+                    "reason": "Correct. Controlled permissions and pipelines reduce unmanaged changes."
+                },
+                {
+                    "id": 2,
+                    "text": "Allow all finance users to edit production prompts.",
+                    "reason": "Incorrect. This creates uncontrolled changes."
+                },
+                {
+                    "id": 3,
+                    "text": "Disable testing to accelerate production edits.",
+                    "reason": "Incorrect. Testing is required for safe changes."
+                },
+                {
+                    "id": 4,
+                    "text": "Store all configuration in private chat messages.",
+                    "reason": "Incorrect. Private chat messages are not appropriate for configuration control."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Production environments should have restricted maker access, governed deployment pipelines, approvals, and auditability."
+        },
+        {
+            "id": 50,
+            "topic": "Design ALM process for AI-powered business solutions",
+            "Question": "An agent depends on a model, knowledge sources, environment variables, and connectors.\n\nWhat should the architect include in the ALM design?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A manual reminder for one person to recreate everything from memory",
+                    "reason": "Incorrect. Manual recreation is unreliable."
+                },
+                {
+                    "id": 2,
+                    "text": "Dependency mapping, configuration management, connection references, environment variables, and deployment validation",
+                    "reason": "Correct. Dependencies and configuration must be managed across environments."
+                },
+                {
+                    "id": 3,
+                    "text": "A decision to hard-code every production endpoint in the prompt",
+                    "reason": "Incorrect. Hard-coded environment details reduce portability."
+                },
+                {
+                    "id": 4,
+                    "text": "An instruction to ignore connector authentication during deployment",
+                    "reason": "Incorrect. Authentication must be configured and validated."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "AI ALM should manage dependencies, configuration, data connections, environment variables, connection references, and post-deployment validation."
+        },
+        {
+            "id": 51,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A regulated organisation is designing an agent that provides recommendations affecting customer eligibility.\n\nWhich governance control is most important?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Allowing the agent to make final eligibility decisions without review",
+                    "reason": "Incorrect. High-impact decisions require stronger oversight."
+                },
+                {
+                    "id": 2,
+                    "text": "Changing the agent avatar for every compliance review",
+                    "reason": "Incorrect. Avatar changes do not provide governance."
+                },
+                {
+                    "id": 3,
+                    "text": "Implementing human oversight, auditability, fairness review, risk assessment, and clear accountability",
+                    "reason": "Correct. These controls support responsible AI in high-impact scenarios."
+                },
+                {
+                    "id": 4,
+                    "text": "Removing all documentation to make the agent easier to update",
+                    "reason": "Incorrect. Documentation is important for accountability and compliance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Responsible AI governance should include accountability, transparency, fairness, reliability, privacy, safety, auditability, and human oversight for high-impact decisions."
+        },
+        {
+            "id": 52,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "An agent will access confidential documents from SharePoint.\n\nWhat should the architect ensure?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The agent ignores document permissions to provide consistent answers.",
+                    "reason": "Incorrect. Permissions must be respected."
+                },
+                {
+                    "id": 2,
+                    "text": "All documents are copied into a public site for faster retrieval.",
+                    "reason": "Incorrect. Confidential data must remain protected."
+                },
+                {
+                    "id": 3,
+                    "text": "Users share one privileged account for document access.",
+                    "reason": "Incorrect. Shared privileged accounts weaken accountability."
+                },
+                {
+                    "id": 4,
+                    "text": "The agent respects user permissions, sensitivity labels, data policies, and audit requirements.",
+                    "reason": "Correct. Confidential content requires identity-aware access and governance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Agents accessing confidential documents should enforce identity, permissions, sensitivity, data protection policies, and audit logging."
+        },
+        {
+            "id": 53,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A security team is concerned that users may attempt prompt injection against an agent.\n\nWhich mitigation should be included?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Instruction hierarchy, content filtering, tool permission checks, grounding boundaries, and adversarial testing",
+                    "reason": "Correct. These controls reduce prompt injection risk."
+                },
+                {
+                    "id": 2,
+                    "text": "A policy that trusts all user input as system instructions",
+                    "reason": "Incorrect. User input should not override system or developer instructions."
+                },
+                {
+                    "id": 3,
+                    "text": "A rule that disables all logging for suspicious prompts",
+                    "reason": "Incorrect. Logging supports detection and investigation."
+                },
+                {
+                    "id": 4,
+                    "text": "A design that lets any prompt change connector permissions",
+                    "reason": "Incorrect. Prompts must not change security permissions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Prompt injection mitigation includes robust instruction design, least-privilege tools, permission enforcement, content safety, monitoring, and adversarial tests."
+        },
+        {
+            "id": 54,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "An organisation wants to prevent agents from using unapproved connectors that can send data outside the company.\n\nWhich Power Platform control is most relevant?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Personal browser bookmarks",
+                    "reason": "Incorrect. Bookmarks do not control connector usage."
+                },
+                {
+                    "id": 2,
+                    "text": "Data loss prevention policies",
+                    "reason": "Correct. DLP policies control connector usage and data movement boundaries."
+                },
+                {
+                    "id": 3,
+                    "text": "Desktop wallpaper policy",
+                    "reason": "Incorrect. Wallpaper policies do not govern connectors."
+                },
+                {
+                    "id": 4,
+                    "text": "Calendar sharing colours",
+                    "reason": "Incorrect. Calendar colours are not a data governance control."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Power Platform data loss prevention policies help classify connectors and restrict combinations that could move data inappropriately."
+        },
+        {
+            "id": 55,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A company wants to define who can create, approve, deploy, monitor, and retire AI agents.\n\nWhat governance artifact should be created?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A list of preferred chat emojis",
+                    "reason": "Incorrect. Emojis do not define governance responsibilities."
+                },
+                {
+                    "id": 2,
+                    "text": "A personal note owned by one developer",
+                    "reason": "Incorrect. Governance must be organisational and durable."
+                },
+                {
+                    "id": 3,
+                    "text": "An AI operating model with roles, responsibilities, policies, review gates, and lifecycle controls",
+                    "reason": "Correct. An operating model defines accountability and governance."
+                },
+                {
+                    "id": 4,
+                    "text": "A policy that every agent is permanent after release",
+                    "reason": "Incorrect. Agents should have lifecycle management including retirement."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "An AI operating model defines roles, responsibilities, governance gates, approval processes, monitoring, lifecycle ownership, and retirement rules."
+        },
+        {
+            "id": 56,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "An architect must design an AI solution for personal data processing.\n\nWhich requirement is most important?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Store personal data in unrestricted prompts for convenience.",
+                    "reason": "Incorrect. Personal data requires protection and minimisation."
+                },
+                {
+                    "id": 2,
+                    "text": "Use data minimisation, lawful purpose, access controls, retention rules, and auditability.",
+                    "reason": "Correct. These controls support privacy and compliance."
+                },
+                {
+                    "id": 3,
+                    "text": "Disable all access reviews to simplify operations.",
+                    "reason": "Incorrect. Access reviews support governance."
+                },
+                {
+                    "id": 4,
+                    "text": "Allow every agent to use all personal data by default.",
+                    "reason": "Incorrect. Access should be limited to what is necessary."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Personal data processing should follow privacy principles including minimisation, purpose limitation, access control, retention, monitoring, and auditability."
+        },
+        {
+            "id": 57,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A risk review identifies that an agent may provide inaccurate legal guidance to employees.\n\nWhat should the architect recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Allow the agent to provide final legal advice without disclaimers or escalation.",
+                    "reason": "Incorrect. Legal guidance is high risk and should have controls."
+                },
+                {
+                    "id": 2,
+                    "text": "Remove all approved legal knowledge sources.",
+                    "reason": "Incorrect. Approved sources improve accuracy."
+                },
+                {
+                    "id": 3,
+                    "text": "Limit the agent to approved informational guidance, include clear boundaries, and route legal decisions to qualified reviewers.",
+                    "reason": "Correct. Scope limitation and escalation reduce risk."
+                },
+                {
+                    "id": 4,
+                    "text": "Train users to trust every generated answer.",
+                    "reason": "Incorrect. Users should understand limitations and escalation routes."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "High-risk advisory scenarios should include clear scope, approved sources, disclaimers or boundaries, escalation, and human expert review."
+        },
+        {
+            "id": 58,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A governance board asks why audit logging is required for an agent that updates customer records.\n\nWhich explanation is best?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Audit logging is useful only for visual design decisions.",
+                    "reason": "Incorrect. Audit logging is primarily for accountability and investigation."
+                },
+                {
+                    "id": 2,
+                    "text": "Audit logging is optional when AI performs the action.",
+                    "reason": "Incorrect. AI actions still require accountability."
+                },
+                {
+                    "id": 3,
+                    "text": "Audit logging replaces the need for access control.",
+                    "reason": "Incorrect. Logging complements but does not replace access control."
+                },
+                {
+                    "id": 4,
+                    "text": "Audit logging supports accountability, investigation, compliance evidence, and change traceability.",
+                    "reason": "Correct. Record updates need auditable evidence of who, what, when, and why."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Agents that perform business actions should generate audit evidence for accountability, compliance, troubleshooting, and governance review."
+        },
+        {
+            "id": 59,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "A company is defining acceptable use for generative AI in business processes.\n\nWhich statement should be included?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Users may enter any sensitive data into any AI tool if it is convenient.",
+                    "reason": "Incorrect. Sensitive data requires approved tools and controls."
+                },
+                {
+                    "id": 2,
+                    "text": "Users should use approved AI experiences, follow data handling rules, verify high-impact outputs, and report unexpected behaviour.",
+                    "reason": "Correct. Acceptable use should guide secure and responsible adoption."
+                },
+                {
+                    "id": 3,
+                    "text": "Users should bypass human review when the answer sounds confident.",
+                    "reason": "Incorrect. Confidence in wording does not replace review."
+                },
+                {
+                    "id": 4,
+                    "text": "Users should copy restricted documents into public prompts to improve accuracy.",
+                    "reason": "Incorrect. Restricted data must not be exposed to public prompts."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Acceptable use policies should identify approved tools, data handling rules, user responsibilities, verification expectations, and reporting processes."
+        },
+        {
+            "id": 60,
+            "topic": "Design responsible AI, security, governance, risk management, and compliance",
+            "Question": "An architect is asked whether responsible AI controls are only needed after the solution goes live.\n\nOptions must be exactly Yes or No.\n\nAre responsible AI controls only required after production deployment?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Yes",
+                    "reason": "Incorrect. Responsible AI controls should be considered throughout the lifecycle."
+                },
+                {
+                    "id": 2,
+                    "text": "No",
+                    "reason": "Correct. Responsible AI applies from strategy and design through testing, deployment, monitoring, and retirement."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Responsible AI is a lifecycle discipline that begins during planning and continues through design, validation, deployment, monitoring, improvement, and retirement."
+        }
+    ]
+}

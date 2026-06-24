@@ -1,0 +1,1956 @@
+{
+  "quizName": "AB-100: Agentic AI Business Solutions Architect Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY: Contoso Health AI Migration\n\nContoso Health provides patient management and clinical decision support services globally. The company is migrating its legacy rules-based triage systems to an automated Multi-Agent AI architecture built on Azure AI Studio and Azure OpenAI Service.\n\nThe technical requirements include:\n- A Customer-Facing Agent that securely reads patient medical history records from Azure Cosmos DB.\n- A Clinical Triage Agent that evaluates symptoms against medical knowledge bases and recommends care priority levels.\n- A Compliance Auditor Agent that reviews agent execution traces to ensure compliance with healthcare data regulations (HIPAA).\n- Cross-agent collaboration must be orchestrated using a decentralized routing mechanism where agents pass tasks dynamically based on specialized capabilities."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY: Adatum Financial Agents Asset Management\n\nAdatum Financial is designing an enterprise portfolio rebalancing application powered by a swarm of autonomous agentic solutions.\n\nThe system components consist of:\n- A Market Analytics Agent that continuously ingests financial news feeds, corporate earnings filings, and stock metrics using Azure AI Search.\n- A Risk Assessment Agent that calculates portfolio exposure metrics via internal mathematical APIs.\n- An Execution Agent that places trade orders via secure enterprise webhooks.\n\nSecurity and governance are critical. The Execution Agent must never place trades exceeding $50,000 without explicit, out-of-band human-in-the-loop (HITL) approval. All agent components must be deployed using managed identities with the lowest viable privileges."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY: Fabrikam Supply Chain Swarm\n\nFabrikam operates a complex global supply chain involving manufacturing plants, localized warehouses, and logistics providers. They are implementing an Agentic AI solution to automatically discover and mitigate supply chain disruptions.\n\nThe architecture relies on Azure Container Apps hosting custom Semantic Kernel-based agents:\n- Inventory Agent: Monitors stock levels across regions in real time.\n- Logistics Agent: Tracks shipping schedules and predicts delay probabilities.\n- Procurement Agent: Places purchase orders automatically when stock dips below safety thresholds.\n\nTo ensure reliability, the orchestration framework must implement structured planning and fallback strategies when an individual agent fails to accomplish its sub-task."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Agent Architecture & Design",
+      "scenario_id": 1,
+      "Question": "Based on the Contoso Health AI Migration scenario, which orchestration paradigm best fits the dynamic, capability-based passing of tasks required for cross-agent collaboration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Sequential Chain Orchestration",
+          "reason": "Incorrect. Sequential chains enforce a strict, predetermined linear flow which prevents dynamic, capability-based task passing."
+        },
+        {
+          "id": 2,
+          "text": "Directed Acyclic Graph (DAG) Routing",
+          "reason": "Incorrect. DAG routing sets predefined static execution paths rather than enabling decentralized dynamic handoffs."
+        },
+        {
+          "id": 3,
+          "text": "Router-Based Hub-and-Spoke Architecture",
+          "reason": "Incorrect. A centralized hub routing strategy does not align with the requirement for decentralized dynamic task passing."
+        },
+        {
+          "id": 4,
+          "text": "Peer-to-Peer Multi-Agent Hand-off Protocol",
+          "reason": "Correct. A peer-to-peer approach allows agents to evaluate neighboring agent capabilities and dynamically pass tasks without relying on a central coordinator."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "A decentralized peer-to-peer orchestration framework allows agents to share context directly and delegate sub-tasks dynamically based on runtime capability evaluations."
+    },
+    {
+      "id": 2,
+      "topic": "Data & Context Management",
+      "scenario_id": 1,
+      "Question": "To meet the compliance requirement for the Compliance Auditor Agent, how should you store and index the execution history logs of the agents for audits?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Write the trace telemetry to an Azure Log Analytics workspace and query using KQL.",
+          "reason": "Correct. Azure Log Analytics combined with Application Insights allows for persistent, secure, and compliant tracking of execution traces."
+        },
+        {
+          "id": 2,
+          "text": "Cache the execution states entirely in local application memory.",
+          "reason": "Incorrect. In-memory storage is volatile and cannot be audited externally for compliance purposes."
+        },
+        {
+          "id": 3,
+          "text": "Dump execution traces directly to flat text files in an Azure Files share.",
+          "reason": "Incorrect. Flat text files lack structured query capabilities and robust access auditing controls required for compliance."
+        },
+        {
+          "id": 4,
+          "text": "Pass the trace history back through the LLM prompt context for the next turn.",
+          "reason": "Incorrect. Passing history in the prompt does not store persistent logs required by compliance auditors."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Log Analytics provides a tamper-evident, structured, and long-term storage facility ideal for security compliance and audit trails."
+    },
+    {
+      "id": 3,
+      "topic": "Security & Governance",
+      "scenario_id": 1,
+      "Question": "The Customer-Facing Agent must interact securely with Azure Cosmos DB. Which authentication mechanism should you implement to align with Microsoft security best practices?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Hardcode the Cosmos DB primary master key within the agent's application settings.",
+          "reason": "Incorrect. Hardcoding master keys violates basic security and credential management hygiene."
+        },
+        {
+          "id": 2,
+          "text": "Configure a User-Assigned Managed Identity and assign the Cosmos DB Built-in Data Reader role.",
+          "reason": "Correct. Using managed identities with specialized RBAC provides a secure, passwordless authentication flow aligned with least privilege."
+        },
+        {
+          "id": 3,
+          "text": "Store the connection string inside an unencrypted Azure Key Vault secret without access policies.",
+          "reason": "Incorrect. Unencrypted configurations or missing access controls expose sensitive data unnecessarily."
+        },
+        {
+          "id": 4,
+          "text": "Enable anonymous public read access on the Azure Cosmos DB collection.",
+          "reason": "Incorrect. Enabling public access completely breaches healthcare compliance regulations like HIPAA."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure Managed Identities eliminate the need for embedding credentials, and standard Azure Cosmos DB RBAC roles limit the agent's actions to only reading records."
+    },
+    {
+      "id": 4,
+      "topic": "Agent Capabilities & Tool Integration",
+      "scenario_id": 1,
+      "Question": "The Clinical Triage Agent needs to query external medical reference material securely. Which technique should you implement within the Azure AI Studio environment to provide verified domain context without training?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Fine-tune the foundational large language model using historical triage chat logs.",
+          "reason": "Incorrect. Fine-tuning is used for tone and structural adjustments rather than factual, zero-shot grounding against dynamic data."
+        },
+        {
+          "id": 2,
+          "text": "Increase the temperature parameter of the model configuration to encourage diverse responses.",
+          "reason": "Incorrect. Increasing temperature introduces non-deterministic responses, increasing the risk of medical hallucinations."
+        },
+        {
+          "id": 3,
+          "text": "Configure Retrieval-Augmented Generation (RAG) using Azure AI Search connected to the medical knowledge base.",
+          "reason": "Correct. RAG grounds the model's responses in factual, current data sources, preventing hallucinations and preserving privacy."
+        },
+        {
+          "id": 4,
+          "text": "Hardcode medical guidelines directly into the agent's system prompt definition.",
+          "reason": "Incorrect. Prompts have token limitations and cannot support massive, complex external medical knowledge bases."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Retrieval-Augmented Generation (RAG) extracts relevant document snippets from verified indexes and injects them as grounding data into the agent's execution context."
+    },
+    {
+      "id": 5,
+      "topic": "Optimization & Reliability",
+      "scenario_id": 1,
+      "Question": "During peak hours, the Clinical Triage Agent hits Azure OpenAI Service rate limits (HTTP 429 errors). Which pattern should you implement to maintain application availability?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Instruct the user to resubmit their query manually until the request succeeds.",
+          "reason": "Incorrect. This results in a poor user experience and degrades system usability."
+        },
+        {
+          "id": 2,
+          "text": "Implement exponential backoff with jitter retry logic and use an Azure API Management circuit breaker across multiple endpoints.",
+          "reason": "Correct. Combining backoff retry mechanisms with API Management load balancing over multiple regions mitigates rate-limit disruptions effectively."
+        },
+        {
+          "id": 3,
+          "text": "Switch the deployment type from Provisioned Throughput Units (PTU) to Standard Pay-as-you-go dynamically.",
+          "reason": "Incorrect. Dynamic switching is not natively supported mid-request and does not guarantee capacity during global load peaks."
+        },
+        {
+          "id": 4,
+          "text": "Configure the agent to automatically drop conversational context to save token consumption.",
+          "reason": "Incorrect. Dropping context breaks the continuity and safety of clinical evaluation routines."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "An API Management gateway routing strategy coupled with robust client-side retry patterns ensures high availability under heavy load conditions."
+    },
+    {
+      "id": 6,
+      "topic": "Security & Governance",
+      "scenario_id": 2,
+      "Question": "Based on the Adatum Financial scenario, what is the most appropriate way to enforce the human-in-the-loop (HITL) requirement for trades over $50,000?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Configure an authorization tool within the execution loop that flags high-value transactions and pauses execution until an approval webhook returns valid approval telemetry.",
+          "reason": "Correct. A standard execution loop pause pattern with an authenticated approval callback provides reliable governance for automated tools."
+        },
+        {
+          "id": 2,
+          "text": "Rely entirely on the model's internal reasoning capabilities to skip high-value actions via system prompt compliance.",
+          "reason": "Incorrect. Language models are non-deterministic and cannot be trusted blindly to enforce hard numerical security boundaries."
+        },
+        {
+          "id": 3,
+          "text": "Increase the frequency of automated system monitoring logs from every 5 minutes to real-time stream processing.",
+          "reason": "Incorrect. Logging records events after they happen; it does not prevent or gate the unauthorized transaction."
+        },
+        {
+          "id": 4,
+          "text": "Instruct the Market Analytics Agent to redact financial values above $50,000 before passing them to the execution phase.",
+          "reason": "Incorrect. Redacting data prevents proper portfolio calculations and breaks business logic."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Critical business boundaries require structured validation functions that interrupt autonomous execution loops until external confirmation is supplied."
+    },
+    {
+      "id": 7,
+      "topic": "Agent Capabilities & Tool Integration",
+      "scenario_id": 2,
+      "Question": "The Risk Assessment Agent needs to invoke internal mathematical APIs. How should the API parameters be accurately constructed and executed by the agent framework?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Hardcode every possible variation of mathematical input parameter into a script template file.",
+          "reason": "Incorrect. Hardcoding parameter variations defeats the adaptive purpose of an agentic solution."
+        },
+        {
+          "id": 2,
+          "text": "Expose the API as an OpenAPI-compliant tool plugin, allowing the agent to dynamically construct the necessary JSON arguments based on the user request.",
+          "reason": "Correct. Exposing APIs with clear descriptions via standard schemas allows agent planners to accurately populate arguments and invoke actions."
+        },
+        {
+          "id": 3,
+          "text": "Force the user to formulate their queries in pure JSON format to align perfectly with the backend system schemas.",
+          "reason": "Incorrect. Forcing technical formatting on end users degrades user experience and bypasses the flexibility of conversational AI."
+        },
+        {
+          "id": 4,
+          "text": "Use regular expressions to parse model outputs and extract values manually into custom variables.",
+          "reason": "Incorrect. Text parsing using regular expressions is fragile and prone to failure when model phrasing changes slightly."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Native tool plugins leveraging OpenAPI definitions provide clear metadata instructions, mapping unstructured data accurately to formal structural types."
+    },
+    {
+      "id": 8,
+      "topic": "Data & Context Management",
+      "scenario_id": 2,
+      "Question": "The Market Analytics Agent uses Azure AI Search to find text across complex earnings reports. To capture semantically rich data that might use different vocabulary, which indexing strategy should you choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Configure standard exact keyword matching fields on metadata text strings.",
+          "reason": "Incorrect. Keyword matching fails to identify concepts with distinct vocabularies or synonymous phrasing."
+        },
+        {
+          "id": 2,
+          "text": "Generate and store vector embeddings using an embedding model, and execute hybrid search queries with semantic reranking.",
+          "reason": "Correct. Hybrid vector and keyword search combined with semantic reranking yields high relevance and understanding across varying terminology."
+        },
+        {
+          "id": 3,
+          "text": "Export the data periodically to CSV files and scan them sequentially using raw string lookups.",
+          "reason": "Incorrect. String lookups are slow, non-scalable, and lack semantic understanding."
+        },
+        {
+          "id": 4,
+          "text": "Compress reports into archive folders to save storage volume across index fragments.",
+          "reason": "Incorrect. Archiving data obscures content structures and blocks the search index engine entirely."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Hybrid search blends keyword and vector strengths, while semantic ranking improves relevance by prioritizing documents that match contextually."
+    },
+    {
+      "id": 9,
+      "topic": "Agent Architecture & Design",
+      "scenario_id": 2,
+      "Question": "Adatum requires that information shared between the Market Analytics Agent and the Risk Assessment Agent remains completely separate except for explicitly passed structured data summaries. Which architecture satisfies this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A shared global prompt system containing all system instructions for every operational role.",
+          "reason": "Incorrect. Shared prompts blend roles, which may leak analytical context across agent operational scopes."
+        },
+        {
+          "id": 2,
+          "text": "Isolated single-agent workspaces interacting exclusively via explicit message brokers or agent hand-off channels.",
+          "reason": "Correct. Isolating contexts ensures clear boundaries, preventing internal prompts or private knowledge bases from spilling over."
+        },
+        {
+          "id": 3,
+          "text": "A unified vector database index combining public market news feeds with confidential customer portfolio records.",
+          "reason": "Incorrect. Mixing public and confidential data in one shared index presents severe data exposure risks."
+        },
+        {
+          "id": 4,
+          "text": "An unconstrained multi-agent conversation block where all agents simultaneously monitor all user text feeds.",
+          "reason": "Incorrect. Open multi-agent channels expose all internal thinking to every agent, violating the isolation requirement."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Maintaining isolated state tracking per agent ensures strict boundaries, with context shared only via explicit parameter passing."
+    },
+    {
+      "id": 10,
+      "topic": "Optimization & Reliability",
+      "scenario_id": 2,
+      "Question": "When testing the Risk Assessment Agent, the model occasionally experiences hallucinations, calculating mathematical returns using fictitious figures. How can you minimize this issue?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Re-train the baseline model on a monthly cadence using raw transaction data history.",
+          "reason": "Incorrect. Training baseline foundation models is highly expensive and doesn't explicitly guarantee real-time calculated precision."
+        },
+        {
+          "id": 2,
+          "text": "Configure strict system instructions enforcing the model to rely only on data provided by verified API tools and restrict it from executing calculations itself.",
+          "reason": "Correct. Restricting calculations to specific tool definitions avoids model reasoning flaws and ensures math tasks are offloaded to code engines."
+        },
+        {
+          "id": 3,
+          "text": "Increase the max token allocation setting to allow the model longer processing streams.",
+          "reason": "Incorrect. Expanding token sizes does not prevent logical errors or hallucinations; it can sometimes make them wordier."
+        },
+        {
+          "id": 4,
+          "text": "Remove grounding context documentation entirely from the primary reasoning workflow window.",
+          "reason": "Incorrect. Eliminating grounding context degrades accuracy and forces the model to rely entirely on its pre-trained knowledge."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Grounding systems and using tools for analytical computations ensures the language model focuses on orchestration and extraction rather than running arithmetic calculations natively."
+    },
+    {
+      "id": 11,
+      "topic": "Optimization & Reliability",
+      "scenario_id": 3,
+      "Question": "Based on the Fabrikam Supply Chain Swarm scenario, if the Logistics Agent fails to respond due to an external network timeout during structured execution, how should the architecture gracefully handle this failure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Terminate the entire application flow and display a generic runtime error stack trace to the user.",
+          "reason": "Incorrect. Abruptly terminating the workflow is not a resilient or gracefully handled failure strategy."
+        },
+        {
+          "id": 2,
+          "text": "Implement a fallback strategy that captures the timeout exception, switches to a backup localized shipping model, or uses cached data to approximate logistics metrics.",
+          "reason": "Correct. Defining clear fallback strategies or alternative tools maintains partial system utility and robust user application experiences."
+        },
+        {
+          "id": 3,
+          "text": "Loop indefinitely until the target Logistics Agent becomes accessible again over the network fabric.",
+          "reason": "Incorrect. Indefinite loops cause resource exhaustion, thread blocking, and unpredictable costs."
+        },
+        {
+          "id": 4,
+          "text": "Delete the current agent runtime state and spin up a blank instance without historical execution data tracking.",
+          "reason": "Incorrect. Discarding operational state tracking without resolving the timeout destroys context and breaks the user workflow."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Resilient multi-agent designs leverage structural try-catch flows, automated rerouting, or fallback routines to preserve core functionality when downstream subsystems fail."
+    },
+    {
+      "id": 12,
+      "topic": "Agent Architecture & Design",
+      "scenario_id": 3,
+      "Question": "The Fabrikam system uses Semantic Kernel to handle complex scheduling tasks. You need to choose between a Stepwise Planner and a Sequential Planner. The scheduling task requires multi-step iterative reasoning and dynamic feedback loops during execution. Which planner should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The Sequential Planner, because it establishes a single fixed list of actions before execution begins.",
+          "reason": "Incorrect. Sequential planners prepare fixed lists and cannot dynamically adjust mid-step based on execution feedback."
+        },
+        {
+          "id": 2,
+          "text": "The Stepwise Planner, because it utilizes a ReAct (Reasoning and Acting) framework to determine, execute, and evaluate steps iteratively.",
+          "reason": "Correct. Stepwise planners analyze tool execution results step-by-step, making them ideal for complex, unpredictable operations."
+        },
+        {
+          "id": 3,
+          "text": "A standard rule-based code switch statement instead of using advanced agent planners.",
+          "reason": "Incorrect. A hardcoded switch statement lacks the flexible, adaptive planning requested for complex conversational logic."
+        },
+        {
+          "id": 4,
+          "text": "A zero-shot prompt template that forces all solutions into one single execution burst.",
+          "reason": "Incorrect. Single-step processing patterns cannot resolve tasks requiring multi-step iterative evaluations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Stepwise planners evaluate outcomes at each step using a ReAct architecture, letting the system dynamically adjust subsequent plans based on real-world results."
+    },
+    {
+      "id": 13,
+      "topic": "Agent Capabilities & Tool Integration",
+      "scenario_id": 3,
+      "Question": "The Procurement Agent needs to update transactional inventory levels in a legacy ERP system that lacks an HTTP API. Which technology should you implement to bridge the agent's capabilities with this system?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Develop a custom Power Automate Desktop flow and expose it via an API gateway for the agent to trigger.",
+          "reason": "Correct. Robotic Process Automation (RPA) tools like Power Automate Desktop bridge the gap between advanced AI agents and legacy systems without native modern APIs."
+        },
+        {
+          "id": 2,
+          "text": "Re-write the entire legacy ERP codebase to natively support modern vector embedding databases.",
+          "reason": "Incorrect. Rewriting core legacy enterprise applications is highly impractical and cost-prohibitive just for an automation task."
+        },
+        {
+          "id": 3,
+          "text": "Configure the Procurement Agent to output raw text instructions for a human operator to copy and paste.",
+          "reason": "Incorrect. While functional, manual data entry lacks automation and does not integrate the agent with the legacy system directly."
+        },
+        {
+          "id": 4,
+          "text": "Deploy an Azure Function that continuously queries the agent's memory stream via basic polling loops.",
+          "reason": "Incorrect. Polling memory streams does not solve the underlying connectivity problem with a legacy desktop system."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Power Automate Desktop acts as an effective RPA layer, allowing modern AI orchestrators to control UI actions within systems that lack standard API connectivity."
+    },
+    {
+      "id": 14,
+      "topic": "Security & Governance",
+      "scenario_id": 3,
+      "Question": "To securely host the Semantic Kernel-based agents on Azure Container Apps according to enterprise security standards, how should network communications be restricted?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Configure the Container Apps environment to accept all incoming traffic from the public internet without verification.",
+          "reason": "Incorrect. Opening services to the public internet violates basic enterprise perimeter security controls."
+        },
+        {
+          "id": 2,
+          "text": "Deploy the Azure Container Apps environment inside a secured Azure Virtual Network (VNet) and use private endpoints for dependencies.",
+          "reason": "Correct. Restricting container access within an internal VNet and securing backend dependencies using private endpoints isolates your data traffic from public networks."
+        },
+        {
+          "id": 3,
+          "text": "Rely entirely on local container firewalls configured on individual application container layers.",
+          "reason": "Incorrect. Container-level firewalls alone are insufficient and hard to manage across complex enterprise microservice clusters."
+        },
+        {
+          "id": 4,
+          "text": "Disable transport layer security (TLS) to minimize operational network routing overhead.",
+          "reason": "Incorrect. Disabling TLS exposes internal data transmissions to interception and violates data security policies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Deploying into a custom Virtual Network ensures that communication channels between agent nodes and backend resources remain isolated on Microsoft's private network backbone."
+    },
+    {
+      "id": 15,
+      "topic": "Data & Context Management",
+      "scenario_id": 3,
+      "Question": "The Inventory Agent needs to access current stock data while maintaining short latency for user requests. Stock levels fluctuate multiple times per minute. Which caching pattern should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Store data in an Azure Cache for Redis instance with an appropriate Time-to-Live (TTL) configuration and write-through cache logic.",
+          "reason": "Correct. Azure Cache for Redis handles high-frequency data reads with minimal latency while protecting backend databases from excessive traffic."
+        },
+        {
+          "id": 2,
+          "text": "Refresh the complete vector search database index via full rebuilds once every 24 hours.",
+          "reason": "Incorrect. A 24-hour refresh cycle is too slow for data that updates multiple times per minute."
+        },
+        {
+          "id": 3,
+          "text": "Save the data points inside text logs on the agent's local scratch storage disk.",
+          "reason": "Incorrect. Local disk files introduce latency and present structural barriers when scaling across multiple container instances."
+        },
+        {
+          "id": 4,
+          "text": "Avoid caching entirely and run full table scans on historical databases for every query turn.",
+          "reason": "Incorrect. Skipping caching and performing full table scans creates severe performance bottlenecks and increases database costs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Cache for Redis provides high-throughput, low-latency in-memory data processing, matching the speed requirements of volatile inventory updates."
+    },
+    {
+      "id": 16,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are designing an autonomous customer support agent solution using Azure AI Studio. The agent must handle requests that require branching logic based on the user's sentiment and topic. Which structural component should you use to coordinate this logic within your architecture?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An Azure AI Studio Prompt Flow with conditional routing nodes.",
+          "reason": "Correct. Prompt Flow conditional nodes allow you to build clear execution paths based on variables like sentiment score or category tags."
+        },
+        {
+          "id": 2,
+          "text": "An Azure Blob Storage lifecycle management policy.",
+          "reason": "Incorrect. Lifecycle management controls data retention and archiving, not application routing logic."
+        },
+        {
+          "id": 3,
+          "text": "An Azure Content Safety text analysis classification filter.",
+          "reason": "Incorrect. Content Safety filters catch inappropriate text, rather than coordinating custom operational workflows."
+        },
+        {
+          "id": 4,
+          "text": "A static system prompt message block containing 10,000 example conversations.",
+          "reason": "Incorrect. Overloading a prompt with too many examples is inefficient, increases latency, and risks hitting token limits."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure AI Studio Prompt Flow helps you build, execute, and monitor complex LLM connection graphs, providing conditional routing mechanisms for dynamic orchestration."
+    },
+    {
+      "id": 17,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "An agent needs to access sensitive corporate records stored securely in an enterprise database. You want to implement a mechanism where the LLM does not execute queries directly but triggers a secure, intermediate component instead. What is the recommended practice?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Have the agent call an API endpoint secured by Azure API Management, which validates tokens and queries the database.",
+          "reason": "Correct. Using a managed API layer keeps the agent isolated from direct database access and enforces enterprise authentication and security policies."
+        },
+        {
+          "id": 2,
+          "text": "Embed the database's administrative username and password directly inside the LLM system prompt.",
+          "reason": "Incorrect. Placing credentials in prompts is a severe security risk, as they can be leaked via prompt injection."
+        },
+        {
+          "id": 3,
+          "text": "Grant the LLM model direct write permissions to the database master configuration files.",
+          "reason": "Incorrect. Language models should never be given administrative database access, to prevent accidental or malicious corruption."
+        },
+        {
+          "id": 4,
+          "text": "Configure public access on the database so the LLM can connect without any credentials.",
+          "reason": "Incorrect. Opening internal databases to the public internet introduces critical security vulnerabilities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "An API layer like Azure API Management provides authentication, throttling, and logging, allowing agents to fetch data safely using structured tools."
+    },
+    {
+      "id": 18,
+      "topic": "Security & Governance",
+      "Question": "You want to protect an Azure OpenAI Service agent deployment against prompt injection attacks where users try to override the agent's core safety instructions. Which service should you place in front of your model endpoint?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure ExpressRoute",
+          "reason": "Incorrect. ExpressRoute establishes dedicated private network connections; it does not analyze or filter content payloads."
+        },
+        {
+          "id": 2,
+          "text": "Azure Monitor Log Analytics Workspace",
+          "reason": "Incorrect. Log Analytics stores and queries telemetry data after the fact, but cannot block real-time attacks."
+        },
+        {
+          "id": 3,
+          "text": "Azure AI Content Safety with prompt shielding enabled.",
+          "reason": "Correct. Azure AI Content Safety prompt shields detect and block user attempts to hijack model prompts before they reach the foundation model."
+        },
+        {
+          "id": 4,
+          "text": "Azure Storage client-side encryption modules",
+          "reason": "Incorrect. Client-side encryption protects data at rest or in transit, but does not parse prompt content for malicious intent."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Azure AI Content Safety prompt shields analyze incoming text streams to catch adversarial injection techniques, blocking attacks before they affect model behavior."
+    },
+    {
+      "id": 19,
+      "topic": "Optimization & Reliability",
+      "Question": "Your enterprise agentic solution often experiences performance degradation during end-of-quarter processing due to high token usage. You need to guarantee dedicated compute capacity with predictable costs. Which deployment type should you select?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Provisioned Throughput Units (PTU) deployment.",
+          "reason": "Correct. PTUs provide reserved model processing capacity with predictable latency and throughput, making them ideal for enterprise workloads."
+        },
+        {
+          "id": 2,
+          "text": "Standard global pay-as-you-go consumption tier.",
+          "reason": "Incorrect. Pay-as-you-go tiers are subject to regional token availability constraints and do not guarantee dedicated throughput."
+        },
+        {
+          "id": 3,
+          "text": "Serverless Azure Functions consumption tier hosting local Python modules.",
+          "reason": "Incorrect. Serverless functions do not provide dedicated capacity or throughput for Azure OpenAI models."
+        },
+        {
+          "id": 4,
+          "text": "Free trial tier container cluster configuration.",
+          "reason": "Incorrect. Free tiers have strict rate limits and are unsuitable for production enterprise workloads."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Provisioned Throughput Units (PTU) reserve dedicated capacity on Microsoft's infrastructure, ensuring stable response times during traffic spikes."
+    },
+    {
+      "id": 20,
+      "topic": "Data & Context Management",
+      "Question": "You are designing the context strategy for a long-running customer support agent. To manage costs and stay within the model's token limits, you need to compress conversational history while retaining core facts. Which technique should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A summarization step that condenses older messages into a rolling bulleted summary using an LLM turn.",
+          "reason": "Correct. Rolling summarization keeps the critical context of long conversations compact, saving token space."
+        },
+        {
+          "id": 2,
+          "text": "A truncation filter that removes all vowels from historical customer messages.",
+          "reason": "Incorrect. Removing vowels makes text hard for the model to parse and does not reliably solve token limitations."
+        },
+        {
+          "id": 3,
+          "text": "Exporting the chat history to an archive cold bucket and clear the context completely on every third turn.",
+          "reason": "Incorrect. Clearing context every three turns degrades usability, as the agent loses the thread of the conversation."
+        },
+        {
+          "id": 4,
+          "text": "Enlarging the context window by appending duplicate copies of the system instructions.",
+          "reason": "Incorrect. Duplicating system instructions wastes tokens and does not compress conversational history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Summarizing older dialogue into a concise running summary preserves key context details while reducing overall token use."
+    },
+    {
+      "id": 21,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are selecting a framework for an agentic solution that requires close integration with .NET systems and automated plugin execution. Which framework aligns best with Microsoft enterprise technologies?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "LangChain for JavaScript applications",
+          "reason": "Incorrect. LangChain JS targets Node.js environments and does not provide native support for modern .NET workloads."
+        },
+        {
+          "id": 2,
+          "text": "Semantic Kernel framework.",
+          "reason": "Correct. Semantic Kernel is a Microsoft-backed framework with excellent support for both .NET and Python, facilitating enterprise-grade integration."
+        },
+        {
+          "id": 3,
+          "text": "AutoGPT standalone bash script configurations",
+          "reason": "Incorrect. AutoGPT is an open-source research tool rather than an enterprise-supported library for .NET systems."
+        },
+        {
+          "id": 4,
+          "text": "Rasa Open Source conversational pipeline frameworks",
+          "reason": "Incorrect. Rasa uses distinct intent-parsing architectures rather than natively supporting LLM-driven .NET plugin ecosystems."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Semantic Kernel integrates AI capabilities directly into modern enterprise applications, offering robust SDKs for both .NET and Python ecosystems."
+    },
+    {
+      "id": 22,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "An agent needs to access the current weather to recommend apparel choices to online shoppers. Which tool integration pattern should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Define a custom plugin tool that calls a verified external weather API at runtime based on the user's location.",
+          "reason": "Correct. Plugins let models fetch real-time, dynamic information from external web services when needed."
+        },
+        {
+          "id": 2,
+          "text": "Fine-tune the model daily on global weather statistics gathered from historical data sets.",
+          "reason": "Incorrect. Fine-tuning models daily is too expensive and cannot provide unpredictable, real-time weather updates."
+        },
+        {
+          "id": 3,
+          "text": "Embed a hardcoded list of global capital weather predictions directly into the system message.",
+          "reason": "Incorrect. Static text configurations cannot account for changing weather patterns across various locations."
+        },
+        {
+          "id": 4,
+          "text": "Configure the agent to guess the weather based on the current season.",
+          "reason": "Incorrect. Guessing introduces inaccuracies, which degrades trust in your application."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Custom function tools and plugins allow LLMs to safely query up-to-date information from external systems during a chat session."
+    },
+    {
+      "id": 23,
+      "topic": "Security & Governance",
+      "Question": "Your company requires all AI solutions to have a clear human oversight mechanism for sensitive tasks, such as modifying data records. Which architectural pattern should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An autonomous self-healing agent loop that handles data corrections independently.",
+          "reason": "Incorrect. Fully autonomous loops lack the required human oversight for sensitive data modifications."
+        },
+        {
+          "id": 2,
+          "text": "A Human-in-the-Loop (HITL) pattern that flags changes and waits for manual approval via a dashboard before updating records.",
+          "reason": "Correct. HITL patterns pause execution and require human confirmation for sensitive actions, ensuring adequate governance."
+        },
+        {
+          "id": 3,
+          "text": "A pattern that emails an unformatted summary text report to an unattended mailbox every weekend.",
+          "reason": "Incorrect. Retrospective text updates sent to an unmonitored mailbox do not provide active oversight or approval capabilities."
+        },
+        {
+          "id": 4,
+          "text": "Increasing log retention to 7 years to satisfy historical search requirements.",
+          "reason": "Incorrect. Extending log retention helps with compliance audits but does not establish real-time human oversight."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Human-in-the-loop patterns pause agent execution when critical actions occur, ensuring a human reviews and approves the operation before completion."
+    },
+    {
+      "id": 24,
+      "topic": "Optimization & Reliability",
+      "Question": "You are evaluating an agentic application using Azure AI Studio evaluation metrics. You want to assess how accurately the agent's responses align with your ground truth dataset. Which metric should you focus on?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "System operational latency time measurements",
+          "reason": "Incorrect. Latency measures speed, not the accuracy or quality of the generated content."
+        },
+        {
+          "id": 2,
+          "text": "Azure Cosmos DB query throughput usage metrics",
+          "reason": "Incorrect. Throughput measures database request volume rather than text generation quality."
+        },
+        {
+          "id": 3,
+          "text": "Groundedness or Ground Truth Similarity metrics.",
+          "reason": "Correct. Groundedness and similarity metrics evaluate how well model outputs align with facts in the reference source material."
+        },
+        {
+          "id": 4,
+          "text": "Container network interface bandwidth usage stats",
+          "reason": "Incorrect. Bandwidth statistics show network load, not the correctness of an AI's responses."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Azure AI Studio offers built-in AI-assisted metrics like Groundedness and Relevance to verify if outputs are supported by your source documents."
+    },
+    {
+      "id": 25,
+      "topic": "Data & Context Management",
+      "Question": "You are setting up an enterprise RAG pipeline using Azure AI Search. The source documents contain specialized acronyms and industry terms. Which feature should you use to ensure search queries recognize these terms properly?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A custom synonym map associated with the target index fields.",
+          "reason": "Correct. Synonym maps in Azure AI Search map specialized terms and acronyms to their definitions, improving search recall."
+        },
+        {
+          "id": 2,
+          "text": "An automated document deletion policy configured on the storage account tier.",
+          "reason": "Incorrect. Deletion policies remove data rather than clarifying terminology or improving search accuracy."
+        },
+        {
+          "id": 3,
+          "text": "An unencrypted backup copy of the raw documents stored in a separate public container.",
+          "reason": "Incorrect. Public backup copies expose data and do not improve search engine term recognition."
+        },
+        {
+          "id": 4,
+          "text": "Increasing the embedding dimension size parameter to its maximum limit.",
+          "reason": "Incorrect. Changing embedding sizes can alter vector representations but doesn't resolve specific term-to-synonym mappings directly."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Synonym maps expand queries with matching terminology, ensuring search queries return relevant documents even if different words are used."
+    },
+    {
+      "id": 26,
+      "topic": "Agent Architecture & Design",
+      "Question": "You need to build a system where multiple specialized agents communicate using a central manager that receives user inputs and coordinates work across teams. Which multi-agent pattern does this represent?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A completely flat peer-to-peer network matrix.",
+          "reason": "Incorrect. Flat networks lack a central coordinator, with agents interacting directly as peers."
+        },
+        {
+          "id": 2,
+          "text": "A single isolated agent operating without tools.",
+          "reason": "Incorrect. This represents a single-agent setup, not a coordinated multi-agent system."
+        },
+        {
+          "id": 3,
+          "text": "A Orchestrator-Workers (or Supervisor) multi-agent architecture.",
+          "reason": "Correct. The Orchestrator-Workers pattern uses a central supervisor agent to receive tasks, delegate work, and combine responses."
+        },
+        {
+          "id": 4,
+          "text": "A static hardcoded script that executes steps linearly.",
+          "reason": "Incorrect. A linear script lacks the dynamic decision-making and delegation capabilities of an agentic architecture."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "The Supervisor/Orchestrator pattern centralizes control, using a primary agent to coordinate tasks among specialized worker nodes."
+    },
+    {
+      "id": 27,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "An agent needs to parse unstructured PDF invoices, extract key-value data fields like total due, and update an ERP system. Which Azure service should you integrate as a tool component to handle this extraction reliably?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure AI Document Intelligence.",
+          "reason": "Correct. Azure AI Document Intelligence uses machine learning models to extract text, tables, and key-value pairs from complex forms and documents."
+        },
+        {
+          "id": 2,
+          "text": "Azure Event Hubs stream routing modules",
+          "reason": "Incorrect. Event Hubs handles high-throughput data streams but cannot parse document structures or extract fields."
+        },
+        {
+          "id": 3,
+          "text": "Azure ExpressRoute private peering filters",
+          "reason": "Incorrect. ExpressRoute configures network circuits and does not process files or documents."
+        },
+        {
+          "id": 4,
+          "text": "Azure DNS private zones namespace registers",
+          "reason": "Incorrect. Azure DNS manages domain resolution and has no document analysis capabilities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure AI Document Intelligence extracts structured data from unstructured forms, making it an ideal tool for document processing agents."
+    },
+    {
+      "id": 28,
+      "topic": "Security & Governance",
+      "Question": "You are implementing an enterprise agentic AI solution for a financial services firm. The compliance team requires that all data processing locations be restricted to a single geographic region. How should you enforce this restriction?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Rely on user settings within client browsers to control data residency boundaries.",
+          "reason": "Incorrect. Client-side browser settings cannot govern data processing locations on cloud infrastructure."
+        },
+        {
+          "id": 2,
+          "text": "Deploy all Azure AI resources and OpenAI endpoints within that single specified Azure region and use Azure Policy to restrict creation elsewhere.",
+          "reason": "Correct. Combining regional resource deployment with Azure Policy prevents users from spinning up services outside the approved boundary."
+        },
+        {
+          "id": 3,
+          "text": "Use a global load balancer that randomly routes traffic across multiple international endpoints.",
+          "reason": "Incorrect. Random global routing distributes data across multiple regions, violating the single-region compliance rule."
+        },
+        {
+          "id": 4,
+          "text": "Compress all corporate data into encrypted ZIP files before running model interactions.",
+          "reason": "Incorrect. Encrypting local files does not control where cloud endpoints process data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Deploying services in a single region and using Azure Policy ensures strict compliance with data residency and sovereignty requirements."
+    },
+    {
+      "id": 29,
+      "topic": "Optimization & Reliability",
+      "Question": "During operational review, you notice an agentic application frequently fails when tasks require more than 10 consecutive model calls. The system errors out with an execution limit exception. How should you resolve this issue?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Configure the agent's maximum iteration or loop limit configuration parameter to an appropriate value greater than 10.",
+          "reason": "Correct. Agent frameworks use maximum iteration parameters to prevent runaway loops; adjusting this limit allows complex, multi-step tasks to complete."
+        },
+        {
+          "id": 2,
+          "text": "Instruct users to write shorter prompts to avoid triggering system logic.",
+          "reason": "Incorrect. Forcing shorter user inputs doesn't fix the underlying framework execution limit for complex tasks."
+        },
+        {
+          "id": 3,
+          "text": "Re-train the underlying foundational LLM to use fewer steps.",
+          "reason": "Incorrect. Re-training foundation models is expensive and cannot change runtime configuration limits set by the orchestration framework."
+        },
+        {
+          "id": 4,
+          "text": "Disable logging and telemetry tracking to reduce system overhead.",
+          "reason": "Incorrect. Disabling logs removes visibility into failures without fixing the underlying execution limit."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Increasing the framework's maximum iteration threshold gives the agent the headroom it needs to finish tasks that involve multiple steps."
+    },
+    {
+      "id": 30,
+      "topic": "Data & Context Management",
+      "Question": "You are designing an agent that requires persistent access to high-speed memory regarding a customer's preference profile across multi-day conversational turns. Which storage service should you select to store this user state context?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Cosmos DB.",
+          "reason": "Correct. Azure Cosmos DB provides low-latency, globally distributed database storage, making it ideal for managing persistent agent sessions and user profiles."
+        },
+        {
+          "id": 2,
+          "text": "Azure Archive Blob Storage tier configurations",
+          "reason": "Incorrect. The Archive tier is for cold storage and takes hours to retrieve data, making it unsuitable for real-time applications."
+        },
+        {
+          "id": 3,
+          "text": "Azure Queue Storage message buffers",
+          "reason": "Incorrect. Queue Storage is designed for message queuing between services, not for long-term profile storage or quick lookups."
+        },
+        {
+          "id": 4,
+          "text": "Local container file caches",
+          "reason": "Incorrect. Local container storage is temporary and data is lost when containers scale down or restart."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Cosmos DB offers reliable document storage with low latency, providing the persistent memory required for tracking multi-turn agent conversations."
+    },
+    {
+      "id": 31,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are building a custom enterprise assistant using Azure AI Studio Prompt Flow. You need to test different variants of a prompt simultaneously against a test dataset to compare output quality. Which feature should you utilize?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A standard continuous deployment pipeline with manual approvals.",
+          "reason": "Incorrect. Standard pipelines run deployments linearly rather than comparing prompt variations across a shared dataset."
+        },
+        {
+          "id": 2,
+          "text": "Prompt Flow Evaluation with Variant testing.",
+          "reason": "Correct. Prompt Flow supports variants, allowing you to compare different prompt configurations against the same dataset to evaluate performance metrics."
+        },
+        {
+          "id": 3,
+          "text": "An Azure API Management rate limiting policy rule.",
+          "reason": "Incorrect. Rate limiting policies throttle traffic volume; they do not evaluate or compare prompt quality."
+        },
+        {
+          "id": 4,
+          "text": "A static backup system prompt file deployed across separate regions.",
+          "reason": "Incorrect. Splitting files across regions does not provide a built-in framework for comparing prompt performance side-by-side."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Prompt Flow variants let you test multiple prompt formulations against a single validation dataset to measure and optimize quality metrics."
+    },
+    {
+      "id": 32,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "Your autonomous agent needs to execute Python code generated at runtime to perform data analysis charts and mathematical functions. How can you implement this capability safely without exposing your hosting infrastructure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Run the code natively on the host server using administrative root privileges.",
+          "reason": "Incorrect. Running unverified model code with root privileges on your host server is a critical security risk."
+        },
+        {
+          "id": 2,
+          "text": "Use Azure Dynamic Sessions in Azure Container Apps to run code inside a sandboxed environment.",
+          "reason": "Correct. Azure Container Apps dynamic sessions provide secure, isolated sandboxes for running code generated by models at runtime."
+        },
+        {
+          "id": 3,
+          "text": "Convert the Python code into SQL stored procedures on your core database server.",
+          "reason": "Incorrect. Converting runtime Python into database stored procedures is highly impractical and introduces severe SQL injection risks."
+        },
+        {
+          "id": 4,
+          "text": "Instruct the user to run the generated code on their local machine and paste back the results.",
+          "reason": "Incorrect. Relying on manual user execution breaks the automation flow and degrades the user experience."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure Container Apps dynamic sessions offer isolated, short-lived execution environments, letting agents safely run code without risking host infrastructure."
+    },
+    {
+      "id": 33,
+      "topic": "Security & Governance",
+      "Question": "A business analyst wants to verify who granted permissions to a specific agentic tool plugin that accesses customer records. Which security logging component should they review?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Activity Logs and Azure RBAC role assignment logs.",
+          "reason": "Correct. Azure Activity Logs and RBAC tracking show who modified permissions or role definitions across your resources."
+        },
+        {
+          "id": 2,
+          "text": "The local container's internal console output text.",
+          "reason": "Incorrect. Local container console logs track app operational errors, not platform-level identity and access management changes."
+        },
+        {
+          "id": 3,
+          "text": "The public network traffic volume charts inside Azure Monitor.",
+          "reason": "Incorrect. Traffic charts show the volume of network data, not identity or access management actions."
+        },
+        {
+          "id": 4,
+          "text": "The model definition JSON file stored in your source control repository.",
+          "reason": "Incorrect. Source control files define application structures; they do not record live permission assignments in Azure."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Activity Logs record administrative operations, providing an audit trail of identity updates and role modifications across subscriptions."
+    },
+    {
+      "id": 34,
+      "topic": "Optimization & Reliability",
+      "Question": "An agentic solution deployed in production occasionally experiences timeout issues because an underlying external API takes too long to respond. You want to configure an elegant user notice without blocking resources. What should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A standard tool timeout limit parameter combined with a clean error catch route in your orchestration flow.",
+          "reason": "Correct. Setting clear tool timeouts and handling exceptions ensures the system stays responsive when external dependencies stall."
+        },
+        {
+          "id": 2,
+          "text": "Instruct the agent to try the exact same request indefinitely until the API responds.",
+          "reason": "Incorrect. Infinite retry loops exhaust system resources and can lead to application crashes or high costs."
+        },
+        {
+          "id": 3,
+          "text": "Increase the Azure OpenAI token limit configuration to its maximum value.",
+          "reason": "Incorrect. Token limits control text generation length; they have no effect on external network API timeouts."
+        },
+        {
+          "id": 4,
+          "text": "Disable the tool entirely and force the agent to guess the data.",
+          "reason": "Incorrect. Disabling tools forces the model to hallucinate or fail, which degrades the quality of the application."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Timeout thresholds and exception handling prevent downstream system dependencies from stalling your agent's execution loop."
+    },
+    {
+      "id": 35,
+      "topic": "Data & Context Management",
+      "Question": "You are deploying an enterprise RAG system that processes documents with varied access permissions. You need to ensure users only see search results they are authorized to access. Which feature should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A single public search index where all documents are available to every user.",
+          "reason": "Incorrect. Public indexes expose sensitive data to unauthorized users, violating compliance standards."
+        },
+        {
+          "id": 2,
+          "text": "Security filters using group membership IDs within Azure AI Search queries.",
+          "reason": "Correct. Adding security filters based on user access tokens ensures Azure AI Search only returns records the user is authorized to view."
+        },
+        {
+          "id": 3,
+          "text": "Encrypting the source files with different keys on a local storage drive.",
+          "reason": "Incorrect. Encrypting raw storage files does not manage document-level access controls within the search engine's query index."
+        },
+        {
+          "id": 4,
+          "text": "Enforcing a mandatory 15-minute wait time for all search queries.",
+          "reason": "Incorrect. Adding a delay impacts usability without securing data or managing user permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Security filtering in Azure AI Search matches document access permissions with the user's security groups, ensuring data isolation."
+    },
+    {
+      "id": 36,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are selecting an orchestration engine within Azure to run long-running agent workflows that require custom state persistence, manual approval gates, and automatic event retries. Which Azure service is designed for this scenario?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Event Grid basic subscription topics.",
+          "reason": "Incorrect. Event Grid is a pub-sub messaging service; it does not manage complex, long-running stateful workflows natively."
+        },
+        {
+          "id": 2,
+          "text": "Durable Functions (an extension of Azure Functions).",
+          "reason": "Correct. Durable Functions let you write stateful workflows in code, making them ideal for long-running processes, checkpoints, and human approval gates."
+        },
+        {
+          "id": 3,
+          "text": "Azure Container Registry task schedules.",
+          "reason": "Incorrect. Container Registry tasks build and manage container images; they cannot orchestrate conversational agent flows."
+        },
+        {
+          "id": 4,
+          "text": "Azure ExpressRoute virtual circuit gateways.",
+          "reason": "Incorrect. ExpressRoute establishes private network infrastructure and does not handle application workflow routing or state management."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Durable Functions manage state tracking and checkpoints automatically, providing a reliable platform for complex orchestrations and approval loops."
+    },
+    {
+      "id": 37,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "Your multi-agent system needs to receive real-time streaming alerts from IoT devices on a manufacturing floor and distribute tasks based on those alerts. Which component should handle this high-frequency ingestion point?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Event Hubs or Azure IoT Hub.",
+          "reason": "Correct. Event Hubs and IoT Hub excel at ingesting millions of high-frequency events per second from distributed devices or applications."
+        },
+        {
+          "id": 2,
+          "text": "A static text file hosted inside an Azure Storage container.",
+          "reason": "Incorrect. Static files cannot handle real-time, high-frequency data streams efficiently."
+        },
+        {
+          "id": 3,
+          "text": "Azure API Management developer portal pages.",
+          "reason": "Incorrect. The developer portal is a documentation website and cannot ingest or process high-speed streaming data."
+        },
+        {
+          "id": 4,
+          "text": "Direct peer-to-peer prompt injection loops.",
+          "reason": "Incorrect. Flooding prompts with high-frequency telemetry will exhaust token limits and cause application crashes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Event Hubs provides a reliable event ingestion tier, buffer streaming telemetry data, and feeding it smoothly into downstream agent components."
+    },
+    {
+      "id": 38,
+      "topic": "Security & Governance",
+      "Question": "You want to ensure that your agentic application code can authenticate securely with Azure Key Vault to retrieve enterprise API tokens without managing secrets or keys in your code repository. What should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Store access credentials in a public configuration file within your source control repo.",
+          "reason": "Incorrect. Storing credentials in source control is a serious security risk that can lead to credential leakage."
+        },
+        {
+          "id": 2,
+          "text": "Configure an Azure Managed Identity for your hosting resource and grant it access to the Key Vault.",
+          "reason": "Correct. Managed Identities provide secure, passwordless authentication by tying resource identities directly to Microsoft Entra ID."
+        },
+        {
+          "id": 3,
+          "text": "Disable authentication on Azure Key Vault to simplify network connectivity.",
+          "reason": "Incorrect. Disabling authentication removes all security protections, exposing sensitive credentials to unauthorized access."
+        },
+        {
+          "id": 4,
+          "text": "Hardcode the Key Vault administrative credentials into your application's javascript files.",
+          "reason": "Incorrect. Hardcoding administrative credentials exposes access keys to anyone with access to the source code."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure Managed Identities eliminate the need for credentials in your code, utilizing Microsoft Entra ID to secure connections to Azure services like Key Vault."
+    },
+    {
+      "id": 39,
+      "topic": "Optimization & Reliability",
+      "Question": "You are running automated tests on your agent framework using an evaluation dataset. You notice that while the agent's responses are accurate, it takes too long to generate text for users. Which configuration change will reduce this latency?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Enable streaming on the model completion endpoint so text tokens are sent to the client as they are generated.",
+          "reason": "Correct. Streaming delivers tokens to the client interface immediately as they are generated, improving the perceived response time."
+        },
+        {
+          "id": 2,
+          "text": "Increase the model's temperature parameter to its maximum limit.",
+          "reason": "Incorrect. Higher temperature increases creativity and randomness, but does not improve processing or network delivery speeds."
+        },
+        {
+          "id": 3,
+          "text": "Add multiple long examples to the system prompt definition.",
+          "reason": "Incorrect. Adding long examples increases token counts and can actually increase processing latency."
+        },
+        {
+          "id": 4,
+          "text": "Deploy the application behind an unindexed storage proxy bucket.",
+          "reason": "Incorrect. Storage proxies add unnecessary steps and network overhead, increasing latency."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Streaming completion endpoints return tokens incrementally, reducing time-to-first-token latency and providing a smoother user experience."
+    },
+    {
+      "id": 40,
+      "topic": "Data & Context Management",
+      "Question": "You are migrating a classic SQL database into an AI-ready search architecture to support an agentic solution. You need to choose a service that natively supports vector queries, hybrid keyword lookups, and semantic rank profiles. Which service should you choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Table Storage accounts.",
+          "reason": "Incorrect. Table Storage is a simple key-value store that lacks native vector search, hybrid querying, and semantic ranking capabilities."
+        },
+        {
+          "id": 2,
+          "text": "Azure AI Search.",
+          "reason": "Correct. Azure AI Search natively supports vector search, hybrid queries, and advanced semantic ranking, making it an ideal choice for grounding AI models."
+        },
+        {
+          "id": 3,
+          "text": "Azure Files shares.",
+          "reason": "Incorrect. Azure Files provides standard cloud file shares but does not offer specialized vector search or semantic indexing tools."
+        },
+        {
+          "id": 4,
+          "text": "An unindexed Azure Queue Storage container.",
+          "reason": "Incorrect. Queue Storage is designed for asynchronous message queuing and does not support complex database or text search operations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure AI Search provides specialized indexing capabilities tailored for AI workloads, including vector storage, hybrid search, and semantic ranking tools."
+    },
+    {
+      "id": 41,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are configuring an agent with multiple plugins using Semantic Kernel. You want the system to dynamically select the best plugin functions and determine the execution sequence automatically based on the user's intent. Which component should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A static loop that calls plugins in a fixed order.",
+          "reason": "Incorrect. Fixed loops cannot adjust dynamically or choose plugins based on user intent."
+        },
+        {
+          "id": 2,
+          "text": "An automated data archiving policy.",
+          "reason": "Incorrect. Archiving policies manage data retention, not plugin selection or orchestration logic."
+        },
+        {
+          "id": 3,
+          "text": "A Semantic Kernel Planner (such as Stepwise Planner).",
+          "reason": "Correct. Planners in Semantic Kernel analyze user input and use model reasoning to dynamically select and sequence available plugin functions."
+        },
+        {
+          "id": 4,
+          "text": "A network security access control list.",
+          "reason": "Incorrect. Access control lists manage network traffic boundaries, not application-level plugin orchestration."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Semantic Kernel Planners utilize the language model's reasoning capabilities to assemble and execute multi-step workflows dynamically from a set of available plugins."
+    },
+    {
+      "id": 42,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "Your corporate agent solution needs to verify a customer's subscription tier by querying data stored in Microsoft Dataverse. Which approach provides a native, low-code integration method?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Build a custom Power Platform connector or use a standard Copilot Studio action linked to Dataverse.",
+          "reason": "Correct. Copilot Studio actions and Power Platform connectors provide native, secure methods for interacting with Dataverse data without custom code."
+        },
+        {
+          "id": 2,
+          "text": "Download the entire Dataverse database daily as raw text files and embed them in your prompts.",
+          "reason": "Incorrect. Bulk text downloads waste token capacity, compromise data security, and quickly fall out of date."
+        },
+        {
+          "id": 3,
+          "text": "Decline the integration request and advise the user to perform the check manually.",
+          "reason": "Incorrect. Refusing the integration defeats the automation purpose of building an enterprise agent."
+        },
+        {
+          "id": 4,
+          "text": "Expose the Dataverse instance to the public internet with anonymous access permissions.",
+          "reason": "Incorrect. Exposing internal business data publicly introduces critical security and compliance vulnerabilities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "The Power Platform ecosystem provides native, low-code data connectors that securely bridge conversational AI engines with business systems like Dataverse."
+    },
+    {
+      "id": 43,
+      "topic": "Security & Governance",
+      "Question": "You need to ensure that an external agentic application cannot overload your internal APIs with too many rapid requests. Which component and policy should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An Azure API Management instance configured with a rate-limiting (throttling) policy.",
+          "reason": "Correct. Azure API Management throttling policies protect backend systems by capping the number of requests an application can make within a given timeframe."
+        },
+        {
+          "id": 2,
+          "text": "An Azure Storage Account lifecycle rule that deletes older log data.",
+          "reason": "Incorrect. Log deletion policies manage storage volume; they do not throttle or manage live incoming API traffic."
+        },
+        {
+          "id": 3,
+          "text": "A larger virtual network subnet range in your Azure configuration.",
+          "reason": "Incorrect. Expanding IP addresses increases network capacity but does not limit or throttle request volumes."
+        },
+        {
+          "id": 4,
+          "text": "Increasing the model's max token configuration parameter to its highest level.",
+          "reason": "Incorrect. Token limits control response length; they do not protect backend APIs from high request volumes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Throttling policies in Azure API Management protect backend APIs from spikes in traffic and malicious denial-of-service attempts."
+    },
+    {
+      "id": 44,
+      "topic": "Optimization & Reliability",
+      "Question": "You are reviewing trace analytics for an enterprise assistant and notice that it frequently provides incorrect information because it searches for outdated documents. Which strategy will improve accuracy?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Increase the model's temperature setting to make its responses more creative.",
+          "reason": "Incorrect. Increasing temperature makes answers more random, which can worsen inaccuracies and hallucinations."
+        },
+        {
+          "id": 2,
+          "text": "Implement an automated pipeline that updates your search index when documents change, and add a date-based filter to queries.",
+          "reason": "Correct. Keeping index content fresh and using date filters ensures the agent retrieves current, accurate information."
+        },
+        {
+          "id": 3,
+          "text": "Remove historical document reference datasets from your index entirely.",
+          "reason": "Incorrect. Deleting your documentation index removes the grounding data, leaving the agent unable to answer questions accurately."
+        },
+        {
+          "id": 4,
+          "text": "Hardcode your entire product manual directly into the system message.",
+          "reason": "Incorrect. Large manuals will exceed the model's prompt token limits, leading to increased latency and higher costs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Synchronizing data pipelines and applying query filters ensures the RAG architecture uses fresh, relevant information to ground model responses."
+    },
+    {
+      "id": 45,
+      "topic": "Data & Context Management",
+      "Question": "You want to evaluate how an agentic RAG solution performs when processing different types of search queries. Which Azure AI Studio tool should you use to run automated tests using a test dataset?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The Azure Content Safety text analysis panel.",
+          "reason": "Incorrect. The Content Safety tool scans text for inappropriate content; it does not evaluate RAG search retrieval performance."
+        },
+        {
+          "id": 2,
+          "text": "The Azure AI Studio Prompt Flow evaluation and batch run feature.",
+          "reason": "Correct. Batch runs and evaluation flows in Azure AI Studio let you run large datasets through your prompt flow to assess performance metrics."
+        },
+        {
+          "id": 3,
+          "text": "An Azure ExpressRoute private circuit monitoring window.",
+          "reason": "Incorrect. ExpressRoute tools monitor network infrastructure telemetry, not application-level AI metrics."
+        },
+        {
+          "id": 4,
+          "text": "A standard Azure Blob Storage lifecycle logging configuration.",
+          "reason": "Incorrect. Lifecycle logs track storage resource operations, not text processing or search quality metrics."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure AI Studio batch runs evaluate prompt performance across entire test datasets, calculating metrics like groundedness and answer relevance."
+    },
+    {
+      "id": 46,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are designing an automated call center system where a customer support request is passed sequentially from a sorting agent to a specialized billing agent. Which orchestration pattern best describes this linear flow?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A decentralized peer-to-peer mesh network matrix.",
+          "reason": "Incorrect. Peer-to-peer networks pass tasks dynamically based on specialized rules, rather than following a strict linear sequence."
+        },
+        {
+          "id": 2,
+          "text": "A Sequential Chain Orchestration pattern.",
+          "reason": "Correct. Sequential chains route tasks linearly from one agent to the next in a predetermined order."
+        },
+        {
+          "id": 3,
+          "text": "An isolated single-agent setup that lacks tool connectivity.",
+          "reason": "Incorrect. This scenario involves multiple agents passing tasks, not an isolated single agent."
+        },
+        {
+          "id": 4,
+          "text": "A random routing topology that distributes tasks unpredictably.",
+          "reason": "Incorrect. Random routing passes tasks arbitrarily, which breaks structured business processes."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Sequential chains pass data linearly from one node to the next, making them well-suited for structured workflows with predictable dependencies."
+    },
+    {
+      "id": 47,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "An agentic AI assistant needs to create and update calendar events directly within an enterprise employee's corporate calendar schedule. Which integration mechanism should you choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A custom plugin that authenticates securely and calls the Microsoft Graph API endpoints.",
+          "reason": "Correct. The Microsoft Graph API provides secure access to Microsoft 365 services, including calendar events and email schedules."
+        },
+        {
+          "id": 2,
+          "text": "A hardcoded text prompt asking users to update their calendars manually.",
+          "reason": "Incorrect. Relying on manual updates breaks automation and doesn't integrate the agent with the calendar system."
+        },
+        {
+          "id": 3,
+          "text": "Exposing the calendar servers directly to the public internet without authentication.",
+          "reason": "Incorrect. Disabling authentication creates severe security risks and violates basic corporate data protection policies."
+        },
+        {
+          "id": 4,
+          "text": "A script that downloads the complete corporate database as local CSV files daily.",
+          "reason": "Incorrect. Downloading flat files is an inefficient way to manage live, real-time schedule updates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "The Microsoft Graph API provides a secure, unified gateway for agents to interact with Microsoft 365 services like calendars and emails."
+    },
+    {
+      "id": 48,
+      "topic": "Security & Governance",
+      "Question": "Your compliance team requires that all data transmissions between your hosting environment and the Azure OpenAI Service endpoint remain on a private network and never cross the public internet. What should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A standard public routing rule configured on your internet gateway.",
+          "reason": "Incorrect. Public routing sends traffic over the open internet, which violates the requirement for a private connection."
+        },
+        {
+          "id": 2,
+          "text": "A Private Endpoint using Azure Private Link connected to your Azure OpenAI instance.",
+          "reason": "Correct. Private Endpoints map services directly to your private virtual network, keeping data traffic off the public internet."
+        },
+        {
+          "id": 3,
+          "text": "A public access policy that allows all incoming connections to your resources.",
+          "reason": "Incorrect. Public access policies expose services to the open internet, creating significant security vulnerabilities."
+        },
+        {
+          "id": 4,
+          "text": "Encrypting local application logs into compressed archive files.",
+          "reason": "Incorrect. Encrypting logs protects data at rest but does not secure real-time network transmissions between services."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure Private Link creates secure, private access points for cloud services, keeping your data traffic within Microsoft's private network backbone."
+    },
+    {
+      "id": 49,
+      "topic": "Optimization & Reliability",
+      "Question": "You want to evaluate how your model's responses compare against historical expert answers. You have a test dataset and want to use an AI-assisted evaluation metric. Which metric should you select?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Network bandwidth throughput capacity metrics.",
+          "reason": "Incorrect. Bandwidth metrics track network data transfer speeds; they do not assess response text accuracy or quality."
+        },
+        {
+          "id": 2,
+          "text": "Similarity or Relevance comparison scores relative to a ground truth dataset.",
+          "reason": "Correct. Similarity and relevance metrics compare model outputs with expert ground truth data to evaluate text accuracy."
+        },
+        {
+          "id": 3,
+          "text": "The storage volume allocation metrics on your database tier.",
+          "reason": "Incorrect. Storage metrics measure data size on disk, not the qualitative accuracy of generated answers."
+        },
+        {
+          "id": 4,
+          "text": "The total number of container files created during deployment.",
+          "reason": "Incorrect. Tracking deployment files shows container infrastructure status, not the accuracy of model responses."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "AI-assisted evaluation metrics compare model text with a reference ground truth dataset to measure semantic accuracy and similarity."
+    },
+    {
+      "id": 50,
+      "topic": "Data & Context Management",
+      "Question": "You are building an enterprise search solution. The data consists of highly detailed technical schemas and source code. Which type of search query will provide the most accurate results for exact code snippets and technical terms?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A standard vector query using low-dimensional embeddings.",
+          "reason": "Incorrect. Vector search captures general semantic intent well, but can sometimes miss exact character-level matches or code snippets."
+        },
+        {
+          "id": 2,
+          "text": "A hybrid query combining keyword lookups with vector search and semantic ranking.",
+          "reason": "Correct. Hybrid queries use keyword matching for exact terms or snippets and vector search for conceptual meaning, providing high overall accuracy."
+        },
+        {
+          "id": 3,
+          "text": "A random selection query across your text index fragments.",
+          "reason": "Incorrect. Random sampling is inefficient and does not target or return relevant search results."
+        },
+        {
+          "id": 4,
+          "text": "A query that reads text data from older, archived offline logs.",
+          "reason": "Incorrect. Searching old offline logs misses current index content and doesn't provide real-time search functionality."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Hybrid search blends the precision of keyword matching for technical terms with the conceptual understanding of vector search, optimizing query accuracy."
+    },
+    {
+      "id": 51,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are building an agentic solution where multiple systems communicate asynchronously via messaging queues. You need to ensure tasks are processed reliably even during sudden traffic spikes. Which pattern should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A direct, unbuffered peer-to-peer HTTP connection scheme.",
+          "reason": "Incorrect. Unbuffered connections can drop requests or crash applications when traffic spikes exceed capacity."
+        },
+        {
+          "id": 2,
+          "text": "A Queue-Based Load Leveling pattern using Azure Service Bus.",
+          "reason": "Correct. Queue-based load leveling buffers incoming tasks in a queue, allowing background workers to process them at a steady pace."
+        },
+        {
+          "id": 3,
+          "text": "A policy that rejects all incoming user requests when traffic increases.",
+          "reason": "Incorrect. Rejecting requests hurts availability and degrades the overall user experience."
+        },
+        {
+          "id": 4,
+          "text": "A hardcoded delay timer added into every model interaction turn.",
+          "reason": "Incorrect. Fixed delays slow down performance for everyone without solving the underlying capacity or load management challenges."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Queue-based load leveling uses a message queue to buffer tasks, protecting downstream services from being overwhelmed during traffic spikes."
+    },
+    {
+      "id": 52,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "An agent needs to look up a customer's real-time shipping location from an external shipping courier's system. How should this integration be configured in a secure, reusable manner?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Instruct the model to guess the shipping location based on the tracking number format.",
+          "reason": "Incorrect. Guessing introduces inaccuracies and hallucinations, which degrades application reliability."
+        },
+        {
+          "id": 2,
+          "text": "Define an OpenAPI plugin tool that connects securely to the courier's verified API endpoint.",
+          "reason": "Correct. Exposing external APIs as plugins using OpenAPI specifications lets agents fetch accurate, real-time data securely."
+        },
+        {
+          "id": 3,
+          "text": "Download the courier's complete historical database as a flat file every morning.",
+          "reason": "Incorrect. Bulk daily downloads are inefficient and cannot provide real-time tracking updates for active shipments."
+        },
+        {
+          "id": 4,
+          "text": "Ask users to copy and paste tracking updates from the courier's website manually.",
+          "reason": "Incorrect. Manual copy-pasting removes automation, impacting usability and overall user experience."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "OpenAPI-compliant tool plugins give agents clear, structured interfaces to query up-to-date information from external systems."
+    },
+    {
+      "id": 53,
+      "topic": "Security & Governance",
+      "Question": "You want to prevent an AI model from generating inappropriate content or responding to unsafe topics. Which Azure service should you integrate directly into your deployment pipeline?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure ExpressRoute dedicated network circuits.",
+          "reason": "Incorrect. ExpressRoute establishes private network connections; it does not analyze text content or filter safety violations."
+        },
+        {
+          "id": 2,
+          "text": "Azure AI Content Safety.",
+          "reason": "Correct. Azure AI Content Safety scans text inputs and outputs to detect and block inappropriate or unsafe material based on customizable thresholds."
+        },
+        {
+          "id": 3,
+          "text": "An Azure Storage account lifecycle management filter.",
+          "reason": "Incorrect. Storage lifecycle filters manage file retention and archiving, not real-time text analysis or content moderation."
+        },
+        {
+          "id": 4,
+          "text": "An unindexed Azure Queue Storage messaging buffer.",
+          "reason": "Incorrect. Queue Storage buffers message payloads asynchronously but does not inspect or moderate text content for safety."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure AI Content Safety provides built-in content moderation tools that flag and block unsafe material before it reaches users or backend systems."
+    },
+    {
+      "id": 54,
+      "topic": "Optimization & Reliability",
+      "Question": "You are deploying an enterprise agentic application across multiple geographic regions. You want to route traffic to the closest endpoint to minimize latency and ensure high availability if a region goes offline. Which service should you choose?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A single local server gateway deployed in your primary datacenter.",
+          "reason": "Incorrect. Local gateways lack global routing optimization and create a single point of failure if that region goes down."
+        },
+        {
+          "id": 2,
+          "text": "Azure Front Door or Azure Traffic Manager.",
+          "reason": "Correct. Azure Front Door provides global routing, optimization, and instant failover capabilities to ensure high availability across regions."
+        },
+        {
+          "id": 3,
+          "text": "An unindexed Azure Storage account container file share.",
+          "reason": "Incorrect. Storage accounts store data files; they do not handle global network routing or service failovers."
+        },
+        {
+          "id": 4,
+          "text": "A standard continuous deployment pipeline with manual approval gates.",
+          "reason": "Incorrect. Deployment pipelines manage code releases; they do not handle real-time network traffic routing or failover logic."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Azure Front Door provides global traffic routing and health monitoring, automatically redirecting users to the nearest healthy region to maximize availability."
+    },
+    {
+      "id": 55,
+      "topic": "Data & Context Management",
+      "Question": "You are designing an agent that processes customer feedback forms. You want to convert these text entries into numerical vectors that capture their semantic meaning for similarity search. Which type of model should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A generative text-to-speech conversion model configuration.",
+          "reason": "Incorrect. Text-to-speech models convert text into audio files, not into numerical vectors for search operations."
+        },
+        {
+          "id": 2,
+          "text": "An text embedding model (such as text-embedding-3-large).",
+          "reason": "Correct. Embedding models convert text strings into numerical vector arrays, capturing semantic meaning for search and retrieval."
+        },
+        {
+          "id": 3,
+          "text": "A legacy rule-based keyword sorting template script.",
+          "reason": "Incorrect. Rule-based scripts match exact characters and words, but cannot generate semantic vector embeddings."
+        },
+        {
+          "id": 4,
+          "text": "A raw file compression utility tool.",
+          "reason": "Incorrect. Compression tools reduce file size for storage, but do not extract semantic concepts or generate search vectors."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Text embedding models convert unstructured language into dense vectors, enabling accurate semantic search and similarity comparisons."
+    },
+    {
+      "id": 56,
+      "topic": "Agent Architecture & Design",
+      "Question": "You are designing a solution where multiple agents operate independently, executing specialized sub-tasks and publishing updates to a shared dashboard without a single coordinator. Which orchestration pattern does this represent?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A centralized Supervisor/Worker orchestration layout.",
+          "reason": "Incorrect. Centralized supervisor models rely on a primary coordinator agent to manage and assign tasks to worker nodes."
+        },
+        {
+          "id": 2,
+          "text": "A Decentralized Peer-to-Peer / Blackboard Collaboration pattern.",
+          "reason": "Correct. Blackboard or peer-to-peer patterns allow autonomous agents to collaborate by writing updates to a shared space without a central coordinator."
+        },
+        {
+          "id": 3,
+          "text": "A single linear sequential execution script.",
+          "reason": "Incorrect. Linear scripts run steps sequentially in a fixed order, lacking the autonomy of a collaborative agent matrix."
+        },
+        {
+          "id": 4,
+          "text": "An isolated standalone assistant operating without tools.",
+          "reason": "Incorrect. This scenario describes collaborative interaction among multiple agents, not an isolated single-agent setup."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Decentralized collaboration patterns let autonomous agents work independently, sharing status updates and data through a common space like a blackboard."
+    },
+    {
+      "id": 57,
+      "topic": "Agent Capabilities & Tool Integration",
+      "Question": "Your customer support agent needs to retrieve real-time order tracking details from an external database using a REST API. Which component should you configure in Semantic Kernel to handle this integration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A native or semantic plugin function that defines the HTTP request.",
+          "reason": "Correct. Semantic Kernel uses plugins to expose custom code functions and APIs to the model, allowing it to interact with external systems."
+        },
+        {
+          "id": 2,
+          "text": "A static prompt template that hardcodes example tracking data strings.",
+          "reason": "Incorrect. Hardcoding static examples does not connect the system to the live external API to fetch real-time updates."
+        },
+        {
+          "id": 3,
+          "text": "An automated data retention rule configured on your log workspace.",
+          "reason": "Incorrect. Data retention rules manage log volume; they do not provide API connectivity or integration capabilities."
+        },
+        {
+          "id": 4,
+          "text": "Enlarging the model's max token configuration parameter to its limit.",
+          "reason": "Incorrect. Increasing token limits allows for longer text responses but does not establish connectivity to external web APIs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Plugins in Semantic Kernel provide structured interfaces that allow models to invoke native code or external REST APIs during execution."
+    },
+    {
+      "id": 58,
+      "topic": "Security & Governance",
+      "Question": "You want to monitor your agentic application in real time to trace how tasks move between agents and catch processing bottlenecks. Which Azure service should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An Azure Storage Account blob retention filter policy.",
+          "reason": "Incorrect. Retention policies manage data archiving timelines; they do not provide real-time application tracing or monitoring."
+        },
+        {
+          "id": 2,
+          "text": "Application Insights with Azure Monitor Distributed Tracing.",
+          "reason": "Correct. Application Insights and distributed tracing monitor application telemetry, mapping call stacks and tracking how requests flow across services."
+        },
+        {
+          "id": 3,
+          "text": "An unindexed Azure Queue Storage message queue.",
+          "reason": "Incorrect. Queue Storage buffers message payloads between services but does not provide tracing analytics or visualization tools."
+        },
+        {
+          "id": 4,
+          "text": "An Azure ExpressRoute private circuit monitoring panel.",
+          "reason": "Incorrect. ExpressRoute tools monitor network-level infrastructure circuits, not application or multi-agent workflow telemetry."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Distributed tracing in Application Insights tracks request paths across distributed microservices, helping developers identify performance bottlenecks."
+    },
+    {
+      "id": 59,
+      "topic": "Optimization & Reliability",
+      "Question": "Your production agent application frequently encounters rate-limiting errors (HTTP 429) from the Azure OpenAI Service during peak hours. Which approach provides the most reliable long-term solution?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Instruct users to wait several minutes before attempting to resubmit their queries.",
+          "reason": "Incorrect. Relying on manual user retries creates a poor experience and does not fix the underlying capacity issue."
+        },
+        {
+          "id": 2,
+          "text": "Implement retry logic with exponential backoff on the client side, and use an Azure API Management gateway to load-balance traffic across multiple regional model endpoints.",
+          "reason": "Correct. Combining backoff retries with global load balancing distributes requests effectively and mitigates rate-limiting disruptions."
+        },
+        {
+          "id": 3,
+          "text": "Switch the model's temperature parameter to its minimum setting.",
+          "reason": "Incorrect. Adjusting temperature changes the randomness of responses but has no impact on endpoint capacity or rate limits."
+        },
+        {
+          "id": 4,
+          "text": "Disable logging and telemetry tracking features within the application.",
+          "reason": "Incorrect. Disabling logs removes operational visibility without addressing token consumption or capacity constraints."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "An API gateway strategy that balances load across multiple regional endpoints combined with client-side retry patterns provides high availability under heavy traffic."
+    },
+    {
+      "id": 40,
+      "topic": "Data & Context Management",
+      "Question": "You are designing an enterprise RAG system using Azure AI Search. You want to refine search results by applying a secondary ranking step that uses a deep learning model to assess document relevance contextually. Which feature should you enable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A standard exact keyword matching filter on text strings.",
+          "reason": "Incorrect. Keyword filters match exact characters, but do not use deep learning models to assess contextual relevance."
+        },
+        {
+          "id": 2,
+          "text": "Semantic Reranking (Semantic Ranker) in Azure AI Search.",
+          "reason": "Correct. Semantic Ranker uses Microsoft's deep learning models to re-score and re-rank the top search results based on contextual relevance to the query."
+        },
+        {
+          "id": 3,
+          "text": "An automated data deletion policy configured on the storage account.",
+          "reason": "Incorrect. Deletion policies manage data archiving and retention; they do not score or rank query search results."
+        },
+        {
+          "id": 4,
+          "text": "An unindexed Azure Queue Storage message routing buffer.",
+          "reason": "Incorrect. Queue Storage buffers data messages asynchronously but does not provide search capabilities or ranking models."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Semantic Reranking applies deep learning models to evaluate the contextual relevance of search results, improving precision for RAG systems."
+    }
+  ]
+}

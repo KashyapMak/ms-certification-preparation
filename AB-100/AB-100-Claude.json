@@ -1,0 +1,1927 @@
+{
+  "quizName": "AB-100: Agentic AI Business Solutions Architect - Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY 1: Contoso Manufacturing — Agentic Supply Chain Transformation\n\nContoso Manufacturing is a global automotive-parts supplier operating across 14 countries. The company runs Dynamics 365 Supply Chain Management, Dynamics 365 Finance, and Microsoft Power Platform. Procurement teams spend ~40% of their time manually approving purchase orders below a $25,000 threshold, and stockouts have cost the company an estimated $18M in the last fiscal year.\n\nThe CIO has sponsored an agentic AI program with three priorities:\n1. Build an agent that autonomously approves low-risk purchase orders against policy.\n2. Build a forecasting agent grounded on three years of ERP demand history and current supplier lead-time data.\n3. Build a supplier-risk agent that proactively monitors news feeds and SEC filings to flag disruption.\n\nThe architecture team has selected Microsoft Copilot Studio for conversational interfaces and Microsoft Foundry for advanced model orchestration. The target is to reduce stockouts by 30% within 12 months and demonstrate ROI within the first two reporting quarters."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY 2: Fabrikam Financial Services — Multi-Agent Customer Service\n\nFabrikam Financial Services is a European regional bank serving 2.1M retail customers. Regulators require that all customer data remain inside the EU, that every AI-driven decision be auditable for seven years, and that any large language model interaction be defended against prompt-manipulation attacks.\n\nThe bank is designing a multi-agent contact-center solution. A triage agent receives the initial customer message and routes the conversation to one of three specialist agents: a Loans agent, an Accounts agent, and a Fraud agent. The Fraud agent must be able to call the Accounts agent for live balance data during an investigation. All agents are built in Microsoft Copilot Studio and orchestrated through Microsoft Foundry. The team plans to expose internal tools (KYC lookup, transaction history) through Model Context Protocol (MCP) servers and use Agent-to-Agent (A2A) protocol for inter-agent collaboration.\n\nThe security architect must enforce data residency, audit traceability, prompt-injection defense, and least-privilege access for every agent identity."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY 3: Northwind Retail — Enterprise Rollout of a Product-Knowledge Agent\n\nNorthwind Retail operates 320 stores and an e-commerce platform built on Dynamics 365 Commerce. The marketing organization wants an agent that answers internal staff questions about product specifications, returns policy, and promotional campaigns. Authoritative content lives in a SharePoint Online knowledge base, a Dataverse table of SKUs, and an external pricing API.\n\nThe solution architect has chosen Microsoft Copilot Studio with grounding against the SharePoint knowledge base, a custom MCP server that wraps the pricing API, and Dataverse as the source of structured SKU data. The agent will move through development, test, and production environments using Power Platform Pipelines. Stakeholders require >=85% answer precision against a 500-item evaluation set, full telemetry in Application Insights, managed solution packaging, and adherence to Microsoft's Responsible AI Standard before go-live."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Plan AI-Powered Business Solutions",
+      "scenario_id": 1,
+      "Question": "Contoso wants the purchase-order approval workflow to evaluate policy rules, reason about supplier risk, and act without a human in the loop for low-risk transactions.\n\nWhich solution pattern best fits the autonomous PO approval requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A classic Power Automate cloud flow with deterministic approval branches",
+          "reason": "Incorrect. Deterministic flows handle rule-based routing but cannot reason about context such as supplier risk signals or unstructured policy nuance."
+        },
+        {
+          "id": 2,
+          "text": "A Microsoft 365 Copilot extension that surfaces PO data inside Outlook",
+          "reason": "Incorrect. A Copilot extension exposes information but does not autonomously execute approval decisions."
+        },
+        {
+          "id": 3,
+          "text": "An autonomous agent built in Copilot Studio that is triggered by new PO events and acts against policy and risk signals",
+          "reason": "Correct. Autonomous (trigger-based) agents in Copilot Studio are designed for goal-driven, event-triggered execution without conversational input."
+        },
+        {
+          "id": 4,
+          "text": "A standalone Azure Function that calls a fine-tuned model directly",
+          "reason": "Incorrect. A bare function lacks the orchestration, governance, ALM, and grounding capabilities expected for an enterprise agent."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Agentic AI fits decisions that require reasoning over policy and unstructured context. Copilot Studio supports autonomous, event-triggered agents that operate without continuous user prompts."
+    },
+    {
+      "id": 2,
+      "topic": "Plan AI-Powered Business Solutions",
+      "scenario_id": 1,
+      "Question": "The CFO has asked you to demonstrate ROI for the agentic program in two reporting quarters.\n\nWhich combination of metrics should be the foundation of the ROI model?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Number of agents deployed and number of prompts processed",
+          "reason": "Incorrect. Activity counts do not measure business value or financial return."
+        },
+        {
+          "id": 2,
+          "text": "Avoided stockout cost, hours of procurement labor reclaimed, and total cost of ownership of the AI workload",
+          "reason": "Correct. ROI for agentic AI quantifies business value against the full TCO."
+        },
+        {
+          "id": 3,
+          "text": "Average model latency and average prompt token count",
+          "reason": "Incorrect. Operational metrics for tuning, not financial ROI inputs."
+        },
+        {
+          "id": 4,
+          "text": "Number of users with Copilot Studio licenses assigned",
+          "reason": "Incorrect. License consumption is an input cost, not an outcome metric."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "ROI aligns measurable business outcomes against the total cost of ownership of the AI solution."
+    },
+    {
+      "id": 3,
+      "topic": "Design AI-Powered Business Solutions",
+      "scenario_id": 1,
+      "Question": "The demand-forecasting agent must reason over three years of ERP history plus current supplier lead-time data.\n\nWhich grounding strategy is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ground the agent on Dataverse and the Dynamics 365 Supply Chain Management connector, with a Fabric/Azure Data Lake source for historical demand",
+          "reason": "Correct. Grounding on the system of record for live data plus a curated analytical store for history yields accurate, explainable forecasts."
+        },
+        {
+          "id": 2,
+          "text": "Fine-tune a base model on three years of CSV exports and rely solely on model memory",
+          "reason": "Incorrect. Fine-tuning bakes in static knowledge that becomes stale."
+        },
+        {
+          "id": 3,
+          "text": "Embed all ERP rows into the system prompt at runtime",
+          "reason": "Incorrect. Context windows are finite; embedding millions of rows is infeasible."
+        },
+        {
+          "id": 4,
+          "text": "Use only public web search as a knowledge source",
+          "reason": "Incorrect. Public web data cannot represent Contoso's private ERP history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Grounding combines authoritative live data sources with curated analytical stores."
+    },
+    {
+      "id": 4,
+      "topic": "Design AI-Powered Business Solutions",
+      "scenario_id": 1,
+      "Question": "Contoso wants the supplier-risk agent to detect disruption signals from external news and regulatory filings, then notify the procurement lead.\n\nWhich extensibility pattern fits the requirement with the least custom code?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Build a bespoke C# microservice that scrapes news feeds and posts to Teams",
+          "reason": "Incorrect. Custom microservices add maintenance burden."
+        },
+        {
+          "id": 2,
+          "text": "Hard-code RSS URLs into the agent's system prompt",
+          "reason": "Incorrect. Prompt-injected URLs are not retrieved at runtime."
+        },
+        {
+          "id": 3,
+          "text": "Disable the safety filters so the agent can read any external content",
+          "reason": "Incorrect. Disabling safety controls violates Responsible AI guidance."
+        },
+        {
+          "id": 4,
+          "text": "Wrap the news and SEC-filing APIs as tools via a Model Context Protocol (MCP) server, then register the MCP server with the Copilot Studio agent",
+          "reason": "Correct. MCP standardizes tool access for agents with governed extensibility."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "MCP is the open standard for exposing tools and resources to agents in a governed, reusable way."
+    },
+    {
+      "id": 5,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 1,
+      "Question": "After go-live, leadership wants to confirm the 30% stockout-reduction target.\n\nWhich monitoring approach best demonstrates business impact rather than agent technical health?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Track agent message volume and average response latency in Application Insights",
+          "reason": "Incorrect. Technical signals do not show whether stockouts have decreased."
+        },
+        {
+          "id": 2,
+          "text": "Correlate stockout incidents from Dynamics 365 SCM with the forecasting agent's recommendations through a Power BI executive scorecard",
+          "reason": "Correct. Pairing the agent's outputs with the business KPI quantifies the business outcome."
+        },
+        {
+          "id": 3,
+          "text": "Count the number of users who have logged into the Copilot Studio maker portal",
+          "reason": "Incorrect. Maker activity is unrelated to the business outcome."
+        },
+        {
+          "id": 4,
+          "text": "Inspect Foundry model logs for tokens consumed per request",
+          "reason": "Incorrect. Token usage measures cost, not business outcome."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Effective enterprise telemetry blends operational signals with business KPIs."
+    },
+    {
+      "id": 6,
+      "topic": "Design AI-Powered Business Solutions",
+      "scenario_id": 2,
+      "Question": "The Fraud agent needs to obtain a live balance from the Accounts agent during an investigation.\n\nWhich pattern should the solution architect use to enable this inter-agent collaboration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Have the Fraud agent call the Accounts API directly using its own credentials",
+          "reason": "Incorrect. Bypassing the Accounts agent violates encapsulation."
+        },
+        {
+          "id": 2,
+          "text": "Pass the balance through a shared Dataverse table polled every minute",
+          "reason": "Incorrect. Polling introduces latency and is not how agentic systems collaborate."
+        },
+        {
+          "id": 3,
+          "text": "Use the Agent-to-Agent (A2A) protocol so the Fraud agent invokes the Accounts agent as a peer with defined capabilities",
+          "reason": "Correct. A2A is the open standard for cross-agent capability discovery and invocation."
+        },
+        {
+          "id": 4,
+          "text": "Embed the Accounts agent's prompt inside the Fraud agent's system prompt",
+          "reason": "Incorrect. Copy-pasting prompts duplicates logic and breaks ownership boundaries."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Agent2Agent (A2A) is the open protocol for inter-agent capability discovery and invocation."
+    },
+    {
+      "id": 7,
+      "topic": "Design AI-Powered Business Solutions",
+      "scenario_id": 2,
+      "Question": "Which multi-agent orchestration pattern best matches the bank's triage-plus-specialist design?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An orchestrator/dispatcher pattern in which the triage agent classifies intent and delegates to the appropriate specialist agent",
+          "reason": "Correct. The orchestrator/dispatcher pattern matches the described topology."
+        },
+        {
+          "id": 2,
+          "text": "A single monolithic agent containing every skill",
+          "reason": "Incorrect. Monolithic agents undermine specialization and scaling."
+        },
+        {
+          "id": 3,
+          "text": "A peer-to-peer pattern where every customer message is broadcast to all agents",
+          "reason": "Incorrect. Broadcasting wastes compute."
+        },
+        {
+          "id": 4,
+          "text": "A staged batch pattern that processes messages overnight",
+          "reason": "Incorrect. Batch processing is incompatible with real-time customer service."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "An orchestrator/dispatcher (router) pattern is the canonical multi-agent design for differentiated workloads."
+    },
+    {
+      "id": 8,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 2,
+      "Question": "Which configuration most directly enforces that all customer data — including model inference — remains inside the European Union?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Apply an Azure tag named 'region=EU' to every resource",
+          "reason": "Incorrect. Resource tags are metadata only."
+        },
+        {
+          "id": 2,
+          "text": "Restrict user accounts via conditional access only",
+          "reason": "Incorrect. Conditional access governs sign-in, not data residency."
+        },
+        {
+          "id": 3,
+          "text": "Rely on the customer's browser locale",
+          "reason": "Incorrect. The locale does not determine where data is processed."
+        },
+        {
+          "id": 4,
+          "text": "Provision the Copilot Studio environment, Dataverse, and the Foundry project in EU-based regions and enforce data-residency policy through Power Platform admin controls",
+          "reason": "Correct. Region selection per service plus admin-tier policy enforces residency end to end."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Data residency is enforced by deploying every layer in the required geography and applying admin policy."
+    },
+    {
+      "id": 9,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 2,
+      "Question": "Which control most effectively defends the bank's agents against prompt-injection attempts embedded in customer messages?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Increase the model's context window to ignore suspicious input",
+          "reason": "Incorrect. A larger context window does not detect malicious instructions."
+        },
+        {
+          "id": 2,
+          "text": "Enable Microsoft Foundry / Azure AI Content Safety with prompt-shield (prompt-injection detection) on every agent input, combined with grounding and strict tool-execution policies",
+          "reason": "Correct. Prompt-shield plus tool scoping and grounding form the recommended defense in depth."
+        },
+        {
+          "id": 3,
+          "text": "Switch to a smaller language model",
+          "reason": "Incorrect. Model size is unrelated to prompt-injection resistance."
+        },
+        {
+          "id": 4,
+          "text": "Disable conversational history",
+          "reason": "Incorrect. Removing history does not prevent injection."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Microsoft recommends layered defenses including prompt-injection detection, strict tool boundaries, and grounded responses."
+    },
+    {
+      "id": 10,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 2,
+      "Question": "Regulators require a seven-year audit trail of every AI-driven decision.\n\nWhich approach best satisfies this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Save Application Insights logs at the default 90-day retention",
+          "reason": "Incorrect. Default retention is far shorter than the requirement."
+        },
+        {
+          "id": 2,
+          "text": "Capture only the model's final answer in a Dataverse table",
+          "reason": "Incorrect. Without input, tools called, and rationale, the audit trail is incomplete."
+        },
+        {
+          "id": 3,
+          "text": "Export agent telemetry — input, retrieved knowledge, tool calls, model output, and decision metadata — to immutable long-term storage and integrate with Microsoft Purview for compliance",
+          "reason": "Correct. A complete audit trail captures the full decision chain in immutable storage with Purview governance."
+        },
+        {
+          "id": 4,
+          "text": "Email a daily summary to the compliance officer",
+          "reason": "Incorrect. Manual summaries are not an audit trail."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "A regulator-grade audit trail captures the full request -> reasoning -> action chain in immutable, governed storage."
+    },
+    {
+      "id": 11,
+      "topic": "Plan AI-Powered Business Solutions",
+      "scenario_id": 3,
+      "Question": "Northwind plans to expose the pricing API to the product-knowledge agent through a custom MCP server.\n\nWhich statement best justifies this design choice over a traditional Power Platform custom connector?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An MCP server provides a standardized tool-discovery contract that any compliant agent (Copilot Studio, Foundry, third-party) can consume, increasing reuse and portability",
+          "reason": "Correct. MCP is an open standard, making tools portable across compliant agent runtimes."
+        },
+        {
+          "id": 2,
+          "text": "Custom connectors cannot call REST APIs",
+          "reason": "Incorrect. Custom connectors do call REST APIs."
+        },
+        {
+          "id": 3,
+          "text": "MCP servers automatically encrypt all data at the application layer",
+          "reason": "Incorrect. Encryption is a platform concern, not the rationale for MCP."
+        },
+        {
+          "id": 4,
+          "text": "Power Platform custom connectors are deprecated",
+          "reason": "Incorrect. Custom connectors remain a supported integration mechanism."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "MCP provides an open, standardized contract for tools, enabling cross-runtime reuse."
+    },
+    {
+      "id": 12,
+      "topic": "Design AI-Powered Business Solutions",
+      "scenario_id": 3,
+      "Question": "Which combination of knowledge sources should be configured on the Copilot Studio agent to satisfy the requirement that answers come from authoritative content?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Public Bing search only",
+          "reason": "Incorrect. Public search is not authoritative for proprietary content."
+        },
+        {
+          "id": 2,
+          "text": "A single large prompt containing every policy paragraph",
+          "reason": "Incorrect. Stuffing prompts is brittle and exceeds context windows."
+        },
+        {
+          "id": 3,
+          "text": "Image-based PDFs stored in a personal OneDrive",
+          "reason": "Incorrect. Personal storage is ungoverned."
+        },
+        {
+          "id": 4,
+          "text": "SharePoint Online (knowledge base), Dataverse (SKU table), and the MCP-wrapped pricing tool, with generative answers grounded on those sources",
+          "reason": "Correct. Combining governed enterprise sources with tools yields authoritative, current answers."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Grounding combines governed content (SharePoint, Dataverse) with tools (MCP pricing) for trustworthy answers."
+    },
+    {
+      "id": 13,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 3,
+      "Question": "Which ALM approach should Northwind adopt to promote the agent through development, test, and production environments?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Copy the agent definition manually between environments at each release",
+          "reason": "Incorrect. Manual copying is error-prone."
+        },
+        {
+          "id": 2,
+          "text": "Package the agent as a managed Power Platform solution and promote it through Power Platform Pipelines (or Azure DevOps) with environment variables and connection references",
+          "reason": "Correct. Managed solutions plus pipelines and environment variables give a repeatable, governed promotion path."
+        },
+        {
+          "id": 3,
+          "text": "Allow makers to edit the production agent directly",
+          "reason": "Incorrect. Editing production breaks ALM controls."
+        },
+        {
+          "id": 4,
+          "text": "Recreate the agent from scratch in each environment",
+          "reason": "Incorrect. Recreation guarantees drift."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Power Platform ALM uses managed solutions promoted via pipelines, with environment variables decoupling configuration."
+    },
+    {
+      "id": 14,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 3,
+      "Question": "How should the team validate the >=85% answer-precision target against the 500-item evaluation set?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Sample 10 questions and ask a stakeholder if the answers feel right",
+          "reason": "Incorrect. Subjective spot checks are not statistically meaningful."
+        },
+        {
+          "id": 2,
+          "text": "Rely on customer satisfaction surveys after go-live",
+          "reason": "Incorrect. CSAT lags release."
+        },
+        {
+          "id": 3,
+          "text": "Run the full 500-item evaluation set in an automated test harness, compute precision and recall against ground-truth answers, and gate release on the 85% threshold",
+          "reason": "Correct. Repeatable automated evaluation with ground-truth labels produces auditable metrics."
+        },
+        {
+          "id": 4,
+          "text": "Trust the model vendor's general benchmark scores",
+          "reason": "Incorrect. Vendor benchmarks do not reflect Northwind's domain."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Pre-release AI quality gates use automated evaluation with labeled ground truth."
+    },
+    {
+      "id": 15,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "scenario_id": 3,
+      "Question": "Which identity model should the agent use to call the SharePoint knowledge base and the MCP pricing tool while honoring least privilege?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Store a shared service-account password in the agent configuration",
+          "reason": "Incorrect. Shared passwords break least privilege."
+        },
+        {
+          "id": 2,
+          "text": "Use the maker's personal account for production connections",
+          "reason": "Incorrect. Personal accounts are not appropriate for production."
+        },
+        {
+          "id": 3,
+          "text": "Disable authentication for the MCP server",
+          "reason": "Incorrect. Unauthenticated tools violate baseline security policy."
+        },
+        {
+          "id": 4,
+          "text": "Use a workload identity (managed identity / service principal) per agent with scoped role-based access on SharePoint and the MCP endpoint",
+          "reason": "Correct. Per-agent workload identities with scoped RBAC enforce least privilege."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Least-privilege identity for agents uses workload identities with scoped RBAC."
+    },
+    {
+      "id": 16,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which statement best characterizes the difference between agentic AI and traditional process automation?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Agentic AI executes only deterministic steps defined in advance",
+          "reason": "Incorrect. Deterministic execution is the hallmark of traditional automation."
+        },
+        {
+          "id": 2,
+          "text": "Agentic AI plans, reasons, and takes actions toward a goal — including invoking tools — whereas traditional automation executes a fixed, predefined sequence",
+          "reason": "Correct. Agents are goal-oriented and tool-using; traditional automation is rule-driven and step-fixed."
+        },
+        {
+          "id": 3,
+          "text": "Agentic AI replaces every workflow and no human approval is ever required",
+          "reason": "Incorrect. Human-in-the-loop remains an explicit design pattern."
+        },
+        {
+          "id": 4,
+          "text": "Agentic AI runs only on local hardware",
+          "reason": "Incorrect. Agents run in cloud-managed runtimes such as Copilot Studio and Foundry."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Agents reason about a goal, choose tools, and adapt to context; traditional automation is fixed-sequence execution."
+    },
+    {
+      "id": 17,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "An organization can choose between extending Microsoft 365 Copilot, building a custom agent in Copilot Studio, or developing in Microsoft Foundry.\n\nFor which scenario is Microsoft Foundry the most appropriate choice?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Surface a simple FAQ inside Microsoft Teams for end users",
+          "reason": "Incorrect. A Copilot Studio agent is simpler and faster."
+        },
+        {
+          "id": 2,
+          "text": "Add an action that retrieves CRM data into a Word document",
+          "reason": "Incorrect. A Microsoft 365 Copilot extension is purpose-built for in-app context."
+        },
+        {
+          "id": 3,
+          "text": "Build a multi-agent system that orchestrates several specialized agents, uses custom models, and integrates code-first tools and evaluation pipelines",
+          "reason": "Correct. Foundry is the pro-developer platform for advanced multi-agent orchestration."
+        },
+        {
+          "id": 4,
+          "text": "Send a daily reminder email to employees",
+          "reason": "Incorrect. Power Automate suffices; AI is unnecessary."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Microsoft Foundry is the pro-code platform for advanced multi-agent orchestration, model selection, and evaluation."
+    },
+    {
+      "id": 18,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which criterion most strongly indicates that a business process is a good candidate for an AI agent rather than rule-based automation?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The process requires interpretation of unstructured content and contextual decision-making that varies case by case",
+          "reason": "Correct. Unstructured input and contextual variability are exactly where reasoning models add value."
+        },
+        {
+          "id": 2,
+          "text": "The process executes a fixed sequence of validated steps with no exceptions",
+          "reason": "Incorrect. Fixed deterministic processes are best automated with workflow tools."
+        },
+        {
+          "id": 3,
+          "text": "The process has no measurable business value",
+          "reason": "Incorrect. No-value processes should not be automated."
+        },
+        {
+          "id": 4,
+          "text": "The process produces only a single Boolean result from a single input",
+          "reason": "Incorrect. Single-input Boolean problems are trivial rule-engine work."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "AI agents are most valuable where unstructured input and contextual reasoning are required."
+    },
+    {
+      "id": 19,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which of the following are typically part of the Total Cost of Ownership of an enterprise agentic AI solution?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Only the monthly cost of Copilot licenses",
+          "reason": "Incorrect. Licensing is one of many cost lines."
+        },
+        {
+          "id": 2,
+          "text": "Only the model inference cost",
+          "reason": "Incorrect. Inference is one cost line; TCO is broader."
+        },
+        {
+          "id": 3,
+          "text": "Only the initial implementation effort",
+          "reason": "Incorrect. TCO includes ongoing run costs."
+        },
+        {
+          "id": 4,
+          "text": "Licensing and inference, plus integration build effort, storage, monitoring, security and governance overhead, training, and ongoing maintenance",
+          "reason": "Correct. TCO spans build, run, govern, and improve activities across the lifecycle."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "TCO for AI workloads includes licensing, inference, build effort, storage, monitoring, governance, training, and run costs."
+    },
+    {
+      "id": 20,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which data-readiness activity should be performed before grounding an agent on enterprise sources?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Encrypt the model weights at rest",
+          "reason": "Incorrect. Model-weight encryption is a model-security topic."
+        },
+        {
+          "id": 2,
+          "text": "Catalog sources, classify sensitivity, validate quality, and ensure permissions follow a least-privilege model so the agent only surfaces content the user is authorized to see",
+          "reason": "Correct. Data readiness — catalog, classify, validate, align permissions — is foundational to safe grounding."
+        },
+        {
+          "id": 3,
+          "text": "Disable Microsoft Purview labels so the agent can access all data",
+          "reason": "Incorrect. Disabling sensitivity labels violates Responsible AI."
+        },
+        {
+          "id": 4,
+          "text": "Replace the model with a smaller one",
+          "reason": "Incorrect. Model size is unrelated to data readiness."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Data readiness ensures the right content, at the right quality and sensitivity, with permissions intact."
+    },
+    {
+      "id": 21,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "When mapping AI initiatives to the Microsoft Cloud Adoption Framework, which discipline most directly governs the rollout of agentic AI across business units?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Migrate",
+          "reason": "Incorrect. Migrate addresses moving existing workloads to the cloud."
+        },
+        {
+          "id": 2,
+          "text": "Innovate (workload only)",
+          "reason": "Incorrect. Innovate alone does not establish governance."
+        },
+        {
+          "id": 3,
+          "text": "Govern and Manage, paired with the AI-specific guidance in the Cloud Adoption Framework",
+          "reason": "Correct. Govern and Manage establish the policy, compliance, and operational controls for enterprise AI."
+        },
+        {
+          "id": 4,
+          "text": "Ready (landing zones only)",
+          "reason": "Incorrect. Landing zones are foundation, but governance controls ongoing adoption."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Govern and Manage disciplines drive controls needed for safe AI rollout."
+    },
+    {
+      "id": 22,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "An executive sponsor asks how to prioritize candidate AI use cases.\n\nWhich approach best balances value and feasibility?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Score candidates on business impact, data readiness, technical complexity, risk, and time-to-value, then sequence on a portfolio matrix",
+          "reason": "Correct. A weighted scoring matrix across value and feasibility dimensions produces a defensible portfolio sequence."
+        },
+        {
+          "id": 2,
+          "text": "Start with the use case that is most technically novel",
+          "reason": "Incorrect. Novelty does not equal business value."
+        },
+        {
+          "id": 3,
+          "text": "Pick whichever vendor demo looked most impressive",
+          "reason": "Incorrect. Vendor demos are not prioritization criteria."
+        },
+        {
+          "id": 4,
+          "text": "Begin with whichever team has the largest budget left",
+          "reason": "Incorrect. Budget alone is not a value/feasibility signal."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Prioritization uses a multi-criteria score across value and feasibility to sequence the AI portfolio."
+    },
+    {
+      "id": 23,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which scenario most clearly indicates that a human-in-the-loop step should be retained rather than automated by an agent?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Composing a meeting summary from notes",
+          "reason": "Incorrect. Low-risk content generation is a good agent fit."
+        },
+        {
+          "id": 2,
+          "text": "Suggesting a draft email reply",
+          "reason": "Incorrect. Drafts are reviewed before send."
+        },
+        {
+          "id": 3,
+          "text": "Classifying support tickets into routine categories",
+          "reason": "Incorrect. Routine, reversible classification can be automated."
+        },
+        {
+          "id": 4,
+          "text": "Approving a high-value credit line decision with regulatory consequences",
+          "reason": "Correct. High-impact, irreversible, regulated decisions warrant a human reviewer."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Human oversight is retained for high-impact, regulated, or irreversible decisions."
+    },
+    {
+      "id": 24,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which combination most accurately represents the major skill domains assessed by Exam AB-100?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Plan, Build, and Test AI applications",
+          "reason": "Incorrect. These are not the official AB-100 domains."
+        },
+        {
+          "id": 2,
+          "text": "Plan, Design, and Deploy AI-powered business solutions",
+          "reason": "Correct. AB-100 measures Plan (25-30%), Design (25-30%), and Deploy (40-45%)."
+        },
+        {
+          "id": 3,
+          "text": "Configure, License, and Renew Microsoft Copilot",
+          "reason": "Incorrect. Licensing is not an architect-role domain."
+        },
+        {
+          "id": 4,
+          "text": "Manage, Govern, and Bill AI workloads",
+          "reason": "Incorrect. These are sub-topics, not published domain names."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Published AB-100 domains are Plan, Design, and Deploy AI-powered business solutions."
+    },
+    {
+      "id": 25,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Yes/No: For a high-risk decision such as denying a medical claim, an agent should be configured to act fully autonomously without any human review.",
+      "Options": [
+        {
+          "id": 1,
+          "text": "No",
+          "reason": "Correct. High-risk decisions retain a human-in-the-loop control as part of responsible-AI design."
+        },
+        {
+          "id": 2,
+          "text": "Yes",
+          "reason": "Incorrect. Responsible AI requires human oversight on high-impact, irreversible, or regulated decisions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Responsible AI requires meaningful human oversight on high-impact decisions."
+    },
+    {
+      "id": 26,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which stakeholder group should be engaged earliest when planning an enterprise agentic AI program?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The marketing team only",
+          "reason": "Incorrect. Marketing alone cannot cover compliance, risk, or data."
+        },
+        {
+          "id": 2,
+          "text": "The front-line agents who will be displaced",
+          "reason": "Incorrect. Front-line involvement matters but cannot frame strategy alone."
+        },
+        {
+          "id": 3,
+          "text": "A cross-functional steering group spanning business sponsors, security/compliance, data owners, IT operations, and end-user representatives",
+          "reason": "Correct. Agentic AI cuts across multiple disciplines; cross-functional steering is essential."
+        },
+        {
+          "id": 4,
+          "text": "Only the model vendor's account team",
+          "reason": "Incorrect. The vendor is a supplier, not the governance body."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Cross-functional steering aligns business value, governance, security, and adoption."
+    },
+    {
+      "id": 27,
+      "topic": "Plan AI-Powered Business Solutions",
+      "Question": "Which artifact best documents the architectural intent and trade-offs of a planned agentic solution for executive sign-off?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A list of Copilot license SKUs",
+          "reason": "Incorrect. SKUs are a procurement detail, not architectural intent."
+        },
+        {
+          "id": 2,
+          "text": "Screenshots of the maker studio",
+          "reason": "Incorrect. Screenshots are illustrative, not decisional."
+        },
+        {
+          "id": 3,
+          "text": "Model-version release notes",
+          "reason": "Incorrect. Release notes are vendor information."
+        },
+        {
+          "id": 4,
+          "text": "A solution architecture document covering business case, target architecture, integration points, data flows, security/compliance posture, ALM, and operating model",
+          "reason": "Correct. A solution architecture document is the canonical artifact for executive endorsement."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "A complete solution architecture document captures intent, trade-offs, controls, and operating model."
+    },
+    {
+      "id": 28,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which agent type in Copilot Studio is best suited to respond conversationally to a user's typed question?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Trigger-based autonomous agent",
+          "reason": "Incorrect. Autonomous agents act on events without conversational input."
+        },
+        {
+          "id": 2,
+          "text": "Conversational (prompt-response) agent",
+          "reason": "Correct. Conversational agents handle interactive question-and-answer scenarios."
+        },
+        {
+          "id": 3,
+          "text": "Batch processing job",
+          "reason": "Incorrect. Batch jobs do not handle live conversations."
+        },
+        {
+          "id": 4,
+          "text": "A Dataverse plug-in",
+          "reason": "Incorrect. Plug-ins are data-tier extensibility, not user-facing agents."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Conversational, prompt-response agents are the right pattern for interactive user dialogue."
+    },
+    {
+      "id": 29,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "An architect needs the agent to show its reasoning steps for complex analytical questions.\n\nWhich prompt-engineering technique most directly supports this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Zero-shot prompting",
+          "reason": "Incorrect. Zero-shot gives no examples and does not elicit step-by-step reasoning."
+        },
+        {
+          "id": 2,
+          "text": "Direct prompting with a single short instruction",
+          "reason": "Incorrect. Direct prompts ask for the final answer only."
+        },
+        {
+          "id": 3,
+          "text": "Chain-of-thought prompting",
+          "reason": "Correct. Chain-of-thought elicits intermediate reasoning steps before the final answer."
+        },
+        {
+          "id": 4,
+          "text": "Translation prompting",
+          "reason": "Incorrect. Translation prompts target language conversion."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Chain-of-thought prompting elicits intermediate steps, improving transparency for complex reasoning."
+    },
+    {
+      "id": 30,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which knowledge-source choice best supports grounding an agent on structured enterprise data with row-level security preserved?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dataverse tables accessed through the Copilot Studio knowledge connector",
+          "reason": "Correct. Dataverse with the knowledge connector preserves row-level security."
+        },
+        {
+          "id": 2,
+          "text": "A shared OneDrive Excel file",
+          "reason": "Incorrect. Personal storage lacks enterprise governance."
+        },
+        {
+          "id": 3,
+          "text": "A PowerPoint deck",
+          "reason": "Incorrect. Slides are not a structured-data source."
+        },
+        {
+          "id": 4,
+          "text": "Hard-coded values in the system prompt",
+          "reason": "Incorrect. Hard-coded data does not scale and bypasses security."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Dataverse delivers structured grounding while honoring security and row-level controls."
+    },
+    {
+      "id": 31,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which integration approach lets a Copilot Studio agent call a Dynamics 365 Sales record action with proper governance?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Embed a Sales record ID in the agent's name",
+          "reason": "Incorrect. The agent name is metadata; it cannot perform an action."
+        },
+        {
+          "id": 2,
+          "text": "Generate the action with a free-form natural-language description only",
+          "reason": "Incorrect. Without a typed action contract there is no governed invocation."
+        },
+        {
+          "id": 3,
+          "text": "Have the user paste the data into chat each time",
+          "reason": "Incorrect. Manual paste removes automation value."
+        },
+        {
+          "id": 4,
+          "text": "Define a Power Platform action (Dataverse/Sales connector) and register it as a tool the agent can call, with environment-level permissions",
+          "reason": "Correct. Typed Power Platform actions exposed as agent tools provide governed integration."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Typed actions registered as agent tools give a governed, permissioned path to invoke Dynamics 365 operations."
+    },
+    {
+      "id": 32,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "In a multi-agent architecture, which design principle helps each agent remain maintainable and reusable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Merge all agents into one large agent over time",
+          "reason": "Incorrect. Merging reduces reuse and worsens maintainability."
+        },
+        {
+          "id": 2,
+          "text": "Give each agent a single, well-bounded responsibility with explicit inputs, outputs, and tools",
+          "reason": "Correct. Single responsibility with explicit contracts enables reuse and isolation."
+        },
+        {
+          "id": 3,
+          "text": "Share a single system prompt across every agent",
+          "reason": "Incorrect. Shared prompts couple agents and obscure responsibility."
+        },
+        {
+          "id": 4,
+          "text": "Disable telemetry to reduce log volume",
+          "reason": "Incorrect. Disabling telemetry harms operability."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Single-responsibility agents with explicit contracts are reusable, composable, and easier to operate."
+    },
+    {
+      "id": 33,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "What is the primary purpose of the Agent-to-Agent (A2A) protocol?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To compress agent telemetry before storage",
+          "reason": "Incorrect. Telemetry compression is unrelated to A2A."
+        },
+        {
+          "id": 2,
+          "text": "To replace HTTPS for general web traffic",
+          "reason": "Incorrect. A2A is an agent-collaboration protocol."
+        },
+        {
+          "id": 3,
+          "text": "To provide an open standard for agents to discover capabilities of, and securely collaborate with, other agents across runtimes and vendors",
+          "reason": "Correct. A2A enables capability discovery and secure cross-agent collaboration."
+        },
+        {
+          "id": 4,
+          "text": "To deploy agents to mobile devices",
+          "reason": "Incorrect. A2A is not a packaging or delivery mechanism."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Agent2Agent (A2A) standardizes how agents discover and call each other's capabilities across runtimes."
+    },
+    {
+      "id": 34,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "What is the primary purpose of the Model Context Protocol (MCP)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To provide an open standard for exposing tools, resources, and data sources to AI agents in a portable, runtime-agnostic way",
+          "reason": "Correct. MCP standardizes tool and resource exposure for compliant agent runtimes."
+        },
+        {
+          "id": 2,
+          "text": "To compress prompts before submission to the model",
+          "reason": "Incorrect. MCP is a tool-exposure standard."
+        },
+        {
+          "id": 3,
+          "text": "To replace Power Automate connectors organization-wide",
+          "reason": "Incorrect. MCP complements existing connector ecosystems."
+        },
+        {
+          "id": 4,
+          "text": "To train large language models on enterprise data",
+          "reason": "Incorrect. MCP is not a training mechanism."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Model Context Protocol is the open standard for exposing tools and data to agents portably."
+    },
+    {
+      "id": 35,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "An agent must answer common questions cheaply at high volume but escalate complex reasoning tasks to a more capable model.\n\nWhich design pattern should the architect adopt?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use only a small model and accept lower quality on complex tasks",
+          "reason": "Incorrect. Accepting lower quality is not a design pattern."
+        },
+        {
+          "id": 2,
+          "text": "Use only the largest model regardless of cost",
+          "reason": "Incorrect. This wastes spend and increases latency."
+        },
+        {
+          "id": 3,
+          "text": "Re-prompt the same model 10 times for every question",
+          "reason": "Incorrect. Repeated prompting is wasteful."
+        },
+        {
+          "id": 4,
+          "text": "Model routing — direct simple queries to a small/fast model and escalate complex queries to a larger reasoning model",
+          "reason": "Correct. Model routing balances cost, latency, and quality."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Model routing sends each request to the model best suited for it, optimizing cost and quality."
+    },
+    {
+      "id": 36,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which design element is essential to handle gracefully when an agent cannot answer or a tool call fails?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Crash the conversation and clear context",
+          "reason": "Incorrect. Crashing harms UX."
+        },
+        {
+          "id": 2,
+          "text": "Explicit fallback logic — for example, escalate to a human agent, apologize, or offer an alternative action",
+          "reason": "Correct. Fallback logic provides a defined, governed path when the agent is uncertain."
+        },
+        {
+          "id": 3,
+          "text": "Increase model temperature to generate any answer",
+          "reason": "Incorrect. Higher temperature increases hallucination risk."
+        },
+        {
+          "id": 4,
+          "text": "Hide the failure from the user",
+          "reason": "Incorrect. Concealing failures erodes trust."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Defined fallback behavior is a core element of trustworthy agent design."
+    },
+    {
+      "id": 37,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "An organization wants pro-code developers to extend agents with custom Python tools and evaluation pipelines.\n\nWhich Microsoft platform fits best?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Power Apps canvas designer",
+          "reason": "Incorrect. Canvas apps are for low-code UIs."
+        },
+        {
+          "id": 2,
+          "text": "Microsoft Lists",
+          "reason": "Incorrect. Lists store data; they are not an agent runtime."
+        },
+        {
+          "id": 3,
+          "text": "Microsoft Foundry with its agent SDK, tool framework, and evaluation tooling",
+          "reason": "Correct. Foundry is the pro-developer platform for custom tools and evaluations."
+        },
+        {
+          "id": 4,
+          "text": "SharePoint Designer",
+          "reason": "Incorrect. SharePoint Designer is unrelated to AI agent development."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Microsoft Foundry provides pro-code SDKs, custom tools, and evaluation pipelines."
+    },
+    {
+      "id": 38,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which approach gives the agent persistent memory of prior user interactions across sessions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Persist conversation state to Dataverse (or another governed store) and reload relevant context on subsequent sessions",
+          "reason": "Correct. Persisting state to a governed store and reloading context enables cross-session memory."
+        },
+        {
+          "id": 2,
+          "text": "Increase the temperature parameter on the model",
+          "reason": "Incorrect. Temperature controls randomness, not memory."
+        },
+        {
+          "id": 3,
+          "text": "Set the model to a larger size",
+          "reason": "Incorrect. Model size does not provide persistent memory."
+        },
+        {
+          "id": 4,
+          "text": "Disable session timeout in the browser",
+          "reason": "Incorrect. Browser timeouts do not control server-side state."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Persistent memory is implemented by storing conversation state in a governed data store."
+    },
+    {
+      "id": 39,
+      "topic": "Design AI-Powered Business Solutions",
+      "Question": "Which prompt pattern is most appropriate to enforce a specific tone and scope, for example, 'You are a compliance officer for a European bank'?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Translation prompting",
+          "reason": "Incorrect. Translation prompts target multi-lingual conversion."
+        },
+        {
+          "id": 2,
+          "text": "Zero-shot summarization prompting",
+          "reason": "Incorrect. Summarization patterns target text condensation."
+        },
+        {
+          "id": 3,
+          "text": "Open-ended brainstorming prompting",
+          "reason": "Incorrect. Open-ended prompts widen scope."
+        },
+        {
+          "id": 4,
+          "text": "Role-based prompting",
+          "reason": "Correct. Role-based prompting assigns the model a persona, constraining tone and scope."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Role-based prompts focus tone, scope, and domain expertise consistently."
+    },
+    {
+      "id": 40,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which ALM artifact decouples environment-specific values such as endpoints when promoting an agent solution from dev to production?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Hard-coded URLs inside the agent prompt",
+          "reason": "Incorrect. Hard-coding prevents safe promotion."
+        },
+        {
+          "id": 2,
+          "text": "Environment variables and connection references in the managed solution",
+          "reason": "Correct. These externalize environment-specific configuration in Power Platform solutions."
+        },
+        {
+          "id": 3,
+          "text": "User passwords stored in the solution",
+          "reason": "Incorrect. Passwords must never be packaged in a solution."
+        },
+        {
+          "id": 4,
+          "text": "A README file in SharePoint",
+          "reason": "Incorrect. Documentation is not an ALM artifact."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Environment variables and connection references externalize environment-specific values for clean promotion."
+    },
+    {
+      "id": 41,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which environment topology is appropriate for an enterprise agent that needs safe iteration, evaluation, and stable production?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A single production environment that all makers edit directly",
+          "reason": "Incorrect. Editing production directly defeats ALM discipline."
+        },
+        {
+          "id": 2,
+          "text": "Two environments named 'mine' and 'theirs'",
+          "reason": "Incorrect. Personal-style topologies do not support enterprise ALM."
+        },
+        {
+          "id": 3,
+          "text": "Separated Development, Test/Validation, and Production environments, each with appropriate governance and DLP policies",
+          "reason": "Correct. Separated dev / test / prod is the recommended Power Platform topology."
+        },
+        {
+          "id": 4,
+          "text": "A single environment with version comments in the description field",
+          "reason": "Incorrect. Comments are not isolation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "A dev/test/prod topology with managed solutions and pipelines is the enterprise ALM standard."
+    },
+    {
+      "id": 42,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which metric pair is most relevant when evaluating whether an information-retrieval agent returns correct and complete answers?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Precision and Recall",
+          "reason": "Correct. Precision measures correctness; recall measures coverage — both are core IR metrics."
+        },
+        {
+          "id": 2,
+          "text": "CPU utilization and GPU memory",
+          "reason": "Incorrect. These are infrastructure metrics."
+        },
+        {
+          "id": 3,
+          "text": "Disk free space and IOPS",
+          "reason": "Incorrect. Storage metrics do not measure answer quality."
+        },
+        {
+          "id": 4,
+          "text": "Active Directory sign-in count",
+          "reason": "Incorrect. Sign-in counts are unrelated to retrieval quality."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Precision and recall remain the foundational metrics for retrieval evaluation."
+    },
+    {
+      "id": 43,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Where should detailed telemetry (latency, token usage, errors, custom events) for a Copilot Studio agent be aggregated for production monitoring?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "On the maker's local workstation logs",
+          "reason": "Incorrect. Local logs are not centralized."
+        },
+        {
+          "id": 2,
+          "text": "Inside the Microsoft 365 message center",
+          "reason": "Incorrect. The message center carries service messages."
+        },
+        {
+          "id": 3,
+          "text": "Only in the browser console of each user",
+          "reason": "Incorrect. Client consoles do not aggregate or persist data."
+        },
+        {
+          "id": 4,
+          "text": "Azure Application Insights connected to the agent and visualized through Azure Monitor / Log Analytics dashboards",
+          "reason": "Correct. Application Insights with Azure Monitor provides the standard telemetry stack."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Application Insights and Azure Monitor are the standard telemetry stack for production agent observability."
+    },
+    {
+      "id": 44,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which agent KPI most directly indicates user value rather than technical health?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Average tokens per request",
+          "reason": "Incorrect. Token count is a cost/efficiency signal."
+        },
+        {
+          "id": 2,
+          "text": "Task completion rate (the share of sessions in which the user achieves the intended outcome)",
+          "reason": "Correct. Task completion rate is an outcome-oriented KPI."
+        },
+        {
+          "id": 3,
+          "text": "CPU utilization",
+          "reason": "Incorrect. Infrastructure metric, not value."
+        },
+        {
+          "id": 4,
+          "text": "Number of model versions deployed",
+          "reason": "Incorrect. Release counts are an operational metric."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Task completion rate measures whether the agent actually helps users complete what they came to do."
+    },
+    {
+      "id": 45,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which continuous-improvement loop is appropriate for a deployed agent?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Wait for an annual audit to assess changes",
+          "reason": "Incorrect. Annual cycles are too slow for agentic workloads."
+        },
+        {
+          "id": 2,
+          "text": "Re-deploy weekly without measurement",
+          "reason": "Incorrect. Releases without measurement create regression risk."
+        },
+        {
+          "id": 3,
+          "text": "Collect telemetry and user feedback, replay against an evaluation set, identify regressions, and update prompts, knowledge, or model selection through ALM",
+          "reason": "Correct. A measure -> evaluate -> improve -> re-release loop is the recommended model."
+        },
+        {
+          "id": 4,
+          "text": "Replace all prompts whenever a new model version ships",
+          "reason": "Incorrect. Wholesale replacement without testing causes regressions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Continuous improvement uses telemetry plus an evaluation set to detect regressions."
+    },
+    {
+      "id": 46,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which set of principles defines Microsoft's Responsible AI Standard?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, and Accountability",
+          "reason": "Correct. These six principles are the foundation of Microsoft's Responsible AI Standard."
+        },
+        {
+          "id": 2,
+          "text": "Speed, Scale, Sales, and Storage",
+          "reason": "Incorrect. These are not Responsible AI principles."
+        },
+        {
+          "id": 3,
+          "text": "GPU, CPU, Memory, Disk",
+          "reason": "Incorrect. Compute resources, not principles."
+        },
+        {
+          "id": 4,
+          "text": "Plan, Design, Deploy, Renew",
+          "reason": "Incorrect. These are exam domain words, not RAI principles."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Microsoft's Responsible AI Standard is built on six principles."
+    },
+    {
+      "id": 47,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "An organization must keep all AI inference inside a specific geography.\n\nWhich configuration is most directly responsible for honoring this constraint?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Setting a friendly name on the environment",
+          "reason": "Incorrect. Friendly names are metadata only."
+        },
+        {
+          "id": 2,
+          "text": "Updating the agent description",
+          "reason": "Incorrect. Description text does not constrain inference."
+        },
+        {
+          "id": 3,
+          "text": "Adjusting the agent's avatar image",
+          "reason": "Incorrect. Avatars are presentation only."
+        },
+        {
+          "id": 4,
+          "text": "Choosing region-bound services and configuring data residency / boundary settings at the tenant, environment, and AI workload level",
+          "reason": "Correct. Region-bound services plus explicit boundary settings enforce residency."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Geography controls are enforced by region-bound services and explicit data-boundary settings."
+    },
+    {
+      "id": 48,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which baseline encryption posture should an enterprise agentic AI solution maintain?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Encryption at rest only",
+          "reason": "Incorrect. In-transit protection is also required."
+        },
+        {
+          "id": 2,
+          "text": "Encryption at rest and in transit, with optional customer-managed keys for sensitive workloads",
+          "reason": "Correct. This is the enterprise baseline; CMK is available for higher-sensitivity workloads."
+        },
+        {
+          "id": 3,
+          "text": "Encryption in transit only",
+          "reason": "Incorrect. At-rest protection is also required."
+        },
+        {
+          "id": 4,
+          "text": "No encryption inside the corporate network",
+          "reason": "Incorrect. Internal networks still require encryption."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Microsoft enterprise security baselines mandate encryption at rest and in transit, with CMK available."
+    },
+    {
+      "id": 49,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which access-control approach should govern who can publish a Copilot Studio agent to a production environment?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Allow every maker in the tenant to publish to production",
+          "reason": "Incorrect. Open publish rights violate least privilege."
+        },
+        {
+          "id": 2,
+          "text": "Use a single global admin account shared by the team",
+          "reason": "Incorrect. Shared admin accounts break audit."
+        },
+        {
+          "id": 3,
+          "text": "Apply role-based access control with environment-level security roles, restricting publish rights to a small group of approved owners and using a dedicated service principal in CI/CD",
+          "reason": "Correct. Scoped RBAC and CI/CD identities enforce least privilege and audit."
+        },
+        {
+          "id": 4,
+          "text": "Manage publishing rights through email approvals only",
+          "reason": "Incorrect. Email approvals are not an enforceable access control."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Scoped RBAC, restricted publish rights, and CI/CD identities protect production publish operations."
+    },
+    {
+      "id": 50,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which Azure feature directly inspects model inputs and outputs for harmful content and jailbreak attempts?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure AI Content Safety (with prompt-shield / jailbreak detection)",
+          "reason": "Correct. Azure AI Content Safety scans inputs and outputs for harmful content and prompt-injection patterns."
+        },
+        {
+          "id": 2,
+          "text": "Azure Cost Management",
+          "reason": "Incorrect. Cost Management deals with billing."
+        },
+        {
+          "id": 3,
+          "text": "Azure DNS",
+          "reason": "Incorrect. DNS resolves names."
+        },
+        {
+          "id": 4,
+          "text": "Azure Service Bus",
+          "reason": "Incorrect. Service Bus is messaging."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure AI Content Safety provides harmful-content classification and prompt-injection detection."
+    },
+    {
+      "id": 51,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which Microsoft service helps discover, classify, and govern sensitive data flowing through AI agents and Copilot interactions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Front Door",
+          "reason": "Incorrect. Front Door is an application delivery service."
+        },
+        {
+          "id": 2,
+          "text": "Power BI Premium",
+          "reason": "Incorrect. Power BI is analytics and visualization."
+        },
+        {
+          "id": 3,
+          "text": "Azure Container Registry",
+          "reason": "Incorrect. ACR stores container images."
+        },
+        {
+          "id": 4,
+          "text": "Microsoft Purview (including the Data Security Posture Management capabilities for AI)",
+          "reason": "Correct. Purview provides classification, labeling, DLP, and AI-specific data security posture management."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Microsoft Purview is the platform for classifying, labeling, governing, and monitoring sensitive data."
+    },
+    {
+      "id": 52,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "An auditor needs evidence that a specific decision recommended by an agent was based on certain knowledge content and tool outputs.\n\nWhich practice supports this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Log only the final response and discard intermediate context",
+          "reason": "Incorrect. Without intermediate context, the decision is not reproducible."
+        },
+        {
+          "id": 2,
+          "text": "Capture and retain the full request, retrieved knowledge citations, tool invocations, model response, and decision metadata in tamper-resistant storage",
+          "reason": "Correct. Tamper-resistant, end-to-end decision logging is the foundation of auditable AI."
+        },
+        {
+          "id": 3,
+          "text": "Email a screenshot of the chat to the auditor each time",
+          "reason": "Incorrect. Manual screenshots are not an audit control."
+        },
+        {
+          "id": 4,
+          "text": "Rely on the model vendor's training logs",
+          "reason": "Incorrect. Vendor training logs do not record customer interactions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Auditable AI captures the full decision chain in tamper-resistant storage with retention aligned to regulation."
+    },
+    {
+      "id": 53,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Yes/No: Promoting an agent directly from a developer's personal environment to production — bypassing test — is an acceptable ALM practice for enterprise solutions.",
+      "Options": [
+        {
+          "id": 1,
+          "text": "No",
+          "reason": "Correct. Enterprise ALM requires promotion through a validated test environment before production."
+        },
+        {
+          "id": 2,
+          "text": "Yes",
+          "reason": "Incorrect. Bypassing test removes regression detection and violates enterprise ALM controls."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Direct-to-production promotion bypasses validation and breaks ALM controls."
+    },
+    {
+      "id": 54,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "When packaging a Power Platform solution for production deployment, which solution type prevents unmanaged customization in the target environment?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Unmanaged solution",
+          "reason": "Incorrect. Unmanaged is intended for development and allows free edits."
+        },
+        {
+          "id": 2,
+          "text": "A patch package only",
+          "reason": "Incorrect. Patches layer on top of solutions."
+        },
+        {
+          "id": 3,
+          "text": "Managed solution",
+          "reason": "Correct. Managed solutions prevent direct customization in the target environment."
+        },
+        {
+          "id": 4,
+          "text": "Personal view export",
+          "reason": "Incorrect. Personal views are user-scoped."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Managed solutions are the production packaging type in Power Platform."
+    },
+    {
+      "id": 55,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which approach gives an architect the safest path to roll back a problematic agent change in production?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Delete the agent and rebuild it from memory",
+          "reason": "Incorrect. Recreating from memory is error-prone."
+        },
+        {
+          "id": 2,
+          "text": "Disable telemetry during the rollback to reduce noise",
+          "reason": "Incorrect. Telemetry is required for verification during rollback."
+        },
+        {
+          "id": 3,
+          "text": "Ask end users to clear their browser caches",
+          "reason": "Incorrect. Cache clearing does not undo a server-side change."
+        },
+        {
+          "id": 4,
+          "text": "Maintain versioned managed solutions and the prior model/prompt configuration so the previous known-good version can be redeployed through the pipeline",
+          "reason": "Correct. Versioned packages plus pipeline redeployment is the safe rollback pattern."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Versioned, pipeline-driven redeployment of the prior known-good solution is the safe rollback path."
+    },
+    {
+      "id": 56,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which of the following are explicit principles of Microsoft's Responsible AI Standard? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Fairness",
+          "reason": "Correct. Fairness is one of the six Responsible AI principles."
+        },
+        {
+          "id": 2,
+          "text": "Aggressive cost reduction",
+          "reason": "Incorrect. Cost reduction is a business objective."
+        },
+        {
+          "id": 3,
+          "text": "Transparency",
+          "reason": "Correct. Transparency is one of the six Responsible AI principles."
+        },
+        {
+          "id": 4,
+          "text": "Latency minimization",
+          "reason": "Incorrect. Performance is a non-functional requirement."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Fairness and Transparency are two of the six Responsible AI principles."
+    },
+    {
+      "id": 57,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which Microsoft control prevents an agent's connectors from being combined with certain endpoints (for example, blocking a business connector from sharing data with a public social network)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Backup",
+          "reason": "Incorrect. Backup protects data integrity; it does not control connector pairing."
+        },
+        {
+          "id": 2,
+          "text": "Power Platform Data Loss Prevention (DLP) policies",
+          "reason": "Correct. DLP policies classify connectors into business and non-business groups and prevent disallowed combinations."
+        },
+        {
+          "id": 3,
+          "text": "Azure DNS Private Resolver",
+          "reason": "Incorrect. DNS resolution does not enforce data-policy boundaries."
+        },
+        {
+          "id": 4,
+          "text": "Microsoft Defender SmartScreen",
+          "reason": "Incorrect. SmartScreen is a browser/endpoint protection."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Power Platform DLP policies separate connectors into groups and block disallowed combinations."
+    },
+    {
+      "id": 58,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Yes/No: An agent's responses should be evaluated against a curated 'golden' dataset before each production release.",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Yes",
+          "reason": "Correct. Pre-release evaluation against a curated golden dataset is the recommended quality gate for AI workloads."
+        },
+        {
+          "id": 2,
+          "text": "No",
+          "reason": "Incorrect. Skipping evaluation introduces regression risk that should be detected before production."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Pre-release evaluation against a labeled golden dataset is a core AI ALM quality gate."
+    },
+    {
+      "id": 59,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "An organization is rolling out an internal Copilot Studio agent.\n\nWhich activity most directly accelerates sustained user adoption?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Increase model temperature to make responses more varied",
+          "reason": "Incorrect. Variability does not drive adoption."
+        },
+        {
+          "id": 2,
+          "text": "Hide the agent from most users to limit support volume",
+          "reason": "Incorrect. Restricting access prevents adoption."
+        },
+        {
+          "id": 3,
+          "text": "Run a structured change-management program including role-based training, identified champions, communication plan, and a feedback loop that informs ongoing improvements",
+          "reason": "Correct. Structured change management combined with champions and feedback loops is the proven approach for sustained AI adoption."
+        },
+        {
+          "id": 4,
+          "text": "Send a one-time launch email and rely on word of mouth",
+          "reason": "Incorrect. One-time communication is insufficient for sustained adoption."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Adoption is accelerated by structured change management, training, champions, and feedback loops."
+    },
+    {
+      "id": 60,
+      "topic": "Deploy AI-Powered Business Solutions",
+      "Question": "Which Microsoft platform provides managed endpoints, a model catalog, evaluation tooling, and content-safety integration for hosting custom AI models that agents call?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Microsoft Dataverse",
+          "reason": "Incorrect. Dataverse is the relational data platform."
+        },
+        {
+          "id": 2,
+          "text": "Microsoft Teams Admin Center",
+          "reason": "Incorrect. The admin center manages Teams settings."
+        },
+        {
+          "id": 3,
+          "text": "SharePoint Online",
+          "reason": "Incorrect. SharePoint is a content platform."
+        },
+        {
+          "id": 4,
+          "text": "Microsoft Foundry (Azure AI Foundry)",
+          "reason": "Correct. Microsoft Foundry provides managed model endpoints, a model catalog, evaluations, and integrated content safety."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Microsoft Foundry (Azure AI Foundry) is Microsoft's enterprise platform for hosting models with managed endpoints, evaluations, and safety integration."
+    }
+  ]
+}
