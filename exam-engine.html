@@ -554,10 +554,11 @@
                 if (isRevealed) $('.option-item').addClass('pointer-events-none');
 
                 $('#prev-btn').prop('disabled', currentIndex === 0);
+                $('#finish-btn').removeClass('hidden');
                 if (currentIndex === currentExam.questions.length - 1) {
-                    $('#next-btn').addClass('hidden'); $('#finish-btn').removeClass('hidden');
+                    $('#next-btn').prop('disabled', true).addClass('opacity-30 cursor-not-allowed');
                 } else {
-                    $('#next-btn').removeClass('hidden'); $('#finish-btn').addClass('hidden');
+                    $('#next-btn').prop('disabled', false).removeClass('opacity-30 cursor-not-allowed');
                 }
                 updateStats();
             }
@@ -576,7 +577,13 @@
                 renderQuestion();
             });
 
-            $('#next-btn').click(() => { currentIndex++; renderQuestion(); window.scrollTo(0, 0); });
+            $('#next-btn').click(() => {
+                if (currentIndex < currentExam.questions.length - 1) {
+                    currentIndex++;
+                    renderQuestion();
+                    window.scrollTo(0, 0);
+                }
+            });
             $('#prev-btn').click(() => { currentIndex--; renderQuestion(); window.scrollTo(0, 0); });
             $('#show-ans-btn').click(function () {
                 // Show Answer button only available in Practice mode
@@ -615,9 +622,11 @@
                     const isCorrect = uArr.join(',') === cArr.join(',') && uArr.length > 0;
                     if (isCorrect) totalPoints += weight;
 
-                    const reviewItem = $(`
+                    const scenarioText = q.scenario_id ? (scenarios.find(s => s.id === q.scenario_id)?.text || '') : '';
+                const reviewItem = $(`
                         <div class="bg-white rounded-xl p-6 border-l-8 ${isCorrect ? 'border-green-500' : 'border-red-500'} shadow-md">
                             ${q.topic ? `<div class="text-[9px] font-black text-blue-500 uppercase mb-1">${q.topic}</div>` : ''}
+                            ${scenarioText ? `<div class="text-[11px] text-slate-500 italic mb-2"><strong>Scenario:</strong><div class="text-[12px] mt-1">${formatText(scenarioText)}</div></div>` : ''}
                             <h4 class="font-black text-slate-800 mb-4">Q${idx + 1}: ${formatText(q.Question)}</h4>
                             <div class="space-y-3 mb-4">
                                 ${q.Options.map(opt => {
