@@ -128,12 +128,16 @@
                 </div>
                 
                 <div id="question-container" class="space-y-6">
-                    <p id="q-text" class="text-xl font-semibold leading-snug text-slate-800"></p>
-                    <div id="scenario-button-container" class="hidden mt-2">
-                        <button id="view-scenario-btn" class="inline-flex items-center gap-2 px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded border border-blue-300 hover:bg-blue-200 transition-colors">
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>View Scenario
+                    <div id="scenario-panel" class="hidden rounded-3xl border border-blue-200 bg-blue-50 p-5 text-slate-800">
+                        <div class="mb-3 flex items-center gap-2 text-[11px] font-black uppercase tracking-[0.18em] text-blue-700">
+                            <span>Case Study</span>
+                        </div>
+                        <div id="scenario-preview" class="leading-relaxed whitespace-pre-wrap text-slate-800"></div>
+                        <button id="view-scenario-panel-btn" type="button" class="mt-4 inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-xs font-black text-white transition hover:bg-blue-700">
+                            View Full Scenario
                         </button>
                     </div>
+                    <p id="q-text" class="text-xl font-semibold leading-snug text-slate-800"></p>
                     <div id="selection-hint" class="px-3 py-1 bg-amber-50 text-amber-700 text-[11px] font-black uppercase rounded border border-amber-200 w-fit"></div>
                     <div id="options-list" class="grid gap-3"></div>
                 </div>
@@ -238,6 +242,58 @@
             return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
         }
 
+        const SCENARIO_START_REGEX = /^(CASE STUDY|Case Study|SCENARIO:|Scenario:|Case Study Context)/i;
+        const SCENARIO_BREAK_RE = /\n\s*\n(?=(?:Question:|Refer to|Which |What |How |Select |Choose |Based on |In this scenario|You need |Your |The |A |This ))/i;
+        let currentScenarioText = '';
+
+        function truncateText(text, maxLength = 280) {
+            if (!text) return '';
+            if (text.length <= maxLength) return text;
+            const trimmed = text.slice(0, maxLength);
+            const lastSpace = trimmed.lastIndexOf(' ');
+            return `${trimmed.slice(0, lastSpace > 0 ? lastSpace : maxLength)}…`;
+        }
+
+        function splitScenarioContent(text) {
+            if (!text) return { scenarioText: '', questionText: '' };
+            const trimmed = text.trim();
+            if (!SCENARIO_START_REGEX.test(trimmed)) {
+                return { scenarioText: '', questionText: trimmed };
+            }
+
+            const match = trimmed.match(SCENARIO_BREAK_RE);
+            if (match && match.index !== undefined) {
+                return {
+                    scenarioText: trimmed.slice(0, match.index).trim(),
+                    questionText: trimmed.slice(match.index).trim(),
+                };
+            }
+
+            const firstBreak = trimmed.indexOf('\n\n');
+            if (firstBreak > 0 && firstBreak < trimmed.length - 1) {
+                const scenarioText = trimmed.slice(0, firstBreak).trim();
+                const questionText = trimmed.slice(firstBreak).trim();
+                if (questionText.length > 20) {
+                    return { scenarioText, questionText };
+                }
+            }
+
+            return { scenarioText: '', questionText: trimmed };
+        }
+
+        function getQuestionScenarioText(q) {
+            if (q?.scenario_id) {
+                const scenario = scenarios.find(s => s.id === q.scenario_id);
+                if (scenario?.text) return scenario.text.trim();
+            }
+            return splitScenarioContent(q.Question).scenarioText;
+        }
+
+        function getQuestionTextOnly(q) {
+            if (q?.scenario_id) return q.Question;
+            return splitScenarioContent(q.Question).questionText || q.Question;
+        }
+
         // Start the timer
         function startTimer() {
             if (timerInterval) clearInterval(timerInterval);
@@ -282,9 +338,10 @@
 
         // Show scenario modal
         function showScenario(scenarioId) {
-            const scenario = scenarios.find(s => s.id === scenarioId);
-            if (scenario) {
-                $('#scenario-content').html(formatText(scenario.text));
+            const scenario = typeof scenarioId !== 'undefined' ? scenarios.find(s => s.id === scenarioId) : null;
+            const text = scenario?.text?.trim() || currentScenarioText || '';
+            if (text) {
+                $('#scenario-content').html(formatText(text));
                 $('#scenario-modal').removeClass('hidden').fadeIn();
             }
         }
@@ -486,23 +543,23 @@
                     $('#q-topic').hide();
                 }
 
-                $('#q-text').html(formatText(q.Question));
-                
-                // Show/hide scenario button based on current question
-                if (q.scenario_id) {
-                    const scenario = scenarios.find(s => s.id === q.scenario_id);
-                    if (scenario) {
-                        $('#scenario-button-container').removeClass('hidden');
-                        $('#view-scenario-btn').off('click').click(function(e) {
-                            e.preventDefault();
-                            showScenario(q.scenario_id);
-                        });
-                    } else {
-                        $('#scenario-button-container').addClass('hidden');
-                    }
+                const scenarioText = getQuestionScenarioText(q);
+                const questionText = getQuestionTextOnly(q);
+                currentScenarioText = scenarioText;
+
+                if (scenarioText) {
+                    const previewText = truncateText(scenarioText, 280);
+                    $('#scenario-preview').html(formatText(previewText));
+                    $('#scenario-panel').removeClass('hidden');
+                    $('#view-scenario-panel-btn').off('click').click(function () {
+                        showScenario(q.scenario_id);
+                    });
                 } else {
-                    $('#scenario-button-container').addClass('hidden');
+                    $('#scenario-panel').addClass('hidden');
+                    $('#scenario-preview').empty();
                 }
+
+                $('#q-text').html(formatText(questionText));
                 
                 $('#current-q-num').text(currentIndex + 1);
                 $('#selection-hint').text(max === 1 ? "Choose 1 Correct Option" : `Select ${max} Correct Options`);

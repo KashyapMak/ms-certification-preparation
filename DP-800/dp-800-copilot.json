@@ -1,0 +1,1962 @@
+{
+  "quizName": "DP-800: Developing AI-Enabled Database Solutions Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY: Contoso Retail Database Modernization\n\nContoso Retail operates an online commerce platform backed by Azure SQL Database and SQL Server. The company stores product records, customer profiles, order history, and support tickets. Contoso wants to modernize its database design to support analytics, semi-structured JSON attributes, secure customer data, and AI-assisted development.\n\nThe database team must design tables, indexes, constraints, programmability objects, and advanced T-SQL queries. They also plan to use GitHub Copilot for database development but must avoid exposing sensitive business data or secrets."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY: Fabrikam Insurance Secure Deployment\n\nFabrikam Insurance is building a secure claims processing solution using Azure SQL Database, GitHub, SQL Database Projects, and Azure services. Claims data includes personally identifiable information, policy numbers, medical notes, and claim amounts.\n\nThe architecture team requires passwordless access from Azure Functions, auditing of sensitive changes, row filtering by business unit, controlled CI/CD deployments, schema drift detection, and operational monitoring through Azure Monitor services."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY: Northwind Knowledge Assistant\n\nNorthwind Traders is creating an AI-enabled knowledge assistant using SQL databases in Microsoft Fabric and Azure SQL. The solution must answer employee questions by searching product manuals, support cases, order notes, and structured customer records.\n\nThe team must generate embeddings, store vectors, implement full-text and vector search, combine rankings with hybrid search, and use retrieved database context in prompts sent to a language model. The solution must keep embeddings updated as source data changes."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Design and implement database objects",
+      "scenario_id": 1,
+      "Question": "Contoso stores large product sales facts and runs frequent aggregation queries by product, month, and region.\n\nWhich index type should be recommended to improve analytical query performance and compression for this large fact table?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A nonclustered rowstore index on each filter column",
+          "reason": "Incorrect. Rowstore indexes can help point lookups, but they are not the best fit for large analytical scans and aggregations."
+        },
+        {
+          "id": 2,
+          "text": "A clustered columnstore index on the fact table",
+          "reason": "Correct. A clustered columnstore index is designed for large analytical workloads, compression, scans, and aggregations."
+        },
+        {
+          "id": 3,
+          "text": "A unique constraint on the sales amount column",
+          "reason": "Incorrect. A unique constraint enforces data integrity and does not optimize large aggregation workloads."
+        },
+        {
+          "id": 4,
+          "text": "A full-text index on the region column",
+          "reason": "Incorrect. Full-text indexes are for linguistic keyword search, not fact table aggregation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "A clustered columnstore index is the best option for large fact tables used for reporting, scans, and aggregations."
+    },
+    {
+      "id": 2,
+      "topic": "Design and implement database objects",
+      "scenario_id": 1,
+      "Question": "Contoso needs to keep a complete history of customer address changes and query the address value as it existed at a previous point in time.\n\nWhich table feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ledger table",
+          "reason": "Incorrect. Ledger tables provide tamper-evidence but are not primarily used for point-in-time history queries."
+        },
+        {
+          "id": 2,
+          "text": "Memory-optimized table",
+          "reason": "Incorrect. Memory-optimized tables improve high-throughput transactional performance."
+        },
+        {
+          "id": 3,
+          "text": "System-versioned temporal table",
+          "reason": "Correct. Temporal tables maintain historical row versions and support point-in-time queries."
+        },
+        {
+          "id": 4,
+          "text": "External table",
+          "reason": "Incorrect. External tables expose data stored outside the database engine."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "System-versioned temporal tables automatically maintain current and history rows and support querying data as of a previous time."
+    },
+    {
+      "id": 3,
+      "topic": "Design and implement database objects",
+      "scenario_id": 1,
+      "Question": "Contoso stores product attributes as JSON in an NVARCHAR column. Developers frequently filter products by the JSON property category.\n\nWhich approach should improve query performance while preserving the JSON document structure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a computed column using JSON_VALUE for category and index that computed column",
+          "reason": "Correct. Extracting a JSON property with JSON_VALUE into a computed column and indexing it improves filtering performance."
+        },
+        {
+          "id": 2,
+          "text": "Store the full JSON document in an XML column and create a primary XML index",
+          "reason": "Incorrect. This changes the storage model and does not preserve the JSON structure as intended."
+        },
+        {
+          "id": 3,
+          "text": "Create a columnstore index on the JSON text column only",
+          "reason": "Incorrect. A columnstore index on the text column does not directly optimize filtering by a JSON property."
+        },
+        {
+          "id": 4,
+          "text": "Create a CHECK constraint that validates the category property",
+          "reason": "Incorrect. A CHECK constraint can validate data but does not optimize lookups."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "For frequently queried JSON properties, use JSON_VALUE in a computed column and index the computed column."
+    },
+    {
+      "id": 4,
+      "topic": "Design and implement database objects",
+      "scenario_id": 1,
+      "Question": "Contoso wants to model customers, products, and recommendations where relationships such as bought, viewed, and recommended are queried as connected paths.\n\nWhich SQL table design is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Temporal tables with history retention",
+          "reason": "Incorrect. Temporal tables track row history, not graph relationships."
+        },
+        {
+          "id": 2,
+          "text": "External tables over product files",
+          "reason": "Incorrect. External tables expose data outside the database, not connected relationship traversal."
+        },
+        {
+          "id": 3,
+          "text": "Memory-optimized tables with hash indexes",
+          "reason": "Incorrect. Memory-optimized tables help low-latency OLTP workloads but do not provide native graph semantics."
+        },
+        {
+          "id": 4,
+          "text": "Graph node and edge tables queried with MATCH",
+          "reason": "Correct. Graph tables use node and edge structures and support relationship traversal using MATCH."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Graph node and edge tables are designed for connected data scenarios and can be queried with the MATCH operator."
+    },
+    {
+      "id": 5,
+      "topic": "Design and implement database objects",
+      "scenario_id": 1,
+      "Question": "Contoso needs a reusable number generator for order numbers that can be used by more than one table.\n\nWhich object should be created?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A SEQUENCE object",
+          "reason": "Correct. A sequence generates numeric values independently of a specific table and can be shared."
+        },
+        {
+          "id": 2,
+          "text": "An IDENTITY column on each table",
+          "reason": "Incorrect. An identity property is tied to a specific table and is not shared across tables."
+        },
+        {
+          "id": 3,
+          "text": "A DEFAULT constraint using GETDATE",
+          "reason": "Incorrect. A date default does not generate reusable numeric order values."
+        },
+        {
+          "id": 4,
+          "text": "A CHECK constraint on the order number",
+          "reason": "Incorrect. A CHECK constraint validates values but does not generate them."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A SEQUENCE is independent of a table and is suitable when multiple tables need values from the same numeric series."
+    },
+    {
+      "id": 6,
+      "topic": "Design and implement database objects",
+      "Question": "A table must ensure that every order references an existing customer record.\n\nWhich database constraint should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "UNIQUE constraint",
+          "reason": "Incorrect. A UNIQUE constraint prevents duplicate values in a column or set of columns."
+        },
+        {
+          "id": 2,
+          "text": "CHECK constraint",
+          "reason": "Incorrect. A CHECK constraint validates values against a Boolean expression."
+        },
+        {
+          "id": 3,
+          "text": "FOREIGN KEY constraint",
+          "reason": "Correct. A FOREIGN KEY enforces referential integrity between child and parent tables."
+        },
+        {
+          "id": 4,
+          "text": "DEFAULT constraint",
+          "reason": "Incorrect. A DEFAULT constraint supplies a value when one is not provided."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "A FOREIGN KEY ensures that values in the child table correspond to valid rows in the referenced parent table."
+    },
+    {
+      "id": 7,
+      "topic": "Design and implement database objects",
+      "Question": "A database table contains 2 billion rows partitioned by transaction date. Queries commonly filter by month and old monthly partitions must be archived.\n\nWhich design is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Create a scalar function for each calendar month",
+          "reason": "Incorrect. Scalar functions do not provide partition elimination or partition-level data management."
+        },
+        {
+          "id": 2,
+          "text": "Create a graph edge table for monthly relationships",
+          "reason": "Incorrect. Graph edge tables model relationships rather than data distribution by date."
+        },
+        {
+          "id": 3,
+          "text": "Create one trigger per month to move data",
+          "reason": "Incorrect. Triggers add overhead and are not the correct design for large partitioned data management."
+        },
+        {
+          "id": 4,
+          "text": "Create a partition function and partition scheme based on transaction date",
+          "reason": "Correct. Table and index partitioning by date supports partition elimination and partition-level maintenance."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "A partition function and partition scheme allow large tables and indexes to be distributed and managed by date ranges."
+    },
+    {
+      "id": 8,
+      "topic": "Implement programmability objects",
+      "Question": "A developer needs a reusable database object that returns a table of active orders for a specified customer and can be joined to other tables.\n\nWhich object should be created?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A table-valued function",
+          "reason": "Correct. A table-valued function returns a tabular result that can be queried and joined."
+        },
+        {
+          "id": 2,
+          "text": "A scalar function",
+          "reason": "Incorrect. A scalar function returns a single value rather than a table."
+        },
+        {
+          "id": 3,
+          "text": "A DML trigger",
+          "reason": "Incorrect. A trigger executes automatically after or instead of data modifications."
+        },
+        {
+          "id": 4,
+          "text": "A DEFAULT constraint",
+          "reason": "Incorrect. A DEFAULT constraint supplies missing values during insert operations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A table-valued function is appropriate when reusable parameterized logic must return rows that can be joined."
+    },
+    {
+      "id": 9,
+      "topic": "Implement programmability objects",
+      "Question": "A team wants to restrict users from seeing sensitive salary columns while still allowing them to query employee names and departments through a simplified object.\n\nWhich object best supports this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A trigger on the employee table",
+          "reason": "Incorrect. A trigger is not used to present a restricted query surface."
+        },
+        {
+          "id": 2,
+          "text": "A view that projects only approved columns",
+          "reason": "Correct. A view can expose selected columns and simplify secure access."
+        },
+        {
+          "id": 3,
+          "text": "A sequence object used by the employee table",
+          "reason": "Incorrect. A sequence generates numeric values and does not restrict column visibility."
+        },
+        {
+          "id": 4,
+          "text": "A columnstore index on the employee table",
+          "reason": "Incorrect. A columnstore index improves analytical performance but does not define a restricted data surface."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "A view can expose only allowed columns and can be granted permissions independently from the base table."
+    },
+    {
+      "id": 10,
+      "topic": "Implement programmability objects",
+      "Question": "A stored procedure must update multiple tables. If any statement fails, the procedure should return a controlled error message and roll back the transaction.\n\nWhich T-SQL construct should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "OPENJSON with a WITH clause",
+          "reason": "Incorrect. OPENJSON parses JSON data and does not implement error handling."
+        },
+        {
+          "id": 2,
+          "text": "ROW_NUMBER with an OVER clause",
+          "reason": "Incorrect. ROW_NUMBER generates row ordinals and does not catch runtime errors."
+        },
+        {
+          "id": 3,
+          "text": "TRY...CATCH with explicit transaction handling",
+          "reason": "Correct. TRY...CATCH can capture errors and coordinate rollback logic."
+        },
+        {
+          "id": 4,
+          "text": "CREATE SEQUENCE with CACHE",
+          "reason": "Incorrect. A sequence generates numbers and does not manage transaction errors."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Use TRY...CATCH with BEGIN TRANSACTION, COMMIT, and ROLLBACK to handle failures consistently."
+    },
+    {
+      "id": 11,
+      "topic": "Write advanced T-SQL code",
+      "Question": "A query must return each salesperson's monthly sales and a running total within each salesperson partition.\n\nWhich T-SQL feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A graph MATCH query",
+          "reason": "Incorrect. MATCH is used for graph pattern traversal."
+        },
+        {
+          "id": 2,
+          "text": "A JSON_VALUE expression",
+          "reason": "Incorrect. JSON_VALUE extracts scalar JSON values."
+        },
+        {
+          "id": 3,
+          "text": "A recursive CTE only",
+          "reason": "Incorrect. Recursive CTEs are useful for hierarchy traversal but are not the best fit for running totals."
+        },
+        {
+          "id": 4,
+          "text": "A window aggregate function with OVER and PARTITION BY",
+          "reason": "Correct. Window functions can calculate running totals while retaining row-level detail."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "SUM with OVER, PARTITION BY, and ORDER BY can calculate a running total for each salesperson."
+    },
+    {
+      "id": 12,
+      "topic": "Write advanced T-SQL code",
+      "Question": "A support table stores request details in a JSON document. You need to return the scalar value of $.priority from the JSON column.\n\nWhich function should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_VALUE",
+          "reason": "Correct. JSON_VALUE extracts a scalar value from a JSON string."
+        },
+        {
+          "id": 2,
+          "text": "JSON_ARRAYAGG",
+          "reason": "Incorrect. JSON_ARRAYAGG aggregates values into a JSON array."
+        },
+        {
+          "id": 3,
+          "text": "OPENJSON",
+          "reason": "Incorrect. OPENJSON returns rows and columns from JSON."
+        },
+        {
+          "id": 4,
+          "text": "JSON_OBJECT",
+          "reason": "Incorrect. JSON_OBJECT constructs a JSON object from values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "JSON_VALUE is used when the required JSON path returns a single scalar value."
+    },
+    {
+      "id": 13,
+      "topic": "Write advanced T-SQL code",
+      "Question": "You need to parse a JSON array of order line items into rows so that each line can be inserted into a relational table.\n\nWhich function should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_QUERY",
+          "reason": "Incorrect. JSON_QUERY returns JSON fragments rather than relational rows."
+        },
+        {
+          "id": 2,
+          "text": "OPENJSON",
+          "reason": "Correct. OPENJSON can transform JSON arrays or objects into a rowset."
+        },
+        {
+          "id": 3,
+          "text": "JSON_CONTAINS",
+          "reason": "Incorrect. JSON_CONTAINS is used to test whether JSON contains a specified value."
+        },
+        {
+          "id": 4,
+          "text": "JSON_ARRAY",
+          "reason": "Incorrect. JSON_ARRAY creates a JSON array rather than shredding one into rows."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "OPENJSON is used to parse JSON data into relational rows and columns."
+    },
+    {
+      "id": 14,
+      "topic": "Write advanced T-SQL code",
+      "Question": "A query must detect email values that match a specific pattern in a customer table.\n\nWhich regular expression function is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "REGEXP_REPLACE",
+          "reason": "Incorrect. REGEXP_REPLACE replaces text that matches a pattern."
+        },
+        {
+          "id": 2,
+          "text": "REGEXP_SUBSTR",
+          "reason": "Incorrect. REGEXP_SUBSTR returns a matching substring."
+        },
+        {
+          "id": 3,
+          "text": "REGEXP_LIKE",
+          "reason": "Correct. REGEXP_LIKE evaluates whether a string matches a regular expression pattern."
+        },
+        {
+          "id": 4,
+          "text": "REGEXP_COUNT",
+          "reason": "Incorrect. REGEXP_COUNT counts pattern matches."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "REGEXP_LIKE is appropriate when filtering rows based on whether a character value matches a pattern."
+    },
+    {
+      "id": 15,
+      "topic": "Write advanced T-SQL code",
+      "Question": "A data quality process must compare customer names such as Jon Smith and John Smith and assign a similarity score.\n\nWhich type of function should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A system-versioning function",
+          "reason": "Incorrect. System-versioning supports temporal history, not approximate string comparison."
+        },
+        {
+          "id": 2,
+          "text": "A graph traversal function",
+          "reason": "Incorrect. Graph traversal is for node and edge relationships."
+        },
+        {
+          "id": 3,
+          "text": "A JSON construction function",
+          "reason": "Incorrect. JSON construction functions build JSON documents."
+        },
+        {
+          "id": 4,
+          "text": "A fuzzy string matching function such as EDIT_DISTANCE_SIMILARITY",
+          "reason": "Correct. Fuzzy matching functions compare strings and return distance or similarity measures."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Fuzzy string matching functions such as EDIT_DISTANCE_SIMILARITY or JARO_WINKLER_DISTANCE are designed for approximate name matching."
+    },
+    {
+      "id": 16,
+      "topic": "AI-assisted SQL development",
+      "Question": "A repository uses GitHub Copilot for database scripts. The team wants Copilot to consistently generate schema-qualified object names and avoid SELECT * in generated T-SQL.\n\nWhat should the team configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A GitHub Copilot instruction file in the repository",
+          "reason": "Correct. Instruction files guide Copilot to follow repository-specific coding standards."
+        },
+        {
+          "id": 2,
+          "text": "A database CHECK constraint for each table",
+          "reason": "Incorrect. CHECK constraints validate data values, not AI coding guidance."
+        },
+        {
+          "id": 3,
+          "text": "A Query Store forced plan",
+          "reason": "Incorrect. Query Store plan forcing affects runtime query execution, not code generation style."
+        },
+        {
+          "id": 4,
+          "text": "A column-level encryption key",
+          "reason": "Incorrect. Encryption keys protect data and do not influence Copilot output."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "GitHub Copilot instruction files provide repository-specific guidance for generated code and development practices."
+    },
+    {
+      "id": 17,
+      "topic": "AI-assisted SQL development",
+      "Question": "A developer wants GitHub Copilot to query an authorized SQL Server schema during chat-based database development. Access must be controlled and limited to approved tools.\n\nWhich capability should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A ledger table digest",
+          "reason": "Incorrect. Ledger digests support tamper-evidence, not AI tool connectivity."
+        },
+        {
+          "id": 2,
+          "text": "A Model Context Protocol server endpoint for SQL Server",
+          "reason": "Correct. MCP enables AI tools to connect to external systems such as SQL Server through controlled tool endpoints."
+        },
+        {
+          "id": 3,
+          "text": "A local temporary table",
+          "reason": "Incorrect. Temporary tables do not provide controlled AI tool access to external systems."
+        },
+        {
+          "id": 4,
+          "text": "An indexed view with NOEXPAND",
+          "reason": "Incorrect. Indexed views improve query performance and do not provide AI tool integration."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "MCP endpoints are used to connect AI-assisted tools to external systems while controlling available tools and permissions."
+    },
+    {
+      "id": 18,
+      "topic": "Implement data security and compliance",
+      "scenario_id": 2,
+      "Question": "Fabrikam must protect policyholder national identifiers from database administrators and operators. The application should decrypt values only in the client driver.\n\nWhich feature should be implemented?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Dynamic Data Masking hides data in query results but does not encrypt it from administrators."
+        },
+        {
+          "id": 2,
+          "text": "Row-Level Security",
+          "reason": "Incorrect. Row-Level Security filters rows but does not encrypt column values."
+        },
+        {
+          "id": 3,
+          "text": "Always Encrypted",
+          "reason": "Correct. Always Encrypted protects column data so encryption and decryption occur on the client side."
+        },
+        {
+          "id": 4,
+          "text": "SQL Audit",
+          "reason": "Incorrect. SQL Audit records activities but does not encrypt sensitive values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Always Encrypted is designed to protect sensitive data from high-privileged database users by keeping keys and decryption at the client."
+    },
+    {
+      "id": 19,
+      "topic": "Implement data security and compliance",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants customer service representatives to see only claim rows for their assigned business unit. The application should not add custom WHERE clauses to every query.\n\nWhich feature should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A full-text index on the business unit column",
+          "reason": "Incorrect. Full-text indexes support linguistic search, not row filtering by user."
+        },
+        {
+          "id": 2,
+          "text": "A columnstore index on the claims table",
+          "reason": "Incorrect. Columnstore indexes improve analytical workloads but do not enforce row-level access."
+        },
+        {
+          "id": 3,
+          "text": "Dynamic Data Masking on the business unit column",
+          "reason": "Incorrect. Masking hides values but does not filter rows."
+        },
+        {
+          "id": 4,
+          "text": "Row-Level Security with a filter predicate",
+          "reason": "Correct. Row-Level Security applies row filters automatically based on a predicate function."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Row-Level Security adds a transparent filter predicate to restrict rows returned to each user or role."
+    },
+    {
+      "id": 20,
+      "topic": "Implement data security and compliance",
+      "scenario_id": 2,
+      "Question": "Fabrikam needs to hide full policy numbers from support users while still allowing them to query claim records. The original values must remain unchanged in the database.\n\nWhich feature should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dynamic Data Masking",
+          "reason": "Correct. Dynamic Data Masking obscures sensitive values in query results without changing stored data."
+        },
+        {
+          "id": 2,
+          "text": "Database partitioning",
+          "reason": "Incorrect. Partitioning improves manageability and performance for large tables."
+        },
+        {
+          "id": 3,
+          "text": "Query Store",
+          "reason": "Incorrect. Query Store captures plans and runtime statistics."
+        },
+        {
+          "id": 4,
+          "text": "Columnstore compression",
+          "reason": "Incorrect. Columnstore compression reduces storage and improves analytics performance, but does not mask data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Dynamic Data Masking is used to limit exposure of sensitive data in result sets while preserving the original stored values."
+    },
+    {
+      "id": 21,
+      "topic": "Implement data security and compliance",
+      "scenario_id": 2,
+      "Question": "An Azure Function must connect to Azure SQL Database without storing a password or connection string secret.\n\nWhich authentication approach should Fabrikam use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SQL authentication with a shared administrator login",
+          "reason": "Incorrect. Shared SQL credentials increase secret management risks."
+        },
+        {
+          "id": 2,
+          "text": "Application configuration with a plain-text password",
+          "reason": "Incorrect. Plain-text passwords should not be stored in application configuration."
+        },
+        {
+          "id": 3,
+          "text": "Managed identity with Microsoft Entra authentication",
+          "reason": "Correct. Managed identity supports passwordless access from Azure services."
+        },
+        {
+          "id": 4,
+          "text": "Local user authentication through a SQL Agent proxy",
+          "reason": "Incorrect. This does not provide recommended passwordless access from Azure Functions to Azure SQL."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Managed identity allows Azure services to authenticate to Azure SQL using Microsoft Entra ID without storing secrets."
+    },
+    {
+      "id": 22,
+      "topic": "Implement data security and compliance",
+      "scenario_id": 2,
+      "Question": "Fabrikam must collect records of database access and security-related events for later review in a centralized monitoring workspace.\n\nWhich capability should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A nonclustered index with included columns",
+          "reason": "Incorrect. Indexes improve query performance but do not audit access."
+        },
+        {
+          "id": 2,
+          "text": "A recursive common table expression",
+          "reason": "Incorrect. Recursive CTEs query hierarchical data and do not collect security event logs."
+        },
+        {
+          "id": 3,
+          "text": "A sequence object with cache enabled",
+          "reason": "Incorrect. A sequence generates numeric values and does not capture audit events."
+        },
+        {
+          "id": 4,
+          "text": "SQL auditing sent to Log Analytics",
+          "reason": "Correct. Auditing can capture database events and send them to centralized monitoring destinations such as Log Analytics."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "SQL auditing records database activities and can send audit logs to a centralized analytics workspace."
+    },
+    {
+      "id": 23,
+      "topic": "Implement data security and compliance",
+      "Question": "A developer is granting access so an application role can execute stored procedures but cannot directly read the underlying tables.\n\nWhich permission should be granted on the procedures?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "EXECUTE",
+          "reason": "Correct. EXECUTE allows a principal to run stored procedures."
+        },
+        {
+          "id": 2,
+          "text": "ALTER",
+          "reason": "Incorrect. ALTER allows modifying database objects and is broader than required."
+        },
+        {
+          "id": 3,
+          "text": "CONTROL",
+          "reason": "Incorrect. CONTROL grants extensive permissions and violates least privilege."
+        },
+        {
+          "id": 4,
+          "text": "REFERENCES",
+          "reason": "Incorrect. REFERENCES is used for constraints and schema-bound objects, not procedure execution."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Grant EXECUTE on stored procedures when users or application roles should run them without direct table access."
+    },
+    {
+      "id": 24,
+      "topic": "Optimize database performance",
+      "Question": "An OLTP workload experiences blocking between readers and writers. The team wants readers to access a consistent version of committed rows without waiting for writers where possible.\n\nWhich isolation option should be considered?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "READ UNCOMMITTED",
+          "reason": "Incorrect. READ UNCOMMITTED allows dirty reads and does not provide consistent committed data."
+        },
+        {
+          "id": 2,
+          "text": "SNAPSHOT isolation or read committed snapshot",
+          "reason": "Correct. Row versioning isolation can reduce reader-writer blocking while preserving consistency."
+        },
+        {
+          "id": 3,
+          "text": "SERIALIZABLE isolation for all transactions",
+          "reason": "Incorrect. SERIALIZABLE provides strict isolation but can increase blocking."
+        },
+        {
+          "id": 4,
+          "text": "TABLOCK hints on all read queries",
+          "reason": "Incorrect. Table locks can increase blocking and reduce concurrency."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Snapshot-based isolation uses row versions to reduce blocking between readers and writers while preserving committed consistency."
+    },
+    {
+      "id": 25,
+      "topic": "Optimize database performance",
+      "Question": "A query suddenly performs poorly after a deployment. Query Store shows that the optimizer selected a new plan, while a previous plan had consistently better performance.\n\nWhat should you do first to stabilize performance?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Drop all nonclustered indexes on the table",
+          "reason": "Incorrect. Removing indexes broadly can worsen performance and should not be the first action."
+        },
+        {
+          "id": 2,
+          "text": "Convert the table into a graph node table",
+          "reason": "Incorrect. Graph tables solve relationship traversal problems, not plan regression."
+        },
+        {
+          "id": 3,
+          "text": "Force the previously good execution plan in Query Store",
+          "reason": "Correct. Query Store can force a known good plan to address query plan regression."
+        },
+        {
+          "id": 4,
+          "text": "Replace the query with a JSON_ARRAY expression",
+          "reason": "Incorrect. JSON construction does not resolve query plan regression."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Query Store is commonly used to detect regressions and force a previous stable plan when appropriate."
+    },
+    {
+      "id": 26,
+      "topic": "Optimize database performance",
+      "Question": "A stored procedure sometimes runs quickly and sometimes very slowly depending on the first parameter value used after compilation. Statistics are current and indexes are appropriate.\n\nWhat is the likely issue?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ledger digest verification",
+          "reason": "Incorrect. Ledger verification relates to tamper-evidence, not inconsistent query plan reuse."
+        },
+        {
+          "id": 2,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Data masking changes returned values for unauthorized users and does not explain parameter-sensitive plans."
+        },
+        {
+          "id": 3,
+          "text": "Partition switching",
+          "reason": "Incorrect. Partition switching moves partitions efficiently but does not cause parameter-specific plan reuse."
+        },
+        {
+          "id": 4,
+          "text": "Parameter sniffing",
+          "reason": "Correct. Parameter sniffing can cause a plan optimized for one parameter value to be reused poorly for another."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Parameter sniffing occurs when a cached plan based on one parameter value is inefficient for other parameter values."
+    },
+    {
+      "id": 27,
+      "topic": "Optimize database performance",
+      "Question": "An execution plan shows a Key Lookup operator executed many times after a nonclustered index seek. The query returns only a few additional columns.\n\nWhich action is most likely to reduce the lookup cost?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Add the returned columns as INCLUDE columns to the nonclustered index",
+          "reason": "Correct. Include columns can cover the query and avoid repeated lookups to the base table."
+        },
+        {
+          "id": 2,
+          "text": "Enable Dynamic Data Masking on the returned columns",
+          "reason": "Incorrect. Masking does not reduce Key Lookup operations."
+        },
+        {
+          "id": 3,
+          "text": "Create a sequence object for the table",
+          "reason": "Incorrect. A sequence generates numbers and does not affect lookup operations."
+        },
+        {
+          "id": 4,
+          "text": "Rewrite the query using REGEXP_COUNT",
+          "reason": "Incorrect. Regular expression functions do not address lookup costs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Adding included columns can make a nonclustered index cover the query and avoid expensive Key Lookup operations."
+    },
+    {
+      "id": 28,
+      "topic": "Optimize database performance",
+      "Question": "Two transactions each hold a lock needed by the other transaction. SQL Server automatically terminates one transaction to allow the other to continue.\n\nWhat condition occurred?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Blocking",
+          "reason": "Incorrect. Blocking means one session waits, but it does not necessarily involve a circular dependency."
+        },
+        {
+          "id": 2,
+          "text": "Deadlock",
+          "reason": "Correct. A deadlock occurs when sessions wait on each other in a cycle, causing one to be selected as a victim."
+        },
+        {
+          "id": 3,
+          "text": "Schema drift",
+          "reason": "Incorrect. Schema drift is a database schema difference from the source-controlled model."
+        },
+        {
+          "id": 4,
+          "text": "Dirty read",
+          "reason": "Incorrect. A dirty read is reading uncommitted data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "A deadlock is a circular blocking chain where SQL Server resolves the condition by choosing a victim transaction."
+    },
+    {
+      "id": 29,
+      "topic": "Optimize database performance",
+      "Question": "You need to identify currently running requests, wait types, blocking sessions, and resource usage for active SQL sessions.\n\nWhich dynamic management view is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "sys.dm_db_index_usage_stats",
+          "reason": "Incorrect. This DMV shows index usage information, not active request waits."
+        },
+        {
+          "id": 2,
+          "text": "sys.dm_exec_query_stats",
+          "reason": "Incorrect. This DMV provides aggregate query statistics for cached plans."
+        },
+        {
+          "id": 3,
+          "text": "sys.dm_exec_requests",
+          "reason": "Correct. This DMV shows active requests, blocking session IDs, waits, and execution information."
+        },
+        {
+          "id": 4,
+          "text": "sys.database_permissions",
+          "reason": "Incorrect. This catalog view shows database permissions, not active requests."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "sys.dm_exec_requests is useful for investigating active requests, wait types, blocking, and current execution state."
+    },
+    {
+      "id": 30,
+      "topic": "Implement CI/CD by using SQL Database Projects",
+      "scenario_id": 2,
+      "Question": "Fabrikam wants its database schema definitions, post-deployment scripts, and static reference data to be reviewed through pull requests and deployed consistently.\n\nWhich approach should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Apply direct table changes in the production portal",
+          "reason": "Incorrect. Direct production changes bypass review and repeatable deployment."
+        },
+        {
+          "id": 2,
+          "text": "Use SQL Database Projects stored in source control",
+          "reason": "Correct. SQL Database Projects represent database schema as code and support versioning and deployment automation."
+        },
+        {
+          "id": 3,
+          "text": "Use only SQL Server Management Studio local history",
+          "reason": "Incorrect. Local history does not provide team source control or automated deployment."
+        },
+        {
+          "id": 4,
+          "text": "Use Query Store to store database object definitions",
+          "reason": "Incorrect. Query Store stores query runtime information and plans, not source-controlled schema definitions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "SQL Database Projects enable database-as-code practices, source control, validation, and repeatable deployments."
+    },
+    {
+      "id": 31,
+      "topic": "Implement CI/CD by using SQL Database Projects",
+      "scenario_id": 2,
+      "Question": "A developer manually changes a column in the test database without updating the SQL Database Project. The deployment pipeline must detect that the target database no longer matches the project model.\n\nWhat should the pipeline detect?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Deadlock priority",
+          "reason": "Incorrect. Deadlock priority affects which session is chosen as a deadlock victim."
+        },
+        {
+          "id": 2,
+          "text": "Parameter sniffing",
+          "reason": "Incorrect. Parameter sniffing relates to cached query plans and parameter values."
+        },
+        {
+          "id": 3,
+          "text": "Schema drift",
+          "reason": "Correct. Schema drift occurs when the target database schema differs from the source-controlled model."
+        },
+        {
+          "id": 4,
+          "text": "Query regression",
+          "reason": "Incorrect. Query regression is a performance issue, not a schema mismatch."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Schema drift identifies differences between the deployed database and the expected schema model."
+    },
+    {
+      "id": 32,
+      "topic": "Implement CI/CD by using SQL Database Projects",
+      "scenario_id": 2,
+      "Question": "Fabrikam must prevent unreviewed database changes from being merged into the main branch. At least one database owner must approve schema changes.\n\nWhich control should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A database trigger on every table",
+          "reason": "Incorrect. Database triggers do not control Git branch merging."
+        },
+        {
+          "id": 2,
+          "text": "An OPENJSON clause in deployment scripts",
+          "reason": "Incorrect. OPENJSON parses JSON and does not enforce repository approval."
+        },
+        {
+          "id": 3,
+          "text": "A full-text catalog",
+          "reason": "Incorrect. A full-text catalog supports full-text indexing, not code review."
+        },
+        {
+          "id": 4,
+          "text": "Branch policies with required reviewers or code owners",
+          "reason": "Correct. Branch policies and code owners enforce review and approval before merge."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Branch policies and code owner rules are governance controls for pull requests and protected branches."
+    },
+    {
+      "id": 33,
+      "topic": "Implement CI/CD by using SQL Database Projects",
+      "Question": "A pipeline requires a production deployment password. The team must avoid storing secrets in the repository.\n\nWhich option should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Key Vault or pipeline secret storage",
+          "reason": "Correct. Secrets should be stored in a secure secret management system rather than source control."
+        },
+        {
+          "id": 2,
+          "text": "A comment at the top of the deployment script",
+          "reason": "Incorrect. Storing passwords in scripts or comments exposes secrets."
+        },
+        {
+          "id": 3,
+          "text": "A static data seed file in the repository",
+          "reason": "Incorrect. Static seed files are for reference data and should not contain secrets."
+        },
+        {
+          "id": 4,
+          "text": "A JSON column in the target database",
+          "reason": "Incorrect. Storing deployment passwords in a table is not an appropriate secrets management practice."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Use a secure secret store such as Azure Key Vault or the CI/CD platform's protected secret storage."
+    },
+    {
+      "id": 34,
+      "topic": "Integrate SQL solutions with Azure services",
+      "Question": "A team needs to expose selected Azure SQL tables and stored procedures through REST and GraphQL endpoints without writing a custom API layer.\n\nWhich service or tool should be configured?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Monitor Application Insights",
+          "reason": "Incorrect. Application Insights monitors applications but does not expose database objects as REST and GraphQL APIs."
+        },
+        {
+          "id": 2,
+          "text": "Data API builder",
+          "reason": "Correct. Data API builder can expose database objects through REST and GraphQL endpoints."
+        },
+        {
+          "id": 3,
+          "text": "Query Performance Insight",
+          "reason": "Incorrect. Query Performance Insight helps identify resource-consuming queries."
+        },
+        {
+          "id": 4,
+          "text": "Microsoft Entra Privileged Identity Management",
+          "reason": "Incorrect. Privileged Identity Management governs elevated access and does not generate APIs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Data API builder is used to configure entities and expose database objects through REST and GraphQL endpoints."
+    },
+    {
+      "id": 35,
+      "topic": "Integrate SQL solutions with Azure services",
+      "Question": "A Data API builder configuration must restrict which operations anonymous users can perform against an exposed entity.\n\nWhat should be configured for the entity?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Columnstore compression settings",
+          "reason": "Incorrect. Compression settings do not secure API operations."
+        },
+        {
+          "id": 2,
+          "text": "A graph edge relationship only",
+          "reason": "Incorrect. Relationships do not define anonymous permissions by themselves."
+        },
+        {
+          "id": 3,
+          "text": "Entity permissions for the anonymous role",
+          "reason": "Correct. Data API builder uses role-based entity permissions to control actions such as read, create, update, and delete."
+        },
+        {
+          "id": 4,
+          "text": "A partition function for the entity",
+          "reason": "Incorrect. Partitioning does not control API permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "DAB entity permissions define which roles can perform operations against exposed entities."
+    },
+    {
+      "id": 36,
+      "topic": "Integrate SQL solutions with Azure services",
+      "Question": "A web API using Data API builder must avoid returning very large result sets and should support clients that request results in pages.\n\nWhich capability should be configured or used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Always Encrypted randomized encryption",
+          "reason": "Incorrect. Randomized encryption improves confidentiality but does not paginate API results."
+        },
+        {
+          "id": 2,
+          "text": "Ledger table verification",
+          "reason": "Incorrect. Ledger verification provides tamper-evidence, not result set paging."
+        },
+        {
+          "id": 3,
+          "text": "Snapshot isolation",
+          "reason": "Incorrect. Snapshot isolation controls transaction consistency, not API page size."
+        },
+        {
+          "id": 4,
+          "text": "Pagination options for REST or GraphQL queries",
+          "reason": "Correct. Pagination limits response size and improves scalability for API clients."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Pagination helps APIs return manageable result sets and supports scalable client access patterns."
+    },
+    {
+      "id": 37,
+      "topic": "Integrate SQL solutions with Azure services",
+      "Question": "A database solution must automatically start processing changed rows and regenerate embeddings shortly after source data changes. The team wants serverless processing triggered by SQL data changes.\n\nWhich option best fits?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Functions with SQL trigger binding",
+          "reason": "Correct. SQL trigger binding for Azure Functions can respond to database changes and run processing logic."
+        },
+        {
+          "id": 2,
+          "text": "A scalar user-defined function called by SELECT queries",
+          "reason": "Incorrect. A scalar function does not provide serverless event-driven processing."
+        },
+        {
+          "id": 3,
+          "text": "A UNIQUE constraint on the embedding table",
+          "reason": "Incorrect. A UNIQUE constraint enforces uniqueness but does not trigger processing."
+        },
+        {
+          "id": 4,
+          "text": "A nonclustered columnstore index",
+          "reason": "Incorrect. A nonclustered columnstore index improves analytics but does not run processing logic."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Functions with SQL trigger binding is an appropriate event-driven approach for responding to changed SQL data."
+    },
+    {
+      "id": 38,
+      "topic": "Integrate SQL solutions with Azure services",
+      "Question": "You must capture detailed row-level change history for downstream processing, including information about inserted, updated, and deleted rows.\n\nWhich feature is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Change Tracking",
+          "reason": "Incorrect. Change Tracking identifies changed rows but does not provide full historical change detail."
+        },
+        {
+          "id": 2,
+          "text": "Change data capture",
+          "reason": "Correct. CDC captures detailed insert, update, and delete changes for downstream processing."
+        },
+        {
+          "id": 3,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Data masking obscures sensitive results and does not capture data changes."
+        },
+        {
+          "id": 4,
+          "text": "Query Store",
+          "reason": "Incorrect. Query Store captures query plans and runtime statistics, not row-level change history."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Change data capture captures detailed row changes and is suitable when downstream systems need change details."
+    },
+    {
+      "id": 39,
+      "topic": "Design and implement models and embeddings",
+      "scenario_id": 3,
+      "Question": "Northwind wants to create embeddings that represent the meaning of product manuals and support articles.\n\nWhich columns are the best candidates for embedding?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Identity keys and surrogate numeric IDs",
+          "reason": "Incorrect. Technical identifiers generally do not contain semantic meaning useful for embeddings."
+        },
+        {
+          "id": 2,
+          "text": "Created date and modified date only",
+          "reason": "Incorrect. Dates can be useful metadata but do not capture the meaning of document content."
+        },
+        {
+          "id": 3,
+          "text": "Article body, product description, and troubleshooting text",
+          "reason": "Correct. Descriptive natural language fields contain semantic meaning suitable for embeddings."
+        },
+        {
+          "id": 4,
+          "text": "Rowversion and checksum columns",
+          "reason": "Incorrect. Rowversion and checksums support change detection or integrity, not semantic representation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Embeddings should be generated from meaningful descriptive text rather than technical identifiers."
+    },
+    {
+      "id": 40,
+      "topic": "Design and implement models and embeddings",
+      "scenario_id": 3,
+      "Question": "Northwind has long product manuals that exceed the desired prompt size. The team needs better retrieval quality and smaller passages for vector search.\n\nWhat should they do before generating embeddings?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Encrypt each manual using randomized encryption",
+          "reason": "Incorrect. Encryption protects data but does not improve retrieval quality or passage size."
+        },
+        {
+          "id": 2,
+          "text": "Convert each manual into a ledger table",
+          "reason": "Incorrect. Ledger tables provide tamper-evidence and do not split documents for retrieval."
+        },
+        {
+          "id": 3,
+          "text": "Create one sequence value per manual",
+          "reason": "Incorrect. A sequence generates numbers and does not improve semantic retrieval."
+        },
+        {
+          "id": 4,
+          "text": "Split the manuals into chunks based on paragraphs or semantic boundaries",
+          "reason": "Correct. Chunking creates smaller meaningful passages that improve retrieval and prompt construction."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Chunking long documents before embedding improves search relevance and keeps retrieved context manageable."
+    },
+    {
+      "id": 41,
+      "topic": "Design and implement models and embeddings",
+      "scenario_id": 3,
+      "Question": "Northwind needs a low-cost model for simple embedding generation across a large document corpus. Latency and cost are more important than complex reasoning.\n\nWhich model characteristic should be preferred?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A smaller embedding model appropriate for the required vector dimension",
+          "reason": "Correct. Smaller models are generally preferred when cost and latency are the main priorities and the task is straightforward."
+        },
+        {
+          "id": 2,
+          "text": "A large multimodal reasoning model for every embedding request",
+          "reason": "Incorrect. A large multimodal reasoning model is usually more costly and unnecessary for simple text embeddings."
+        },
+        {
+          "id": 3,
+          "text": "A randomized encryption algorithm",
+          "reason": "Incorrect. Encryption algorithms do not generate embeddings."
+        },
+        {
+          "id": 4,
+          "text": "A full-text thesaurus file only",
+          "reason": "Incorrect. A thesaurus can enhance keyword search but does not generate vector embeddings."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "For simple embedding generation at scale, choose a model that balances dimension, quality, cost, and latency."
+    },
+    {
+      "id": 42,
+      "topic": "Design and implement models and embeddings",
+      "scenario_id": 3,
+      "Question": "Northwind wants embedding maintenance to occur outside the user transaction because embedding generation can be slow. Changed rows should be detected and processed asynchronously.\n\nWhich approach is more appropriate than a synchronous table trigger?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "A CHECK constraint that validates the document length",
+          "reason": "Incorrect. A CHECK constraint validates data but does not run asynchronous embedding generation."
+        },
+        {
+          "id": 2,
+          "text": "Change Tracking with an external worker or Azure Function",
+          "reason": "Correct. Change Tracking can identify changed rows for asynchronous downstream embedding maintenance."
+        },
+        {
+          "id": 3,
+          "text": "A clustered primary key rebuild after every insert",
+          "reason": "Incorrect. Index rebuilding does not maintain embeddings and would add unnecessary overhead."
+        },
+        {
+          "id": 4,
+          "text": "A scalar function called in every SELECT",
+          "reason": "Incorrect. Generating embeddings during SELECT queries increases latency and is not an asynchronous maintenance pattern."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Change Tracking plus external processing is a lightweight way to detect changed rows and update embeddings asynchronously."
+    },
+    {
+      "id": 43,
+      "topic": "Design and implement models and embeddings",
+      "scenario_id": 3,
+      "Question": "Northwind wants language model responses to be easy for a downstream application to parse into database columns.\n\nWhich model output requirement should be specified?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Output with unpredictable free-form paragraphs",
+          "reason": "Incorrect. Free-form paragraphs are harder to parse reliably."
+        },
+        {
+          "id": 2,
+          "text": "Output as an image attachment",
+          "reason": "Incorrect. Image output is not appropriate for parsing into database columns."
+        },
+        {
+          "id": 3,
+          "text": "Structured output such as JSON",
+          "reason": "Correct. Structured JSON output is easier for applications and database processes to parse."
+        },
+        {
+          "id": 4,
+          "text": "Output as a graph edge table",
+          "reason": "Incorrect. A graph edge table is a database structure, not a language model output format."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Structured model output, such as JSON, supports reliable parsing and downstream automation."
+    },
+    {
+      "id": 44,
+      "topic": "Design and implement intelligent search",
+      "Question": "A product search feature must match exact keywords and linguistic terms in product descriptions. Semantic similarity is not required.\n\nWhich search method is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Vector search only",
+          "reason": "Incorrect. Vector search focuses on semantic similarity rather than exact keyword matching."
+        },
+        {
+          "id": 2,
+          "text": "Graph MATCH traversal",
+          "reason": "Incorrect. Graph MATCH is for node and edge relationship patterns."
+        },
+        {
+          "id": 3,
+          "text": "Ledger digest verification",
+          "reason": "Incorrect. Ledger digest verification supports tamper-evidence, not keyword search."
+        },
+        {
+          "id": 4,
+          "text": "Full-text search",
+          "reason": "Correct. Full-text search is designed for keyword and linguistic queries over text columns."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Full-text search is the best fit when the requirement is keyword-oriented text search rather than semantic similarity."
+    },
+    {
+      "id": 45,
+      "topic": "Design and implement intelligent search",
+      "Question": "Users search for laptop battery problems, and the system should also find articles about notebook power issues even when the exact words are different.\n\nWhich search method should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Semantic vector search",
+          "reason": "Correct. Vector search finds semantically similar content even when exact keywords differ."
+        },
+        {
+          "id": 2,
+          "text": "A primary key lookup",
+          "reason": "Incorrect. Primary key lookups retrieve known records and do not perform semantic matching."
+        },
+        {
+          "id": 3,
+          "text": "A table partition switch",
+          "reason": "Incorrect. Partition switching manages table partitions and does not search by meaning."
+        },
+        {
+          "id": 4,
+          "text": "A stored procedure permission check",
+          "reason": "Incorrect. Permissions control access and do not implement semantic search."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Semantic vector search uses embeddings to find content with similar meaning, even when words differ."
+    },
+    {
+      "id": 46,
+      "topic": "Design and implement intelligent search",
+      "Question": "A vector column will store embeddings generated by a model that returns 1536 floating-point dimensions.\n\nHow should the vector column be defined?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "As NVARCHAR(MAX) because all embeddings are JSON strings",
+          "reason": "Incorrect. A native vector column should match the embedding dimension rather than store arbitrary text."
+        },
+        {
+          "id": 2,
+          "text": "As VECTOR(1536)",
+          "reason": "Correct. The vector column dimension must match the embedding model output dimension."
+        },
+        {
+          "id": 3,
+          "text": "As VARBINARY(16) because vectors are always 16 bytes",
+          "reason": "Incorrect. Embeddings contain many numeric dimensions and are not fixed to 16 bytes."
+        },
+        {
+          "id": 4,
+          "text": "As XML because vector dimensions are hierarchical",
+          "reason": "Incorrect. Vector dimensions are numerical arrays, not XML hierarchies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "The vector data type should specify the dimension count produced by the embedding model."
+    },
+    {
+      "id": 47,
+      "topic": "Design and implement intelligent search",
+      "Question": "A query needs to sort documents by similarity between a query embedding and a stored document embedding.\n\nWhich function should be used in the ORDER BY expression?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_ARRAYAGG",
+          "reason": "Incorrect. JSON_ARRAYAGG aggregates values into a JSON array."
+        },
+        {
+          "id": 2,
+          "text": "REGEXP_COUNT",
+          "reason": "Incorrect. REGEXP_COUNT counts pattern matches in text."
+        },
+        {
+          "id": 3,
+          "text": "VECTOR_DISTANCE",
+          "reason": "Correct. VECTOR_DISTANCE calculates distance or similarity between vectors for ordering nearest results."
+        },
+        {
+          "id": 4,
+          "text": "NEXT VALUE FOR",
+          "reason": "Incorrect. NEXT VALUE FOR gets a value from a sequence."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "VECTOR_DISTANCE is used to compare query and stored embeddings and can rank nearest matches."
+    },
+    {
+      "id": 48,
+      "topic": "Design and implement intelligent search",
+      "Question": "A small curated dataset contains only a few thousand embeddings. Accuracy is more important than search latency.\n\nWhich vector search approach should be selected?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Approximate nearest neighbor search",
+          "reason": "Incorrect. ANN is faster and scalable but may trade some accuracy."
+        },
+        {
+          "id": 2,
+          "text": "Full-text search only",
+          "reason": "Incorrect. Full-text search does not perform semantic vector comparison."
+        },
+        {
+          "id": 3,
+          "text": "Hash partitioning by document ID",
+          "reason": "Incorrect. Partitioning by ID does not guarantee exact vector similarity results."
+        },
+        {
+          "id": 4,
+          "text": "Exact nearest neighbor search",
+          "reason": "Correct. ENN compares candidates exactly and is suitable for smaller datasets when accuracy is the priority."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "Exact nearest neighbor search provides the most accurate vector results and is practical for smaller datasets."
+    },
+    {
+      "id": 49,
+      "topic": "Design and implement intelligent search",
+      "Question": "A production knowledge base contains millions of embeddings. The search service must return highly relevant results with low latency, accepting a small approximation tradeoff.\n\nWhich approach should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Approximate nearest neighbor search with an appropriate vector index",
+          "reason": "Correct. ANN with vector indexing is designed for scalable, low-latency similarity search over large datasets."
+        },
+        {
+          "id": 2,
+          "text": "Exact nearest neighbor search without any index",
+          "reason": "Incorrect. ENN without indexing can be too slow at large scale."
+        },
+        {
+          "id": 3,
+          "text": "A scalar function that loops through every row",
+          "reason": "Incorrect. Row-by-row scalar processing is not appropriate for large-scale vector search."
+        },
+        {
+          "id": 4,
+          "text": "A CHECK constraint on the vector column",
+          "reason": "Incorrect. CHECK constraints validate data and do not accelerate similarity search."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Approximate nearest neighbor search with a vector index is typically used for low-latency search across large vector collections."
+    },
+    {
+      "id": 50,
+      "topic": "Design and implement intelligent search",
+      "Question": "A search feature should combine keyword relevance from full-text search and semantic relevance from vector search into a single ranked list.\n\nWhich search pattern should be implemented?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Full backup and restore",
+          "reason": "Incorrect. Backup and restore protect data availability and do not combine search rankings."
+        },
+        {
+          "id": 2,
+          "text": "Hybrid search",
+          "reason": "Correct. Hybrid search combines full-text and vector search results."
+        },
+        {
+          "id": 3,
+          "text": "Ledger append-only verification",
+          "reason": "Incorrect. Ledger verification provides tamper-evidence, not search ranking."
+        },
+        {
+          "id": 4,
+          "text": "Static data seeding",
+          "reason": "Incorrect. Static data seeding loads reference data and does not combine search results."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Hybrid search combines keyword and semantic search signals to improve relevance."
+    },
+    {
+      "id": 51,
+      "topic": "Design and implement intelligent search",
+      "Question": "A hybrid search implementation returns one ranked list from full-text search and another ranked list from vector search. The team needs a method to combine those rankings fairly.\n\nWhich technique should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "READ UNCOMMITTED isolation",
+          "reason": "Incorrect. READ UNCOMMITTED controls transaction isolation and does not combine rankings."
+        },
+        {
+          "id": 2,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Data masking obscures sensitive values and does not rank search results."
+        },
+        {
+          "id": 3,
+          "text": "Reciprocal rank fusion",
+          "reason": "Correct. RRF combines rankings from multiple retrieval methods into a single ranked result."
+        },
+        {
+          "id": 4,
+          "text": "Foreign key cascading",
+          "reason": "Incorrect. Cascading actions enforce referential integrity and do not combine rankings."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Reciprocal rank fusion is commonly used to combine ranked results from full-text and vector searches."
+    },
+    {
+      "id": 52,
+      "topic": "Design and implement intelligent search",
+      "Question": "You need to evaluate whether vector search results are returning relevant documents and whether the system retrieves enough of the known relevant documents.\n\nWhich two metrics are most relevant? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Precision",
+          "reason": "Correct. Precision measures how many returned items are relevant."
+        },
+        {
+          "id": 2,
+          "text": "Recall",
+          "reason": "Correct. Recall measures how many relevant items were retrieved."
+        },
+        {
+          "id": 3,
+          "text": "Deadlock priority",
+          "reason": "Incorrect. Deadlock priority influences victim selection and is not a search relevance metric."
+        },
+        {
+          "id": 4,
+          "text": "Identity seed",
+          "reason": "Incorrect. Identity seed controls generated numeric values and is not a relevance metric."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Precision and recall are standard metrics for evaluating search relevance and retrieval completeness."
+    },
+    {
+      "id": 53,
+      "topic": "Design and implement retrieval-augmented generation",
+      "Question": "A chatbot must answer questions using current company policy documents stored in SQL rather than relying only on the language model's training data.\n\nWhich architecture should be implemented?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Data masking hides sensitive values and does not ground model responses in retrieved context."
+        },
+        {
+          "id": 2,
+          "text": "Query Store plan forcing",
+          "reason": "Incorrect. Query Store plan forcing stabilizes query performance and does not implement a chatbot architecture."
+        },
+        {
+          "id": 3,
+          "text": "External table federation only",
+          "reason": "Incorrect. External tables alone do not retrieve context and generate grounded answers."
+        },
+        {
+          "id": 4,
+          "text": "Retrieval-augmented generation",
+          "reason": "Correct. RAG retrieves relevant enterprise content and supplies it to the model as grounding context."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        4
+      ],
+      "CorrectAnswerExplanation": "RAG combines retrieval of relevant data with language model generation to provide grounded answers."
+    },
+    {
+      "id": 54,
+      "topic": "Design and implement retrieval-augmented generation",
+      "Question": "A SQL-based workflow needs to package selected rows as JSON before sending them to a language model for summarization.\n\nWhich T-SQL clause should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "FOR JSON PATH",
+          "reason": "Correct. FOR JSON PATH formats query results as JSON suitable for downstream processing."
+        },
+        {
+          "id": 2,
+          "text": "WITH SYSTEM_VERSIONING",
+          "reason": "Incorrect. SYSTEM_VERSIONING enables temporal history and does not serialize results as JSON."
+        },
+        {
+          "id": 3,
+          "text": "CREATE FULLTEXT CATALOG",
+          "reason": "Incorrect. Full-text catalogs support full-text indexing, not row serialization."
+        },
+        {
+          "id": 4,
+          "text": "ORDER BY VECTOR_DISTANCE only",
+          "reason": "Incorrect. Ordering by vector distance ranks rows but does not format them as JSON."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "FOR JSON PATH converts relational query results into JSON, which is commonly used as model input."
+    },
+    {
+      "id": 55,
+      "topic": "Design and implement retrieval-augmented generation",
+      "Question": "A stored procedure in Azure SQL must call an external language model endpoint by sending a prompt and receiving a response.\n\nWhich stored procedure capability should be used?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "sp_rename",
+          "reason": "Incorrect. sp_rename changes object names and does not call external endpoints."
+        },
+        {
+          "id": 2,
+          "text": "sp_invoke_external_rest_endpoint",
+          "reason": "Correct. sp_invoke_external_rest_endpoint can call external REST endpoints from SQL workflows."
+        },
+        {
+          "id": 3,
+          "text": "sp_helpindex",
+          "reason": "Incorrect. sp_helpindex returns index information and does not invoke REST APIs."
+        },
+        {
+          "id": 4,
+          "text": "sp_who",
+          "reason": "Incorrect. sp_who shows session information and does not call model endpoints."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "sp_invoke_external_rest_endpoint enables SQL code to invoke external REST endpoints, including model endpoints."
+    },
+    {
+      "id": 56,
+      "topic": "Design and implement retrieval-augmented generation",
+      "Question": "Which sequence best represents a typical RAG pipeline for answering a user question?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Mask data, rebuild index, drop history table, return answer",
+          "reason": "Incorrect. This sequence does not retrieve context or invoke a model."
+        },
+        {
+          "id": 2,
+          "text": "Create graph edge, enforce constraint, generate sequence, return answer",
+          "reason": "Incorrect. This sequence describes unrelated database operations."
+        },
+        {
+          "id": 3,
+          "text": "Generate query embedding, retrieve relevant chunks, build grounded prompt, call model, return answer",
+          "reason": "Correct. This is the standard flow for retrieval-augmented generation."
+        },
+        {
+          "id": 4,
+          "text": "Enable auditing, deny permissions, create login, return answer",
+          "reason": "Incorrect. Security administration does not implement RAG answer generation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "RAG retrieves relevant context first, then sends that context with the user question to a model."
+    },
+    {
+      "id": 57,
+      "topic": "Design and implement retrieval-augmented generation",
+      "Question": "A RAG response must include only information supported by retrieved database content. The prompt should reduce hallucination risk.\n\nWhich prompt instruction is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Ignore retrieved content and answer from general knowledge",
+          "reason": "Incorrect. This increases hallucination risk and defeats the purpose of RAG."
+        },
+        {
+          "id": 2,
+          "text": "Use only the provided context and say when the context is insufficient",
+          "reason": "Correct. This grounds the response and reduces unsupported answers."
+        },
+        {
+          "id": 3,
+          "text": "Prefer the longest answer even if context is missing",
+          "reason": "Incorrect. Length does not improve grounding or correctness."
+        },
+        {
+          "id": 4,
+          "text": "Generate a random answer when no context is found",
+          "reason": "Incorrect. Random answers are inaccurate and inappropriate for enterprise RAG."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Grounded prompts should instruct the model to rely on retrieved context and acknowledge insufficient evidence."
+    },
+    {
+      "id": 58,
+      "topic": "AI-enabled database solution design",
+      "Question": "A solution must combine secure data access, semantic retrieval, and grounded generation over enterprise SQL data.\n\nWhich combination is most appropriate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Managed identity, vector search, and RAG",
+          "reason": "Correct. Managed identity secures access, vector search retrieves semantic context, and RAG grounds model responses."
+        },
+        {
+          "id": 2,
+          "text": "READ UNCOMMITTED, table scans, and free-form model prompts",
+          "reason": "Incorrect. This combination does not provide secure access or reliable grounded retrieval."
+        },
+        {
+          "id": 3,
+          "text": "Randomized masking, trigger recursion, and ad hoc model output",
+          "reason": "Incorrect. These do not collectively implement secure semantic retrieval with grounded generation."
+        },
+        {
+          "id": 4,
+          "text": "Identity columns, scalar functions, and exact keyword search only",
+          "reason": "Incorrect. This does not provide semantic retrieval or grounded generation."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "A secure AI-enabled SQL solution commonly uses managed identity for access, vector search for semantic retrieval, and RAG for grounded answers."
+    },
+    {
+      "id": 59,
+      "topic": "AI-enabled database solution design",
+      "Question": "A table stores embeddings generated by a multilingual model. Users search in several languages and expect semantically related documents to be returned across language boundaries.\n\nWhich statement is accurate?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Only full-text search can compare meaning across languages",
+          "reason": "Incorrect. Full-text search is keyword-oriented and depends on language-specific processing."
+        },
+        {
+          "id": 2,
+          "text": "A multilingual embedding model can support cross-language semantic similarity when vectors are generated consistently",
+          "reason": "Correct. Multilingual embeddings can place semantically similar content across languages near each other in vector space."
+        },
+        {
+          "id": 3,
+          "text": "A ledger table is required before multilingual search can work",
+          "reason": "Incorrect. Ledger tables are unrelated to multilingual semantic similarity."
+        },
+        {
+          "id": 4,
+          "text": "Dynamic Data Masking improves semantic search quality across languages",
+          "reason": "Incorrect. Masking controls data exposure and does not improve vector similarity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Multilingual embedding models can encode text from multiple languages into a shared semantic space when used consistently."
+    },
+    {
+      "id": 60,
+      "topic": "AI-enabled database solution design",
+      "Question": "A team is designing an exam-ready AI-enabled SQL application. Which three design choices best align with DP-800 solution expectations? (Select 3)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use least privilege and managed identity for service access",
+          "reason": "Correct. Secure passwordless access and least privilege are core design expectations."
+        },
+        {
+          "id": 2,
+          "text": "Use hybrid search with RRF when both keyword and semantic relevance are required",
+          "reason": "Correct. Hybrid search with RRF is appropriate when combining full-text and vector rankings."
+        },
+        {
+          "id": 3,
+          "text": "Store secrets directly in SQL project files for easier deployment",
+          "reason": "Incorrect. Secrets should not be stored in source-controlled project files."
+        },
+        {
+          "id": 4,
+          "text": "Maintain embeddings through a change-aware process such as Change Tracking, CDC, CES, or Azure Functions",
+          "reason": "Correct. Embeddings must be kept synchronized with source data using an appropriate maintenance pattern."
+        }
+      ],
+      "MaxAnswerSelection": 3,
+      "CorrectAnswers": [
+        1,
+        2,
+        4
+      ],
+      "CorrectAnswerExplanation": "Secure access, appropriate hybrid retrieval, and reliable embedding maintenance are important design principles for AI-enabled SQL solutions."
+    }
+  ]
+}

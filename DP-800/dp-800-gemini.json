@@ -1,0 +1,1958 @@
+{
+  "quizName": "DP-800: Developing AI-Enabled Database Solutions Practice Exam",
+  "totalScore": 1000,
+  "passingScore": 700,
+  "scenarios": [
+    {
+      "id": 1,
+      "text": "CASE STUDY 1: Contoso E-Commerce AI Modernization\n\nContoso Ltd. is a global e-commerce enterprise migrating its operational database infrastructure to Azure SQL Database and Azure Fabric. The architecture team is building an AI-powered product recommendation and natural language search engine.\n\nThe database schema includes a central `Sales.Orders` table receiving millions of transactions daily, a `Catalog.Products` table with high-dimensional text descriptions, and an audit ledger table tracking financial changes.\n\nTechnical Requirements:\n- Enable hybrid natural language product discovery utilizing semantic search and exact catalog keyword queries.\n- Process high-volume product embeddings without causing latency spikes on transactional workloads.\n- Maintain cryptographically verifiable transaction history for financial regulatory compliance.\n- Enforce tenant-level data isolation dynamically based on caller application session contexts."
+    },
+    {
+      "id": 2,
+      "text": "CASE STUDY 2: Woodgrove Bank AI-Driven Analytics & Security\n\nWoodgrove Bank is implementing an AI-assisted fraud detection system on Azure SQL Database. The solution leverages Retrieval-Augmented Generation (RAG) to evaluate suspicious account activity and output risk assessments directly to compliance officers.\n\nTechnical Requirements:\n- Store customer identity details and high-risk transactional vectors with strict data protection mechanisms.\n- Ensure database developers using GitHub Copilot and Model Context Protocol (MCP) cannot view raw PII or unencrypted sensitive fields during query construction.\n- Integrate Azure OpenAI models using T-SQL stored procedures while using database-scoped managed identities.\n- Detect schema drift across CI/CD environments before publishing database changes via automated deployment pipelines."
+    },
+    {
+      "id": 3,
+      "text": "CASE STUDY 3: Fabrikam Industrial IoT & Event-Driven AI Solutions\n\nFabrikam Inc. manages global manufacturing plants and streams real-time sensor metrics into Azure SQL Database and Data API Builder (DAB) GraphQL endpoints.\n\nTechnical Requirements:\n- Store fast-ingestion telemetry payloads using lock-free data structures while archiving historical data by date.\n- Automatically trigger downstream serverless Azure Functions when machine anomaly alerts are logged to the database.\n- Expose transactional entities and graph relationships securely via GraphQL and REST without writing web application code.\n- Perform string matching on telemetry diagnostic logs to find similar maintenance records despite typographical variations in log messages."
+    }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 1,
+      "Question": "Based on the requirements for Contoso Ltd in Case Study 1:\n\nYou need to design the catalog dataset search strategy combining keyword matching (`CONTAINS`) and semantic vector scoring (`VECTOR_DISTANCE`).\n\nWhich statistical algorithm should you write in T-SQL to merge and re-rank the rank positions from both search approaches into a single ordered dataset?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Levenshtein Edit Distance Reranking",
+          "reason": "Incorrect. Levenshtein distance measures string character edit differences rather than combining rank positions from disparate search engines."
+        },
+        {
+          "id": 2,
+          "text": "Reciprocal Rank Fusion (RRF)",
+          "reason": "Correct. Reciprocal Rank Fusion combines ordinal search ranks from lexical (Full-Text) and semantic (Vector) search results into a unified score."
+        },
+        {
+          "id": 3,
+          "text": "Cosine Similarity Normalization",
+          "reason": "Incorrect. Cosine similarity calculates directional angle between individual vector pairs, not multi-engine rank consolidation."
+        },
+        {
+          "id": 4,
+          "text": "Jaro-Winkler Distance Indexing",
+          "reason": "Incorrect. Jaro-Winkler measures proximity between short strings like names, not search engine result fusion."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Reciprocal Rank Fusion (RRF) evaluates the inverse rank position of documents across multiple retrieval systems (Full-Text Keyword and Vector Similarity) to yield a balanced hybrid search result."
+    },
+    {
+      "id": 2,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 1,
+      "Question": "Contoso Ltd requires storing financial audit events in a table that guarantees immutability and cryptographic proof of data integrity.\n\nWhich database object should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Append-Only Ledger Table",
+          "reason": "Correct. Append-only ledger tables enforce cryptographic verification while prohibiting UPDATE and DELETE modifications."
+        },
+        {
+          "id": 2,
+          "text": "System-Versioned Temporal Table",
+          "reason": "Incorrect. Temporal tables retain historical state, but authorized admins can alter history or drop system versioning without cryptographic hashes."
+        },
+        {
+          "id": 3,
+          "text": "In-Memory OLTP Table with DURABILITY = SCHEMA_ONLY",
+          "reason": "Incorrect. Schema-only in-memory tables lose data upon restart and provide zero immutability or ledger guarantees."
+        },
+        {
+          "id": 4,
+          "text": "Clustered Columnstore Index with CHECK constraints",
+          "reason": "Incorrect. Columnstore tables compress analytical data but do not protect against data tampering or updates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Ledger tables capture Merkle-tree cryptographic hashes of operations. Append-only ledger tables block all update/delete operations, ensuring non-repudiation."
+    },
+    {
+      "id": 3,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 1,
+      "Question": "You are creating the table to store high-dimensional text embeddings for Contoso's 1,536-dimension AI catalog models.\n\nWhich native column data type should you select for the `ProductEmbedding` column?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "VARBINARY(MAX)",
+          "reason": "Incorrect. While raw bytes can be stored in VARBINARY, it lacks native vector distance math and query engine optimizers."
+        },
+        {
+          "id": 2,
+          "text": "NVARCHAR(MAX)",
+          "reason": "Incorrect. Serializing vector arrays as JSON strings in NVARCHAR consumes excess space and penalizes CPU during distance metrics."
+        },
+        {
+          "id": 3,
+          "text": "VECTOR(1536)",
+          "reason": "Correct. Native VECTOR(1536) stores dense floating-point embedding arrays optimized for T-SQL vector functions."
+        },
+        {
+          "id": 4,
+          "text": "FLOAT(53)",
+          "reason": "Incorrect. FLOAT(53) represents a single floating-point number, not an array of embedding dimensions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "The native VECTOR(n) data type optimizes layout and enables engine integration for native functions like VECTOR_DISTANCE."
+    },
+    {
+      "id": 4,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 1,
+      "Question": "Contoso needs to enforce dynamic row visibility in `Sales.Orders` so multi-tenant vendors can only query their specific tenant records based on `SESSION_CONTEXT`.\n\nWhich two database components must you configure? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An Inline Table-Valued Function marked WITH SCHEMABINDING",
+          "reason": "Correct. Row-Level Security requires a schemabound security predicate function returning 1 for allowed rows."
+        },
+        {
+          "id": 2,
+          "text": "A Scalar Function using EXECUTE AS OWNER",
+          "reason": "Incorrect. Scalar functions cannot serve as RLS security predicates due to performance and architectural rules."
+        },
+        {
+          "id": 3,
+          "text": "A Security Policy binding the predicate to the target table",
+          "reason": "Correct. A SECURITY POLICY binds the predicate function as a FILTER PREDICATE on the specified target table."
+        },
+        {
+          "id": 4,
+          "text": "Dynamic Data Masking rules on the TenantID column",
+          "reason": "Incorrect. Dynamic Data Masking obfuscates string output but does not prevent non-privileged rows from appearing in queries."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        3
+      ],
+      "CorrectAnswerExplanation": "Row-Level Security (RLS) is implemented by creating an Inline Table-Valued Function with SCHEMABINDING and attaching it via a CREATE SECURITY POLICY statement."
+    },
+    {
+      "id": 5,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 1,
+      "Question": "Contoso's query execution plans show performance degradation when executing scalar functions inside large dataset filters.\n\nWhich programmability object should you replace the scalar functions with to improve query optimizer inlining?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Multi-statement Table-Valued Function",
+          "reason": "Incorrect. Multi-statement TVFs treat execution as black boxes and do not inline efficiently compared to ITVFs."
+        },
+        {
+          "id": 2,
+          "text": "Inline Table-Valued Function (ITVF)",
+          "reason": "Correct. Inline TVFs are directly expanded into the overall query execution plan, unlocking full optimizer statistics."
+        },
+        {
+          "id": 3,
+          "text": "AFTER UPDATE Trigger",
+          "reason": "Incorrect. Triggers execute post-DML and cannot substitute read query filter functions."
+        },
+        {
+          "id": 4,
+          "text": "CLR Stored Procedure",
+          "reason": "Incorrect. CLR procedures introduce inter-process context switching and will not solve inline query optimization."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Inline Table-Valued Functions return a result set based on a single SELECT statement. The SQL Engine inlines them into the query plan, unlike scalar or multi-statement functions."
+    },
+    {
+      "id": 6,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "scenario_id": 2,
+      "Question": "Based on Woodgrove Bank's requirements in Case Study 2:\n\nYou must ensure that database developers querying the customer table via GitHub Copilot cannot view full Social Security Numbers, displaying only the last 4 digits.\n\nWhich feature should you implement on the table column?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Always Encrypted with Deterministic Encryption",
+          "reason": "Incorrect. Always Encrypted completely blocks query execution if keys are absent, rather than showing selective trailing digits."
+        },
+        {
+          "id": 2,
+          "text": "Dynamic Data Masking using partial(0, \"XXX-XX-\", 4)",
+          "reason": "Correct. Dynamic Data Masking with partial obfuscation displays designated unmasked characters while masking the rest for unprivileged connections."
+        },
+        {
+          "id": 3,
+          "text": "Row-Level Security with SESSION_CONTEXT",
+          "reason": "Incorrect. RLS filters entire rows out of the query result, rather than masking a specific string field."
+        },
+        {
+          "id": 4,
+          "text": "Transparent Data Encryption (TDE)",
+          "reason": "Incorrect. TDE encrypts raw physical storage files at rest, but exposes raw data to active SQL connections."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Dynamic Data Masking obfuscates target column data on the fly using masking functions like partial(prefix, padding, suffix) for non-privileged accounts."
+    },
+    {
+      "id": 7,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "scenario_id": 2,
+      "Question": "Woodgrove Bank needs to call an Azure OpenAI GPT-4o model directly inside a stored procedure to analyze risk context outputted as JSON.\n\nWhich native system object should you use to invoke the remote LLM endpoint?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "sp_execute_external_script",
+          "reason": "Incorrect. Used to run R/Python scripts locally, not for calling external HTTPS REST endpoints."
+        },
+        {
+          "id": 2,
+          "text": "sp_invoke_external_rest_endpoint",
+          "reason": "Correct. sp_invoke_external_rest_endpoint executes outbound HTTPS REST calls securely from T-SQL using Database Scoped Credentials."
+        },
+        {
+          "id": 3,
+          "text": "xp_cmdshell",
+          "reason": "Incorrect. xp_cmdshell triggers OS shell commands and is disabled by default due to security risks."
+        },
+        {
+          "id": 4,
+          "text": "sys.sp_addextendedproc",
+          "reason": "Incorrect. Extended stored procedures invoke native DLLs, which is a legacy unmanaged approach."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "sp_invoke_external_rest_endpoint allows Azure SQL Database to send POST/GET payloads directly to REST services like Azure OpenAI."
+    },
+    {
+      "id": 8,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "scenario_id": 2,
+      "Question": "You are setting up CI/CD deployment pipelines for Woodgrove Bank's SDK-style database projects (`.sqlproj`).\n\nYou need to generate a pre-deployment report that flags manual target database schema modifications before executing structural pipeline upgrades.\n\nWhich `SqlPackage` action parameter should you run?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "/Action:Publish",
+          "reason": "Incorrect. Publish directly executes schema updates against the target database without stopping to output a drift report."
+        },
+        {
+          "id": 2,
+          "text": "/Action:Extract",
+          "reason": "Incorrect. Extract generates a dacpac from an active database instance."
+        },
+        {
+          "id": 3,
+          "text": "/Action:DeployReport",
+          "reason": "Correct. DeployReport analyzes schema differences between a dacpac build output and the target database, detailing changes and potential drift."
+        },
+        {
+          "id": 4,
+          "text": "/Action:Export",
+          "reason": "Incorrect. Export creates a bacpac package containing schema and data."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "SqlPackage with /Action:DeployReport outputs an XML report summarizing deployment actions and identifying schema drift without modifying the target database."
+    },
+    {
+      "id": 9,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 2,
+      "Question": "To configure GitHub Copilot within Woodgrove Bank's development environment, you must provide repository-level standards mandating strict T-SQL guidelines for code generation.\n\nWhich file path should you commit to the repository root?",
+      "Options": [
+        {
+          "id": 1,
+          "text": ".github/copilot-instructions.md",
+          "reason": "Correct. GitHub Copilot automatically loads context instructions placed inside .github/copilot-instructions.md."
+        },
+        {
+          "id": 2,
+          "text": ".vscode/mcp-server.json",
+          "reason": "Incorrect. mcp-server.json configures endpoint servers for Model Context Protocol, not repository prompt instructions."
+        },
+        {
+          "id": 3,
+          "text": "azure-pipelines/sqlproj.yaml",
+          "reason": "Incorrect. Yaml files configure CI/CD build steps, not AI assistant prompt instructions."
+        },
+        {
+          "id": 4,
+          "text": "properties/launchSettings.json",
+          "reason": "Incorrect. Launch settings configure local application runtime environments."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Placing a Markdown instruction file at .github/copilot-instructions.md defines custom guidelines that GitHub Copilot incorporates when generating code within that repository."
+    },
+    {
+      "id": 10,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 3,
+      "Question": "Based on Fabrikam Inc's requirements in Case Study 3:\n\nYou are designing a high-throughput telemetry table to ingest continuous device logs. Writes must avoid locking overhead, while schemas must persist across database restarts.\n\nWhich table options should you configure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_ONLY",
+          "reason": "Incorrect. SCHEMA_ONLY discards row data when the database engine restarts."
+        },
+        {
+          "id": 2,
+          "text": "MEMORY_OPTIMIZED = ON, DURABILITY = SCHEMA_AND_DATA",
+          "reason": "Correct. Memory-optimized tables eliminate lock/latch contention, while SCHEMA_AND_DATA guarantees persistence across restarts."
+        },
+        {
+          "id": 3,
+          "text": "SYSTEM_VERSIONING = ON, LEDGER = ON",
+          "reason": "Incorrect. Ledger system versioning adds cryptographic hash processing overhead, which is inefficient for high-frequency telemetry ingestion."
+        },
+        {
+          "id": 4,
+          "text": "DATA_COMPRESSION = PAGE, SYSTEM_VERSIONING = ON",
+          "reason": "Incorrect. Temporal system-versioning triggers synchronous history log insertions on modifications."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "In-Memory OLTP tables with DURABILITY = SCHEMA_AND_DATA deliver lock-free write performance for IoT workloads while preserving data across reboots."
+    },
+    {
+      "id": 11,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "scenario_id": 3,
+      "Question": "Fabrikam wants an event-driven mechanism to execute an Azure Function immediately whenever anomaly rows are written to `dbo.TelemetryAlerts`.\n\nWhich Azure SQL integration feature provides the lowest-overhead trigger binding for serverless code execution?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure Functions SQL Trigger Binding based on Change Tracking",
+          "reason": "Correct. Azure Functions SQL trigger uses lightweight Change Tracking to capture new rows and fire function code automatically."
+        },
+        {
+          "id": 2,
+          "text": "SQL Database Mail with SMTP notifications",
+          "reason": "Incorrect. Database mail sends email notifications rather than triggering serverless application execution."
+        },
+        {
+          "id": 3,
+          "text": "Extended Events firing Windows Event Logs",
+          "reason": "Incorrect. Extended events monitor engine diagnostics rather than triggering application event flows."
+        },
+        {
+          "id": 4,
+          "text": "Transaction Log Shipping to Azure Blob Storage",
+          "reason": "Incorrect. Log shipping is a disaster recovery mechanism, not an event-driven execution trigger."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Functions bindings for SQL use Change Tracking to monitor table modifications and trigger function executions automatically."
+    },
+    {
+      "id": 12,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "scenario_id": 3,
+      "Question": "Fabrikam is configuring Data API Builder (DAB) to expose the database via GraphQL without custom REST middleware.\n\nWhich configuration file must be deployed to define database entities, CRUD permissions, and endpoint mappings?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "dab-config.json",
+          "reason": "Correct. Data API Builder relies on a dab-config.json schema file to configure datasources, entities, roles, and GraphQL/REST options."
+        },
+        {
+          "id": 2,
+          "text": "appsettings.Development.json",
+          "reason": "Incorrect. appsettings is used in ASP.NET applications, not Data API Builder engine deployments."
+        },
+        {
+          "id": 3,
+          "text": "schema.graphql",
+          "reason": "Incorrect. schema.graphql defines GraphQL schemas manually, whereas DAB auto-generates GraphQL from its JSON configuration."
+        },
+        {
+          "id": 4,
+          "text": "parameters.dacpac",
+          "reason": "Incorrect. Dacpac files hold compiled database definitions, not API mapping configurations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Data API Builder uses dab-config.json to define how relational database views, tables, and procedures are mapped into REST and GraphQL schemas."
+    },
+    {
+      "id": 13,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 3,
+      "Question": "Fabrikam engineers need to locate error strings in diagnostic logs that are near-matches to 'Overheating Engine' despite minor typographical errors.\n\nWhich T-SQL fuzzy matching function calculates the minimum number of single-character edits required to convert one string into another?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JARO_WINKLER_DISTANCE",
+          "reason": "Incorrect. Jaro-Winkler outputs a normalized similarity score between 0 and 1, rather than counting discrete single-character edits."
+        },
+        {
+          "id": 2,
+          "text": "EDIT_DISTANCE",
+          "reason": "Correct. EDIT_DISTANCE computes the Levenshtein distance (count of insertions, deletions, or substitutions to transform one string to another)."
+        },
+        {
+          "id": 3,
+          "text": "REGEXP_INSTR",
+          "reason": "Incorrect. REGEXP_INSTR finds the starting character position of a regex match, not edit counts."
+        },
+        {
+          "id": 4,
+          "text": "SOUNDEX",
+          "reason": "Incorrect. SOUNDEX maps strings to four-character phonetic codes rather than calculating edit counts."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "EDIT_DISTANCE measures the Levenshtein edit distance between two strings, returning the count of character edits needed for transformation."
+    },
+    {
+      "id": 14,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "scenario_id": 3,
+      "Question": "Fabrikam models plant machinery as nodes and physical wiring connections as edges.\n\nWhich T-SQL clause must be used in a graph query to traverse the path between a `Sensor` node and a `Controller` node?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "WHERE MATCH(Sensor-(ConnectedTo)->Controller)",
+          "reason": "Correct. Graph queries use the MATCH clause with directional arrow patterns to traverse nodes and edges."
+        },
+        {
+          "id": 2,
+          "text": "JOIN ConnectedTo ON Sensor.ID = Controller.ID",
+          "reason": "Incorrect. Standard relational JOINs do not use graph engine pattern match optimizers."
+        },
+        {
+          "id": 3,
+          "text": "CROSS APPLY STRING_SPLIT(Sensor.Path, '->')",
+          "reason": "Incorrect. STRING_SPLIT parses strings into tables, not graph nodes."
+        },
+        {
+          "id": 4,
+          "text": "HAVING GRAPH_PATH(Sensor, Controller) = TRUE",
+          "reason": "Incorrect. GRAPH_PATH is invalid T-SQL syntax."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Graph processing in T-SQL uses the MATCH predicate inside the WHERE clause to evaluate ASCII-art directional patterns like Node-(Edge)->Node."
+    },
+    {
+      "id": 15,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are partitioning a historical sales database table by quarter. You need to define the partitioning boundaries for the dataset.\n\nWhich database object must you create first?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Partition Scheme",
+          "reason": "Incorrect. A Partition Scheme maps partitions to filegroups, but it requires an existing Partition Function."
+        },
+        {
+          "id": 2,
+          "text": "Partition Function",
+          "reason": "Correct. A Partition Function defines the logical boundary points and data types used for partitioning."
+        },
+        {
+          "id": 3,
+          "text": "Clustered Columnstore Index",
+          "reason": "Incorrect. Columnstore indexes can be aligned with partitions, but do not define partition logic."
+        },
+        {
+          "id": 4,
+          "text": "Filegroup Map",
+          "reason": "Incorrect. Filegroup maps are not an independent T-SQL creation step."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "The mandatory sequence for table partitioning is: 1) CREATE PARTITION FUNCTION, 2) CREATE PARTITION SCHEME, 3) CREATE TABLE on scheme."
+    },
+    {
+      "id": 16,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to extract a nested JSON sub-object from a raw API response string stored in a column.\n\nWhich JSON function should you use to return a valid JSON object string instead of a scalar value?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_VALUE",
+          "reason": "Incorrect. JSON_VALUE extracts only scalar values (strings, numbers, booleans) and returns NULL if an object or array is targeted."
+        },
+        {
+          "id": 2,
+          "text": "JSON_QUERY",
+          "reason": "Correct. JSON_QUERY extracts embedded JSON objects or arrays from a JSON string."
+        },
+        {
+          "id": 3,
+          "text": "JSON_ARRAYAGG",
+          "reason": "Incorrect. JSON_ARRAYAGG aggregates row values into a JSON array structure."
+        },
+        {
+          "id": 4,
+          "text": "JSON_OBJECT",
+          "reason": "Incorrect. JSON_OBJECT constructs a new JSON object from key-value inputs."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "JSON_QUERY extracts an object or array from JSON strings, whereas JSON_VALUE extracts scalar values."
+    },
+    {
+      "id": 17,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are creating a standalone sequence object to supply auto-incrementing invoice numbers across three separate database tables.\n\nWhich T-SQL statement properly retrieves the next available identity integer?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SELECT CURRENT VALUE FOR dbo.InvoiceSeq;",
+          "reason": "Incorrect. CURRENT VALUE FOR is invalid syntax; NEXT VALUE FOR is required."
+        },
+        {
+          "id": 2,
+          "text": "SELECT NEXT VALUE FOR dbo.InvoiceSeq;",
+          "reason": "Correct. NEXT VALUE FOR fetches the next atomic sequence value."
+        },
+        {
+          "id": 3,
+          "text": "EXECUTE dbo.sp_next_sequence 'dbo.InvoiceSeq';",
+          "reason": "Incorrect. System procedures are not used for retrieving sequence values."
+        },
+        {
+          "id": 4,
+          "text": "SELECT SCOPE_IDENTITY() FROM dbo.InvoiceSeq;",
+          "reason": "Incorrect. SCOPE_IDENTITY() applies to IDENTITY columns on specific tables."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Sequence numbers are generated using the expression NEXT VALUE FOR sequence_name."
+    },
+    {
+      "id": 18,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to write a T-SQL query that returns customer ranks based on purchase totals, without leaving gaps in the ranking sequence when ties occur.\n\nWhich window function should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "RANK()",
+          "reason": "Incorrect. RANK() inserts gaps in rank numbers following ties (e.g., 1, 2, 2, 4)."
+        },
+        {
+          "id": 2,
+          "text": "ROW_NUMBER()",
+          "reason": "Incorrect. ROW_NUMBER() produces strictly sequential row counts, ignoring ties."
+        },
+        {
+          "id": 3,
+          "text": "DENSE_RANK()",
+          "reason": "Correct. DENSE_RANK() ranks items without skipping numbers after tied values (e.g., 1, 2, 2, 3)."
+        },
+        {
+          "id": 4,
+          "text": "NTILE(4)",
+          "reason": "Incorrect. NTILE splits rows into fixed buckets/quartiles."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "DENSE_RANK() evaluates ordering partitions and assigns consecutive rank values without gaps when tied rows exist."
+    },
+    {
+      "id": 19,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are implementing regular expression validation on user registration records.\n\nWhich function checks if a column string matches a specified regular expression pattern, returning a boolean evaluation?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "REGEXP_REPLACE",
+          "reason": "Incorrect. REGEXP_REPLACE modifies text matches rather than evaluating boolean conditions."
+        },
+        {
+          "id": 2,
+          "text": "REGEXP_LIKE",
+          "reason": "Correct. REGEXP_LIKE evaluates whether a string matches a regex pattern."
+        },
+        {
+          "id": 3,
+          "text": "REGEXP_SUBSTR",
+          "reason": "Incorrect. REGEXP_SUBSTR extracts a substring match."
+        },
+        {
+          "id": 4,
+          "text": "REGEXP_SPLIT_TO_TABLE",
+          "reason": "Incorrect. REGEXP_SPLIT_TO_TABLE converts delimited string matches into tabular rows."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "REGEXP_LIKE is a predicate function that returns TRUE if the target string matches the supplied regular expression pattern."
+    },
+    {
+      "id": 20,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are configuring PolyBase to query data stored in external Parquet files on Azure Data Lake Storage Gen2 without moving the files.\n\nWhich database object abstracts the external dataset into a queryable database structure?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "External Table",
+          "reason": "Correct. External Tables point to remote storage locations and allow T-SQL queries as if they were local tables."
+        },
+        {
+          "id": 2,
+          "text": "In-Memory Table",
+          "reason": "Incorrect. In-Memory tables host local data in system RAM."
+        },
+        {
+          "id": 3,
+          "text": "System-Versioned Temporal Table",
+          "reason": "Incorrect. Temporal tables record local row changes over time."
+        },
+        {
+          "id": 4,
+          "text": "Node Table",
+          "reason": "Incorrect. Node tables host graph database entities."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "CREATE EXTERNAL TABLE references data stored in external files (Parquet, CSV) via an External Data Source."
+    },
+    {
+      "id": 21,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are creating a non-clustered index on an `Orders` table. The index must cover queries filtering by `CustomerID` and returning `OrderDate` and `TotalAmount`, without exceeding index key size limits.\n\nHow should you construct the index?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Define CustomerID, OrderDate, and TotalAmount as key columns.",
+          "reason": "Incorrect. Adding all columns as index keys increases B-tree key width unnecessarily."
+        },
+        {
+          "id": 2,
+          "text": "Define CustomerID as the key column, and append OrderDate and TotalAmount in the INCLUDE clause.",
+          "reason": "Correct. Storing non-search filter columns in the INCLUDE clause creates a covering index without widening key limits."
+        },
+        {
+          "id": 3,
+          "text": "Create a Clustered Index on TotalAmount and INCLUDE CustomerID.",
+          "reason": "Incorrect. Clustered indexes physically order table rows and do not support an INCLUDE clause."
+        },
+        {
+          "id": 4,
+          "text": "Create a Clustered Columnstore Index filtered by CustomerID.",
+          "reason": "Incorrect. Columnstore indexes compress all columns and do not support standard key/include configurations."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Using the INCLUDE clause adds payload columns to the index leaf nodes, avoiding key lookups while keeping B-Tree key size minimal."
+    },
+    {
+      "id": 22,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to store audit logs in a temporal database table so that historical row states are retained automatically whenever updates or deletes occur.\n\nWhich pair of temporal columns must be added to the table definition? (Select 2)",
+      "Options": [
+        {
+          "id": 1,
+          "text": "DATETIME2 column marked GENERATED ALWAYS AS ROW START",
+          "reason": "Correct. Temporal tables require a start timestamp column defined as GENERATED ALWAYS AS ROW START."
+        },
+        {
+          "id": 2,
+          "text": "DATETIME2 column marked GENERATED ALWAYS AS ROW END",
+          "reason": "Correct. Temporal tables require an end timestamp column defined as GENERATED ALWAYS AS ROW END."
+        },
+        {
+          "id": 3,
+          "text": "VARBINARY(MAX) column marked GENERATED AS HASH",
+          "reason": "Incorrect. Binary hashes are used in ledger tables, not temporal tracking."
+        },
+        {
+          "id": 4,
+          "text": "BIGINT column marked AS IDENTITY",
+          "reason": "Incorrect. Identity columns generate surrogate key values, not temporal period bounds."
+        }
+      ],
+      "MaxAnswerSelection": 2,
+      "CorrectAnswers": [
+        1,
+        2
+      ],
+      "CorrectAnswerExplanation": "Temporal tables require two DATETIME2 columns defined with GENERATED ALWAYS AS ROW START and GENERATED ALWAYS AS ROW END, combined into a PERIOD FOR SYSTEM_TIME definition."
+    },
+    {
+      "id": 23,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to optimize searches against JSON properties stored in a `VARCHAR(MAX)` column.\n\nWhich strategy enables creating a standard non-clustered index over a specific JSON attribute?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Add a computed column using JSON_VALUE to extract the property, then index the computed column.",
+          "reason": "Correct. Non-clustered indexes can be built on non-persisted or persisted computed columns derived via JSON_VALUE."
+        },
+        {
+          "id": 2,
+          "text": "Create a Clustered Columnstore Index directly over the JSON column.",
+          "reason": "Incorrect. Columnstore indexes cannot index LOB/VARCHAR(MAX) JSON properties for point-lookups."
+        },
+        {
+          "id": 3,
+          "text": "Apply Dynamic Data Masking to the JSON column.",
+          "reason": "Incorrect. Masking obfuscates output and does not facilitate index lookups."
+        },
+        {
+          "id": 4,
+          "text": "Use JSON_QUERY inside a clustered primary key constraint.",
+          "reason": "Incorrect. JSON_QUERY returns JSON fragments and cannot define primary keys."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Extracting JSON properties into a computed column allows standard B-tree non-clustered indexes to be placed on the computed column."
+    },
+    {
+      "id": 24,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are writing a database script that reads data from an execution block. You must retain access to intermediate hierarchical data across multiple recursive evaluations within a single query.\n\nWhich T-SQL construct supports self-referential recursive iteration?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Recursive Common Table Expression (CTE)",
+          "reason": "Correct. A recursive CTE references itself to iterate through parent-child relationships."
+        },
+        {
+          "id": 2,
+          "text": "Inline Table-Valued Function",
+          "reason": "Incorrect. Functions do not allow direct self-referencing recursive execution paths."
+        },
+        {
+          "id": 3,
+          "text": "System-Versioned Temporal View",
+          "reason": "Incorrect. Temporal views provide historical row snapshots, not dynamic recursion."
+        },
+        {
+          "id": 4,
+          "text": "INSTEAD OF Trigger",
+          "reason": "Incorrect. Triggers intercept DML operations, not query execution hierarchies."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Recursive Common Table Expressions (CTEs) iterate over hierarchical data like org charts by joining an anchor member to a recursive member."
+    },
+    {
+      "id": 25,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are integrating an AI agent using Model Context Protocol (MCP) to interact with an Azure SQL Database instance.\n\nWhat is the primary operational role of an MCP server endpoint in this architecture?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "It standardizes how AI applications securely request context, schemas, and tools directly from the database server.",
+          "reason": "Correct. MCP provides a standardized protocol for AI models to query context and invoke capabilities exposed by database endpoints."
+        },
+        {
+          "id": 2,
+          "text": "It converts relational database tables into external Parquet files.",
+          "reason": "Incorrect. MCP does not handle file format export operations."
+        },
+        {
+          "id": 3,
+          "text": "It automatically generates cryptographic hashes for ledger tables.",
+          "reason": "Incorrect. Database engines generate ledger hashes internally, independent of MCP."
+        },
+        {
+          "id": 4,
+          "text": "It acts as a hardware security enclave for Always Encrypted keys.",
+          "reason": "Incorrect. Enclaves run isolated hardware execution environments, not application context protocols."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Model Context Protocol (MCP) establishes a unified communication boundary that lets AI clients inspect schema metadata and execute authorized database context queries."
+    },
+    {
+      "id": 26,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are configuring end-to-end data security for sensitive health records stored in Azure SQL Database.\n\nYou must ensure data remains encrypted in transit, at rest, and while in memory during query processing. Database administrators must not have access to plaintext values.\n\nWhich encryption technology should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Transparent Data Encryption (TDE)",
+          "reason": "Incorrect. TDE encrypts data at rest on disk, but presents unencrypted data in memory and to SQL connection sessions."
+        },
+        {
+          "id": 2,
+          "text": "Always Encrypted with secure enclaves",
+          "reason": "Correct. Always Encrypted with secure enclaves keeps data encrypted client-side and processes computations within protected enclave memory."
+        },
+        {
+          "id": 3,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Masking obfuscates string displays but stores raw data unencrypted."
+        },
+        {
+          "id": 4,
+          "text": "BitLocker Drive Encryption",
+          "reason": "Incorrect. BitLocker protects disk volumes at the OS level, not individual application data fields."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Always Encrypted with secure enclaves extends client-side encryption by evaluating computations inside confidential hardware enclaves without exposing plaintext to DBAs."
+    },
+    {
+      "id": 27,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You need to prevent dirty reads, non-repeatable reads, and phantom reads in a financial settlement transaction.\n\nWhich T-SQL transaction isolation level provides the highest level of data consistency?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "READ UNCOMMITTED",
+          "reason": "Incorrect. READ UNCOMMITTED allows dirty reads."
+        },
+        {
+          "id": 2,
+          "text": "READ COMMITTED",
+          "reason": "Incorrect. READ COMMITTED allows non-repeatable and phantom reads."
+        },
+        {
+          "id": 3,
+          "text": "SERIALIZABLE",
+          "reason": "Correct. SERIALIZABLE places range locks to block dirty reads, non-repeatable reads, and phantom reads."
+        },
+        {
+          "id": 4,
+          "text": "REPEATABLE READ",
+          "reason": "Incorrect. REPEATABLE READ prevents non-repeatable reads, but still permits phantom reads."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "SERIALIZABLE is the strictest isolation level; it places range locks that prevent concurrent insertions of phantom rows within read ranges."
+    },
+    {
+      "id": 28,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "scenario_id": 1,
+      "Question": "You are troubleshooting query performance degradation on Contoso's operational database.\n\nWhich Dynamic Management View (DMV) displays active executing requests, their current waits, and blocking session IDs in real time?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "sys.dm_db_index_usage_stats",
+          "reason": "Incorrect. This DMV tracks index scan/seek operational counts."
+        },
+        {
+          "id": 2,
+          "text": "sys.dm_exec_requests",
+          "reason": "Correct. sys.dm_exec_requests lists actively executing query requests, wait types, and blocking session IDs."
+        },
+        {
+          "id": 3,
+          "text": "sys.dm_resource_governor_workload_groups",
+          "reason": "Incorrect. Displays resource governor configuration stats."
+        },
+        {
+          "id": 4,
+          "text": "sys.dm_query_store_plan",
+          "reason": "Incorrect. Displays stored historical plan details from Query Store."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "sys.dm_exec_requests returns information about each request currently executing within SQL Server, including blocking details."
+    },
+    {
+      "id": 29,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are establishing passwordless database connections between an Azure App Service host and an Azure SQL Database instance.\n\nWhich configuration eliminates static database passwords while granting the web application database access?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Enable Managed Identity on the App Service and create a mapped database user from the external provider.",
+          "reason": "Correct. Entra ID Managed Identities allow applications to authenticate to Azure SQL Database passwordlessly via tokens."
+        },
+        {
+          "id": 2,
+          "text": "Store the SQL SA user credentials in appsettings.json.",
+          "reason": "Incorrect. Exposes static administrative passwords."
+        },
+        {
+          "id": 3,
+          "text": "Configure SQL Server Authentication using connection string encryption.",
+          "reason": "Incorrect. Still relies on embedded database user passwords."
+        },
+        {
+          "id": 4,
+          "text": "Create an asymmetric key inside the database and export the private key to Azure Storage.",
+          "reason": "Incorrect. Asymmetric DB keys are used for column encryption, not app connection auth."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Managed Identities allow Azure resources to authenticate securely to Azure SQL Database without storing credentials in code or config files."
+    },
+    {
+      "id": 30,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are auditing a SQL database project's build errors. The build fails because reference table data script execution violates key constraints during clean pipeline runs.\n\nWhere should static seed data script statements (`MERGE`) be linked inside an SDK-style database project (`.sqlproj`)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Inside a script file marked with Build Action = PostDeploy",
+          "reason": "Correct. Post-deployment scripts execute after schema deployment completes, making them the standard location for seed data operations."
+        },
+        {
+          "id": 2,
+          "text": "Inside the PreDeploy script file",
+          "reason": "Incorrect. Pre-deployment scripts run before tables exist or structural updates occur."
+        },
+        {
+          "id": 3,
+          "text": "As a schema definition script marked Build Action = Build",
+          "reason": "Incorrect. Build action targets DDL object creation scripts (CREATE TABLE), not data population statements."
+        },
+        {
+          "id": 4,
+          "text": "Inside the .github/workflows deployment YAML file",
+          "reason": "Incorrect. CI/CD workflow files direct pipeline tasks, not database engine script execution."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Post-deployment scripts (PostDeploy) run after the main schema deployment, ensuring reference data can be merged into target tables safely."
+    },
+    {
+      "id": 31,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are configuring Data API Builder (DAB) caching options to reduce database load for catalog lookup endpoints.\n\nWhich section inside `dab-config.json` configures entity-level response caching ttl (time-to-live)?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Under the entity's runtime configuration settings",
+          "reason": "Correct. Caching policies (enabled state and TTL in seconds) are defined within the entity configuration in dab-config.json."
+        },
+        {
+          "id": 2,
+          "text": "Inside the Azure Key Vault secrets settings",
+          "reason": "Incorrect. Key Vault stores secrets, not DAB endpoint caching parameters."
+        },
+        {
+          "id": 3,
+          "text": "Inside the Database Scoped Credential configuration",
+          "reason": "Incorrect. Database scoped credentials manage database connection authentication."
+        },
+        {
+          "id": 4,
+          "text": "Under the database connection string parameters",
+          "reason": "Incorrect. Connection strings specify network routes and credentials."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Entity caching parameters, including TTL, are specified per entity within the dab-config.json runtime metadata settings."
+    },
+    {
+      "id": 32,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You need to log structural DDL alterations and permission modifications across an Azure SQL database instance to an Azure Log Analytics workspace.\n\nWhich service component should you enable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Azure SQL Auditing",
+          "reason": "Correct. Azure SQL Auditing tracks database events and writes logs to Log Analytics, Event Hubs, or Azure Storage."
+        },
+        {
+          "id": 2,
+          "text": "Change Data Capture (CDC)",
+          "reason": "Incorrect. CDC tracks table DML data changes (insert/update/delete), not administrative DDL events."
+        },
+        {
+          "id": 3,
+          "text": "Query Performance Insight",
+          "reason": "Incorrect. Monitors query resource usage and execution statistics."
+        },
+        {
+          "id": 4,
+          "text": "Application Insights SDK",
+          "reason": "Incorrect. Monitors application-level telemetry and HTTP request pipeline traces."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "SQL Auditing logs server and database events, including DDL schema updates and authentication actions, directly to Log Analytics."
+    },
+    {
+      "id": 33,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You need to track row modifications in a database table to support a microservice synchronization pipeline. You only need to identify *which* row primary keys changed, without needing full historical column values.\n\nWhich feature minimizes operational logging overhead for this requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Change Tracking (CT)",
+          "reason": "Correct. Change Tracking is a lightweight mechanism that records only changed row primary keys, minimizing overhead."
+        },
+        {
+          "id": 2,
+          "text": "Change Data Capture (CDC)",
+          "reason": "Incorrect. CDC reads the transaction log to record complete historical column values, consuming more storage and compute."
+        },
+        {
+          "id": 3,
+          "text": "Ledger System-Versioned Tables",
+          "reason": "Incorrect. Ledger provides tamper-proof cryptographic hashing, which adds unnecessary overhead for simple synchronization."
+        },
+        {
+          "id": 4,
+          "text": "Temporal System-Versioned History",
+          "reason": "Incorrect. Temporal tables store full table copies of updated/deleted rows."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Change Tracking records primary key values of modified rows with minimal resource overhead, making it ideal for basic synchronization."
+    },
+    {
+      "id": 34,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are reviewing execution plans in Query Store. You notice an execution plan contains a `Key Lookup` (Clustered) operator occurring millions of times inside a loop.\n\nHow should you resolve this operator overhead?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Add the missing payload columns to the non-clustered index using the INCLUDE clause.",
+          "reason": "Correct. A Key Lookup occurs when a non-clustered index lacks required output columns. Adding them via INCLUDE creates a covering index."
+        },
+        {
+          "id": 2,
+          "text": "Drop the non-clustered index and force a Table Scan.",
+          "reason": "Incorrect. Table scans force reading the whole table from disk, which degrades performance."
+        },
+        {
+          "id": 3,
+          "text": "Increase the MAXDOP setting to 16.",
+          "reason": "Incorrect. Increasing MAXDOP allocates more CPU threads to the lookup loop, but does not eliminate the lookups."
+        },
+        {
+          "id": 4,
+          "text": "Enable Dynamic Data Masking on the key column.",
+          "reason": "Incorrect. Data masking does not affect query execution plan operators."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Key Lookups occur when an index seek finds matching rows, but must fetch additional columns from the clustered index. Adding those columns to the INCLUDE list eliminates the lookup."
+    },
+    {
+      "id": 35,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are deploying a database updates pipeline. The pipeline must deploy schema updates dynamically using `.dacpac` files built from source control.\n\nWhich command-line tool executes schema comparison and deployment actions against Azure SQL targets in CI/CD runner agents?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SqlPackage",
+          "reason": "Correct. SqlPackage is the CLI utility used to publish, extract, and report on .dacpac files."
+        },
+        {
+          "id": 2,
+          "text": "az sql db copy",
+          "reason": "Incorrect. az sql db copy creates a database clone, but does not manage declarative deployment packages."
+        },
+        {
+          "id": 3,
+          "text": "bcp",
+          "reason": "Incorrect. bcp (Bulk Copy Program) imports and exports raw bulk data files."
+        },
+        {
+          "id": 4,
+          "text": "mssql-cli",
+          "reason": "Incorrect. mssql-cli is an interactive terminal for running manual T-SQL queries."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "SqlPackage is the core cross-platform command-line tool for deploying, extracting, and reporting on database package (.dacpac) files."
+    },
+    {
+      "id": 36,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are evaluating vector distance functions in Azure SQL Database to find semantically similar documents.\n\nWhich distance metric should you select when comparing directional angles between text embedding vectors, independent of vector magnitude?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Euclidean distance",
+          "reason": "Incorrect. Euclidean distance measures straight-line spatial distance between point coordinates."
+        },
+        {
+          "id": 2,
+          "text": "Cosine distance",
+          "reason": "Correct. Cosine distance evaluates the angle between vectors, making it ideal for text semantic similarity comparisons."
+        },
+        {
+          "id": 3,
+          "text": "Manhattan distance",
+          "reason": "Incorrect. Manhattan distance calculates grid-based path distances."
+        },
+        {
+          "id": 4,
+          "text": "Hamming distance",
+          "reason": "Incorrect. Hamming distance measures binary bit difference counts between strings."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Cosine distance measures the cosine of the angle between two vector directions, making it the standard metric for text embedding semantic search."
+    },
+    {
+      "id": 37,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You need to scale a vector database search workload containing 50 million rows. Queries must execute under 50 milliseconds.\n\nWhich vector search indexing approach should you evaluate to meet the sub-second latency requirement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Exact Nearest Neighbor (ENN)",
+          "reason": "Incorrect. ENN scans every vector row sequentially (O(N)), causing high query latency on large datasets."
+        },
+        {
+          "id": 2,
+          "text": "Approximate Nearest Neighbor (ANN) index",
+          "reason": "Correct. ANN indexes (such as HNSW) organize vectors into search graphs to return top matches in sub-second times."
+        },
+        {
+          "id": 3,
+          "text": "Clustered B-Tree Index on raw vector string",
+          "reason": "Incorrect. Standard B-Trees cannot index high-dimensional vector space."
+        },
+        {
+          "id": 4,
+          "text": "Full-Text Inverted Index",
+          "reason": "Incorrect. Inverted indexes support keyword matching, not multi-dimensional vector math."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "ANN indexing trades a minor degree of recall precision for sub-second query evaluation across millions of vectors."
+    },
+    {
+      "id": 38,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are generating embeddings from large technical manuals before writing them to the database.\n\nWhat is the primary objective of breaking source documents into chunks (e.g., 512 tokens with overlap) before embedding generation?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "To stay within model token limits and keep embedding vectors focused on specific semantic topics.",
+          "reason": "Correct. Chunking prevents text truncation at model token boundaries and ensures embedding vectors represent granular semantic units."
+        },
+        {
+          "id": 2,
+          "text": "To encrypt sensitive PII before transmission.",
+          "reason": "Incorrect. Chunking breaks down text; it does not encrypt data."
+        },
+        {
+          "id": 3,
+          "text": "To convert unstructured text directly into JSON tables.",
+          "reason": "Incorrect. Chunking does not handle table formatting."
+        },
+        {
+          "id": 4,
+          "text": "To enable Temporal system-versioning triggers.",
+          "reason": "Incorrect. Chunking is a pre-embedding text preparation step, unrelated to temporal database features."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Chunking splits large documents into smaller text blocks, ensuring they fit embedding model context windows and produce focused vector representations."
+    },
+    {
+      "id": 39,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are building a RAG application in T-SQL. You have queried vector matches and formatted them into a JSON payload stored in `@ContextJSON`.\n\nWhich T-SQL function constructs the structured JSON payload containing the system instructions and user context to send to Azure OpenAI?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_OBJECT and JSON_ARRAY",
+          "reason": "Correct. JSON_OBJECT and JSON_ARRAY construct well-formed JSON object keys and message arrays inline."
+        },
+        {
+          "id": 2,
+          "text": "OPENJSON",
+          "reason": "Incorrect. OPENJSON parses tabular rows out of a JSON string."
+        },
+        {
+          "id": 3,
+          "text": "JSON_VALUE",
+          "reason": "Incorrect. JSON_VALUE reads a single scalar value from a JSON string."
+        },
+        {
+          "id": 4,
+          "text": "VECTOR_NORMALIZE",
+          "reason": "Incorrect. VECTOR_NORMALIZE rescales vector floating-point lengths."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "JSON_OBJECT and JSON_ARRAY create structured JSON payloads in T-SQL, which are required for REST APIs like Azure OpenAI."
+    },
+    {
+      "id": 40,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You need to evaluate the magnitude length of a vector stored in a database column to verify it is normalized (length equal to 1.0).\n\nWhich vector function should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "VECTOR_NORMALIZE",
+          "reason": "Incorrect. VECTOR_NORMALIZE returns a new normalized vector, rather than reporting metadata metrics."
+        },
+        {
+          "id": 2,
+          "text": "VECTORPROPERTY",
+          "reason": "Correct. VECTORPROPERTY retrieves properties of a vector, such as its dimension count or normalization status."
+        },
+        {
+          "id": 3,
+          "text": "VECTOR_DISTANCE",
+          "reason": "Incorrect. VECTOR_DISTANCE measures distance between two separate vectors."
+        },
+        {
+          "id": 4,
+          "text": "EDIT_DISTANCE",
+          "reason": "Incorrect. EDIT_DISTANCE computes string edit counts."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "VECTORPROPERTY inspects metadata properties of a vector instance, such as its dimension length or normalization state."
+    },
+    {
+      "id": 41,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are designing a data solution using In-Memory OLTP tables. You must establish durability settings for a high-volume shopping cart table where cart contents must survive unexpected database restarts.\n\nWhich setting should you include in the `CREATE TABLE` statement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "DURABILITY = SCHEMA_ONLY",
+          "reason": "Incorrect. SCHEMA_ONLY discards row data when the server restarts."
+        },
+        {
+          "id": 2,
+          "text": "DURABILITY = SCHEMA_AND_DATA",
+          "reason": "Correct. DURABILITY = SCHEMA_AND_DATA ensures both the table definition and row contents persist across engine restarts."
+        },
+        {
+          "id": 3,
+          "text": "LEDGER = ON (LEDGER_TYPE = APPEND_ONLY)",
+          "reason": "Incorrect. Append-only ledger settings are for tamper-proof logging, not In-Memory OLTP durability."
+        },
+        {
+          "id": 4,
+          "text": "SYSTEM_VERSIONING = ON",
+          "reason": "Incorrect. System versioning creates temporal history tables, which is distinct from memory-optimized durability."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "DURABILITY = SCHEMA_AND_DATA persists memory-optimized table changes to transaction logs on disk, ensuring data survives database restarts."
+    },
+    {
+      "id": 42,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are writing a complex report query. You need to return all customer records along with the total number of orders placed by each customer. Customers who have placed no orders must still appear in the result set with an order count of zero.\n\nWhich join type and strategy should you use?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "INNER JOIN Customers to Orders with GROUP BY",
+          "reason": "Incorrect. INNER JOIN excludes customers who have no matching records in the Orders table."
+        },
+        {
+          "id": 2,
+          "text": "LEFT OUTER JOIN Customers to Orders with GROUP BY and COUNT(Orders.OrderID)",
+          "reason": "Correct. LEFT OUTER JOIN keeps all rows from the left table (Customers), returning NULL for non-matching orders which COUNT() evaluates to 0."
+        },
+        {
+          "id": 3,
+          "text": "CROSS JOIN Customers to Orders",
+          "reason": "Incorrect. CROSS JOIN produces a Cartesian product of all rows, generating incorrect totals."
+        },
+        {
+          "id": 4,
+          "text": "RIGHT OUTER JOIN Customers to Orders",
+          "reason": "Incorrect. RIGHT JOIN returns all rows from Orders, excluding customers who have placed no orders."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "A LEFT OUTER JOIN retains all primary entity records from the left table while joining matches from the right table, allowing COUNT(RightTable.Key) to evaluate to 0 for missing matches."
+    },
+    {
+      "id": 43,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to store financial transaction records. Updates and deletes must be prevented entirely, and every inserted row must be cryptographically hashed to maintain an immutable log.\n\nWhich type of table should you create?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "System-Versioned Temporal Table",
+          "reason": "Incorrect. Temporal tables allow updates and deletes, archiving previous row states to a history table."
+        },
+        {
+          "id": 2,
+          "text": "Append-Only Ledger Table",
+          "reason": "Correct. Append-only ledger tables block UPDATE and DELETE operations completely and cryptographically hash inserts."
+        },
+        {
+          "id": 3,
+          "text": "Memory-Optimized Table with DURABILITY = SCHEMA_ONLY",
+          "reason": "Incorrect. Discards row data on server restart and provides no cryptographic guarantees."
+        },
+        {
+          "id": 4,
+          "text": "External Table pointing to Parquet storage",
+          "reason": "Incorrect. External tables map remote files for querying and do not provide ledger cryptographic features."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Append-only ledger tables prohibit UPDATE and DELETE statements entirely, maintaining an immutable, cryptographically verifiable append-only log."
+    },
+    {
+      "id": 44,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are reviewing a database schema that contains a column defined as `VARCHAR(MAX)` storing raw JSON documents.\n\nWhich function should you use in a T-SQL query to transform these JSON documents into a relational result set with standard columns and rows?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "JSON_VALUE",
+          "reason": "Incorrect. JSON_VALUE extracts a single scalar value from a JSON string."
+        },
+        {
+          "id": 2,
+          "text": "OPENJSON",
+          "reason": "Correct. OPENJSON parses JSON text and returns its elements as tabular rows and columns."
+        },
+        {
+          "id": 3,
+          "text": "JSON_QUERY",
+          "reason": "Incorrect. JSON_QUERY extracts a sub-object or array fragment as a JSON string."
+        },
+        {
+          "id": 4,
+          "text": "JSON_OBJECT",
+          "reason": "Incorrect. JSON_OBJECT constructs a JSON string from relational values."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "OPENJSON is a table-valued function that parses JSON text and projects the data as tabular rows and columns."
+    },
+    {
+      "id": 45,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to automate string replacements in diagnostic log entries using regular expressions.\n\nWhich function replaces instances of a specified regex pattern with a new string value?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "REGEXP_LIKE",
+          "reason": "Incorrect. REGEXP_LIKE checks for pattern matches and returns a boolean value."
+        },
+        {
+          "id": 2,
+          "text": "REGEXP_REPLACE",
+          "reason": "Correct. REGEXP_REPLACE substitutes text matching a regular expression pattern with a replacement string."
+        },
+        {
+          "id": 3,
+          "text": "REGEXP_INSTR",
+          "reason": "Incorrect. REGEXP_INSTR returns the character position of a match."
+        },
+        {
+          "id": 4,
+          "text": "EDIT_DISTANCE",
+          "reason": "Incorrect. EDIT_DISTANCE measures character edit counts between two strings."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "REGEXP_REPLACE searches a string for regular expression matches and replaces them with a specified replacement string."
+    },
+    {
+      "id": 46,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are designing access control policies for an Azure SQL Database instance that serves a multi-tenant SaaS application.\n\nYou need to ensure that application users can only query rows belonging to their tenant, based on a session context variable set upon connection.\n\nWhich security feature should you implement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Dynamic Data Masking",
+          "reason": "Incorrect. Dynamic Data Masking obfuscates column output but does not filter rows from result sets."
+        },
+        {
+          "id": 2,
+          "text": "Always Encrypted",
+          "reason": "Incorrect. Encrypts column data at rest and in transit, but does not provide row-level filtering based on tenant context."
+        },
+        {
+          "id": 3,
+          "text": "Row-Level Security (RLS)",
+          "reason": "Correct. Row-Level Security uses security predicate functions to automatically filter query results based on user identity or session context."
+        },
+        {
+          "id": 4,
+          "text": "Transparent Data Encryption (TDE)",
+          "reason": "Incorrect. Encrypts physical database files on disk."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        3
+      ],
+      "CorrectAnswerExplanation": "Row-Level Security (RLS) restricts row access at the database engine layer using filter predicates driven by context like SESSION_CONTEXT."
+    },
+    {
+      "id": 47,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are troubleshooting a performance issue where an administrative batch script blocks operational transactions during business hours.\n\nYou want to allow the batch script to read operational tables without acquiring shared locks, accepting that dirty reads may occur.\n\nWhich isolation level should you set for the batch script session?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SERIALIZABLE",
+          "reason": "Incorrect. SERIALIZABLE acquires restrictive range locks, increasing blocking."
+        },
+        {
+          "id": 2,
+          "text": "READ UNCOMMITTED",
+          "reason": "Correct. READ UNCOMMITTED reads data without acquiring shared locks, allowing dirty reads but avoiding blocking."
+        },
+        {
+          "id": 3,
+          "text": "REPEATABLE READ",
+          "reason": "Incorrect. REPEATABLE READ holds shared locks until the transaction completes, worsening blocking."
+        },
+        {
+          "id": 4,
+          "text": "READ COMMITTED",
+          "reason": "Incorrect. READ COMMITTED uses shared locks (unless RCSI is on) which can still contend with exclusive write locks."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "READ UNCOMMITTED prevents read operations from acquiring shared locks, preventing blocking against concurrent write operations at the risk of reading dirty data."
+    },
+    {
+      "id": 48,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are managing database objects in an SDK-style database project (`.sqlproj`).\n\nYou need to add a script that populates reference code tables only after all tables and database objects have been created during deployment.\n\nWhich build action attribute should be assigned to this script file in the project?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Build",
+          "reason": "Incorrect. Build action is for standard DDL object creation scripts."
+        },
+        {
+          "id": 2,
+          "text": "PostDeploy",
+          "reason": "Correct. PostDeploy identifies scripts executed immediately after main schema deployment completes."
+        },
+        {
+          "id": 3,
+          "text": "PreDeploy",
+          "reason": "Incorrect. PreDeploy scripts run before schema changes take place."
+        },
+        {
+          "id": 4,
+          "text": "None",
+          "reason": "Incorrect. Build action None excludes the file from deployment execution."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Files designated with PostDeploy run automatically after the DACFX engine finishes deploying database schema objects."
+    },
+    {
+      "id": 49,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are deploying Data API Builder (DAB) to expose database tables to a single-page web application.\n\nWhich security mechanism in `dab-config.json` restricts data access based on authentication roles passed in incoming HTTP request headers?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "The permissions configuration within entity settings",
+          "reason": "Correct. DAB permissions map roles (e.g., authenticated, anonymous, custom roles) to specific CRUD actions per entity."
+        },
+        {
+          "id": 2,
+          "text": "The connection string parameters",
+          "reason": "Incorrect. Connection strings specify network routes and credentials for the database, not web caller roles."
+        },
+        {
+          "id": 3,
+          "text": "The database scoped credential definition",
+          "reason": "Incorrect. Manages internal database scoped credentials, not HTTP authorization roles."
+        },
+        {
+          "id": 4,
+          "text": "The global CORS configuration settings",
+          "reason": "Incorrect. CORS controls cross-origin domain browser policies, not user role permissions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Data API Builder maps access rules per entity inside dab-config.json by linking roles to permitted actions (create, read, update, delete)."
+    },
+    {
+      "id": 50,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are implementing vector search using T-SQL native vector functions.\n\nYou have an unnormalized query vector array and need to scale its values so its Euclidean length equals 1.0 before performing distance calculations.\n\nWhich function should you execute on the vector variable?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "VECTOR_DISTANCE",
+          "reason": "Incorrect. VECTOR_DISTANCE calculates distance between two vectors; it does not normalize a single vector."
+        },
+        {
+          "id": 2,
+          "text": "VECTOR_NORMALIZE",
+          "reason": "Correct. VECTOR_NORMALIZE returns a rescaled vector with a unit length of 1.0."
+        },
+        {
+          "id": 3,
+          "text": "VECTORPROPERTY",
+          "reason": "Incorrect. VECTORPROPERTY inspects vector metadata properties."
+        },
+        {
+          "id": 4,
+          "text": "EDIT_DISTANCE_SIMILARITY",
+          "reason": "Incorrect. Calculates string similarity scores."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "VECTOR_NORMALIZE rescales a vector's components so that its Euclidean norm equals 1."
+    },
+    {
+      "id": 51,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You need to store embeddings generated by an Azure OpenAI model in an Azure SQL Database table.\n\nThe model outputs embeddings with 1,536 dimensions.\n\nHow should you define the embedding column in your `CREATE TABLE` statement?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Embedding VARBINARY(1536)",
+          "reason": "Incorrect. VARBINARY(1536) allocates 1,536 bytes, which is insufficient for 1,536 4-byte floating point values."
+        },
+        {
+          "id": 2,
+          "text": "Embedding VECTOR(1536)",
+          "reason": "Correct. Native VECTOR(1536) correctly declares a vector column typed for 1,536 dimensions."
+        },
+        {
+          "id": 3,
+          "text": "Embedding VARCHAR(1536)",
+          "reason": "Incorrect. VARCHAR(1536) stores text strings and cannot handle high-dimensional vector math natively."
+        },
+        {
+          "id": 4,
+          "text": "Embedding FLOAT(1536)",
+          "reason": "Incorrect. FLOAT precision parameters accept values up to 53, representing a single floating-point number."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "The VECTOR(n) data type explicitly defines a vector column with n dimensions, enabling native vector optimization and storage."
+    },
+    {
+      "id": 52,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are building an event-driven vector embedding pipeline. When new rows are inserted into a `KnowledgeBase` table, an external process must generate vector embeddings and write them back to the database.\n\nWhich feature captures data modification events asynchronously for this pipeline while minimizing database workload impact?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "AFTER INSERT Trigger calling a web service synchronously",
+          "reason": "Incorrect. Synchronous trigger calls block active database user transactions."
+        },
+        {
+          "id": 2,
+          "text": "Change Data Capture (CDC) or Azure Functions SQL Trigger",
+          "reason": "Correct. CDC and Azure Functions SQL Triggers read changes asynchronously, decoupling embedding generation from transaction execution."
+        },
+        {
+          "id": 3,
+          "text": "Always Encrypted key enclave generation",
+          "reason": "Incorrect. Always Encrypted handles encryption, not asynchronous application pipelines."
+        },
+        {
+          "id": 4,
+          "text": "In-Memory OLTP durable table checkpoints",
+          "reason": "Incorrect. Checkpoints write memory table snapshots to disk for persistence, not external events."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Using asynchronous change processing (such as CDC or Azure Functions SQL Triggers) decouples embedding generation from transactional write operations."
+    },
+    {
+      "id": 53,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are creating a clustered index on a telemetry database table. The table receives high volumes of sequential insert operations continuously.\n\nWhich column design choice prevents page splits and index fragmentation during rapid key insertions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Use an increasing BIGINT column with IDENTITY or a sequential key as the clustered index key.",
+          "reason": "Correct. Monotonically increasing keys append new data rows to the end of index pages, avoiding page splits."
+        },
+        {
+          "id": 2,
+          "text": "Use a random NEWID() UNIQUEIDENTIFIER column as the clustered index key.",
+          "reason": "Incorrect. Random GUID keys cause severe page splits and fragmentation across index pages."
+        },
+        {
+          "id": 3,
+          "text": "Use a VARCHAR(MAX) column containing unstructured JSON.",
+          "reason": "Incorrect. LOB columns cannot serve as clustered index keys."
+        },
+        {
+          "id": 4,
+          "text": "Create the clustered index on a non-persisted computed column derived from a random float.",
+          "reason": "Incorrect. Random values cause page splits during insertions."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Using a monotonically increasing key (like a BIGINT IDENTITY) ensures new rows are appended to the last index page, minimizing page splits."
+    },
+    {
+      "id": 54,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You need to store semi-structured catalog product specifications where attributes vary significantly by category.\n\nWhich data storage approach offers flexibility without requiring frequent DDL schema modifications when new attributes are added?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Store dynamic attributes as JSON in a native JSON or NVARCHAR(MAX) column.",
+          "reason": "Correct. Storing dynamic properties in a JSON column allows flexible attribute bags without modifying table schemas."
+        },
+        {
+          "id": 2,
+          "text": "Add 500 fixed sparse columns for every potential product property.",
+          "reason": "Incorrect. Sparse columns still require DDL changes when new properties are introduced."
+        },
+        {
+          "id": 3,
+          "text": "Create an Append-Only Ledger Table for each category.",
+          "reason": "Incorrect. Ledger tables enforce immutability, which is unrelated to dynamic schema modeling."
+        },
+        {
+          "id": 4,
+          "text": "Store properties in external Parquet files.",
+          "reason": "Incorrect. External files add query latency and storage overhead for core transactional product updates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "JSON structures accommodate variable key-value pairs per record, avoiding constant table schema migrations."
+    },
+    {
+      "id": 55,
+      "topic": "Domain 1: Design and Develop Database Solutions",
+      "Question": "You are implementing error handling inside a complex stored procedure that performs updates across multiple financial tables within a transaction.\n\nWhich error handling structure ensures that active transactions are safely rolled back when an error occurs?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Wrap operations in a BEGIN TRY...END TRY block, and include IF @@TRANCOUNT > 0 ROLLBACK TRANSACTION inside the BEGIN CATCH block.",
+          "reason": "Correct. Checking @@TRANCOUNT inside a CATCH block ensures any uncommitted transaction is rolled back safely before re-throwing the error."
+        },
+        {
+          "id": 2,
+          "text": "Set OPTIMIZE_FOR_SEQUENTIAL_KEY = ON.",
+          "reason": "Incorrect. This index setting addresses last-page insert contention, not transaction error handling."
+        },
+        {
+          "id": 3,
+          "text": "Use an INSTEAD OF trigger to catch invalid statements.",
+          "reason": "Incorrect. Triggers intercept operations, but do not replace structured transaction error handling in stored procedures."
+        },
+        {
+          "id": 4,
+          "text": "Execute sp_invoke_external_rest_endpoint to log errors externally.",
+          "reason": "Incorrect. Calling REST endpoints does not manage database transaction rollbacks."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Using TRY...CATCH blocks with @@TRANCOUNT checks enables safe transaction rollbacks when database runtime errors occur."
+    },
+    {
+      "id": 56,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are configuring permissions for an application user account that executes reports against Azure SQL Database.\n\nFollowing the principle of least privilege, how should you grant read access to a specific table without granting broader database permissions?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Add the application user account to the db_owner database role.",
+          "reason": "Incorrect. db_owner grants full control over all database objects and settings."
+        },
+        {
+          "id": 2,
+          "text": "GRANT SELECT ON dbo.TargetTable TO [ApplicationUser];",
+          "reason": "Correct. Direct GRANT SELECT on the target object grants access to that specific table only."
+        },
+        {
+          "id": 3,
+          "text": "Add the account to the db_datareader role.",
+          "reason": "Incorrect. db_datareader grants read access to all tables across the entire database."
+        },
+        {
+          "id": 4,
+          "text": "Grant ALTER ANY SCHEMA to the user.",
+          "reason": "Incorrect. Grants permission to modify schema structures, far exceeding read privilege requirements."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        2
+      ],
+      "CorrectAnswerExplanation": "Granting SELECT permissions directly on a specific table follows the principle of least privilege."
+    },
+    {
+      "id": 57,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are managing deployments using SQL Database Projects.\n\nWhich file contains database object definitions (tables, views, procedures) stored as individual declarative script files within source control?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "An SDK-style project repository containing .sql script files referenced by a .sqlproj file.",
+          "reason": "Correct. Database projects track declarative schema state using individual .sql files referenced within a .sqlproj project."
+        },
+        {
+          "id": 2,
+          "text": "A single bacpac file stored in Git LFS.",
+          "reason": "Incorrect. Bacpac files are compiled binary packages containing schema and data, not readable source files."
+        },
+        {
+          "id": 3,
+          "text": "An appsettings.json file containing dynamic DDL strings.",
+          "reason": "Incorrect. appsettings files hold application runtime configurations, not database object definitions."
+        },
+        {
+          "id": 4,
+          "text": "A transactional log file (.ldf).",
+          "reason": "Incorrect. LDF files store database transaction logs on disk."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "SQL Database Projects (.sqlproj) organize object definitions into individual T-SQL scripts to enable source control management and CI/CD builds."
+    },
+    {
+      "id": 58,
+      "topic": "Domain 2: Secure, Optimize, and Deploy Database Solutions",
+      "Question": "You are using Azure Monitor to track query performance degradation and resource bottlenecks in an Azure SQL Database instance.\n\nWhich Azure Monitor component provides a centralized repository for collecting, analyzing, and querying log metrics across resources?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "Log Analytics Workspace",
+          "reason": "Correct. Log Analytics stores log metrics and allows querying via Kusto Query Language (KQL)."
+        },
+        {
+          "id": 2,
+          "text": "Application Insights Profiler",
+          "reason": "Incorrect. Application Insights tracks app-level telemetry rather than overall database server log metrics."
+        },
+        {
+          "id": 3,
+          "text": "Data API Builder Engine",
+          "reason": "Incorrect. Data API Builder generates REST/GraphQL API endpoints."
+        },
+        {
+          "id": 4,
+          "text": "Azure Key Vault",
+          "reason": "Incorrect. Key Vault stores secrets and certificates."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "Azure Log Analytics Workspaces collect diagnostic logs and performance metrics across Azure resources for querying and analysis."
+    },
+    {
+      "id": 59,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are implementing vector search to evaluate similarity between a query embedding `@QueryVec` and catalog embeddings in `ProductCatalog`.\n\nWhich T-SQL query orders products from most semantically similar to least semantically similar using Cosine distance?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "SELECT ProductID FROM dbo.ProductCatalog ORDER BY VECTOR_DISTANCE('cosine', @QueryVec, ProductEmbedding) ASC;",
+          "reason": "Correct. Cosine distance returns smaller values for vectors pointing in similar directions. Ascending order puts the most similar vectors first."
+        },
+        {
+          "id": 2,
+          "text": "SELECT ProductID FROM dbo.ProductCatalog ORDER BY VECTOR_DISTANCE('cosine', @QueryVec, ProductEmbedding) DESC;",
+          "reason": "Incorrect. Descending order places the largest distance values first, returning the least similar items."
+        },
+        {
+          "id": 3,
+          "text": "SELECT ProductID FROM dbo.ProductCatalog WHERE VECTORPROPERTY(ProductEmbedding, 'dimensions') = 1536;",
+          "reason": "Incorrect. Filters by dimension count rather than performing similarity sorting."
+        },
+        {
+          "id": 4,
+          "text": "SELECT ProductID FROM dbo.ProductCatalog ORDER BY EDIT_DISTANCE(@QueryVec, ProductEmbedding) ASC;",
+          "reason": "Incorrect. EDIT_DISTANCE computes string character edit counts, not multi-dimensional vector similarity."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "For Cosine distance, smaller values indicate smaller angular differences (higher similarity). Thus, sorting ASC returns the top semantic matches."
+    },
+    {
+      "id": 60,
+      "topic": "Domain 3: Implement AI Capabilities in Database Solutions",
+      "Question": "You are implementing a Retrieval-Augmented Generation (RAG) architecture using Azure SQL Database and Azure OpenAI.\n\nWhich sequence accurately reflects the processing steps for a user query?",
+      "Options": [
+        {
+          "id": 1,
+          "text": "1) Generate embedding for user query\n2) Execute vector search in Azure SQL Database to retrieve relevant context\n3) Construct JSON payload with context and prompt\n4) Call Azure OpenAI via sp_invoke_external_rest_endpoint to generate the response",
+          "reason": "Correct. This sequence represents the standard RAG process: query vectorization -> context retrieval -> payload construction -> LLM invocation."
+        },
+        {
+          "id": 2,
+          "text": "1) Send raw user prompt directly to Azure OpenAI\n2) Store response in an In-Memory OLTP table\n3) Run vector distance calculations on the LLM output\n4) Return results to user",
+          "reason": "Incorrect. Sending raw prompts to an LLM before retrieving database context bypasses the core pattern of RAG."
+        },
+        {
+          "id": 3,
+          "text": "1) Create an Append-Only Ledger Table\n2) Execute full table scan using EDIT_DISTANCE\n3) Mask SSN strings using Dynamic Data Masking\n4) Invoke sp_execute_external_script",
+          "reason": "Incorrect. This sequence mixes unrelated database security and fuzzy string features rather than constructing a RAG workflow."
+        },
+        {
+          "id": 4,
+          "text": "1) Call Data API Builder GraphQL endpoint\n2) Export data using SqlPackage /Action:Extract\n3) Generate embeddings using JSON_ARRAYAGG\n4) Return result set",
+          "reason": "Incorrect. SqlPackage extraction is a deployment operation, not a runtime RAG query workflow."
+        }
+      ],
+      "MaxAnswerSelection": 1,
+      "CorrectAnswers": [
+        1
+      ],
+      "CorrectAnswerExplanation": "RAG works by generating a query embedding, searching the vector database for relevant context, combining that context into a JSON prompt payload, and calling an LLM endpoint."
+    }
+  ]
+}

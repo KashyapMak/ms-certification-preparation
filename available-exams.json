@@ -166,6 +166,20 @@
           "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-100/AB-100-Claude.json"
         }
       ]
+    },
+    {
+      "code": "DP-800",
+      "name": "Developing AI-Enabled Database Solutions",
+      "tests": [
+        {
+          "title": "Set 1 (Copilot)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-800/dp-800-copilot.json"
+        },
+        {
+          "title": "Set 2 (Gemini)",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-800/dp-800-gemini.json"
+        }
+      ]
     }
   ]
 }
