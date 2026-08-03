@@ -249,30 +249,8 @@
   - [CI/CD and Integration](#cicd-and-integration)
   - [AI and RAG](#ai-and-rag)
 - [14. Seven-Day Revision Plan](#14-seven-day-revision-plan)
-- [15. Deduplication and Move Log](#15-deduplication-and-move-log)
-- [16. Source Note](#16-source-note)
-- [17. DP-800 Skills Coverage Matrix](#17-dp-800-skills-coverage-matrix)
-- [18. Final Validation Report for V3](#18-final-validation-report-for-v3)
-  - [18.1 Deduplication Validation](#181-deduplication-validation)
-  - [18.2 Content Preservation Validation](#182-content-preservation-validation)
-  - [18.3 Maintainability Guidance](#183-maintainability-guidance)
-  - [18.4 Final Quality Checklist](#184-final-quality-checklist)
+- [15. DP-800 Skills Coverage Matrix](#15-dp-800-skills-coverage-matrix)
 
----
-
-## How This Version Was Cleaned Up
-
-The uploaded README had grown through multiple additions: original guide, expanded scenario cheat sheets, syntax pack, top facts, practice questions, practice exam gap addendum, and later scenario decision packs. That made the content correct but scattered.
-
-In this version:
-
-- Repeated **RLS** content is merged under **Security > Row-Level Security**.
-- Repeated **DAB** content is merged under **Data API Builder**.
-- Repeated **JSON** examples are merged under **JSON and Semi-Structured Data**.
-- Repeated **Query Store, DMVs, blocking, deadlocks, Key Lookups, parameter sniffing** are merged under **Performance**.
-- Repeated **Vector, ANN/ENN, hybrid search, RRF, RAG** content is merged under **AI Capabilities**.
-- Repeated **decision trees, cheat sheets, traps, and must-memorize facts** are converted into topic-level scenario tables.
-- Practice-exam gaps are moved into the exact topic where they belong instead of remaining as addendums.
 
 ---
 
@@ -3665,37 +3643,7 @@ VALUES (@RequestId, @answer);
 
 ---
 
-# 15. Deduplication and Move Log
-
-| Original repeated area | Final location |
-|---|---|
-| Data type tables and top facts | Section 1.1 Data Types |
-| Constraints and sequence examples | Section 1.2 Constraints, Identity, and Sequences |
-| Index overview, scenario cheat sheet, Key Lookup, columnstore addendum | Section 1.3 Index Design |
-| Partitioning original and practice scenario | Section 1.4 Partitioning |
-| Temporal, Ledger, Memory Optimized, External, Graph | Section 1.5 Specialized Tables |
-| JSON overview, syntax pack, RAG JSON, OPENJSON practice gaps | Section 1.6 JSON and Section 11 RAG |
-| Views, functions, stored procedures, triggers, later usage guide | Section 2 Programmability Objects |
-| CTE, window functions, regex, fuzzy, correlated queries, TRY/CATCH | Section 3 Advanced T-SQL |
-| Copilot instructions, MCP scenarios, SSMS custom model notes | Section 4 AI-Assisted Development |
-| Always Encrypted, DDM, RLS, permissions, auditing, endpoint security | Section 5 Security |
-| DMVs, Query Store, execution plans, blocking, deadlocks, parameter sniffing | Section 6 Performance |
-| SQL projects, DACPAC, GitHub secrets, drift reconciliation | Section 7 CI/CD |
-| DAB REST/GraphQL, field security, stored procedure mutation, caching | Section 8 DAB and Azure Integration |
-| Embeddings, external models, structured output, maintenance methods | Section 9 Models and Embeddings |
-| Full-text, vector, ANN/ENN, hybrid, RRF, metrics | Section 10 Intelligent Search |
-| RAG architecture, scoped credentials, JSON response extraction | Section 11 RAG |
-| Practice questions and must-memorize lists | Sections 12 and 13 |
-
----
-
-# 16. Source Note
-
-This file was created by consolidating the uploaded README.md into one topic-centric master guide. The goal is to make each topic self-contained so a reader can study one topic and find the description, when-to-use guidance, syntax, scenarios, exam traps, and practice points in the same place.
-
----
-
-# 17. DP-800 Skills Coverage Matrix
+# 15. DP-800 Skills Coverage Matrix
 
 This matrix is included as a final quality gate so the README can be maintained against the official DP-800 skills outline without creating duplicate topic chapters.
 
@@ -3720,50 +3668,4 @@ This matrix is included as a final quality gate so the README can be maintained 
 
 ---
 
-# 18. Final Validation Report for V3
-
-## 18.1 Deduplication Validation
-
-- Duplicate topic explanations were consolidated into one source-of-truth chapter.
-- Duplicate syntax samples were merged into single authoritative examples unless the same syntax is intentionally reused in a different context.
-- Duplicate comparison tables, decision trees, scenario lists, top facts, and practice notes were normalized into the relevant topic or final revision sections.
-- The README no longer uses scattered addendum sections as the primary learning material.
-
-## 18.2 Content Preservation Validation
-
-The following original README content families were preserved by consolidation:
-
-- Original domain-wise study guide content.
-- Expanded scenario cheat sheets.
-- Decision trees.
-- Syntax pack examples.
-- Top facts and final revision notes.
-- Practice questions.
-- Practice exam gap addendum.
-- Security, DAB, performance, CI/CD, vector, RAG, graph, and MCP missing-detail sections.
-
-## 18.3 Maintainability Guidance
-
-When adding future content:
-
-1. Do not create a new addendum unless it is temporary.
-2. Add new details directly into the relevant chapter.
-3. If adding a new scenario, place it under the topic's exam scenario or practice question section.
-4. If adding a new syntax pattern, place it under the topic's syntax section.
-5. If adding a new comparison, place it near the topic it helps explain.
-6. Keep each concept as one source of truth.
-
-## 18.4 Final Quality Checklist
-
-- [x] Markdown format preserved.
-- [x] Clickable table of contents added.
-- [x] Heading hierarchy normalized.
-- [x] Duplicate topic sections removed.
-- [x] Related content consolidated.
-- [x] Missing explanations filled where relevant.
-- [x] Missing examples added where relevant, including expanded CTE, window functions, correlated queries, JSON, graph, security, performance, DAB REST/GraphQL, SQL AI conceptual functions, full-text, vector, and RAG examples.
-- [x] Missing exam scenarios added where relevant.
-- [x] DP-800 skills outline cross-check added.
-- [x] Final revision structure retained.
-- [x] Document reads as a professional study guide rather than accumulated notes.
 
