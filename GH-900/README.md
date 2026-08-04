@@ -337,17 +337,7 @@ Markdown is a lightweight markup language used in GitHub to format README files,
 - [ ] Task item
 - [x] Completed task
 
-**Bold text**
-`inline code`
 
-```text
-code block
-```
-
-[Link text](https://example.com)
-![Alt text](image.png)
-
-> Quoted note
 ```
 
 ### Markdown Use Cases
