@@ -1,70 +1,202 @@
-# GH-900 Robust Study Material - Expanded Scenario Use-Case Guide
+# GH-900 GitHub Foundations - One-Day Crash Study Guide
 
 **Exam:** GH-900: GitHub Foundations  
-**Certification:** GitHub Foundations  
-**Generated:** 31 July 2026  
-**Purpose:** Single Markdown study pack in the same practical scenario-focused style as the DP-800 guide. It includes concepts, decision trees, examples, scenario cheat sheets, must-memorize facts, and last-mile exam traps so you do not need to jump back to Microsoft Learn at the last moment.
-
-> **Exam mindset:** GH-900 is foundational, but it is still scenario-based. When a question gives a business requirement, identify the keyword: version history, repository, fork, branch, commit, pull request, issue, discussion, notification, README, LICENSE, CODEOWNERS, Actions, Copilot, Codespaces, Projects, 2FA, passkeys, branch protection, roles, Marketplace, open source, InnerSource.
+**Purpose:** Exam-focused study material for last-day preparation. This guide is organized by official exam domains and uses a repeatable structure: definition, description, examples, syntax, exam tips, traps, and scenarios.
 
 ---
 
-## Exam Weighting and Study Strategy
+## Index
 
-| Domain | Weight | What to master |
+- [0. Exam Quick Facts](#0-exam-quick-facts)
+- [1. How to Use This Guide in One Day](#1-how-to-use-this-guide-in-one-day)
+- [2. Official Exam Domains and Weighting](#2-official-exam-domains-and-weighting)
+- [Domain 1 - Understand Git and GitHub Basics](#domain-1---understand-git-and-github-basics)
+  - [1.1 Version Control](#11-version-control)
+  - [1.2 Git vs GitHub](#12-git-vs-github)
+  - [1.3 Core Git Concepts](#13-core-git-concepts)
+  - [1.4 GitHub Accounts, Organizations, and Enterprise Options](#14-github-accounts-organizations-and-enterprise-options)
+  - [1.5 GitHub Flow](#15-github-flow)
+  - [1.6 Markdown](#16-markdown)
+  - [1.7 GitHub Desktop, GitHub Mobile, github.dev, and Codespaces](#17-github-desktop-github-mobile-githubdev-and-codespaces)
+- [Domain 2 - Work with GitHub Repositories](#domain-2---work-with-github-repositories)
+  - [2.1 Repository Structure](#21-repository-structure)
+  - [2.2 Key Repository Files](#22-key-repository-files)
+  - [2.3 Add and Manage Repository Files](#23-add-and-manage-repository-files)
+  - [2.4 Repository Templates, Branches, Topics, Stars, and Archive](#24-repository-templates-branches-topics-stars-and-archive)
+  - [2.5 Repository Insights, Metrics, Feature Previews, and Dependency Insights](#25-repository-insights-metrics-feature-previews-and-dependency-insights)
+- [Domain 3 - Collaborate Using GitHub](#domain-3---collaborate-using-github)
+  - [3.1 Issues](#31-issues)
+  - [3.2 Pull Requests](#32-pull-requests)
+  - [3.3 Discussions](#33-discussions)
+  - [3.4 Templates, Filters, Assignments, Labels, and Milestones](#34-templates-filters-assignments-labels-and-milestones)
+  - [3.5 Notifications](#35-notifications)
+  - [3.6 Gists, Wikis, and GitHub Pages](#36-gists-wikis-and-github-pages)
+- [Domain 4 - Apply Modern Development Practices](#domain-4---apply-modern-development-practices)
+  - [4.1 GitHub Actions](#41-github-actions)
+  - [4.2 GitHub Actions Syntax](#42-github-actions-syntax)
+  - [4.3 Runners, Jobs, Steps, Actions, Matrix, and Secrets](#43-runners-jobs-steps-actions-matrix-and-secrets)
+  - [4.4 GitHub Copilot](#44-github-copilot)
+  - [4.5 Copilot Plans](#45-copilot-plans)
+  - [4.6 GitHub Codespaces and Dev Containers](#46-github-codespaces-and-dev-containers)
+  - [4.7 github.dev vs Codespaces](#47-githubdev-vs-codespaces)
+- [Domain 5 - Manage Projects with GitHub](#domain-5---manage-projects-with-github)
+  - [5.1 GitHub Projects](#51-github-projects)
+  - [5.2 Project Layouts](#52-project-layouts)
+  - [5.3 Project Configuration](#53-project-configuration)
+  - [5.4 Labels, Milestones, Assignees, and Saved Replies](#54-labels-milestones-assignees-and-saved-replies)
+  - [5.5 Project Workflows and Insights](#55-project-workflows-and-insights)
+- [Domain 6 - Understand Privacy, Security, and Administration](#domain-6---understand-privacy-security-and-administration)
+  - [6.1 Account Security](#61-account-security)
+  - [6.2 Repository Visibility](#62-repository-visibility)
+  - [6.3 Repository Roles](#63-repository-roles)
+  - [6.4 Organization Settings, Teams, Roles, and Outside Collaborators](#64-organization-settings-teams-roles-and-outside-collaborators)
+  - [6.5 Branch Protection and Repository Rulesets](#65-branch-protection-and-repository-rulesets)
+  - [6.6 Enterprise Managed Users and Copilot Policy](#66-enterprise-managed-users-and-copilot-policy)
+- [Domain 7 - Explore the GitHub Community](#domain-7---explore-the-github-community)
+  - [7.1 Open Source](#71-open-source)
+  - [7.2 GitHub Sponsors](#72-github-sponsors)
+  - [7.3 Following Users and Organizations](#73-following-users-and-organizations)
+  - [7.4 GitHub Marketplace](#74-github-marketplace)
+  - [7.5 Forks, Templates, and Discoverable Repositories](#75-forks-templates-and-discoverable-repositories)
+  - [7.6 InnerSource](#76-innersource)
+- [Final Exam Revision](#final-exam-revision)
+  - [A. Master Decision Matrix](#a-master-decision-matrix)
+  - [B. Must-Memorize Facts](#b-must-memorize-facts)
+  - [C. Common Exam Traps](#c-common-exam-traps)
+  - [D. Scenario Practice Questions](#d-scenario-practice-questions)
+  - [E. Two-Hour Final Revision Checklist](#e-two-hour-final-revision-checklist)
+  - [F. Seven-Day Revision Plan](#f-seven-day-revision-plan)
+
+---
+
+## 0. Exam Quick Facts
+
+- **Exam name:** GitHub Foundations
+- **Exam code:** GH-900
+- **Level:** Beginner
+- **Product:** GitHub
+- **Duration:** 100 minutes
+- **Passing score:** 700 or greater
+- **Audience:** GitHub users, non-developers, developers, administrators, DevOps engineers, app makers, and solution architects who need foundational GitHub knowledge
+- **Question style:** Mostly conceptual and scenario-based
+- **Exam mindset:** Identify the keyword in the requirement, then map it to the correct GitHub feature
+
+---
+
+## 1. How to Use This Guide in One Day
+
+### If You Have 8 Hours
+
+1. Read the domain summaries and decision tables.
+2. Focus deeply on Domains 1, 2, 3, 4, and 6 because they carry more weight.
+3. Practice the scenario questions.
+4. Revise the Master Decision Matrix.
+5. Review Common Exam Traps before the exam.
+
+### If You Have 4 Hours
+
+1. Read the official domain weighting.
+2. Study Git vs GitHub, clone vs fork vs branch vs template, Issues vs PRs vs Discussions.
+3. Study repository files, repository roles, branch protection, Actions, Copilot, Codespaces, and Projects.
+4. Complete the Two-Hour Final Revision Checklist.
+
+### If You Have 2 Hours
+
+1. Read the Master Decision Matrix.
+2. Read Common Exam Traps.
+3. Attempt the Scenario Practice Questions.
+4. Review syntax examples: Git commands, Markdown, Actions YAML, CODEOWNERS, devcontainer, Dependabot.
+
+---
+
+## 2. Official Exam Domains and Weighting
+
+| Domain | Weight | What to Master |
 |---|---:|---|
 | Understand Git and GitHub basics | 25-30% | Git vs GitHub, version control, repositories, commits, branches, GitHub Flow, Markdown, GitHub Desktop, GitHub Mobile |
-| Work with GitHub repositories | 10-15% | Repository files, README, LICENSE, CONTRIBUTING, CODEOWNERS, SECURITY, templates, branches, insights, stars, metrics, dependency insights |
+| Work with GitHub repositories | 10-15% | Repository files, README, LICENSE, CONTRIBUTING, CODEOWNERS, SECURITY, templates, branches, insights, stars, metrics dashboards, dependency insights |
 | Collaborate using GitHub | 10-15% | Issues, pull requests, discussions, templates, filters, assignments, notifications, Gists, Wikis, GitHub Pages |
-| Apply modern development practices | 10-15% | GitHub Actions, workflows, jobs, runners, Copilot, Copilot plans, Codespaces, dev containers, github.dev |
+| Apply modern development practices | 10-15% | GitHub Actions, workflows, jobs, runners, Copilot, Copilot agents, Agent Mode, multi-model support, Codespaces, dev containers, github.dev |
 | Manage projects with GitHub | 5-10% | GitHub Projects, table/board/roadmap layouts, labels, milestones, workflows, saved replies, assignees, insights |
-| Understand privacy, security, and administration | 10-15% | 2FA, passkeys, roles, teams, permissions, EMUs, Copilot policy, repository visibility, branch protection, organization settings |
+| Understand privacy, security, and administration | 10-15% | 2FA, passkeys, roles, teams, permissions, EMUs, Copilot policy, visibility, branch protection, organization settings |
 | Explore the GitHub community | 5-10% | Open source, Sponsors, following users/orgs, Marketplace, InnerSource, forks, templates, discoverability |
-
-### How To Study GH-900
-
-| If you have... | Focus on... |
-|---|---|
-| 1 day | Decision trees, scenario cheat sheet, repository files, GitHub Flow, roles, Actions/Copilot/Codespaces basics |
-| 3 days | Domains 1-4 first, then security/admin, then community and Projects |
-| 7 days | One domain per day plus practice questions and hands-on GitHub navigation |
 
 ---
 
 # Domain 1 - Understand Git and GitHub Basics
 
-## 1. Version Control Fundamentals
+## 1.1 Version Control
 
-### Version Control Overview
+### Definition
 
-| Concept | What it is | When to use / exam clue |
+Version control is a system that tracks changes to files over time so users can view history, compare differences, collaborate safely, and revert mistakes.
+
+### Description
+
+Version control is important because software, documentation, infrastructure code, and configuration files change frequently. Git keeps a record of changes through commits. GitHub builds collaboration features on top of Git repositories.
+
+### Example
+
+A team updates a website. One developer changes the homepage, another updates the README, and another fixes a bug. Version control tracks who changed what, when, and why.
+
+### Exam Tips
+
+- If the requirement says **track history**, **compare changes**, or **revert mistakes**, think **version control**.
+- If the requirement says **work offline and commit locally**, think **Git**.
+- If the requirement says **collaborate online with pull requests, issues, and reviews**, think **GitHub**.
+
+### Exam Trap
+
+Git and GitHub are related, but they are not the same. Git is the version control system. GitHub is a cloud platform for hosting Git repositories and collaboration.
+
+---
+
+## 1.2 Git vs GitHub
+
+### Definition
+
+- **Git:** Distributed version control tool used to track source history.
+- **GitHub:** Cloud-based platform for hosting Git repositories and enabling collaboration.
+
+### Decision Table
+
+| Scenario | Best Answer | Why |
 |---|---|---|
-| Version control | A system for tracking changes over time | Requirement says track history, compare changes, revert mistakes, collaborate safely |
-| Distributed version control | Each contributor has a local copy of repository history | Requirement says work offline, commit locally, sync later |
-| Git | The distributed version control tool | Commands like clone, commit, branch, merge, push, pull |
-| GitHub | A cloud platform for hosting Git repositories and collaboration | Issues, pull requests, discussions, Actions, Projects, security, community |
-| Repository | Project storage containing files and history | Need a place to store code/docs/configuration |
-| Commit | Snapshot of changes with metadata and message | Need record of what changed and why |
-| Branch | Independent line of development | Need isolate feature/fix work from main branch |
-| Merge | Combine changes from one branch into another | Need bring feature branch into main after review |
-| Clone | Download full repository to local machine | Need work locally with full history |
-| Fork | Personal copy of another repository under your account | Need contribute without direct write access to original repository |
-| Pull | Fetch and integrate remote changes locally | Need update local branch from remote |
-| Push | Upload local commits to remote | Need publish local work to GitHub |
-
-### Git vs GitHub Decision Table
-
-| Scenario | Best answer | Why |
-|---|---|---|
-| Need local version control on a laptop | Git | Git is the version control system |
-| Need web-based collaboration, issues, PRs, review, hosting | GitHub | GitHub hosts Git repos and collaboration features |
+| Need local version control on a laptop | Git | Git manages local repository history |
 | Need to commit while offline | Git | Commits are local until pushed |
-| Need to run CI/CD on pull request | GitHub Actions | Platform automation feature |
-| Need discussion, planning, or community contribution | GitHub | Collaboration and community platform |
+| Need hosted repository, issues, PRs, reviews | GitHub | GitHub provides cloud collaboration |
+| Need CI/CD on pull request | GitHub Actions | Actions automates workflows on GitHub |
+| Need discussions, community, or project planning | GitHub | GitHub includes collaboration and community features |
 
-**Exam trap:** Git and GitHub are related but not the same. Git is the tool; GitHub is a hosting and collaboration platform built around Git.
+### Example
 
-### Core Git Command Cheat Sheet
+A developer uses Git commands locally, then pushes commits to GitHub so the team can review the work in a pull request.
+
+### Exam Tip
+
+When the question says **tool**, **command**, **local commit**, or **distributed version control**, the answer is usually Git. When it says **platform**, **collaboration**, **issues**, **pull requests**, or **Actions**, the answer is usually GitHub.
+
+---
+
+## 1.3 Core Git Concepts
+
+### Definitions
+
+| Concept | Definition | Exam Clue |
+|---|---|---|
+| Repository | Storage location for project files and history | Need a place to store code/docs/configuration |
+| Commit | Snapshot of staged changes with metadata and message | Need record of what changed and why |
+| Branch | Independent line of development | Need isolate feature/fix work from main |
+| Merge | Combine changes from one branch into another | Need bring reviewed work into main |
+| Clone | Local copy of a repository with history | Need work locally |
+| Fork | GitHub-hosted copy under your account | Need contribute without write access |
+| Pull | Fetch and integrate remote changes locally | Need update local branch |
+| Push | Upload local commits to remote | Need publish work to GitHub |
+| Remote | Hosted copy of repository, commonly on GitHub | Need sync local and hosted repo |
+| Working tree | Local files you are editing | Need understand current file changes |
+| Staging area | Area where changes are selected before commit | Need prepare selected files for commit |
+
+### Core Git Command Syntax
 
 ```bash
 git clone https://github.com/org/repo.git
@@ -77,7 +209,9 @@ git pull origin main
 git merge feature/add-login
 ```
 
-| Command | Purpose | Use when |
+### Command Purpose
+
+| Command | Purpose | Use When |
 |---|---|---|
 | git clone | Copy remote repository locally | Starting work on an existing repo |
 | git status | Show changed/staged files | Checking current local state |
@@ -89,41 +223,75 @@ git merge feature/add-login
 | git pull | Bring remote changes locally | Updating local branch |
 | git merge | Combine branch history | Integrating changes |
 
+### Branch vs Fork vs Clone vs Template
+
+| Requirement | Best Answer | Why |
+|---|---|---|
+| Work locally on an existing repository | Clone | Creates a local copy |
+| Work on a feature without affecting main | Branch | Creates an isolated line of work |
+| Contribute without write access | Fork | Creates your GitHub-hosted copy |
+| Start a new repo from a standard structure | Template | Creates a new independent repository |
+| Bookmark or show interest | Star | Saves or signals interest |
+
+### Exam Trap
+
+- Clone is local.
+- Fork is server-side under your GitHub account.
+- Branch is an isolated development line in a repository.
+- Template is for starting a new independent repository from a standard pattern.
+
 ---
 
-## 2. GitHub Accounts, Organizations, and Enterprise Options
+## 1.4 GitHub Accounts, Organizations, and Enterprise Options
 
-| Option | Description | Best for |
+### Definitions
+
+| Option | Description | Best For |
 |---|---|---|
 | Personal account | Individual GitHub identity | Personal projects, contributions, learning |
-| Organization | Shared account for teams and projects | Company/team repositories, teams, centralized permissions |
-| Enterprise account | Top-level account for multiple organizations | Large companies needing centralized policy, billing, security, SSO, governance |
-| Enterprise Managed Users (EMUs) | Enterprise-controlled user accounts | Strict identity lifecycle and enterprise-managed GitHub identities |
+| Organization | Shared account for teams and projects | Team repositories, teams, centralized permissions |
+| Enterprise account | Top-level account for multiple organizations | Large companies needing centralized policy, billing, security, and governance |
+| Enterprise Managed Users | Enterprise-controlled GitHub user accounts | Strict identity lifecycle and enterprise-owned accounts |
 
-### Account / Organization Decision Tree
+### Decision Tree
 
+```text
 Need one person's projects?
-  -> Personal account
+-> Personal account
+
 Need shared team repositories and permissions?
-  -> Organization
+-> Organization
+
 Need centralized control across many organizations?
-  -> Enterprise account
+-> Enterprise account
+
 Need enterprise-owned developer identities?
-  -> Enterprise Managed Users
+-> Enterprise Managed Users
+```
+
+### Exam Tip
+
+If the question says **central governance across multiple organizations**, choose enterprise account. If it says **enterprise-owned identities and lifecycle**, choose Enterprise Managed Users.
 
 ---
 
-## 3. GitHub Flow
+## 1.5 GitHub Flow
 
-### GitHub Flow Steps
+### Definition
 
-1. Create a branch from `main`.
+GitHub Flow is a lightweight branch-based collaboration workflow where changes are developed on a branch, reviewed through a pull request, and merged into the main branch.
+
+### Steps
+
+1. Create a branch from main.
 2. Add commits to the branch.
 3. Open a pull request.
 4. Discuss and review changes.
 5. Run checks and resolve issues.
-6. Merge into `main`.
-7. Deploy from `main` if that is your release strategy.
+6. Merge into main.
+7. Deploy from main if that is the project strategy.
+
+### Syntax Example
 
 ```bash
 git checkout main
@@ -136,7 +304,9 @@ git push origin feature/update-docs
 # open pull request on GitHub
 ```
 
-| Scenario | Best GitHub Flow action |
+### Scenario Mapping
+
+| Scenario | Best GitHub Flow Action |
 |---|---|
 | Need isolate work from stable main branch | Create a branch |
 | Need ask others to review proposed changes | Open a pull request |
@@ -144,85 +314,132 @@ git push origin feature/update-docs
 | Need automatically validate changes | Configure required checks / GitHub Actions |
 | Need enforce review before merging | Branch protection or ruleset |
 
-**Exam tip:** GitHub Flow is lightweight and pull-request based. It is not the same as Git Flow with long-lived develop/release branches.
+### Exam Tip
+
+GitHub Flow is pull-request based and lightweight. Do not confuse it with Git Flow, which uses long-lived develop and release branches.
 
 ---
 
-## 4. Markdown for GitHub Communication
+## 1.6 Markdown
 
-| Markdown feature | Syntax | Use case |
-|---|---|---|
-| Heading | `# Heading` | Structure README/issues |
-| Bullet list | `- item` | Requirements or tasks |
-| Task list | `- [ ] task` | Track work in issues/PRs |
-| Bold | `**text**` | Emphasis |
-| Inline code | `` `code` `` | Commands, file names |
-| Code block | Triple backticks | Multi-line examples |
-| Link | `[text](url)` | Reference docs/issues |
-| Image | `![alt](url)` | Diagrams/screenshots |
-| Quote | `> text` | Highlight note |
-| Table | Markdown table | Compare options |
+### Definition
 
-### Markdown Exam Uses
+Markdown is a lightweight markup language used in GitHub to format README files, issues, pull requests, discussions, comments, and documentation.
 
-| Requirement | Best answer |
+### Common Syntax
+
+```markdown
+# Heading
+
+## Subheading
+
+- Bullet item
+- [ ] Task item
+- [x] Completed task
+
+**Bold text**
+`inline code`
+
+```text
+code block
+```
+
+[Link text](https://example.com)
+![Alt text](image.png)
+
+> Quoted note
+```
+
+### Markdown Use Cases
+
+| Requirement | Best Answer |
 |---|---|
 | Create project landing page | README.md |
-| Add task checklist in an issue | Markdown task list |
+| Add checklist in an issue | Markdown task list |
 | Explain contribution steps | CONTRIBUTING.md |
-| Format commands clearly | Code blocks |
-| Link related pull request or issue | Markdown link or GitHub auto-link |
+| Format commands clearly | Code block |
+| Link related PR or issue | Markdown link or GitHub auto-link |
+
+### Exam Tip
+
+If the question focuses on clear communication in issues and pull requests, Markdown is likely relevant.
 
 ---
 
-## 5. GitHub Desktop, GitHub Mobile, and github.dev
+## 1.7 GitHub Desktop, GitHub Mobile, github.dev, and Codespaces
 
-| Tool | What it is | Best for | Not best for |
+### Definitions
+
+| Tool | What It Is | Best For | Not Best For |
 |---|---|---|---|
-| GitHub Desktop | Desktop GUI for Git and GitHub workflows | Beginners, visual commit/branch/PR flow | Cloud dev environment or heavy browser-only coding |
-| GitHub Mobile | Mobile app for GitHub notifications and collaboration | Review issues/PRs, triage, comment on the go | Full development environment |
-| github.dev editor | Lightweight browser editor for repositories | Quick edits in browser without full compute | Running/building server-side apps |
-| GitHub Codespaces | Cloud development environment | Full development, terminal, dependencies, dev containers | Simple one-line documentation edit when no runtime needed |
+| GitHub Desktop | Desktop GUI for Git and GitHub workflows | Beginners, visual commit/branch/PR flow | Full cloud dev environment |
+| GitHub Mobile | Mobile app for notifications and collaboration | Review, triage, comment on the go | Heavy coding |
+| github.dev | Lightweight browser editor | Quick edits in browser without compute | Running/building server-side apps |
+| GitHub Codespaces | Cloud development environment | Full development, terminal, dependencies, dev containers | Simple one-line doc edit |
+
+### Exam Tip
+
+- Quick browser edit: github.dev or GitHub web editor.
+- Full cloud dev environment: Codespaces.
+- Visual local Git workflow: GitHub Desktop.
+- Triage on phone: GitHub Mobile.
 
 ---
 
 # Domain 2 - Work with GitHub Repositories
 
-## 6. Repository Structure and Key Files
+## 2.1 Repository Structure
 
-### Key Repository Files
+### Definition
 
-| File | Purpose | Exam clue |
+A GitHub repository stores project files, history, branches, issues, pull requests, settings, security configuration, and collaboration metadata.
+
+### Description
+
+Repositories can contain source code, documentation, workflows, templates, configuration files, and community health files.
+
+### Example Repository Structure
+
+```text
+repo-name/
+├── README.md
+├── LICENSE
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── CODEOWNERS
+├── .gitignore
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml
+│   ├── ISSUE_TEMPLATE/
+│   └── PULL_REQUEST_TEMPLATE.md
+├── docs/
+├── src/
+└── tests/
+```
+
+### Exam Tip
+
+If the question asks about a project landing page, legal reuse, contribution process, security reporting, or automatic review assignment, it is usually testing repository files.
+
+---
+
+## 2.2 Key Repository Files
+
+### File Selection Table
+
+| File | Definition / Purpose | Exam Clue |
 |---|---|---|
 | README.md | Project overview, setup, usage, badges, links | New user needs to understand project quickly |
-| LICENSE | Defines legal permissions for using/modifying/distributing project | Need clarify open-source usage rights |
-| CONTRIBUTING.md | Explains how to contribute | New contributors need contribution process |
+| LICENSE | Defines legal permissions for using, modifying, distributing project | Need clarify reuse rights |
+| CONTRIBUTING.md | Explains how to contribute | New contributors need process guidance |
 | CODEOWNERS | Defines reviewers responsible for files/paths | Need automatic review requests from owners |
 | SECURITY.md | Explains security reporting policy | Need responsible vulnerability disclosure |
-| .gitignore | Files Git should ignore | Need exclude build output/secrets/local config |
+| .gitignore | Files Git should ignore | Need exclude build output, secrets, local config |
 | SUPPORT.md | Support channels and expectations | Need direct users to help resources |
-| ISSUE_TEMPLATE | Standardize issue creation | Need collect consistent bug/feature information |
-| PULL_REQUEST_TEMPLATE | Standardize PR details | Need checklist and context for reviewers |
-| .github/workflows/*.yml | GitHub Actions workflows | Need automated CI/CD or repo automation |
-
-### Repository File Decision Tree
-
-Need project introduction?
-  -> README.md
-Need legal permission for reuse?
-  -> LICENSE
-Need contribution rules?
-  -> CONTRIBUTING.md
-Need automatic reviewer assignment?
-  -> CODEOWNERS
-Need vulnerability reporting instructions?
-  -> SECURITY.md
-Need standard bug report information?
-  -> Issue template
-Need PR review checklist?
-  -> Pull request template
-Need automation?
-  -> GitHub Actions workflow YAML
+| ISSUE_TEMPLATE | Standardizes issue creation | Need consistent bug/feature information |
+| PULL_REQUEST_TEMPLATE | Standardizes PR details | Need checklist and context for reviewers |
+| .github/workflows/*.yml | GitHub Actions workflows | Need automation |
 
 ### .gitignore Example
 
@@ -243,23 +460,80 @@ node_modules/
 .vscode/settings.json
 ```
 
-**Exam trap:** `.gitignore` does not remove files already committed. It stops untracked matching files from being added in the future.
+### CODEOWNERS Example
+
+```text
+# Global owner
+* @org/core-maintainers
+
+# Documentation owners
+/docs/ @org/docs-team
+
+# Security-sensitive areas
+/security/ @org/security-team
+```
+
+### Exam Traps
+
+- README is not a license.
+- LICENSE is not contribution guidance.
+- CONTRIBUTING is not CODEOWNERS.
+- SECURITY.md is not secret scanning.
+- .gitignore does not remove files already committed.
+- CODEOWNERS may require branch protection/ruleset configuration to enforce required owner review.
 
 ---
 
-## 7. Repository Creation, Templates, Branches, and Maintenance
+## 2.3 Add and Manage Repository Files
 
-| Feature | Description | When to use |
+### Definition
+
+Managing files in a repository means creating, editing, uploading, deleting, renaming, committing, and reviewing files through GitHub web UI, github.dev, GitHub Desktop, Codespaces, or Git commands.
+
+### Common Actions
+
+- Add a file directly in GitHub web UI.
+- Edit an existing file and commit changes.
+- Upload files from a local machine.
+- Delete or rename files.
+- Commit directly to a branch or create a new branch and pull request.
+- Use Git locally for larger changes.
+- Use github.dev for lightweight browser editing.
+- Use Codespaces when edits require runtime, terminal, dependencies, or build/test execution.
+
+### Git Command Example
+
+```bash
+git checkout -b docs/update-readme
+echo "# Project Guide" > GUIDE.md
+git add GUIDE.md
+git commit -m "Add project guide"
+git push origin docs/update-readme
+```
+
+### Exam Tips
+
+- Small browser edit: GitHub web editor or github.dev.
+- Full local workflow: Git commands or GitHub Desktop.
+- Change needs review: branch plus pull request.
+- Needs terminal/dependencies/build: Codespaces or local environment.
+
+---
+
+## 2.4 Repository Templates, Branches, Topics, Stars, and Archive
+
+### Definitions
+
+| Feature | Definition | Use When |
 |---|---|---|
-| New repository | Create a new project container | Starting a new project |
-| Repository template | Create new repos from a predefined structure | Standardize starter projects |
+| New repository | New project container | Starting a new project |
+| Repository template | Create new repos from predefined structure | Standardize starter projects |
 | Branch | Parallel development line | Feature/fix isolation |
-| Default branch | Main branch used for PR base and default view | Usually `main` |
+| Default branch | Main branch used for default view and PR base | Usually main |
 | Protected branch / ruleset | Enforces workflow requirements | Require PR review, checks, restrictions |
 | Archive repository | Make repository read-only | Project is no longer maintained |
 | Topics | Tags describing repository | Improve discoverability |
 | Stars | Bookmark/recommend repository | Track popular or useful repos |
-| Repository insights | Metrics and activity visibility | Understand contributors, traffic, commits, dependency graph |
 
 ### Repository Maintenance Best Practices
 
@@ -269,528 +543,67 @@ node_modules/
 - Use CODEOWNERS for ownership clarity.
 - Protect important branches.
 - Avoid committing secrets.
-- Use Dependabot/dependency insights where available.
-- Archive inactive repositories rather than deleting if history should remain visible.
+- Use dependency insights and Dependabot where appropriate.
+- Archive inactive repositories instead of deleting if history should remain visible.
+
+### Exam Tip
+
+If the project should become read-only while preserving history, choose archive repository.
 
 ---
 
-## 8. Repository Insights and Visibility
+## 2.5 Repository Insights, Metrics, Feature Previews, and Dependency Insights
 
-| Feature | What it shows | Use case |
+### Definitions
+
+| Feature | What It Shows | Use Case |
 |---|---|---|
 | Pulse | Recent repository activity | Quick health/activity check |
 | Contributors | Contribution activity by people | Understand who contributed |
 | Community standards | README, code of conduct, contributing, license, security files | Improve open-source readiness |
 | Traffic | Views and clones | Measure repository interest |
-| Dependency graph | Dependencies used by project | Understand dependency relationships and alerts |
-| Security insights | Vulnerabilities and code/security alerts where enabled | Improve security posture |
 | Stars | Users interested in repository | Popularity/bookmark signal |
-| Forks | Copies made by users | Community contribution and experimentation signal |
+| Forks | Copies made by users | Contribution/experimentation signal |
+| Dependency graph | Dependencies used by the project | Understand dependency relationships |
+| Dependency insights | Dependency health and visibility | Improve dependency management |
+| Security insights | Vulnerabilities and alerts where enabled | Improve security posture |
+| Repository metrics dashboards | Activity, trends, progress, and health indicators | Understand engagement and repository health |
+| Feature previews | Ability to try newer GitHub features | Evaluate upcoming or newly available capabilities |
+
+### Dependabot Configuration Example
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+```
+
+### Exam Tip
+
+If the question mentions repository activity, traffic, contributors, dependency visibility, health, or engagement, look for repository insights, metrics, dependency graph, or dependency insights.
 
 ---
 
 # Domain 3 - Collaborate Using GitHub
 
-## 9. Issues, Pull Requests, and Discussions
+## 3.1 Issues
 
-### Collaboration Tool Selection Matrix
+### Definition
 
-| Requirement | Best tool | Why |
-|---|---|---|
-| Track a bug, task, or feature request | Issue | Issue is work item / conversation around work |
-| Propose code or documentation changes | Pull request | PR compares branch changes and supports review/merge |
-| Ask open-ended question or community topic | Discussion | Better for Q&A, ideas, announcements, community conversation |
-| Announce project updates | Discussion announcement category | Good for broadcast/community updates |
-| Capture repeatable bug details | Issue template | Standardizes information |
-| Capture PR checklist | Pull request template | Standardizes review readiness |
-| Link implementation to task | Link PR to issue | Traceability and auto-close support |
+An issue is a GitHub work item used to track bugs, tasks, feature requests, ideas, or discussions around specific work.
 
-### Issues
+### Description
 
-| Feature | Purpose |
-|---|---|
-| Labels | Categorize issues/PRs, e.g., bug, enhancement, help wanted |
-| Assignees | Show who owns work |
-| Milestones | Group work towards a target/release |
-| Projects | Track issues and PRs in tables/boards/roadmaps |
-| Filters | Find issues by label, assignee, state, author, etc. |
-| Templates | Collect standardized information |
+Issues support labels, assignees, milestones, comments, templates, links to pull requests, and project tracking.
 
-### Pull Requests
+### Example
 
-| PR feature | Purpose | Exam clue |
-|---|---|---|
-| Review | Approve, comment, request changes | Need peer review |
-| Draft PR | Work is not ready for review | Early feedback without merge readiness |
-| Required checks | Must pass before merge | Enforce automated validation |
-| Linked issue | Connect code change to work item | Traceability, may close issue on merge |
-| CODEOWNERS review | Automatically request file owners | Ownership-based review |
-| Merge commit | Preserve branch history with merge commit | Need explicit merge record |
-| Squash merge | Combine PR commits into one | Clean main branch history |
-| Rebase merge | Replay commits onto base branch | Linear history |
+A tester finds a login bug and creates an issue with reproduction steps, expected behavior, actual behavior, browser version, and screenshots.
 
-### Issue-to-PR Linking Keywords
-
-| Wording | Effect |
-|---|---|
-| `Fixes #123` | Links PR and can close issue when PR merges |
-| `Closes #123` | Same closure intent |
-| `Resolves #123` | Same closure intent |
-| `Related to #123` | Links but does not automatically close |
-
-**Exam trap:** A pull request is for proposed changes. A discussion is not the right tool to merge code.
-
----
-
-## 10. Notifications, Gists, Wikis, and Pages
-
-| Feature | Description | Best for |
-|---|---|---|
-| Notifications | Alerts for repository/user/team activity | Managing work you are participating in or watching |
-| Watch | Subscribe to repository activity | Follow all/specific repository events |
-| Mention | Notify a user/team using `@` | Bring someone into conversation |
-| Saved replies | Reusable responses | Common triage/support messages |
-| Gist | Lightweight snippet or note sharing | Share small code/text snippets |
-| Wiki | Repository documentation pages | More detailed docs linked to a repo |
-| GitHub Pages | Static website hosting from repository | Publish docs, project site, portfolio |
-
-### Pages vs Wiki vs README
-
-| Requirement | Best answer |
-|---|---|
-| Quick project overview on repository home | README |
-| Multi-page repo documentation maintained near project | Wiki |
-| Public static website with custom pages | GitHub Pages |
-| Share a short code snippet independently | Gist |
-
----
-
-# Domain 4 - Apply Modern Development Practices
-
-## 11. GitHub Actions
-
-### GitHub Actions Core Concepts
-
-| Concept | Description | Exam clue |
-|---|---|---|
-| Workflow | Automated process defined in YAML | Need build/test/deploy automation |
-| Event | Trigger that starts workflow | push, pull_request, issue opened, schedule, manual |
-| Job | Group of steps that run on same runner | Need organize work / parallelize |
-| Step | Individual command or action inside a job | Shell command or reusable action |
-| Action | Reusable automation component | Avoid writing repeated workflow logic |
-| Runner | Machine that executes jobs | GitHub-hosted or self-hosted |
-| Matrix | Runs same job across combinations | Test multiple OS/language versions |
-| Secret | Encrypted value for workflow | Avoid hardcoding credentials |
-
-### Workflow Example
-
-```yaml
-name: CI
-
-on:
-  pull_request:
-    branches: [ main ]
-  push:
-    branches: [ main ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-      - name: Run tests
-        run: echo "Run build and test commands here"
-```
-
-### Actions Scenario Matrix
-
-| Scenario | Best answer |
-|---|---|
-| Run tests on every pull request | GitHub Actions workflow triggered by `pull_request` |
-| Deploy after merge to main | Workflow triggered by push to main or release |
-| Run nightly scan | Scheduled workflow |
-| Reuse common workflow across repos | Reusable workflow |
-| Avoid exposing passwords in workflow YAML | GitHub Actions secrets |
-| Need specific hardware/network | Self-hosted runner |
-| Need Linux/Windows/macOS hosted VM | GitHub-hosted runner |
-
-**Exam trap:** GitHub Actions is not only CI/CD. It can automate repository events like labeling issues or responding to pull request activity.
-
----
-
-## 12. GitHub Copilot
-
-### Copilot Capability Overview
-
-| Capability | Description | Good scenario |
-|---|---|---|
-| Code suggestions | AI suggestions as you type | Speed up coding in IDE |
-| Copilot Chat | Ask questions about code or repo context | Explain, debug, refactor, generate tests |
-| Pull request assistance | Helps generate PR descriptions/summaries | Improve review context |
-| CLI assistance | Help with command-line tasks | Generate/explain shell or Git commands |
-| Agent mode / coding agent | Can plan and make changes for review | Delegate scoped coding tasks with human review |
-| Multi-model support | Choose different models where available | Match task to model capability/cost/performance |
-
-### Copilot Plans - Exam-Level Difference
-
-| Plan | Best for | Key idea |
-|---|---|---|
-| Copilot for Individuals / Pro-style plans | Individual developer productivity | Personal subscription and features |
-| Copilot Business | Organization-managed Copilot access | Central policy and user management for orgs |
-| Copilot Enterprise | Enterprise-scale Copilot with deeper GitHub integration | Larger governance and enterprise features |
-
-### Copilot Security Rules
-
-- Do not paste secrets, tokens, credentials, customer data, or sensitive data into prompts.
-- Review generated code before use.
-- Treat AI-generated code as a draft, not an approved implementation.
-- Use pull requests and security scans for generated changes.
-- Use organization/enterprise Copilot policies where governance is required.
-
-**Exam trap:** Copilot assists development. It does not remove the need for code review, testing, security scanning, or human accountability.
-
----
-
-## 13. GitHub Codespaces, Dev Containers, and github.dev
-
-### Codespaces Overview
-
-| Feature | Description | Exam clue |
-|---|---|---|
-| Codespace | Cloud-hosted development environment | Need full dev environment without local setup |
-| Dev container | Configuration-as-code for development environment | Need repeatable dependencies/tools/settings |
-| Browser or VS Code access | Connect from browser, VS Code, or CLI | Need flexible access to environment |
-| Linux container environment | Runs in a Docker container on a VM | Need consistent Linux-based runtime |
-| Prebuilds | Speed up codespace startup | Large repos or slow setup |
-| Secrets | Secure environment values | Need credentials inside codespace safely |
-
-### Dev Container Example
-
-```json
-{
-  "name": "Node Dev Container",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
-  "customizations": {
-    "vscode": {
-      "extensions": ["GitHub.copilot"]
-    }
-  }
-}
-```
-
-### Codespaces vs github.dev Decision Table
-
-| Requirement | Best answer | Why |
-|---|---|---|
-| Quick browser edit to README | github.dev | Lightweight editor, no full compute needed |
-| Run app/tests/build in browser environment | Codespaces | Provides compute, terminal, dependencies |
-| Standardize dev tools for team | Dev container + Codespaces | Configuration as code |
-| Review small documentation change | github.dev or GitHub web editor | Fast edit pathway |
-| Need full VS Code-like cloud environment | Codespaces | Full cloud development environment |
-
----
-
-# Domain 5 - Manage Projects with GitHub
-
-## 14. GitHub Projects
-
-### Projects Feature Overview
-
-| Feature | Description | Use when |
-|---|---|---|
-| Project | Flexible planning and tracking tool | Manage backlog, roadmap, sprint, triage |
-| Table layout | Spreadsheet-like view | Detailed planning and metadata |
-| Board layout | Kanban-style columns | Workflow/status tracking |
-| Roadmap layout | Timeline planning | Time-based planning and releases |
-| Custom fields | Metadata like priority, size, target date | Track information not built into issues/PRs |
-| Workflows | Automations in Projects | Automatically set status or archive items |
-| Insights | Charts and progress visibility | Track productivity/progress |
-| Draft issue | Project item not yet formal issue | Early planning/backlog capture |
-
-### Projects vs Issues vs Milestones
-
-| Requirement | Best answer |
-|---|---|
-| Track a single bug/task | Issue |
-| Group issues/PRs for a release | Milestone |
-| Visualize and manage work across many issues/PRs | Project |
-| Add priority/effort/custom metadata | Project custom fields |
-| Show roadmap timeline | Project roadmap layout |
-| Show Kanban status columns | Project board layout |
-
-### Labels, Milestones, Assignees, Saved Replies
-
-| Feature | Purpose | Example |
-|---|---|---|
-| Label | Categorize work | bug, documentation, help wanted |
-| Milestone | Group work toward target | v1.0 release |
-| Assignee | Assign responsibility | Person responsible for issue/PR |
-| Saved reply | Reuse common response | Triage response or support guidance |
-
----
-
-# Domain 6 - Privacy, Security, and Administration
-
-## 15. Account Security
-
-| Feature | Description | Exam clue |
-|---|---|---|
-| Two-factor authentication (2FA) | Requires second factor in addition to password | Need protect account login |
-| Passkeys | Passwordless/authenticator-backed sign-in method | Modern sign-in resistant to phishing |
-| Personal access token (PAT) | Token for API/Git operations | Need authenticate tooling without password |
-| SSH key | Key-based Git authentication | Need secure Git command-line access |
-| Secret scanning | Detect committed secrets where enabled | Need identify leaked credentials |
-
-**Exam tip:** 2FA/passkeys protect identity access. Branch protection protects repository workflow. These solve different problems.
-
----
-
-## 16. Repository Visibility and Access Roles
-
-### Repository Visibility
-
-| Visibility | Who can see it | Use when |
-|---|---|---|
-| Public | Everyone | Open-source or public docs/projects |
-| Private | Only explicitly granted users/teams | Confidential/proprietary work |
-| Internal | Enterprise members only where supported | Company-wide sharing inside enterprise |
-
-### Repository Roles
-
-| Role | Best for | Key access idea |
-|---|---|---|
-| Read | Non-code contributors who need to view/discuss | View, clone, open issues/PRs from forks |
-| Triage | Manage issues/PRs without code write | Apply labels, assign, manage discussions/issues |
-| Write | Active contributors | Push branches, merge PRs depending rules |
-| Maintain | Project maintainers/managers | Manage repo settings except sensitive/destructive actions |
-| Admin | Full repository control | Security settings, delete/transfer repo, manage access |
-
-### Least Privilege Role Decision
-
-| Scenario | Recommended role |
-|---|---|
-| Business stakeholder needs to view docs and comment | Read |
-| Support lead needs to label/assign issues but not push code | Triage |
-| Developer needs to push feature branches | Write |
-| Project lead needs to manage labels, settings, discussions, Pages | Maintain |
-| Repo owner needs branch protection/security/delete/manage access | Admin |
-
-**Exam trap:** Give the smallest role that satisfies the requirement. Do not choose Admin when Write or Triage is enough.
-
----
-
-## 17. Branch Protection and Rulesets
-
-| Protection / rule | Purpose | Exam clue |
-|---|---|---|
-| Require pull request before merge | Prevent direct changes to protected branch | Need review workflow |
-| Require approvals | Enforce peer review | Need one or more reviewers |
-| Require status checks | Ensure CI passes before merge | Need tests/build/security checks pass |
-| Require conversation resolution | Prevent unresolved comments | Need reviewers' comments addressed |
-| Require signed commits | Verify commit signatures | Need commit authenticity |
-| Restrict who can push | Limit direct branch updates | Need protect main/release branches |
-| CODEOWNERS review | Require owners for files | Need domain owners approve changes |
-
-### Branch Protection Decision Tree
-
-Need prevent direct commits to main?
-  -> Require pull request before merging
-Need automated tests before merge?
-  -> Require status checks
-Need specific file owners to review?
-  -> CODEOWNERS + required review
-Need only certain people can update branch?
-  -> Restrict push access
-Need comments addressed before merge?
-  -> Require conversation resolution
-
----
-
-## 18. Organization Settings, Teams, and Copilot Policy
-
-| Feature | Purpose | Use when |
-|---|---|---|
-| Team | Group users for repository access and mentions | Manage access by group |
-| Base permissions | Default repo access for org members | Organization-wide access baseline |
-| Outside collaborator | Non-member with access to specific repo | External partner/contractor |
-| Organization owner | Admin control over organization | Manage settings, teams, policies |
-| Copilot policy | Control Copilot usage at org/enterprise level | Need governance of AI coding assistant |
-| Enterprise Managed Users | Centralized enterprise identity model | Enterprise-owned accounts and lifecycle |
-
----
-
-# Domain 7 - Explore the GitHub Community
-
-## 19. Open Source and Community Features
-
-| Feature | Description | Best for |
-|---|---|---|
-| Open source | Software/projects with source available under license | Community collaboration and reuse |
-| GitHub Sponsors | Financially support maintainers | Funding maintainers/projects |
-| Follow users/orgs | Stay informed about activity | Discover updates and contributors |
-| GitHub Marketplace | Find apps/actions/integrations | Extend GitHub workflows |
-| Fork | Copy repository to contribute or experiment | Propose changes without write access |
-| Template repository | Start new project from a standard structure | Repeatable starter repositories |
-| Topics/discoverability | Help people find repos | Improve project visibility |
-| InnerSource | Apply open-source practices inside organization | Cross-team collaboration in private/internal repos |
-
-### Fork vs Template vs Clone
-
-| Requirement | Best answer | Why |
-|---|---|---|
-| Work locally on existing repo | Clone | Local copy of repository |
-| Contribute to project without write access | Fork | Your server-side copy on GitHub |
-| Start a new independent repo from a pattern | Template | New repo without original history dependency |
-| Bookmark interesting repo | Star | Save/show interest |
-
----
-
-# Last-Mile Exam Decision Trees
-
-## Git vs GitHub
-Need version control commands/local history?
-  -> Git
-Need hosted collaboration/issues/PRs/Actions/Projects/security/community?
-  -> GitHub
-
-## Branch / Fork / Clone
-Need local copy?
-  -> Clone
-Need isolated line of work inside same repo?
-  -> Branch
-Need your own GitHub copy because no write access?
-  -> Fork
-Need start a new repo from starter structure?
-  -> Template
-
-## Collaboration Tool
-Bug/task/feature tracking?
-  -> Issue
-Code/doc change proposal?
-  -> Pull request
-Open-ended Q&A or community conversation?
-  -> Discussion
-Full project tracking view?
-  -> Project
-Reusable short snippet?
-  -> Gist
-Static website?
-  -> GitHub Pages
-
-## Documentation File Selection
-Project overview?
-  -> README.md
-Usage rights?
-  -> LICENSE
-Contribution process?
-  -> CONTRIBUTING.md
-Security reporting?
-  -> SECURITY.md
-Auto reviewer ownership?
-  -> CODEOWNERS
-Standard issue content?
-  -> Issue template
-Standard PR checklist?
-  -> PR template
-Automation?
-  -> .github/workflows YAML
-
-## Modern Development Tool Selection
-Automate build/test/deploy or repo events?
-  -> GitHub Actions
-AI-powered coding help?
-  -> GitHub Copilot
-Full cloud dev environment?
-  -> GitHub Codespaces
-Quick browser edit without compute?
-  -> github.dev
-Standard team dev environment?
-  -> Dev container
-
-## Project Management Selection
-Single work item?
-  -> Issue
-Group work for release?
-  -> Milestone
-Categorize work?
-  -> Label
-Assign ownership?
-  -> Assignee
-Visual plan/backlog/roadmap?
-  -> GitHub Project
-Repeated response?
-  -> Saved reply
-
-## Security and Administration Selection
-Protect user login?
-  -> 2FA / passkeys
-Least privilege repo access?
-  -> Repository roles / teams
-Prevent direct changes to main?
-  -> Branch protection / rulesets
-Require automated tests before merge?
-  -> Required status checks
-Require owners to review files?
-  -> CODEOWNERS + required review
-Avoid committed credentials?
-  -> Secrets, secret scanning, .gitignore, remove from history if committed
-Enterprise-owned users?
-  -> Enterprise Managed Users
-
----
-
-# Scenario Cheat Sheet
-
-| Requirement | Best answer | Why |
-|---|---|---|
-| Track changes and revert mistakes | Version control / Git | Maintains history |
-| Host repository and collaborate online | GitHub | Cloud collaboration platform |
-| Work on new feature without affecting main | Branch | Isolates work |
-| Propose changes for review | Pull request | Review and merge workflow |
-| Report bug or task | Issue | Tracks work item |
-| Ask broad question to community | Discussion | Open-ended collaboration |
-| Standardize issue details | Issue template | Consistent input |
-| Add project overview | README.md | Repository landing page |
-| Specify open-source terms | LICENSE | Legal usage rights |
-| Explain contribution process | CONTRIBUTING.md | Contributor guidance |
-| Define file experts/reviewers | CODEOWNERS | Automatic review ownership |
-| Explain vulnerability reporting | SECURITY.md | Security disclosure process |
-| Prevent direct push to main | Branch protection/ruleset | Protects important branch |
-| Run tests on PR | GitHub Actions | CI automation |
-| Store workflow secret | GitHub Actions secrets | Avoid hardcoding credentials |
-| Full cloud dev environment | Codespaces | Browser/VS Code cloud container |
-| Quick web edit | github.dev | Lightweight browser editor |
-| AI coding assistance | GitHub Copilot | Suggestions/chat/agent support |
-| Visual backlog/roadmap | GitHub Projects | Flexible project tracking |
-| Group issues for release | Milestone | Release/target grouping |
-| Categorize issues | Labels | Metadata and filtering |
-| Non-code issue manager | Triage role | Manage issues without write access |
-| Active code contributor | Write role | Push branches/contribute code |
-| Manage repo without destructive actions | Maintain role | Maintenance permissions |
-| Full sensitive repo control | Admin role | Manage access/security/delete |
-| Protect account login | 2FA/passkeys | Strong authentication |
-| Copy repo to contribute without write access | Fork | Personal server-side copy |
-| Start standardized new repo | Template repository | Reusable starter structure |
-| Share small snippet | Gist | Lightweight code/text sharing |
-| Publish static site | GitHub Pages | Public website hosting |
-| Find reusable actions/apps | GitHub Marketplace | Integrations and automations |
-| Apply open-source practices internally | InnerSource | Internal collaboration model |
-
----
-
-# Syntax and Configuration Pack
-
-## Markdown Task List
-
-```markdown
-## Acceptance Criteria
-- [ ] Login page displays validation messages
-- [ ] Tests pass in CI
-- [ ] Documentation is updated
-```
-
-## Issue Template Example
+### Issue Template Example
 
 ```markdown
 ## Description
@@ -808,7 +621,31 @@ Explain the issue or request.
 ## Additional context
 ```
 
-## Pull Request Template Example
+### Exam Tips
+
+- Bug/task/feature tracking: Issue.
+- Need standardized bug report: Issue template.
+- Need categorize issue: Label.
+- Need assign responsibility: Assignee.
+- Need group for release: Milestone.
+
+---
+
+## 3.2 Pull Requests
+
+### Definition
+
+A pull request proposes changes from one branch into another and supports review, comments, checks, and merge.
+
+### Description
+
+Pull requests are central to GitHub collaboration. They allow contributors to explain changes, request reviews, run automated checks, discuss feedback, and merge only after the required criteria are met.
+
+### Example
+
+A developer creates a branch, commits a bug fix, pushes the branch, opens a pull request, links the issue, passes CI checks, gets approval, and merges into main.
+
+### Pull Request Template Example
 
 ```markdown
 ## Summary
@@ -822,32 +659,190 @@ Describe the change.
 Fixes #123
 ```
 
-## CODEOWNERS Example
+### Issue-to-PR Linking Keywords
 
 ```text
-# Global owner
-* @org/core-maintainers
-
-# Documentation owners
-/docs/ @org/docs-team
-
-# Security-sensitive areas
-/security/ @org/security-team
+Fixes #123
+Closes #123
+Resolves #123
+Related to #123
 ```
 
-## Branch Workflow Commands
+### Meaning
 
-```bash
-git checkout main
-git pull origin main
-git checkout -b feature/new-report
-# make changes
-git add .
-git commit -m "Add new report documentation"
-git push origin feature/new-report
+| Wording | Effect |
+|---|---|
+| Fixes #123 | Links PR and can close issue when PR merges |
+| Closes #123 | Links PR and can close issue when PR merges |
+| Resolves #123 | Links PR and can close issue when PR merges |
+| Related to #123 | Links but does not automatically close |
+
+### Pull Request Merge Options
+
+| Option | Description | Use When |
+|---|---|---|
+| Merge commit | Preserves branch history with a merge commit | Need explicit merge record |
+| Squash merge | Combines PR commits into one commit | Need clean main history |
+| Rebase merge | Replays commits onto base branch | Need linear history |
+
+### Exam Tip
+
+If the requirement says **propose changes**, **review code**, **run checks before merge**, or **merge branch into main**, choose pull request.
+
+### Exam Trap
+
+A Discussion is not the right tool for reviewing and merging code changes.
+
+---
+
+## 3.3 Discussions
+
+### Definition
+
+A discussion is a GitHub collaboration feature for open-ended conversation, questions, ideas, announcements, and community engagement.
+
+### Description
+
+Discussions are better than issues when the topic is not a specific trackable work item. They help communities and teams collaborate without turning every conversation into a bug or task.
+
+### Use Cases
+
+| Requirement | Best Answer |
+|---|---|
+| Ask broad question | Discussion |
+| Collect ideas from community | Discussion |
+| Announce project updates | Discussion announcement category |
+| Track bug or task | Issue |
+| Review proposed code change | Pull request |
+
+### Exam Tip
+
+If the scenario is open-ended Q&A or community conversation, use Discussions. If it is a trackable work item, use Issues.
+
+---
+
+## 3.4 Templates, Filters, Assignments, Labels, and Milestones
+
+### Definitions
+
+| Feature | Purpose | Example |
+|---|---|---|
+| Issue template | Standardize issue input | Bug report template with reproduction steps |
+| PR template | Standardize review context | Checklist for tests and linked issues |
+| Filter | Find issues/PRs by metadata | Filter by label, assignee, author, state |
+| Label | Categorize work | bug, enhancement, documentation |
+| Assignee | Show responsibility | Assign issue to developer |
+| Milestone | Group issues/PRs toward target | v1.0 release |
+
+### Filter Examples
+
+```text
+is:issue is:open label:bug
+is:pr is:open review-requested:@me
+author:octocat label:documentation
+assignee:@me milestone:"v1.0"
 ```
 
-## Basic GitHub Actions Workflow
+### Exam Tip
+
+- Organize by type: label.
+- Group for release: milestone.
+- Assign owner: assignee.
+- Search/find work: filters.
+
+---
+
+## 3.5 Notifications
+
+### Definition
+
+GitHub notifications help users track activity for repositories, issues, pull requests, discussions, teams, reviews, assignments, and mentions.
+
+### Common Notification Sources
+
+- Watching a repository.
+- Being mentioned with @username or @team.
+- Being assigned to an issue or pull request.
+- Participating in a conversation.
+- Being requested as a reviewer.
+- Updates to subscribed issues, PRs, or discussions.
+
+### Configuration Options
+
+- Watch, unwatch, or ignore repositories.
+- Subscribe or unsubscribe from specific issues, PRs, or discussions.
+- Configure email, web, and mobile notification preferences.
+- Filter notifications by reason such as assigned, participating, mentioned, review requested, or team mention.
+
+### Exam Tips
+
+- Too many alerts: adjust notification settings or watch settings.
+- Need follow all repository activity: watch repository.
+- Need bring someone into conversation: mention user/team.
+- Need manage work on the go: GitHub Mobile.
+
+---
+
+## 3.6 Gists, Wikis, and GitHub Pages
+
+### Definitions
+
+| Feature | Description | Best For |
+|---|---|---|
+| Gist | Lightweight snippet or note sharing | Share small code/text snippets |
+| Wiki | Repository documentation pages | Multi-page docs linked to a repo |
+| GitHub Pages | Static website hosting from repository | Publish docs, project site, portfolio |
+| README | Repository landing page | Quick project overview |
+
+### Decision Table
+
+| Requirement | Best Answer |
+|---|---|
+| Quick project overview on repository home | README |
+| Multi-page repository documentation | Wiki |
+| Public static website | GitHub Pages |
+| Share a short code snippet independently | Gist |
+
+### Exam Trap
+
+Wiki is documentation inside a repository context. GitHub Pages publishes a static website.
+
+---
+
+# Domain 4 - Apply Modern Development Practices
+
+## 4.1 GitHub Actions
+
+### Definition
+
+GitHub Actions is GitHub's automation platform for CI/CD and repository workflows.
+
+### Description
+
+Actions can build, test, deploy, label issues, respond to pull request events, run scheduled jobs, and automate repository tasks.
+
+### Core Concepts
+
+| Concept | Definition | Exam Clue |
+|---|---|---|
+| Workflow | Automated process defined in YAML | Need build/test/deploy automation |
+| Event | Trigger that starts a workflow | push, pull_request, schedule, manual |
+| Job | Group of steps that run on the same runner | Need organize or parallelize work |
+| Step | Individual command or action inside a job | Shell command or reusable action |
+| Action | Reusable automation component | Avoid repeated workflow logic |
+| Runner | Machine that executes jobs | GitHub-hosted or self-hosted |
+| Matrix | Runs job across combinations | Test multiple OS/language versions |
+| Secret | Encrypted value for workflow | Avoid hardcoding credentials |
+
+### Exam Tip
+
+GitHub Actions is not only CI/CD. It can also automate repository events, issue triage, pull request labeling, scheduled tasks, and release workflows.
+
+---
+
+## 4.2 GitHub Actions Syntax
+
+### Basic Workflow Example
 
 ```yaml
 name: Pull Request Checks
@@ -860,23 +855,163 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Validate
         run: echo "Run validation here"
 ```
 
-## Dependabot Configuration Example
+### Push and Pull Request Workflow
 
 ```yaml
-version: 2
-updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        run: echo "Run build and test commands here"
 ```
 
-## Dev Container Example
+### Matrix Example
+
+```yaml
+name: Matrix Test
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node: [18, 20]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+```
+
+### Scenario Matrix
+
+| Scenario | Best Answer |
+|---|---|
+| Run tests on every pull request | Workflow triggered by pull_request |
+| Deploy after merge to main | Workflow triggered by push to main or release |
+| Run nightly scan | Scheduled workflow |
+| Reuse common automation across repos | Reusable workflow |
+| Avoid exposing passwords in YAML | GitHub Actions secrets |
+| Need specific hardware/network | Self-hosted runner |
+| Need Linux/Windows/macOS hosted VM | GitHub-hosted runner |
+
+---
+
+## 4.3 Runners, Jobs, Steps, Actions, Matrix, and Secrets
+
+### Definitions
+
+| Feature | What It Means | Exam Clue |
+|---|---|---|
+| GitHub-hosted runner | Runner managed by GitHub | Need managed Linux/Windows/macOS environment |
+| Self-hosted runner | Runner managed by your organization | Need custom hardware, software, network, or compliance |
+| Job | Set of steps executed on a runner | Need organize automation |
+| Step | Command or action | Need run one task |
+| Action | Reusable task/plugin | Need reuse existing automation |
+| Matrix | Run same job across combinations | Need test multiple OS/version combinations |
+| Secret | Encrypted sensitive value | Need protect token/password/API key |
+
+### Exam Traps
+
+- Workflow is the automation definition.
+- Event starts the workflow.
+- Runner executes jobs.
+- Job contains steps.
+- Step runs a command or action.
+- Secret is not stored directly in YAML output.
+
+---
+
+## 4.4 GitHub Copilot
+
+### Definition
+
+GitHub Copilot is an AI-powered coding assistant that helps with suggestions, explanations, debugging, refactoring, test generation, pull request assistance, command-line help, and agent-based development tasks.
+
+### Capability Overview
+
+| Capability | Description | Good Scenario |
+|---|---|---|
+| Code suggestions | AI suggestions as you type | Speed up coding in IDE |
+| Copilot Chat | Ask questions about code or repo context | Explain, debug, refactor, generate tests |
+| Pull request assistance | Helps generate PR descriptions/summaries | Improve review context |
+| CLI assistance | Help with command-line tasks | Generate/explain shell or Git commands |
+| Agent Mode / Coding Agent | Helps plan and make scoped code changes for review | Delegate scoped implementation tasks |
+| Multi-model support | Supports use of different models where available | Match task to model capability, policy, or availability |
+
+### Copilot Security Rules
+
+- Do not paste secrets, tokens, credentials, customer data, or sensitive data into prompts.
+- Review generated code before use.
+- Treat AI-generated output as a draft.
+- Use pull requests, testing, code review, and security scanning for generated changes.
+- Use organization or enterprise Copilot policies where governance is required.
+
+### Exam Trap
+
+Copilot assists development. It does not remove human accountability for code review, testing, security, licensing, quality, or production readiness.
+
+---
+
+## 4.5 Copilot Plans
+
+### Exam-Level Difference
+
+| Plan | Best For | Key Idea |
+|---|---|---|
+| Copilot for Individuals / Pro-style plans | Individual developer productivity | Personal subscription and individual features |
+| Copilot Business | Organization-managed Copilot access | Central policy and user management for organizations |
+| Copilot Enterprise | Enterprise-scale Copilot with deeper GitHub integration | Enterprise governance and broader integrations |
+
+### Exam Tip
+
+If the scenario says **organization-wide management**, choose Copilot Business or organization policy. If it says **enterprise-scale governance**, choose Copilot Enterprise or enterprise policy.
+
+---
+
+## 4.6 GitHub Codespaces and Dev Containers
+
+### Definition
+
+GitHub Codespaces provides cloud-hosted development environments. Dev containers define a repeatable development environment as configuration.
+
+### Codespaces Features
+
+| Feature | Description | Exam Clue |
+|---|---|---|
+| Codespace | Cloud-hosted development environment | Need full dev environment without local setup |
+| Dev container | Configuration-as-code for dev environment | Need repeatable tools/dependencies/settings |
+| Browser or VS Code access | Connect from browser, VS Code, or CLI | Need flexible access |
+| Linux container environment | Runs in a container on a VM | Need consistent Linux runtime |
+| Prebuilds | Speed up startup | Large repos or slow setup |
+| Secrets | Secure environment values | Need credentials safely inside codespace |
+
+### Dev Container Example
 
 ```json
 {
@@ -884,317 +1019,828 @@ updates:
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": ["GitHub.copilot"]
+    }
   }
 }
 ```
 
----
+### Exam Tip
 
-# Expanded TOP 150 Must-Memorize GH-900 Facts
-
-## Git and GitHub Basics
-1. Git is a distributed version control system.
-2. GitHub is a cloud platform for hosting Git repositories and collaboration.
-3. A repository stores project files and history.
-4. A commit is a saved snapshot of changes.
-5. A branch is an independent line of development.
-6. The default branch is commonly named `main`.
-7. A clone is a local copy of a repository.
-8. A fork is your GitHub-hosted copy of someone else's repository.
-9. A pull request proposes merging changes from one branch into another.
-10. GitHub Flow is branch, commit, pull request, review, merge.
-11. Use branches to isolate work.
-12. Use commits to record meaningful units of change.
-13. Use pull requests for review and collaboration.
-14. Use Markdown for structured communication in GitHub.
-15. GitHub Desktop is a GUI for Git/GitHub workflows.
-16. GitHub Mobile helps with notifications, triage, and collaboration on the go.
-17. github.dev is best for quick browser-based edits.
-18. Codespaces is best for full cloud development.
-19. Organizations manage shared repositories and teams.
-20. Enterprise accounts centralize policies across organizations.
-
-## Repository Management
-21. README.md is the repository landing page.
-22. LICENSE defines permissions and restrictions for reuse.
-23. CONTRIBUTING.md explains how to contribute.
-24. CODEOWNERS defines file/path ownership for reviews.
-25. SECURITY.md explains how to report vulnerabilities.
-26. .gitignore excludes local/build/secret files from being tracked.
-27. Issue templates standardize bug/feature reports.
-28. Pull request templates standardize review context.
-29. Repository templates help create standardized new repositories.
-30. Topics improve repository discoverability.
-31. Stars can bookmark or signal interest in a repo.
-32. Forks help users contribute or experiment without write access.
-33. Repository insights show activity and health signals.
-34. Dependency insights help understand project dependencies.
-35. Archive inactive repositories when they should become read-only.
-
-## Collaboration
-36. Issues track bugs, tasks, and feature requests.
-37. Pull requests review and merge changes.
-38. Discussions support open-ended Q&A and conversations.
-39. Labels categorize issues and pull requests.
-40. Assignees show responsibility.
-41. Milestones group issues and pull requests toward a target.
-42. Filters help find issues/PRs by metadata.
-43. Notifications help manage watched, mentioned, assigned, and participating activity.
-44. Gists share small snippets or notes.
-45. Wikis provide repository documentation pages.
-46. GitHub Pages hosts static websites.
-47. Linking PRs to issues improves traceability.
-48. `Fixes #123` can close an issue when the PR merges.
-49. Draft pull requests signal work is not ready for final review.
-50. Required reviews enforce PR review workflow.
-
-## Modern Development Practices
-51. GitHub Actions automates CI/CD and repository workflows.
-52. Workflows are YAML files in `.github/workflows`.
-53. Events trigger workflows.
-54. Jobs group steps on a runner.
-55. Steps run commands or actions.
-56. Actions are reusable automation components.
-57. Runners execute jobs.
-58. GitHub-hosted runners are managed by GitHub.
-59. Self-hosted runners are managed by you.
-60. Matrix builds test multiple variations.
-61. Secrets should store sensitive values for workflows.
-62. Copilot is an AI coding assistant.
-63. Copilot suggestions must be reviewed.
-64. Copilot Chat can explain, refactor, and help debug code.
-65. Copilot plans differ for individuals, businesses, and enterprises.
-66. Codespaces provides cloud-hosted dev environments.
-67. Dev containers define repeatable development environments.
-68. Codespaces can be accessed from browser, VS Code, or GitHub CLI.
-69. github.dev does not provide the same compute/runtime as Codespaces.
-70. Do not paste sensitive data into AI prompts.
-
-## Projects and Planning
-71. GitHub Projects tracks work across issues and pull requests.
-72. Projects can use table, board, and roadmap layouts.
-73. Custom fields add metadata like priority or target date.
-74. Project workflows automate project item updates.
-75. Project insights show charts and progress.
-76. Draft issues capture planning items before formal issues.
-77. Labels categorize; milestones group; projects visualize/manage.
-78. Saved replies speed up repeated communication.
-79. Assignees clarify ownership.
-80. Roadmap view is best for timeline planning.
-
-## Privacy, Security, and Administration
-81. 2FA adds an extra login factor.
-82. Passkeys provide modern passwordless authentication.
-83. Repository visibility can be public, private, or internal where supported.
-84. Read role is for viewing and discussion.
-85. Triage role manages issues/PRs without code write access.
-86. Write role allows active contribution.
-87. Maintain role manages repository without sensitive/destructive actions.
-88. Admin role provides full repository control.
-89. Use least privilege for repository access.
-90. Teams simplify permission management.
-91. Outside collaborators are non-members with repo access.
-92. Branch protection prevents unsafe changes to important branches.
-93. Required status checks enforce tests/builds before merge.
-94. CODEOWNERS can enforce ownership-based review.
-95. EMUs are enterprise-managed GitHub user accounts.
-96. Organization-wide Copilot policies help govern AI use.
-97. Secret scanning helps detect exposed secrets where enabled.
-98. Never commit secrets to a repository.
-99. Use Actions secrets for workflow credentials.
-100. Admin is not the answer when a smaller role satisfies the requirement.
-
-## Community and Open Source
-101. Open source depends on a license for reuse rights.
-102. GitHub Sponsors supports maintainers financially.
-103. Following users/orgs helps track activity.
-104. GitHub Marketplace provides apps, Actions, and integrations.
-105. InnerSource applies open-source practices inside organizations.
-106. Forks support external contribution.
-107. Templates support standardized new projects.
-108. Discoverable repositories use README, topics, license, and good metadata.
-109. Community standards improve open-source readiness.
-110. Public repos are visible to everyone.
-
-## Exam Traps
-111. Git is not GitHub.
-112. Clone is not fork.
-113. Branch is not fork.
-114. README is not LICENSE.
-115. CONTRIBUTING is not CODEOWNERS.
-116. SECURITY.md is not secret scanning.
-117. Issue is not pull request.
-118. Discussion is not issue when work tracking is required.
-119. Wiki is not GitHub Pages.
-120. github.dev is not Codespaces.
-121. Actions workflow is not a single action.
-122. Runner is the machine; workflow is the automation definition.
-123. Job contains steps; step can run an action.
-124. Secrets should not be stored in YAML or README.
-125. Required checks are enforced through branch protection/rulesets.
-126. Triage role does not allow pushing code.
-127. Read role can view but not manage labels broadly.
-128. Maintain is not full Admin.
-129. GitHub Projects are not the same as classic milestones.
-130. Milestones are good for releases; Projects are flexible planning views.
-131. Forking creates a server-side copy under your account.
-132. Template creates a new independent repository from a pattern.
-133. Pull requests are for proposed changes, not just discussion.
-134. Draft PR means not ready for final review.
-135. CODEOWNERS requires compatible branch protection/rules to enforce required review.
-136. Copilot output should be tested and reviewed.
-137. Codespaces cost/quotas can matter in real usage, but exam focuses mainly on purpose.
-138. Open source does not mean no license is needed.
-139. InnerSource is internal, not public open source.
-140. GitHub Marketplace is for integrations and apps, not repository hosting.
-141. Passkeys/2FA protect account sign-in, not branch workflows.
-142. Branch protection protects code workflow, not account login.
-143. .gitignore is not a security boundary for already-committed secrets.
-144. Repository insights are for visibility, not deployment.
-145. Dependency graph shows dependencies, not Git history.
-146. Use issues for trackable work, discussions for broad conversations.
-147. Use PR templates to improve review quality.
-148. Use issue templates to improve triage quality.
-149. Use least privilege for users, teams, and collaborators.
-150. GH-900 tests terminology and scenario selection more than deep coding syntax.
+If the scenario asks for consistent developer setup across the team, choose dev container configuration with Codespaces.
 
 ---
 
-# Final 50 Practice Questions - Scenario Style
+## 4.7 github.dev vs Codespaces
 
-## Domain 1 - Git and GitHub Basics
-1. A developer needs to save project history locally and work while offline. What tool is involved?  
+### Decision Table
+
+| Requirement | Best Answer | Why |
+|---|---|---|
+| Quick browser edit to README | github.dev | Lightweight editor, no full compute needed |
+| Run app/tests/build in browser environment | Codespaces | Provides compute, terminal, dependencies |
+| Standardize dev tools for team | Dev container + Codespaces | Configuration as code |
+| Review small documentation change | github.dev or GitHub web editor | Fast edit pathway |
+| Need full VS Code-like cloud environment | Codespaces | Full cloud development environment |
+
+### Exam Trap
+
+The github.dev editor does not provide the same compute/runtime as Codespaces.
+
+---
+
+# Domain 5 - Manage Projects with GitHub
+
+## 5.1 GitHub Projects
+
+### Definition
+
+GitHub Projects is a flexible planning and tracking tool for organizing issues, pull requests, draft issues, fields, views, workflows, and progress insights.
+
+### Description
+
+Projects help teams manage work across repositories using table, board, and roadmap layouts. They can track custom metadata such as priority, status, size, iteration, and target date.
+
+### Example
+
+A team creates a GitHub Project to manage sprint work. Issues and pull requests are added to the project, assigned priorities, displayed on a board, and tracked using project insights.
+
+### Exam Tip
+
+If the scenario asks for cross-repository planning, visual backlog, board, roadmap, custom fields, or progress tracking, choose GitHub Projects.
+
+---
+
+## 5.2 Project Layouts
+
+| Layout | Description | Use When |
+|---|---|---|
+| Table layout | Spreadsheet-like view | Detailed planning and metadata |
+| Board layout | Kanban-style columns | Workflow/status tracking |
+| Roadmap layout | Timeline planning | Time-based planning and releases |
+
+### Exam Tip
+
+- Kanban columns: Board layout.
+- Timeline view: Roadmap layout.
+- Detailed metadata view: Table layout.
+
+---
+
+## 5.3 Project Configuration
+
+### Project Configuration Includes
+
+- Selecting layout: table, board, roadmap.
+- Adding custom fields such as priority, status, size, iteration, and target date.
+- Adding issues, pull requests, and draft issues.
+- Creating project workflows to automate item status updates.
+- Using project insights to track progress.
+- Saving views for different audiences or workflows.
+
+### Draft Issues
+
+A draft issue is a planning item inside a project that is not yet a formal repository issue.
+
+### Exam Tip
+
+If the requirement says early backlog planning before creating a real issue, choose draft issue in GitHub Projects.
+
+---
+
+## 5.4 Labels, Milestones, Assignees, and Saved Replies
+
+### Definitions
+
+| Feature | Purpose | Example |
+|---|---|---|
+| Label | Categorize work | bug, documentation, help wanted |
+| Milestone | Group work toward a target | v1.0 release |
+| Assignee | Assign responsibility | Person responsible for issue/PR |
+| Saved reply | Reuse common response | Triage or support guidance |
+
+### Projects vs Issues vs Milestones
+
+| Requirement | Best Answer |
+|---|---|
+| Track a single bug/task | Issue |
+| Group issues/PRs for a release | Milestone |
+| Visualize and manage work across many items | Project |
+| Add priority/effort/custom metadata | Project custom fields |
+| Show roadmap timeline | Project roadmap layout |
+| Show Kanban status columns | Project board layout |
+
+### Exam Tip
+
+Labels categorize. Milestones group toward a release or target. Projects visualize and manage work.
+
+---
+
+## 5.5 Project Workflows and Insights
+
+### Definition
+
+Project workflows automate project item updates. Project insights provide charts and visibility into progress and productivity.
+
+### Examples
+
+- Automatically set status to **In Progress** when an issue is assigned.
+- Automatically set status to **Done** when a linked pull request is merged.
+- Use charts to track completed work, remaining work, and progress over time.
+
+### Exam Tip
+
+If the question says **automatically update project status**, choose project workflows. If it says **track progress with charts**, choose project insights.
+
+---
+
+# Domain 6 - Understand Privacy, Security, and Administration
+
+## 6.1 Account Security
+
+### Definitions
+
+| Feature | Description | Exam Clue |
+|---|---|---|
+| Two-factor authentication | Requires second factor in addition to password | Need protect account login |
+| Passkeys | Passwordless or authenticator-backed sign-in | Need phishing-resistant modern sign-in |
+| Personal access token | Token for API/Git operations | Need authenticate tooling without password |
+| SSH key | Key-based Git authentication | Need secure Git command-line access |
+| Secret scanning | Detect committed secrets where enabled | Need identify leaked credentials |
+
+### Exam Tips
+
+- Protect user login: 2FA or passkeys.
+- Authenticate Git/API automation: PAT or SSH key depending scenario.
+- Detect leaked credentials: secret scanning.
+- Store workflow credentials: GitHub Actions secrets.
+
+### Exam Trap
+
+2FA and passkeys protect account sign-in. Branch protection protects repository workflow. They solve different problems.
+
+---
+
+## 6.2 Repository Visibility
+
+### Definitions
+
+| Visibility | Who Can See It | Use When |
+|---|---|---|
+| Public | Everyone | Open-source or public docs/projects |
+| Private | Only explicitly granted users/teams | Confidential or proprietary work |
+| Internal | Enterprise members only where supported | Company-wide sharing inside enterprise |
+
+### Exam Tip
+
+If the repository must be visible only to members of the enterprise but not the public, choose internal repository where supported.
+
+---
+
+## 6.3 Repository Roles
+
+### Repository Role Table
+
+| Role | Best For | Key Access Idea |
+|---|---|---|
+| Read | Non-code contributors who need to view/discuss | View, clone, open issues/PRs from forks |
+| Triage | Manage issues/PRs without code write | Apply labels, assign, manage issues/PRs |
+| Write | Active contributors | Push branches and contribute code |
+| Maintain | Project maintainers/managers | Manage repo settings except sensitive/destructive actions |
+| Admin | Full repository control | Security settings, delete/transfer repo, manage access |
+
+### Least Privilege Decision Table
+
+| Scenario | Recommended Role |
+|---|---|
+| Business stakeholder needs to view docs and comment | Read |
+| Support lead needs to label/assign issues but not push code | Triage |
+| Developer needs to push feature branches | Write |
+| Project lead needs to manage labels, settings, discussions, Pages | Maintain |
+| Repo owner needs branch protection/security/delete/manage access | Admin |
+
+### Exam Tip
+
+Always choose the smallest role that satisfies the requirement.
+
+### Exam Trap
+
+Do not choose Admin when Write, Triage, Maintain, or Read is enough.
+
+---
+
+## 6.4 Organization Settings, Teams, Roles, and Outside Collaborators
+
+### Definitions
+
+| Feature | Purpose | Use When |
+|---|---|---|
+| Organization owner | Admin control over organization | Manage settings, teams, policies, billing, access |
+| Organization member | User who belongs to organization | Internal user needing org access |
+| Team | Group users for repository access and mentions | Manage access by group |
+| Base permissions | Default repo access for org members | Organization-wide access baseline |
+| Outside collaborator | Non-member with access to specific repo | External partner/contractor |
+| Organization role | Permission level within organization | Delegate organization-level responsibilities |
+
+### Exam Tips
+
+- Use teams for scalable permission management.
+- Use outside collaborators for external users who need access only to specific repositories.
+- Use organization owner for organization-wide administration.
+- Use base permissions carefully because they affect default access.
+
+---
+
+## 6.5 Branch Protection and Repository Rulesets
+
+### Definitions
+
+| Protection / Rule | Purpose | Exam Clue |
+|---|---|---|
+| Require pull request before merge | Prevent direct changes to protected branch | Need review workflow |
+| Require approvals | Enforce peer review | Need one or more reviewers |
+| Require status checks | Ensure CI passes before merge | Need tests/build/security checks pass |
+| Require conversation resolution | Prevent unresolved comments | Need reviewers' comments addressed |
+| Require signed commits | Verify commit signatures | Need commit authenticity |
+| Restrict who can push | Limit direct branch updates | Need protect main/release branches |
+| CODEOWNERS review | Require owners for files | Need domain owners approve changes |
+
+### Decision Tree
+
+```text
+Need prevent direct commits to main?
+-> Require pull request before merging
+
+Need automated tests before merge?
+-> Require status checks
+
+Need specific file owners to review?
+-> CODEOWNERS + required review
+
+Need only certain people can update branch?
+-> Restrict push access
+
+Need comments addressed before merge?
+-> Require conversation resolution
+```
+
+### Exam Tip
+
+If the scenario says main branch must be protected from direct push, choose branch protection or repository rulesets.
+
+---
+
+## 6.6 Enterprise Managed Users and Copilot Policy
+
+### Enterprise Managed Users
+
+Enterprise Managed Users are GitHub accounts controlled by an enterprise. They are used when organizations need centralized identity lifecycle management.
+
+### Copilot Policy
+
+Organization and enterprise Copilot policies allow administrators to control Copilot availability and governance for users and teams.
+
+### Exam Tips
+
+- Enterprise-owned identities: Enterprise Managed Users.
+- Organization-wide AI coding governance: Copilot policy.
+- Central control across multiple organizations: enterprise account.
+
+---
+
+# Domain 7 - Explore the GitHub Community
+
+## 7.1 Open Source
+
+### Definition
+
+Open source refers to projects where source code is available under a license that defines how others can use, modify, and distribute it.
+
+### Description
+
+GitHub supports open source through repositories, licenses, issues, pull requests, discussions, community standards, Sponsors, discoverability, and collaboration tools.
+
+### Exam Tips
+
+- Open source reuse requires a license.
+- Public does not automatically mean open-source licensed.
+- Good open-source repositories usually have README, LICENSE, CONTRIBUTING, CODE_OF_CONDUCT, and SECURITY files.
+
+---
+
+## 7.2 GitHub Sponsors
+
+### Definition
+
+GitHub Sponsors allows individuals and organizations to financially support open-source maintainers and projects.
+
+### Exam Tip
+
+If the scenario says a maintainer needs financial support or funding from the community, choose GitHub Sponsors.
+
+---
+
+## 7.3 Following Users and Organizations
+
+### Definition
+
+Following users or organizations helps you stay informed about their GitHub activity and discover projects and contributors.
+
+### Related Actions
+
+- Follow a user.
+- Follow an organization.
+- Watch a repository.
+- Star a repository.
+
+### Exam Tip
+
+If the scenario says stay informed about a user or organization, choose follow. If it says track repository activity, choose watch.
+
+---
+
+## 7.4 GitHub Marketplace
+
+### Definition
+
+GitHub Marketplace is where users can find apps, Actions, and integrations to extend GitHub workflows.
+
+### Examples
+
+- CI/CD tools.
+- Code quality tools.
+- Security scanning tools.
+- Project management integrations.
+- Reusable GitHub Actions.
+
+### Exam Tip
+
+If the requirement is to find reusable apps, Actions, or integrations, choose GitHub Marketplace.
+
+---
+
+## 7.5 Forks, Templates, and Discoverable Repositories
+
+### Definitions
+
+| Feature | Definition | Use When |
+|---|---|---|
+| Fork | Copy of a repository under your account | Contribute without write access or experiment |
+| Template repository | Starter repository used to create new repos | Standardize new projects |
+| Topics | Tags that describe a repository | Improve discoverability |
+| README | Project landing page | Explain project purpose and usage |
+| License | Legal permissions | Clarify reuse rights |
+| Star | Bookmark or signal interest | Save useful repository |
+
+### Exam Tip
+
+Fork for contribution without write access. Template for starting something new from a standard pattern.
+
+---
+
+## 7.6 InnerSource
+
+### Definition
+
+InnerSource applies open-source practices inside an organization, usually using private or internal repositories.
+
+### Description
+
+InnerSource encourages transparency, reusable components, cross-team contribution, documented contribution processes, and collaborative review practices inside a company.
+
+### Exam Tip
+
+If the scenario says open-source-style collaboration inside a company, choose InnerSource.
+
+---
+
+# Final Exam Revision
+
+## A. Master Decision Matrix
+
+### Git and GitHub Basics
+
+| Requirement | Best Answer |
+|---|---|
+| Track changes and revert mistakes | Version control / Git |
+| Hosted collaboration platform | GitHub |
+| Work offline and commit locally | Git |
+| Store project files and history | Repository |
+| Save a snapshot of changes | Commit |
+| Isolate feature work from main | Branch |
+| Copy repository locally | Clone |
+| Copy repository under your GitHub account | Fork |
+| Upload local commits | Push |
+| Bring remote changes locally | Pull |
+| Lightweight PR-based workflow | GitHub Flow |
+
+### Repository Files
+
+| Requirement | Best Answer |
+|---|---|
+| Project overview | README.md |
+| Legal usage rights | LICENSE |
+| Contribution process | CONTRIBUTING.md |
+| Vulnerability reporting | SECURITY.md |
+| Automatic reviewer ownership | CODEOWNERS |
+| Ignore local/build files | .gitignore |
+| Standard bug report | Issue template |
+| Standard PR checklist | Pull request template |
+| Automation | .github/workflows YAML |
+
+### Collaboration
+
+| Requirement | Best Answer |
+|---|---|
+| Track bug/task/feature | Issue |
+| Propose code/doc change | Pull request |
+| Open-ended Q&A | Discussion |
+| Categorize work | Label |
+| Assign responsibility | Assignee |
+| Group work for a release | Milestone |
+| Link PR to issue and close on merge | Fixes/Closes/Resolves issue number |
+| Share small snippet | Gist |
+| Multi-page repo documentation | Wiki |
+| Static website | GitHub Pages |
+| Reusable support response | Saved reply |
+
+### Modern Development
+
+| Requirement | Best Answer |
+|---|---|
+| Automate build/test/deploy | GitHub Actions |
+| Trigger automation by event | Event |
+| Machine that executes jobs | Runner |
+| Group of steps | Job |
+| Individual command/action | Step |
+| Reusable automation component | Action |
+| Test multiple OS/versions | Matrix |
+| Store workflow secret | Actions secrets |
+| AI coding help | GitHub Copilot |
+| Full cloud dev environment | Codespaces |
+| Quick browser edit | github.dev |
+| Repeatable team dev environment | Dev container |
+
+### Projects
+
+| Requirement | Best Answer |
+|---|---|
+| Single work item | Issue |
+| Visual backlog/roadmap | GitHub Project |
+| Timeline planning | Roadmap layout |
+| Kanban tracking | Board layout |
+| Detailed metadata | Table layout |
+| Priority/effort fields | Custom fields |
+| Release grouping | Milestone |
+| Automatic project item updates | Project workflows |
+| Charts/progress | Project insights |
+
+### Security and Administration
+
+| Requirement | Best Answer |
+|---|---|
+| Protect account login | 2FA / passkeys |
+| Tool/API authentication | PAT |
+| Git command-line authentication | SSH key |
+| Detect leaked credentials | Secret scanning |
+| Confidential repository | Private visibility |
+| Company-wide enterprise-only visibility | Internal visibility |
+| View/comment only | Read role |
+| Manage issues/PRs but no code push | Triage role |
+| Push code | Write role |
+| Manage repo without destructive actions | Maintain role |
+| Full repo control | Admin role |
+| Group-based access | Team |
+| External user with limited repo access | Outside collaborator |
+| Prevent direct push to main | Branch protection / ruleset |
+| Require tests before merge | Required status checks |
+| Require specific file owners | CODEOWNERS + required review |
+| Enterprise-owned accounts | Enterprise Managed Users |
+| Govern Copilot in organization | Copilot policy |
+
+### Community
+
+| Requirement | Best Answer |
+|---|---|
+| Financially support maintainers | GitHub Sponsors |
+| Find reusable apps/actions | GitHub Marketplace |
+| Stay informed about user/org | Follow |
+| Track repository activity | Watch |
+| Open-source-style internal collaboration | InnerSource |
+| Improve project discoverability | Topics, README, license, metadata |
+
+---
+
+## B. Must-Memorize Facts
+
+### Git and GitHub Basics
+
+- Git is a distributed version control system.
+- GitHub is a cloud platform for Git repositories and collaboration.
+- A repository stores files and history.
+- A commit is a saved snapshot of changes.
+- A branch is an independent line of development.
+- A clone is a local copy of a repository.
+- A fork is your GitHub-hosted copy of another repository.
+- A pull request proposes merging changes from one branch into another.
+- GitHub Flow is branch, commit, pull request, review, merge.
+- Markdown is used for README files, issues, PRs, comments, and documentation.
+
+### Repositories
+
+- README.md is the repository landing page.
+- LICENSE defines permissions and restrictions for reuse.
+- CONTRIBUTING.md explains how to contribute.
+- CODEOWNERS defines file/path ownership for reviews.
+- SECURITY.md explains how to report vulnerabilities.
+- .gitignore excludes local/build/secret files from being tracked.
+- Issue templates standardize bug/feature reports.
+- Pull request templates standardize review context.
+- Repository templates create standardized new repositories.
+- Topics improve discoverability.
+- Stars bookmark or signal interest.
+- Archive makes an inactive repository read-only.
+
+### Collaboration
+
+- Issues track bugs, tasks, and feature requests.
+- Pull requests review and merge changes.
+- Discussions support open-ended conversations.
+- Labels categorize issues and pull requests.
+- Assignees show responsibility.
+- Milestones group work toward a target.
+- Notifications help manage watched, mentioned, assigned, and participating activity.
+- Gists share small snippets or notes.
+- Wikis provide repository documentation pages.
+- GitHub Pages hosts static websites.
+
+### Modern Development
+
+- GitHub Actions automates CI/CD and repository workflows.
+- Workflows are YAML files in `.github/workflows`.
+- Events trigger workflows.
+- Jobs group steps on a runner.
+- Steps run commands or actions.
+- Runners execute jobs.
+- Matrix builds test multiple combinations.
+- Secrets store sensitive workflow values.
+- Copilot is an AI coding assistant.
+- Copilot output must be reviewed and tested.
+- Codespaces provides cloud-hosted development environments.
+- Dev containers define repeatable development environments.
+- github.dev is best for quick browser edits.
+
+### Projects and Planning
+
+- GitHub Projects tracks work across issues and pull requests.
+- Projects support table, board, and roadmap layouts.
+- Custom fields add metadata like priority, size, iteration, and target date.
+- Project workflows automate project item updates.
+- Project insights show charts and progress.
+- Draft issues capture planning items before formal issues.
+- Labels categorize; milestones group; projects visualize/manage.
+
+### Security and Administration
+
+- 2FA adds an extra login factor.
+- Passkeys provide modern passwordless authentication.
+- Repository visibility can be public, private, or internal where supported.
+- Read role is for viewing and discussion.
+- Triage role manages issues/PRs without code write access.
+- Write role allows active contribution.
+- Maintain role manages repository without sensitive/destructive actions.
+- Admin role provides full repository control.
+- Teams simplify permission management.
+- Outside collaborators are non-members with specific repo access.
+- Branch protection prevents unsafe changes to important branches.
+- Required status checks enforce tests/builds before merge.
+- CODEOWNERS can enforce ownership-based review when configured with branch protection/rulesets.
+- Enterprise Managed Users are enterprise-controlled GitHub accounts.
+- Copilot policies help govern AI coding assistant usage.
+
+### Community
+
+- Open source needs a license to define reuse rights.
+- Public repository does not automatically mean licensed for reuse.
+- GitHub Sponsors supports maintainers financially.
+- Following users/orgs helps track activity.
+- GitHub Marketplace provides apps, Actions, and integrations.
+- InnerSource applies open-source practices inside organizations.
+- Forks support external contribution.
+- Templates support standardized new projects.
+
+---
+
+## C. Common Exam Traps
+
+- Git is not GitHub.
+- Clone is not fork.
+- Branch is not fork.
+- Template is not fork.
+- README is not LICENSE.
+- CONTRIBUTING is not CODEOWNERS.
+- SECURITY.md is not secret scanning.
+- Issue is not pull request.
+- Discussion is not issue when work tracking is required.
+- Pull request is for proposed changes and review.
+- Wiki is not GitHub Pages.
+- github.dev is not Codespaces.
+- Actions workflow is not a single action.
+- Runner is the machine; workflow is the automation definition.
+- Job contains steps; step can run an action.
+- Secrets should not be stored directly in YAML or README.
+- Required checks are enforced through branch protection/rulesets.
+- Triage role does not allow pushing code.
+- Maintain is not full Admin.
+- Milestones are good for releases; Projects are flexible planning views.
+- CODEOWNERS requires compatible branch protection/rulesets to enforce required review.
+- Copilot output should be tested and reviewed.
+- Open source does not mean no license is needed.
+- InnerSource is internal, not public open source.
+- GitHub Marketplace is for integrations and apps, not repository hosting.
+- Passkeys/2FA protect account sign-in, not branch workflows.
+- Branch protection protects code workflow, not account login.
+- .gitignore is not a security boundary for already-committed secrets.
+- Repository insights are for visibility, not deployment.
+- Dependency graph shows dependencies, not Git history.
+- Use least privilege for users, teams, and collaborators.
+
+---
+
+## D. Scenario Practice Questions
+
+### Domain 1 - Git and GitHub Basics
+
+1. A developer needs to save project history locally and work offline. What tool is involved?  
    **Answer:** Git.
-2. A team needs a cloud platform for pull requests, issues, and Actions. What should they use?  
+
+2. A team needs a cloud platform for pull requests, issues, reviews, and Actions. What should they use?  
    **Answer:** GitHub.
-3. You need to work on a feature without affecting `main`. What should you create?  
+
+3. You need to work on a feature without affecting main. What should you create?  
    **Answer:** A branch.
+
 4. You need to propose your branch changes for review. What should you open?  
    **Answer:** A pull request.
+
 5. You do not have write access to an open-source repo but want to propose a change. What should you do first?  
    **Answer:** Fork the repository, make changes, and open a pull request.
-6. You want to copy a repository locally with full history. What command/action is this?  
+
+6. You want to copy a repository locally with full history. What action is this?  
    **Answer:** Clone.
-7. Which workflow uses branch, commit, pull request, review, merge?  
+
+7. Which workflow uses branch, commit, pull request, review, and merge?  
    **Answer:** GitHub Flow.
 
-## Domain 2 - Repositories
+### Domain 2 - Repositories
+
 8. A new contributor needs project setup instructions. Which file should they read?  
    **Answer:** README.md.
+
 9. A public project needs to define legal reuse rights. Which file should be added?  
    **Answer:** LICENSE.
+
 10. A team wants automatic reviewer assignment for files under `/security`. Which file helps?  
-   **Answer:** CODEOWNERS.
+    **Answer:** CODEOWNERS.
+
 11. A project needs a vulnerability reporting process. Which file should be added?  
-   **Answer:** SECURITY.md.
+    **Answer:** SECURITY.md.
+
 12. A team wants all bug reports to include reproduction steps. What should they configure?  
-   **Answer:** Issue template.
+    **Answer:** Issue template.
+
 13. A team wants every PR to include testing confirmation. What should they configure?  
-   **Answer:** Pull request template.
-14. A repo should become read-only because development stopped. What should you do?  
-   **Answer:** Archive the repository.
+    **Answer:** Pull request template.
 
-## Domain 3 - Collaboration
-15. Where should a bug be tracked?  
-   **Answer:** Issue.
-16. Where should a code change be reviewed before merge?  
-   **Answer:** Pull request.
-17. Where should a broad community Q&A topic be started?  
-   **Answer:** Discussion.
-18. Which feature categorizes issues as bug or enhancement?  
-   **Answer:** Labels.
-19. Which feature groups issues for a release target?  
-   **Answer:** Milestone.
-20. Which phrase can close issue 25 when a PR merges?  
-   **Answer:** `Fixes #25`, `Closes #25`, or `Resolves #25`.
-21. You need to publish a static documentation website from a repo. What should you use?  
-   **Answer:** GitHub Pages.
-22. You need to share a short code snippet. What should you use?  
-   **Answer:** Gist.
+14. A repository should become read-only because development stopped. What should you do?  
+    **Answer:** Archive the repository.
 
-## Domain 4 - Modern Development
-23. You need tests to run on every pull request. What should you use?  
-   **Answer:** GitHub Actions.
-24. In Actions, what starts a workflow?  
-   **Answer:** An event.
-25. In Actions, what executes jobs?  
-   **Answer:** A runner.
-26. In Actions, where are workflow files stored?  
-   **Answer:** `.github/workflows`.
-27. You need to test on multiple operating systems. What Actions feature helps?  
-   **Answer:** Matrix strategy.
-28. You need AI coding suggestions and chat assistance. What should you use?  
-   **Answer:** GitHub Copilot.
-29. A developer needs a complete cloud dev environment with terminal and dependencies. What should they use?  
-   **Answer:** GitHub Codespaces.
-30. A developer only needs to quickly edit README in browser. What can they use?  
-   **Answer:** github.dev or GitHub web editor.
-31. A team wants consistent development environments. What should they define?  
-   **Answer:** Dev container configuration.
+15. A maintainer wants to understand views, clones, contributors, and activity. What should they use?  
+    **Answer:** Repository insights or metrics.
 
-## Domain 5 - Projects
-32. A team wants a Kanban view of work. What should they use?  
-   **Answer:** GitHub Projects board layout.
-33. A team wants a timeline roadmap. What should they use?  
-   **Answer:** GitHub Projects roadmap layout.
-34. A team wants to track priority and effort fields. What Projects feature helps?  
-   **Answer:** Custom fields.
-35. A support user sends the same triage answer often. What should they use?  
-   **Answer:** Saved replies.
-36. A team wants progress charts from tracked items. What should they use?  
-   **Answer:** Project insights.
+### Domain 3 - Collaboration
 
-## Domain 6 - Security/Admin
-37. A user account needs stronger sign-in protection. What should be enabled?  
-   **Answer:** 2FA or passkeys.
-38. Stakeholders need to view and comment but not push code. Which repository role fits?  
-   **Answer:** Read.
-39. A user must manage labels and issues but not push code. Which role fits?  
-   **Answer:** Triage.
-40. A developer must push code. Which role fits?  
-   **Answer:** Write.
-41. A project manager must manage repo settings but not destructive actions. Which role fits?  
-   **Answer:** Maintain.
-42. Someone must manage access and security settings. Which role fits?  
-   **Answer:** Admin.
-43. You must prevent direct pushes to `main`. What should be configured?  
-   **Answer:** Branch protection or repository ruleset.
-44. You must require tests before merging. What should be configured?  
-   **Answer:** Required status checks.
-45. An enterprise wants centrally managed GitHub user accounts. What feature fits?  
-   **Answer:** Enterprise Managed Users.
+16. Where should a bug be tracked?  
+    **Answer:** Issue.
 
-## Domain 7 - Community
-46. A maintainer wants financial support from users. What feature helps?  
-   **Answer:** GitHub Sponsors.
-47. A team wants reusable GitHub apps/actions. Where should they look?  
-   **Answer:** GitHub Marketplace.
-48. A company wants open-source-style collaboration internally. What is this called?  
-   **Answer:** InnerSource.
-49. A user wants to follow project activity from an organization. What should they do?  
-   **Answer:** Follow the organization or watch/star relevant repositories.
-50. A team wants to make new repos from a standard starter repository. What should they use?  
-   **Answer:** Template repository.
+17. Where should a code change be reviewed before merge?  
+    **Answer:** Pull request.
+
+18. Where should a broad community Q&A topic be started?  
+    **Answer:** Discussion.
+
+19. Which feature categorizes issues as bug or enhancement?  
+    **Answer:** Labels.
+
+20. Which feature groups issues for a release target?  
+    **Answer:** Milestone.
+
+21. Which phrase can close issue 25 when a PR merges?  
+    **Answer:** Fixes #25, Closes #25, or Resolves #25.
+
+22. You need to publish a static documentation website from a repo. What should you use?  
+    **Answer:** GitHub Pages.
+
+23. You need to share a short code snippet. What should you use?  
+    **Answer:** Gist.
+
+24. A user receives too many repository alerts. What should they adjust?  
+    **Answer:** Notification or watch settings.
+
+### Domain 4 - Modern Development
+
+25. You need tests to run on every pull request. What should you use?  
+    **Answer:** GitHub Actions.
+
+26. In GitHub Actions, what starts a workflow?  
+    **Answer:** An event.
+
+27. In GitHub Actions, what executes jobs?  
+    **Answer:** A runner.
+
+28. Where are workflow files stored?  
+    **Answer:** `.github/workflows`.
+
+29. You need to test on multiple operating systems. What Actions feature helps?  
+    **Answer:** Matrix strategy.
+
+30. You need AI coding suggestions and chat assistance. What should you use?  
+    **Answer:** GitHub Copilot.
+
+31. A developer needs a complete cloud dev environment with terminal and dependencies. What should they use?  
+    **Answer:** GitHub Codespaces.
+
+32. A developer only needs to quickly edit README in browser. What can they use?  
+    **Answer:** github.dev or GitHub web editor.
+
+33. A team wants consistent development environments. What should they define?  
+    **Answer:** Dev container configuration.
+
+### Domain 5 - Projects
+
+34. A team wants a Kanban view of work. What should they use?  
+    **Answer:** GitHub Projects board layout.
+
+35. A team wants a timeline roadmap. What should they use?  
+    **Answer:** GitHub Projects roadmap layout.
+
+36. A team wants to track priority and effort fields. What Projects feature helps?  
+    **Answer:** Custom fields.
+
+37. A support user sends the same triage answer often. What should they use?  
+    **Answer:** Saved replies.
+
+38. A team wants progress charts from tracked items. What should they use?  
+    **Answer:** Project insights.
+
+### Domain 6 - Security/Admin
+
+39. A user account needs stronger sign-in protection. What should be enabled?  
+    **Answer:** 2FA or passkeys.
+
+40. Stakeholders need to view and comment but not push code. Which repository role fits?  
+    **Answer:** Read.
+
+41. A user must manage labels and issues but not push code. Which role fits?  
+    **Answer:** Triage.
+
+42. A developer must push code. Which role fits?  
+    **Answer:** Write.
+
+43. A project manager must manage repository settings but not destructive actions. Which role fits?  
+    **Answer:** Maintain.
+
+44. Someone must manage access and security settings. Which role fits?  
+    **Answer:** Admin.
+
+45. You must prevent direct pushes to main. What should be configured?  
+    **Answer:** Branch protection or repository ruleset.
+
+46. You must require tests before merging. What should be configured?  
+    **Answer:** Required status checks.
+
+47. An enterprise wants centrally managed GitHub user accounts. What feature fits?  
+    **Answer:** Enterprise Managed Users.
+
+### Domain 7 - Community
+
+48. A maintainer wants financial support from users. What feature helps?  
+    **Answer:** GitHub Sponsors.
+
+49. A team wants reusable GitHub apps/actions. Where should they look?  
+    **Answer:** GitHub Marketplace.
+
+50. A company wants open-source-style collaboration internally. What is this called?  
+    **Answer:** InnerSource.
 
 ---
 
-# 7-Day Last-Moment Revision Plan
+## E. Two-Hour Final Revision Checklist
 
-| Day | Focus |
-|---:|---|
-| 1 | Git vs GitHub, repositories, commits, branches, clone/fork/pull/push, GitHub Flow |
-| 2 | Repository files: README, LICENSE, CONTRIBUTING, CODEOWNERS, SECURITY, templates, insights |
-| 3 | Issues, pull requests, discussions, notifications, Gists, Wikis, Pages |
-| 4 | GitHub Actions, Copilot, Codespaces, dev containers, github.dev |
-| 5 | GitHub Projects, labels, milestones, assignees, saved replies, insights |
-| 6 | Security/admin: 2FA, passkeys, roles, teams, branch protection, EMUs, Copilot policy |
-| 7 | Open source, Sponsors, Marketplace, InnerSource, final cheat sheet and practice questions |
-
----
-
-# Final Revision Checklist
-
-Before the exam, confirm you can explain each of these without notes:
+Before the exam, confirm you can explain each item without notes:
 
 - Git vs GitHub.
 - Repository vs branch vs commit.
@@ -1206,10 +1852,13 @@ Before the exam, confirm you can explain each of these without notes:
 - Wiki vs GitHub Pages vs Gist.
 - GitHub Actions workflow vs event vs job vs step vs action vs runner.
 - GitHub-hosted runner vs self-hosted runner.
-- Copilot purpose and plan-level idea.
+- Actions secrets and why not to hardcode credentials.
+- Copilot purpose, Copilot Chat, Agent Mode, and multi-model support.
+- Copilot plans: individual, business, enterprise.
 - Codespaces vs github.dev.
 - Dev containers and repeatable environments.
 - Project layouts: table, board, roadmap.
+- Project custom fields, workflows, and insights.
 - Repository roles: Read, Triage, Write, Maintain, Admin.
 - Public vs private vs internal repositories.
 - 2FA/passkeys vs branch protection.
@@ -1219,11 +1868,15 @@ Before the exam, confirm you can explain each of these without notes:
 
 ---
 
-# Source and Validation Notes
+## F. Seven-Day Revision Plan
 
-This study guide was prepared from the current Microsoft Learn GH-900 study guide and supporting GitHub Docs pages covering GitHub Flow, Actions, Copilot, Codespaces, Projects, repository roles, and GitHub community/repository collaboration concepts. It is designed as a practical, exam-focused study material and not a replacement for hands-on practice in GitHub.
+| Day | Focus |
+|---:|---|
+| 1 | Git vs GitHub, repositories, commits, branches, clone/fork/pull/push, GitHub Flow |
+| 2 | Repository files: README, LICENSE, CONTRIBUTING, CODEOWNERS, SECURITY, templates, insights |
+| 3 | Issues, pull requests, discussions, notifications, Gists, Wikis, Pages |
+| 4 | GitHub Actions, Copilot, Codespaces, dev containers, github.dev |
+| 5 | GitHub Projects, labels, milestones, assignees, saved replies, insights |
+| 6 | Security/admin: 2FA, passkeys, roles, teams, branch protection, EMUs, Copilot policy |
+| 7 | Open source, Sponsors, Marketplace, InnerSource, final decision matrix and practice questions |
 
-Primary source areas used for alignment:
-
-- Microsoft Learn GH-900 Study Guide, skills at a glance as of January 2026.
-- GitHub Docs: GitHub Flow, Actions, Copilot, Codespaces, Projects, repository roles, repositories, issues, pull requests, discussions, notifications, Gists, Wikis, Pages, and community topics.
