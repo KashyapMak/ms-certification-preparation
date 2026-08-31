@@ -1,0 +1,1249 @@
+{
+    "quizName": "Power Platform & Dataverse Practice Exam",
+    "totalScore": 1000,
+    "passingScore": 700,
+    "scenarios": [
+        {
+            "id": 1,
+            "text": "Case Study 1 - Fabrikam Inc\n\nBackground\nFabrikam Inc. is an energy provider that operates wind and solar farms across multiple countries and regions. The company uses Microsoft Power Platform to manage asset maintenance, technician workflows, and predictive analytics.\nField technicians use canvas apps on mobile devices to capture inspection and repair data.\nOperations managers use model-driven apps to monitor asset performance and maintenance history.\nThe company plans to enhance its platform by introducing AI-driven insights, improving reuse across applications, and establishing a formal application lifecycle management (ALM) strategy.\n\nCurrent environment\nApplications\nField technicians use an outdated mobile app to log maintenance activities and capture asset readings in SharePoint Online.\nOperations managers use a model-driven app to review maintenance records and asset performance trends.\n\nDevelopment practices\nDevelopers build and modify applications directly in the production environment.\nThere is NO structured ALM process.\nSolutions are NOT consistently used to package or deploy application components.\nReusable components are inconsistently implemented across apps, leading to duplication.\n\nAI integration\nFabrikam Inc. plans to actively explore generative AI usage as part of the next phase of work.\n\nBusiness requirement\nApplication development\nThe outdated mobile app must be replaced with a new app that supports responsive design principles, provides full control over the UI, and allows technicians to take and upload photos directly from their mobile devices.\nThe new app for the field technicians requires the name of the technician to be persisted on the home screen only. In addition, work orders must be displayed within a gallery.\nAll new apps must connect to a scalable, cloud-based relational data store.\nApps must support efficient data entry for technicians in the field.\nReusable UI elements must be implemented to reduce duplication.\n\nAI capabilities\nThe company requires a generative AI solution to manage customer complaint responses and create custom inspection reports that align to an existing template.\nCustomer complaint responses must be generated in applications and based on emails being sent to a mailbox.\nCustom AI development must be minimized.\n\nGenerative AI reusability\nGenerative AI solutions must accept dynamic inputs to adapt to different scenarios.\nGenerative AI solutions must be reusable across different Power Platform services.\n\nExtensibility\nCustom UI form components must be reusable across applications.\nUse of server-side custom code must be minimized where possible.\n\nTechnical requirements\nApplication lifecycle management (ALM)\nSeparate environments must be used for development, testing, and production.\nSolutions must be used to package application components, segmented based on functional areas.\nManaged solutions must be deployed to the production environment.\nValidation must occur before deployment to production.\n\nData processing\nAggregated values across related rows must be displayed for reporting.\nCalculations must update automatically as new data is entered. Calculation data must be limited to a maximum length of 10.\n\nIssues\nDuplicate logic exists across multiple canvas apps.\nDevelopers frequently overwrite changes in production.\nGenerative AI solutions produce inconsistent outputs due to missing or inconsistent inputs.\nMaintenance metrics are not consistently calculated across related rows."
+        },
+        {
+            "id": 2,
+            "text": "Case Study 2 - Contoso Ltd.\n\nBackground\nContoso Ltd. is a global renewable energy provider that operates wind farms and solar installations. The company is modernizing its maintenance and operations platform. The company plans to implement a Microsoft Power Platform solution for the operations team. The implementation will include Microsoft Dataverse, a model-driven app, and Power Automate cloud flows.\n\nThe company is building and testing a new model-driven app named Operations. The solution will support operations managers, regional coordinators, and field technicians. The app must integrate with an external cloud-based system that manages onboarding of field technicians.\nContoso Ltd. plans to improve data quality and enforce consistent business logic across the app and automation processes.\n\nTechnical environment\nContoso Ltd. has an Identity and Access Management (IDAM) department that manages security. The company has one Power Platform environment named Production, where all building and configuration take place. Auditing is disabled.\n\nThe Production environment has the following security configurations:\nIDAM has a Microsoft Entra security group named Contoso Ltd. QA. This security group will assign all members a Power Apps license.\nIDAM created a Quality Assurance security role that grants read and write access to all custom tables.\nIDAM also created a team named Testers in Dataverse, of a Microsoft Entra group team type. The team is configured for the Contoso Ltd. QA security group. The Testers team is assigned the Quality Assurance security role.\n\nMicrosoft 365 environment\nAll Contoso Ltd. managers are included in a Microsoft 365 group named Managers. The group is NOT enabled for email.\nThe company shares a SharePoint list with a key customer: Alpine Ski House. Alpine Ski House staff members can add new maintenance requests, which are then checked and marked as reviewed by Contoso Ltd.\n\nCurrent issue:\nA new QA tester joins Contoso Ltd. The IDAM department adds the new tester to the Contoso Ltd. QA security group. However, the new tester is not listed in the Testers team as a member.\n\nOther applications:\nA separate software-as a-service (SaaS) solution named TechCheck manages technician onboarding. The TechCheck solution is set up as follows:\nTechCheck assigns a unique number named Ref to all technicians.\nUsers cannot make changes to the TechCheck data model.\nUsers cannot use the same TechCheck ref on more than one Technician row.\n\nAutomation requirements\nContoso plans to use Power Automate to develop a Maintenance Request Approval flow. The flow must meet the following requirements:\nCreate a Maintenance Request row in Dataverse when either of the following occurs:\nAn item is added to the SharePoint list by the customer with the Priority property set to High.\nAny item is checked and marked as reviewed by a Contoso Ltd. representative.\nSeek maintenance request approvals from managers through both email and a Microsoft Teams message after they have been reviewed:\nRequests require approval from all managers.\nIf one manager rejects the request, approval must not be granted.\nThe result of the approval request must be sent to the initial reviewer in an email. The subject line must set the response as either Approve or Reject.\n\nContoso Ltd. requires the following table logic:\nIf a user tries to enter a price greater than the cost on a new Asset row, the row must display an inline error message.\nIf a user tries to save changes to a Technician row where the TechCheck ref column is empty, the action must be prevented and a message explaining the action must be displayed.\nAny updates made to Technician profiles in TechCheck must be mirrored in Dataverse by using a custom integration. The developers building the integration require an index for performant searches on the Technician table.\n\nData model and app design\nContoso Ltd. plans to use Dataverse as its central data platform. Log storage must be minimized.\n\nTables\nThe following tables are required for data modeling and the app design:\nAssets: Stores information about solar panels and wind turbines\nMaintenance Requests: Tracks issues and maintenance activities. The table must include the following columns:\nRequest ID (auto-number)\nExternal Request Code (text)\nAssigned -Technician (lookup to Technicians)\nReport (lookup to Maintenance Reports)\nTechnician updated (Yes/No)\nMaintenance Reports: Tracks the results of maintenance reports\nTechnicians: Stores technician assignment data. The table must include the following columns:\nFull Name (Text)\nMobile phone number (Text)\nEmail (Text)\nSeniority (Choice)\nTechCheck ref (Text)\n\nData modeling\nThe data model must provide the following functionality:\nMaintenance Requests must:\nbe uniquely identifiable across systems.\nhave two inactive statuses, Cancelled and Duplicate.\nIf a new option is added to an existing set of options, it must be made available automatically for selection on all columns that use the set.\nA new column named Priority must be added to multiple tables. Users must be able to select only one option from the following set per row:\nLow, Medium, High, Critical\nChanges to the Technician column on Maintenance Requests must be tracked for compliance purposes. Rows must include the names of previous and current technicians and the time of the change.\n\nRelationship requirements\nOne asset can be related to many maintenance requests. A maintenance request can have many assets.\nA maintenance request can have only zero or one maintenance report.\nOnly one Technician can be related to a Maintenance Request at a time.\nWhen a Maintenance Request is deleted, any Maintenance Reports associated with it must also be deleted, but this action should be prevented if there is value in the Technician lookup.\nWhen a Maintenance Request is assigned to a different owner, the Maintenance Report associated with it must be reassigned to the new owner as well, but the associated Technician should stay with the current owner.\n\nApp design\nThe Technicians table contains the following public views:\nSenior Technicians\nJunior Technicians\nThe Senior Technician view must be available through the table list view selector to a set of specific users only.\nA tester creates a personal view named Hot Assets on the Assets table. The tester recognizes that the view is useful for the entire testing team. The view must be made accessible to the team."
+        }
+    ],
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Power Automate & AI Builder",
+            "Question": "A company plans to implement an automated process to retrieve and analyze customer feedback. The company requires a solution that:\n- Autonomously analyzes feedback.\n- Stores results for reporting.\n- Triggers an escalation for negative sentiment.\n\nYou need to design the solution. Which three components should you use? (Choose three.)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Dataverse table",
+                    "reason": "Correct. Dataverse is required to store the analyzed feedback results for reporting."
+                },
+                {
+                    "id": 2,
+                    "text": "Business rule",
+                    "reason": "Incorrect. Business rules apply logic on forms and at the table level, but cannot autonomously analyze feedback or natively trigger escalations based on unstructured text sentiment."
+                },
+                {
+                    "id": 3,
+                    "text": "Cloud flow",
+                    "reason": "Correct. A Power Automate cloud flow is needed to autonomously orchestrate the process, trigger the AI analysis, and conditionally escalate based on negative sentiment."
+                },
+                {
+                    "id": 4,
+                    "text": "Canvas app",
+                    "reason": "Incorrect. A Canvas app is a user interface and is not required for an autonomous backend processing workflow."
+                },
+                {
+                    "id": 5,
+                    "text": "AI builder prompt",
+                    "reason": "Correct. AI Builder (specifically Sentiment Analysis or a custom prompt) is used to analyze the text of the customer feedback."
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                1,
+                3,
+                5
+            ],
+            "CorrectAnswerExplanation": "A combination of Power Automate (Cloud flow) for orchestration, AI Builder for autonomous sentiment analysis, and Dataverse for structured storage meets all requirements. Reference: https://learn.microsoft.com/en-us/ai-builder/sentiment-analysis-model-in-flow"
+        },
+        {
+            "id": 2,
+            "topic": "Canvas App Development",
+            "scenario_id": 1,
+            "Question": "You need to resolve the issues with the canvas apps mentioned in the Fabrikam case study (Duplicate logic exists across multiple canvas apps; Reusable UI elements must be implemented to reduce duplication).\n\nWhich two configurations should you use?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "User-defined function",
+                    "reason": "Correct. User-defined functions allow makers to centralize and reuse logic/formulas across a canvas app, resolving duplicate logic issues."
+                },
+                {
+                    "id": 2,
+                    "text": "Named formula",
+                    "reason": "Incorrect. While named formulas help centralize static definitions, User-defined functions are specifically designed for reusable procedural logic with parameters."
+                },
+                {
+                    "id": 3,
+                    "text": "Collection",
+                    "reason": "Incorrect. Collections store tabular data locally in the app, not reusable logic or UI components."
+                },
+                {
+                    "id": 4,
+                    "text": "Component library",
+                    "reason": "Correct. A Component library allows you to build reusable custom UI controls once and share them across multiple canvas apps."
+                },
+                {
+                    "id": 5,
+                    "text": "Context variable",
+                    "reason": "Incorrect. Context variables store local state on a single screen and do not aid in cross-app logic or UI reusability."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                4
+            ],
+            "CorrectAnswerExplanation": "User-defined functions solve the issue of duplicating formula logic, while Component Libraries solve the issue of duplicating UI components across multiple apps. Reference: https://learn.microsoft.com/en-us/power-apps/maker/canvas-apps/component-library"
+        },
+        {
+            "id": 3,
+            "topic": "Model-Driven App Security",
+            "Question": "An accounting team is assigned to a model-driven app to manage financial data.\nThe app is currently visible in the app launcher but inaccessible to the accounting team.\nUsers must be able to:\n- Open the app.\n- Access and record financial data.\n\nYou need to resolve the access issues. What should you do?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Configure app visibility privileges for the users.",
+                    "reason": "Incorrect. Visibility in the app launcher is already confirmed. The issue is accessing the underlying app and data."
+                },
+                {
+                    "id": 2,
+                    "text": "Assign users the appropriate security roles.",
+                    "reason": "Correct. To access a model-driven app and its data, users must have a security role assigned that grants privileges to the app and the tables it uses."
+                },
+                {
+                    "id": 3,
+                    "text": "Set the app as the default app for the users.",
+                    "reason": "Incorrect. Setting as default does not resolve security permission issues."
+                },
+                {
+                    "id": 4,
+                    "text": "Grant the users table-level permissions to the required tables.",
+                    "reason": "Incorrect. While table permissions are needed, Dataverse uses Security Roles to bundle and assign these permissions. You cannot assign standalone table-level permissions without a role."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "In Dataverse, app access and data permissions are governed by Security Roles. Users need a role associated with the app to run it, and privileges on the required tables to read/write data. Reference: https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/share-model-driven-app"
+        },
+        {
+            "id": 4,
+            "topic": "AI Builder Prompts",
+            "Question": "A company has a product report in PDF format. The report must be rewritten with formal vocabulary and cadence.\nThe company requires a prompt that can be used within a canvas app to rewrite the report as a Word document. The prompt must reference a business glossary stored in a SharePoint site.\n\nYou need to make a suggestion for the expectations portion of the prompt to generate a report summary correctly. What should you suggest?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use the PDF and the business glossary stored in the SharePoint site.",
+                    "reason": "Incorrect. This addresses the 'Context/Data Source' portion of prompt design, not the 'Expectations' portion."
+                },
+                {
+                    "id": 2,
+                    "text": "Create a Microsoft Word document summary.",
+                    "reason": "Incorrect. This is a Format instruction rather than guiding the qualitative expectation of the summary."
+                },
+                {
+                    "id": 3,
+                    "text": "The summary should highlight key themes, product features, and recurring feedback.",
+                    "reason": "Correct. The 'Expectations' portion of a prompt specifies the qualitative requirements, tone, or specific details the model should focus on, such as key themes and features."
+                },
+                {
+                    "id": 4,
+                    "text": "Format the summary as a list of bullet points, which should be clear and use short sentences.",
+                    "reason": "Incorrect. This provides specific Formatting instructions rather than overall summary expectations."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "When designing AI prompts, specifying that 'The summary should highlight key themes, product features, and recurring feedback' aligns with defining the AI's expectations and focus areas. Reference: https://learn.microsoft.com/en-us/ai-builder/prompts-create"
+        },
+        {
+            "id": 5,
+            "topic": "Model-Driven App Design",
+            "Question": "A company is designing a model-driven app for customer service representatives. You need to configure navigation and table availability using drag-and-drop mechanics. (Fill in the blank format)\n\nRequirement 1: Organize navigation into logical groupings.\nRequirement 2: Include only the required tables in the navigation.\n\nChoose the correct actions from the options below.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Requirement 1: Configure app settings. Requirement 2: Configure app properties.",
+                    "reason": "Incorrect."
+                },
+                {
+                    "id": 2,
+                    "text": "Requirement 1: Customize the site map. Requirement 2: Add tables to app designer.",
+                    "reason": "Correct. The Site Map controls logical navigation groupings (Areas/Groups). Adding tables to the app designer explicitly defines which tables are included in the app."
+                },
+                {
+                    "id": 3,
+                    "text": "Requirement 1: Add tables to app designer. Requirement 2: Customize the site map.",
+                    "reason": "Incorrect."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "To organize navigation into logical groupings based on business processes in a model-driven app, you must configure the App's Sitemap. Adding tables directly to the app designer makes them part of the app's underlying data model and security scope. Reference: https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/create-site-map-app"
+        },
+        {
+            "id": 6,
+            "topic": "Dynamics 365 / Dataverse Administration",
+            "Question": "A user named Elisabeth Rice signs in to the app by using the following sign in name: Elisabeth.Rice@contoso.com. After marriage, Elisabeth changes her legal name to Elisabeth Mueller.\nYou need to update the sign in name for the user without losing any application history.\n\nSolution: From Dynamics 365 Settings, select Email Configuration. In the active mailbox for the user, update the name.\n\nDoes the solution meet the goal?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Yes",
+                    "reason": "Incorrect. Modifying the Dynamics mailbox does not update the user's core system sign-in identity."
+                },
+                {
+                    "id": 2,
+                    "text": "No",
+                    "reason": "Correct. The sign-in name (UPN) must be updated in Microsoft 365 Admin Center / Microsoft Entra ID, not in Dynamics 365 Email settings."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "User identity and sign-in credentials for Power Platform and Dynamics 365 are managed centrally in Microsoft Entra ID (formerly Azure AD). Modifying the mailbox configuration does not change the user's primary UPN/Sign-in name. Reference: https://learn.microsoft.com/en-us/power-platform/admin/manage-users-portal"
+        },
+        {
+            "id": 7,
+            "topic": "Model-Driven App Business Logic",
+            "Question": "A company uses a model-driven app.\nThe company must be able to dynamically control how components of the form behave as users interact with it. The solution must modify the form in real time while the user interacts with the interface.\n\nYou need to enforce client-side behavior dynamically.\n\nSolution: Use business rules to show inline error messages.\n\nDoes the solution meet the goal?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Yes",
+                    "reason": "Correct. Business rules run on the client-side inside model-driven apps. They monitor data entries as the user interacts with the form and can show error messages dynamically in real time without a page refresh."
+                },
+                {
+                    "id": 2,
+                    "text": "No",
+                    "reason": "Incorrect. Business rules are precisely the out-of-the-box feature used to enforce real-time client-side logic on forms."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Business rules apply client-side logic in real-time as users interact with model-driven app forms, such as showing or hiding fields, setting values, or displaying inline error messages. Reference: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/data-platform-create-business-rule"
+        },
+        {
+            "id": 8,
+            "topic": "AI Implementation Strategy",
+            "Question": "A company wants to evaluate whether an AI-generated answer is useful before releasing an application to production. Which activity should be performed?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Delete training data",
+                    "reason": "Incorrect. Deleting training data prevents the model from improving and destroys the baseline context."
+                },
+                {
+                    "id": 2,
+                    "text": "Increase hardware resources only",
+                    "reason": "Incorrect. Hardware resources affect performance speed, not the qualitative usefulness or accuracy of the AI output."
+                },
+                {
+                    "id": 3,
+                    "text": "AI evaluation and testing",
+                    "reason": "Correct. Rigorous AI evaluation and human-in-the-loop testing ensures the generated answers meet quality and usefulness standards before production release."
+                },
+                {
+                    "id": 4,
+                    "text": "Disable user feedback",
+                    "reason": "Incorrect. User feedback is a critical mechanism for evaluating and refining AI answers post-launch."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "AI evaluation and testing (including 'red teaming' and quality assurance loops) is the standard practice for verifying the safety, accuracy, and usefulness of AI-generated responses prior to production release. Reference: https://learn.microsoft.com/en-us/ai-builder/responsible-ai-overview"
+        },
+        {
+            "id": 9,
+            "topic": "Copilot Studio / AI Agents",
+            "Question": "A developer builds a chatbot that must remember previous messages during a user session.\nWhich component is responsible for maintaining conversational context?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Network firewall",
+                    "reason": "Incorrect. Firewalls manage network security, not application session state."
+                },
+                {
+                    "id": 2,
+                    "text": "Conversation state management",
+                    "reason": "Correct. Conversation state management (or context variables) retains the history and context of interactions throughout a user's active session."
+                },
+                {
+                    "id": 3,
+                    "text": "Data compression layer",
+                    "reason": "Incorrect. Data compression is used for bandwidth optimization."
+                },
+                {
+                    "id": 4,
+                    "text": "Image recognition model",
+                    "reason": "Incorrect. Image recognition processes visual inputs, not conversational memory."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "In Copilot Studio or custom chatbots, conversation state management is used to track and store context, user inputs, and variable data throughout the lifecycle of a specific interaction session. Reference: https://learn.microsoft.com/en-us/microsoft-copilot-studio/authoring-variables"
+        },
+        {
+            "id": 10,
+            "topic": "Power Automate Integration",
+            "scenario_id": 1,
+            "Question": "Based on the Fabrikam case study, you need to configure the generative AI reusability requirements.\nRequirement: Generative AI solutions must be reusable across different Power Platform services.\n\nWhat should you do?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Output results as JSON.",
+                    "reason": "Incorrect. While JSON is a standard format, it doesn't inherently dictate how the component is shared across different services."
+                },
+                {
+                    "id": 2,
+                    "text": "Use an input variable.",
+                    "reason": "Incorrect. Input variables make a prompt dynamic, but don't address cross-service orchestration."
+                },
+                {
+                    "id": 3,
+                    "text": "Call the prompt from a Power Automate cloud flow.",
+                    "reason": "Correct. A Power Automate cloud flow can wrap the AI prompt and be triggered from any Power Platform service (Canvas apps, Model-driven apps, external systems), ensuring centralized reusability."
+                },
+                {
+                    "id": 4,
+                    "text": "Call the prompt from a canvas app.",
+                    "reason": "Incorrect. Calling it directly from a Canvas app tightly couples the AI logic to that specific app, reducing reusability across other services."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "To achieve reusability across various Power Platform services (like Canvas apps, Model-driven apps, and Copilot), wrapping the generative AI logic in a Power Automate Cloud Flow provides a centralized, reusable API endpoint for the platform. Reference: https://learn.microsoft.com/en-us/ai-builder/use-in-flow-overview"
+        },
+        {
+            "id": 11,
+            "topic": "Dataverse Data Modeling",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to add the Priority column to the Maintenance Request table.\nRequirement: A new column named Priority must be added to multiple tables. Users must be able to select only one option from the following set per row: Low, Medium, High, Critical. If a new option is added, it must be made available automatically on all columns.\n\nWhich column type should you use?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "local choice",
+                    "reason": "Incorrect. A local choice is bound only to a single table and cannot be reused across multiple tables natively."
+                },
+                {
+                    "id": 2,
+                    "text": "global choice",
+                    "reason": "Correct. A global choice lets you create a centralized dropdown list and reuse it across multiple tables. Any updates to the options instantly reflect everywhere it is used."
+                },
+                {
+                    "id": 3,
+                    "text": "status reason",
+                    "reason": "Incorrect. Status reason is specifically tied to the state transitions of a record (Active/Inactive), not general categorization."
+                },
+                {
+                    "id": 4,
+                    "text": "formula",
+                    "reason": "Incorrect. A formula column calculates data dynamically; it does not present a manual choice selection to a user."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "A global choice creates a unified list of options that can be shared across multiple columns and tables in Dataverse, fulfilling the requirement for centralized updates. Reference: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-edit-global-option-sets"
+        },
+        {
+            "id": 12,
+            "topic": "Dataverse Relationships",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to configure the Maintenance Request relationships to the other tables.\n\nFill in the blank by matching the correct Relationship Behavior Type to the Table:\nTable 1: Maintenance Report\nTable 2: Technician\n\nOptions to select from: [Parental], [Referential, Remove Link], [Referential, Restrict Delete]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Maintenance Report: Parental | Technician: Referential, Restrict Delete",
+                    "reason": "Correct. Maintenance Report must inherit assignments and deletion (Parental). Technician lookup must prevent deletion of the Technician if linked (Referential, Restrict Delete)."
+                },
+                {
+                    "id": 2,
+                    "text": "Maintenance Report: Referential, Remove Link | Technician: Parental",
+                    "reason": "Incorrect."
+                },
+                {
+                    "id": 3,
+                    "text": "Maintenance Report: Referential, Restrict Delete | Technician: Referential, Remove Link",
+                    "reason": "Incorrect."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "A parental relationship ensures actions (assign/delete) cascade to child records (Maintenance Reports). 'Referential, Restrict Delete' ensures data integrity by preventing the deletion of a Technician if they are linked to an active request. Reference: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/create-edit-entity-relationships"
+        },
+        {
+            "id": 13,
+            "topic": "Dataverse Views & Security",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to configure the access requirements to the views.\n\nFill in the blank by matching the correct Configuration to the View:\nView 1: Senior technicians\nView 2: Hot Assets\n\nOptions to select from: [Sharing], [Owner teams], [Security roles], [Business units]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Senior technicians: Security roles | Hot Assets: Sharing",
+                    "reason": "Correct. System views can be restricted via Security Roles. Personal views (like Hot Assets) must be shared using the native Sharing feature."
+                },
+                {
+                    "id": 2,
+                    "text": "Senior technicians: Business units | Hot Assets: Owner teams",
+                    "reason": "Incorrect."
+                },
+                {
+                    "id": 3,
+                    "text": "Senior technicians: Sharing | Hot Assets: Security roles",
+                    "reason": "Incorrect."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Security roles dictate which users can see specific system views in model-driven apps. Personal views are owned by the creator and must be explicitly 'Shared' with other users or teams. Reference: https://learn.microsoft.com/en-us/power-apps/maker/model-driven-apps/share-personal-views"
+        },
+        {
+            "id": 14,
+            "topic": "Dataverse Columns",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to define the alternate key for the Technicians table by using the TechCheck ref column.\nWhich setting should you apply to the TechCheck ref column?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Required",
+                    "reason": "Correct. To establish an alternate key in Dataverse, the column must be marked as Business Required to prevent nulls."
+                },
+                {
+                    "id": 2,
+                    "text": "Searchable",
+                    "reason": "Incorrect. Searchable only impacts advanced find and global search, not database index requirements."
+                },
+                {
+                    "id": 3,
+                    "text": "Column security",
+                    "reason": "Incorrect. Field-level security prevents unauthorized read/write access, but does not enforce alternate key requirements."
+                },
+                {
+                    "id": 4,
+                    "text": "Auditing",
+                    "reason": "Incorrect. Auditing tracks historical data changes."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Dataverse requires that any field used in an Alternate Key definition must be set as 'Business Required' to ensure unique database index integrity. Reference: https://learn.microsoft.com/en-us/power-apps/maker/data-platform/define-alternate-keys-reference-records"
+        },
+        {
+            "id": 15,
+            "topic": "ALM & Environments",
+            "Question": "A company maintains a Power Platform solution that includes prompts, cloud flows, and Dataverse components. Multiple development teams are responsible for different features within the solution.\n\nThe development teams have the following requirements:\n- Teams must develop and update the same features independently.\n- Updates must not overwrite changes made by other teams.\n- Production deployments must remain controlled and predictable.\n\nYou need to recommend an ALM approach that supports independent development and controlled deployment in line with Microsoft best practices. What should you recommend?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Create and maintain separate solutions in a single development environment. Deploy independently as managed solutions.",
+                    "reason": "Incorrect. Sharing a single dev environment causes 'last writer wins' conflicts, allowing teams to overwrite each other's customizations before deployment."
+                },
+                {
+                    "id": 2,
+                    "text": "Make changes in a single solution. Deploy updates directly to production.",
+                    "reason": "Incorrect. Deploying directly to production violates ALM testing constraints and lacks controlled validation."
+                },
+                {
+                    "id": 3,
+                    "text": "Create and maintain separate solutions in a separate development environment. Deploy independently as managed solutions.",
+                    "reason": "Correct. Providing dedicated, isolated development environments per team/feature prevents cross-contamination, and deploying as managed solutions ensures stable, controlled production footprints."
+                },
+                {
+                    "id": 4,
+                    "text": "Create unmanaged solutions in production. Merge changes during deployment.",
+                    "reason": "Incorrect. Unmanaged solutions should never be deployed or created directly in production environments."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Microsoft ALM best practices strongly recommend isolated development environments for parallel team streams, followed by packaging and deploying as Managed Solutions to downstream testing and production environments. Reference: https://learn.microsoft.com/en-us/power-platform/alm/environment-strategy-alm"
+        },
+        {
+            "id": 16,
+            "topic": "Solution Architecture & Automation",
+            "Question": "A company plans to implement an automated process to retrieve and analyze customer feedback. The company requires a solution that:\n- Autonomously analyzes feedback.\n- Stores results for reporting.\n- Triggers an escalation for negative sentiment.\n\nYou need to design the solution. Which three components should you use? (Choose three.)[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Dataverse table",
+                    "reason": "Correct. Used to store the results for reporting.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Business rule",
+                    "reason": "Incorrect. Business rules are for form/table logic, not autonomous process orchestration.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Cloud flow",
+                    "reason": "Correct. Power Automate cloud flows provide the autonomous triggers and orchestration for escalations.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Canvas app",
+                    "reason": "Incorrect. A UI is not required for a backend autonomous process.[cite: 1]"
+                },
+                {
+                    "id": 5,
+                    "text": "AI builder prompt",
+                    "reason": "Correct. Required to natively and autonomously analyze the sentiment of the feedback text.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                1,
+                3,
+                5
+            ],
+            "CorrectAnswerExplanation": "A complete solution requires AI Builder (for analysis), a Cloud flow (to automate the process and trigger escalation), and a Dataverse table (to store results). Reference: MS Learn - AI Builder Sentiment Analysis.[cite: 1]"
+        },
+        {
+            "id": 17,
+            "topic": "Canvas App Development",
+            "scenario_id": 1,
+            "Question": "You need to resolve the issues with the canvas apps mentioned in the Fabrikam case study (Duplicate logic exists across multiple canvas apps; Reusable UI elements must be implemented to reduce duplication).\n\nWhich two configurations should you use?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "User-defined function",
+                    "reason": "Correct. User-defined functions allow you to centralize logic.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Named formula",
+                    "reason": "Incorrect. Used for static declarative formulas, not primarily for reusable functional logic blocks across apps like UDFs or components.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Collection",
+                    "reason": "Incorrect. Collections store local app data, not reusable logic.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Component library",
+                    "reason": "Correct. A component library is the standard method for sharing reusable UI elements across multiple canvas apps.[cite: 1]"
+                },
+                {
+                    "id": 5,
+                    "text": "Context variable",
+                    "reason": "Incorrect. Used for local screen state.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                4
+            ],
+            "CorrectAnswerExplanation": "To reduce duplication, Component Libraries share UI elements across apps, while User-defined functions allow for reusable formula logic. Reference: MS Learn - Canvas App Components.[cite: 1]"
+        },
+        {
+            "id": 18,
+            "topic": "Security and Administration",
+            "Question": "An accounting team is assigned to a model-driven app to manage financial data. The app is currently visible in the app launcher but inaccessible to the accounting team. Users must be able to open the app and access financial data.\n\nYou need to resolve the access issues. What should you do?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Configure app visibility privileges for the users.",
+                    "reason": "Incorrect. The app is already visible in the launcher.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Assign users the appropriate security roles.",
+                    "reason": "Correct. Security roles govern access to the underlying app and the specific Dataverse tables the app utilizes.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Set the app as the default app for the users.",
+                    "reason": "Incorrect. Does not grant data or access permissions.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Grant the users table-level permissions to the required tables.",
+                    "reason": "Incorrect. Table permissions are managed by assigning Security Roles; they are not granted independently of a role in Dataverse.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Model-driven app access is strictly controlled by Security Roles, which bundle the necessary read/write privileges for the app's components and underlying Dataverse tables. Reference: MS Learn - Share a model-driven app.[cite: 1]"
+        },
+        {
+            "id": 19,
+            "topic": "AI Builder",
+            "Question": "A company has a product report in PDF format. The report must be rewritten with formal vocabulary and cadence. The company requires a prompt that can be used within a canvas app to rewrite the report as a Word document. The prompt must reference a business glossary stored in a SharePoint site.\n\nYou need to make a suggestion for the expectations portion of the prompt to generate a report summary correctly. What should you suggest?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use the PDF and the business glossary stored in the SharePoint site.",
+                    "reason": "Incorrect. This addresses the context/data source, not the expectations.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Create a Microsoft Word document summary.",
+                    "reason": "Incorrect. This is a format instruction.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "The summary should highlight key themes, product features, and recurring feedback.",
+                    "reason": "Correct. This statement defines the qualitative expectations and focus areas for the generated output.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Format the summary as a list of bullet points, which should be clear and use short sentences.",
+                    "reason": "Incorrect. This is a formatting/style instruction.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "In prompt engineering, the 'expectations' parameter guides the AI on what content is important to extract and highlight (e.g., key themes and features). Reference: MS Learn - Create AI Builder Prompts.[cite: 1]"
+        },
+        {
+            "id": 20,
+            "topic": "Model-Driven App Design",
+            "Question": "A company is designing a model-driven app for customer service representatives. You must configure navigation and table availability.\n\nMatch the App configuration actions to the Requirements:\nRequirement 1: Organize navigation into logical groupings.\nRequirement 2: Include only the required tables in the navigation.\n\nSelect the correct combination.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Requirement 1: Configure app settings. Requirement 2: Configure app properties.",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Requirement 1: Customize the site map. Requirement 2: Add tables to app designer.",
+                    "reason": "Correct. The Site Map is customized to organize logical groupings (Areas, Groups, Subareas). Tables are added directly to the app designer to define the data scope.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Requirement 1: Add tables to app designer. Requirement 2: Customize the site map.",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The Site Map is the navigation structure for model-driven apps. Adding tables to the app designer explicitly includes those specific data entities in the app's metadata. Reference: MS Learn - Create model-driven app site map.[cite: 1]"
+        },
+        {
+            "id": 21,
+            "topic": "Dataverse Administration",
+            "Question": "A user named Elisabeth Rice signs in to a model-driven app by using the sign-in name: Elisabeth.Rice@contoso.com. After marriage, Elisabeth changes her legal name to Elisabeth Mueller. You need to update the sign-in name for the user without losing any application history.\n\nSolution: From Dynamics 365 Settings, select Email Configuration. In the active mailbox for the user, update the name. Does the solution meet the goal?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Yes",
+                    "reason": "Incorrect. Modifying the mailbox does not alter the core sign-in identity.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "No",
+                    "reason": "Correct. The primary identity (UPN) must be updated in Microsoft 365 Admin Center / Microsoft Entra ID.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "User principal names (UPNs) and sign-in identities for Power Platform are managed centrally via Microsoft Entra ID, not through Dynamics 365 email mailbox settings. Reference: MS Learn - Manage users in Power Platform.[cite: 1]"
+        },
+        {
+            "id": 22,
+            "topic": "Business Logic",
+            "Question": "A company uses a model-driven app. The company must be able to dynamically control how components of the form behave as users interact with it. The solution must modify the form in real time while the user interacts with the interface.\n\nYou need to enforce client-side behavior dynamically. Solution: Use business rules to show inline error messages. Does the solution meet the goal?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Yes",
+                    "reason": "Correct. Business rules execute client-side and dynamically update the form (like showing inline errors) in real time without a page refresh.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "No",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Business rules are the primary out-of-the-box mechanism for enforcing real-time client-side behavior in model-driven apps, including setting visibility, default values, and showing inline error messages. Reference: MS Learn - Create business rules for model-driven apps.[cite: 1]"
+        },
+        {
+            "id": 23,
+            "topic": "Generative AI",
+            "scenario_id": 1,
+            "Question": "Based on the Fabrikam case study, you need to configure the generative AI reusability requirements.\nRequirement: Generative AI solutions must be reusable across different Power Platform services.\n\nWhat should you do?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Output results as JSON.",
+                    "reason": "Incorrect. This is a formatting choice, not an architecture choice for reusability.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Use an input variable.",
+                    "reason": "Incorrect. Input variables make a prompt dynamic but do not expose it across services.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Call the prompt from a Power Automate cloud flow.",
+                    "reason": "Correct. Wrapping the AI prompt in a Cloud Flow creates a centralized API endpoint that any Power Platform service can trigger.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Call the prompt from a canvas app.",
+                    "reason": "Incorrect. This restricts the logic to that specific app.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Executing an AI prompt via a Power Automate Cloud Flow ensures the logic is centralized and can be reused by Canvas Apps, Model-Driven Apps, and external systems seamlessly. Reference: MS Learn - Use AI Builder in Power Automate.[cite: 1]"
+        },
+        {
+            "id": 24,
+            "topic": "Dataverse Data Modeling",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to add the Priority column to the Maintenance Request table.\nRequirement: A new column named Priority must be added to multiple tables. Users must be able to select only one option from the following set per row: Low, Medium, High, Critical. If a new option is added, it must be made available automatically on all columns.\n\nWhich column type should you use?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "local choice",
+                    "reason": "Incorrect. Local choices cannot be shared natively across multiple tables.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "global choice",
+                    "reason": "Correct. A global choice provides a single, centralized list of options that can be applied to multiple columns across different tables.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "status reason",
+                    "reason": "Incorrect. This is tied to record state transitions.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "formula",
+                    "reason": "Incorrect. Formulas calculate values rather than providing selectable options.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Global choices ensure data consistency and reduce maintenance by allowing you to define a set of options once and reuse it across multiple tables. Reference: MS Learn - Create global option sets.[cite: 1]"
+        },
+        {
+            "id": 25,
+            "topic": "Dataverse Relationships",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to configure the Maintenance Request relationships to the other tables. Ensure the correct relationship behavior types are matched to the Maintenance Report and Technician tables. \n\nSelect the correct configuration format.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Maintenance Report -> Parental; Technician -> Referential, Restrict Delete",
+                    "reason": "Correct. A parental relationship ensures operations cascade to the maintenance report. Restrict Delete prevents a technician record from being deleted if they are linked to an active request.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Maintenance Report -> Referential, Remove Link; Technician -> Parental",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Maintenance Report -> Referential; Technician -> Referential, Remove Link",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Parental relationships automatically cascade parent record assignments and deletions to children. Referential, Restrict Delete ensures data integrity by preventing the removal of referenced lookup records. Reference: MS Learn - Entity relationship behavior.[cite: 1]"
+        },
+        {
+            "id": 26,
+            "topic": "Dataverse Views",
+            "scenario_id": 2,
+            "Question": "Based on the Contoso Ltd. case study, you need to configure the access requirements to the views.\nMatch the configurations (Sharing, Owner teams, Security roles, Business units) to the views: 'Senior technicians' and 'Hot Assets'.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Senior technicians -> Security roles; Hot Assets -> Sharing",
+                    "reason": "Correct. System views are restricted via Security roles. Personal views (like Hot Assets) must be shared with other users/teams using the Share functionality.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Senior technicians -> Business units; Hot Assets -> Owner teams",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Senior technicians -> Sharing; Hot Assets -> Security roles",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Access to public/system views is managed in the model-driven app designer via Security Roles. Personal views are owned by the creator and must be explicitly shared. Reference: MS Learn - Share personal views.[cite: 1]"
+        },
+        {
+            "id": 27,
+            "topic": "Application Lifecycle Management (ALM)",
+            "Question": "A company maintains an AI-enabled Power Platform solution that includes prompts, cloud flows, and Dataverse components. Multiple development teams are responsible for different features within the solution.\n\nThe development teams have the following requirements:\n- Teams must develop and update the same features independently.\n- Updates must not overwrite changes made by other teams.\n- Production deployments must remain controlled and predictable.\n\nYou need to recommend an ALM approach that supports independent development and controlled deployment in line with Microsoft best practices. What should you recommend?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Create and maintain separate solutions in a single development environment. Deploy independently as managed solutions.",
+                    "reason": "Incorrect. Sharing a single dev environment causes 'last writer wins' conflicts.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Make changes in a single solution. Deploy updates directly to production.",
+                    "reason": "Incorrect. Direct to production violates ALM guidelines.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Create and maintain separate solutions in a separate development environment. Deploy independently as managed solutions.",
+                    "reason": "Correct. Dedicated dev environments prevent cross-contamination. Deploying as managed solutions ensures a stable production environment.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Create unmanaged solutions in production. Merge changes during deployment.",
+                    "reason": "Incorrect. Never create unmanaged solutions in production.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Microsoft ALM best practices dictate using separate development environments for isolated team work, and always deploying artifacts as Managed Solutions into production. Reference: MS Learn - ALM Environment Strategy.[cite: 1]"
+        },
+        {
+            "id": 28,
+            "topic": "Dataverse Data Modeling",
+            "Question": "You are designing a data model for a company. The model uses only standard Microsoft Dataverse tables. You must extend the existing Accounts and Contacts tables to support the following business requirements:\n- Add a classification value to the Accounts table.\n- Add a customer engagement tier to the Contacts table.\n- Improve lookup performance and enforce uniqueness.\n\nMatch the components (Alternate key, Choice column, Lookup column) to the requirements.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Classification value -> Choice column; Engagement tier -> Choice column; Enforce uniqueness -> Alternate key",
+                    "reason": "Correct. Classification and tiers represent restricted predefined lists (Choice columns). Performance indexing and strict uniqueness are enforced via Alternate keys.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Classification value -> Lookup column; Engagement tier -> Alternate key; Enforce uniqueness -> Choice column",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Classification value -> Choice column; Engagement tier -> Lookup column; Enforce uniqueness -> Alternate key",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Choice columns are used for static categorization lists. Alternate Keys build database indexes to improve search performance and inherently prevent duplicate entries across designated fields. Reference: MS Learn - Define alternate keys.[cite: 1]"
+        },
+        {
+            "id": 29,
+            "topic": "Dataverse Relationships",
+            "Question": "A company uses Dataverse to manage customer accounts and related transaction records. The company requires the following functionality:\n- Reference a single related record without performing any aggregations.\n- Store the relationship as part of the table definition, so the platform automatically maintains the link between records.\n\nYou need to configure a column. Which type of column should you configure?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Formula",
+                    "reason": "Incorrect. Formulas calculate dynamic values based on logic, rather than establishing standard relational links.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Calculated",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Rollup",
+                    "reason": "Incorrect. Rollup columns perform aggregations (SUM, COUNT) over related records.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Lookup",
+                    "reason": "Correct. A Lookup column creates an N:1 relationship that directly references a single related record in another table.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A Lookup column natively establishes a many-to-one relationship between tables in Dataverse, allowing users to reference a specific parent record directly from a child record. Reference: MS Learn - Create a lookup column.[cite: 1]"
+        },
+        {
+            "id": 30,
+            "topic": "Dataverse Calculations",
+            "Question": "A company is using a model-driven app to process orders. Order numbers are stored in a column on an Order table named Number. The order numbers are prefixed with the value POS1- or POS2- depending on which point-of-sale system they originated from. The company creates a calculated text column to store the clean order number. The clean order number must remove the point-of-sale system prefix.\n\nYou need to configure the action on the calculated column. Which formula should you use?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "CONCAT(Number, \"4\")",
+                    "reason": "Incorrect. CONCAT joins strings together.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "TRIMLEFT(Number, 4)",
+                    "reason": "Incorrect. Trimming 4 characters leaves the hyphen (e.g., '-1234').[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "TRIMLEFT(Number, 5)",
+                    "reason": "Correct. Both 'POS1-' and 'POS2-' are exactly 5 characters long. Removing the leftmost 5 characters yields the clean order number.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "TRIMRIGHT(Number, 5)",
+                    "reason": "Incorrect. This would remove characters from the end of the string.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The Dataverse calculated column function TRIMLEFT(column, length) removes the specified number of characters from the beginning of a text string. 'POS1-' is 5 characters. Reference: MS Learn - Define calculated columns.[cite: 1]"
+        },
+        {
+            "id": 31,
+            "topic": "Business Process Flows",
+            "Question": "A company uses Microsoft Dataverse to manage prospects. The company has a business process flow named BPFA that is associated with the Prospect entity to streamline the prospect management process. You add a field named Category to the Prospect entity. You create additional business process flows. You apply the business process flows to Prospect records based on the selected category. Users can switch to any other newly configured business process flows but must not use BPFA. You need to configure the solution. What are two possible ways to achieve this goal? (Choose two.)[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Change the display order of the business process flows to move BPFA to the bottom of the list.",
+                    "reason": "Incorrect. Changing the order only affects which flow is applied by default; it does not prevent users from manually switching to BPFA.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Use a business rule.",
+                    "reason": "Incorrect. Business rules operate at the field level on forms, not at the Business Process Flow visibility level.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Deactivate BPFA.",
+                    "reason": "Correct. Deactivating the business process flow completely removes it from the list of available processes for all users.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Remove all of the privileges for BPFA.",
+                    "reason": "Correct. Business process flows are secured via Security Roles. Removing read privileges prevents users from seeing or switching to BPFA.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                3,
+                4
+            ],
+            "CorrectAnswerExplanation": "To prevent users from using a specific Business Process Flow, you must either deactivate it globally or remove their security role privileges for that specific BPF entity. Reference: MS Learn - Manage Business Process Flows.[cite: 1]"
+        },
+        {
+            "id": 32,
+            "topic": "Dataverse Security",
+            "Question": "A company plans to use Microsoft Dataverse to manage sales opportunities. Records will contain confidential financial data that should only be accessible to specific groups of employees. \n\nMatch the correct Dataverse security configuration to the requirement:\nRequirement 1: Sales representatives must only view and update records they create.\nRequirement 2: Sales managers must have visibility into all opportunities within their organization.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Requirement 1: User-level access | Requirement 2: Organization-level access",
+                    "reason": "Correct. User-level (Basic) access restricts users to records they own. Organization-level (Global) access grants visibility across the entire Dataverse environment regardless of ownership.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Requirement 1: Team-level access | Requirement 2: Business Unit-level access",
+                    "reason": "Incorrect. Team access would allow them to see records owned by the team; BU access would restrict managers to just their division.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Requirement 1: Organization-level access | Requirement 2: Parent: Child Business Unit-Level access",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Security role privileges in Dataverse use 'depth' to control access. User-level depth ensures representatives only see their own records, while Organization-level depth allows managers to oversee everything. Reference: MS Learn - Security roles and privileges.[cite: 1]"
+        },
+        {
+            "id": 33,
+            "topic": "Dataverse Views & Searching",
+            "Question": "A company uses Power Apps. Users must be able to view only the address1 columns in the Account table. You need to ensure other address columns are not visible to users when creating views and filters. What should you do?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use column-level security to remove read access to all users.",
+                    "reason": "Incorrect. This masks the data but still allows the column name to appear in the view editor and filter dropdowns.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Create business rules to hide the other address columns.",
+                    "reason": "Incorrect. Business rules hide fields on a specific form, not in the global view builder or advanced filters.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Delete the other address columns from the table.",
+                    "reason": "Incorrect. Standard system columns like address2 cannot be deleted from Dataverse.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Disable the Search option for the columns.",
+                    "reason": "Correct. Unchecking the 'Searchable' property prevents the column from appearing in advanced finds, filters, and view-building menus.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "The 'Searchable' property on a column determines whether it is exposed to users in advanced find filters and personal view column selectors. Reference: MS Learn - Column properties in Dataverse.[cite: 1]"
+        },
+        {
+            "id": 34,
+            "topic": "Generative AI & Prompts",
+            "Question": "A company is building a prompt about product specifications. The company plans to use the prompt in Power Automate. The prompt must use Retrieval-Augmented Generation to ground the model with additional business information. You need to select the available knowledge source for the prompt. What should you use?[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "PDF document",
+                    "reason": "Incorrect. Standalone unstructured files are not standard RAG knowledge sources directly in the basic prompt builder without SharePoint integration.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "PNG image",
+                    "reason": "Incorrect. Image files cannot be used for text-based RAG grounding.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Dataverse table columns",
+                    "reason": "Correct. You can ground custom prompts by referencing structured data directly from Dataverse table columns.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Text",
+                    "reason": "Incorrect. Static text is an input, not a dynamic retrieval knowledge source.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "When configuring RAG (Retrieval-Augmented Generation) in AI Builder prompts, Dataverse table columns provide the structured business data used to ground the LLM's responses. Reference: MS Learn - Use your own data in AI Builder prompts.[cite: 1]"
+        },
+        {
+            "id": 35,
+            "topic": "Dataverse Data Types",
+            "Question": "A company tracks order processing duration using a model-driven app. The company requires a system that provides the following functionality: \n- The age of the order, based on the created date, must be displayed on forms and views.\n- The value must update dynamically when viewed without storing the result.\n- The value must NOT be stored in the database.\n\nYou need to configure the column types. Which two column types should you use? (Choose two.)[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Formula",
+                    "reason": "Correct. Formula columns use Power Fx to calculate values dynamically on the fly without storing them in the SQL database.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Calculated",
+                    "reason": "Correct. Calculated columns compute values at runtime when a record is queried and do not store the static result in the database.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "BigInt",
+                    "reason": "Incorrect. This is a static storage type for large numbers.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Prompt",
+                    "reason": "Incorrect. This is not a column type for mathematical/date calculations.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                2
+            ],
+            "CorrectAnswerExplanation": "Both Formula (Power Fx) and Calculated (classic) columns execute their logic at runtime to display data dynamically, meaning the computed result is never physically persisted in the Dataverse database. Reference: MS Learn - Formula, calculated, and rollup columns.[cite: 1]"
+        },
+        {
+            "id": 36,
+            "topic": "Business Rules Scope",
+            "Question": "A company is creating a canvas app and a model-driven app to manage their customer accounts. \n- The canvas app requires a business rule to set the Business Type column to large if the customer size is greater than a specific currency value.\n- The model-driven app requires a business rule to recommend the account rating be re-evaluated when the account goes on credit hold for this app only.\n\nMatch the business rule to the correct Scope (Table, All forms, Specific form).[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Canvas app rule -> Table | Model-driven app rule -> Specific form",
+                    "reason": "Correct. Setting the scope to 'Table' executes the rule at the server level, which is required for it to apply to Canvas apps. Setting it to 'Specific form' targets only the desired model-driven app form.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Canvas app rule -> All forms | Model-driven app rule -> Table",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Canvas app rule -> Specific form | Model-driven app rule -> All forms",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Canvas apps do not run Dataverse business rules locally on the client; to enforce logic for a Canvas app, the rule must be scoped to 'Entity/Table' so it runs on the server. For logic isolated to a single model-driven UI, use 'Specific form'. Reference: MS Learn - Set scope for business rules.[cite: 1]"
+        },
+        {
+            "id": 37,
+            "topic": "Canvas App Performance",
+            "Question": "A company builds a canvas app to display and manipulate large datasets across multiple screens. Users report the app takes a long time to load data when opened. You need to optimize performance when the app is started. What are three actions you can perform? (Choose three.)[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Move data transformation logic from the source to Power Fx.",
+                    "reason": "Incorrect. Data transformation should ideally be handled at the data source (delegation) rather than pulling massive datasets into the app to be transformed by Power Fx.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Remove data retrieval calls from the App.OnStart.",
+                    "reason": "Correct. Heavy data calls in OnStart block the app from rendering.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Enable preloading in app settings.",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "Use the Concurrent() function for data retrieval calls.",
+                    "reason": "Correct. Concurrent() allows multiple data calls to execute in parallel rather than sequentially, reducing overall load time.[cite: 1]"
+                },
+                {
+                    "id": 5,
+                    "text": "Use the ClearCollect() function to cache data.",
+                    "reason": "Correct. Caching static or rarely changed data locally in a collection upon initial load prevents repeated slow network calls when switching screens.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 3,
+            "CorrectAnswers": [
+                2,
+                4,
+                5
+            ],
+            "CorrectAnswerExplanation": "To optimize Canvas app startup, you should defer non-essential loading from App.OnStart, fetch necessary data in parallel using Concurrent(), and cache reference data using ClearCollect(). Reference: MS Learn - Optimize Canvas App performance.[cite: 1]"
+        },
+        {
+            "id": 38,
+            "topic": "Canvas App State Management",
+            "Question": "A company is building a canvas app that spans multiple screens. The app must store selected values across screens and hold tabular data during a session. You need to manage application state. Which two components should you use? (Choose two.)[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "collections",
+                    "reason": "Correct. Collections are used to store multi-row, tabular data arrays in local memory during the session.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "context variables",
+                    "reason": "Incorrect. Context variables (UpdateContext) are scoped strictly to a single screen and cannot pass values across screens.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "data sources",
+                    "reason": "Incorrect. Data sources are external connections, not local session state managers.[cite: 1]"
+                },
+                {
+                    "id": 4,
+                    "text": "global variables",
+                    "reason": "Correct. Global variables (Set) are available across all screens and are ideal for storing single selected values.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                4
+            ],
+            "CorrectAnswerExplanation": "Global variables (Set) manage single-value state across the entire app. Collections (ClearCollect) manage local, tabular data arrays across the entire app. Reference: MS Learn - Understand Canvas App variables.[cite: 1]"
+        },
+        {
+            "id": 39,
+            "topic": "Troubleshooting Canvas Apps",
+            "Question": "A remote Power Apps user experiences an issue with a canvas app. The issue cannot be reproduced locally. You must analyze the issue in near real-time. Session data must be available for later review. You need to troubleshoot the canvas app by using Monitor. Match the actions to the requirements: \n- Monitor events while a remote user runs the app.\n- Share a troubleshooting session for later review.[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Monitor events -> Use the Connect user feature | Share session -> Download the Monitor session file",
+                    "reason": "Correct. 'Connect user' sends a link to the remote user to stream their telemetry to your Monitor session. You can then download that session as a JSON file for later review.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "Monitor events -> Initiate the Test Studio | Share session -> Collect the session ID",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "Monitor events -> Launch the App checker | Share session -> Use Application Insights",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The 'Connect user' feature in Power Apps Monitor allows an admin to trace a remote user's active session. The recorded events can be exported by downloading the Monitor session file. Reference: MS Learn - Debug a Canvas App with Monitor.[cite: 1]"
+        },
+        {
+            "id": 40,
+            "topic": "Power Automate Cloud Flows",
+            "Question": "A company runs Power Automate cloud flows in production. You observe many duplicate executions and 401 error codes when you review the flow runs. You need to resolve the errors. Match the error to the correct action:\n- 401 error codes\n- Duplicate executions[cite: 1]",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "401 error codes -> Reauthenticate connection | Duplicate executions -> Enable concurrency control",
+                    "reason": "Correct. A 401 Unauthorized error requires re-establishing the connection credentials. Duplicate trigger executions can be mitigated by configuring trigger concurrency control to limit parallel runs.[cite: 1]"
+                },
+                {
+                    "id": 2,
+                    "text": "401 error codes -> Increase timeout | Duplicate executions -> Add delay",
+                    "reason": "Incorrect.[cite: 1]"
+                },
+                {
+                    "id": 3,
+                    "text": "401 error codes -> Configure retry policy | Duplicate executions -> Configure retry policy",
+                    "reason": "Incorrect.[cite: 1]"
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "HTTP 401 errors strictly indicate failed authentication, requiring connection reauthentication. When a flow triggers multiple concurrent instances for the same event, enabling concurrency control (and setting the degree of parallelism to 1) enforces sequential processing. Reference: MS Learn - Troubleshooting Cloud Flows.[cite: 1]"
+        }
+    ]
+}
