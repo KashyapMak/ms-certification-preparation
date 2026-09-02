@@ -1,54 +1,158 @@
-GOAL  
-Create a highly focused "last-night exam preparation guide" for {{ExamCode}}: {{ExamName}}.  
-The output should help with quick revision, concept clarity, and identifying important exam topics.
+Act as a senior certification trainer, Microsoft technical architect, exam curriculum analyst, and expert Markdown author.
 
-CONTEXT  
-The preparation is intended for final revision (1-day or last-night before exam).  
-Focus on clarity, prioritization, and memory-friendly summaries rather than lengthy explanations.
+Your objective is to create a complete exam-preparation Markdown guide using official Microsoft sources.
 
-SOURCES TO USE  
-1. Study Guide ({{StudyGuideUrl}}): Use this to identify exam domains, skills measured, and topic weightage.  
-2. Official Course ({{StudyCourseUrl}}): Use course modules to extract explanations, examples, and key concepts.
+INPUTS
+- Exam Code: {{ExamCode}}
+- Exam Name: {{ExamName}}
+- Study Guide URL: {{StudyGuideUrl}}
+- Official Course URL: {{StudyCourseUrl}}
 
-INSTRUCTIONS  
+RESEARCH REQUIREMENTS
 
-1. Topic Coverage  
-- Extract ALL topics from the study guide and organize them hierarchically  
-- Map each topic to relevant course modules  
+Before writing:
 
-2. For EACH topic, provide:  
-- Brief explanation (what it is)  
-- Key concepts / subtopics  
-- Important points to remember for exam  
-- Common pitfalls or tricky areas  
-- Example (if applicable)  
+1. Open and review the Study Guide URL.
+2. Open and review the Official Course URL.
+3. Traverse all linked learning paths and modules related to the course.
+4. Use the Study Guide as the authoritative exam scope.
+5. Validate terminology, services, and features against current Microsoft Learn documentation.
+6. Identify any differences between course content and the current exam blueprint.
+7. Do not invent facts, weights, commands, limits, dates, features, or URLs.
+8. If information cannot be verified, explicitly state this.
 
-3. Prioritization  
-- Clearly highlight:  
-  - 🔥 High-priority / frequently tested topics  
-  - ⚠️ Commonly misunderstood areas  
+OUTPUT REQUIREMENTS
 
-4. Exam-Focused Enhancements  
-- Add quick memory tips, keywords, or mnemonics wherever useful  
-- Provide likely question patterns or scenarios  
+Generate a single Markdown document suitable for final exam preparation.
 
-5. Final Revision Section  
-Include:  
-- ✅ Quick cheat sheet (bullet summary of entire syllabus)  
-- ✅ Top 20–30 must-remember facts  
-- ✅ Rapid revision checklist  
+The guide should be detailed enough that a candidate can use it as their primary revision resource while remaining concise and exam-focused.
 
-OUTPUT FORMAT  
+# {{ExamCode}} Complete Exam Study Guide
 
-Use structured Markdown format:  
-- Clear headings for domains and topics  
-- Nested bullet points for readability  
-- Use icons (✅ 🔥 ⚠️) for emphasis  
-- Keep explanations concise but meaningful  
+## 1. Exam Snapshot
+- Exam name
+- Exam code
+- Date researched
+- Passing score (if officially available)
+- Certification earned
+- Direct source links
 
-PARAMETERS FOR THIS RUN  
+## 2. Domain Coverage Matrix
 
-- {{ExamCode}} =  DP-600
-- {{ExamName}} = Microsoft Certified: Fabric Analytics Engineer Associate
-- {{StudyGuideUrl}} = https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/DP-600  
-- {{StudyCourseUrl}} = https://learn.microsoft.com/en-us/training/courses/dp-600t00 
+| Domain | Weight | Related Learning Paths | Priority |
+|----------|----------|----------|----------|
+
+Assign:
+- 🔥 High Priority
+- ✅ Medium Priority
+- 📌 Low Priority
+
+## 3. Blueprint Changes and Course Gap Analysis
+
+Identify:
+- New topics
+- Retired topics
+- Deprecated features
+- Preview features
+- Areas where exam objectives extend beyond course content
+
+## 4. Objective-by-Objective Study Notes
+
+For every official objective:
+
+### Objective Name
+
+#### What You Need to Know
+- Core concepts
+- Important terminology
+- Architecture overview
+
+#### Mental Model & Decision Rules
+- When to use
+- When not to use
+- Selection guidance
+- Comparison tables where useful
+
+#### Implementation Examples
+Include relevant:
+- Azure Portal steps
+- CLI commands
+- PowerShell commands
+- REST API examples
+- JSON/Bicep samples
+- Code snippets
+
+#### Security, Governance & Operations
+- RBAC
+- Authentication
+- Monitoring
+- Troubleshooting
+- Cost considerations
+
+#### Exam Gotchas ⚠️
+Capture:
+- Defaults
+- Limits
+- Thresholds
+- Unsupported scenarios
+- Licensing requirements
+- Common mistakes
+
+#### Scenario Patterns
+Provide likely exam scenarios and explain why the correct choice is best.
+
+#### Quick Revision Summary
+3-10 bullets covering the key takeaways.
+
+## 5. High-Yield Facts Reference
+
+Create consolidated tables containing:
+- Limits
+- Quotas
+- Retention periods
+- Timeout values
+- Capacity thresholds
+- Licensing requirements
+- Performance considerations
+
+## 6. Service Selection Cheat Sheet
+
+Format:
+
+IF the requirement is... | AND the constraint is... | USE...
+---|---|---
+
+## 7. Practice Questions
+
+Create original scenario-based questions with:
+- Correct answer
+- Explanation
+- Why alternatives are incorrect
+
+## 8. Final Revision Section
+
+### 🔥 Top Must-Know Facts
+List the most important exam facts.
+
+### ⚠️ Common Traps
+List frequently misunderstood topics.
+
+### ✅ Rapid Revision Checklist
+Provide a last-hour review checklist.
+
+### 🎯 Exam-Day Strategy
+Summarize how to approach scenario, case study, and multiple-choice questions.
+
+## 9. References
+
+Include all official Microsoft sources used, with title, URL, and access date.
+
+QUALITY RULES
+
+- Cover every objective from the Study Guide.
+- Match depth to objective weight.
+- Prefer current Microsoft Learn documentation over older course content.
+- Use accurate Markdown headings, tables, lists, and code blocks.
+- Clearly identify GA, Preview, Deprecated, and Retired features.
+- Use concise explanations focused on certification success.
+- Optimize for both learning and rapid revision.
