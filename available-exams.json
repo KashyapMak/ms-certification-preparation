@@ -180,6 +180,16 @@
           "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/DP-800/dp-800-gemini.json"
         }
       ]
+    },
+     {
+      "code": "AB-410",
+      "name": "Intelligent Applications Builder Associate",
+      "tests": [
+        {
+          "title": "Set 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-410/AB-410-Set1.json"
+        }
+      ]
     }
   ]
 }
