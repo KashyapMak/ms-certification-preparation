@@ -190,6 +190,16 @@
           "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/AB-410/AB-410-Set1.json"
         }
       ]
+    },
+     {
+      "code": "CCAO-F",
+      "name": "Claude Certified Associate - Foundations",
+      "tests": [
+        {
+          "title": "Practice 1",
+          "file": "https://raw.githubusercontent.com/KashyapMak/ms-certification-preparation/refs/heads/main/CCAO-F/CCAO-F-Practice.json"
+        }
+      ]
     }
   ]
 }

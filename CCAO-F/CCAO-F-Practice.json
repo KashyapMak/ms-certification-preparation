@@ -1,0 +1,2694 @@
+{
+    "quizName": "CCAO-F (Claude Certified Associate - Foundations) Practice Quiz",
+    "totalScore": 1000,
+    "passingScore": 720,
+    "scenarios": [],
+    "questions": [
+        {
+            "id": 1,
+            "topic": "Prompting Strategy",
+            "Question": "You are an operations lead evaluating prompting strategies that teammates have proposed for various task types.\n\nWhich two strategies represent appropriate matches between strategy and task type? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Rigid templated prompting for early-stage creative naming and tagline ideation",
+                    "reason": "Incorrect. Templated prompting constrains output too tightly for open-ended creative ideation, which benefits from exploratory, less structured prompting."
+                },
+                {
+                    "id": 2,
+                    "text": "Open exploratory prompting for early-stage strategic brainstorming on a new market",
+                    "reason": "Correct. Early-stage brainstorming benefits from open, exploratory prompting that doesn't prematurely narrow the solution space."
+                },
+                {
+                    "id": 3,
+                    "text": "Rigid templated prompting for monthly compliance reports against a fixed schema",
+                    "reason": "Correct. A fixed, recurring schema is exactly the kind of task templated prompting is built for -- consistency and predictability matter more than creativity."
+                },
+                {
+                    "id": 4,
+                    "text": "Open exploratory prompting for legal contract redlining against a clause library",
+                    "reason": "Incorrect. Redlining against a fixed clause library needs precision and consistency, not open-ended exploration."
+                },
+                {
+                    "id": 5,
+                    "text": "Rigid templated prompting for casual customer-feedback summarization with no schema",
+                    "reason": "Incorrect. Without a fixed schema, forcing a rigid template adds unnecessary constraint to a task that doesn't need it."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                3
+            ],
+            "CorrectAnswerExplanation": "Match prompting strategy to task type: open exploratory prompting suits early-stage, ill-defined creative or strategic work (Option B), while rigid templated prompting suits recurring, schema-bound tasks like compliance reporting (Option C)."
+        },
+        {
+            "id": 2,
+            "topic": "Prompt Iteration",
+            "Question": "A knowledge worker is iterating a prompt that has produced a partly acceptable response.\n\nWhich refinement practice produces the strongest learning across iterations?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Change one identifiable element per iteration, capture the change and its effect, and adjust another element only after the first is settled.",
+                    "reason": "Correct. Isolating one variable at a time creates a clean, traceable cause-and-effect record of what actually improved the output."
+                },
+                {
+                    "id": 2,
+                    "text": "Address every weakness the response showed in a single revision, then compare the revised output against the prior version.",
+                    "reason": "Incorrect. Changing many things at once makes it impossible to know which specific change drove the improvement (or regression)."
+                },
+                {
+                    "id": 3,
+                    "text": "Restart from a fresh prompt each iteration so that prior wording does not bias the next attempt, and pick the strongest response at the end.",
+                    "reason": "Incorrect. Restarting from scratch discards the learning gained from prior iterations rather than building on it."
+                },
+                {
+                    "id": 4,
+                    "text": "Make several related changes in one iteration when they target the same weakness, and revert the whole set if the combined change makes the output worse.",
+                    "reason": "Incorrect. Even related bundled changes obscure which specific element was responsible for the effect."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Controlled, single-variable iteration lets you attribute cause and effect clearly, producing the strongest learning loop across prompt revisions."
+        },
+        {
+            "id": 3,
+            "topic": "Prompt Refinement",
+            "Question": "The first output from Claude is partially useful but has tone and detail issues.\n\nWhich two refinement actions are most likely to produce a meaningfully better output? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Resubmit the same prompt several times and select the best response.",
+                    "reason": "Incorrect. Resubmitting an unchanged prompt relies on randomness rather than fixing the actual gap in the instructions."
+                },
+                {
+                    "id": 2,
+                    "text": "Add a specific tone descriptor and a concrete audience to the prompt.",
+                    "reason": "Correct. Naming the tone and audience directly targets the reported tone issue and gives Claude the missing context it needs."
+                },
+                {
+                    "id": 3,
+                    "text": "Provide an example of an output that meets the desired standard.",
+                    "reason": "Correct. A concrete example anchors both tone and level of detail far more reliably than abstract instructions."
+                },
+                {
+                    "id": 4,
+                    "text": "Append the phrase \"please do better\" to the end of the original prompt.",
+                    "reason": "Incorrect. Vague exhortations give the model no actionable information about what to change."
+                },
+                {
+                    "id": 5,
+                    "text": "Increase the temperature setting and resubmit the unchanged prompt.",
+                    "reason": "Incorrect. Higher temperature increases randomness, not precision toward the tone and detail you actually want."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                3
+            ],
+            "CorrectAnswerExplanation": "Concrete tone/audience descriptors and a worked example both give Claude specific, actionable guidance, unlike randomness-based tactics (resubmitting, raising temperature) or vague appeals."
+        },
+        {
+            "id": 4,
+            "topic": "Terminology Consistency",
+            "Question": "You are a content creator. A first response from Claude is accurate but uses inconsistent terminology that does not match your organization's glossary.\n\nWhich iterative change addresses the issue most directly?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Increase the requested length so the inconsistent terminology appears more often.",
+                    "reason": "Incorrect. More length only produces more instances of the same inconsistent terms; it doesn't fix the root cause."
+                },
+                {
+                    "id": 2,
+                    "text": "Provide the organization's glossary and instruct Claude to use only those terms throughout the response.",
+                    "reason": "Correct. Supplying the actual glossary and an explicit instruction to conform to it directly closes the gap that caused the inconsistency."
+                },
+                {
+                    "id": 3,
+                    "text": "Ask Claude to invent additional terms unrelated to the glossary.",
+                    "reason": "Incorrect. This adds further inconsistency rather than resolving it."
+                },
+                {
+                    "id": 4,
+                    "text": "Remove the topic from the prompt to avoid the terminology issue entirely.",
+                    "reason": "Incorrect. Avoiding the topic doesn't solve the underlying terminology problem for future use."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The most direct fix for a terminology mismatch is to give the model the authoritative glossary and instruct it to use those terms exclusively."
+        },
+        {
+            "id": 5,
+            "topic": "Workflow Decomposition",
+            "Question": "You are using Claude to redesign an employee onboarding workflow and must complete the high-level decomposition steps before specifying detailed artifacts.\n\nWhich two decomposition steps must be completed BEFORE specifying exact email content and the schedule? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Negotiate the onboarding budget with the finance department.",
+                    "reason": "Incorrect. Budget negotiation is an organizational activity outside the content-decomposition sequence, not a prerequisite step."
+                },
+                {
+                    "id": 2,
+                    "text": "Pilot the onboarding workflow with a small cohort of new hires.",
+                    "reason": "Incorrect. Piloting happens after the detailed artifacts (like emails and schedule) already exist, not before."
+                },
+                {
+                    "id": 3,
+                    "text": "Identify the major phases of the onboarding experience.",
+                    "reason": "Correct. You need the phase structure (e.g., pre-boarding, Day 1, Week 1) established before you can slot specific emails into a schedule."
+                },
+                {
+                    "id": 4,
+                    "text": "Define the overall objective of the onboarding experience.",
+                    "reason": "Correct. The overall objective anchors every downstream decision, including what the schedule and emails need to accomplish."
+                },
+                {
+                    "id": 5,
+                    "text": "Roll out the onboarding workflow to every new hire across the company.",
+                    "reason": "Incorrect. Full rollout is a downstream execution step, occurring well after detailed artifacts are built and piloted."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                3,
+                4
+            ],
+            "CorrectAnswerExplanation": "Complex requests decompose top-down: define the objective, then identify the major phases, and only then build detailed artifacts like exact email content and scheduling."
+        },
+        {
+            "id": 6,
+            "topic": "Task Decomposition Adjustment",
+            "Question": "A knowledge worker decomposed a \"draft a board memo\" request into fifteen tiny steps and noticed the output now feels disjointed because related ideas were split apart.\n\nWhich adjustment is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Combine the original request back into one unstructured sentence.",
+                    "reason": "Incorrect. Removing all structure loses the benefits of decomposition entirely, rather than fixing the over-fragmentation."
+                },
+                {
+                    "id": 2,
+                    "text": "Subdivide each tiny step into ten more tiny steps for additional precision.",
+                    "reason": "Incorrect. Further subdivision makes the fragmentation problem worse, not better."
+                },
+                {
+                    "id": 3,
+                    "text": "Remove all sequencing so the steps run in random order.",
+                    "reason": "Incorrect. Randomizing sequence does nothing to address the core issue of ideas being split apart."
+                },
+                {
+                    "id": 4,
+                    "text": "Consolidate related steps into fewer cohesive sections that group naturally connected ideas.",
+                    "reason": "Correct. Grouping naturally connected ideas back together restores coherence while keeping useful structure."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "When decomposition becomes too granular and disjointed, the fix is to consolidate related steps into fewer, more cohesive sections -- not to abandon structure or fragment further."
+        },
+        {
+            "id": 7,
+            "topic": "Customer Journey Mapping Sequence",
+            "Question": "You are decomposing a \"build a customer journey map\" request.\n\nWhich is the correct order of decomposed steps?\n(1) Identify the touchpoints the customer encounters during each stage.\n(2) Define the persona and the journey scope to be mapped.\n(3) Capture pain points and opportunities at each touchpoint.\n(4) Synthesize the findings into the final journey-map artifact.\n(5) Identify the major stages the persona moves through.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "2, 5, 1, 3, 4",
+                    "reason": "Correct. Define persona/scope first, then identify stages, then touchpoints within each stage, then pain points/opportunities, then synthesize the final artifact."
+                },
+                {
+                    "id": 2,
+                    "text": "1, 2, 5, 3, 4",
+                    "reason": "Incorrect. Touchpoints (1) can't be identified before the stages (5) they belong to are defined, and persona/scope (2) must come first of all."
+                },
+                {
+                    "id": 3,
+                    "text": "5, 2, 1, 3, 4",
+                    "reason": "Incorrect. You need the persona and scope (2) defined before you can meaningfully identify the stages (5) that persona moves through."
+                },
+                {
+                    "id": 4,
+                    "text": "2, 1, 5, 3, 4",
+                    "reason": "Incorrect. Touchpoints (1) depend on stages (5) already being identified; stages must come before touchpoints."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Journey mapping proceeds top-down: define persona/scope (2) -> identify major stages (5) -> identify touchpoints within each stage (1) -> capture pain points/opportunities (3) -> synthesize into the final artifact (4)."
+        },
+        {
+            "id": 8,
+            "topic": "AI Fluency: Description Competency",
+            "Question": "A knowledge worker is applying the AI Fluency Framework Description competency while revising an underperforming prompt.\n\nWhich revision best reflects Description principles?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Remove the existing context from the prompt and submit only the bare task statement, eliminating the audience, format, and constraint information that Description principles call for.",
+                    "reason": "Incorrect. This removes exactly the specification detail that Description principles require, moving further from best practice."
+                },
+                {
+                    "id": 2,
+                    "text": "Replace the specific instructions with generic phrasing that broadens the task scope, undoing the specification work Description principles require.",
+                    "reason": "Incorrect. Broadening scope with vague phrasing undoes precision rather than adding it."
+                },
+                {
+                    "id": 3,
+                    "text": "Specify the task scope, the required output format, the audience, and the relevant constraints with sufficient clarity that the prompt produces a useful, reliable output on the next run.",
+                    "reason": "Correct. This is the core of the Description competency: give the model a complete, unambiguous specification."
+                },
+                {
+                    "id": 4,
+                    "text": "Add length to the prompt by inserting filler text that does not specify task scope, output format, audience, or constraints.",
+                    "reason": "Incorrect. Filler length without substantive specification does not address the underperformance."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Description, in the AI Fluency Framework, is about clearly specifying scope, format, audience, and constraints -- not adding length or vagueness, and not stripping context out."
+        },
+        {
+            "id": 9,
+            "topic": "Prompt Failure Patterns",
+            "Question": "You are a knowledge worker summarizing common prompt failure patterns for the team.\n\nWhich pattern most often produces vague or off-target output?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A prompt that names a topic but does not state the task, audience, or required output structure.",
+                    "reason": "Correct. Naming only a topic, with no task/audience/structure, leaves the model guessing about what 'good' looks like -- the classic cause of vague output."
+                },
+                {
+                    "id": 2,
+                    "text": "A prompt that adds clear constraints on length and tone.",
+                    "reason": "Incorrect. Clear constraints improve targeting; they don't cause vagueness."
+                },
+                {
+                    "id": 3,
+                    "text": "A prompt that explicitly names the role, task, audience, and required output format.",
+                    "reason": "Incorrect. This is a well-specified prompt and is the opposite of a failure pattern."
+                },
+                {
+                    "id": 4,
+                    "text": "A prompt that includes a representative example of the desired output.",
+                    "reason": "Incorrect. Examples improve output quality; they are not a failure pattern."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The most common driver of vague, off-target output is an under-specified prompt that states a topic without the task, audience, or output-structure detail the model needs."
+        },
+        {
+            "id": 10,
+            "topic": "Decomposition Trigger",
+            "Question": "You are evaluating whether a \"redesign new-hire onboarding\" request should be decomposed before prompting Claude.\n\nWhich feature of the request most strongly indicates decomposition will help?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The request is for a single structured document that can be produced from one set of inputs in one prompt.",
+                    "reason": "Incorrect. A single, well-defined output from one input set is exactly the case where decomposition adds little value."
+                },
+                {
+                    "id": 2,
+                    "text": "The request requires multiple distinct outputs: a process map, supporting materials, and a measurement plan.",
+                    "reason": "Correct. Multiple distinct deliverables with different formats and purposes is the clearest signal that breaking the request into parts will help."
+                },
+                {
+                    "id": 3,
+                    "text": "The request involves a single well-defined output with a clear input and a familiar format.",
+                    "reason": "Incorrect. Single, well-defined, familiar-format requests are the least likely to need decomposition."
+                },
+                {
+                    "id": 4,
+                    "text": "The request involves content the associate has produced many times before and knows can be handled in a single well-structured prompt.",
+                    "reason": "Incorrect. Familiarity with a single-prompt approach suggests decomposition is unnecessary here."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Requests spanning multiple distinct output types (a map, supporting materials, a measurement plan) benefit most from decomposition into separate, purpose-built prompts."
+        },
+        {
+            "id": 11,
+            "topic": "Dependency Sequencing",
+            "Question": "You are a procurement associate decomposing a vendor-evaluation task.\n\nWhich dependency ordering reflects sound sequencing?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Define evaluation criteria first, gather vendor data against those criteria, then score and rank.",
+                    "reason": "Correct. Criteria must exist before data collection can be targeted, and scoring/ranking depends on both criteria and data being in place."
+                },
+                {
+                    "id": 2,
+                    "text": "Rank vendors before any data is collected.",
+                    "reason": "Incorrect. Ranking without data is meaningless -- there is nothing to base the rank on."
+                },
+                {
+                    "id": 3,
+                    "text": "Score vendors first and decide on the criteria afterward.",
+                    "reason": "Incorrect. Scoring requires criteria to exist first; reversing the order makes the score arbitrary."
+                },
+                {
+                    "id": 4,
+                    "text": "Skip criteria and ask Claude to produce a vendor recommendation from no inputs.",
+                    "reason": "Incorrect. A recommendation with no criteria or data has no grounding and cannot be trusted."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Sound sequencing follows logical dependency: criteria first, then data collection against those criteria, then scoring and ranking based on both."
+        },
+        {
+            "id": 12,
+            "topic": "Campaign Ideation Framing",
+            "Question": "You are a marketing manager using Claude to ideate concepts for a campaign and must complete the framing steps before generating concepts.\n\nWhich two framing steps must be completed BEFORE asking Claude to generate concepts? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Select a finalist concept and prepare it for stakeholder approval.",
+                    "reason": "Incorrect. Selecting a finalist happens after concepts already exist, not before generation."
+                },
+                {
+                    "id": 2,
+                    "text": "Define the brand voice and the audience the concepts will speak to.",
+                    "reason": "Correct. Brand voice and audience are essential framing inputs Claude needs before it can generate relevant concepts."
+                },
+                {
+                    "id": 3,
+                    "text": "Define the goal of the campaign and the success metrics for the campaign.",
+                    "reason": "Correct. The campaign goal and success metrics give concept generation a clear direction and a basis for later evaluation."
+                },
+                {
+                    "id": 4,
+                    "text": "Schedule the campaign launch and the rollout dates with the agency.",
+                    "reason": "Incorrect. Launch scheduling is a downstream logistics step, unrelated to framing the ideation itself."
+                },
+                {
+                    "id": 5,
+                    "text": "Review the Claude-generated concepts and select the two strongest for further development.",
+                    "reason": "Incorrect. Reviewing concepts can only happen after they've been generated, so it is not a framing step."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                3
+            ],
+            "CorrectAnswerExplanation": "Before generating concepts, you need the brand voice/audience and the campaign goal/success metrics defined -- these frame what 'good' concepts look like."
+        },
+        {
+            "id": 13,
+            "topic": "Clarified Task Strategy",
+            "Question": "You received a vague request to \"look at our pricing.\" After discovery, the goal is confirmed: produce a structured competitor-pricing summary the team can act on, not new pricing ideas.\n\nWhich strategy best fits the clarified task?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use a comparative analysis strategy that contrasts the company's pricing against a single named competitor, since pairwise comparison produces the clearest output.",
+                    "reason": "Incorrect. A single-competitor comparison is too narrow for a broader, structured competitor summary."
+                },
+                {
+                    "id": 2,
+                    "text": "Use a divergent brainstorming approach to generate a wide range of possible competitor-pricing observations, then narrow to the most likely ones.",
+                    "reason": "Incorrect. Brainstorming generates ideas, not verified facts -- the wrong tool for a factual pricing summary."
+                },
+                {
+                    "id": 3,
+                    "text": "Use an open conversational strategy that explores competitor pricing iteratively across several prompts, allowing the structure to emerge from the conversation.",
+                    "reason": "Incorrect. The structure has already been clarified upfront; an emergent, unstructured conversation isn't needed."
+                },
+                {
+                    "id": 4,
+                    "text": "Use a research strategy that gathers structured information about competitor pricing, names sources, and notes confidence in each finding.",
+                    "reason": "Correct. A research-oriented strategy with sourcing and confidence levels matches the need for an actionable, structured, verifiable summary."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Once the goal is clarified as a structured, actionable competitor-pricing summary, a research strategy that names sources and confidence levels is the right fit -- not brainstorming or open-ended exploration."
+        },
+        {
+            "id": 14,
+            "topic": "Sticky-Note to Structured Prompt",
+            "Question": "A business analyst is converting a sticky-note request from a stakeholder into a structured prompt for Claude.\n\nWhich is the correct order of conversion steps?\n(1) Confirm the audience and the decision the response must support.\n(2) Submit the structured prompt to Claude.\n(3) Identify the underlying task hidden in the sticky-note language.\n(4) Specify the desired length, tone, and output format.\n(5) Add the supporting facts and constraints relevant to the task.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "3, 5, 1, 4, 2",
+                    "reason": "Incorrect. Audience/decision (1) should be confirmed right after identifying the task (3), before adding supporting facts (5)."
+                },
+                {
+                    "id": 2,
+                    "text": "1, 3, 5, 4, 2",
+                    "reason": "Incorrect. The underlying task (3) must be identified before you can confirm the audience/decision (1) it needs to support."
+                },
+                {
+                    "id": 3,
+                    "text": "3, 1, 5, 4, 2",
+                    "reason": "Correct. Identify the hidden task first, confirm audience/decision next, add supporting facts/constraints, specify format/tone/length, then submit."
+                },
+                {
+                    "id": 4,
+                    "text": "2, 3, 1, 5, 4",
+                    "reason": "Incorrect. Submitting the prompt (2) must be the last step, not the first."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The natural conversion flow is: uncover the real task (3) -> confirm audience/decision it serves (1) -> add supporting facts/constraints (5) -> specify format/tone/length (4) -> submit (2)."
+        },
+        {
+            "id": 15,
+            "topic": "Solution Design First Step",
+            "Question": "You are a product designer using Claude in a solution-design exercise.\n\nWhich solution-design step should be performed first when using Claude?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Articulate the problem the solution must address and the constraints in play.",
+                    "reason": "Correct. Every downstream step -- concept generation, comparison, mock-ups -- depends on a clear problem/constraint statement first."
+                },
+                {
+                    "id": 2,
+                    "text": "Compare the candidate concepts against the constraints and select a finalist.",
+                    "reason": "Incorrect. You need candidate concepts to exist before you can compare them."
+                },
+                {
+                    "id": 3,
+                    "text": "Produce detailed mock-ups of the chosen solution for stakeholder review.",
+                    "reason": "Incorrect. Mock-ups come after a finalist concept has already been selected, near the end of the process."
+                },
+                {
+                    "id": 4,
+                    "text": "Generate candidate solution concepts using Claude across diverse styles.",
+                    "reason": "Incorrect. Concept generation without a clear problem/constraint statement first risks producing irrelevant ideas."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Solution design must start by articulating the problem and constraints -- this frames everything that follows, including concept generation and evaluation."
+        },
+        {
+            "id": 16,
+            "topic": "Bias in Generalizations",
+            "Question": "A Claude associate is reviewing a Claude-drafted set of customer-segment descriptions for an internal marketing brief. One description applies a generalization about a demographic group's purchasing behavior that does not hold for individual customers in the segment.\n\nWhich response is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Revise the description to focus on observed behaviors rather than generalizations about people, and validate the revision against actual customer data.",
+                    "reason": "Correct. Grounding the description in observed, data-validated behavior removes the unsupported demographic generalization while keeping the brief useful."
+                },
+                {
+                    "id": 2,
+                    "text": "Remove the entire customer-segment description from the brief, since any segmentation that involves demographic characteristics is likely to introduce similar issues.",
+                    "reason": "Incorrect. This overreacts -- segmentation itself isn't the problem; the unsupported generalization is."
+                },
+                {
+                    "id": 3,
+                    "text": "Add a disclaimer to the description, noting that the generalization may not apply to all individuals in the segment, and keep the underlying description unchanged.",
+                    "reason": "Incorrect. A disclaimer doesn't fix an inaccurate claim; it just flags it without correcting it."
+                },
+                {
+                    "id": 4,
+                    "text": "Keep the description as written for the internal brief, since internal use does not carry the same risk as external publication of demographic generalizations.",
+                    "reason": "Incorrect. Internal-only use does not eliminate the risk of decisions being made on a flawed generalization."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The correct fix is to replace unsupported demographic generalizations with observed, data-validated behaviors -- not to delete the segment, add a disclaimer, or leave it unchanged."
+        },
+        {
+            "id": 17,
+            "topic": "Deliverable Completeness Check",
+            "Question": "A customer-success team member is reviewing a Claude-generated customer health-check report against the agreed deliverable list. The report covers all five required topics, but the renewal-risk section names only one risk factor where the deliverable specification calls for renewal risk to be assessed across pricing, product fit, and stakeholder change.\n\nWhich conclusion is best supported?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The report meets the topic-level requirements but the renewal-risk section is under-scoped against the specification and should be expanded before delivery.",
+                    "reason": "Correct. Topic coverage is present, but depth within the renewal-risk section falls short of the three-dimension requirement, so it needs expansion."
+                },
+                {
+                    "id": 2,
+                    "text": "The report meets the deliverable specification because all five required topics appear and the renewal-risk section is present in the output.",
+                    "reason": "Incorrect. Mere presence of a section doesn't satisfy a specification that requires specific depth (three risk dimensions)."
+                },
+                {
+                    "id": 3,
+                    "text": "The report's completeness cannot be assessed from the deliverable specification alone; the customer should review the output and confirm whether the renewal-risk depth is sufficient.",
+                    "reason": "Incorrect. The specification already defines the required depth explicitly, so completeness can be assessed directly against it."
+                },
+                {
+                    "id": 4,
+                    "text": "The report does not meet the deliverable specification because a section that addresses only one of three required risk dimensions counts as a missing section.",
+                    "reason": "Incorrect. This overstates the gap -- the section exists and covers one of three required dimensions, so it's under-scoped, not entirely missing."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The specification calls for three specific risk dimensions; covering only one means the section is under-scoped and should be expanded, not treated as fully compliant or as entirely missing."
+        },
+        {
+            "id": 18,
+            "topic": "False Positive Rate Assessment",
+            "Question": "A content moderation team is deploying Claude to flag potentially harmful user-generated content across multiple product categories. Before going live, the team validates Claude's output against a test dataset of 500 previously moderated items. They notice that Claude correctly identifies 92% of harmful content but also incorrectly flags 8% of benign content as harmful.\n\nBeyond the raw accuracy metrics, what critical issue should the team assess before deployment?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The false positive rate (incorrectly flagged benign content) may harm user experience and requires threshold tuning or human review workflows.",
+                    "reason": "Correct. An 8% false-positive rate has real business impact (frustrated users, lost trust) and needs explicit mitigation, such as threshold tuning or human review."
+                },
+                {
+                    "id": 2,
+                    "text": "The 92% detection rate proves the system is ready for production without further testing.",
+                    "reason": "Incorrect. No single metric guarantees readiness -- false positives carry real consequences that must be evaluated separately."
+                },
+                {
+                    "id": 3,
+                    "text": "Claude's responses are too fast and need to be slowed down for accuracy.",
+                    "reason": "Incorrect. Speed and accuracy are unrelated in this context; this conflates two different concerns."
+                },
+                {
+                    "id": 4,
+                    "text": "The validation dataset is too small and must be expanded to at least 5,000 items before any assessment is possible.",
+                    "reason": "Incorrect. A 500-item, representative test set can provide meaningful validation; dataset size alone isn't the critical issue here."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Output evaluation must weigh business impact of different error types, not just raw accuracy -- a meaningful false-positive rate needs mitigation like threshold tuning or human-in-the-loop review."
+        },
+        {
+            "id": 19,
+            "topic": "Context Window Effectiveness",
+            "Question": "You are a knowledge manager structuring source material in the context window for a long Claude evaluation task.\n\nWhich two practices produce a more effective use of the context window? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Paste every available document into context regardless of relevance to the task.",
+                    "reason": "Incorrect. Uncurated material adds noise, consumes quota, and can dilute the model's focus on what matters."
+                },
+                {
+                    "id": 2,
+                    "text": "Mark each source clearly with delimiters so the model can attribute claims correctly.",
+                    "reason": "Correct. Clear delimiters (like XML tags or headers) let the model distinguish source boundaries and attribute claims accurately."
+                },
+                {
+                    "id": 3,
+                    "text": "Repeat the same instruction at the start, middle, and end to reinforce it.",
+                    "reason": "Incorrect. Excessive repetition wastes tokens without meaningfully improving adherence."
+                },
+                {
+                    "id": 4,
+                    "text": "Mix sources together in a single block so the model can synthesize them freely.",
+                    "reason": "Incorrect. Blending sources together obscures provenance and makes accurate citation harder."
+                },
+                {
+                    "id": 5,
+                    "text": "Place the most reference-critical material near the beginning or end of context.",
+                    "reason": "Correct. This leverages the primacy/recency effect in attention, since models attend most reliably to the start and end of long context."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                5
+            ],
+            "CorrectAnswerExplanation": "Clear source delimiters improve attribution, and placing critical material at the beginning or end of context takes advantage of how models attend most reliably to those positions (avoiding the 'lost in the middle' problem)."
+        },
+        {
+            "id": 20,
+            "topic": "Unsourced Claims",
+            "Question": "A knowledge worker is reviewing a Claude-generated brief that asserts a \"well-known industry standard\" without naming any source.\n\nHow should this assertion be handled?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Treat the assertion as unverified, and either source it from an authoritative reference or remove it.",
+                    "reason": "Correct. An unsourced 'well-known' claim should be treated as unverified until it can be traced to a credible reference."
+                },
+                {
+                    "id": 2,
+                    "text": "Accept the assertion because the phrase \"well-known\" is reassuring.",
+                    "reason": "Incorrect. Confident-sounding phrasing is not evidence of accuracy."
+                },
+                {
+                    "id": 3,
+                    "text": "Republish the brief unchanged because the claim sounds authoritative.",
+                    "reason": "Incorrect. Sounding authoritative is not the same as being verified."
+                },
+                {
+                    "id": 4,
+                    "text": "Strengthen the assertion by adding more confident wording.",
+                    "reason": "Incorrect. Adding confidence to an unverified claim increases risk rather than resolving it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Unsourced claims that sound authoritative should still be treated as unverified until traced to a credible source or removed -- plausibility is not verification."
+        },
+        {
+            "id": 21,
+            "topic": "Valid Evaluation Criteria",
+            "Question": "You are validating evaluation criteria proposed for a Claude-generated business brief.\n\nWhich two criteria are valid for evaluating a Claude-generated brief? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Factual accuracy of the claims made against the supplied source material.",
+                    "reason": "Correct. Accuracy against source material is a fundamental, substantive evaluation criterion."
+                },
+                {
+                    "id": 2,
+                    "text": "Consistency of the writing style with the organization's established tone guidelines.",
+                    "reason": "Incorrect. Style consistency matters for polish but is not a core criterion for evaluating the brief's core validity in this context."
+                },
+                {
+                    "id": 3,
+                    "text": "Total word count of the output relative to industry benchmarks for business briefs.",
+                    "reason": "Incorrect. Word count relative to external benchmarks is an arbitrary metric unrelated to whether the brief is accurate or useful."
+                },
+                {
+                    "id": 4,
+                    "text": "Presence of an executive summary section as a structural completeness check.",
+                    "reason": "Incorrect. Presence of a specific section is a formatting check, not a substantive validity criterion."
+                },
+                {
+                    "id": 5,
+                    "text": "Alignment of the output with the requested format and length constraints.",
+                    "reason": "Correct. Meeting the actual requested constraints (format, length) is a legitimate, task-specific evaluation criterion."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                5
+            ],
+            "CorrectAnswerExplanation": "The two substantively valid criteria are factual accuracy against source material, and alignment with the specific format/length constraints that were actually requested -- not arbitrary benchmarks or generic structural checks."
+        },
+        {
+            "id": 22,
+            "topic": "Plausibility vs Verification",
+            "Question": "You are reviewing a Claude-generated report whose tone is confident throughout.\n\nWhich question best separates plausibility from verification?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Can each specific claim be traced to a credible source or to the supplied input material?",
+                    "reason": "Correct. Traceability to a credible source is the actual test of verification, independent of how confident the writing sounds."
+                },
+                {
+                    "id": 2,
+                    "text": "Does the response open with a clear, well-framed statement of the main finding?",
+                    "reason": "Incorrect. A clear opening is a writing-quality trait, not a verification check."
+                },
+                {
+                    "id": 3,
+                    "text": "Does the response cover the topic comprehensively based on its length and section count?",
+                    "reason": "Incorrect. Length and section count say nothing about whether the content is actually accurate."
+                },
+                {
+                    "id": 4,
+                    "text": "Does the response use varied sentence structure across sections?",
+                    "reason": "Incorrect. Sentence variety is a style attribute, unrelated to factual verification."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "A confident tone can mask unverified claims. The only question that truly separates plausibility from verification is whether each specific claim traces back to a credible source or the supplied input material."
+        },
+        {
+            "id": 23,
+            "topic": "Conflicting Dates Fact-Check",
+            "Question": "You are an analyst fact-checking a Claude-generated report. Two cited sources give conflicting dates for the same event.\n\nWhich approach is correct?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Choose the more recent date on the basis that later sources typically reflect updated or corrected information.",
+                    "reason": "Incorrect. Recency alone doesn't guarantee accuracy -- a later source could simply be repeating an earlier error."
+                },
+                {
+                    "id": 2,
+                    "text": "Average the two conflicting dates and use the average.",
+                    "reason": "Incorrect. Averaging conflicting facts produces a meaningless, likely incorrect result."
+                },
+                {
+                    "id": 3,
+                    "text": "Locate a primary or authoritative source for the event and use the date that source confirms.",
+                    "reason": "Correct. Going back to a primary/authoritative source is the only reliable way to resolve a factual conflict."
+                },
+                {
+                    "id": 4,
+                    "text": "Publish both dates without resolving the conflict and let the reader choose.",
+                    "reason": "Incorrect. This shifts verification burden onto the reader rather than resolving it as the analyst should."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "When two sources conflict, the correct approach is to locate a primary or authoritative source and use the date that source confirms -- not to guess based on recency or average the discrepancy away."
+        },
+        {
+            "id": 24,
+            "topic": "Trade-Press Growth Figure Validation",
+            "Question": "You are a communications manager validating a Claude-generated newsletter that includes a specific industry growth figure. The figure appears in three trade-press articles, but none of them link to the underlying study.\n\nWhich validation step is correct?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Accept the figure because three trade-press articles repeat it.",
+                    "reason": "Incorrect. Repetition across secondary sources is not the same as verification against the primary study."
+                },
+                {
+                    "id": 2,
+                    "text": "Remove the source attribution and present the figure as common knowledge.",
+                    "reason": "Incorrect. Removing attribution obscures the unverified nature of the figure rather than resolving it."
+                },
+                {
+                    "id": 3,
+                    "text": "Locate the original study referenced by the trade-press articles and verify the figure in the primary source.",
+                    "reason": "Correct. Tracing back to the original study is the only way to actually confirm the figure is accurate."
+                },
+                {
+                    "id": 4,
+                    "text": "Use the highest figure across the three articles to make the newsletter more compelling.",
+                    "reason": "Incorrect. Selecting the most compelling number rather than the most accurate one is a verification failure, not a fix."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The correct validation step is to trace the figure back to the primary study the trade press is citing and confirm it there -- not to rely on repetition, remove attribution, or cherry-pick the most compelling number."
+        },
+        {
+            "id": 25,
+            "topic": "Reviewing an Unsupported-Claims Brief (Order)",
+            "Question": "You are reviewing a Claude-generated competitor brief for unsupported claims.\n\nWhich is the correct order of review steps?\n(1) Cross-check each specific claim against the supplied source material or trusted external references.\n(2) Decide whether to correct, re-prompt, or escalate based on findings.\n(3) Document each unsupported or inconsistent claim with location and severity.\n(4) Identify the specific factual claims, statistics, and citations in the brief.\n(5) Read the brief end to end and flag any claims that feel surprising.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "1, 4, 5, 3, 2",
+                    "reason": "Incorrect. You can't cross-check claims (1) before you've read the brief (5) and identified which claims/citations need checking (4)."
+                },
+                {
+                    "id": 2,
+                    "text": "4, 5, 1, 3, 2",
+                    "reason": "Incorrect. A full read-through to flag surprising claims (5) naturally comes before -- or alongside -- pinpointing specific claims (4), but should precede detailed cross-checking (1)."
+                },
+                {
+                    "id": 3,
+                    "text": "5, 1, 4, 3, 2",
+                    "reason": "Incorrect. Identifying specific factual claims (4) should happen before cross-checking them (1), not after."
+                },
+                {
+                    "id": 4,
+                    "text": "5, 4, 1, 3, 2",
+                    "reason": "Correct. Read end-to-end and flag anything surprising, then pinpoint the specific claims/citations, cross-check each against source material, document findings, then decide next steps."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "[Note: this question had no answer key in the source material; the answer was derived through logical process analysis.] The natural review flow is: read broadly and flag anomalies (5) -> pinpoint the specific claims (4) -> verify each against sources (1) -> document findings (3) -> decide on next steps (2)."
+        },
+        {
+            "id": 26,
+            "topic": "Upstream Steps Before Scoring",
+            "Question": "You are designing a checklist for evaluating Claude outputs and must complete the upstream steps before scoring an output.\n\nWhich two steps must be completed BEFORE scoring a Claude output against the checklist? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Define the evaluation criteria that matter for the task at hand.",
+                    "reason": "Correct. You cannot score anything meaningfully without first knowing what criteria you're scoring against."
+                },
+                {
+                    "id": 2,
+                    "text": "Promote the approved output into the downstream production process.",
+                    "reason": "Incorrect. Promotion happens only after an output has been scored and approved -- a downstream step."
+                },
+                {
+                    "id": 3,
+                    "text": "Forward unacceptable outputs to a senior reviewer for second-pass review.",
+                    "reason": "Incorrect. Escalation to a senior reviewer is a consequence of scoring, not a precursor to it."
+                },
+                {
+                    "id": 4,
+                    "text": "Specify the threshold that distinguishes acceptable from unacceptable output.",
+                    "reason": "Correct. Without a defined pass/fail threshold, a score has no way to translate into an accept/reject decision."
+                },
+                {
+                    "id": 5,
+                    "text": "Document the final score and the reviewer comments for the audit trail.",
+                    "reason": "Incorrect. Documentation happens after scoring is complete, as a record of the outcome."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                4
+            ],
+            "CorrectAnswerExplanation": "[Note: this question had no answer key in the source material; the answer was derived through logical process analysis.] Before you can score anything, you need both the evaluation criteria and the acceptable/unacceptable threshold defined -- everything else (promotion, escalation, documentation) happens after scoring."
+        },
+        {
+            "id": 27,
+            "topic": "Effective Context-Window Practices",
+            "Question": "You are a business analyst deciding which output-formatting and context-window practices to recommend to teammates.\n\nWhich two practices represent effective use of the context window? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Reuse the same context block across multiple requests to avoid rebuilding it each time.",
+                    "reason": "Incorrect. Reuse for convenience alone doesn't address focus or relevance; stale or irrelevant blocks can still hurt output quality."
+                },
+                {
+                    "id": 2,
+                    "text": "Concatenate all source documents end-to-end with no separators between them.",
+                    "reason": "Incorrect. No separators obscure document boundaries and hurt the model's ability to attribute information correctly."
+                },
+                {
+                    "id": 3,
+                    "text": "Paste full email threads related to the project into context so the model has complete conversational history.",
+                    "reason": "Incorrect. Full email threads often add irrelevant back-and-forth rather than focused, useful context."
+                },
+                {
+                    "id": 4,
+                    "text": "Trim irrelevant material before submitting the request to keep context focused.",
+                    "reason": "Correct. Trimming irrelevant material keeps the context window focused on what actually supports the task."
+                },
+                {
+                    "id": 5,
+                    "text": "Use clear section headers to separate different parts of the input material.",
+                    "reason": "Correct. Clear headers help the model distinguish documents, requirements, examples, and questions."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                4,
+                5
+            ],
+            "CorrectAnswerExplanation": "Trimming irrelevant material and using clear section headers both improve focus and interpretability of context, unlike blind concatenation, full email dumps, or careless reuse."
+        },
+        {
+            "id": 28,
+            "topic": "Productive Feedback Responses",
+            "Question": "You are reviewing colleagues' responses to feedback received on Claude-drafted communications.\n\nWhich two feedback responses are productive? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Declining to revise sections that were generated by Claude on the basis that the model's output should be trusted as written.",
+                    "reason": "Incorrect. Blanket trust in AI-generated content, refusing legitimate revision, is not a productive response to feedback."
+                },
+                {
+                    "id": 2,
+                    "text": "Incorporating all feedback received, including contradictory suggestions, into the next draft simultaneously.",
+                    "reason": "Incorrect. Implementing contradictory feedback simultaneously produces an incoherent result; conflicts need to be resolved first."
+                },
+                {
+                    "id": 3,
+                    "text": "Deferring all feedback to a later revision cycle to avoid disrupting the current draft's consistency.",
+                    "reason": "Incorrect. Deferring all feedback indefinitely delays necessary improvements without justification."
+                },
+                {
+                    "id": 4,
+                    "text": "Asking clarifying questions when feedback is ambiguous before acting on it.",
+                    "reason": "Correct. Clarifying ambiguous feedback before acting prevents misapplied changes and wasted revision cycles."
+                },
+                {
+                    "id": 5,
+                    "text": "Mapping each piece of feedback to the specific change made in the next draft.",
+                    "reason": "Correct. Traceable mapping from feedback to change ensures accountability and confirms feedback was actually addressed."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                4,
+                5
+            ],
+            "CorrectAnswerExplanation": "Productive responses to feedback involve clarifying ambiguity before acting, and explicitly mapping each piece of feedback to a specific resulting change -- not blanket trust, blind incorporation of contradictions, or indefinite deferral."
+        },
+        {
+            "id": 29,
+            "topic": "Root Cause: Missed Questions",
+            "Question": "A Claude associate is troubleshooting a Claude response that addressed only one of three required questions in a prompt. The prompt listed all three questions in a single paragraph separated by commas.\n\nWhich root cause is most likely?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The prompt was too long and Claude focused on the question with the strongest grounding in the surrounding context.",
+                    "reason": "Incorrect. Length alone is not the most likely cause; the structural issue with how questions were listed is more directly responsible."
+                },
+                {
+                    "id": 2,
+                    "text": "The prompt's required questions were addressed implicitly across the response, even though the response did not visibly answer each question.",
+                    "reason": "Incorrect. If the response doesn't visibly answer each question, this explanation is speculative rather than diagnostic."
+                },
+                {
+                    "id": 3,
+                    "text": "The prompt's task statement did not enumerate the three required questions explicitly enough for Claude to address each one in turn.",
+                    "reason": "Correct. Burying three distinct questions in one comma-separated paragraph, without clear enumeration, is the most likely reason only one got addressed."
+                },
+                {
+                    "id": 4,
+                    "text": "The prompt's audience and tone specification overshadowed the task statement, so Claude prioritized voice over coverage.",
+                    "reason": "Incorrect. There's no indication tone/audience specification competed with the task statement here; the real issue is the lack of enumeration."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "When multiple distinct questions are buried in a single comma-separated paragraph rather than clearly enumerated, the model is far more likely to miss some of them -- explicit enumeration (e.g., numbered list) fixes this."
+        },
+        {
+            "id": 30,
+            "topic": "Best Output Format for Metric Records",
+            "Question": "You are an operations assistant asking Claude to summarize 200 weekly metric records across multiple regions.\n\nWhich output format communicates the data most clearly?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A structured table with one record per row and one metric per column, sorted by region.",
+                    "reason": "Correct. A structured table is the clearest way to present large volumes of comparable, standardized data for easy comparison."
+                },
+                {
+                    "id": 2,
+                    "text": "A narrative summary organized by region, describing trends and notable records in prose.",
+                    "reason": "Incorrect. Prose makes it harder to compare specific records and metrics precisely across 200 entries."
+                },
+                {
+                    "id": 3,
+                    "text": "A series of regional narrative briefs, each describing weekly performance in paragraph form.",
+                    "reason": "Incorrect. Paragraph-based regional briefs still lack the precise comparability a table provides."
+                },
+                {
+                    "id": 4,
+                    "text": "A bulleted list of observations grouped by region without consistent metrics across entries.",
+                    "reason": "Incorrect. Inconsistent metrics across bullet points make reliable comparison difficult."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "For large volumes of comparable, standardized weekly metric data, a structured table (one record per row, one metric per column, sorted by region) is clearest -- prose and inconsistent bullet lists both sacrifice comparability."
+        },
+        {
+            "id": 31,
+            "topic": "Escalation Impact Factor",
+            "Question": "You are a customer-success manager considering whether to escalate a Claude-generated response.\n\nWhich factor most strongly raises the impact of the output and supports escalation before external use?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The response is an internal draft summarizing the associate's notes from a customer call for their own reference.",
+                    "reason": "Incorrect. A personal internal reference document carries low external impact and doesn't need escalation."
+                },
+                {
+                    "id": 2,
+                    "text": "The response is a brief internal announcement about an upcoming team all-hands meeting.",
+                    "reason": "Incorrect. A routine internal announcement has minimal consequence if something is slightly wrong."
+                },
+                {
+                    "id": 3,
+                    "text": "The response is an unchanged draft for a paying customer that includes a service-level commitment.",
+                    "reason": "Correct. An unreviewed, customer-facing draft with a binding service-level commitment carries real business and contractual risk -- exactly the kind of impact that warrants escalation before use."
+                },
+                {
+                    "id": 4,
+                    "text": "The response is a casual rephrasing of an internal team status update.",
+                    "reason": "Incorrect. An internal, casual rephrasing has low stakes and low external impact."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The factor that most strongly raises impact is external, customer-facing use combined with a binding commitment (like an SLA) -- this combination of audience and consequence is what should trigger escalation before the response goes out unchanged."
+        },
+        {
+            "id": 32,
+            "topic": "AI Fluency: Delegation (Hiring Decisions)",
+            "Question": "A Claude associate is evaluating a proposed use case in which Claude would issue final hiring decisions without any human review, applying the AI Fluency Framework Delegation competency.\n\nWhich classification best reflects Delegation principles?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Inappropriate only because of system reliability concerns rather than accountability, even though Delegation criteria classify final hiring decisions as requiring human ownership regardless of system performance.",
+                    "reason": "Incorrect. This misattributes the reason -- the issue is accountability/judgment, not merely reliability."
+                },
+                {
+                    "id": 2,
+                    "text": "Appropriate with light human review applied only to a sample of decisions, even though Delegation criteria reserve final hiring decisions for human ownership rather than sample-based oversight after the fact.",
+                    "reason": "Incorrect. Sample-based after-the-fact review does not satisfy the requirement for human ownership of each final decision."
+                },
+                {
+                    "id": 3,
+                    "text": "Inappropriate for full AI delegation, because hiring decisions involve human judgment, accountability, and consequences that Delegation criteria reserve for human ownership rather than autonomous AI execution.",
+                    "reason": "Correct. Hiring decisions carry consequences, judgment, and accountability requirements that Delegation principles reserve for humans, not autonomous AI."
+                },
+                {
+                    "id": 4,
+                    "text": "Appropriate for full AI delegation, on the basis that processing speed outweighs the human judgment, accountability, and consequence considerations that Delegation criteria require for final hiring decisions.",
+                    "reason": "Incorrect. Speed is never a valid justification for bypassing accountability and judgment requirements on high-stakes decisions."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "Delegation principles reserve high-stakes decisions involving judgment, accountability, and real consequences -- like final hiring decisions -- for human ownership, regardless of speed or sampling-based oversight schemes."
+        },
+        {
+            "id": 33,
+            "topic": "Refund Auto-Approval Design",
+            "Question": "A project manager is evaluating a proposal to use Claude to autonomously approve refunds above a defined threshold without human review. The volume is high -- roughly 2,000 refunds per week -- the average refund amount is moderate, and a small percentage of refunds in historical audits required correction. The team needs to reduce cycle time.\n\nWhich response is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Decline the autonomous-approval design and propose that Claude triage refunds into auto-approve (low-risk), human-approve (standard), and escalate-to-supervisor (high-risk) lanes.",
+                    "reason": "Correct. A risk-tiered triage design keeps human oversight where it matters most while still gaining speed on genuinely low-risk cases."
+                },
+                {
+                    "id": 2,
+                    "text": "Approve the proposal and replace human review with a daily audit of a random sample of autonomous approvals, with corrective action taken on errors found.",
+                    "reason": "Incorrect. After-the-fact sampling doesn't prevent errors from reaching customers before correction, unlike a risk-tiered design."
+                },
+                {
+                    "id": 3,
+                    "text": "Approve the proposal but cap autonomous approvals at the threshold the team currently audits, so the existing audit sample continues to catch errors after the fact.",
+                    "reason": "Incorrect. This still relies on after-the-fact detection rather than proactively routing risk to the right level of review."
+                },
+                {
+                    "id": 4,
+                    "text": "Decline the autonomous-approval design and propose that Claude pre-fill the refund decision and rationale, with a human approver completing each refund before it is issued.",
+                    "reason": "Incorrect. Requiring full human review of every single refund undermines the stated goal of reducing cycle time, unlike a tiered approach."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The best design reduces cycle time while keeping accountability where risk warrants it: tiered triage (auto-approve low-risk, human-approve standard, escalate high-risk) rather than full autonomy with only after-the-fact sampling."
+        },
+        {
+            "id": 34,
+            "topic": "Code Execution Workflow Integration",
+            "Question": "An operations assistant is redesigning a recurring data-processing workflow step to use Code Execution.\n\nWhich two design choices best support reliable integration? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Standardize the input file format the step expects, so each Code Execution run receives consistent input and produces comparable, verifiable output across recurring weekly cycles.",
+                    "reason": "Correct. Standardized input is essential for producing consistent, comparable, verifiable output run after run."
+                },
+                {
+                    "id": 2,
+                    "text": "Eliminate the human review step that follows Code Execution, since the sandboxed environment already verifies that the code ran without errors.",
+                    "reason": "Incorrect. Code running without errors is not the same as the computed result being correct -- a sanity-check review is still needed."
+                },
+                {
+                    "id": 3,
+                    "text": "Vary the input file format from run to run to accommodate the different source systems that supply the data each week.",
+                    "reason": "Incorrect. Varying formats undermines consistency and comparability across runs."
+                },
+                {
+                    "id": 4,
+                    "text": "Define a brief output-verification step in which a human reviewer confirms the computed result against an expected range or sanity check before the output advances to downstream consumers.",
+                    "reason": "Correct. A lightweight human sanity-check on the output catches errors that a purely technical 'ran without errors' check would miss."
+                },
+                {
+                    "id": 5,
+                    "text": "Embed the Code Execution step inside the workflow without documenting the expected output format or the fields it produces.",
+                    "reason": "Incorrect. Undocumented output format makes downstream integration unreliable and hard to verify."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                4
+            ],
+            "CorrectAnswerExplanation": "Reliable integration of Code Execution requires standardized input formats for consistency, plus a lightweight human verification step -- since 'ran without error' doesn't guarantee the result is actually correct."
+        },
+        {
+            "id": 35,
+            "topic": "Third-Party Skill Trust Decision",
+            "Question": "A Claude associate is evaluating whether to enable a Skill that was provided by an unfamiliar third party.\n\nWhich two checks best support a sound trust decision? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Skip permission review on the assumption that the Skill cannot exceed the boundaries of the workflow, even though Skills can request access that the task does not require.",
+                    "reason": "Incorrect. Skills can request more access than the task actually requires, so skipping review is risky."
+                },
+                {
+                    "id": 2,
+                    "text": "Review the permissions and capabilities the Skill requests and confirm that the requested access is appropriate for the task the Skill is intended to perform.",
+                    "reason": "Correct. Confirming requested permissions match the actual task need is a core trust-verification step."
+                },
+                {
+                    "id": 3,
+                    "text": "Enable the Skill immediately on the basis of strong external reviews, even though its source has not been validated and its permissions remain unverified.",
+                    "reason": "Incorrect. External reviews don't substitute for verifying source and permissions directly."
+                },
+                {
+                    "id": 4,
+                    "text": "Treat the Skill's appearance in a public listing as sufficient validation, without confirming the source, requested permissions, or alignment with the organization's approved-Skill list.",
+                    "reason": "Incorrect. Public listing alone says nothing about whether the source is trustworthy or the permissions are appropriate."
+                },
+                {
+                    "id": 5,
+                    "text": "Verify the source of the Skill against the organization's approved-Skill list before enabling it within Claude.ai or any Project the team uses for its work.",
+                    "reason": "Correct. Verifying against the approved-Skill list confirms the source has already been vetted by the organization."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                5
+            ],
+            "CorrectAnswerExplanation": "A sound trust decision requires both reviewing requested permissions against actual task need, and verifying the source against the organization's approved-Skill list -- not relying on public reputation or external reviews alone."
+        },
+        {
+            "id": 36,
+            "topic": "AI Fluency: Delegation Criteria",
+            "Question": "As part of a workflow redesign, a process analyst is applying the AI Fluency Framework Delegation competency.\n\nWhich two criteria most directly inform Delegation decisions? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The reversibility of the task and the consequence of an error, which together indicate whether the step is safe to delegate to Claude or should be retained for human decision-making.",
+                    "reason": "Correct. Reversibility and error consequence are core, direct criteria for judging whether autonomous delegation is safe."
+                },
+                {
+                    "id": 2,
+                    "text": "The need for human creativity, empathy, or judgment in the step, which indicates whether the task is appropriate for AI delegation or requires the human capabilities Claude cannot provide.",
+                    "reason": "Correct. Steps requiring uniquely human capabilities like judgment or empathy are directly relevant to Delegation decisions."
+                },
+                {
+                    "id": 3,
+                    "text": "The visual complexity of the workflow diagram, since steps with more connections and dependencies are more likely to require human oversight.",
+                    "reason": "Incorrect. Diagram complexity is a documentation artifact, not a substantive criterion for delegation risk."
+                },
+                {
+                    "id": 4,
+                    "text": "The seniority of the team member who currently performs the step, since more senior roles typically involve higher-stakes tasks that warrant human retention.",
+                    "reason": "Incorrect. Current role seniority is not a direct measure of the task's actual risk or reversibility."
+                },
+                {
+                    "id": 5,
+                    "text": "The length of time the workflow has existed in its current form, since well-established processes have been sufficiently validated for AI delegation.",
+                    "reason": "Incorrect. Age of a process says nothing about whether it's currently appropriate for AI delegation."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                2
+            ],
+            "CorrectAnswerExplanation": "Delegation decisions should hinge on reversibility/consequence of error and the need for human judgment, creativity, or empathy -- not on incidental factors like diagram complexity, role seniority, or process age."
+        },
+        {
+            "id": 37,
+            "topic": "Requirements Analysis Fit",
+            "Question": "A project manager is defining how Claude can support requirements analysis for an upcoming engagement. Their team will conduct stakeholder interviews and review existing process documentation as part of discovery.\n\nWhich activity fits this domain?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use Claude to generate a complete requirements list from the project name and a short description, since requirements for similar engagements are largely standard.",
+                    "reason": "Incorrect. Generating requirements without grounding them in actual stakeholder input risks fabricating or missing real needs."
+                },
+                {
+                    "id": 2,
+                    "text": "Use Claude to prioritize the requirements the team has already gathered, leaving the gathering itself to manual analyst work since prioritization is more time-consuming.",
+                    "reason": "Incorrect. This underuses Claude's strength in synthesis and doesn't leverage it for the actual discovery-heavy work described."
+                },
+                {
+                    "id": 3,
+                    "text": "Use Claude to synthesize stakeholder inputs and existing process documentation into a structured list of requirements with traceability to each source.",
+                    "reason": "Correct. This directly leverages Claude's strength in synthesizing large amounts of source material into a structured, traceable output."
+                },
+                {
+                    "id": 4,
+                    "text": "Use Claude to conduct the stakeholder interviews directly, with the analyst reviewing the recordings afterward to confirm the requirements Claude extracted.",
+                    "reason": "Incorrect. Having Claude conduct interviews directly removes the human rapport and judgment interviews require."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The best fit for Claude here is synthesizing already-gathered stakeholder inputs and documentation into a structured, traceable requirements list -- not generating requirements from nothing, skipping gathering, or conducting interviews itself."
+        },
+        {
+            "id": 38,
+            "topic": "Conflicting Requirements Resolution",
+            "Question": "An account manager has used Claude to extract requirements from stakeholder notes. Three requirements appear to conflict: two stakeholders specified mutually exclusive workflow steps, and a third requirement assumes an outcome the first two would prevent.\n\nWhich step is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Present all three conflicting requirements as alternative options in the requirements document, leaving the resolution to the project's decision-making process later.",
+                    "reason": "Incorrect. This defers resolution without routing the conflict back to the people who can actually resolve it."
+                },
+                {
+                    "id": 2,
+                    "text": "Apply Claude to propose a compromise wording for each conflict and submit the compromise to stakeholders as the proposed resolution.",
+                    "reason": "Incorrect. Claude lacks the authority and context to resolve a genuine stakeholder disagreement; it can surface but not decide."
+                },
+                {
+                    "id": 3,
+                    "text": "Select the requirement that has the strongest business justification in the source notes, set the conflicting requirements aside, and proceed with the selected one.",
+                    "reason": "Incorrect. Unilaterally picking a 'winner' bypasses the stakeholders who actually need to resolve the conflict."
+                },
+                {
+                    "id": 4,
+                    "text": "Flag the conflicts in the requirements document, document the source for each side, and route the conflicts back to the originating stakeholders for resolution.",
+                    "reason": "Correct. Genuine stakeholder conflicts require the stakeholders themselves to resolve them, with clear documentation of each position."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Real conflicts between stakeholders should be flagged, documented with sources, and routed back to the originating stakeholders -- not resolved unilaterally or by AI compromise."
+        },
+        {
+            "id": 39,
+            "topic": "Prototype Iteration After Feedback",
+            "Question": "A sales manager is iterating on a Claude-generated solution prototype after a stakeholder review identified two specific concerns. The rest of the prototype was accepted as written.\n\nWhich iteration approach is most likely to produce a strong next version?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Rewrite the prototype from scratch incorporating the two specific concerns, since starting fresh integrates the feedback more cleanly than targeted edits.",
+                    "reason": "Incorrect. Rewriting from scratch risks losing the parts that were already accepted, and adds unnecessary rework."
+                },
+                {
+                    "id": 2,
+                    "text": "Address the two specific concerns and add a third improvement the associate identified, since combining stakeholder feedback with self-identified improvements is more efficient.",
+                    "reason": "Incorrect. Adding unrequested changes muddies what was actually reviewed and approved by stakeholders."
+                },
+                {
+                    "id": 3,
+                    "text": "Address the two specific concerns directly, leave unrelated parts unchanged, and document the changes for the next review.",
+                    "reason": "Correct. Targeted edits that address exactly the flagged concerns, with clear documentation, preserve what was already accepted and keep the review focused."
+                },
+                {
+                    "id": 4,
+                    "text": "Address the two specific concerns and also revise unrelated sections to maintain consistent voice across the prototype after the edits.",
+                    "reason": "Incorrect. Revising unrelated, already-accepted sections risks introducing new issues into parts that didn't need changes."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The strongest iteration approach targets exactly what was flagged, leaves already-accepted parts untouched, and documents the changes -- avoiding both scope creep and unnecessary rework."
+        },
+        {
+            "id": 40,
+            "topic": "Escalation Decision Order",
+            "Question": "You are a knowledge worker deciding whether to escalate a Claude-generated output.\n\nWhich is the correct order of decision steps?\n(1) Identify the audience and the impact of the output if it is wrong.\n(2) Document the decision and the rationale for traceability.\n(3) Compare the output's risk profile to the organization's escalation criteria.\n(4) Decide whether to use, iterate further, or escalate.\n(5) Assess the output's accuracy, completeness, and any unverified claims.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "1, 5, 3, 4, 2",
+                    "reason": "Correct. Identify audience/impact first, then assess the output's own accuracy/completeness, then compare the resulting risk profile to escalation criteria, then decide, then document."
+                },
+                {
+                    "id": 2,
+                    "text": "5, 1, 3, 4, 2",
+                    "reason": "Incorrect. Assessing accuracy first, before understanding who will use the output and what's at stake, skips essential context that should come first."
+                },
+                {
+                    "id": 3,
+                    "text": "1, 3, 5, 4, 2",
+                    "reason": "Incorrect. Comparing to escalation criteria (3) before assessing accuracy (5) means you compare risk before you actually know how accurate the output is."
+                },
+                {
+                    "id": 4,
+                    "text": "4, 3, 2, 1, 5",
+                    "reason": "Incorrect. Deciding what to do (4) before any evaluation of audience, risk, or accuracy has happened is premature."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "IMPORTANT CAVEAT: this exact question appeared with three different conflicting 'correct' answers across duplicate copies in the source material (5,1,3,4,2 / 1,3,5,4,2 / 1,5,3,4,2), none from an official Anthropic key. This answer (1,5,3,4,2) was chosen by analogy with a verified, logically parallel question in the same bank ('assess a proposed Claude use case,' where audience/impact/reversibility is identified first, then the content itself is assessed, then compared to policy). Treat this one with extra caution if it appears differently worded on your actual exam."
+        },
+        {
+            "id": 41,
+            "topic": "Weekly Workflow Integration Order",
+            "Question": "You are a process consultant integrating Claude into an existing weekly workflow.\n\nWhich is the correct order of integration steps?\n(1) Pilot the integrated workflow with a small group and gather feedback.\n(2) Document the current workflow steps, owners, and decision points.\n(3) Update the documented workflow and roll it out to the broader team.\n(4) Identify the steps where Claude can augment work and where humans must remain.\n(5) Define the inputs Claude needs, the outputs Claude returns, and the hand-offs around each step.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "2, 5, 4, 1, 3",
+                    "reason": "Incorrect. You need to identify where Claude adds value (4) before you can define the specific inputs/outputs/hand-offs (5) for those steps."
+                },
+                {
+                    "id": 2,
+                    "text": "2, 4, 5, 1, 3",
+                    "reason": "Correct. Document current state, identify augment/human steps, define inputs/outputs/hand-offs, pilot with a small group, then roll out broadly."
+                },
+                {
+                    "id": 3,
+                    "text": "4, 2, 5, 1, 3",
+                    "reason": "Incorrect. You need to document the current workflow (2) before you can identify which steps Claude should augment (4)."
+                },
+                {
+                    "id": 4,
+                    "text": "1, 2, 4, 5, 3",
+                    "reason": "Incorrect. Piloting (1) can't happen before the workflow has even been documented (2) or the integration points defined."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Systematic workflow integration follows: document current state (2) -> identify augmentation/human-retention points (4) -> define the technical interface (5) -> pilot (1) -> roll out and finalize documentation (3)."
+        },
+        {
+            "id": 42,
+            "topic": "Code Review System Design",
+            "Question": "A software development team is building an automated code review system using Claude. They need to handle codebases ranging from 5,000 to 50,000 lines of code. In early testing, Claude sometimes misses bugs in files that appear later in the review or provides generic comments when context is incomplete.\n\nWhat workflow design approach would most effectively address these limitations?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Break the codebase into logical modules, send each module with its full context and dependencies to Claude in separate API calls, then aggregate results with a final consistency pass.",
+                    "reason": "Correct. Modular, context-complete review calls with a final consistency pass address both the missed-bugs and generic-comments problems directly."
+                },
+                {
+                    "id": 2,
+                    "text": "Send the entire codebase as a single prompt to maximize Claude's full context window.",
+                    "reason": "Incorrect. Maximizing raw context doesn't guarantee focused, high-quality analysis and can introduce noise that degrades reasoning."
+                },
+                {
+                    "id": 3,
+                    "text": "Use only Claude's smallest available model to process code faster, then validate outputs manually afterward.",
+                    "reason": "Incorrect. Smaller models typically produce less reliable code review, sacrificing quality for speed."
+                },
+                {
+                    "id": 4,
+                    "text": "Abandon Claude for code review and switch to a specialized linting tool instead.",
+                    "reason": "Incorrect. This is premature abandonment; the actual issue is workflow design, not a fundamental limitation of using Claude."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Splitting large codebases into logical, context-complete modules (with dependencies), then running a final consistency pass, addresses both the 'missed bugs in later files' and 'generic comments' problems better than one massive prompt or a smaller model."
+        },
+        {
+            "id": 43,
+            "topic": "Classification Performance Degradation",
+            "Question": "Your organization is monitoring Claude's performance across three different use cases: document summarization, customer inquiry classification, and technical writing assistance. Over the past month, performance on classification tasks has degraded noticeably while summarization and writing assistance remain stable. You've confirmed the Claude model version hasn't changed.\n\nWhat is the most likely cause that should be investigated first as a configuration and knowledge-management issue? (Fill in the blank)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The knowledge base or reference data used for classification has become stale or outdated.",
+                    "reason": "Correct. Classification tasks depend heavily on mapping inquiries to a specific taxonomy or reference set -- if that data hasn't kept pace with business reality, accuracy degrades."
+                },
+                {
+                    "id": 2,
+                    "text": "Claude's underlying model architecture silently changed without notice.",
+                    "reason": "Incorrect. The scenario explicitly confirms the model version hasn't changed, ruling this out."
+                },
+                {
+                    "id": 3,
+                    "text": "Users are submitting classification requests in a different language than before.",
+                    "reason": "Incorrect. There's no evidence in the scenario pointing to a language shift; this is speculative."
+                },
+                {
+                    "id": 4,
+                    "text": "The API rate limits were recently lowered, causing incomplete responses.",
+                    "reason": "Incorrect. Rate limiting would affect all task types, not selectively degrade only classification."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Classification tasks are unusually sensitive to knowledge quality because they depend on mapping inputs to a specific taxonomy or business-rule set. When only classification degrades (with model version unchanged), stale or outdated reference data is the most likely first thing to investigate."
+        },
+        {
+            "id": 44,
+            "topic": "CRM Data Extraction Troubleshooting",
+            "Question": "You are troubleshooting a system where Claude is supposed to extract structured data from customer emails to populate a CRM database. Recently, extracted data has become inconsistent: some emails produce well-formatted output while others have missing fields, incorrect data types, or malformed JSON responses.\n\nWhich combination of troubleshooting steps would most efficiently identify and resolve the root cause?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Compare the problem emails to successful ones to identify patterns (length, language, formatting), test with refined prompts that include specific JSON schema guidance and example outputs, then incrementally adjust temperature and max_tokens to find the optimal settings.",
+                    "reason": "Correct. This follows sound diagnostic methodology: isolate the pattern, apply targeted prompt fixes, then tune configuration based on evidence."
+                },
+                {
+                    "id": 2,
+                    "text": "Immediately switch to a larger Claude model variant since inconsistency always indicates insufficient model capacity.",
+                    "reason": "Incorrect. Jumping to a larger model is premature and wastes resources without diagnosing the actual root cause."
+                },
+                {
+                    "id": 3,
+                    "text": "Increase the temperature parameter to maximum to encourage more varied and creative outputs.",
+                    "reason": "Incorrect. Higher temperature increases randomness, which worsens consistency for structured extraction rather than improving it."
+                },
+                {
+                    "id": 4,
+                    "text": "Remove all system prompts and retry, assuming the system prompt is causing the inconsistency.",
+                    "reason": "Incorrect. The system prompt likely contains the schema/format instructions essential for consistent output; removing it removes critical context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Effective troubleshooting isolates the pattern first (comparing failing vs. successful cases), applies targeted prompt fixes (explicit schema, examples), and only then tunes configuration parameters based on evidence -- rather than jumping straight to a bigger model or randomizing settings."
+        },
+        {
+            "id": 45,
+            "topic": "Project Configuration Conflict Resolution",
+            "Question": "A support representative is configuring a Project for drafting customer-facing apology emails after service outages. The current custom instructions tell Claude to \"be empathetic and casual, keep it short, and offer a goodwill credit.\" The customer-service team has flagged that recent drafts have been too brief, have offered goodwill credits in cases where policy does not allow them, and have used contractions that the brand voice guide prohibits.\n\nWhich adjustment best aligns the configuration to the use case?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Replace 'be empathetic and casual' with 'match the brand voice guide,' remove the instruction to offer goodwill credits, and let each draft determine its own length based on the incident.",
+                    "reason": "Incorrect. This removes necessary goodwill-credit guidance entirely rather than conditioning it on the actual eligibility policy."
+                },
+                {
+                    "id": 2,
+                    "text": "Move the brand voice guide and the goodwill-credit policy into the Project knowledge base and rely on the documents alone to govern tone, length, and credit decisions, without changing the custom instructions.",
+                    "reason": "Incorrect. Leaving conflicting custom instructions unchanged means the Project will still tell Claude to be 'casual,' directly contradicting the brand guide even if it's also uploaded."
+                },
+                {
+                    "id": 3,
+                    "text": "Specify the brand voice attributes (empathetic, formal, no contractions), set a minimum length, and instruct Claude to recommend a goodwill credit only when the attached eligibility policy permits one.",
+                    "reason": "Correct. This directly resolves all three flagged problems: operationalized tone, a concrete length floor, and credit decisions conditioned on actual eligibility."
+                },
+                {
+                    "id": 4,
+                    "text": "Keep the existing instructions and add a sentence telling Claude to consult the brand voice guide and the goodwill-credit policy that are attached to the Project knowledge base.",
+                    "reason": "Incorrect. Keeping the conflicting 'casual' instruction while also pointing to a formal brand guide creates a direct contradiction Claude must resolve unpredictably."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The root causes were conflicting/vague directives: 'casual' contradicts a no-contractions brand guide, 'keep it short' produced under-scoped drafts, and unconditional credit offers ignored eligibility. The fix operationalizes tone attributes explicitly, sets a length floor, and conditions credit recommendations on the actual policy."
+        },
+        {
+            "id": 46,
+            "topic": "Highest-Leverage Workflow Step",
+            "Question": "You are a project manager weighing workflow steps by how much leverage Claude integration provides.\n\nWhich workflow step typically offers the greatest Claude leverage in a knowledge-work team?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Approving final deliverables for external publication without further review.",
+                    "reason": "Incorrect. Unreviewed external publication is an inappropriate delegation risk, not a high-leverage integration point."
+                },
+                {
+                    "id": 2,
+                    "text": "Negotiating contractual terms with external parties on behalf of the company.",
+                    "reason": "Incorrect. Binding negotiation requires legal authority and judgment that shouldn't be automated."
+                },
+                {
+                    "id": 3,
+                    "text": "Drafting and synthesizing across many sources for a downstream reviewer.",
+                    "reason": "Correct. This plays to Claude's core strengths -- large-context comprehension and fast synthesis -- while keeping a human reviewer in the loop for final judgment."
+                },
+                {
+                    "id": 4,
+                    "text": "Making final personnel decisions about hiring, promotion, or termination.",
+                    "reason": "Incorrect. Final personnel decisions require human accountability and judgment that can't be automated."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The highest-leverage use of Claude is high-volume synthesis and initial drafting paired with human review -- not autonomous, unreviewed high-stakes determinations like publication approval, contract negotiation, or personnel decisions."
+        },
+        {
+            "id": 47,
+            "topic": "First Step in Multi-Person Integration",
+            "Question": "You are an operations lead integrating Claude into a multi-person team workflow.\n\nWhich integration step should be performed first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Identify where Claude adds value and where each handoff to a human occurs.",
+                    "reason": "Correct. Mapping the exact stages where Claude provides leverage vs. where human judgment must remain is the essential first step before any implementation."
+                },
+                {
+                    "id": 2,
+                    "text": "Pilot the integrated workflow with a small group on representative work.",
+                    "reason": "Incorrect. Piloting before functional boundaries are even defined leads to unstructured trials and unclear accountability."
+                },
+                {
+                    "id": 3,
+                    "text": "Iterate the integrated workflow based on the findings from the pilot.",
+                    "reason": "Incorrect. Iteration depends on pilot results existing first, which in turn depends on the boundaries being defined."
+                },
+                {
+                    "id": 4,
+                    "text": "Document the integrated workflow and onboard the rest of the team to it.",
+                    "reason": "Incorrect. Documentation and onboarding happen well after the value/handoff analysis, piloting, and iteration."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Structured process mapping -- identifying exactly where Claude adds value and where human handoffs occur -- must come before piloting, iterating, or documenting for broader rollout."
+        },
+        {
+            "id": 48,
+            "topic": "Diagnostic Steps Before Workflow Change",
+            "Question": "You are optimizing a recurring Claude workflow and must complete the diagnostic steps before changing the workflow.\n\nWhich two diagnostic steps must be completed BEFORE changing the recurring workflow? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Notify executive leadership of the projected savings from the optimization.",
+                    "reason": "Incorrect. Leadership notification happens after solutions are verified, not as a diagnostic prerequisite."
+                },
+                {
+                    "id": 2,
+                    "text": "Identify the steps that contribute most to time, cost, or quality issues.",
+                    "reason": "Correct. Bottleneck analysis -- pinpointing exactly which sub-steps are responsible for degradation -- is a core diagnostic prerequisite."
+                },
+                {
+                    "id": 3,
+                    "text": "Deploy the updated workflow across the team and monitor for adoption issues.",
+                    "reason": "Incorrect. Deployment is a downstream execution phase that comes after diagnostics and redesign."
+                },
+                {
+                    "id": 4,
+                    "text": "Measure the current workflow's quality, time, and cost across recent runs.",
+                    "reason": "Correct. Establishing a quantitative baseline is essential before you can know whether any change actually improved things."
+                },
+                {
+                    "id": 5,
+                    "text": "Document the revised workflow steps and update the team's standard operating procedures.",
+                    "reason": "Incorrect. SOP updates happen after the workflow has actually been redesigned and implemented."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                4
+            ],
+            "CorrectAnswerExplanation": "Workflow optimization must be evidence-based: first measure the current baseline (quality/time/cost), then identify the specific bottlenecks contributing most to issues -- only then should you change anything."
+        },
+        {
+            "id": 49,
+            "topic": "Stakeholder Messaging Preparation",
+            "Question": "You are a communications specialist preparing to describe Claude's role in a workflow to multiple stakeholder groups and must complete the preparation steps before drafting messages.\n\nWhich two preparation steps must be completed BEFORE drafting the stakeholder messages? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Archive the drafted messages in the corporate communications repository.",
+                    "reason": "Incorrect. Archiving happens after messages exist, as a post-drafting activity."
+                },
+                {
+                    "id": 2,
+                    "text": "Identify the stakeholder groups and what each group needs to understand.",
+                    "reason": "Correct. Segmenting audiences and their specific concerns is essential preparation before drafting targeted messages."
+                },
+                {
+                    "id": 3,
+                    "text": "Define the key facts about Claude's role and the boundaries that apply.",
+                    "reason": "Correct. Establishing the accurate ground truth -- role, scope, and limitations -- must happen before you can communicate it accurately."
+                },
+                {
+                    "id": 4,
+                    "text": "Send the drafted messages out and gather feedback for revision.",
+                    "reason": "Incorrect. Sending and gathering feedback are post-drafting activities."
+                },
+                {
+                    "id": 5,
+                    "text": "Schedule a follow-up forum to handle questions raised by the messages.",
+                    "reason": "Incorrect. A follow-up forum addresses questions that arise only after messages have already gone out."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                3
+            ],
+            "CorrectAnswerExplanation": "Before drafting stakeholder communications, you need the core ground truth (Claude's role and boundaries) and the audience segmentation (who needs to know what) -- everything else (sending, archiving, follow-up) happens afterward."
+        },
+        {
+            "id": 50,
+            "topic": "Appropriate Stakeholder Messages",
+            "Question": "You are a project manager reviewing stakeholder messages that teammates have drafted about Claude's role in a workflow.\n\nWhich two messages are appropriate for stakeholder communication about Claude? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A claim that the model never makes errors and requires no quality review.",
+                    "reason": "Incorrect. This is factually inaccurate and sets unrealistic expectations, undermining necessary quality safeguards."
+                },
+                {
+                    "id": 2,
+                    "text": "A vague reassurance that \"the AI is taking care of it\" without further detail.",
+                    "reason": "Incorrect. Vagueness gives stakeholders no actionable information to plan around."
+                },
+                {
+                    "id": 3,
+                    "text": "A claim that Claude will handle every task without any human involvement.",
+                    "reason": "Incorrect. This misrepresents the actual human-in-the-loop design most Claude workflows require."
+                },
+                {
+                    "id": 4,
+                    "text": "A clear statement of the limits and known failure modes of the integration.",
+                    "reason": "Correct. Clear communication of limits and failure modes lets stakeholders set realistic expectations and plan safeguards."
+                },
+                {
+                    "id": 5,
+                    "text": "An honest description of where Claude assists and where humans retain decisions.",
+                    "reason": "Correct. An honest, specific description of the human/AI division of labor is exactly what stakeholders need to trust the integration."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                4,
+                5
+            ],
+            "CorrectAnswerExplanation": "Effective stakeholder communication describes limits/failure modes honestly and clarifies exactly where humans retain decision authority -- claims of error-free or fully autonomous operation, or vague reassurances, are not appropriate."
+        },
+        {
+            "id": 51,
+            "topic": "Requirements Analysis Steps Order",
+            "Question": "You are a senior analyst using Claude to analyze requirements from several stakeholder sources.\n\nWhich is the correct order of steps?\n(1) Group related requirements and flag conflicts or ambiguities for stakeholder review.\n(2) Validate the structured output against the original sources for accuracy and completeness.\n(3) Submit the consolidated inputs to Claude with a structured extraction prompt.\n(4) Gather and label the source materials so each requirement can be traced.\n(5) Document the final requirements set with source traceability and status.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "4, 1, 3, 2, 5",
+                    "reason": "Incorrect. Requirements can't be grouped and flagged (1) before they've even been extracted from Claude (3)."
+                },
+                {
+                    "id": 2,
+                    "text": "4, 3, 1, 2, 5",
+                    "reason": "Correct. Gather/label sources, submit to Claude for structured extraction, group/flag conflicts, validate against originals, then document the final set."
+                },
+                {
+                    "id": 3,
+                    "text": "1, 4, 3, 2, 5",
+                    "reason": "Incorrect. You can't group requirements (1) before they've been gathered/labeled (4) or extracted (3) in the first place."
+                },
+                {
+                    "id": 4,
+                    "text": "3, 4, 1, 2, 5",
+                    "reason": "Incorrect. Source materials must be gathered and labeled (4) before you can submit them to Claude (3) for extraction."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Requirements analysis flows: gather and label sources (4) -> extract via Claude (3) -> group and flag conflicts (1) -> validate against originals (2) -> document the final traceable set (5)."
+        },
+        {
+            "id": 52,
+            "topic": "Custom Instructions for Writing Project",
+            "Question": "You are a marketing manager deciding what to include in custom instructions for a writing-focused Project.\n\nWhich two items belong in the custom instructions? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A representative sample of past writing that reflects the team's preferred style and structure.",
+                    "reason": "Incorrect. While style samples can be helpful reference material, the two best-fit answers here are the brand voice/tone and structure/length expectations directly."
+                },
+                {
+                    "id": 2,
+                    "text": "The brand voice and tonal expectations the writing must follow.",
+                    "reason": "Correct. Brand voice and tone are foundational, stable expectations that belong in Project-level custom instructions."
+                },
+                {
+                    "id": 3,
+                    "text": "The preferred writing style of the marketing manager who will review all final deliverables.",
+                    "reason": "Incorrect. One individual reviewer's personal preference is not the same as the organization's established brand/style requirements."
+                },
+                {
+                    "id": 4,
+                    "text": "The prompt author's preferred response length for internal messages unrelated to external deliverables.",
+                    "reason": "Incorrect. This is unrelated to the actual deliverables the writing-focused Project exists to support."
+                },
+                {
+                    "id": 5,
+                    "text": "The standard structure and length expectations for typical deliverables.",
+                    "reason": "Correct. Standard structure and length expectations ensure consistent, on-brand formatting across every writing task in the Project."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                5
+            ],
+            "CorrectAnswerExplanation": "Project-level custom instructions should capture stable, organization-wide expectations -- brand voice/tone and standard structure/length -- rather than one individual's personal preferences or unrelated internal-message conventions."
+        },
+        {
+            "id": 53,
+            "topic": "HR Project Knowledge Base Content",
+            "Question": "An HR business partner is configuring a new Project for recurring policy questions from managers. The Project will be used across many chats by several HR team members.\n\nWhich content belongs in the Project knowledge base?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The current employee handbook plus prior versions of the handbook going back five years, so Claude can answer questions about how policies have changed.",
+                    "reason": "Incorrect. Including outdated handbooks risks Claude citing obsolete rules and creating contradictions."
+                },
+                {
+                    "id": 2,
+                    "text": "The current employee handbook, the leveling guide, the policies-FAQ, and every email the HR team has sent about policy in the past year, for additional context.",
+                    "reason": "Incorrect. Raw email trails inject uncurated noise, conflicting statements, and potential privacy issues into the knowledge base."
+                },
+                {
+                    "id": 3,
+                    "text": "The current employee handbook only, with the leveling guide and the policies-FAQ attached at the start of each chat as needed for that chat's topic.",
+                    "reason": "Incorrect. Relegating core, frequently used documents to manual per-chat uploads undermines the efficiency benefit of using a Project."
+                },
+                {
+                    "id": 4,
+                    "text": "The current employee handbook, the leveling guide, and the policies-FAQ document referenced across the Project's chats.",
+                    "reason": "Correct. These are the core, evergreen, authoritative reference documents that should live in the persistent knowledge base."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "The Project knowledge base should hold authoritative, canonical, frequently-accessed reference material -- the current handbook, leveling guide, and FAQ -- not outdated versions, raw email trails, or documents relegated to manual per-chat uploads."
+        },
+        {
+            "id": 54,
+            "topic": "Course-Design Custom Instructions",
+            "Question": "A learning specialist is configuring a Project for course-design work. Their organization has an internal instructional-design standard and a preferred output structure for lesson outlines.\n\nWhich custom-instruction set best supports this use case?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Name Claude's role as a course designer; let each chat's prompt specify the standards and output structure for that lesson, since lessons vary widely.",
+                    "reason": "Incorrect. Leaving standards and structure to individual chat prompts risks inconsistent results across the team."
+                },
+                {
+                    "id": 2,
+                    "text": "Name Claude's role as a course designer and require alignment to the organization's instructional-design standards; leave output structure to Claude based on the topic of each lesson.",
+                    "reason": "Incorrect. Leaving structure fully to Claude's discretion can produce outlines that don't match the organization's required format."
+                },
+                {
+                    "id": 3,
+                    "text": "Specify only the preferred output structure for lesson outlines, since the structure carries the standards implicitly and naming the role adds no value.",
+                    "reason": "Incorrect. Structure alone doesn't convey the full instructional-design standard, and role framing does add useful context."
+                },
+                {
+                    "id": 4,
+                    "text": "Name Claude's role as a course designer, require alignment to the organization's instructional-design standards, and specify the preferred output structure for lesson outlines.",
+                    "reason": "Correct. Together, role, standards, and structure establish consistent expertise, quality criteria, and formatting across every course-design conversation."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Comprehensive custom instructions combining role, standards, and structure produce consistent results across the Project -- putting any one piece only in individual prompts, or leaving structure to chance, risks inconsistency."
+        },
+        {
+            "id": 55,
+            "topic": "Transitioning to a Fresh Session",
+            "Question": "You are a knowledge worker transitioning from a long, drifting conversation into a fresh focused session.\n\nWhich is the correct order of transition steps?\n(1) Begin a new chat and paste the summary as its starting context.\n(2) Summarize the goals, key decisions, and open questions from the long conversation.\n(3) Identify which references should persist beyond the current chat.\n(4) Move persistent references into a Project's knowledge base or attach them as needed.\n(5) Confirm the new chat is on-task before continuing the work.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "1, 2, 3, 4, 5",
+                    "reason": "Incorrect. You need to summarize (2) and identify persistent references (3) before starting the new chat (1), not after."
+                },
+                {
+                    "id": 2,
+                    "text": "2, 3, 4, 1, 5",
+                    "reason": "Correct. Summarize the old conversation, identify what should persist, move it into the Project/attachments, start the new chat with the summary, then confirm on-task."
+                },
+                {
+                    "id": 3,
+                    "text": "2, 4, 3, 1, 5",
+                    "reason": "Incorrect. You need to identify which references should persist (3) before you can move them (4), not after."
+                },
+                {
+                    "id": 4,
+                    "text": "3, 2, 4, 1, 5",
+                    "reason": "Incorrect. Summarizing goals/decisions/questions (2) should generally come before identifying persistent references (3), since the summary often reveals what matters most."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The transition flow: summarize the prior conversation (2) -> identify what should persist (3) -> move it into a Project/attach as needed (4) -> start the new chat with that summary (1) -> confirm the new session is on-task (5)."
+        },
+        {
+            "id": 56,
+            "topic": "Memory Maintenance Best Practices",
+            "Question": "A manager is deciding what changes to make while conducting a memory maintenance review for a long-running workflow.\n\nWhich two actions best support memory quality over time? (Choose 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Delete all memories as the maintenance action to ensure a clean slate, then allow Claude to rebuild context organically through subsequent workflow runs.",
+                    "reason": "Incorrect. Wiping everything discards useful, still-relevant context along with the stale entries."
+                },
+                {
+                    "id": 2,
+                    "text": "Disable Memory entirely to eliminate the risk of stale entries surfacing in future workflow runs.",
+                    "reason": "Incorrect. Disabling Memory entirely sacrifices its benefits rather than maintaining its quality."
+                },
+                {
+                    "id": 3,
+                    "text": "Identify and edit or delete entries that are stale, inaccurate, or no longer relevant, and add context Claude has not automatically captured but the workflow continues to need.",
+                    "reason": "Correct. Targeted curation -- removing what's stale and adding what's missing -- is the actual maintenance action that improves memory quality."
+                },
+                {
+                    "id": 4,
+                    "text": "Leave all memories untouched on the basis that the workflow has been running consistently and no output quality issues have been reported.",
+                    "reason": "Incorrect. Absence of reported issues doesn't mean stale or inaccurate entries aren't quietly degrading quality."
+                },
+                {
+                    "id": 5,
+                    "text": "Export the current memories as a backup before making changes, so prior context can be restored if a maintenance edit unintentionally removes information the workflow still depends on.",
+                    "reason": "Correct. Backing up before editing protects against accidentally losing information the workflow still needs."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                3,
+                5
+            ],
+            "CorrectAnswerExplanation": "Good memory maintenance means targeted curation (removing stale/inaccurate entries, adding missing context) combined with backing up beforehand -- not wholesale deletion, disabling Memory, or leaving it untouched indefinitely."
+        },
+        {
+            "id": 57,
+            "topic": "Feature Choice for Persistent Team Reference",
+            "Question": "An HR business partner is building a long-running workspace where a team handbook, a leveling guide, and a policies-FAQ document will be referenced across many separate chats by several team members.\n\nWhich Claude feature is designed for this use case?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Connect the team's Google Drive folder where the three documents live, so the connector surfaces them inside each chat at the moment the chat needs them.",
+                    "reason": "Incorrect. A connector surfaces documents dynamically but isn't the purpose-built feature for a shared, persistent team workspace with its own instructions."
+                },
+                {
+                    "id": 2,
+                    "text": "Generate an Artifact containing the three documents, which gives the team an editable surface for the reference content that persists across chats.",
+                    "reason": "Incorrect. Artifacts are for specific generated content within a chat, not a shared, cross-team persistent knowledge workspace."
+                },
+                {
+                    "id": 3,
+                    "text": "Create a Project, which provides a persistent workspace with its own knowledge base and custom instructions shared across chats and members.",
+                    "reason": "Correct. A Project is exactly the feature designed for a persistent, shared workspace with its own knowledge base and instructions across many chats and team members."
+                },
+                {
+                    "id": 4,
+                    "text": "Attach all three documents to each chat as needed, since per-chat attachments give the chat direct access to the documents without additional setup.",
+                    "reason": "Incorrect. Per-chat attachments require repetitive manual setup and don't provide the persistent, shared workspace the use case calls for."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "A Project is purpose-built for exactly this scenario: a persistent workspace with its own knowledge base and custom instructions, shared consistently across many chats and multiple team members."
+        },
+        {
+            "id": 58,
+            "topic": "First Maintenance Action for Project Drift",
+            "Question": "You are an operations lead and notice that a Project's outputs have been drifting from the team's current expectations.\n\nWhich maintenance action should be tried first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Review the Project's instructions and reference materials against current standards.",
+                    "reason": "Correct. Checking whether the Project's instructions/knowledge base have fallen out of sync with current standards is the natural first diagnostic step."
+                },
+                {
+                    "id": 2,
+                    "text": "Switch the Project to a different Claude model in the hope it behaves better.",
+                    "reason": "Incorrect. Switching models without diagnosing the actual cause is a guess, not a maintenance action."
+                },
+                {
+                    "id": 3,
+                    "text": "Continue using the Project and accept the drift as the new baseline of behavior.",
+                    "reason": "Incorrect. Accepting drift without investigation lets a real configuration problem persist."
+                },
+                {
+                    "id": 4,
+                    "text": "Retire the Project and rebuild a new one from scratch with fresh content.",
+                    "reason": "Incorrect. Rebuilding from scratch is a drastic, wasteful step before you've even diagnosed what's actually out of date."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "When outputs drift from expectations, the first, most targeted maintenance action is reviewing the Project's instructions and reference materials against current standards -- not switching models, ignoring it, or rebuilding entirely."
+        },
+        {
+            "id": 59,
+            "topic": "First Step Writing System-Level Instructions",
+            "Question": "You are writing system-level instructions for a Project that supports recurring writing tasks.\n\nWhich step should be performed first when writing the system-level instructions?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Refine the drafted instructions based on observed gaps from validation runs.",
+                    "reason": "Incorrect. Refinement depends on validation results existing first, which in turn depends on a draft existing."
+                },
+                {
+                    "id": 2,
+                    "text": "Validate the drafted instructions against representative requests for the Project.",
+                    "reason": "Incorrect. Validation requires a draft of the instructions to already exist, and a clear purpose/boundary to validate against."
+                },
+                {
+                    "id": 3,
+                    "text": "Distribute the finalized instructions to collaborators on the Project.",
+                    "reason": "Incorrect. Distribution is the last step, after drafting, validating, and refining."
+                },
+                {
+                    "id": 4,
+                    "text": "Define the purpose of the Project and the boundaries the instructions must respect.",
+                    "reason": "Correct. Establishing the Project's purpose and boundaries first gives you the foundation for everything that follows -- drafting, testing, and refining."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Defining the Project's purpose and boundaries must come first -- it establishes what the instructions need to accomplish before you draft, validate, refine, or distribute them."
+        },
+        {
+            "id": 60,
+            "topic": "First Step Configuring a New Project",
+            "Question": "You are configuring a new Claude Project for a specific recurring workload.\n\nWhich Project configuration step should be performed first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Add reference materials and instructions that the Project will rely on.",
+                    "reason": "Incorrect. You need to know the Project's purpose and workload first to know which materials/instructions are actually relevant."
+                },
+                {
+                    "id": 2,
+                    "text": "Invite collaborators to the Project and confirm the appropriate access levels.",
+                    "reason": "Incorrect. Inviting collaborators before the Project's requirements are established can create unnecessary access or rework later."
+                },
+                {
+                    "id": 3,
+                    "text": "Test the configured Project on a representative request from the workload.",
+                    "reason": "Incorrect. Testing requires the Project to already be configured, which requires the purpose and requirements to be defined first."
+                },
+                {
+                    "id": 4,
+                    "text": "Define the purpose of the Project and the recurring tasks it must support.",
+                    "reason": "Correct. Establishing purpose and scope first provides the foundation for selecting instructions, materials, collaborators, and validation requests."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "As with system-level instructions, Project configuration starts with defining purpose and recurring workload -- everything else (materials, collaborators, testing) follows from that foundation."
+        },
+        {
+            "id": 61,
+            "topic": "Reducing Repetitive Context-Setting Across Sessions",
+            "Question": "A knowledge worker often switches between Claude and another AI service while working on a long-running project.\n\nWhich Claude feature most directly reduces repetitive context-setting between sessions?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Rely on a single static Artifact pasted into each chat as the only continuity mechanism, ignoring the Memory feature that is purpose-built for retaining work-relevant context across sessions.",
+                    "reason": "Incorrect. Repeatedly pasting a static Artifact into every session doesn't provide the automatic continuity Memory is built for."
+                },
+                {
+                    "id": 2,
+                    "text": "Disable Memory entirely and re-paste the same context paragraphs at the start of every Claude session, even though Memory is designed to retain that context across conversations automatically.",
+                    "reason": "Incorrect. This manually recreates the exact repetitive work Memory is designed to eliminate."
+                },
+                {
+                    "id": 3,
+                    "text": "Open every Claude session in Incognito mode, which prevents the conversation from contributing to Memory and therefore eliminates the cross-session continuity the project would benefit from.",
+                    "reason": "Incorrect. Incognito mode actively works against cross-session continuity, the opposite of what's needed here."
+                },
+                {
+                    "id": 4,
+                    "text": "Enable Memory and use the import capability to bring relevant context from the other AI service into Claude as a starting point for the project's work.",
+                    "reason": "Correct. Enabling Memory and importing context from the other service directly reduces the need to repeatedly re-establish context."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "Memory is purpose-built to retain relevant context across sessions, and its import capability lets you bring in context from another AI service as a starting point -- directly reducing repetitive context-setting."
+        },
+        {
+            "id": 62,
+            "topic": "Connector Authorization Planning",
+            "Question": "You are organizing connected data sources for a team and must complete the planning steps before authorizing any connection.\n\nWhich two planning steps must be completed BEFORE authorizing a new Connector? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Decommission any unused legacy Connectors that may still be authorized.",
+                    "reason": "Incorrect. Decommissioning old connectors is good hygiene, but it's not a prerequisite for authorizing a new one."
+                },
+                {
+                    "id": 2,
+                    "text": "Migrate every existing report off the prior data source onto the new Connector.",
+                    "reason": "Incorrect. Migration is an implementation activity that happens after authorization, not before."
+                },
+                {
+                    "id": 3,
+                    "text": "Confirm the data classification of the source and the team's permission to use it.",
+                    "reason": "Correct. Understanding data sensitivity and confirming the team has the right to access it is essential before granting any connection."
+                },
+                {
+                    "id": 4,
+                    "text": "Confirm the Connector is on the approved-vendor list maintained by IT.",
+                    "reason": "Correct. Verifying vendor approval ensures the connection complies with organizational security and vendor-management requirements."
+                },
+                {
+                    "id": 5,
+                    "text": "Train every team member on the new Connector through formal training sessions.",
+                    "reason": "Incorrect. Formal training may be useful eventually, but it isn't a prerequisite for authorizing the connection itself."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                3,
+                4
+            ],
+            "CorrectAnswerExplanation": "Before authorizing a new Connector, you must confirm both the data classification/permission (is this data appropriate to connect?) and that the vendor is IT-approved -- migration, decommissioning, and training all happen at other points in the process."
+        },
+        {
+            "id": 63,
+            "topic": "Model Cost/Speed/Quality Trade-off",
+            "Question": "A knowledge worker is explaining the cost, speed, and quality trade-offs across Claude models to a colleague.\n\nWhich generalization correctly describes the trade-off?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "More capable models generally consume more resources and run more slowly, while lighter models are usually faster and less expensive.",
+                    "reason": "Correct. This is the standard, accurate trade-off: greater capability generally costs more in latency and resource/rate-limit consumption."
+                },
+                {
+                    "id": 2,
+                    "text": "More capable models generally consume less of the usage limit because their reasoning is more efficient, even though they run more slowly than lighter models.",
+                    "reason": "Incorrect. More capable models generally consume more of the usage limit, not less -- this inverts the actual relationship."
+                },
+                {
+                    "id": 3,
+                    "text": "Lighter models consume more resources per request than more capable models because they always require multiple passes to match higher-model quality.",
+                    "reason": "Incorrect. This misrepresents how lighter models work -- they don't inherently require multiple passes, and they consume fewer resources per request."
+                },
+                {
+                    "id": 4,
+                    "text": "Speed and resource consumption are independent of model capability; the difference between Haiku, Sonnet, and Opus is reasoning depth alone.",
+                    "reason": "Incorrect. Speed and resource consumption are directly tied to model capability, not independent of it."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The standard trade-off holds: more capable models (like Opus) generally consume more resources and run more slowly, while lighter models (like Haiku) are faster and cheaper -- though at the cost of some reasoning depth."
+        },
+        {
+            "id": 64,
+            "topic": "Preserving Context Window with Regulatory Documents",
+            "Question": "You are a research associate preparing inputs for a long task that references two lengthy regulatory documents, but only specific sections apply.\n\nWhich approach best preserves context-window capacity?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Skip the documents entirely and rely on Claude to invent the missing context.",
+                    "reason": "Incorrect. Skipping real source documents entirely and having Claude invent context risks fabricated, inaccurate information."
+                },
+                {
+                    "id": 2,
+                    "text": "Split each document into one-character pieces and feed them one at a time.",
+                    "reason": "Incorrect. This is an absurd, impractical approach that would waste enormous context capacity."
+                },
+                {
+                    "id": 3,
+                    "text": "Extract only the relevant sections from each document and include those, omitting unrelated chapters.",
+                    "reason": "Correct. Extracting only the applicable sections keeps the context focused and preserves capacity for other useful content."
+                },
+                {
+                    "id": 4,
+                    "text": "Paste the full text of both documents without trimming to maximize available material.",
+                    "reason": "Incorrect. Pasting full, largely irrelevant text wastes context-window capacity that could be used more effectively."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "When only specific sections of lengthy documents actually apply, extracting just those relevant sections preserves context-window capacity far better than pasting entire documents or omitting them altogether."
+        },
+        {
+            "id": 65,
+            "topic": "Deterministic Spreadsheet Calculations",
+            "Question": "A finance manager must select a Claude feature for a task that requires deterministic calculations across a multi-tab spreadsheet.\n\nWhich selection best fits the requirement?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use an Artifact alone for the calculations, which provides a stable editable surface for the result but does not perform the deterministic computation that Code Execution would run.",
+                    "reason": "Incorrect. An Artifact is a display/editing surface, not a computation engine."
+                },
+                {
+                    "id": 2,
+                    "text": "Use Code Execution, which runs code in a sandbox to perform calculations on the uploaded file and produce verified outputs the associate can check.",
+                    "reason": "Correct. Code Execution runs actual code against the data, producing deterministic, verifiable calculations -- exactly what's required."
+                },
+                {
+                    "id": 3,
+                    "text": "Use the Research feature for the calculations, which gathers and synthesizes external sources and is not the appropriate feature for deterministic computation on an uploaded spreadsheet.",
+                    "reason": "Incorrect. Research is designed for gathering/synthesizing external information, not running deterministic calculations on an uploaded file."
+                },
+                {
+                    "id": 4,
+                    "text": "Use a standard chat prompt for the calculations, which generates text without running code and does not produce the verified deterministic output the multi-tab calculation task requires.",
+                    "reason": "Incorrect. A standard text-generation prompt cannot guarantee the precision and verifiability that deterministic calculations require."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Deterministic, verifiable calculations on structured data require Code Execution, which actually runs code in a sandbox against the file -- not a standard chat prompt, an Artifact alone, or the Research feature."
+        },
+        {
+            "id": 66,
+            "topic": "Computing Summary Statistics and Chart",
+            "Question": "An analyst has been asked to compute summary statistics from an uploaded sales data file and produce a chart for a weekly report.\n\nWhich output approach best fits the task?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Use Code Execution to perform the calculations and generate the chart, then verify the computed results against the source data before sharing the output.",
+                    "reason": "Correct. Code Execution processes the full dataset, computes accurate statistics, and generates an actual chart -- with verification as a final check."
+                },
+                {
+                    "id": 2,
+                    "text": "Request a narrative description of the data in the chat response without computing values, leaving the summary statistics and the chart unproduced and the weekly report incomplete.",
+                    "reason": "Incorrect. A narrative description doesn't fulfill the explicit requirement for computed statistics and an actual chart."
+                },
+                {
+                    "id": 3,
+                    "text": "Ask Claude to estimate the summary statistics from a brief preview of the file, accepting unverified figures rather than running the calculations against the full uploaded dataset.",
+                    "reason": "Incorrect. Estimating from a preview risks inaccurate results, especially with many records; calculations should run against the full dataset."
+                },
+                {
+                    "id": 4,
+                    "text": "Produce a written placeholder for the chart in the chat response without generating the actual visualization, leaving the weekly report without the visual output it requires.",
+                    "reason": "Incorrect. A placeholder doesn't satisfy the actual requirement to produce a real chart."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Code Execution is the right approach when accurate calculations and real visualizations are needed -- it processes the full dataset, computes verified statistics, and generates the actual chart, unlike estimation, narrative description, or placeholders."
+        },
+        {
+            "id": 67,
+            "topic": "Production Tasks Fitting Claude's Strengths",
+            "Question": "You are an operations lead mapping production tasks to Claude model strengths to set realistic expectations.\n\nWhich two production tasks fit Claude's strengths most clearly? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Synthesizing a single executive summary across many long source documents.",
+                    "reason": "Correct. Large-context comprehension and synthesis across many documents is a core Claude strength."
+                },
+                {
+                    "id": 2,
+                    "text": "Monitoring a live sensor data stream and flagging anomalies as they occur in real time.",
+                    "reason": "Incorrect. Real-time continuous stream monitoring requires specialized stream-processing infrastructure, not Claude's core strength."
+                },
+                {
+                    "id": 3,
+                    "text": "Drafting a tone-and-audience-aware customer-facing email under human review.",
+                    "reason": "Correct. Adapting written communication for tone and audience, with human review as a safeguard, plays directly to Claude's strengths."
+                },
+                {
+                    "id": 4,
+                    "text": "Issuing a binding legal determination based solely on Claude's analysis of case documents.",
+                    "reason": "Incorrect. Binding legal determinations require qualified human professionals and legal authority Claude cannot provide."
+                },
+                {
+                    "id": 5,
+                    "text": "Calculating the precise settlement value of a derivative contract using live market inputs.",
+                    "reason": "Incorrect. Precise financial calculations with live market data require specialized, validated financial systems, not a general-purpose model."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                3
+            ],
+            "CorrectAnswerExplanation": "Claude's clearest production strengths are synthesizing large volumes of source material and drafting tone/audience-aware content under human review -- not autonomous real-time monitoring, binding legal determinations, or precise live financial calculations."
+        },
+        {
+            "id": 68,
+            "topic": "Model Selection for Recurring Meeting Summaries",
+            "Question": "You are an operations assistant selecting a model for a recurring meeting-summary task that does not require deep reasoning and runs at moderate volume.\n\nWhich selection best balances cost, speed, and quality?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Haiku, which is suitable only when the task requires the fastest possible turnaround.",
+                    "reason": "Incorrect. This overstates Haiku's narrow fit and undersells Sonnet's suitability for everyday, moderate-volume work."
+                },
+                {
+                    "id": 2,
+                    "text": "Opus, which prioritizes depth at higher latency and rate-limit consumption.",
+                    "reason": "Incorrect. Opus's extra depth isn't needed here and comes at unnecessary cost and latency for a task that doesn't require deep reasoning."
+                },
+                {
+                    "id": 3,
+                    "text": "Sonnet, which provides solid quality at moderate latency and rate-limit consumption for everyday work.",
+                    "reason": "Correct. Sonnet is designed as the balanced, everyday-work option -- ideal for moderate-volume tasks that don't need deep reasoning."
+                },
+                {
+                    "id": 4,
+                    "text": "A custom model, which the Associate-level user would need to build and train independently.",
+                    "reason": "Incorrect. Building a custom model is unnecessary and impractical for a straightforward summarization task."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "For a recurring, moderate-volume task not requiring deep reasoning, Sonnet's balance of solid quality, moderate latency, and moderate rate-limit consumption is the best fit -- Opus is overkill and Haiku is better suited to the fastest, lightest tasks."
+        },
+        {
+            "id": 69,
+            "topic": "Compliance Configuration for Sensitive Chatbot Data",
+            "Question": "Your organization is evaluating Claude for a customer service chatbot that handles sensitive personal information (account details, transaction history). Your compliance team requires that no sensitive data should remain in conversation history after 90 days, and you need audit trails for all data access.\n\nWhich combination of configuration and governance measures best addresses these requirements?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Configure Claude with system-level instructions to not retain data, then implement a separate data retention policy and audit logging system in your application layer.",
+                    "reason": "Correct. Data retention and audit logging are infrastructure-level responsibilities that must be implemented in your own application systems alongside Claude's configuration."
+                },
+                {
+                    "id": 2,
+                    "text": "Trust Claude's built-in automatic deletion to handle all compliance requirements without additional system configuration.",
+                    "reason": "Incorrect. This incorrectly assumes Claude manages compliance automatically; compliance responsibility ultimately lies with the deploying organization."
+                },
+                {
+                    "id": 3,
+                    "text": "Remove all sensitive data from prompts and rely only on Claude's training data for responses.",
+                    "reason": "Incorrect. Legitimate customer service often requires working with sensitive data; avoidance isn't a practical governance strategy."
+                },
+                {
+                    "id": 4,
+                    "text": "Store all conversation history indefinitely in a database and let Claude handle compliance through API calls.",
+                    "reason": "Incorrect. Indefinite storage with no explicit policy leaves the system vulnerable to data sprawl with no audit trail."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Compliance requires a layered approach: system-level instructions can guide Claude's handling of data in the moment, but retention windows and audit logging are infrastructure-level obligations the deploying organization must implement itself."
+        },
+        {
+            "id": 70,
+            "topic": "Data Handling Sequence for Mixed-Sensitivity Document",
+            "Question": "You are handling a document containing mixed-sensitivity content before using it with Claude.\n\nWhich data-handling step should be performed first?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Redact sensitive fields and replace them with appropriate placeholders.",
+                    "reason": "Incorrect. You can't redact fields accurately until you've first classified which fields are actually sensitive."
+                },
+                {
+                    "id": 2,
+                    "text": "Classify the content of the document and identify which fields are sensitive.",
+                    "reason": "Correct. Classification -- identifying what's actually sensitive (PII, PHI, confidential data) -- must happen before any redaction can be done properly."
+                },
+                {
+                    "id": 3,
+                    "text": "Submit the redacted document to Claude for the intended task.",
+                    "reason": "Incorrect. Submission is the final step, after classification, redaction, and review."
+                },
+                {
+                    "id": 4,
+                    "text": "Review the redacted document with a peer to confirm the redaction is complete.",
+                    "reason": "Incorrect. Peer review of the redaction happens after redaction, which itself depends on classification first."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "Responsible data handling follows a strict sequence: classify sensitive content first, then redact it, then peer-review the redaction, and only then submit the sanitized document to Claude."
+        },
+        {
+            "id": 71,
+            "topic": "Purpose of an AI Governance Framework",
+            "Question": "A knowledge worker is explaining the purpose of an organizational AI governance framework to a colleague.\n\nWhich description is most accurate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A governance framework defines approved tools, allowed data, required reviews, and reporting paths so AI is used consistently and accountably.",
+                    "reason": "Correct. This captures the comprehensive scope of governance: sanctioned tools, data rules, review requirements, and escalation/reporting paths."
+                },
+                {
+                    "id": 2,
+                    "text": "A governance framework lists the AI tools the organization licenses and the cost of each, so users can pick the most cost-effective tool for each task.",
+                    "reason": "Incorrect. A licensing/cost catalog is a procurement tool, not a governance framework."
+                },
+                {
+                    "id": 3,
+                    "text": "A governance framework defines the training every employee must complete before using AI tools, with separate requirements for each tool the organization licenses.",
+                    "reason": "Incorrect. Training requirements alone cover only onboarding logistics, not the full scope of governance."
+                },
+                {
+                    "id": 4,
+                    "text": "A governance framework documents the AI policies the organization is legally required to adopt, focusing on regulatory compliance rather than day-to-day use.",
+                    "reason": "Incorrect. Narrowing governance purely to legal mandates ignores its role in guiding daily operational use and quality."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "An AI governance framework is broader than any single concern -- it establishes approved tools, data rules, required reviews, and reporting paths together, ensuring consistent and accountable use across the organization."
+        },
+        {
+            "id": 72,
+            "topic": "PCI-DSS Governance for Payment Chatbot",
+            "Question": "Your organization is building a customer support chatbot using Claude that needs to handle sensitive payment information. The chatbot will be integrated into your existing CRM system and must comply with PCI-DSS regulations.\n\nWhich of the following is the most appropriate governance approach for this use case?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Pass all customer payment data directly to Claude for analysis, then implement post-processing filters to remove sensitive information before storing results.",
+                    "reason": "Incorrect. Post-processing filters cannot guarantee removal of information already processed; this violates PCI-DSS data-minimization principles."
+                },
+                {
+                    "id": 2,
+                    "text": "Configure the system to exclude payment card data from Claude prompts entirely, use separate tokenization systems for payment processing, and document the data handling policy for audit purposes.",
+                    "reason": "Correct. Never sending sensitive payment data to Claude eliminates the risk category entirely, and tokenization plus documentation supports both security and auditability."
+                },
+                {
+                    "id": 3,
+                    "text": "Use Claude's built-in encryption features to secure payment data before sending it to the API, then store the encrypted results in your CRM.",
+                    "reason": "Incorrect. Claude does not provide application-level encryption that protects data once received; TLS in transit is not the same as application-level protection, creating false confidence."
+                },
+                {
+                    "id": 4,
+                    "text": "Implement a sampling approach where only 10% of payment transactions are sent to Claude for analysis to reduce exposure.",
+                    "reason": "Incorrect. Sampling doesn't reduce compliance requirements -- any amount of unencrypted payment data sent to an external service violates PCI-DSS regardless of volume."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                2
+            ],
+            "CorrectAnswerExplanation": "The strongest PCI-DSS governance posture excludes payment card data from Claude entirely, using tokenization and clear documentation -- eliminating the risk category rather than trying to manage it downstream."
+        },
+        {
+            "id": 73,
+            "topic": "Preparing Feedback File with Mixed Content",
+            "Question": "You are an operations team member preparing inputs to summarize customer feedback. The feedback file mixes public quotations with personal contact details.\n\nWhich preparation approach is most appropriate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Extract only the feedback content needed for the summary, redact or anonymize personal contact details, and submit the trimmed input.",
+                    "reason": "Correct. This applies the principle of using the minimum necessary data -- keeping the useful feedback content while protecting personal details."
+                },
+                {
+                    "id": 2,
+                    "text": "Submit the entire file unchanged so Claude has complete context.",
+                    "reason": "Incorrect. Submitting unredacted personal contact details unnecessarily exposes sensitive information."
+                },
+                {
+                    "id": 3,
+                    "text": "Replace the feedback content with the personal contact details and ask Claude to invent the missing feedback.",
+                    "reason": "Incorrect. This backwards approach discards the actual useful content and invents fabricated feedback."
+                },
+                {
+                    "id": 4,
+                    "text": "Strip out the feedback content and submit only the personal contact details.",
+                    "reason": "Incorrect. This removes exactly the content needed for the summarization task while retaining only the sensitive data."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "The right approach extracts only what's needed for the task (the feedback itself) while redacting or anonymizing personal contact details -- following the minimum-necessary-data principle."
+        },
+        {
+            "id": 74,
+            "topic": "HR Policy on Ongoing Investigations",
+            "Question": "An HR associate is preparing to use Claude on a sensitive personnel matter. The organization's AI policy explicitly states that information related to ongoing investigations must not be entered into AI tools.\n\nWhich response best aligns with the policy?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Enter the investigation-related information into Claude only after the investigation closes, since the policy applies during the investigation period.",
+                    "reason": "Incorrect. This doesn't address what to do right now, during the active investigation, which is the actual situation at hand."
+                },
+                {
+                    "id": 2,
+                    "text": "Enter a paraphrased version of the investigation-related information that removes identifying details, since paraphrasing addresses the spirit of the policy.",
+                    "reason": "Incorrect. Paraphrasing doesn't override an explicit organizational restriction on entering investigation-related information at all."
+                },
+                {
+                    "id": 3,
+                    "text": "Enter the investigation-related information into Claude in an Incognito chat, since Incognito chats do not retain information and therefore fall outside the policy's intent.",
+                    "reason": "Incorrect. Using Incognito mode does not override an organization's explicit AI policy; data-handling restrictions apply regardless of chat mode."
+                },
+                {
+                    "id": 4,
+                    "text": "Refrain from entering investigation-related information into Claude and consult HR leadership for an approved alternative way to handle the matter.",
+                    "reason": "Correct. The associate should follow the explicit policy now and seek an approved alternative workflow from HR leadership, rather than finding workarounds."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "When policy explicitly prohibits entering certain information into AI tools, the correct response is to follow that policy now -- refraining from entry and consulting leadership for an approved alternative -- not to paraphrase, delay, or use Incognito mode as a workaround."
+        },
+        {
+            "id": 75,
+            "topic": "Appropriate HR Prompt Data Items",
+            "Question": "You are an HR specialist reviewing data items proposed for inclusion in a Claude prompt for a routine task.\n\nWhich two data items are appropriate to include? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "A redacted job description that the model will adapt for a posting.",
+                    "reason": "Correct. A redacted job description provides needed role information without exposing unnecessary sensitive employee data."
+                },
+                {
+                    "id": 2,
+                    "text": "Accommodation request notes from an employee's HR file needed to draft a role-adjustment memo.",
+                    "reason": "Incorrect. Accommodation notes contain highly sensitive personal information that shouldn't be entered for a routine task without specific policy authorization."
+                },
+                {
+                    "id": 3,
+                    "text": "Employee ID numbers and hire dates for the team roster included to help Claude personalize onboarding communications.",
+                    "reason": "Incorrect. IDs and hire dates are unnecessary personal data for most onboarding-writing tasks; non-sensitive placeholders would suffice."
+                },
+                {
+                    "id": 4,
+                    "text": "A compensation-band summary that includes employee names and current salary figures for a specific team.",
+                    "reason": "Incorrect. Names combined with salary figures are sensitive personnel/compensation data unnecessary for a routine prompt."
+                },
+                {
+                    "id": 5,
+                    "text": "An anonymized summary of an HR policy that the model will rephrase.",
+                    "reason": "Correct. An anonymized policy summary provides the needed content for rewriting without exposing any identifiable employee information."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                1,
+                5
+            ],
+            "CorrectAnswerExplanation": "Appropriate data items follow the minimum-necessary-data principle: a redacted job description and an anonymized policy summary both provide what's needed for the task without exposing sensitive personal or compensation information."
+        },
+        {
+            "id": 76,
+            "topic": "Use Case Assessment Order",
+            "Question": "You are a Claude associate assessing a proposed Claude use case before approving it for your team.\n\nWhich is the correct order of assessment steps?\n(1) Compare the use case against the organization's policies and the relevant regulatory considerations.\n(2) Document the assessment outcome and the rationale for traceability.\n(3) Identify the audience, decision impact, and reversibility of the outputs.\n(4) Decide whether the use case proceeds, requires modification, or is declined.\n(5) Identify the data types involved and whether sensitive data is implicated.",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "3, 1, 5, 4, 2",
+                    "reason": "Incorrect. Data-type identification (5) should come right after audience/impact (3), before comparing against policy (1)."
+                },
+                {
+                    "id": 2,
+                    "text": "1, 3, 5, 4, 2",
+                    "reason": "Incorrect. Comparing against policy (1) too early, before audience/impact (3) and data types (5) are even understood, is premature."
+                },
+                {
+                    "id": 3,
+                    "text": "5, 3, 1, 4, 2",
+                    "reason": "Incorrect. Identifying data types (5) before establishing audience and impact (3) skips the step that determines the level of scrutiny needed."
+                },
+                {
+                    "id": 4,
+                    "text": "3, 5, 1, 4, 2",
+                    "reason": "Correct. Identify audience/impact/reversibility first, then the data types involved, then compare against policy/regulatory requirements, then decide, then document."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                4
+            ],
+            "CorrectAnswerExplanation": "A sound use-case assessment begins with audience/impact/reversibility (this determines scrutiny level), then identifies data sensitivity, then compares against policy and regulation, then decides, then documents for traceability. This ordering is independently corroborated by third-party CCAO-F reference sources."
+        },
+        {
+            "id": 77,
+            "topic": "Chain-of-Thought for Routing Errors",
+            "Question": "You are designing a system to help a financial services company analyze customer account inquiries and route them to the appropriate department. The company requires that all outputs include explicit reasoning before Claude reaches a conclusion. Currently, your initial tests show Claude sometimes routes inquiries to the wrong department without sufficient justification.\n\nWhich prompting technique would most directly address this issue?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Implement chain-of-thought prompting that requires Claude to enumerate key details from the inquiry before making a routing decision.",
+                    "reason": "Correct. Chain-of-thought prompting improves reasoning by requiring the model to work through intermediate steps (account type, issue category, customer segment) before deciding, increasing transparency and reducing errors."
+                },
+                {
+                    "id": 2,
+                    "text": "Switch to a smaller Claude model variant to reduce latency in the routing system.",
+                    "reason": "Incorrect. Model size doesn't directly address reasoning quality or justification; smaller models typically produce less reliable reasoning."
+                },
+                {
+                    "id": 3,
+                    "text": "Increase the temperature parameter to encourage more diverse routing suggestions.",
+                    "reason": "Incorrect. Increasing temperature increases randomness rather than improving systematic, justified analysis."
+                },
+                {
+                    "id": 4,
+                    "text": "Remove the system prompt entirely and rely only on the user message for context.",
+                    "reason": "Incorrect. The system prompt is crucial for setting role, constraints, and output format expectations -- removing it would hurt, not help."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Chain-of-thought prompting -- requiring Claude to enumerate key inquiry details before deciding -- directly increases transparency and reduces routing errors caused by incomplete reasoning."
+        },
+        {
+            "id": 78,
+            "topic": "Keeping Long Planning Conversations Productive",
+            "Question": "You are a project manager working through a long planning conversation with Claude and must keep the conversation productive as it grows.\n\nWhich two practices keep a long planning conversation productive? (Select 2)",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Open a new thread for every minor follow-up question to keep threads short.",
+                    "reason": "Incorrect. Fracturing every minor question into a new thread breaks contextual continuity unnecessarily."
+                },
+                {
+                    "id": 2,
+                    "text": "Restate constraints and goals when the focus shifts to a new subtopic.",
+                    "reason": "Correct. Explicitly restating key constraints and goals when the focus shifts anchors the model's attention on active parameters, preventing drift."
+                },
+                {
+                    "id": 3,
+                    "text": "Periodically summarize decisions made so far to compress the working state.",
+                    "reason": "Correct. Context compression -- consolidating milestones and decisions into a dense summary -- reduces token overhead and prevents drift/hallucination."
+                },
+                {
+                    "id": 4,
+                    "text": "Switch context aggressively between unrelated planning topics within one thread.",
+                    "reason": "Incorrect. Aggressive topic-switching within one thread pollutes attention and degrades coherence."
+                },
+                {
+                    "id": 5,
+                    "text": "Avoid summarizing so the model retains every original word it has produced.",
+                    "reason": "Incorrect. Avoiding summarization accelerates context bloat and degrades performance rather than helping."
+                }
+            ],
+            "MaxAnswerSelection": 2,
+            "CorrectAnswers": [
+                2,
+                3
+            ],
+            "CorrectAnswerExplanation": "Long conversations stay productive when you restate key constraints/goals at subtopic shifts and periodically summarize decisions to compress context -- fragmenting threads, aggressive topic-switching, and avoiding summarization all hurt coherence."
+        },
+        {
+            "id": 79,
+            "topic": "Using Feedback to Improve Work Over Time",
+            "Question": "A knowledge worker is explaining how to use feedback to improve Claude-supported work over time.\n\nWhich description is most accurate?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "Capture general impressions after each run and apply them as broad prompt rewrites, since broad rewrites cover more potential issues than targeted changes.",
+                    "reason": "Incorrect. Broad rewrites make it hard to determine what actually improved or degraded output; targeted changes are more reliable."
+                },
+                {
+                    "id": 2,
+                    "text": "Capture feedback as an aggregate quality score per run, since aggregate scores show whether quality is improving without requiring detail on individual issues.",
+                    "reason": "Incorrect. An aggregate score alone doesn't reveal what specifically went wrong or needs to change."
+                },
+                {
+                    "id": 3,
+                    "text": "Capture specific feedback after each run, translate it into targeted prompt or workflow changes, and observe whether subsequent runs improve.",
+                    "reason": "Correct. This creates a continuous, evidence-based feedback loop: specific feedback -> targeted change -> observed effect."
+                },
+                {
+                    "id": 4,
+                    "text": "Capture feedback only after several runs so patterns emerge from the volume of observations, then apply changes based on the patterns rather than any single run.",
+                    "reason": "Incorrect. Waiting several runs before capturing feedback delays important improvements and lets the same problem persist."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                3
+            ],
+            "CorrectAnswerExplanation": "The most effective feedback loop captures specific issues after each run, translates them into targeted changes, and observes the effect on subsequent runs -- rather than waiting for patterns, using vague impressions, or relying on aggregate scores alone."
+        },
+        {
+            "id": 80,
+            "topic": "Feedback on Rigid Prompt-Template Habit",
+            "Question": "You are a project lead reviewing a teammate's habit of using the same prompt template for every task regardless of type.\n\nWhich feedback is most warranted?",
+            "Options": [
+                {
+                    "id": 1,
+                    "text": "The prompting strategy should be adapted to each task type because one template does not produce equally strong outputs across all tasks.",
+                    "reason": "Correct. Different tasks need different instructions, context, constraints, examples, and formats -- a one-size-fits-all template can't serve them all equally well."
+                },
+                {
+                    "id": 2,
+                    "text": "The habit is ideal because a single template guarantees consistent quality across all task types.",
+                    "reason": "Incorrect. A generic template doesn't guarantee quality; different tasks have different requirements a fixed template can't address."
+                },
+                {
+                    "id": 3,
+                    "text": "The prompting strategy should not change between tasks because adapting it wastes time and adds no value.",
+                    "reason": "Incorrect. Adapting prompts often improves output quality and reduces revisions, adding real value despite some upfront effort."
+                },
+                {
+                    "id": 4,
+                    "text": "Task type has no effect on the appropriate prompting strategy.",
+                    "reason": "Incorrect. Task type directly affects the instructions, context, and format a prompt should include."
+                }
+            ],
+            "MaxAnswerSelection": 1,
+            "CorrectAnswers": [
+                1
+            ],
+            "CorrectAnswerExplanation": "Prompting strategy should adapt to task type, since a single generic template cannot produce equally strong results across fundamentally different kinds of work."
+        }
+    ]
+}
